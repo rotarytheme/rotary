@@ -1,0 +1,4 @@
+/* CSS Document */
+#wp-admin-bar-wp-logo > .ab-item .ab-icon {
+	background-image:url(../rotary-sass/images/admin-bar-sprite.png)
+}

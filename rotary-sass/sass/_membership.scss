@@ -1,0 +1,160 @@
+.rotarymembershipcontainer {
+	@include box-shadow(#efefef 3px 3px 5px 0);
+	width:98%;
+}
+.page #content .rotarymembershipheader {
+	background:url(../images/member-table-section-header.png) no-repeat;
+	padding: 0 20px 20px 0;
+	> h2 {
+		border-bottom:none;
+		color:#FFF;
+		font-family:$button-font;
+		font-size: 20px;
+		font-weight:normal;
+		height: 50px;
+		line-height:50px;
+		padding-top: 5px;
+		text-indent:20px;
+		text-transform: uppercase;
+	}
+}
+#rotarymembers_wrapper, .rotaryselections {
+	margin-left:20px;
+}
+.rotaryselections {
+	padding-bottom:20px;
+}
+.rotaryselections .committeecontainer {
+	float:right;
+}
+.rotaryselections #committeelabel {
+	margin-right:5px;
+}
+.rotarymembershipheader #rotarymembers tr td {
+	border-bottom:1px solid #b3b5b7;
+	border-right: 1px dotted #b3b5b7;
+	padding-bottom:15px;
+	padding-top:15px;
+}
+.rotarymembershipheader #rotarymembers tr th{
+	border-top:2px solid #f2e6cc;
+	border-right: 1px dotted #b3b5b7;
+	color:#b3b5b7;
+	font-family:$button-font;
+	font-size:17px;
+	padding-bottom:15px;
+	padding-left:6px;
+	padding-top:15px;
+	text-transform:uppercase;
+}
+.rotarymembershipheader #rotarymembers tr .email {
+	border-right:none;
+}
+#rotarymembers .odd td {
+	background: #f9f4e9;
+	
+}
+#rotarymembers .email a{
+	color:#b3b5b7;
+	text-transform:uppercase;
+}
+.rotarydialog {
+	background:#0f7189 url(../images/rotary-member-dialog-top.png) no-repeat !important;
+	color:#f2e2c0;
+	font-family:$body-font-family;
+	font-size:13px !important;  
+}
+#rotarymemberdialog h2, #rotarymemberdialog h3, #rotarymemberdialog h4, .rotarydialog .ui-dialog-titlebar-close  {
+	color:#fff;
+}
+#rotarymemberdialog h2, #rotarymemberdialog h3 {
+	font-family:$button-font;
+	text-transform:uppercase;
+}
+#rotarymemberdialog h2 {
+	font-size:30px !important;
+	line-height:1.1em;
+}
+#rotarymemberdialog .dialogtop {
+	border-bottom:none !important;
+	padding:0 !important;
+}
+#rotarymemberdialog .namearea, #rotarymemberdialog .addressarea {
+	height:102px !important;
+}
+#rotarymemberdialog .namearea {
+	background:url(../images/image-icon.png) no-repeat;
+	padding-top:20px;
+}
+#rotarymemberdialog .addressarea {
+	background:url(../images/location-icon.png) no-repeat;
+	font-size:17px;
+	padding-top:20px;
+}
+#rotarymemberdialog .dialogmain {
+	background:#0d6e8b url(../images/rotary-details-main-bg.png) repeat-x;
+	padding-top:20px;
+}
+#rotarymemberdialog .profilepicture img {
+	@include box-shadow(#111 3px 3px 3px 0);
+	background:#fff;
+	padding:5px;
+}
+#rotarymemberdialog .profilepicturebottom {
+	background: url(../images/profile-image-bg.png) 5px 100% no-repeat;
+	height:11px;
+	margin-bottom:15px;
+	margin-top:-5px;
+}
+#rotarymemberdialog p {
+	/*font-weight:bold;*/
+}
+#rotarymemberdialog p a {
+	color:#f2e2c0;
+	font-weight:normal;
+}
+#rotarymemberdialog .company h3 {
+	background:url(../images/company-icon.png) no-repeat;
+	text-indent: 25px;
+}
+#rotarymemberdialog .contact h3 {
+	background:url(../images/contact-icon.png) no-repeat;
+	text-indent: 25px;
+}
+#rotarymemberdialog .partner h3 {
+	background:url(../images/partner-icon.png) no-repeat;
+	text-indent: 25px;
+}
+#rotarymemberdialog .clubinfo h3 {
+	background:url(../images/club-info-icon.png) no-repeat;
+	text-indent: 25px;
+}
+#rotarymemberdialog .larger {
+	margin-right:0;
+	padding-right:20px;
+}
+#rotarymemberdialog .dialogbottom {
+	border-top: 2px solid #4a94a6;
+	margin-left:30px;
+	margin-right:30px;
+	padding-top:15px;
+}
+#rotarymemberdialog .company, #rotarymemberdialog .contact {
+	border-bottom-color:#4a94a6;
+}
+.rotarydialog .ui-dialog-titlebar-close {
+	background: url("../images/dialog-close.png") no-repeat scroll 0 10px transparent;
+	display: block;
+	height: 20px;
+	margin-right:10px !important;
+	text-indent: -9999px;
+	width: 20px;
+}
+#rotarymemberdialog .dialogbottom .clubname {
+	color:#f2a700;
+	font-size:14px;
+}
+#rotarymemberdialog .dialogbottom .rotaryclub {
+	color:#fff;
+	font-size:14px;
+}

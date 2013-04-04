@@ -1,0 +1,2099 @@
+2012-09-21 11:04:01     error sass/style.scss (Line 45: Undefined variable: "$body-font-family".)
+2012-09-21 11:04:01    create stylesheets/style.css 
+2012-09-21 11:09:13     error sass/style.scss (Line 9 of sass/_base.scss: Invalid CSS after "$body-font-family": expected ":", was "="Lucida Grande...")
+2012-09-21 11:09:13 overwrite stylesheets/style.css 
+2012-09-21 11:09:25     error sass/style.scss (Line 9 of sass/_base.scss: Invalid CSS after "$body-font-family": expected ":", was "="Lucida Grande...")
+2012-09-21 11:09:25 identical stylesheets/style.css 
+2012-09-21 11:09:33     error sass/style.scss (Line 9 of sass/_base.scss: Invalid CSS after "$body-font-family": expected ":", was "="Lucida Grande...")
+2012-09-21 11:09:33 identical stylesheets/style.css 
+2012-09-21 13:46:14     error sass/style.scss (Line 9 of sass/_base.scss: Invalid CSS after "$body-font-family": expected ":", was "="'Lucida Grand...")
+2012-09-21 13:46:14 overwrite stylesheets/style.css 
+2012-09-21 13:47:05     error sass/style.scss (Line 9 of sass/_base.scss: Invalid CSS after "$body-font-family": expected ":", was "="Lucida Grand'...")
+2012-09-21 13:47:05 overwrite stylesheets/style.css 
+2012-09-21 13:47:20     error sass/style.scss (Line 9 of sass/_base.scss: Invalid CSS after "$body-font-family": expected ":", was "="Lucida Grand,...")
+2012-09-21 13:47:20 overwrite stylesheets/style.css 
+2012-09-21 13:47:59 overwrite stylesheets/style.css 
+2012-09-25 11:54:49 identical stylesheets/ie.css 
+2012-09-25 11:54:49 identical stylesheets/print.css 
+2012-09-25 11:54:50 overwrite stylesheets/screen.css 
+2012-09-25 11:54:52 overwrite stylesheets/style.css 
+2012-09-25 11:55:07 overwrite stylesheets/style.css 
+2012-09-25 12:04:12 overwrite stylesheets/style.css 
+2012-09-25 12:05:44 overwrite stylesheets/style.css 
+2012-09-25 12:06:51 overwrite stylesheets/style.css 
+2012-09-29 14:14:44 overwrite stylesheets/style.css 
+2012-09-29 14:15:04 overwrite stylesheets/style.css 
+2012-09-29 14:15:42 overwrite stylesheets/style.css 
+2012-09-29 14:19:13     error sass/style.scss (Line 55: Invalid CSS after "	width 786px": expected "{", was ";")
+2012-09-29 14:19:13 overwrite stylesheets/style.css 
+2012-10-03 13:06:41     error sass/style.scss (Line 55: Invalid CSS after "	width 786px": expected "{", was ";")
+2012-10-03 13:06:41 overwrite stylesheets/style.css 
+2012-10-03 13:08:28     error sass/style.scss (Line 55: Invalid CSS after "	width 786px": expected "{", was ";")
+2012-10-03 13:08:28 overwrite stylesheets/style.css 
+2012-10-03 13:09:00 overwrite stylesheets/style.css 
+2012-10-03 13:09:37     error sass/style.scss (Line 64: Invalid CSS after "	no-repeat": expected "{", was ";")
+2012-10-03 13:09:37 overwrite stylesheets/style.css 
+2012-10-03 13:11:39 overwrite stylesheets/style.css 
+2012-10-03 13:12:58 overwrite stylesheets/style.css 
+2012-10-03 13:13:51 overwrite stylesheets/style.css 
+2012-10-03 13:14:40 overwrite stylesheets/style.css 
+2012-10-03 13:15:51 overwrite stylesheets/style.css 
+2012-10-03 13:16:57 overwrite stylesheets/style.css 
+2012-10-03 13:17:39 overwrite stylesheets/style.css 
+2012-10-03 13:18:56     error sass/style.scss (Line 71: Invalid CSS after "...="text"], input": expected "{", was "]type="password...")
+2012-10-03 13:18:56 overwrite stylesheets/style.css 
+2012-10-03 13:19:13 overwrite stylesheets/style.css 
+2012-10-03 13:21:00 overwrite stylesheets/style.css 
+2012-10-03 13:21:01 identical stylesheets/style.css 
+2012-10-03 13:28:49 identical stylesheets/style.css 
+2012-10-03 13:29:41 identical stylesheets/style.css 
+2012-10-03 13:31:56     error sass/style.scss (Line 76: Invalid CSS after "...ude background ": expected "}", was "linear-gradient...")
+2012-10-03 13:31:56 overwrite stylesheets/style.css 
+2012-10-03 13:32:31     error sass/style.scss (Line 80: Invalid CSS after "	}": expected selector or at-rule, was "}")
+2012-10-03 13:32:31 overwrite stylesheets/style.css 
+2012-10-03 13:33:48     error sass/style.scss (Line 80: Invalid CSS after "	}": expected selector or at-rule, was "}")
+2012-10-03 13:33:48 identical stylesheets/style.css 
+2012-10-03 13:34:15     error sass/style.scss (Line 79: Invalid CSS after "}": expected selector or at-rule, was "}")
+2012-10-03 13:34:15 overwrite stylesheets/style.css 
+2012-10-03 13:34:55 overwrite stylesheets/style.css 
+2012-10-03 13:36:57 overwrite stylesheets/style.css 
+2012-10-03 13:37:09 overwrite stylesheets/style.css 
+2012-10-03 13:37:39 overwrite stylesheets/style.css 
+2012-10-03 13:38:56 overwrite stylesheets/style.css 
+2012-10-03 13:43:50 overwrite stylesheets/style.css 
+2012-10-03 13:49:55 overwrite stylesheets/style.css 
+2012-10-03 13:51:46 overwrite stylesheets/style.css 
+2012-10-03 13:54:20 overwrite stylesheets/style.css 
+2012-10-03 14:46:03 identical stylesheets/style.css 
+2012-10-03 14:46:46 identical stylesheets/style.css 
+2012-10-03 14:53:24 identical stylesheets/style.css 
+2012-10-03 14:59:02 overwrite stylesheets/style.css 
+2012-10-03 15:00:19 overwrite stylesheets/style.css 
+2012-10-03 15:09:58 overwrite stylesheets/style.css 
+2012-10-03 15:10:54 overwrite stylesheets/style.css 
+2012-10-03 15:19:24 overwrite stylesheets/style.css 
+2012-10-03 15:20:15 overwrite stylesheets/style.css 
+2012-10-03 15:23:48     error sass/style.scss (Line 109: Invalid CSS after "@import "widgets";": expected "}", was "")
+2012-10-03 15:23:48 overwrite stylesheets/style.css 
+2012-10-03 15:24:13     error sass/style.scss (Line 109: Invalid CSS after "@import "widgets";": expected "}", was "")
+2012-10-03 15:24:13 identical stylesheets/style.css 
+2012-10-03 15:26:36 overwrite stylesheets/style.css 
+2012-10-03 15:27:57 overwrite stylesheets/style.css 
+2012-10-03 15:31:34 overwrite stylesheets/style.css 
+2012-10-03 15:37:59 overwrite stylesheets/style.css 
+2012-10-03 15:40:47 overwrite stylesheets/style.css 
+2012-10-03 15:41:50 overwrite stylesheets/style.css 
+2012-10-03 15:48:03 identical stylesheets/style.css 
+2012-10-03 15:48:15 overwrite stylesheets/style.css 
+2012-10-03 15:48:55 identical stylesheets/style.css 
+2012-10-03 15:49:31 overwrite stylesheets/style.css 
+2012-10-03 15:50:17 overwrite stylesheets/style.css 
+2012-10-03 15:54:58 overwrite stylesheets/style.css 
+2012-10-03 15:55:30 identical stylesheets/style.css 
+2012-10-03 16:03:54 overwrite stylesheets/style.css 
+2012-10-03 16:15:16 overwrite stylesheets/style.css 
+2012-10-03 16:16:58 overwrite stylesheets/style.css 
+2012-10-03 16:18:11 overwrite stylesheets/style.css 
+2012-10-03 16:19:04 overwrite stylesheets/style.css 
+2012-10-03 16:20:05 overwrite stylesheets/style.css 
+2012-10-03 16:21:08 overwrite stylesheets/style.css 
+2012-10-03 16:21:40 overwrite stylesheets/style.css 
+2012-10-03 16:23:22 overwrite stylesheets/style.css 
+2012-10-03 16:24:23 overwrite stylesheets/style.css 
+2012-10-03 16:29:01 overwrite stylesheets/style.css 
+2012-10-03 16:29:28 identical stylesheets/style.css 
+2012-10-03 16:38:26 overwrite stylesheets/style.css 
+2012-10-03 16:38:34 overwrite stylesheets/style.css 
+2012-10-03 16:39:46 overwrite stylesheets/style.css 
+2012-10-03 16:41:49 overwrite stylesheets/style.css 
+2012-10-03 16:48:24 overwrite stylesheets/style.css 
+2012-10-03 16:50:46 overwrite stylesheets/style.css 
+2012-10-03 16:52:55 overwrite stylesheets/style.css 
+2012-10-03 16:56:18 overwrite stylesheets/style.css 
+2012-10-03 16:59:39 overwrite stylesheets/style.css 
+2012-10-03 17:16:15 overwrite stylesheets/style.css 
+2012-10-03 17:17:55 overwrite stylesheets/style.css 
+2012-10-03 17:37:03 overwrite stylesheets/style.css 
+2012-10-03 17:44:24 overwrite stylesheets/style.css 
+2012-10-03 17:45:25 overwrite stylesheets/style.css 
+2012-10-03 17:47:28 overwrite stylesheets/style.css 
+2012-10-04 10:08:40 overwrite stylesheets/style.css 
+2012-10-04 10:09:39 overwrite stylesheets/style.css 
+2012-10-04 10:11:57 identical stylesheets/style.css 
+2012-10-04 10:14:20 overwrite stylesheets/style.css 
+2012-10-04 12:54:37    create stylesheets/ie.css 
+2012-10-04 12:54:37    create stylesheets/print.css 
+2012-10-04 12:54:37    create stylesheets/screen.css 
+2012-10-04 12:54:47     error sass/style.scss (Line 27: File to import not found or unreadable: summetfont.
+Load paths:
+  /Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/sass
+  /Applications/compass.app/Contents/Resources/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_extensions/compass-h5bp/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_extensions/thomas-mcdonald-bootstrap-sass-831f25b/vendor/assets/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_extensions/susy-1.0/sass
+  /Applications/compass.app/Contents/Resources/ruby/compass_common/sassy-math-1.2/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_common/modular-scale-1.0.2/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_extensions/zurb-foundation-3.0.9/scss
+  Compass::SpriteImporter)
+2012-10-04 12:54:47    create stylesheets/style.css 
+2012-10-04 12:56:10     error sass/style.scss (Line 27: File to import not found or unreadable: sommetfont.
+Load paths:
+  /Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/sass
+  /Applications/compass.app/Contents/Resources/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_extensions/compass-h5bp/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_extensions/thomas-mcdonald-bootstrap-sass-831f25b/vendor/assets/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_extensions/susy-1.0/sass
+  /Applications/compass.app/Contents/Resources/ruby/compass_common/sassy-math-1.2/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_common/modular-scale-1.0.2/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_extensions/zurb-foundation-3.0.9/scss
+  Compass::SpriteImporter)
+2012-10-04 12:56:10 overwrite stylesheets/style.css 
+2012-10-04 12:58:05     error sass/style.scss (Line 27: File to import not found or unreadable: sommetfont.
+Load paths:
+  /Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/sass
+  /Applications/compass.app/Contents/Resources/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_extensions/compass-h5bp/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_extensions/thomas-mcdonald-bootstrap-sass-831f25b/vendor/assets/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_extensions/susy-1.0/sass
+  /Applications/compass.app/Contents/Resources/ruby/compass_common/sassy-math-1.2/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_common/modular-scale-1.0.2/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_extensions/zurb-foundation-3.0.9/scss
+  Compass::SpriteImporter)
+2012-10-04 12:58:05 identical stylesheets/style.css 
+2012-10-04 12:59:07 overwrite stylesheets/style.css 
+2012-10-04 13:04:50     error sass/style.scss (Line 11 of sass/_base.scss: Invalid CSS after "$header-font ": expected ":", was "{ font-family: ...")
+2012-10-04 13:04:50 overwrite stylesheets/style.css 
+2012-10-04 13:05:52 overwrite stylesheets/style.css 
+2012-10-04 13:06:19 overwrite stylesheets/style.css 
+2012-10-04 13:22:11 identical stylesheets/style.css 
+2012-10-04 13:23:12 overwrite stylesheets/style.css 
+2012-10-04 13:26:22 overwrite stylesheets/style.css 
+2012-10-04 13:28:22 overwrite stylesheets/style.css 
+2012-10-04 13:30:06 overwrite stylesheets/style.css 
+2012-10-04 17:33:54 overwrite stylesheets/style.css 
+2012-10-04 17:35:09 overwrite stylesheets/style.css 
+2012-10-04 17:40:16 identical stylesheets/style.css 
+2012-10-04 17:41:25 overwrite stylesheets/style.css 
+2012-10-04 17:46:47 overwrite stylesheets/style.css 
+2012-10-04 17:49:33 overwrite stylesheets/style.css 
+2012-10-04 17:52:00 overwrite stylesheets/style.css 
+2012-10-04 17:53:24 overwrite stylesheets/style.css 
+2012-10-04 17:54:05 overwrite stylesheets/style.css 
+2012-10-04 17:54:25 overwrite stylesheets/style.css 
+2012-10-04 17:55:52 overwrite stylesheets/style.css 
+2012-10-04 17:56:51 overwrite stylesheets/style.css 
+2012-10-04 17:57:31 overwrite stylesheets/style.css 
+2012-10-04 18:00:37 overwrite stylesheets/style.css 
+2012-10-04 18:01:42 overwrite stylesheets/style.css 
+2012-10-04 19:17:18 overwrite stylesheets/style.css 
+2012-10-04 19:17:24 overwrite stylesheets/style.css 
+2012-10-04 19:19:30 overwrite stylesheets/style.css 
+2012-10-04 19:20:22 overwrite stylesheets/style.css 
+2012-10-04 19:21:33 overwrite stylesheets/style.css 
+2012-10-04 19:25:00 overwrite stylesheets/style.css 
+2012-10-04 19:28:19 overwrite stylesheets/style.css 
+2012-10-04 19:29:35 overwrite stylesheets/style.css 
+2012-10-04 19:30:08 overwrite stylesheets/style.css 
+2012-10-04 19:31:19 overwrite stylesheets/style.css 
+2012-10-04 19:32:47 overwrite stylesheets/style.css 
+2012-10-04 19:33:21 overwrite stylesheets/style.css 
+2012-10-04 19:34:33 overwrite stylesheets/style.css 
+2012-10-04 19:38:08 overwrite stylesheets/style.css 
+2012-10-04 19:43:11 overwrite stylesheets/style.css 
+2012-10-05 15:40:32     error sass/style.scss (Line 152: Invalid CSS after "		border- right:": expected pseudoclass or pseudoelement, was " 1px solid $mai...")
+2012-10-05 15:40:32 overwrite stylesheets/style.css 
+2012-10-05 15:43:58     error sass/style.scss (Line 160: Invalid CSS after "		border- right:": expected pseudoclass or pseudoelement, was " 1px solid $mai...")
+2012-10-05 15:43:58 overwrite stylesheets/style.css 
+2012-10-05 15:45:19 overwrite stylesheets/style.css 
+2012-10-05 15:49:07 overwrite stylesheets/style.css 
+2012-10-05 15:50:01 overwrite stylesheets/style.css 
+2012-10-05 15:51:28 overwrite stylesheets/style.css 
+2012-10-05 15:52:17 overwrite stylesheets/style.css 
+2012-10-05 15:58:56     error sass/style.scss (Line 159: Undefined variable: "$address-font-color".)
+2012-10-05 15:58:56 overwrite stylesheets/style.css 
+2012-10-05 15:59:17     error sass/style.scss (Line 159: Undefined variable: "$address-font-color".)
+2012-10-05 15:59:17 identical stylesheets/style.css 
+2012-10-05 16:00:01     error sass/style.scss (Line 163: Undefined variable: "$address-font-color".)
+2012-10-05 16:00:01 overwrite stylesheets/style.css 
+2012-10-05 16:00:13 overwrite stylesheets/style.css 
+2012-10-05 16:02:33 overwrite stylesheets/style.css 
+2012-10-05 16:03:01 overwrite stylesheets/style.css 
+2012-10-05 16:03:08 identical stylesheets/style.css 
+2012-10-05 16:03:49 overwrite stylesheets/style.css 
+2012-10-05 16:05:10 overwrite stylesheets/style.css 
+2012-10-05 16:06:24 overwrite stylesheets/style.css 
+2012-10-05 16:06:43 overwrite stylesheets/style.css 
+2012-10-05 16:07:43 overwrite stylesheets/style.css 
+2012-10-05 16:08:30 overwrite stylesheets/style.css 
+2012-10-05 16:09:31 overwrite stylesheets/style.css 
+2012-10-05 16:11:27 overwrite stylesheets/style.css 
+2012-10-08 13:28:05 overwrite stylesheets/style.css 
+2012-10-08 13:30:09     error sass/style.scss (Line 201: Invalid CSS after "	}": expected selector or at-rule, was "}")
+2012-10-08 13:30:09 overwrite stylesheets/style.css 
+2012-10-08 13:30:29 overwrite stylesheets/style.css 
+2012-10-08 13:31:25     error sass/style.scss (Line 201: Invalid CSS after "	}": expected selector or at-rule, was "}")
+2012-10-08 13:31:25 overwrite stylesheets/style.css 
+2012-10-08 13:31:31     error sass/style.scss (Line 201: Invalid CSS after "	}": expected selector or at-rule, was "}")
+2012-10-08 13:31:31 identical stylesheets/style.css 
+2012-10-08 13:32:06 overwrite stylesheets/style.css 
+2012-10-08 13:33:15 identical stylesheets/style.css 
+2012-10-08 13:33:27 overwrite stylesheets/style.css 
+2012-10-08 14:13:04 overwrite stylesheets/style.css 
+2012-10-08 14:13:22 identical stylesheets/style.css 
+2012-10-08 14:16:45 overwrite stylesheets/style.css 
+2012-10-08 14:20:11 overwrite stylesheets/style.css 
+2012-10-08 14:20:52 overwrite stylesheets/style.css 
+2012-10-08 14:22:13 overwrite stylesheets/style.css 
+2012-10-08 14:22:54 overwrite stylesheets/style.css 
+2012-10-08 14:24:48 overwrite stylesheets/style.css 
+2012-10-08 15:25:33     error sass/style.scss (Line 291: File to import not found or unreadable: slideshow.
+Load paths:
+  /Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/sass
+  /Applications/compass.app/Contents/Resources/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_extensions/compass-960-plugin-f4bfe8555a7d2cae09bc/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_extensions/heygrady-compass-html5-boilerplate-4cc8815/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_extensions/compass-h5bp/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_extensions/thomas-mcdonald-bootstrap-sass-831f25b/vendor/assets/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_extensions/susy-1.0/sass
+  /Applications/compass.app/Contents/Resources/ruby/compass_common/sassy-math-1.2/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_common/modular-scale-1.0.2/stylesheets
+  /Applications/compass.app/Contents/Resources/ruby/compass_extensions/zurb-foundation-3.0.9/scss
+  Compass::SpriteImporter)
+2012-10-08 15:25:33 overwrite stylesheets/style.css 
+2012-10-08 15:26:12 overwrite stylesheets/style.css 
+2012-10-08 15:27:41 overwrite stylesheets/style.css 
+2012-10-08 15:28:18 overwrite stylesheets/style.css 
+2012-10-08 15:28:24 identical stylesheets/style.css 
+2012-10-08 17:58:25 overwrite stylesheets/style.css 
+2012-10-08 18:00:02 overwrite stylesheets/style.css 
+2012-10-08 18:00:47 overwrite stylesheets/style.css 
+2012-10-08 18:02:41 overwrite stylesheets/style.css 
+2012-10-08 18:03:55 overwrite stylesheets/style.css 
+2012-10-08 18:08:19 overwrite stylesheets/style.css 
+2012-10-08 18:10:26 identical stylesheets/style.css 
+2012-10-08 18:10:50     error sass/style.scss (Line 23 of sass/_slideshow.scss: Invalid CSS after "}": expected "}", was "")
+2012-10-08 18:10:50 overwrite stylesheets/style.css 
+2012-10-08 18:11:13 overwrite stylesheets/style.css 
+2012-10-08 18:11:53 overwrite stylesheets/style.css 
+2012-10-08 18:13:19 overwrite stylesheets/style.css 
+2012-10-08 18:15:17 overwrite stylesheets/style.css 
+2012-10-08 18:19:46 overwrite stylesheets/style.css 
+2012-10-08 18:20:58 overwrite stylesheets/style.css 
+2012-10-08 18:22:07 overwrite stylesheets/style.css 
+2012-10-08 18:29:04 overwrite stylesheets/style.css 
+2012-10-08 18:29:52 overwrite stylesheets/style.css 
+2012-10-08 19:11:09 identical stylesheets/style.css 
+2012-10-08 19:11:15 overwrite stylesheets/style.css 
+2012-10-08 19:14:33 overwrite stylesheets/style.css 
+2012-10-08 19:14:36 identical stylesheets/style.css 
+2012-10-08 19:16:58 overwrite stylesheets/style.css 
+2012-10-08 19:18:09 overwrite stylesheets/style.css 
+2012-10-08 19:35:54 overwrite stylesheets/style.css 
+2012-10-08 19:36:27 overwrite stylesheets/style.css 
+2012-10-08 20:23:41 overwrite stylesheets/style.css 
+2012-10-08 20:31:45 overwrite stylesheets/style.css 
+2012-10-08 20:36:43 overwrite stylesheets/style.css 
+2012-10-08 20:39:30 overwrite stylesheets/style.css 
+2012-10-09 11:42:03 overwrite stylesheets/style.css 
+2012-10-09 11:42:16 overwrite stylesheets/style.css 
+2012-10-09 11:46:16 overwrite stylesheets/style.css 
+2012-10-09 11:46:28 overwrite stylesheets/style.css 
+2012-10-09 11:46:47 overwrite stylesheets/style.css 
+2012-10-09 11:48:38 overwrite stylesheets/style.css 
+2012-10-09 12:41:10 overwrite stylesheets/style.css 
+2012-10-09 12:43:38 overwrite stylesheets/style.css 
+2012-10-09 12:47:19     error sass/style.scss (Line 263: Invalid CSS after "	@include": expected identifier, was ": clearfix;")
+2012-10-09 12:47:19 overwrite stylesheets/style.css 
+2012-10-09 12:48:35     error sass/style.scss (Line 263: Invalid CSS after "	@include": expected identifier, was ": clearfix;")
+2012-10-09 12:48:35 identical stylesheets/style.css 
+2012-10-09 12:49:04 overwrite stylesheets/style.css 
+2012-10-09 12:51:22 overwrite stylesheets/style.css 
+2012-10-09 12:52:22 overwrite stylesheets/style.css 
+2012-10-09 12:59:55 overwrite stylesheets/style.css 
+2012-10-09 13:03:41     error sass/style.scss (Line 297: Invalid CSS after "...adients #footer": expected "{", was "; {")
+2012-10-09 13:03:41 overwrite stylesheets/style.css 
+2012-10-09 13:04:34     error sass/style.scss (Line 297: Invalid CSS after "...adients #footer": expected "{", was "; {")
+2012-10-09 13:04:34 identical stylesheets/style.css 
+2012-10-09 13:04:52     error sass/style.scss (Line 297: Invalid CSS after "...adients #footer": expected "{", was "; {")
+2012-10-09 13:04:52 identical stylesheets/style.css 
+2012-10-09 13:04:56     error sass/style.scss (Line 297: Invalid CSS after "...adients #footer": expected "{", was "; {")
+2012-10-09 13:04:56 identical stylesheets/style.css 
+2012-10-09 13:05:18 overwrite stylesheets/style.css 
+2012-10-09 13:09:01 overwrite stylesheets/style.css 
+2012-10-09 13:13:58 overwrite stylesheets/style.css 
+2012-10-09 13:16:48 overwrite stylesheets/style.css 
+2012-10-09 14:13:02 overwrite stylesheets/style.css 
+2012-10-09 14:16:27 overwrite stylesheets/style.css 
+2012-10-09 14:17:21 overwrite stylesheets/style.css 
+2012-10-09 14:19:31 overwrite stylesheets/style.css 
+2012-10-09 14:21:09 overwrite stylesheets/style.css 
+2012-10-09 14:22:16 overwrite stylesheets/style.css 
+2012-10-09 14:23:30 overwrite stylesheets/style.css 
+2012-10-09 14:55:30 overwrite stylesheets/style.css 
+2012-10-09 14:57:15 overwrite stylesheets/style.css 
+2012-10-09 15:08:09 overwrite stylesheets/style.css 
+2012-10-09 15:08:41 overwrite stylesheets/style.css 
+2012-10-09 15:09:26 overwrite stylesheets/style.css 
+2012-10-09 15:10:30 overwrite stylesheets/style.css 
+2012-10-09 15:12:23 overwrite stylesheets/style.css 
+2012-10-09 15:13:48 overwrite stylesheets/style.css 
+2012-10-09 15:15:56 overwrite stylesheets/style.css 
+2012-10-09 15:16:02 overwrite stylesheets/style.css 
+2012-10-09 18:21:15 overwrite stylesheets/style.css 
+2012-10-09 18:29:42 overwrite stylesheets/style.css 
+2012-10-09 18:31:01 overwrite stylesheets/style.css 
+2012-10-09 18:31:10 identical stylesheets/style.css 
+2012-10-09 18:32:01 overwrite stylesheets/style.css 
+2012-10-09 18:34:40 overwrite stylesheets/style.css 
+2012-10-09 18:36:30 overwrite stylesheets/style.css 
+2012-10-09 19:01:10 overwrite stylesheets/style.css 
+2012-10-09 19:01:51 overwrite stylesheets/style.css 
+2012-10-09 19:02:43 overwrite stylesheets/style.css 
+2012-10-09 19:03:10 overwrite stylesheets/style.css 
+2012-10-09 19:06:09 overwrite stylesheets/style.css 
+2012-10-09 19:07:03 overwrite stylesheets/style.css 
+2012-10-09 19:17:13 overwrite stylesheets/style.css 
+2012-10-09 19:19:34 overwrite stylesheets/style.css 
+2012-10-09 19:20:13 overwrite stylesheets/style.css 
+2012-10-09 19:25:57 overwrite stylesheets/style.css 
+2012-10-09 19:26:19 overwrite stylesheets/style.css 
+2012-10-09 19:27:27 overwrite stylesheets/style.css 
+2012-10-09 20:04:55 overwrite stylesheets/style.css 
+2012-10-09 20:07:37 overwrite stylesheets/style.css 
+2012-10-17 14:51:21 overwrite stylesheets/style.css 
+2012-10-17 14:51:26 identical stylesheets/style.css 
+2012-10-17 14:55:20 overwrite stylesheets/style.css 
+2012-10-17 14:56:18 overwrite stylesheets/style.css 
+2012-10-17 14:57:30 overwrite stylesheets/style.css 
+2012-10-17 15:01:47 overwrite stylesheets/style.css 
+2012-10-17 15:06:18 overwrite stylesheets/style.css 
+2012-10-17 15:09:03 overwrite stylesheets/style.css 
+2012-10-17 15:11:27 overwrite stylesheets/style.css 
+2012-10-17 15:11:35 overwrite stylesheets/style.css 
+2012-10-17 15:22:24 overwrite stylesheets/style.css 
+2012-10-17 15:22:59 overwrite stylesheets/style.css 
+2012-10-17 15:23:03 overwrite stylesheets/style.css 
+2012-10-17 15:24:23 overwrite stylesheets/style.css 
+2012-10-17 15:27:42 overwrite stylesheets/style.css 
+2012-10-17 15:28:20 overwrite stylesheets/style.css 
+2012-10-17 16:12:41 overwrite stylesheets/style.css 
+2012-10-17 16:20:47 identical stylesheets/style.css 
+2012-10-17 16:50:05     error sass/style.scss (Line 91: Invalid CSS after "	height:": expected expression (e.g. 1px, bold), was "}")
+2012-10-17 16:50:05 overwrite stylesheets/style.css 
+2012-10-17 16:50:10 overwrite stylesheets/style.css 
+2012-10-17 16:50:30 overwrite stylesheets/style.css 
+2012-10-17 16:51:26 overwrite stylesheets/style.css 
+2012-10-17 16:52:13 overwrite stylesheets/style.css 
+2012-10-17 16:53:44 overwrite stylesheets/style.css 
+2012-10-17 16:55:59 overwrite stylesheets/style.css 
+2012-10-17 17:06:47 overwrite stylesheets/style.css 
+2012-10-17 17:08:08 overwrite stylesheets/style.css 
+2012-10-17 17:15:11 overwrite stylesheets/style.css 
+2012-10-17 17:15:46 overwrite stylesheets/style.css 
+2012-10-17 17:17:56 overwrite stylesheets/style.css 
+2012-10-17 17:18:49 overwrite stylesheets/style.css 
+2012-10-17 17:19:20 overwrite stylesheets/style.css 
+2012-10-17 17:29:32 overwrite stylesheets/style.css 
+2012-10-17 17:30:46 overwrite stylesheets/style.css 
+2012-10-17 17:30:52 identical stylesheets/style.css 
+2012-10-19 15:18:33 overwrite stylesheets/screen.css 
+2012-10-19 15:19:39 overwrite stylesheets/style.css 
+2012-10-19 15:21:01 overwrite stylesheets/style.css 
+2012-10-19 15:25:48 overwrite stylesheets/style.css 
+2012-10-19 15:28:33 overwrite stylesheets/style.css 
+2012-10-19 15:29:48 overwrite stylesheets/style.css 
+2012-10-19 15:32:50 overwrite stylesheets/style.css 
+2012-10-19 15:33:15 overwrite stylesheets/style.css 
+2012-10-19 15:34:06 overwrite stylesheets/style.css 
+2012-10-19 15:35:33 overwrite stylesheets/style.css 
+2012-10-19 15:43:58 overwrite stylesheets/style.css 
+2012-10-19 15:44:55 overwrite stylesheets/style.css 
+2012-10-19 16:46:55 overwrite stylesheets/style.css 
+2012-10-19 16:47:57 overwrite stylesheets/style.css 
+2012-10-19 16:48:53 overwrite stylesheets/style.css 
+2012-10-19 16:50:15 overwrite stylesheets/style.css 
+2012-10-19 17:55:52 overwrite stylesheets/style.css 
+2012-10-19 17:57:36 overwrite stylesheets/style.css 
+2012-10-19 18:00:38 overwrite stylesheets/style.css 
+2012-10-19 18:00:46 overwrite stylesheets/style.css 
+2012-10-19 18:01:39 overwrite stylesheets/style.css 
+2012-10-19 18:02:36 overwrite stylesheets/style.css 
+2012-10-20 13:38:45 overwrite stylesheets/style.css 
+2012-10-20 13:41:08     error sass/style.scss (Line 374: Invalid CSS after "@import "widgets";": expected "}", was "")
+2012-10-20 13:41:08 overwrite stylesheets/style.css 
+2012-10-20 13:42:31 overwrite stylesheets/style.css 
+2012-10-20 13:44:39 overwrite stylesheets/style.css 
+2012-10-20 13:45:52 overwrite stylesheets/style.css 
+2012-10-20 13:47:32 overwrite stylesheets/style.css 
+2012-10-20 13:48:25 overwrite stylesheets/style.css 
+2012-10-20 13:53:08 overwrite stylesheets/style.css 
+2012-10-20 13:54:45 overwrite stylesheets/style.css 
+2012-10-20 13:55:24 overwrite stylesheets/style.css 
+2012-10-20 13:56:29 overwrite stylesheets/style.css 
+2012-10-20 13:58:36 overwrite stylesheets/style.css 
+2012-10-20 13:59:25 overwrite stylesheets/style.css 
+2012-10-20 14:01:07 overwrite stylesheets/style.css 
+2012-10-20 14:02:22 overwrite stylesheets/style.css 
+2012-10-20 14:04:10 overwrite stylesheets/style.css 
+2012-10-20 14:04:59     error sass/style.scss (Line 101: Undefined mixin 'link-text'.)
+2012-10-20 14:04:59 overwrite stylesheets/style.css 
+2012-10-20 14:05:27 overwrite stylesheets/style.css 
+2012-10-20 14:07:33 overwrite stylesheets/style.css 
+2012-10-20 14:09:25 overwrite stylesheets/style.css 
+2012-10-20 14:38:15 overwrite stylesheets/style.css 
+2012-10-24 17:28:50     error sass/style.scss (Line 41: Invalid CSS after "	font-size": expected ";", was ":40px;")
+2012-10-24 17:28:51 overwrite stylesheets/style.css 
+2012-10-24 17:29:51 overwrite stylesheets/style.css 
+2012-10-24 17:30:47 overwrite stylesheets/style.css 
+2012-10-24 17:30:59 overwrite stylesheets/style.css 
+2012-10-24 17:32:17     error sass/style.scss (Line 417: Invalid CSS after "...lorstr='#2f3f51": expected ";", was "')"; /* IE8 */  ")
+2012-10-24 17:32:17 overwrite stylesheets/style.css 
+2012-10-24 17:38:43 overwrite stylesheets/style.css 
+2012-10-24 17:42:57 overwrite stylesheets/style.css 
+2012-10-24 17:43:31 overwrite stylesheets/style.css 
+2012-10-24 17:45:19 overwrite stylesheets/style.css 
+2012-10-24 18:18:21 overwrite stylesheets/style.css 
+2012-10-24 19:00:20 overwrite stylesheets/style.css 
+2012-10-24 19:01:41 overwrite stylesheets/style.css 
+2012-10-24 19:02:33 overwrite stylesheets/style.css 
+2012-10-24 19:04:55 overwrite stylesheets/style.css 
+2012-10-25 11:35:26 overwrite stylesheets/style.css 
+2012-10-25 11:36:23 overwrite stylesheets/style.css 
+2012-10-25 11:38:31 overwrite stylesheets/style.css 
+2012-10-25 11:40:36 overwrite stylesheets/style.css 
+2012-10-25 11:45:27 overwrite stylesheets/style.css 
+2012-10-25 11:52:11 overwrite stylesheets/style.css 
+2012-10-25 11:54:17 overwrite stylesheets/style.css 
+2012-10-25 12:59:50 overwrite stylesheets/style.css 
+2012-10-25 13:04:39 overwrite stylesheets/style.css 
+2012-10-25 13:06:37 overwrite stylesheets/style.css 
+2012-10-25 13:09:09 overwrite stylesheets/style.css 
+2012-10-25 13:13:54     error sass/style.scss (Line 375: Undefined variable: "$emphasis-font".)
+2012-10-25 13:13:54 overwrite stylesheets/style.css 
+2012-10-25 13:14:33     error sass/style.scss (Line 41: Undefined variable: "$emphais-font".)
+2012-10-25 13:14:33 overwrite stylesheets/style.css 
+2012-10-25 13:15:13 overwrite stylesheets/style.css 
+2012-10-25 13:18:25 overwrite stylesheets/style.css 
+2012-10-25 13:19:55 overwrite stylesheets/style.css 
+2012-10-25 13:20:51 overwrite stylesheets/style.css 
+2012-10-25 13:22:28 overwrite stylesheets/style.css 
+2012-10-25 14:23:50 identical stylesheets/style.css 
+2012-10-25 14:24:49 overwrite stylesheets/style.css 
+2012-10-25 14:30:37 overwrite stylesheets/style.css 
+2012-10-25 14:50:08 overwrite stylesheets/style.css 
+2012-10-25 14:51:39 overwrite stylesheets/style.css 
+2012-10-25 14:53:45     error sass/style.scss (Line 385: Invalid CSS after "...body-text-color": expected ";", was ":#59595c;")
+2012-10-25 14:53:45 overwrite stylesheets/style.css 
+2012-10-25 14:54:04 overwrite stylesheets/style.css 
+2012-10-25 14:54:52 overwrite stylesheets/style.css 
+2012-10-25 15:00:36 overwrite stylesheets/style.css 
+2012-10-25 15:01:24 overwrite stylesheets/style.css 
+2012-10-25 15:02:10 overwrite stylesheets/style.css 
+2012-10-25 15:04:32 overwrite stylesheets/style.css 
+2012-10-25 15:06:21 overwrite stylesheets/style.css 
+2012-10-25 15:32:58     error sass/style.scss (Line 64: Invalid CSS after ".": expected class name, was "	&:after {")
+2012-10-25 15:32:58 overwrite stylesheets/style.css 
+2012-10-25 15:33:48 overwrite stylesheets/style.css 
+2012-10-25 15:34:14     error sass/style.scss (Line 64: Invalid CSS after ".": expected class name, was "	&:after {")
+2012-10-25 15:34:14 overwrite stylesheets/style.css 
+2012-10-25 15:34:40 overwrite stylesheets/style.css 
+2012-10-25 15:36:00 overwrite stylesheets/style.css 
+2012-10-25 15:42:37 overwrite stylesheets/style.css 
+2012-10-25 15:44:22 overwrite stylesheets/style.css 
+2012-10-25 15:45:55 overwrite stylesheets/style.css 
+2012-10-25 15:49:33 overwrite stylesheets/style.css 
+2012-10-25 15:51:09 overwrite stylesheets/style.css 
+2012-10-25 15:56:12 overwrite stylesheets/style.css 
+2012-10-25 16:03:53 overwrite stylesheets/style.css 
+2012-10-25 16:18:06 overwrite stylesheets/style.css 
+2012-10-25 16:18:09 identical stylesheets/style.css 
+2012-10-25 16:19:54 overwrite stylesheets/style.css 
+2012-10-25 16:22:00 overwrite stylesheets/style.css 
+2012-10-25 16:22:35 overwrite stylesheets/style.css 
+2012-10-25 16:23:53 overwrite stylesheets/style.css 
+2012-10-25 16:24:54 overwrite stylesheets/style.css 
+2012-10-25 16:25:34 overwrite stylesheets/style.css 
+2012-10-25 16:28:09 overwrite stylesheets/style.css 
+2012-10-25 16:31:13 overwrite stylesheets/ie.css 
+2012-10-25 16:40:47 overwrite stylesheets/style.css 
+2012-10-25 16:50:00 overwrite stylesheets/ie.css 
+2012-10-25 16:56:16 identical stylesheets/ie.css 
+2012-10-25 16:56:27 overwrite stylesheets/style.css 
+2012-10-25 17:01:06 overwrite stylesheets/style.css 
+2012-10-25 17:02:36 overwrite stylesheets/style.css 
+2012-10-26 15:13:21     error sass/style.scss (Line 4 of sass/_widgets.scss: Invalid CSS after "	background:url(": expected ")", was "../../images/ar...")
+2012-10-26 15:13:21 overwrite stylesheets/style.css 
+2012-10-26 15:13:50 overwrite stylesheets/style.css 
+2012-10-26 15:15:22 overwrite stylesheets/style.css 
+2012-10-26 15:16:27 overwrite stylesheets/style.css 
+2012-10-26 15:18:28 overwrite stylesheets/style.css 
+2012-10-26 15:19:22 overwrite stylesheets/style.css 
+2012-10-26 15:19:59 overwrite stylesheets/style.css 
+2012-10-26 15:24:16 overwrite stylesheets/style.css 
+2012-10-26 15:28:46     error sass/style.scss (Line 45 of sass/_widgets.scss: Invalid CSS after "	}": expected selector or at-rule, was "}")
+2012-10-26 15:28:46 overwrite stylesheets/style.css 
+2012-10-26 15:30:04     error sass/style.scss (Line 46 of sass/_widgets.scss: Invalid CSS after "	}": expected selector or at-rule, was "}")
+2012-10-26 15:30:04 overwrite stylesheets/style.css 
+2012-10-26 15:30:48 overwrite stylesheets/style.css 
+2012-10-26 15:31:37 overwrite stylesheets/style.css 
+2012-10-26 15:38:00 overwrite stylesheets/style.css 
+2012-10-26 15:38:51 overwrite stylesheets/style.css 
+2012-10-26 15:40:48 identical stylesheets/style.css 
+2012-10-26 15:41:09 overwrite stylesheets/style.css 
+2012-10-26 15:42:25 overwrite stylesheets/style.css 
+2012-10-26 15:42:52 overwrite stylesheets/style.css 
+2012-10-26 15:44:37 overwrite stylesheets/style.css 
+2012-10-26 15:45:37 overwrite stylesheets/style.css 
+2012-10-26 15:46:19 overwrite stylesheets/style.css 
+2012-10-26 15:46:58 overwrite stylesheets/style.css 
+2012-10-26 15:49:40 overwrite stylesheets/style.css 
+2012-10-26 15:51:27 overwrite stylesheets/style.css 
+2012-10-26 15:52:12 overwrite stylesheets/style.css 
+2012-10-26 15:53:40 overwrite stylesheets/style.css 
+2012-10-26 15:55:13 overwrite stylesheets/style.css 
+2012-10-26 15:55:33 overwrite stylesheets/style.css 
+2012-10-26 15:56:33 overwrite stylesheets/style.css 
+2012-10-26 15:57:07 overwrite stylesheets/style.css 
+2012-10-26 15:58:15 overwrite stylesheets/style.css 
+2012-10-26 15:58:27 overwrite stylesheets/style.css 
+2012-10-26 16:00:46 overwrite stylesheets/style.css 
+2012-10-26 16:01:40 overwrite stylesheets/style.css 
+2012-10-26 16:03:48 overwrite stylesheets/style.css 
+2012-10-26 16:06:22 overwrite stylesheets/style.css 
+2012-10-26 16:08:21 overwrite stylesheets/style.css 
+2012-10-26 16:09:33 overwrite stylesheets/style.css 
+2012-10-26 16:10:27 overwrite stylesheets/style.css 
+2012-10-31 12:51:39 overwrite stylesheets/style.css 
+2012-10-31 13:01:07 identical stylesheets/style.css 
+2012-10-31 13:01:56     error sass/style.scss (Line 512: Invalid CSS after "@import "widgets";": expected "}", was "")
+2012-10-31 13:01:56 overwrite stylesheets/style.css 
+2012-10-31 13:02:16 overwrite stylesheets/style.css 
+2012-10-31 13:03:36 overwrite stylesheets/style.css 
+2012-10-31 13:04:48 overwrite stylesheets/style.css 
+2012-10-31 13:07:15 overwrite stylesheets/style.css 
+2012-11-01 12:01:34 overwrite stylesheets/style.css 
+2012-11-01 12:37:31 overwrite stylesheets/style.css 
+2012-11-01 12:38:20 overwrite stylesheets/style.css 
+2012-11-01 12:38:41 overwrite stylesheets/style.css 
+2012-11-01 12:40:31 overwrite stylesheets/style.css 
+2012-11-01 17:34:31 overwrite stylesheets/style.css 
+2012-11-01 17:41:15 overwrite stylesheets/style.css 
+2012-11-01 17:50:19 overwrite stylesheets/style.css 
+2012-11-01 17:59:51     error sass/style.scss (Line 454: Invalid CSS after "			float:left:": expected pseudoclass or pseudoelement, was "width:620px;")
+2012-11-01 17:59:51 overwrite stylesheets/style.css 
+2012-11-01 18:00:12 overwrite stylesheets/style.css 
+2012-11-01 18:04:04 overwrite stylesheets/style.css 
+2012-11-01 18:05:40 overwrite stylesheets/style.css 
+2012-11-02 14:23:44 overwrite stylesheets/style.css 
+2012-11-02 14:24:12 overwrite stylesheets/style.css 
+2012-11-02 14:29:02     error sass/style.scss (Line 27: Invalid CSS after "...ton($background": expected ")", was "=#999, $border=...")
+2012-11-02 14:29:03 overwrite stylesheets/style.css 
+2012-11-02 14:32:43     error sass/style.scss (Line 27: Invalid CSS after "...ton($background": expected ")", was "=linear-gradien...")
+2012-11-02 14:32:43 overwrite stylesheets/style.css 
+2012-11-02 14:34:21     error sass/style.scss (Line 27: Invalid CSS after "...ton($background": expected ")", was "=linear-gradien...")
+2012-11-02 14:34:21 identical stylesheets/style.css 
+2012-11-02 14:34:46     error sass/style.scss (Line 27: Required argument $border must come before any optional arguments.)
+2012-11-02 14:34:46 overwrite stylesheets/style.css 
+2012-11-02 14:35:10     error sass/style.scss (Line 318: Invalid CSS after "		width": expected ";", was ":90px;")
+2012-11-02 14:35:10 overwrite stylesheets/style.css 
+2012-11-02 14:35:45 overwrite stylesheets/style.css 
+2012-11-02 14:36:33 overwrite stylesheets/style.css 
+2012-11-02 14:37:49 overwrite stylesheets/style.css 
+2012-11-02 14:38:21 overwrite stylesheets/style.css 
+2012-11-02 14:42:39     error sass/style.scss (Line 285: Invalid CSS after "...b1aba3), $color": expected ")", was ":#fff, $border:...")
+2012-11-02 14:42:39 overwrite stylesheets/style.css 
+2012-11-02 14:43:08 overwrite stylesheets/style.css 
+2012-11-02 14:44:05 overwrite stylesheets/style.css 
+2012-11-02 14:45:31 overwrite stylesheets/style.css 
+2012-11-02 14:46:57 overwrite stylesheets/style.css 
+2012-11-02 14:48:38 overwrite stylesheets/style.css 
+2012-11-02 14:48:54 overwrite stylesheets/style.css 
+2012-11-02 14:50:21 overwrite stylesheets/style.css 
+2012-11-02 15:00:17 overwrite stylesheets/style.css 
+2012-11-02 15:02:04 overwrite stylesheets/style.css 
+2012-11-02 15:02:57 overwrite stylesheets/style.css 
+2012-11-02 15:07:09 overwrite stylesheets/style.css 
+2012-11-02 15:07:50 overwrite stylesheets/style.css 
+2012-11-02 15:09:07 overwrite stylesheets/style.css 
+2012-11-02 15:26:19 overwrite stylesheets/style.css 
+2012-11-02 15:28:59 overwrite stylesheets/style.css 
+2012-11-02 15:32:25     error sass/style.scss (Line 28 of sass/_widgets.scss: Invalid CSS after "	.": expected class name, was "2012-monthlist {")
+2012-11-02 15:32:25 overwrite stylesheets/style.css 
+2012-11-02 15:32:53 overwrite stylesheets/style.css 
+2012-11-02 15:33:10 overwrite stylesheets/style.css 
+2012-11-02 15:33:37     error sass/style.scss (Line 28 of sass/_widgets.scss: Invalid CSS after "	.": expected class name, was "2012-monthlist {")
+2012-11-02 15:33:37 overwrite stylesheets/style.css 
+2012-11-02 15:35:01 overwrite stylesheets/style.css 
+2012-11-02 15:37:11 overwrite stylesheets/style.css 
+2012-11-02 15:39:23 overwrite stylesheets/style.css 
+2012-11-02 15:40:14 overwrite stylesheets/style.css 
+2012-11-02 15:43:10 overwrite stylesheets/style.css 
+2012-11-02 15:44:21 overwrite stylesheets/style.css 
+2012-11-02 15:45:21 overwrite stylesheets/style.css 
+2012-11-02 15:59:51 overwrite stylesheets/style.css 
+2012-11-02 16:01:05     error sass/style.scss (Line 224: Invalid CSS after "		color:": expected expression (e.g. 1px, bold), was "}")
+2012-11-02 16:01:05 overwrite stylesheets/style.css 
+2012-11-02 16:01:44 overwrite stylesheets/style.css 
+2012-11-02 16:02:18 overwrite stylesheets/style.css 
+2012-11-02 16:03:45 overwrite stylesheets/style.css 
+2012-11-02 16:07:39 overwrite stylesheets/style.css 
+2012-11-02 16:11:47 overwrite stylesheets/style.css 
+2012-11-02 16:12:47 overwrite stylesheets/style.css 
+2012-11-02 16:18:46 overwrite stylesheets/style.css 
+2012-11-02 16:23:08 overwrite stylesheets/style.css 
+2012-11-02 16:24:18 overwrite stylesheets/style.css 
+2012-11-02 16:25:53 overwrite stylesheets/style.css 
+2012-11-02 16:26:54 overwrite stylesheets/style.css 
+2012-11-02 16:30:07 identical stylesheets/style.css 
+2012-11-02 16:31:13 overwrite stylesheets/style.css 
+2012-11-02 16:31:36 overwrite stylesheets/style.css 
+2012-11-02 16:46:31 overwrite stylesheets/style.css 
+2012-11-02 16:48:00 overwrite stylesheets/style.css 
+2012-11-02 16:48:56 overwrite stylesheets/style.css 
+2012-11-02 16:56:57 overwrite stylesheets/style.css 
+2012-11-02 16:57:25 overwrite stylesheets/style.css 
+2012-11-02 16:58:21 overwrite stylesheets/style.css 
+2012-11-02 16:59:09 overwrite stylesheets/style.css 
+2012-11-02 16:59:51 overwrite stylesheets/style.css 
+2012-11-02 17:00:39 overwrite stylesheets/style.css 
+2012-11-02 17:04:47 overwrite stylesheets/style.css 
+2012-11-02 17:05:35 overwrite stylesheets/style.css 
+2012-11-02 17:10:28     error sass/style.scss (Line 594: Invalid CSS after "@import "widgets";": expected "}", was "")
+2012-11-02 17:10:28 overwrite stylesheets/style.css 
+2012-11-02 17:11:08 overwrite stylesheets/style.css 
+2012-11-02 17:11:22 overwrite stylesheets/style.css 
+2012-11-02 17:11:26 overwrite stylesheets/style.css 
+2012-11-02 17:11:49 overwrite stylesheets/style.css 
+2012-11-02 17:38:02 overwrite stylesheets/style.css 
+2012-11-02 17:39:28 overwrite stylesheets/style.css 
+2012-11-02 17:41:56     error sass/style.scss (Line 519: Invalid CSS after "...DF8EF, #F9EFD9)": expected "}", was "border-bottom:1...")
+2012-11-02 17:41:56 overwrite stylesheets/style.css 
+2012-11-02 17:42:20     error sass/style.scss (Line 518: Undefined mixin 'backlinear-gradient'.)
+2012-11-02 17:42:20 overwrite stylesheets/style.css 
+2012-11-02 17:43:20 overwrite stylesheets/style.css 
+2012-11-02 17:44:56 overwrite stylesheets/style.css 
+2012-11-02 17:45:32 overwrite stylesheets/style.css 
+2012-11-02 17:47:00 overwrite stylesheets/style.css 
+2012-11-02 17:49:04 overwrite stylesheets/style.css 
+2012-11-02 17:50:10 overwrite stylesheets/style.css 
+2012-11-02 17:50:32 overwrite stylesheets/style.css 
+2012-11-02 17:53:02 overwrite stylesheets/style.css 
+2012-11-02 17:54:31 overwrite stylesheets/style.css 
+2012-11-02 17:54:58 overwrite stylesheets/style.css 
+2012-11-02 17:55:53 overwrite stylesheets/style.css 
+2012-11-02 17:58:32 overwrite stylesheets/style.css 
+2012-11-02 18:01:03 overwrite stylesheets/style.css 
+2012-11-02 18:05:29 overwrite stylesheets/style.css 
+2012-11-02 18:07:54 overwrite stylesheets/style.css 
+2012-11-02 18:10:11 overwrite stylesheets/style.css 
+2012-11-02 18:17:49 overwrite stylesheets/style.css 
+2012-11-02 18:20:53 overwrite stylesheets/style.css 
+2012-11-02 18:26:09 overwrite stylesheets/style.css 
+2012-11-02 18:28:04 overwrite stylesheets/style.css 
+2012-11-05 10:48:03 overwrite stylesheets/style.css 
+2012-11-05 10:48:08 overwrite stylesheets/style.css 
+2012-11-05 10:48:16 overwrite stylesheets/style.css 
+2012-11-05 10:48:43 overwrite stylesheets/style.css 
+2012-11-05 11:01:10    create ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sf25e412d4a.png
+2012-11-05 11:01:11 overwrite stylesheets/style.css 
+2012-11-05 11:04:38     error sass/style.scss (Line 626: Invalid CSS after "		@import ": expected file to import (string or url()), was "backgrounds-spr...")
+2012-11-05 11:04:38 overwrite stylesheets/style.css 
+2012-11-05 11:06:07     error sass/style.scss (Line 626: Invalid CSS after "		@import ": expected file to import (string or url()), was "backgrounds-spr...")
+2012-11-05 11:06:07 identical stylesheets/style.css 
+2012-11-05 11:06:57 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sf25e412d4a.png
+2012-11-05 11:06:57 overwrite stylesheets/style.css 
+2012-11-05 11:08:24 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sf25e412d4a.png
+2012-11-05 11:08:24 overwrite stylesheets/style.css 
+2012-11-05 11:13:55 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s62b8bb04d5.png
+2012-11-05 11:13:59     error sass/style.scss (Line 13 of sass/_slideshow.scss: Invalid CSS after "...right-shadow") ": expected "}", was "no-repeat 100% 0;")
+2012-11-05 11:13:59 overwrite stylesheets/style.css 
+2012-11-05 11:15:26 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s62b8bb04d5.png
+2012-11-05 11:15:27 overwrite stylesheets/style.css 
+2012-11-05 11:16:40 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s62b8bb04d5.png
+2012-11-05 11:16:40 overwrite stylesheets/style.css 
+2012-11-05 11:17:05 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s62b8bb04d5.png
+2012-11-05 11:17:06 identical stylesheets/style.css 
+2012-11-05 11:18:38 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s62b8bb04d5.png
+2012-11-05 11:18:39 overwrite stylesheets/style.css 
+2012-11-05 11:21:23    remove ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s62b8bb04d5.png
+2012-11-05 11:21:23    create ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sf25e412d4a.png
+2012-11-05 11:21:24 overwrite stylesheets/style.css 
+2012-11-05 11:21:41 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sf25e412d4a.png
+2012-11-05 11:21:42 overwrite stylesheets/style.css 
+2012-11-05 11:25:20    remove ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sf25e412d4a.png
+2012-11-05 11:25:22    create ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sf62ad83902.png
+2012-11-05 11:25:23 overwrite stylesheets/style.css 
+2012-11-05 11:26:53 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sf62ad83902.png
+2012-11-05 11:26:54 overwrite stylesheets/style.css 
+2012-11-05 11:27:01 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sf62ad83902.png
+2012-11-05 11:27:01 overwrite stylesheets/style.css 
+2012-11-05 11:27:29 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sf62ad83902.png
+2012-11-05 11:27:30 overwrite stylesheets/style.css 
+2012-11-05 11:27:38 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sf62ad83902.png
+2012-11-05 11:27:39 overwrite stylesheets/style.css 
+2012-11-05 11:29:43 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sf62ad83902.png
+2012-11-05 11:29:43 overwrite stylesheets/style.css 
+2012-11-05 11:30:35    remove ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sf62ad83902.png
+2012-11-05 11:30:35    create ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sf25e412d4a.png
+2012-11-05 11:30:36 overwrite stylesheets/style.css 
+2012-11-05 11:43:01     error sass/style.scss (Line 157: Invalid CSS after "		margin 0 auto": expected "{", was "}")
+2012-11-05 11:43:01 overwrite stylesheets/style.css 
+2012-11-05 11:44:05     error sass/style.scss (Line 157: Invalid CSS after "		margin 0 auto": expected "{", was "}")
+2012-11-05 11:44:05 identical stylesheets/style.css 
+2012-11-05 11:44:09     error sass/style.scss (Line 157: Invalid CSS after "		margin 0 auto": expected "{", was "}")
+2012-11-05 11:44:09 identical stylesheets/style.css 
+2012-11-05 11:44:24     error sass/style.scss (Line 156: Invalid CSS after "		margin 0 auto": expected "{", was ";")
+2012-11-05 11:44:24 overwrite stylesheets/style.css 
+2012-11-05 11:44:32     error sass/style.scss (Line 156: Invalid CSS after "		margin 0 auto": expected "{", was ";")
+2012-11-05 11:44:32 identical stylesheets/style.css 
+2012-11-05 11:45:08 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sf25e412d4a.png
+2012-11-05 11:45:08 overwrite stylesheets/style.css 
+2012-11-05 11:47:23 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sf25e412d4a.png
+2012-11-05 11:47:23 overwrite stylesheets/style.css 
+2012-11-05 11:47:26 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sf25e412d4a.png
+2012-11-05 11:47:26 identical stylesheets/style.css 
+2012-11-05 11:48:50 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sf25e412d4a.png
+2012-11-05 11:48:50 overwrite stylesheets/style.css 
+2012-11-05 11:56:30 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s95790381c7.png
+2012-11-05 11:56:34     error sass/style.scss (Line 406: Undefined mixin 'background-sprites'.)
+2012-11-05 11:56:34 overwrite stylesheets/style.css 
+2012-11-05 11:56:53 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s95790381c7.png
+2012-11-05 11:56:53 overwrite stylesheets/style.css 
+2012-11-05 11:59:22 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s95790381c7.png
+2012-11-05 11:59:22 overwrite stylesheets/style.css 
+2012-11-05 12:01:14 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s95790381c7.png
+2012-11-05 12:01:14 overwrite stylesheets/style.css 
+2012-11-05 12:01:30 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s95790381c7.png
+2012-11-05 12:01:31 overwrite stylesheets/style.css 
+2012-11-05 12:07:55     error sass/style.scss (Line 635: Invalid CSS after "		@include ": expected identifier, was "../backgrounds-...")
+2012-11-05 12:07:55 overwrite stylesheets/style.css 
+2012-11-05 12:07:59     error sass/style.scss (Line 635: Invalid CSS after "		@include ": expected identifier, was "../backgrounds-...")
+2012-11-05 12:07:59 identical stylesheets/style.css 
+2012-11-05 12:08:21 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s95790381c7.png
+2012-11-05 12:08:22 overwrite stylesheets/style.css 
+2012-11-05 12:09:41 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s95790381c7.png
+2012-11-05 12:09:41 identical stylesheets/style.css 
+2012-11-05 12:15:02 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s95790381c7.png
+2012-11-05 12:15:02 overwrite stylesheets/style.css 
+2012-11-05 12:17:06 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s95790381c7.png
+2012-11-05 12:17:07 overwrite stylesheets/style.css 
+2012-11-05 12:30:00    remove ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s95790381c7.png
+2012-11-05 12:30:00    create ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sf25e412d4a.png
+2012-11-05 12:30:01 overwrite stylesheets/style.css 
+2012-11-05 12:32:02 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sf25e412d4a.png
+2012-11-05 12:32:02 overwrite stylesheets/style.css 
+2012-11-05 12:33:20 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sf25e412d4a.png
+2012-11-05 12:33:20 overwrite stylesheets/style.css 
+2012-11-05 12:52:54    remove ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sf25e412d4a.png
+2012-11-05 12:52:54    create ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s83ce7a0fbb.png
+2012-11-05 12:52:55 overwrite stylesheets/style.css 
+2012-11-05 13:28:35 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 13:28:36 overwrite stylesheets/style.css 
+2012-11-05 13:29:53 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 13:29:53 overwrite stylesheets/style.css 
+2012-11-05 13:43:39 overwrite stylesheets/ie.css 
+2012-11-05 13:45:22 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 13:45:22 overwrite stylesheets/style.css 
+2012-11-05 14:16:12 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 14:16:13 overwrite stylesheets/style.css 
+2012-11-05 14:28:30 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 14:28:30 overwrite stylesheets/style.css 
+2012-11-05 14:31:47     error sass/style.scss (Line 672: Invalid CSS after "@import "widgets";": expected "}", was "")
+2012-11-05 14:31:47 overwrite stylesheets/style.css 
+2012-11-05 14:31:48     error sass/style.scss (Line 672: Invalid CSS after "@import "widgets";": expected "}", was "")
+2012-11-05 14:31:48 identical stylesheets/style.css 
+2012-11-05 14:32:18 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 14:32:19 overwrite stylesheets/style.css 
+2012-11-05 14:33:52 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 14:33:52 overwrite stylesheets/style.css 
+2012-11-05 14:34:39 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 14:34:40 overwrite stylesheets/style.css 
+2012-11-05 14:34:53 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 14:34:53 overwrite stylesheets/style.css 
+2012-11-05 14:36:24 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 14:36:25 overwrite stylesheets/style.css 
+2012-11-05 14:41:03 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 14:41:04 overwrite stylesheets/style.css 
+2012-11-05 14:44:44 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 14:44:44 overwrite stylesheets/style.css 
+2012-11-05 14:48:03     error sass/style.scss (Line 533: Invalid CSS: a space is required between a property and its definition
+when it has other properties nested beneath it.
+)
+2012-11-05 14:48:03 overwrite stylesheets/style.css 
+2012-11-05 14:48:50 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 14:48:50 overwrite stylesheets/style.css 
+2012-11-05 14:50:35 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 14:50:35 overwrite stylesheets/style.css 
+2012-11-05 14:52:27 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 14:52:28 overwrite stylesheets/style.css 
+2012-11-05 14:55:48 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 14:55:49 overwrite stylesheets/style.css 
+2012-11-05 14:56:02 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 14:56:02 overwrite stylesheets/style.css 
+2012-11-05 14:57:02 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 14:57:02 overwrite stylesheets/style.css 
+2012-11-05 14:59:08 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 14:59:08 overwrite stylesheets/style.css 
+2012-11-05 14:59:15 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 14:59:16 overwrite stylesheets/style.css 
+2012-11-05 14:59:32 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 14:59:32 overwrite stylesheets/style.css 
+2012-11-05 15:00:40 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 15:00:40 overwrite stylesheets/style.css 
+2012-11-05 15:03:28 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 15:03:28 overwrite stylesheets/style.css 
+2012-11-05 15:06:47 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 15:06:48 overwrite stylesheets/style.css 
+2012-11-05 15:23:40 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 15:23:40 overwrite stylesheets/style.css 
+2012-11-05 15:23:43 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 15:23:43 overwrite stylesheets/style.css 
+2012-11-05 15:24:11 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 15:24:12 overwrite stylesheets/style.css 
+2012-11-05 15:25:51 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 15:25:52 overwrite stylesheets/style.css 
+2012-11-05 16:01:22 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:01:23 overwrite stylesheets/style.css 
+2012-11-05 16:01:32 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:01:33 overwrite stylesheets/style.css 
+2012-11-05 16:02:58 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:02:58 overwrite stylesheets/style.css 
+2012-11-05 16:05:35 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:05:36 overwrite stylesheets/style.css 
+2012-11-05 16:07:07 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:07:07 overwrite stylesheets/style.css 
+2012-11-05 16:09:14 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:09:21     error sass/style.scss (Line 75 of sass/_widgets.scss: Invalid CSS after "			margin-0:": expected expression (e.g. 1px, bold), was "}")
+2012-11-05 16:09:21 overwrite stylesheets/style.css 
+2012-11-05 16:09:48 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:09:49 overwrite stylesheets/style.css 
+2012-11-05 16:09:57 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:09:58 overwrite stylesheets/style.css 
+2012-11-05 16:11:39 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:11:40 overwrite stylesheets/style.css 
+2012-11-05 16:11:56 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:11:56 overwrite stylesheets/style.css 
+2012-11-05 16:11:59 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:11:59 overwrite stylesheets/style.css 
+2012-11-05 16:12:11 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:12:11 overwrite stylesheets/style.css 
+2012-11-05 16:13:18 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:13:19 overwrite stylesheets/style.css 
+2012-11-05 16:14:29 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:14:30 overwrite stylesheets/style.css 
+2012-11-05 16:14:48 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:14:49 overwrite stylesheets/style.css 
+2012-11-05 16:18:38 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:18:39 overwrite stylesheets/style.css 
+2012-11-05 16:18:56 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:18:56 overwrite stylesheets/style.css 
+2012-11-05 16:19:24 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:19:25 overwrite stylesheets/style.css 
+2012-11-05 16:21:18 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:21:23     error sass/style.scss (Line 126 of sass/_widgets.scss: Invalid CSS after "}": expected "}", was "")
+2012-11-05 16:21:23 overwrite stylesheets/style.css 
+2012-11-05 16:22:05 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:22:06 overwrite stylesheets/style.css 
+2012-11-05 16:23:11 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:23:12 overwrite stylesheets/style.css 
+2012-11-05 16:24:08 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:24:09 overwrite stylesheets/style.css 
+2012-11-05 16:24:49 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:24:49 overwrite stylesheets/style.css 
+2012-11-05 16:26:10 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:26:10 overwrite stylesheets/style.css 
+2012-11-05 16:27:38 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:27:39 overwrite stylesheets/style.css 
+2012-11-05 16:29:08 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:29:09 overwrite stylesheets/style.css 
+2012-11-05 16:35:02 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:35:03 overwrite stylesheets/style.css 
+2012-11-05 16:37:31 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:37:37     error sass/style.scss (Line 142 of sass/_widgets.scss: Invalid CSS after "}": expected "}", was "")
+2012-11-05 16:37:37 overwrite stylesheets/style.css 
+2012-11-05 16:38:30 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:38:31 overwrite stylesheets/style.css 
+2012-11-05 16:40:17 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:40:17 overwrite stylesheets/style.css 
+2012-11-05 16:41:22 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:41:23 overwrite stylesheets/style.css 
+2012-11-05 16:42:45 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:42:46 overwrite stylesheets/style.css 
+2012-11-05 16:43:28 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:43:29 overwrite stylesheets/style.css 
+2012-11-05 16:47:20 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:47:20 overwrite stylesheets/style.css 
+2012-11-05 16:48:21 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 16:48:22 overwrite stylesheets/style.css 
+2012-11-05 17:05:49     error sass/style.scss (Line 27: Invalid CSS after "...5, $height:30px": expected ")", was ";) {")
+2012-11-05 17:05:49 overwrite stylesheets/style.css 
+2012-11-05 17:06:03     error sass/style.scss (Line 27: Invalid CSS after "...5, $height:30px": expected ")", was ";) {")
+2012-11-05 17:06:03 identical stylesheets/style.css 
+2012-11-05 17:06:24     error sass/style.scss (Line 27: Invalid CSS after "...5, $height:30px": expected ")", was ";) {")
+2012-11-05 17:06:24 identical stylesheets/style.css 
+2012-11-05 17:06:49 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 17:06:50 overwrite stylesheets/style.css 
+2012-11-05 17:08:09 overwrite stylesheets/ie.css 
+2012-11-05 17:09:55 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 17:09:56 overwrite stylesheets/style.css 
+2012-11-05 17:12:53 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 17:12:54 overwrite stylesheets/style.css 
+2012-11-05 17:13:48 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 17:13:49 overwrite stylesheets/style.css 
+2012-11-05 17:16:56 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 17:16:57 overwrite stylesheets/style.css 
+2012-11-05 17:19:05 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 17:19:06 overwrite stylesheets/style.css 
+2012-11-05 17:20:03 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 17:20:04 overwrite stylesheets/style.css 
+2012-11-05 19:55:40 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 19:55:41 overwrite stylesheets/style.css 
+2012-11-05 19:55:46 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 19:55:46 identical stylesheets/style.css 
+2012-11-05 19:55:49 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 19:55:49 identical stylesheets/style.css 
+2012-11-05 19:56:28 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 19:56:28 overwrite stylesheets/style.css 
+2012-11-05 19:57:56 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 19:57:57 overwrite stylesheets/style.css 
+2012-11-05 19:58:34 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 19:58:34 overwrite stylesheets/style.css 
+2012-11-05 20:01:29 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 20:01:30 overwrite stylesheets/style.css 
+2012-11-05 20:01:46 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 20:01:47 overwrite stylesheets/style.css 
+2012-11-05 20:04:29 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 20:04:30 overwrite stylesheets/style.css 
+2012-11-05 20:05:16 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 20:05:17 overwrite stylesheets/style.css 
+2012-11-05 20:06:11 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-05 20:06:12 overwrite stylesheets/style.css 
+2012-11-06 15:35:31 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-06 15:35:32 overwrite stylesheets/style.css 
+2012-11-06 15:37:57 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-06 15:37:57 overwrite stylesheets/style.css 
+2012-11-06 15:38:49 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-06 15:38:50 overwrite stylesheets/style.css 
+2012-11-06 15:41:13 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-06 15:41:14 overwrite stylesheets/style.css 
+2012-11-06 15:42:34 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-06 15:42:35 overwrite stylesheets/style.css 
+2012-11-06 15:47:33 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-06 15:47:34 overwrite stylesheets/style.css 
+2012-11-06 15:52:01 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-06 15:52:02 overwrite stylesheets/style.css 
+2012-11-06 15:56:29 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-06 15:56:29 overwrite stylesheets/style.css 
+2012-11-06 15:58:40 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-06 15:58:41 overwrite stylesheets/style.css 
+2012-11-06 15:59:07 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-06 15:59:08 overwrite stylesheets/style.css 
+2012-11-06 16:21:12 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-06 16:21:16     error sass/style.scss (Line 110: Mixin button doesn't have an argument named $height.)
+2012-11-06 16:21:16 overwrite stylesheets/style.css 
+2012-11-06 16:21:33 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-06 16:21:33     error sass/style.scss (Line 110: Mixin button doesn't have an argument named $height.)
+2012-11-06 16:21:33 identical stylesheets/style.css 
+2012-11-06 16:22:02 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-06 16:22:02 overwrite stylesheets/style.css 
+2012-11-06 16:22:04 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-06 16:22:05 identical stylesheets/style.css 
+2012-11-06 16:23:50 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-06 16:23:50 overwrite stylesheets/style.css 
+2012-11-06 16:27:30 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-06 16:27:31 overwrite stylesheets/style.css 
+2012-11-06 16:27:38 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-06 16:27:38 overwrite stylesheets/style.css 
+2012-11-06 16:31:15 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-06 16:31:16 overwrite stylesheets/style.css 
+2012-11-06 16:32:08 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-06 16:32:08 overwrite stylesheets/style.css 
+2012-11-06 16:32:39 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-06 16:32:40 overwrite stylesheets/style.css 
+2012-11-06 16:33:11 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-06 16:33:11 overwrite stylesheets/style.css 
+2012-11-06 16:34:42 overwrite stylesheets/ie.css 
+2012-11-06 16:36:06 overwrite stylesheets/ie.css 
+2012-11-06 16:40:44 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-06 16:40:44 overwrite stylesheets/style.css 
+2012-11-06 16:42:26 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-06 16:42:26 identical stylesheets/style.css 
+2012-11-06 16:42:51 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-06 16:42:52 overwrite stylesheets/style.css 
+2012-11-06 16:44:44 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-06 16:44:44 overwrite stylesheets/style.css 
+2012-11-06 16:45:48 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-06 16:45:49 overwrite stylesheets/style.css 
+2012-11-06 16:49:20 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-06 16:49:20 overwrite stylesheets/style.css 
+2012-11-06 16:50:05 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s1ed4ca836b.png
+2012-11-06 16:50:05 overwrite stylesheets/style.css 
+2012-11-09 11:58:06 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-se9bd7ec980.png
+2012-11-09 11:58:07 overwrite stylesheets/style.css 
+2012-11-09 13:05:44 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-se9bd7ec980.png
+2012-11-09 13:05:45 overwrite stylesheets/style.css 
+2012-11-09 13:13:02 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-se9bd7ec980.png
+2012-11-09 13:13:02 overwrite stylesheets/style.css 
+2012-11-09 13:13:18 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-se9bd7ec980.png
+2012-11-09 13:13:19 overwrite stylesheets/style.css 
+2012-11-09 13:14:09 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-se9bd7ec980.png
+2012-11-09 13:14:10 overwrite stylesheets/style.css 
+2012-11-09 13:24:50 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-se9bd7ec980.png
+2012-11-09 13:24:51 overwrite stylesheets/style.css 
+2012-11-09 13:25:59 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-se9bd7ec980.png
+2012-11-09 13:26:00 overwrite stylesheets/style.css 
+2012-11-09 13:27:27 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-se9bd7ec980.png
+2012-11-09 13:27:28 overwrite stylesheets/style.css 
+2012-11-09 13:44:17 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-09 13:44:17 overwrite stylesheets/style.css 
+2012-11-09 13:45:39 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-09 13:45:40 overwrite stylesheets/style.css 
+2012-11-09 14:07:50 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-09 14:07:51 overwrite stylesheets/style.css 
+2012-11-09 14:14:03 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-09 14:14:04 overwrite stylesheets/style.css 
+2012-11-09 14:19:24 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-09 14:19:25 overwrite stylesheets/style.css 
+2012-11-10 11:30:21 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-10 11:30:23 overwrite stylesheets/style.css 
+2012-11-10 11:33:28 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-10 11:33:29 overwrite stylesheets/style.css 
+2012-11-12 15:51:11 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 15:51:12 overwrite stylesheets/style.css 
+2012-11-12 15:54:45 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 15:54:45 overwrite stylesheets/style.css 
+2012-11-12 16:04:48 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 16:04:49 overwrite stylesheets/style.css 
+2012-11-12 16:06:45 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 16:06:46 overwrite stylesheets/style.css 
+2012-11-12 16:07:45 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 16:07:46 overwrite stylesheets/style.css 
+2012-11-12 16:08:22 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 16:08:23 overwrite stylesheets/style.css 
+2012-11-12 16:09:10 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 16:09:11 overwrite stylesheets/style.css 
+2012-11-12 16:09:58 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 16:09:59 overwrite stylesheets/style.css 
+2012-11-12 16:20:10 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 16:20:11 overwrite stylesheets/style.css 
+2012-11-12 16:21:16 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 16:21:17 overwrite stylesheets/style.css 
+2012-11-12 16:24:36 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 16:24:37 overwrite stylesheets/style.css 
+2012-11-12 16:24:55 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 16:24:56 overwrite stylesheets/style.css 
+2012-11-12 16:26:10 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 16:26:11 overwrite stylesheets/style.css 
+2012-11-12 16:31:18 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 16:31:19 overwrite stylesheets/style.css 
+2012-11-12 16:31:51 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 16:31:52 overwrite stylesheets/style.css 
+2012-11-12 16:33:31 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 16:33:32 overwrite stylesheets/style.css 
+2012-11-12 16:39:12 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 16:39:13 overwrite stylesheets/style.css 
+2012-11-12 16:39:58 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 16:39:59 overwrite stylesheets/style.css 
+2012-11-12 16:42:10 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 16:42:11 overwrite stylesheets/style.css 
+2012-11-12 16:43:03 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 16:43:04 overwrite stylesheets/style.css 
+2012-11-12 16:43:10 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 16:43:11 identical stylesheets/style.css 
+2012-11-12 16:43:39 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 16:43:40 overwrite stylesheets/style.css 
+2012-11-12 16:45:03 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 16:45:04 overwrite stylesheets/style.css 
+2012-11-12 16:45:49 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 16:45:50 overwrite stylesheets/style.css 
+2012-11-12 16:47:39 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 16:47:40 overwrite stylesheets/style.css 
+2012-11-12 16:49:14 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 16:49:14 overwrite stylesheets/style.css 
+2012-11-12 16:52:46     error sass/style.scss (Line 497: Invalid CSS after "...-19px 0 0 180px": expected "{", was ";")
+2012-11-12 16:52:47 overwrite stylesheets/style.css 
+2012-11-12 16:53:11 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 16:53:11 overwrite stylesheets/style.css 
+2012-11-12 16:54:18 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 16:54:19 overwrite stylesheets/style.css 
+2012-11-12 16:56:11 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 16:56:11 overwrite stylesheets/style.css 
+2012-11-12 16:56:54 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 16:56:55 overwrite stylesheets/style.css 
+2012-11-12 17:00:17 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 17:00:17 overwrite stylesheets/style.css 
+2012-11-12 17:01:32 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 17:01:32 overwrite stylesheets/style.css 
+2012-11-12 17:02:11 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 17:02:11 overwrite stylesheets/style.css 
+2012-11-12 17:03:21 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 17:03:22 identical stylesheets/style.css 
+2012-11-12 17:04:02 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 17:04:02 overwrite stylesheets/style.css 
+2012-11-12 17:04:48 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 17:04:49 overwrite stylesheets/style.css 
+2012-11-12 17:07:27 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 17:07:28 overwrite stylesheets/style.css 
+2012-11-12 17:08:14 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 17:08:14 overwrite stylesheets/style.css 
+2012-11-12 17:09:18 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 17:09:19 overwrite stylesheets/style.css 
+2012-11-12 17:10:09 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 17:10:10 overwrite stylesheets/style.css 
+2012-11-12 17:12:45 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 17:12:46 overwrite stylesheets/style.css 
+2012-11-12 17:13:41 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 17:13:41 overwrite stylesheets/style.css 
+2012-11-12 17:14:29 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 17:14:29 overwrite stylesheets/style.css 
+2012-11-12 17:15:11 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 17:15:11 overwrite stylesheets/style.css 
+2012-11-12 17:19:26 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 17:19:27 overwrite stylesheets/style.css 
+2012-11-12 17:26:44 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 17:26:45 overwrite stylesheets/style.css 
+2012-11-12 17:27:53 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 17:27:54 overwrite stylesheets/style.css 
+2012-11-12 17:29:34 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 17:29:35 overwrite stylesheets/style.css 
+2012-11-12 17:30:56 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 17:30:57 overwrite stylesheets/style.css 
+2012-11-12 17:31:43 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 17:31:43 overwrite stylesheets/style.css 
+2012-11-12 17:32:14 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 17:32:15 overwrite stylesheets/style.css 
+2012-11-12 17:35:38 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 17:35:39 overwrite stylesheets/style.css 
+2012-11-12 17:37:07 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 17:37:07 overwrite stylesheets/style.css 
+2012-11-12 17:41:19 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 17:41:20 overwrite stylesheets/style.css 
+2012-11-12 17:43:14 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-12 17:43:15 overwrite stylesheets/style.css 
+2012-11-13 17:48:14 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-13 17:48:15 overwrite stylesheets/style.css 
+2012-11-13 17:51:24 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-13 17:51:24 overwrite stylesheets/style.css 
+2012-11-13 17:52:42 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-13 17:52:42 overwrite stylesheets/style.css 
+2012-11-13 17:53:48 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-13 17:53:48 overwrite stylesheets/style.css 
+2012-11-13 17:54:41 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-13 17:54:42 overwrite stylesheets/style.css 
+2012-11-13 17:57:28 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-13 17:57:29 overwrite stylesheets/style.css 
+2012-11-13 17:59:21 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-13 17:59:22 overwrite stylesheets/style.css 
+2012-11-13 18:04:18 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-13 18:04:19 overwrite stylesheets/style.css 
+2012-11-13 18:08:48 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-13 18:08:48 overwrite stylesheets/style.css 
+2012-11-13 18:08:57 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-13 18:08:57 overwrite stylesheets/style.css 
+2012-11-13 18:10:12 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-13 18:10:12 overwrite stylesheets/style.css 
+2012-11-13 18:10:15 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-13 18:10:15 overwrite stylesheets/style.css 
+2012-11-13 18:11:47 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-13 18:11:47 overwrite stylesheets/style.css 
+2012-11-14 10:30:28 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-14 10:30:29 overwrite stylesheets/style.css 
+2012-11-14 10:31:07 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-14 10:31:08 overwrite stylesheets/style.css 
+2012-11-14 10:31:40 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-14 10:31:41 overwrite stylesheets/style.css 
+2012-11-14 10:32:37 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-14 10:32:38 overwrite stylesheets/style.css 
+2012-11-14 10:33:39 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-14 10:33:39 overwrite stylesheets/style.css 
+2012-11-14 10:33:43 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-14 10:33:44 overwrite stylesheets/style.css 
+2012-11-14 10:34:24 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-14 10:34:25 overwrite stylesheets/style.css 
+2012-11-14 10:34:52 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-14 10:34:53 overwrite stylesheets/style.css 
+2012-11-14 10:35:17 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-14 10:35:17 overwrite stylesheets/style.css 
+2012-11-14 10:40:12 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-14 10:40:13 overwrite stylesheets/style.css 
+2012-11-14 10:40:36 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-14 10:40:37 overwrite stylesheets/style.css 
+2012-11-15 14:03:45 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-15 14:03:46 overwrite stylesheets/style.css 
+2012-11-15 14:28:03 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-15 14:28:04 overwrite stylesheets/style.css 
+2012-11-18 12:34:42 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-18 12:34:43 overwrite stylesheets/style.css 
+2012-11-18 12:35:19 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-18 12:35:20 overwrite stylesheets/style.css 
+2012-11-18 12:36:31 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-18 12:36:32 overwrite stylesheets/style.css 
+2012-11-18 12:37:09 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-18 12:37:10 overwrite stylesheets/style.css 
+2012-11-18 12:39:36 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-18 12:39:37 overwrite stylesheets/style.css 
+2012-11-18 12:42:24 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-18 12:42:25 overwrite stylesheets/style.css 
+2012-11-18 12:44:45 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-18 12:44:46 overwrite stylesheets/style.css 
+2012-11-18 12:54:22 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-18 12:54:23 overwrite stylesheets/style.css 
+2012-11-18 12:55:32 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-18 12:55:33 overwrite stylesheets/style.css 
+2012-11-18 12:55:38 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-18 12:55:39 overwrite stylesheets/style.css 
+2012-11-18 12:56:23 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-18 12:56:24 overwrite stylesheets/style.css 
+2012-11-18 12:57:01 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfc45308739.png
+2012-11-18 12:57:01 overwrite stylesheets/style.css 
+2012-11-18 13:01:09 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s2fa3ce0077.png
+2012-11-18 13:01:09 overwrite stylesheets/style.css 
+2012-11-18 13:03:08 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s2fa3ce0077.png
+2012-11-18 13:03:09 overwrite stylesheets/style.css 
+2012-11-18 13:07:41 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s2fa3ce0077.png
+2012-11-18 13:07:42 overwrite stylesheets/style.css 
+2012-11-18 13:11:53     error sass/style.scss (Line 542: Invalid CSS after "				height": expected "}", was ":auto;")
+2012-11-18 13:11:53 overwrite stylesheets/style.css 
+2012-11-18 13:13:21 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s2fa3ce0077.png
+2012-11-18 13:13:22 overwrite stylesheets/style.css 
+2012-11-18 13:14:41 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s2fa3ce0077.png
+2012-11-18 13:14:42 identical stylesheets/style.css 
+2012-11-18 13:15:36 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s2fa3ce0077.png
+2012-11-18 13:15:37 identical stylesheets/style.css 
+2012-11-18 13:16:27 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s2fa3ce0077.png
+2012-11-18 13:16:28 overwrite stylesheets/style.css 
+2012-11-18 13:17:16 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s2fa3ce0077.png
+2012-11-18 13:17:16 identical stylesheets/style.css 
+2012-11-18 13:21:17    remove ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s2fa3ce0077.png
+2012-11-18 13:21:17    create ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 13:21:18 overwrite stylesheets/style.css 
+2012-11-18 13:23:18 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 13:23:19 overwrite stylesheets/style.css 
+2012-11-18 13:25:55 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 13:25:56 overwrite stylesheets/style.css 
+2012-11-18 13:26:28 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 13:26:29 overwrite stylesheets/style.css 
+2012-11-18 13:29:23 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 13:29:23 overwrite stylesheets/style.css 
+2012-11-18 13:33:15     error sass/style.scss (Line 553: Invalid CSS after "...-menu-hover-bg)": expected "}", was ",backgrounds-sp...")
+2012-11-18 13:33:15 overwrite stylesheets/style.css 
+2012-11-18 13:34:49     error sass/style.scss (Line 553: Invalid CSS after "...-menu-hover-bg)": expected "}", was ",backgrounds-sp...")
+2012-11-18 13:34:49 identical stylesheets/style.css 
+2012-11-18 13:35:31 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 13:35:31 overwrite stylesheets/style.css 
+2012-11-18 13:36:46 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 13:36:46 overwrite stylesheets/style.css 
+2012-11-18 13:37:52 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 13:37:52 overwrite stylesheets/style.css 
+2012-11-18 13:38:28 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 13:38:28 overwrite stylesheets/style.css 
+2012-11-18 13:39:23 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 13:41:32 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 13:41:33 overwrite stylesheets/style.css 
+2012-11-18 13:41:38 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 13:41:39 overwrite stylesheets/style.css 
+2012-11-18 13:43:04 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 13:43:05 overwrite stylesheets/style.css 
+2012-11-18 14:39:49 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 14:39:50 overwrite stylesheets/style.css 
+2012-11-18 14:42:33 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 14:42:34 overwrite stylesheets/style.css 
+2012-11-18 14:43:36 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 14:43:37 overwrite stylesheets/style.css 
+2012-11-18 14:44:49 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 14:44:50 overwrite stylesheets/style.css 
+2012-11-18 14:45:25 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 14:45:26 overwrite stylesheets/style.css 
+2012-11-18 14:46:25 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 14:46:26 overwrite stylesheets/style.css 
+2012-11-18 14:48:07 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 14:48:08 overwrite stylesheets/style.css 
+2012-11-18 14:50:16 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 14:50:17 overwrite stylesheets/style.css 
+2012-11-18 14:50:45 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 14:50:46 overwrite stylesheets/style.css 
+2012-11-18 14:58:35 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 14:58:35 overwrite stylesheets/style.css 
+2012-11-18 15:00:59 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 15:01:00 overwrite stylesheets/style.css 
+2012-11-18 15:08:36 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 15:08:37 identical stylesheets/style.css 
+2012-11-18 15:08:48 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 15:08:49 overwrite stylesheets/style.css 
+2012-11-18 15:12:08 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 15:12:09 overwrite stylesheets/style.css 
+2012-11-18 15:14:41 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 15:14:42 overwrite stylesheets/style.css 
+2012-11-18 15:19:12 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 15:19:13 overwrite stylesheets/style.css 
+2012-11-18 15:20:35 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 15:20:36 overwrite stylesheets/style.css 
+2012-11-18 15:22:14 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 15:22:15 overwrite stylesheets/style.css 
+2012-11-18 15:24:03 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 15:24:04 overwrite stylesheets/style.css 
+2012-11-18 15:26:03 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 15:26:04 overwrite stylesheets/style.css 
+2012-11-18 15:28:12 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 15:28:13 overwrite stylesheets/style.css 
+2012-11-18 15:29:26 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 15:29:27 overwrite stylesheets/style.css 
+2012-11-18 15:30:21 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 15:30:22 overwrite stylesheets/style.css 
+2012-11-18 15:30:56 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 15:30:57 overwrite stylesheets/style.css 
+2012-11-18 15:33:20 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 15:33:21 overwrite stylesheets/style.css 
+2012-11-18 15:35:36 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 15:35:37 overwrite stylesheets/style.css 
+2012-11-18 15:35:45 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 15:35:46 overwrite stylesheets/style.css 
+2012-11-18 15:36:03     error sass/style.scss (Line 544: Invalid CSS after "...00%, $offset-y:": expected mixin argument, was "}")
+2012-11-18 15:36:03 overwrite stylesheets/style.css 
+2012-11-18 15:36:32 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 15:36:33 overwrite stylesheets/style.css 
+2012-11-18 15:38:32 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 15:38:33 overwrite stylesheets/style.css 
+2012-11-18 15:39:27 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 15:39:28 overwrite stylesheets/style.css 
+2012-11-18 15:41:38 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 15:41:39 overwrite stylesheets/style.css 
+2012-11-18 15:43:20 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 15:43:21 overwrite stylesheets/style.css 
+2012-11-18 15:44:08 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 15:44:09 overwrite stylesheets/style.css 
+2012-11-18 15:47:23 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 15:47:24 overwrite stylesheets/style.css 
+2012-11-18 15:48:29 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 15:48:30 overwrite stylesheets/style.css 
+2012-11-18 15:48:42 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 15:48:43 overwrite stylesheets/style.css 
+2012-11-18 15:53:05 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 15:53:06 overwrite stylesheets/style.css 
+2012-11-18 15:58:10 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 15:58:10 overwrite stylesheets/style.css 
+2012-11-18 16:00:17 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 16:00:18 identical stylesheets/style.css 
+2012-11-18 16:00:37     error sass/style.scss (Line 859: Invalid CSS after "@import "mobile";": expected "}", was "")
+2012-11-18 16:00:37 overwrite stylesheets/style.css 
+2012-11-18 16:01:03     error sass/style.scss (Line 860: Invalid CSS after "@import "mobile";": expected "}", was "")
+2012-11-18 16:01:03 overwrite stylesheets/style.css 
+2012-11-18 16:01:19 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 16:01:19 overwrite stylesheets/style.css 
+2012-11-18 16:02:27 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 16:02:28 identical stylesheets/style.css 
+2012-11-18 16:02:43 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 16:02:43 overwrite stylesheets/style.css 
+2012-11-18 16:14:34 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 16:14:35 overwrite stylesheets/style.css 
+2012-11-18 16:14:50 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 16:14:51 overwrite stylesheets/style.css 
+2012-11-18 16:21:03 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 16:21:03 overwrite stylesheets/style.css 
+2012-11-18 16:22:28 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 16:22:29 overwrite stylesheets/style.css 
+2012-11-18 20:06:24     error sass/style.scss (Line 17 of sass/_base.scss: Invalid CSS after "$body-text-color": expected selector or at-rule, was ":#59595c;")
+2012-11-18 20:06:24 overwrite stylesheets/style.css 
+2012-11-18 20:07:20 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 20:07:21 overwrite stylesheets/style.css 
+2012-11-18 20:08:13 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 20:08:14 overwrite stylesheets/style.css 
+2012-11-18 20:19:46 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 20:19:47 overwrite stylesheets/style.css 
+2012-11-18 20:21:35 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 20:21:36 overwrite stylesheets/style.css 
+2012-11-18 20:22:20 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 20:22:21 overwrite stylesheets/style.css 
+2012-11-18 20:25:04 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 20:25:05 overwrite stylesheets/style.css 
+2012-11-18 20:27:40 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 20:27:41 overwrite stylesheets/style.css 
+2012-11-18 20:27:46 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 20:27:47 overwrite stylesheets/style.css 
+2012-11-18 20:32:25 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 20:32:26 overwrite stylesheets/style.css 
+2012-11-18 20:34:22 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 20:34:22 overwrite stylesheets/style.css 
+2012-11-18 20:34:58 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 20:34:58 overwrite stylesheets/style.css 
+2012-11-18 20:35:41 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 20:35:42 overwrite stylesheets/style.css 
+2012-11-18 20:36:55 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 20:36:55 overwrite stylesheets/style.css 
+2012-11-18 20:37:38 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 20:37:39 overwrite stylesheets/style.css 
+2012-11-18 20:40:13 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 20:40:14 overwrite stylesheets/style.css 
+2012-11-18 20:41:32 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 20:41:33 overwrite stylesheets/style.css 
+2012-11-18 20:43:32 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 20:43:33 overwrite stylesheets/style.css 
+2012-11-18 20:48:52     error sass/style.scss (Line 687: Invalid CSS after "...ica, sans-serif": expected "{", was ";")
+2012-11-18 20:48:52 overwrite stylesheets/style.css 
+2012-11-18 20:49:02 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 20:49:03     error sass/style.scss (Line 687: Undefined variable: "$meta-font".)
+2012-11-18 20:49:03 overwrite stylesheets/style.css 
+2012-11-18 20:49:16 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 20:49:17 overwrite stylesheets/style.css 
+2012-11-18 20:53:40 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 20:53:41 overwrite stylesheets/style.css 
+2012-11-18 22:26:48 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-18 22:26:49 overwrite stylesheets/style.css 
+2012-11-19 10:44:48 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-19 10:44:49 overwrite stylesheets/style.css 
+2012-11-19 10:46:28 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-19 10:46:29 overwrite stylesheets/style.css 
+2012-11-19 10:48:09 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-19 10:48:10 overwrite stylesheets/style.css 
+2012-11-19 10:51:30 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-19 10:51:31 overwrite stylesheets/style.css 
+2012-11-19 10:52:13 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-19 10:52:14 overwrite stylesheets/style.css 
+2012-11-19 10:54:04 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-19 10:54:05 overwrite stylesheets/style.css 
+2012-11-19 10:55:33 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-19 10:55:34 overwrite stylesheets/style.css 
+2012-11-19 10:57:20 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-19 10:57:21 overwrite stylesheets/style.css 
+2012-11-19 11:03:32 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-19 11:03:33 overwrite stylesheets/style.css 
+2012-11-19 11:03:53 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-19 11:03:54 overwrite stylesheets/style.css 
+2012-11-19 11:04:38 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-19 11:04:39 overwrite stylesheets/style.css 
+2012-11-20 11:04:00 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 11:04:00 identical stylesheets/style.css 
+2012-11-20 11:04:31 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 11:04:32 overwrite stylesheets/style.css 
+2012-11-20 11:08:34 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 11:08:35 overwrite stylesheets/style.css 
+2012-11-20 11:09:04 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 11:09:05 overwrite stylesheets/style.css 
+2012-11-20 11:17:44 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 11:17:45 overwrite stylesheets/style.css 
+2012-11-20 11:21:40 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 11:21:41 overwrite stylesheets/style.css 
+2012-11-20 11:27:47 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 11:27:48 overwrite stylesheets/style.css 
+2012-11-20 11:35:55 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 11:35:56 overwrite stylesheets/style.css 
+2012-11-20 11:36:20 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 11:36:21 overwrite stylesheets/style.css 
+2012-11-20 21:00:05 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 21:00:06 overwrite stylesheets/style.css 
+2012-11-20 21:19:32 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 21:19:33 overwrite stylesheets/style.css 
+2012-11-20 21:25:35 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 21:25:35 overwrite stylesheets/style.css 
+2012-11-20 21:26:06 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 21:26:07 overwrite stylesheets/style.css 
+2012-11-20 21:28:17 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 21:28:17 overwrite stylesheets/style.css 
+2012-11-20 21:30:17 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 21:30:17 overwrite stylesheets/style.css 
+2012-11-20 21:32:15 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 21:32:16 identical stylesheets/style.css 
+2012-11-20 21:32:32 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 21:32:33 overwrite stylesheets/style.css 
+2012-11-20 21:36:57 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 21:36:58 overwrite stylesheets/style.css 
+2012-11-20 21:38:38 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 21:38:39 overwrite stylesheets/style.css 
+2012-11-20 21:53:09 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 21:53:10 overwrite stylesheets/style.css 
+2012-11-20 21:53:59 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 21:54:00 overwrite stylesheets/style.css 
+2012-11-20 21:56:27 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 21:56:28 overwrite stylesheets/style.css 
+2012-11-20 21:57:12 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 21:57:13 overwrite stylesheets/style.css 
+2012-11-20 22:04:22 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 22:04:23     error sass/style.scss (Line 83 of sass/_widgets.scss: wrong number of arguments (3 for 4) for `rgba')
+2012-11-20 22:04:23 overwrite stylesheets/style.css 
+2012-11-20 22:04:39 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 22:04:39 overwrite stylesheets/style.css 
+2012-11-20 22:05:57 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 22:05:58 overwrite stylesheets/style.css 
+2012-11-20 22:06:12 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 22:06:12 identical stylesheets/style.css 
+2012-11-20 22:07:15 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 22:07:16 overwrite stylesheets/style.css 
+2012-11-20 22:09:26 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 22:09:27 overwrite stylesheets/style.css 
+2012-11-20 22:10:50 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 22:10:50 overwrite stylesheets/style.css 
+2012-11-20 22:15:27 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 22:15:28 identical stylesheets/style.css 
+2012-11-20 22:17:35 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 22:17:35 overwrite stylesheets/style.css 
+2012-11-20 22:18:11 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 22:18:11 overwrite stylesheets/style.css 
+2012-11-20 22:18:24 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 22:18:25 overwrite stylesheets/style.css 
+2012-11-20 22:19:08 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 22:19:08 overwrite stylesheets/style.css 
+2012-11-20 22:19:44 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 22:19:44 identical stylesheets/style.css 
+2012-11-20 22:20:12 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 22:20:13 overwrite stylesheets/style.css 
+2012-11-20 22:21:08 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 22:21:09 overwrite stylesheets/style.css 
+2012-11-20 22:23:08 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-20 22:23:09 overwrite stylesheets/style.css 
+2012-11-21 11:01:08 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-21 11:01:09 overwrite stylesheets/style.css 
+2012-11-21 11:05:52 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-21 11:05:53 overwrite stylesheets/style.css 
+2012-11-21 11:10:36     error sass/style.scss (Line 422: Invalid CSS after "	}": expected selector or at-rule, was "}")
+2012-11-21 11:10:36 overwrite stylesheets/style.css 
+2012-11-21 11:10:54 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-21 11:10:54 overwrite stylesheets/style.css 
+2012-11-21 11:12:28 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-21 11:12:29 overwrite stylesheets/style.css 
+2012-11-21 11:24:24 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-21 11:24:24 overwrite stylesheets/style.css 
+2012-11-21 11:30:55 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-21 11:30:56 overwrite stylesheets/style.css 
+2012-11-21 11:45:06 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-21 11:45:07 overwrite stylesheets/style.css 
+2012-11-21 11:47:03 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-21 11:47:03 overwrite stylesheets/style.css 
+2012-11-21 11:48:22 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-21 11:48:23 overwrite stylesheets/style.css 
+2012-11-21 11:49:09 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-21 11:49:09 overwrite stylesheets/style.css 
+2012-11-21 13:46:23 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-21 13:46:24 overwrite stylesheets/style.css 
+2012-11-21 13:49:09 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-21 13:49:10 overwrite stylesheets/style.css 
+2012-11-21 13:49:57 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-21 13:49:58 overwrite stylesheets/style.css 
+2012-11-22 12:03:00 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-22 12:03:01 overwrite stylesheets/style.css 
+2012-11-22 12:07:35 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-22 12:07:35 overwrite stylesheets/style.css 
+2012-11-22 14:19:22 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-22 14:19:23 overwrite stylesheets/style.css 
+2012-11-22 14:29:18 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-22 14:29:18 overwrite stylesheets/style.css 
+2012-11-22 14:30:19 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-22 14:30:20 overwrite stylesheets/style.css 
+2012-11-22 14:32:25 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-22 14:32:26 identical stylesheets/style.css 
+2012-11-22 14:32:39 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-22 14:32:39 overwrite stylesheets/style.css 
+2012-11-22 14:38:34 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-22 14:38:35 overwrite stylesheets/style.css 
+2012-11-22 14:41:52 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-22 14:41:53 overwrite stylesheets/style.css 
+2012-11-22 14:43:36 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-22 14:43:36 overwrite stylesheets/style.css 
+2012-11-22 14:44:03 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-22 14:44:03 overwrite stylesheets/style.css 
+2012-11-22 14:45:36 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-22 14:45:37 overwrite stylesheets/style.css 
+2012-11-22 14:46:31 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-22 14:46:32 overwrite stylesheets/style.css 
+2012-11-22 14:47:48 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-22 14:47:49 overwrite stylesheets/style.css 
+2012-11-22 14:54:36 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-22 14:54:37 overwrite stylesheets/style.css 
+2012-11-26 10:29:12 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-26 10:29:14 overwrite stylesheets/style.css 
+2012-11-26 10:49:16 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s286f77791e.png
+2012-11-26 10:49:17 overwrite stylesheets/style.css 
+2012-11-26 11:03:23 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s4c11760387.png
+2012-11-26 11:03:23 overwrite stylesheets/style.css 
+2012-11-26 11:04:05 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s4c11760387.png
+2012-11-26 11:04:05 overwrite stylesheets/style.css 
+2012-11-26 11:04:30 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s4c11760387.png
+2012-11-26 11:04:31 overwrite stylesheets/style.css 
+2012-11-26 11:08:32 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s4c11760387.png
+2012-11-26 11:08:32 overwrite stylesheets/style.css 
+2012-11-26 11:09:03 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s4c11760387.png
+2012-11-26 11:09:04 overwrite stylesheets/style.css 
+2012-11-26 11:20:18 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s4c11760387.png
+2012-11-26 11:20:19 overwrite stylesheets/style.css 
+2012-11-26 11:28:36 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s4c11760387.png
+2012-11-26 11:28:38 overwrite stylesheets/style.css 
+2012-11-26 11:29:20 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s4c11760387.png
+2012-11-26 11:29:21 identical stylesheets/style.css 
+2012-11-26 11:32:49 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s4c11760387.png
+2012-11-26 11:32:49 overwrite stylesheets/style.css 
+2012-11-26 11:33:43 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s4c11760387.png
+2012-11-26 11:33:43 overwrite stylesheets/style.css 
+2012-11-26 11:37:20 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s4c11760387.png
+2012-11-26 11:37:21 overwrite stylesheets/style.css 
+2012-11-26 11:39:28 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s4c11760387.png
+2012-11-26 11:39:28 overwrite stylesheets/style.css 
+2012-11-27 13:50:34 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s4c11760387.png
+2012-11-27 13:50:35 overwrite stylesheets/style.css 
+2012-11-27 15:41:32 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s4c11760387.png
+2012-11-27 15:41:33 overwrite stylesheets/style.css 
+2012-11-27 17:36:54 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s4c11760387.png
+2012-11-27 17:36:55 overwrite stylesheets/style.css 
+2012-11-27 17:39:20 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s4c11760387.png
+2012-11-27 17:39:21 overwrite stylesheets/style.css 
+2012-11-27 17:50:45 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s4c11760387.png
+2012-11-27 17:50:46 overwrite stylesheets/style.css 
+2012-11-27 17:53:02 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s4c11760387.png
+2012-11-27 17:53:03 overwrite stylesheets/style.css 
+2012-11-27 17:54:21 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s4c11760387.png
+2012-11-27 17:54:22 overwrite stylesheets/style.css 
+2012-11-27 17:55:23 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s4c11760387.png
+2012-11-27 17:55:24 overwrite stylesheets/style.css 
+2012-11-27 17:56:06 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s4c11760387.png
+2012-11-27 17:56:07 overwrite stylesheets/style.css 
+2012-11-27 17:57:00 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s4c11760387.png
+2012-11-27 17:57:01 overwrite stylesheets/style.css 
+2012-11-27 17:57:33 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s4c11760387.png
+2012-11-27 17:57:34 overwrite stylesheets/style.css 
+2012-11-27 18:00:17 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s4c11760387.png
+2012-11-27 18:00:18 overwrite stylesheets/style.css 
+2012-11-27 18:01:53 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s4c11760387.png
+2012-11-27 18:01:54 overwrite stylesheets/style.css 
+2012-11-27 18:05:32    remove ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s4c11760387.png
+2012-11-27 18:05:32    create ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-27 18:05:33 overwrite stylesheets/style.css 
+2012-11-27 18:17:28 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-27 18:17:29 overwrite stylesheets/style.css 
+2012-11-27 18:18:25 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-27 18:18:26 overwrite stylesheets/style.css 
+2012-11-27 18:21:14 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-27 18:21:15 overwrite stylesheets/style.css 
+2012-11-27 18:21:35 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-27 18:21:36 overwrite stylesheets/style.css 
+2012-11-27 18:21:43 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-27 18:21:43 identical stylesheets/style.css 
+2012-11-27 18:24:55 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-27 18:24:56 overwrite stylesheets/style.css 
+2012-11-27 18:25:58 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-27 18:25:59 overwrite stylesheets/style.css 
+2012-11-27 18:28:30 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-27 18:28:30 overwrite stylesheets/style.css 
+2012-11-27 18:29:36 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-27 18:29:37 overwrite stylesheets/style.css 
+2012-11-28 10:52:03 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 10:52:04 overwrite stylesheets/style.css 
+2012-11-28 10:53:42 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 10:53:43 overwrite stylesheets/style.css 
+2012-11-28 11:01:51 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 11:01:52 overwrite stylesheets/style.css 
+2012-11-28 11:04:03 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 11:04:04 overwrite stylesheets/style.css 
+2012-11-28 11:04:58 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 11:04:59 overwrite stylesheets/style.css 
+2012-11-28 11:06:21 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 11:06:22 overwrite stylesheets/style.css 
+2012-11-28 11:22:03 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 11:22:04 overwrite stylesheets/style.css 
+2012-11-28 11:22:50 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 11:22:50 overwrite stylesheets/style.css 
+2012-11-28 11:23:53 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 11:23:53 overwrite stylesheets/style.css 
+2012-11-28 11:24:09 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 11:24:10 overwrite stylesheets/style.css 
+2012-11-28 11:27:45 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 11:27:46 overwrite stylesheets/style.css 
+2012-11-28 11:28:57 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 11:28:58 overwrite stylesheets/style.css 
+2012-11-28 11:31:23 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 11:31:24 overwrite stylesheets/style.css 
+2012-11-28 11:32:41 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 11:32:42 overwrite stylesheets/style.css 
+2012-11-28 11:49:00 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 11:49:01 overwrite stylesheets/style.css 
+2012-11-28 14:04:45     error sass/style.scss (Line 512: Invalid CSS after "		width:": expected pseudoclass or pseudoelement, was " 632px;")
+2012-11-28 14:04:45 overwrite stylesheets/style.css 
+2012-11-28 14:04:48 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 14:04:49 overwrite stylesheets/style.css 
+2012-11-28 14:07:40 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 14:07:41 overwrite stylesheets/style.css 
+2012-11-28 14:25:02 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 14:25:03 overwrite stylesheets/style.css 
+2012-11-28 14:26:17 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 14:26:18 overwrite stylesheets/style.css 
+2012-11-28 14:53:07 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 14:53:08 overwrite stylesheets/style.css 
+2012-11-28 15:01:13 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 15:01:14 overwrite stylesheets/style.css 
+2012-11-28 17:17:16 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 17:17:17 overwrite stylesheets/style.css 
+2012-11-28 17:21:10 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 17:21:11 overwrite stylesheets/style.css 
+2012-11-28 17:22:34 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 17:22:35 overwrite stylesheets/style.css 
+2012-11-28 17:23:13 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 17:23:14 overwrite stylesheets/style.css 
+2012-11-28 17:31:29 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 17:31:30 overwrite stylesheets/style.css 
+2012-11-28 17:39:50 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 17:39:51 overwrite stylesheets/style.css 
+2012-11-28 17:40:29 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 17:40:30 overwrite stylesheets/style.css 
+2012-11-28 17:40:52 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 17:40:53 overwrite stylesheets/style.css 
+2012-11-28 17:41:32 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 17:41:33 identical stylesheets/style.css 
+2012-11-28 17:42:02 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 17:42:03 overwrite stylesheets/style.css 
+2012-11-28 17:42:41 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 17:42:42 overwrite stylesheets/style.css 
+2012-11-28 17:49:53 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-11-28 17:49:54 overwrite stylesheets/style.css 
+2012-12-24 15:50:41 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-12-24 15:50:43 overwrite stylesheets/style.css 
+2012-12-24 15:56:55 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-12-24 15:56:56 overwrite stylesheets/style.css 
+2012-12-24 15:58:38 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2012-12-24 15:58:39 overwrite stylesheets/style.css 
+2013-01-31 11:40:15 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 11:40:18 overwrite stylesheets/style.css 
+2013-01-31 11:43:52 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 11:43:54 overwrite stylesheets/style.css 
+2013-01-31 11:44:43 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 11:44:45 overwrite stylesheets/style.css 
+2013-01-31 13:17:10 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 13:17:11 overwrite stylesheets/style.css 
+2013-01-31 13:21:24 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 13:21:26 overwrite stylesheets/style.css 
+2013-01-31 13:26:51 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 13:26:53 overwrite stylesheets/style.css 
+2013-01-31 13:48:57 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 13:48:58 overwrite stylesheets/style.css 
+2013-01-31 14:27:51 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 14:27:52 overwrite stylesheets/style.css 
+2013-01-31 14:35:23 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 14:35:24 identical stylesheets/style.css 
+2013-01-31 14:35:48 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 14:35:49 overwrite stylesheets/style.css 
+2013-01-31 15:02:42 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 15:02:44 overwrite stylesheets/style.css 
+2013-01-31 15:06:29 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 15:06:31 identical stylesheets/style.css 
+2013-01-31 15:09:42 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 15:09:44 overwrite stylesheets/style.css 
+2013-01-31 15:11:13 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 15:11:15 overwrite stylesheets/style.css 
+2013-01-31 17:22:23 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 17:22:25 overwrite stylesheets/style.css 
+2013-01-31 17:24:41 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 17:24:42 overwrite stylesheets/style.css 
+2013-01-31 17:25:28 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 17:25:30 overwrite stylesheets/style.css 
+2013-01-31 17:26:26 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 17:26:28 overwrite stylesheets/style.css 
+2013-01-31 17:28:45 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 17:28:47 overwrite stylesheets/style.css 
+2013-01-31 17:30:13 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 17:30:15 overwrite stylesheets/style.css 
+2013-01-31 17:32:01 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 17:32:03 overwrite stylesheets/style.css 
+2013-01-31 17:33:47 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 17:33:49 overwrite stylesheets/style.css 
+2013-01-31 17:36:38 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 17:36:40 overwrite stylesheets/style.css 
+2013-01-31 17:38:15 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 17:38:17 overwrite stylesheets/style.css 
+2013-01-31 17:40:40 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 17:40:42 overwrite stylesheets/style.css 
+2013-01-31 17:42:58 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 17:43:00 overwrite stylesheets/style.css 
+2013-01-31 17:51:55 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 17:51:57 overwrite stylesheets/style.css 
+2013-01-31 17:54:22 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 17:54:23 overwrite stylesheets/style.css 
+2013-01-31 17:59:44 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 17:59:45 overwrite stylesheets/style.css 
+2013-01-31 18:01:19 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 18:01:21 overwrite stylesheets/style.css 
+2013-01-31 18:05:07 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 18:05:09 overwrite stylesheets/style.css 
+2013-01-31 18:18:27 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 18:18:29 overwrite stylesheets/style.css 
+2013-01-31 18:22:24 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 18:22:26 overwrite stylesheets/style.css 
+2013-01-31 18:23:19 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 18:23:20 overwrite stylesheets/style.css 
+2013-01-31 18:23:51 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 18:23:53 overwrite stylesheets/style.css 
+2013-01-31 18:24:31 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 18:24:33 overwrite stylesheets/style.css 
+2013-01-31 18:24:58 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 18:25:00 identical stylesheets/style.css 
+2013-01-31 18:25:45 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 18:25:47 overwrite stylesheets/style.css 
+2013-01-31 18:26:39 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 18:26:40 overwrite stylesheets/style.css 
+2013-01-31 18:28:23 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 18:28:25 overwrite stylesheets/style.css 
+2013-01-31 18:29:21 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 18:29:22 overwrite stylesheets/style.css 
+2013-01-31 18:45:14     error sass/style.scss (Line 950: Invalid CSS after "		padding-toP20px": expected "{", was ";")
+2013-01-31 18:45:14 overwrite stylesheets/style.css 
+2013-01-31 18:45:30 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 18:45:32 overwrite stylesheets/style.css 
+2013-01-31 18:46:04 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 18:46:05 overwrite stylesheets/style.css 
+2013-01-31 18:48:22 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 18:48:24 overwrite stylesheets/style.css 
+2013-01-31 18:50:29 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-01-31 18:50:31 overwrite stylesheets/style.css 
+2013-02-01 10:51:48 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-02-01 10:51:50 identical stylesheets/style.css 
+2013-02-01 10:52:56 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-02-01 10:52:58 overwrite stylesheets/style.css 
+2013-02-01 11:02:44 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-02-01 11:02:45 overwrite stylesheets/style.css 
+2013-02-01 11:05:40 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-02-01 11:05:42 overwrite stylesheets/style.css 
+2013-02-01 11:06:35 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-02-01 11:06:36 overwrite stylesheets/style.css 
+2013-02-01 11:08:35 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-02-01 11:08:37 identical stylesheets/style.css 
+2013-02-01 11:36:32 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-02-01 11:36:33 overwrite stylesheets/style.css 
+2013-02-01 11:36:55 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-02-01 11:36:57 overwrite stylesheets/style.css 
+2013-02-01 11:41:23 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-02-01 11:41:25 overwrite stylesheets/style.css 
+2013-02-01 11:53:05 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-02-01 11:53:06 overwrite stylesheets/style.css 
+2013-02-01 12:47:15 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-02-01 12:47:17 overwrite stylesheets/style.css 
+2013-02-21 10:07:25 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-02-21 10:07:26 identical stylesheets/style.css 
+2013-02-21 10:09:10 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-02-21 10:09:12 overwrite stylesheets/style.css 
+2013-02-21 10:16:20 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-02-21 10:16:21 overwrite stylesheets/style.css 
+2013-02-21 10:19:44 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-02-21 10:19:46 overwrite stylesheets/style.css 
+2013-02-21 10:20:28 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-02-21 10:20:30 identical stylesheets/style.css 
+2013-02-21 10:21:21 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-02-21 10:21:23 overwrite stylesheets/style.css 
+2013-02-21 10:22:52 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-02-21 10:22:53 overwrite stylesheets/style.css 
+2013-02-21 10:24:42 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-02-21 10:24:43 overwrite stylesheets/style.css 
+2013-02-21 10:30:27 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-02-21 10:30:28 overwrite stylesheets/style.css 
+2013-02-21 10:30:32 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-02-21 10:30:33 identical stylesheets/style.css 
+2013-02-21 10:34:26 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-02-21 10:34:27 overwrite stylesheets/style.css 
+2013-02-21 10:37:52 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-02-21 10:37:53 overwrite stylesheets/style.css 
+2013-02-21 10:38:54 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-02-21 10:38:55 overwrite stylesheets/style.css 
+2013-02-21 10:40:53 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-02-21 10:40:54 overwrite stylesheets/style.css 
+2013-02-21 10:44:03 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-02-21 10:44:05 overwrite stylesheets/style.css 
+2013-03-02 13:19:04 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-02 13:19:07 overwrite stylesheets/style.css 
+2013-03-04 15:24:37 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 15:24:41 overwrite stylesheets/style.css 
+2013-03-04 15:39:30 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 15:39:32 overwrite stylesheets/style.css 
+2013-03-04 15:40:59 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 15:41:00 overwrite stylesheets/style.css 
+2013-03-04 15:42:36 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 15:42:38 overwrite stylesheets/style.css 
+2013-03-04 15:43:37 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 15:43:40 overwrite stylesheets/style.css 
+2013-03-04 15:43:48 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 15:43:49 overwrite stylesheets/style.css 
+2013-03-04 15:46:40 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 15:46:42 overwrite stylesheets/style.css 
+2013-03-04 15:50:50 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 15:51:02     error sass/style.scss (Line 20 of sass/_membership.scss: Invalid CSS after "#rotarymembers.": expected class name, was " rotaryselectio...")
+2013-03-04 15:51:02 overwrite stylesheets/style.css 
+2013-03-04 15:56:08 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 15:56:14     error sass/style.scss (Line 20 of sass/_membership.scss: Invalid CSS after "#rotarymembers.": expected class name, was " rotaryselectio...")
+2013-03-04 15:56:14 identical stylesheets/style.css 
+2013-03-04 15:56:32 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 15:56:34 overwrite stylesheets/style.css 
+2013-03-04 15:59:41 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 15:59:42 overwrite stylesheets/style.css 
+2013-03-04 16:00:34 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 16:00:35 overwrite stylesheets/style.css 
+2013-03-04 16:01:58 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 16:01:59 overwrite stylesheets/style.css 
+2013-03-04 16:03:13 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 16:03:15 overwrite stylesheets/style.css 
+2013-03-04 16:03:57 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 16:03:59 overwrite stylesheets/style.css 
+2013-03-04 16:04:46 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 16:04:47 overwrite stylesheets/style.css 
+2013-03-04 16:06:43 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 16:06:45 overwrite stylesheets/style.css 
+2013-03-04 16:07:17 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 16:07:18 overwrite stylesheets/style.css 
+2013-03-04 16:09:48 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 16:09:50 overwrite stylesheets/style.css 
+2013-03-04 16:10:47 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 16:10:49 overwrite stylesheets/style.css 
+2013-03-04 16:11:28 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 16:11:30 overwrite stylesheets/style.css 
+2013-03-04 16:12:39 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 16:12:41 overwrite stylesheets/style.css 
+2013-03-04 16:14:13 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 16:14:14 overwrite stylesheets/style.css 
+2013-03-04 16:31:28 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 16:31:30 overwrite stylesheets/style.css 
+2013-03-04 16:32:40 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 16:32:42 overwrite stylesheets/style.css 
+2013-03-04 16:33:45 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 16:33:46 overwrite stylesheets/style.css 
+2013-03-04 16:35:07 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 16:35:09 overwrite stylesheets/style.css 
+2013-03-04 16:35:41 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 16:35:42 overwrite stylesheets/style.css 
+2013-03-04 16:49:51 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 16:49:52 overwrite stylesheets/style.css 
+2013-03-04 16:50:54 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 16:50:55 overwrite stylesheets/style.css 
+2013-03-04 16:51:17 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 16:51:18 overwrite stylesheets/style.css 
+2013-03-04 16:53:30 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 16:53:31 overwrite stylesheets/style.css 
+2013-03-04 16:54:51 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 16:54:53 overwrite stylesheets/style.css 
+2013-03-04 16:55:50 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 16:55:51     error sass/style.scss (Line 52 of sass/_membership.scss: Invalid CSS after ".": expected class name, was "#rotarymemberdi...")
+2013-03-04 16:55:51 overwrite stylesheets/style.css 
+2013-03-04 16:56:22 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 16:56:22     error sass/style.scss (Line 52 of sass/_membership.scss: Invalid CSS after ".": expected class name, was "#rotarymemberdi...")
+2013-03-04 16:56:22 identical stylesheets/style.css 
+2013-03-04 16:56:35 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 16:56:36     error sass/style.scss (Line 52 of sass/_membership.scss: Invalid CSS after ".": expected class name, was "#rotarymemberdi...")
+2013-03-04 16:56:36 identical stylesheets/style.css 
+2013-03-04 16:57:50 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 16:57:52 overwrite stylesheets/style.css 
+2013-03-04 16:57:58 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 16:57:59 overwrite stylesheets/style.css 
+2013-03-04 16:59:37 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 16:59:38 overwrite stylesheets/style.css 
+2013-03-04 17:01:12 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 17:01:13 overwrite stylesheets/style.css 
+2013-03-04 17:09:12 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 17:09:13 overwrite stylesheets/style.css 
+2013-03-04 17:10:34 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 17:10:36 overwrite stylesheets/style.css 
+2013-03-04 17:12:38 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 17:12:39 overwrite stylesheets/style.css 
+2013-03-04 17:14:14 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 17:14:15 overwrite stylesheets/style.css 
+2013-03-04 17:15:30 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 17:15:31 overwrite stylesheets/style.css 
+2013-03-04 17:16:21 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 17:16:23 overwrite stylesheets/style.css 
+2013-03-04 17:18:48 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 17:18:50 overwrite stylesheets/style.css 
+2013-03-04 17:21:20 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 17:21:21 overwrite stylesheets/style.css 
+2013-03-04 17:28:05 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 17:28:06 overwrite stylesheets/style.css 
+2013-03-04 17:30:17 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 17:30:19 overwrite stylesheets/style.css 
+2013-03-04 17:33:55 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 17:33:57 overwrite stylesheets/style.css 
+2013-03-04 17:35:03 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 17:35:04 overwrite stylesheets/style.css 
+2013-03-04 17:37:06 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 17:37:07     error sass/style.scss (Line 69 of sass/_membership.scss: Invalid CSS after "	padding:5px;": expected "}", was "")
+2013-03-04 17:37:07 overwrite stylesheets/style.css 
+2013-03-04 17:37:11 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 17:37:12 overwrite stylesheets/style.css 
+2013-03-04 17:41:31 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 17:41:32 overwrite stylesheets/style.css 
+2013-03-04 17:47:40 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 17:47:41 overwrite stylesheets/style.css 
+2013-03-04 17:48:39 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 17:48:40 overwrite stylesheets/style.css 
+2013-03-04 17:53:59 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 17:54:00 overwrite stylesheets/style.css 
+2013-03-04 17:55:43 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 17:55:49     error sass/style.scss (Line 75 of sass/_membership.scss: Invalid CSS after "	margin-top": expected ";", was ":-5px;")
+2013-03-04 17:55:49 overwrite stylesheets/style.css 
+2013-03-04 17:57:37 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 17:57:38 overwrite stylesheets/style.css 
+2013-03-04 17:59:04 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 17:59:05 overwrite stylesheets/style.css 
+2013-03-04 18:02:25 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 18:02:27 overwrite stylesheets/style.css 
+2013-03-04 18:03:27 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 18:03:28 overwrite stylesheets/style.css 
+2013-03-04 18:04:38 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 18:04:39 overwrite stylesheets/style.css 
+2013-03-04 18:05:26 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 18:05:27 overwrite stylesheets/style.css 
+2013-03-04 18:06:23 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 18:06:24 overwrite stylesheets/style.css 
+2013-03-04 18:08:08 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 18:08:09 overwrite stylesheets/style.css 
+2013-03-04 18:10:37 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 18:10:39 overwrite stylesheets/style.css 
+2013-03-04 18:21:12 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 18:21:13 overwrite stylesheets/style.css 
+2013-03-04 18:21:50 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 18:21:51 overwrite stylesheets/style.css 
+2013-03-04 18:22:47 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 18:22:48 overwrite stylesheets/style.css 
+2013-03-04 18:23:59 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 18:24:01     error sass/style.scss (Line 68 of sass/_membership.scss: Invalid CSS after "	background:url(": expected ")", was "../images/image...")
+2013-03-04 18:24:01 overwrite stylesheets/style.css 
+2013-03-04 18:24:27 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 18:24:27     error sass/style.scss (Line 68 of sass/_membership.scss: Invalid CSS after "	background:url(": expected ")", was "../images/image...")
+2013-03-04 18:24:27 identical stylesheets/style.css 
+2013-03-04 18:24:41 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 18:24:42     error sass/style.scss (Line 68 of sass/_membership.scss: Invalid CSS after "	background:url(": expected ")", was "../images/image...")
+2013-03-04 18:24:42 identical stylesheets/style.css 
+2013-03-04 18:25:02 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 18:25:03 overwrite stylesheets/style.css 
+2013-03-04 18:25:36 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 18:25:38 overwrite stylesheets/style.css 
+2013-03-04 18:29:29 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 18:29:30 overwrite stylesheets/style.css 
+2013-03-04 18:29:56 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 18:29:57 overwrite stylesheets/style.css 
+2013-03-04 18:30:37 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 18:30:38 overwrite stylesheets/style.css 
+2013-03-04 18:34:58 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 18:35:00 overwrite stylesheets/style.css 
+2013-03-04 18:36:17 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 18:36:18 overwrite stylesheets/style.css 
+2013-03-04 18:45:26 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 18:45:27 overwrite stylesheets/style.css 
+2013-03-04 18:49:43 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 18:49:44 overwrite stylesheets/style.css 
+2013-03-04 18:52:52 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 18:52:53 overwrite stylesheets/style.css 
+2013-03-04 18:54:43 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 18:54:45 overwrite stylesheets/style.css 
+2013-03-04 19:21:44 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 19:21:45 overwrite stylesheets/style.css 
+2013-03-04 19:23:46 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 19:23:47 overwrite stylesheets/style.css 
+2013-03-04 19:24:05 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 19:24:07 overwrite stylesheets/style.css 
+2013-03-04 19:32:55 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 19:32:56     error sass/style.scss (Line 3 of sass/_membership.scss: Invalid CSS after "	widthL98%": expected placeholder name, was ";")
+2013-03-04 19:32:56 overwrite stylesheets/style.css 
+2013-03-04 19:33:04 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-03-04 19:33:05 overwrite stylesheets/style.css 
+2013-04-04 13:05:33 identical stylesheets/screen.css 
+2013-04-04 13:05:38 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-04-04 13:05:40 overwrite stylesheets/style.css 

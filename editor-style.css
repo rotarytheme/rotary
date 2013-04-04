@@ -1,0 +1,281 @@
+/* @license
+ * MyFonts Webfont Build ID 2378126, 2012-10-04T15:11:34-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Sommet Heavy by insigne
+ * URL: http://www.myfonts.com/fonts/insigne/sommet/heavy/
+ * Licensed pageviews: 10,000
+ * 
+ * Webfont: Sommet by insigne
+ * URL: http://www.myfonts.com/fonts/insigne/sommet/regular/
+ * Licensed pageviews: unspecified
+ * 
+ * Webfont: Sommet Black by insigne
+ * URL: http://www.myfonts.com/fonts/insigne/sommet/black/
+ * Licensed pageviews: unspecified
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=2378126
+ * Webfonts copyright: Copyright (c) 2010 by Jeremy Dooley. All rights reserved.
+ * 
+ * © 2012 Bitstream Inc
+*/
+
+
+  
+ @font-face {font-family: 'SommetHeavy';src: url('rotary-sass/stylesheets/webfonts/24498E_0_0.eot');src: url('webfonts/24498E_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/24498E_0_0.woff') format('woff'),url('webfonts/24498E_0_0.ttf') format('truetype');}
+ 
+  
+ @font-face {font-family: 'Sommet';src: url('rotary-sass/stylesheets/webfonts/24498E_1_0.eot');src: url('webfonts/24498E_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/24498E_1_0.woff') format('woff'),url('webfonts/24498E_1_0.ttf') format('truetype');}
+ 
+  
+ @font-face {font-family: 'SommetBlack';src: url('rotary-sass/stylesheets/webfonts/24498E_2_0.eot');src: url('webfonts/24498E_2_0.eot?#iefix') format('embedded-opentype'),url('webfonts/24498E_2_0.woff') format('woff'),url('webfonts/24498E_2_0.ttf') format('truetype');}
+html .mceContentBody {
+	max-width: 640px;
+}
+* {
+	color: #59595c;
+	
+}
+
+code, code var {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+body, input, textarea {
+	color: #59595c;
+  	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+  	font-size: 13px;
+}
+hr {
+  background: #EFEFEF;
+  border: none;
+  color: #EFEFEF;
+  clear: both;
+  height: 2px;
+  margin: 10px 0 10px 0;
+}
+/* Text elements */
+p, li {
+	line-height: 1.2em;
+}
+
+ul,
+ol {
+	margin: 0 0 18px 1.5em;
+	padding: 0;
+}
+
+ul {
+	list-style: inside disc;;
+}
+ol {
+	list-style: decimal;
+}
+ol ol {
+	list-style: upper-alpha;
+}
+ol ol ol {
+	list-style: lower-roman;
+}
+ol ol ol ol {
+	list-style: lower-alpha;
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+	margin-bottom: 0;
+}
+dl {
+	margin: 0 0 24px 0;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin-bottom: 18px;
+}
+strong {
+	font-weight: bold;
+}
+cite,
+em,
+i {
+	border: none;
+	font-style: italic;
+}
+
+blockquote {
+	font-style: italic;
+	padding: 0 3em;
+}
+blockquote cite,
+blockquote em,
+blockquote i {
+	font-style: normal;
+}
+
+sup,
+sub {
+	font-size: 10px;
+	height: 0;
+	line-height: 1;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	bottom: 1ex;
+}
+sub {
+	top: .5ex;
+}
+a:link {
+	color: #1a7089;
+  text-decoration: none;
+}
+a:visited {
+  color: #1a7089;
+  text-decoration: none;
+}
+a:active,
+a:hover {
+	text-decoration: underline;
+}
+p,
+ul,
+ol,
+dd,
+pre,
+hr {
+	margin-bottom: 15px;
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+	margin-bottom: 0;
+}
+pre,
+kbd,
+tt,
+var {
+	font-size: 15px;
+	line-height: 21px;
+}
+code {
+	font-size: 13px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  	font-family: SommetHeavy, sans-serif;
+  	line-height: 1.1em;
+}
+h1, h2 {
+  font-size: 20px;
+  height: 50px;
+  padding-top: 5px;
+  text-transform: uppercase;
+
+}
+h2 {
+	border-bottom: 1px solid #59595C;
+	color: #187189;
+	margin-bottom: 15px;
+}
+h3 {
+	font-size: 1.4em;
+}
+h4 {
+	font-size: 1.2em;
+}
+h5 {
+	font-size: 1em;
+}
+h6 {
+	font-size: 0.9em;
+}
+table {
+	border: 1px solid #EFEFEF !important;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin: 0 -1px 24px 0;
+	text-align: left;
+	width: 100%;
+}
+tr th,
+thead th {
+	border: none !important;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 18px;
+	padding: 9px 24px;
+}
+tr td {
+	border: none !important;
+	border-top: 1px solid #EFEFEF !important;
+	padding: 6px 24px;
+}
+img {
+	margin: 0;
+}
+img.size-auto,
+img.size-large,
+img.size-full,
+img.size-medium {
+	max-width: 100%;
+	height: auto;
+}
+.alignleft,
+img.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 24px;
+	margin-top: 4px;
+}
+.alignright,
+img.alignright {
+	display: inline;
+	float: right;
+	margin-left: 24px;
+	margin-top: 4px;
+}
+.aligncenter,
+img.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+img.alignleft,
+img.alignright,
+img.aligncenter {
+	margin-bottom: 12px;
+}
+.wp-caption {
+	background: #dfe0e0;
+  line-height: 18px;
+  margin-bottom: 20px;
+  max-width: 632px !important;
+  /* prevent too-wide images from breaking layout */
+  padding: 4px;
+  text-align: center;
+}
+.wp-caption img {
+	margin: 5px;
+}
+.wp-caption p.wp-caption-text {
+	margin: 0 0 4px;
+}
+.wp-smiley {
+	margin: 0;
+}
