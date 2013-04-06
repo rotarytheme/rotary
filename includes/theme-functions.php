@@ -7,7 +7,7 @@
  * @since Rotary 1.0
  */
 /*remove the admin bar*/
-require_once ($includes_path . 'class-tgm-plugin-activation.php');		// require plugins
+
 add_filter('show_admin_bar', '__return_false');
 add_filter('wp_nav_menu_items','rotary_add_search_box', 10, 2);
 function rotary_add_search_box($items) {
@@ -107,44 +107,7 @@ endif;
 //function rotary_add_tags_to_title($content) {
 //	return $content;
 //}
-//required plugins
-add_action( 'tgmpa_register', array($this, 'rotary_register_required_theme_plugins' ));
-function rotary_register_required_theme_plugins() {
-	/**
-	 * Array of plugin arrays. Required keys are name and slug.
-	 * If the source is NOT from the .org repo, then source is also required.
-	 */
-	$plugins = array(
 
-
-
-		// This is an example of how to include a plugin from the WordPress Plugin Repository
-		array(
-			'name' 		=> 'Theme Updater',
-			'slug' 		=> 'theme-updater',
-			'required' 	=> true,
-			'force_activation' => true
-		),
-
-	);
-
-	// Change this to your theme text domain, used for internationalising strings
-	$theme_text_domain = 'rotary';
-
-	/**
-	 * Array of configuration settings. Amend each line as needed.
-	 * If you want the default strings to be available under your own theme domain,
-	 * leave the strings uncommented.
-	 * Some of the strings are added into a sprintf, so see the comments at the
-	 * end of each line for what each argument will be.
-	 */
-	$config = array(
-		'strings'      		=> array(
-		),
-	);
-
-	tgmpa( $plugins, $config );
-}
 //shortcodes
 add_action( 'init', 'rotary_register_shortcodes');
 function rotary_register_shortcodes(){

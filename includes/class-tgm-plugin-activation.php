@@ -42,6 +42,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
  	 * @author Thomas Griffin <thomas@thomasgriffinmedia.com>
  	 * @author Gary Jones <gamajo@gamajo.com>
  	 */
+
 	class TGM_Plugin_Activation {
 
 		/**
