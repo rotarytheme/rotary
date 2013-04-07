@@ -25,6 +25,8 @@ require_once ($includes_path . 'theme-widgets.php');		// Theme widgets
 
 require_once ($includes_path . 'admin-options.php');		// Theme widgets
 
+require_once ($includes_path . 'rotarythemeupdater.php');		// Theme widgets
+
 /*you can put custom code below this line*/
 
 //always show author
