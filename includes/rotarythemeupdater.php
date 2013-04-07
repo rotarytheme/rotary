@@ -9,7 +9,7 @@ Version: 1.3.7
 */
 
 require_once('assets.php');
-echo 'here';
+
 // register the custom stylesheet header
 add_action( 'extra_theme_headers', 'github_extra_theme_headers' );
 function github_extra_theme_headers( $headers ) {
@@ -67,20 +67,21 @@ function transient_update_themes_filter($data){
 			$data->response[$theme_key]['error'] = 'Incorrect github project url.  Format should be (no trailing slash): <code style="background:#FFFBE4;">https://github.com/&lt;username&gt;/&lt;repo&gt;</code>';
 			continue;
 		}
-		$url = sprintf('https://api.github.com/repos/%s/%s/master', urlencode($matches['username']), urlencode($matches['repo']));
 		
-		$response = get_transient(md5($url)); // Note: WP transients fail if key is long than 45 characters
-		
+		$url = sprintf('https://api.github.com/repos/%s/%s/', urlencode($matches['username']), urlencode($matches['repo']));
+
+		$response = get_transient(($url)); // Note: WP transients fail if key is long than 45 characters
+        
 		if(empty($response)){
 			
-			$raw_response = wp_remote_get($url, array('sslverify' => false, 'timeout' => 10));
+			$raw_response = wp_remote_get($url, array('sslverify' => false));
 			if ( is_wp_error( $raw_response ) ){
 				
 				$data->response[$theme_key]['error'] = "Error response from " . $url;
 				continue;
 			}
 			$response = json_decode($raw_response['body']);
-             
+            
 			if(isset($response->message)){
 				
 				if(is_array($response->message)){
@@ -92,47 +93,41 @@ function transient_update_themes_filter($data){
 					$errors = print_r($response->message, true);
 				}
 				//echo $errors;
-				$data->response[$theme_key]['error'] = sprintf('While <a href="%s">fetching tags</a> api error</a>: <span class="error">%s</span>', $url, $errors);
-				continue;
+				//$data->response[$theme_key]['error'] = sprintf('While <a href="%s">fetching repository</a> api error</a>: <span class="error">%s</span>', $url, $errors);
+			//	continue;
 			}
-			
+
 			if(count($response) == 0){
-				$data->response[$theme_key]['error'] = "Github theme does not have any tags";
+				$data->response[$theme_key]['error'] = "Github theme does not have any updates";
 				continue;
 			}
 			
 			//set cache, just 60 seconds
 			set_transient(md5($url), $response, 30);
 		}
+		$url = sprintf('https://raw.github.com/%s/%s/master', urlencode($matches['username']), urlencode($matches['repo']));
+  
+		$raw_response = wp_remote_get($url, array('sslverify' => false));
+		if ( is_wp_error( $raw_response ) )
+				return $version;
+		preg_match( '#^\s*`*~Current Version\:\s*([^~]*)~#im', $raw_response['body'], $__version );
+			if ( isset( $__version[1] ) ) {
+				$version_readme = $__version[1];
+				if ( -1 == version_compare( $version, $version_readme ) )
+					$version = $version_readme;
+			}
 		
-		// Sort and get latest tag
-		$tags = array_map(create_function('$t', 'return $t->name;'), $response);
-		
-		usort($tags, "version_compare");
-		
-		
-		// check for rollback
-		//if(isset($_GET['rollback'])){
-		//	$data->response[$theme_key]['package'] = 
-		//		$theme['Github Theme URI'] . '/zipball/' . urlencode($_GET['rollback']);
-		//	continue;
-		//}
-		
-		
-		// check and generate download link
-		$newest_tag = array_pop($tags);
-		
-		if(version_compare($theme['Version'],  $newest_tag, '>=')){
+		if(version_compare($theme['Version'],  $version, '>=')){
 			// up-to-date!
 			$data->up_to_date[$theme_key]['rollback'] = $tags;
 			continue;
 		}
 		
-		
+
 		// new update available, add to $data
 		$download_link = $theme['Github Theme URI'] . '/zipball/' . $newest_tag;
 		$update = array();
-		$update['new_version'] = $newest_tag;
+		$update['new_version'] = $version;
 		$update['url']         = $theme['Github Theme URI'];
 		$update['package']     = $download_link;
 		$data->response[$theme_key] = $update;
@@ -171,3 +166,27 @@ function no_ssl_http_request_args($args, $url) {
 	$args['sslverify'] = false;
 	return $args;
 }
+/**
+* Fix WordPress renaming folder name
+* @see - https://github.com/jkudish/WordPress-GitHub-Plugin-Updater/blob/master/updater.php
+*/
+add_filter('upgrader_source_selection', 'aq_upgrader_source_selection_filter', 10, 3);
+function aq_upgrader_source_selection_filter($source, $remote_source=NULL, $upgrader=NULL){
+global $aq_theme_folder;
+
+if( isset($_GET['action']) && stristr($_GET['action'], 'theme') && isset($upgrader->skin->theme) ){
+$upgrader->skin->feedback("Correcting folder name...");
+if( isset($source, $remote_source) && stristr($source, $aq_theme_folder) ){
+$corrected_source = $remote_source . '/'.$aq_theme_folder.'/';
+if(@rename($source, $corrected_source)){
+$upgrader->skin->feedback("Theme folder name corrected to: $aq_theme_folder");
+return $corrected_source;
+} else {
+$upgrader->skin->feedback("Unable to rename downloaded theme.");
+return new WP_Error();
+}
+}
+}
+return $source;
+}
+
