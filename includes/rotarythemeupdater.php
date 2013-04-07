@@ -125,7 +125,7 @@ function transient_update_themes_filter($data){
 		
 
 		// new update available, add to $data
-		$download_link = $theme['Github Theme URI'] . '/zipball/' . $newest_tag;
+		$download_link = $theme['Github Theme URI'] . '/zipball/master';
 		$update = array();
 		$update['new_version'] = $version;
 		$update['url']         = $theme['Github Theme URI'];
