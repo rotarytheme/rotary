@@ -144,7 +144,6 @@ function upgrader_source_selection_filter($source, $remote_source=NULL, $upgrade
 		Github delivers zip files as <Username>-<TagName>-<Hash>.zip
 		must rename this zip file to the accurate theme folder
 	*/
-	
 	if(isset($source, $remote_source, $upgrader->skin->theme)){
 		$corrected_source = $remote_source . '/' . $upgrader->skin->theme . '/';
 		if(@rename($source, $corrected_source)){
