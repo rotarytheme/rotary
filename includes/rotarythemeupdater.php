@@ -167,27 +167,3 @@ function no_ssl_http_request_args($args, $url) {
 	$args['sslverify'] = false;
 	return $args;
 }
-/**
-* Fix WordPress renaming folder name
-* @see - https://github.com/jkudish/WordPress-GitHub-Plugin-Updater/blob/master/updater.php
-*/
-add_filter('upgrader_source_selection', 'aq_upgrader_source_selection_filter', 10, 3);
-function aq_upgrader_source_selection_filter($source, $remote_source=NULL, $upgrader=NULL){
-global $aq_theme_folder;
-
-if( isset($_GET['action']) && stristr($_GET['action'], 'theme') && isset($upgrader->skin->theme) ){
-$upgrader->skin->feedback("Correcting folder name...");
-if( isset($source, $remote_source) && stristr($source, $aq_theme_folder) ){
-$corrected_source = $remote_source . '/'.$aq_theme_folder.'/';
-if(@rename($source, $corrected_source)){
-$upgrader->skin->feedback("Theme folder name corrected to: $aq_theme_folder");
-return $corrected_source;
-} else {
-$upgrader->skin->feedback("Unable to rename downloaded theme.");
-return new WP_Error();
-}
-}
-}
-return $source;
-}
-
