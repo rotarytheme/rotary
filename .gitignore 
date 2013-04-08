@@ -11,4 +11,7 @@ sitemap.xml
 wp-content/cache/
 wp-content/backups/
 sitemap.xml.gz
-dwsync.xml
+*dwsync.xml
+/_notes
+*.DS_Store
+.sass-cache
