@@ -118,11 +118,11 @@ function transient_update_themes_filter($data){
 					$version = $version_readme;
 			}
 		
-	//	if(version_compare($theme['Version'],  $version, '>=')){
+		if(version_compare($theme['Version'],  $version, '>=')){
 			// up-to-date!
 	//		$data->up_to_date[$theme_key]['rollback'] = $tags;
-	//		continue;
-	//	}
+			continue;
+		}
 		
 
 		// new update available, add to $data
