@@ -53,7 +53,7 @@ function transient_update_themes_filter($data){
 		}
 		
 		$theme_key = $theme['Stylesheet'];
-		
+		$version = $theme['Version'];
 		// Add Github Theme Updater to return $data and hook into admin
 		remove_action( "after_theme_row_" . $theme['Stylesheet'], 'wp_theme_update_row');
 		add_action( "after_theme_row_" . $theme['Stylesheet'], 'github_theme_update_row', 11, 2 );
@@ -110,6 +110,7 @@ function transient_update_themes_filter($data){
 		$raw_response = wp_remote_get($url, array('sslverify' => false));
 		if ( is_wp_error( $raw_response ) )
 				return $version;
+		
 		preg_match( '#^\s*`*~Current Version\:\s*([^~]*)~#im', $raw_response['body'], $__version );
 			if ( isset( $__version[1] ) ) {
 				$version_readme = $__version[1];
@@ -117,11 +118,11 @@ function transient_update_themes_filter($data){
 					$version = $version_readme;
 			}
 		
-		if(version_compare($theme['Version'],  $version, '>=')){
+	//	if(version_compare($theme['Version'],  $version, '>=')){
 			// up-to-date!
-			$data->up_to_date[$theme_key]['rollback'] = $tags;
-			continue;
-		}
+	//		$data->up_to_date[$theme_key]['rollback'] = $tags;
+	//		continue;
+	//	}
 		
 
 		// new update available, add to $data
