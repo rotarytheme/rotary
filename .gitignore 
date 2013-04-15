@@ -14,4 +14,4 @@ sitemap.xml.gz
 *dwsync.xml
 /_notes
 *.DS_Store
-.sass-cache
+*.sass-cache
