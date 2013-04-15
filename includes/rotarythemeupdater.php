@@ -7,7 +7,7 @@ Author: Douglas Beck
 Author: UCF Web Communications
 Version: 1.3.7
 */
-if(!empty($_GET['action']) && ($_GET['action'] == 'do-core-reinstall' || $_GET['action'] == 'do-core-upgrade') || $_GET['page'] == 'install-required-plugins'); else {
+if(!empty($_GET['action']) && ($_GET['action'] == 'do-core-reinstall' || $_GET['action'] == 'do-core-upgrade') || $_GET['page'] == 'install-required-plugins' | $_GET['page'] == 'event_espresso#page_settings') ; else {
 if(!function_exists('github_theme_update_row'))require_once('assets.php');
 add_filter('site_transient_update_themes', 'transient_update_themes_filter');
 }
