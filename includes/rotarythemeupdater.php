@@ -7,8 +7,11 @@ Author: Douglas Beck
 Author: UCF Web Communications
 Version: 1.3.7
 */
+if(!empty($_GET['action']) && ($_GET['action'] == 'do-core-reinstall' || $_GET['action'] == 'do-core-upgrade') || $_GET['page'] == 'install-required-plugins'); else {
+if(!function_exists('github_theme_update_row'))require_once('assets.php');
+add_filter('site_transient_update_themes', 'transient_update_themes_filter');
+}
 
-require_once('assets.php');
 
 // register the custom stylesheet header
 add_action( 'extra_theme_headers', 'github_extra_theme_headers' );
@@ -17,7 +20,6 @@ function github_extra_theme_headers( $headers ) {
     return $headers;
 }
 
-add_filter('site_transient_update_themes', 'transient_update_themes_filter');
 function transient_update_themes_filter($data){
 	global $wp_version;
 

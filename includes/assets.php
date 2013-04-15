@@ -48,13 +48,7 @@ function github_theme_update_row( $theme_key, $theme ) {
 	echo '</div></td></tr>';
 }
 
-// http://codex.wordpress.org/Function_Reference/wp_enqueue_style
-add_action( 'admin_init', 'theme_upgrader_stylesheet' );
-function theme_upgrader_stylesheet() {
-	$style_url  = WP_PLUGIN_URL . '/' . basename(dirname(__FILE__)) . '/admin-style.css';
-	wp_register_style('theme_updater_style', $style_url);
-	wp_enqueue_style( 'theme_updater_style');
-}
+
 
 
 
