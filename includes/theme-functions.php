@@ -399,7 +399,13 @@ if ( $query->have_posts() ) : ?>
 			echo '<div class="slideinfo">';
 			the_title('<h2>', '</h2>');
 			echo '<p>'.get_the_excerpt().'</p>';
-			echo '<p><a href="'.get_permalink().'">Keep Reading...</a></p>';
+			$slidelink = get_post_meta(get_the_ID(), 'slidelink', true); 
+			if ($slidelink) {
+				echo '<p><a href="'.$slidelink.'">Keep Reading...</a></p>';
+			}
+			else {
+				echo '<p><a href="'.get_permalink().'">Keep Reading...</a></p>';
+			}
 	
 			edit_post_link( __( 'Edit', 'Rotary' ), '<p>', '</p>' ); 
 			echo '</div>';
@@ -481,3 +487,46 @@ function rotary_get_blog_title() {
 	}
 	return $blogPage;
 }
+//custom meta box for slides
+add_action( 'add_meta_boxes', 'rotary_add_slide_link_metabox');
+function rotary_add_slide_link_metabox() {
+	add_meta_box( 'slidelink', __( 'Slide Link' ),  'rotary_show_slide_link_metabox', 'rotary-slides', 'normal', 'high' );
+}
+add_action( 'save_post', 'rotary_save_slide_link_metabox', 10, 2);
+function rotary_save_slide_link_metabox($post_id, $post) {
+	 if ( !isset( $_POST['rotary_slide_link_nonce'] ) || !wp_verify_nonce( $_POST['rotary_slide_link_nonce'], basename( __FILE__ ) ) )
+         return $post_id;
+		 
+		/* Get the post type object. */
+	    $post_type = get_post_type_object( $post->post_type );
+	 
+	    /* Check if the current user has permission to edit the post. */
+	    if ( !current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+	        return $post_id;	
+		}
+		if (!isset($_POST['slidelink'])) {	 
+			return $post_id;	
+		} 
+	    /* Get the meta key. */
+    	$meta_key = 'slidelink';	 	    /* Get the meta value of the custom field key. */
+	    $meta_value = get_post_meta( $post_id, $meta_key, true );
+		$new_meta_value = strip_tags($_POST['slidelink']);
+		
+		/* If a new meta value was added and there was no previous value, add it. */
+	    if ( $new_meta_value && '' == $meta_value )
+	        add_post_meta( $post_id, $meta_key, $new_meta_value, true );
+	 
+	    /* If the new meta value does not match the old value, update it. */
+	    elseif ( $new_meta_value && $new_meta_value != $meta_value )
+	        update_post_meta( $post_id, $meta_key, $new_meta_value );	 
+	    /* If there is no new meta value but an old value exists, delete it. */
+	    elseif ( '' == $new_meta_value && $meta_value )
+	        delete_post_meta( $post_id, $meta_key, $meta_value );
+		 
+}
+function rotary_show_slide_link_metabox($object) {
+	wp_nonce_field( basename( __FILE__ ), 'rotary_slide_link_nonce' );?>
+		 <h3>Enter full URL to create a link for your slide</h3>
+		 <p><label for="slidelink">Slide Link:<br />
+	        <input id="slidelink" type="url" size="20" name="slidelink" value="<?php echo esc_attr( get_post_meta( $object->ID, 'slidelink', true ) ); ?>" /></label></p>
+<?php }
