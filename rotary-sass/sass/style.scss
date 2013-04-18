@@ -731,6 +731,12 @@ hr {
 		margin-bottom:30px;
 		margin-left:10px;
 	}
+	.SectionHeader {
+		border-bottom:1px solid $body-text-color;
+		color:#187189;
+		height:30px;
+		margin-bottom:15px;
+	}
 	.sectionheader {
 		background: #FFF url(../images/reveille-section-header.png) no-repeat;
 		border-bottom: 1px solid #efefef;
@@ -832,6 +838,12 @@ hr {
 	.excerptcontainer {
 		margin-left:142px;
 			
+	}
+	.SectionContainer {
+		border-bottom:1px solid $body-text-color;
+		color:#187189;
+		height:30px;
+		margin-bottom:15px;
 	}
 	.sectioncontainer {
 		@include box-shadow(#efefef 3px 3px 5px 0);
@@ -1058,6 +1070,7 @@ label[for="comment"] {
 		display:none;
 	}
 }
+
 /*custom for about this template*/
 .page-id-253 #content ul {
 	margin-left:450px;

@@ -187,7 +187,7 @@ h1, h2 {
   text-transform: uppercase;
 
 }
-h2 {
+h2, .SectionHeader {
 	border-bottom: 1px solid #59595C;
 	color: #187189;
 	margin-bottom: 15px;

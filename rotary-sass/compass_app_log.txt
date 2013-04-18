@@ -2097,3 +2097,7 @@ when it has other properties nested beneath it.
 2013-04-04 13:05:33 identical stylesheets/screen.css 
 2013-04-04 13:05:38 unchanged ../Users/koolkat/Documents/websites/rotary wordpress theme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
 2013-04-04 13:05:40 overwrite stylesheets/style.css 
+2013-04-17 19:55:35 unchanged ../Users/koolkat/Documents/websites/rotarytheme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-04-17 19:55:37 overwrite stylesheets/style.css 
+2013-04-18 12:59:20 unchanged ../Users/koolkat/Documents/websites/rotarytheme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-04-18 12:59:21 overwrite stylesheets/style.css 
