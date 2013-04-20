@@ -11,6 +11,12 @@
 
  
 <?php /* If there are no posts to display, such as an empty archive page */ ?>
+<?php if (  $wp_query->max_num_pages > 1 ) : ?>
+    		<nav class="prevnext">
+        		<div class="nav-previous"><?php next_posts_link( __( '&lt; Older posts', 'Rotary' ) ); ?></div>
+        		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts &gt;', 'Rotary' ) ); ?></div>
+    		</nav>
+		<?php endif; ?>
 <?php if ( ! have_posts() ) : ?>
         <div class="inner">
         	<h2><?php _e( 'Not Found', 'Rotary' ); ?></h2>
@@ -22,12 +28,7 @@ $clearLeft='';
 ?>
 <?php while ( have_posts() ) : the_post(); ?>
  		<?php /* Display navigation to next/previous pages when applicable */ ?>
-		<?php if (  $wp_query->max_num_pages > 1 ) : ?>
-    		<nav class="prevnext">
-        		<div class="nav-previous"><?php next_posts_link( __( '&lt; Older posts', 'Rotary' ) ); ?></div>
-        		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts &gt;', 'Rotary' ) ); ?></div>
-    		</nav>
-		<?php endif; ?>
+		
         <?php $postCount++; 
 		  if ($postCount % 2 == 0) {
 			  $clearLeft='';
