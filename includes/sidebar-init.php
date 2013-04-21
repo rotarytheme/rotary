@@ -55,14 +55,12 @@ function rotary_widgets_init() {
 		'after_title' => '</h3>',
 	) );
 
-	
-	rotary_install_default_widgets();
-
 }
 /** Register sidebars by running rotary_widgets_init() on the widgets_init hook. */
 add_action( 'widgets_init', 'rotary_widgets_init' );
 function rotary_install_default_widgets() {
 	//add default widgets to the home page side bar
+	echo 'installing widgets';
 	$sidebar = 'home-widget-area';
 	$widget_name = 'text';
 	$sidebars_widgets = wp_get_sidebars_widgets();
@@ -157,3 +155,4 @@ function rotary_install_default_widgets() {
 	}
 	
 }
+add_action('after_switch_theme', 'rotary_install_default_widgets');
