@@ -67,9 +67,16 @@
 #rotarymemberdialog h2, #rotarymemberdialog h3, #rotarymemberdialog h4, .rotarydialog .ui-dialog-titlebar-close  {
 	color:#fff;
 }
+#rotarymemberdialog h4 {
+	font-family:$body-font-family;
+}
 #rotarymemberdialog h2, #rotarymemberdialog h3 {
 	font-family:$button-font;
 	text-transform:uppercase;
+}
+#rotarymemberdialog .personalinfoarea h4 {
+	line-height:18px;
+	margin-top:5px;
 }
 #rotarymemberdialog h2 {
 	font-size:30px !important;
@@ -98,7 +105,9 @@
 #rotarymemberdialog .profilepicture img {
 	@include box-shadow(#111 3px 3px 3px 0);
 	background:#fff;
+	height:auto;
 	padding:5px;
+	width:140px;
 }
 #rotarymemberdialog .profilepicturebottom {
 	background: url(../images/profile-image-bg.png) 5px 100% no-repeat;

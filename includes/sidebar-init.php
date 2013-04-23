@@ -60,7 +60,6 @@ function rotary_widgets_init() {
 add_action( 'widgets_init', 'rotary_widgets_init' );
 function rotary_install_default_widgets() {
 	//add default widgets to the home page side bar
-	echo 'installing widgets';
 	$sidebar = 'home-widget-area';
 	$widget_name = 'text';
 	$sidebars_widgets = wp_get_sidebars_widgets();

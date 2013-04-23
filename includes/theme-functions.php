@@ -412,7 +412,13 @@ if ( $query->have_posts() ) : ?>
 			if ($showlink) {
 				echo '<a href="'.get_permalink().'">';
 			}
-			the_post_thumbnail('slideshow-size');
+			if ($slidelink) { 
+				echo '<a href="'.$slidelink.'">';
+			}
+			else {
+				echo '<a href="'.get_permalink().'">';
+			}
+			the_post_thumbnail('slideshow-size').'</a>';
 			if ($showlink) {
 				echo '</a>';
 			}
