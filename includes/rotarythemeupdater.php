@@ -142,7 +142,6 @@ function transient_update_themes_filter($data){
 
 
 add_filter('upgrader_source_selection', 'upgrader_source_selection_filter', 10, 3);
-add_filter('upgrader_source_selection', 'upgrader_source_selection_filter', 10, 3);
 function upgrader_source_selection_filter($source, $remote_source=NULL, $upgrader=NULL){
 	/*
 		Github delivers zip files as <Username>-<TagName>-<Hash>.zip
