@@ -1,1 +1,1 @@
-~Current Version:1.94~
+~Current Version:1.95~
