@@ -12,7 +12,9 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!--[if IE]>
+<meta http-equiv="x-ua-compatible" content="IE=edge" />
+<![endif]-->
 <title><?php
  
     global $page, $paged;
@@ -99,7 +101,7 @@
             <?php if ($clubname) { ?>
 				<span class="clubname"><?php echo $clubname;?></span>
             <?php }  ?>     
-			    <span class="clubtype">Rotary Club</span></a>
+			    <span class="clubtype">Rotary Club</span>
              <?php if ( !is_front_page() ) { ?>
 				</a>
               <?php }  ?>  

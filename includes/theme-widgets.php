@@ -3,7 +3,7 @@
  * Rotary widgets
  *
  * @package WordPress
- * @subpackage Rotary
+ * @subpackage Rotaryforeach
  * @since Rotary 1.0
  */
   
@@ -30,35 +30,39 @@ class Rotary_Widget_Links extends WP_Widget {
 		$limit = isset( $instance['limit'] ) ? $instance['limit'] : -1;
 
 		$before_widget = preg_replace('/id="[^"]*"/','id="%id"', $before_widget);
-		$bookmarks = wp_list_bookmarks(apply_filters('widget_links_args', array(
-			'title_before' => $before_title, 'title_after' => $after_title,
-			'category_before' => $before_widget, 'category_after' => $after_widget,
-			'show_images' => $show_images, 'show_description' => $show_description,
-			'show_name' => false, 'show_rating' => $show_rating,
-			'category' => $category, 'class' => 'linkcat widget',
-			'orderby' => $orderby, 'order' => $order, 'echo' => false,
-			'limit' => $limit,
-		)));
-		$bookmarks = str_replace('Rotary', 'Links', $bookmarks );
-		echo $bookmarks;
+		
+		if (wp_list_bookmarks()) {
+			$bookmarks = wp_list_bookmarks(apply_filters('widget_links_args', array(
+				'title_before' => $before_title, 'title_after' => $after_title,
+				'category_before' => $before_widget, 'category_after' => $after_widget,
+				'show_images' => $show_images, 'show_description' => $show_description,
+				'show_name' => false, 'show_rating' => $show_rating,
+				'category' => $category, 'class' => 'linkcat widget',
+				'orderby' => $orderby, 'order' => $order, 'echo' => false,
+				'limit' => $limit,
+			)));
+			$bookmarks = str_replace('Rotary', 'Links', $bookmarks );
+			echo $bookmarks;
+		}
 	}
-
 	function update( $new_instance, $old_instance ) {
 		$new_instance = (array) $new_instance;
 		$instance = array( 'images' => 0, 'name' => 0, 'description' => 0, 'rating' => 0 );
-		foreach ( $instance as $field => $val ) {
-			if ( isset($new_instance[$field]) )
-				$instance[$field] = 1;
-		}
+		if ($instance) {
+			foreach ( $instance as $field => $val ) {
+				if ( isset($new_instance[$field]) )
+					$instance[$field] = 1;
+			}
 
-		$instance['orderby'] = 'name';
-		if ( in_array( $new_instance['orderby'], array( 'name', 'rating', 'id', 'rand' ) ) )
-			$instance['orderby'] = $new_instance['orderby'];
+			$instance['orderby'] = 'name';
+			if ( in_array( $new_instance['orderby'], array( 'name', 'rating', 'id', 'rand' ) ) )
+				$instance['orderby'] = $new_instance['orderby'];
 
 		//$instance['category'] = intval( $new_instance['category'] );
-		$instance['limit'] = ! empty( $new_instance['limit'] ) ? intval( $new_instance['limit'] ) : -1;
+			$instance['limit'] = ! empty( $new_instance['limit'] ) ? intval( $new_instance['limit'] ) : -1;
 
-		return $instance;
+			return $instance;
+		}
 	}
 
 	function form( $instance ) {

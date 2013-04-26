@@ -1,6 +1,6 @@
 <?php
 
-if (!is_admin()) add_action( 'wp_print_scripts', 'rotary_add_javascript' );
+if (!is_admin()) add_action( 'wp_enqueue_scripts', 'rotary_add_javascript' );
 
 function rotary_add_javascript( ) {
 

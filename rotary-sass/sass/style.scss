@@ -269,6 +269,7 @@ hr {
     	text-transform: uppercase;
 	}
 	.SectionHeader, h2.SectionHeader {
+		clear:both;
 		color:#187189;
 		font-family:$header-font;
 		font-size:20px;
@@ -586,7 +587,7 @@ hr {
 	clear:left;
 	height:55px;
 	/*Search*/
-	#searchform {
+	.searchform {
 		margin-top:15px;
 		position:relative;
 		input[type="text"] {
@@ -602,14 +603,14 @@ hr {
 			display:none;
 		}
 	}
-	#searchsubmit {
+	.searchsubmit {
 		border:none;
 		height:20px;
 		left:120px;
 		position:absolute;
 		top:2px;
 	}
-	#searchsubmit2 {
+	.searchsubmit2 {
 		display:none;
 	}
 	ul {
@@ -757,7 +758,7 @@ hr {
 			padding-bottom:5px;
 		}
 	}
-	#inthisissue, #blog {
+	#inthisissue, div[id^="blog"] {  
 			background: #FFF url(../images/single-post-section-header-issue.png) no-repeat;
 	
 	}

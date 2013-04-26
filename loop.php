@@ -42,7 +42,7 @@ $clearLeft='';
      
         <article id="post-<?php the_ID(); ?>" <?php post_class($clearLeft); ?>>
          	<div class="sectioncontainer">
-            	<div class="sectionheader" id="blog">
+            	<div class="sectionheader" id="blog-<?php the_ID(); ?>" >
                 	<div class="sectioncontent">
 			<header>
                 <h2><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'Rotary' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>

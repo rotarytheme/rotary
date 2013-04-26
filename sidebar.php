@@ -35,5 +35,5 @@
 
 
 <?php endif; ?>
-	
+		</ul>
 	</aside>

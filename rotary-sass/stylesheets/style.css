@@ -6,7 +6,6 @@ Author: Merrill M. Mayer and Carolina Torres
 Author URI: http://www.koolkatwebdesigns.com/
 Tags: rotary, html5
 */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/compass\.app\/Contents\/Resources\/lib\/ruby\/compass_0\.12\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000317}}
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -28,50 +27,41 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/compass\.app\/Contents\/Resources\/lib\/ruby\/compass_0\.12\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000322}}
 html {
   line-height: 1;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/compass\.app\/Contents\/Resources\/lib\/ruby\/compass_0\.12\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000324}}
 ol, ul {
   list-style: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/compass\.app\/Contents\/Resources\/lib\/ruby\/compass_0\.12\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000326}}
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/compass\.app\/Contents\/Resources\/lib\/ruby\/compass_0\.12\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000328}}
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/compass\.app\/Contents\/Resources\/lib\/ruby\/compass_0\.12\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000330}}
 q, blockquote {
   quotes: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/compass\.app\/Contents\/Resources\/lib\/ruby\/compass_0\.12\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\00003103}}
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/compass\.app\/Contents\/Resources\/lib\/ruby\/compass_0\.12\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\0000332}}
 a img {
   border: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/compass\.app\/Contents\/Resources\/lib\/ruby\/compass_0\.12\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/reset\/_utilities\.scss}line{font-family:\00003116}}
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Applications\/backgrounds\/\*\.png}line{font-family:\00003106}}
 .backgrounds-sprite, .headeredit, #mainmenu ul ul li.dropdown, #mainmenu ul ul .dropdown:hover > a, .archive #content article .meta .commentspopup, .blog #content article .meta .commentspopup, #footer .twitter, #footer .facebook, #footer .linkedin, #controls #facebookshare, #controls #twittershare, .widgetedit {
   background: url('../images/backgrounds-s8f9fdc06fe.png') no-repeat;
 }
@@ -131,19 +121,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /*@import "icons";*/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\0000345}}
 .meta {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\0000348}}
 .post-edit-link {
   clear: both;
   display: block;
   padding-top: 15px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\0000353}}
 .screen-reader-text {
   /* Reusable, toolbox kind of class */
   position: absolute;
@@ -151,30 +138,25 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   left: -9999px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\0000358}}
 .inner {
   overflow: hidden;
   *zoom: 1;
   margin: 0 55px 0 35px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\0000362}}
 .clearfix {
   overflow: hidden;
   *zoom: 1;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\0000365}}
 .hide {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\0000368}}
 .clearleft {
   clear: left;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\0000371}}
 .button {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZkZjhlZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Y5ZWZkOSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -202,7 +184,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   line-height: 20px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\0000375}}
 .no-cssgradients .button {
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FDF8EF', endColorstr='#F9EFD9');
   /* IE6 & IE7 */
@@ -210,23 +191,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   /* IE8 */
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\0000379}}
 .aligncenter {
   display: block;
   margin: 0 auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\0000380}}
 .alignleft {
   float: left;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\0000381}}
 .alignright {
   float: right;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\0000382}}
 .pagetitle {
   background: #033551 url(../images/header-arrows-before.jpg) no-repeat;
   color: #FFF;
@@ -236,7 +213,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   margin-top: 2px;
   position: relative;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\0000390}}
 .pagetitle span {
   background: url("../images/header-arrows-after.jpg") no-repeat scroll 100% 0 transparent;
   padding-bottom: 3px;
@@ -247,20 +223,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   top: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003100}}
 .pagesubtitle {
   font-family: "BebasNeueRegular", Arial, sans-serif;
   font-size: 24px;
   margin-left: 30px;
   margin-top: 30px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003105}}
 .pagesubtitle span {
   color: #187189;
   font-family: SommetBlack;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003110}}
 .headeredit {
   background-position: 0 -242px;
   overflow: hidden;
@@ -275,71 +248,58 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   z-index: 500;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003123}}
 strong {
   font-weight: bold;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003124}}
 cite, em, i {
   font-style: italic;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003125}}
 html {
   -webkit-font-smoothing: antialiased;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003129}}
 html, body {
   height: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003130}}
 body.white {
   background: #FFF;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003133}}
 body.gray {
   background: #EFEFEF;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003136}}
 h1, h2, h3, h4, h5, h6 {
   font-family: SommetHeavy, sans-serif;
   line-height: 1.1em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003140}}
 a {
   color: #1a7089;
   font-weight: bold;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003144}}
 a:active, a:hover {
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\0000312}}
 a:active:active, a:active:hover, a:hover:active, a:hover:hover {
   color: #f5aa00;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003148}}
 blockquote {
   font-style: italic;
   padding: 0 3em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003154}}
 blockquote cite,
 blockquote em,
 blockquote i {
   font-style: normal;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003158}}
 sup,
 sub {
   font-size: 10px;
@@ -349,37 +309,31 @@ sub {
   vertical-align: baseline;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003165}}
 sup {
   bottom: 1ex;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003168}}
 sub {
   top: .5ex;
 }
 
 /*prev/next navigation*/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003172}}
 .prevnext {
   font-family: Arial, Helvetica, sans-serif;
   height: 25px;
   margin-bottom: 15px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003177}}
 .nav-previous {
   float: left;
   margin-left: 15px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003181}}
 .nav-next {
   float: right;
   margin-right: 15px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003185}}
 input[type="submit"] {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Q0ZDBkYiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2IxYWJhMyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -410,7 +364,6 @@ input[type="submit"] {
   text-transform: uppercase;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003192}}
 .no-cssgradients input[type="submit"] {
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#d4d0db', endColorstr='#b1aba3');
   /* IE6 & IE7 */
@@ -418,13 +371,11 @@ input[type="submit"] {
   /* IE8 */
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003196}}
 input {
   border-radius: 0;
   -webkit-appearance: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003200}}
 hr {
   background: #EFEFEF;
   border: none;
@@ -434,7 +385,6 @@ hr {
   margin: 10px 0 10px 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003208}}
 #wrapper {
   overflow: hidden;
   *zoom: 1;
@@ -448,93 +398,76 @@ hr {
   width: 1024px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003219}}
 .authordesc {
   margin-left: 30px;
   margin-bottom: 15px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003223}}
 #content {
   float: left;
   margin: 20px 20px 40px 0;
   min-height: 400px;
   width: 786px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003228}}
 #content p, #content li, #content dt, #content dd {
   line-height: 1.4em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003231}}
 #content p, #content dl, #content ul ol {
   margin-bottom: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003234}}
 #content ul {
   padding-left: 30px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003237}}
 #content ul li {
   list-style: inside disc;
   margin-left: 1em;
   text-indent: -1em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003242}}
 #content ul li li {
   list-style: inside circle;
   margin-left: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003247}}
 #content ol {
   padding-left: 30px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003250}}
 #content ol li {
   list-style: inside decimal;
   margin-left: 1em;
   text-indent: -1.5em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003255}}
 #content ol li li {
   list-style: inside upper-alpha;
   margin-left: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003259}}
 #content ol li li li {
   list-style: inside lower-roman;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003262}}
 #content ol li li li li {
   list-style: inside lower-alpha;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003265}}
 #content h1, #content h2 {
   font-size: 20px;
   height: 50px;
   padding-top: 5px;
   text-transform: uppercase;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003271}}
 #content .SectionHeader, #content h2.SectionHeader {
+  clear: both;
   color: #187189;
   font-family: SommetHeavy, sans-serif;
   font-size: 20px;
   height: 30px;
   margin-bottom: 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003278}}
 #content h3 {
   font-size: 18px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003281}}
 #content h4 {
   font-size: 16px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003285}}
 #content h5 {
   font-size: 14px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003293}}
 #content img.size-auto,
 #content img.size-full,
 #content img.size-large,
@@ -545,34 +478,29 @@ hr {
   height: auto;
   /* Override height to match resized width for correct aspect ratio. */
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003298}}
 #content img.alignleft {
   display: inline;
   float: left;
   margin-right: 12px;
   margin-top: 4px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003305}}
 #content img.alignright {
   display: inline;
   float: right;
   margin-left: 12px;
   margin-top: 4px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003312}}
 #content img.aligncenter {
   clear: both;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003320}}
 #content img.alignleft,
 #content img.alignright,
 #content img.aligncenter {
   margin-bottom: 6px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003323}}
 #content .wp-caption {
   background: #dfe0e0;
   line-height: 18px;
@@ -582,45 +510,36 @@ hr {
   padding: 4px;
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003330}}
 #content .wp-caption img {
   margin: 5px 5px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003333}}
 #content .wp-caption p.wp-caption-text {
   color: #808080;
   font-size: 11px;
   margin: 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003338}}
 #content .wp-caption.alignleft {
   margin-right: 12px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003341}}
 #content .wp-caption.alignright {
   margin-left: 12px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003347}}
 .home #content {
   margin-top: 35px;
   width: 764px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003351}}
 #content.fullwidth {
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003353}}
 #content.fullwidth #featured {
   margin: 0 auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003356}}
 #content.fullwidth #featuredbottom {
   margin: 0 auto 30px auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003360}}
 .homecontent {
   /*border:1px solid #EFEFEF;
   @include background-image(linear-gradient(#E2E6E7, #FFFFFF));*/
@@ -630,7 +549,6 @@ hr {
   padding-top: 15px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003368}}
 #featured {
   border-top: 1px solid #e6dcc5;
   border-left: 1px solid #e6dcc5;
@@ -649,25 +567,20 @@ hr {
   padding-top: 15px;
   width: 782px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003378}}
 #featured section {
   margin: 0 25px 0 35px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003381}}
 #featured .more-link {
   color: #59595c;
   display: block;
   line-height: 1.2em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003385}}
 #featured .more-link:active, #featured .more-link:hover {
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\0000312}}
 #featured .more-link:active:active, #featured .more-link:active:hover, #featured .more-link:hover:active, #featured .more-link:hover:hover {
   color: #f5aa00;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003389}}
 #featured h4 {
   background: url(../images/date-header-bg.png) no-repeat 0 8px;
   font-family: SommetBlack;
@@ -675,33 +588,27 @@ hr {
   margin: 0 25px 25px 35px;
   text-indent: 25px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003396}}
 #featured .featuredheader {
   border-bottom: 1px solid #59595c;
   margin-bottom: 15px;
   padding-bottom: 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003400}}
 #featured .featuredheader h3 {
   font-size: 24px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003404}}
 #featured img {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003407}}
 #featured .wp-post-image {
   display: block;
   float: left;
   margin-right: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003412}}
 #featured .hasthumb {
   float: left;
   width: 400px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003417}}
 .no-cssgradients #featured {
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#fdf8ef', endColorstr='#f9efd9');
   /* IE6 & IE7 */
@@ -709,7 +616,6 @@ hr {
   /* IE8 */
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003422}}
 #featuredbottom {
   background: url(../images/featured-bottom-bg.png) no-repeat;
   height: 40px;
@@ -718,11 +624,9 @@ hr {
   width: 784px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003430}}
 .home aside > ul {
   border: 1px solid gray;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003432}}
 .home aside > ul > li {
   left: -5px;
   min-height: 80px;
@@ -730,7 +634,6 @@ hr {
   top: -1px;
   width: 104%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003439}}
 .home aside > ul h3 {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzJlNTU2ZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzBmNzI4YiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -750,7 +653,6 @@ hr {
   text-indent: 15px;
   text-transform: uppercase;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003452}}
 .home aside > ul b {
   background: url(../images/sidebar-header-bottom-bg.png) no-repeat;
   display: block;
@@ -759,39 +661,32 @@ hr {
   width: 8px;
   position: absolute;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003460}}
 .home aside > ul p, .home aside > ul li li, .home aside > ul form, .home aside > ul li > div {
   line-height: 19px;
   margin: 5px 15px 5px 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003465}}
 .home aside > ul .textwidget p, .home aside > ul .textwidget li {
   margin: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003470}}
 .no-cssgradients .home aside > ul > li h3 {
   background: url(../images/sidebar-header-bg.png) repeat-x;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003473}}
 #signin {
   background: url(../images/login-bg.jpg) no-repeat;
   height: 30px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003474}}
 #signin .loggedin {
   font-size: 11px;
   margin-left: 641px;
   padding-top: 8px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003478}}
 #signin .loggedin span {
   display: block;
   float: left;
   width: 330px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003483}}
 #signin .loggedin a {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Q0ZDBkYiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2IxYWJhMyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -824,42 +719,34 @@ hr {
   text-transform: uppercase;
   width: 50px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003494}}
 #signin label {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   text-transform: lowercase;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003501}}
 #signin #loginform {
   margin-left: 641px;
   padding-top: 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003505}}
 #signin .login-username, #signin .login-password, #signin .login-submit {
   float: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003508}}
 #signin input[type="text"], #signin input[type="password"] {
   background: transparent;
   border: none;
   margin-right: 5px;
   width: 88px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003513}}
 #signin input[type="text"]:focus, #signin input[type="password"]:focus {
   outline: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003517}}
 #signin input[type="submit"] {
   width: 50px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003523}}
 #branding {
   clear: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003525}}
 #branding section {
   border-left: 1px solid #e0e0e1;
   float: left;
@@ -868,7 +755,6 @@ hr {
   padding: 15px 5px 0 10px;
   width: 178px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003532}}
 #branding section h2 {
   border: none;
   color: #0f728b;
@@ -876,13 +762,11 @@ hr {
   margin-bottom: 5px;
   text-transform: uppercase;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003539}}
 #branding section p {
   color: #90bec9;
   font-size: 12px;
   line-height: 1.4em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003545}}
 #branding #membership a {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZkZjhlZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Y5ZWZkOSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -911,7 +795,6 @@ hr {
   letter-spacing: .02px;
   width: 90px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003552}}
 #branding h1 {
   background: url(../images/logo-rotaryc.jpg) no-repeat;
   float: left;
@@ -926,22 +809,18 @@ hr {
   text-transform: uppercase;
   width: 632px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003565}}
 #branding h1 span {
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003568}}
 #branding h1 .clubname, #branding h1 a.clubname {
   color: #f5aa00;
   font-weight: normal;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003572}}
 #branding h1 .clubtype, #branding h1 a.clubtype {
   color: #1a7089;
   font-weight: normal;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003578}}
 .no-cssgradients #branding section a {
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FDF8EF', endColorstr='#F9EFD9');
   /* IE6 & IE7 */
@@ -950,7 +829,6 @@ hr {
 }
 
 /*main menu*/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003583}}
 #mainmenu {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzJlNTU2ZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzBmNzI4YiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -968,13 +846,11 @@ hr {
   height: 55px;
   /*Search*/
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003589}}
-#mainmenu #searchform {
+#mainmenu .searchform {
   margin-top: 15px;
   position: relative;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003592}}
-#mainmenu #searchform input[type="text"] {
+#mainmenu .searchform input[type="text"] {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
@@ -987,45 +863,37 @@ hr {
   text-indent: 5px;
   width: 150px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003601}}
-#mainmenu #searchform label {
+#mainmenu .searchform label {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003605}}
-#mainmenu #searchsubmit {
+#mainmenu .searchsubmit {
   border: none;
   height: 20px;
   left: 120px;
   position: absolute;
   top: 2px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003612}}
-#mainmenu #searchsubmit2 {
+#mainmenu .searchsubmit2 {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003615}}
 #mainmenu ul {
   margin-left: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003618}}
 #mainmenu .homepage a {
   display: block;
   padding-top: 8px 8px 0 8px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003625}}
 #mainmenu li.current_page_item > a,
 #mainmenu li.current-menu-ancestor > a,
 #mainmenu li.current-menu-item > a,
 #mainmenu li.current-menu-parent > a {
   background: #09455b;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003628}}
 #mainmenu li {
   float: left;
   margin-right: 15px;
   position: relative;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003632}}
 #mainmenu li a {
   color: #e0e0e1;
   display: block;
@@ -1037,15 +905,12 @@ hr {
   text-decoration: none;
   text-transform: uppercase;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003642}}
 #mainmenu li a:active, #mainmenu li a:hover {
   background: #09455b;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003645}}
 #mainmenu li a:hover > a {
   background: #09455b;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003651}}
 #mainmenu ul ul {
   background: #0f728b;
   display: none;
@@ -1056,58 +921,46 @@ hr {
   width: 180px;
   z-index: 99999;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003660}}
 #mainmenu ul ul a {
   margin-top: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003663}}
 #mainmenu ul ul li {
   margin-right: 0;
   min-width: 180px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003667}}
 #mainmenu ul ul li.dropdown {
   background-position: 100% -284px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003670}}
 #mainmenu ul ul ul {
   background-color: #013e53;
   left: 94%;
   top: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003677}}
 #mainmenu ul ul :hover > a {
   background-color: #09455b;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003680}}
 #mainmenu ul ul .dropdown:hover > a {
   background-color: #09455b;
   background-position: 100% -284px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003684}}
 #mainmenu ul ul ul :hover a {
   background-color: #002e40;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003687}}
 #mainmenu ul li:hover > ul {
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003690}}
 #mainmenu .search {
   float: right;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003695}}
 .no-cssgradients.no-borderradius #mainmenu {
   background: url(../images/menu-bg.jpg) no-repeat;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003697}}
 .no-cssgradients.no-borderradius #mainmenu li a {
   margin-top: 11px;
 }
 
 /*pages*/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003704}}
 .page #content h2 {
   border-bottom: 1px solid #59595c;
   color: #187189;
@@ -1115,23 +968,19 @@ hr {
   margin-bottom: 15px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003713}}
 .page-template-default #content, .page-template-onecolumn-page-php #content, .single-rotary-slides #content {
   padding-top: 15px;
 }
 
 /*reveille and blog*/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003719}}
 .single-rotary-reveille .postedin, .single .postedin {
   clear: left;
   margin-left: 170px;
   padding: 15px 0 15px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003724}}
 .single-rotary-reveille .post-edit-link, .single .post-edit-link {
   margin-left: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003727}}
 .single-rotary-reveille article > h2, .single article > h2 {
   color: #898989;
   font-family: Sommet;
@@ -1139,11 +988,9 @@ hr {
   line-height: 50px;
   margin-left: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003734}}
 .single-rotary-reveille .singleauthor, .single .singleauthor {
   margin-left: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003737}}
 .single-rotary-reveille .sectioncontainer, .single .sectioncontainer {
   -webkit-box-shadow: #efefef 3px 3px 5px 0;
   -moz-box-shadow: #efefef 3px 3px 5px 0;
@@ -1151,18 +998,15 @@ hr {
   margin-bottom: 30px;
   margin-left: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003742}}
 .single-rotary-reveille .sectionheader, .single .sectionheader {
   background: white url(../images/reveille-section-header.png) no-repeat;
   border-bottom: 1px solid #efefef;
   border-right: 1px solid #efefef;
   padding: 0 20px 20px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003747}}
 .single-rotary-reveille .sectionheader h2, .single .sectionheader h2 {
   color: #FFF;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003750}}
 .single-rotary-reveille .sectionheader .topictitle, .single .sectionheader .topictitle {
   border-bottom: 1px solid #59595c;
   color: #1a7089;
@@ -1172,11 +1016,9 @@ hr {
   margin-top: 30px;
   padding-bottom: 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003760}}
-.single-rotary-reveille #inthisissue, .single-rotary-reveille #blog, .single #inthisissue, .single #blog {
+.single-rotary-reveille #inthisissue, .single-rotary-reveille div[id^="blog"], .single #inthisissue, .single div[id^="blog"] {
   background: white url(../images/single-post-section-header-issue.png) no-repeat;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003764}}
 .single-rotary-reveille .sectioncontent, .single .sectioncontent {
   overflow: hidden;
   *zoom: 1;
@@ -1186,11 +1028,9 @@ hr {
   position: relative;
   top: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003771}}
 .single-rotary-reveille .sectioncontent > h2, .single .sectioncontent > h2 {
   color: #59595c;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003774}}
 .single-rotary-reveille .sectioncontent .postdate, .single .sectioncontent .postdate {
   /*border-bottom:1px solid #EFEFEF;*/
   float: left;
@@ -1204,82 +1044,67 @@ hr {
   top: 0;
   width: 140px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003786}}
 .single-rotary-reveille .sectioncontent .postdate a, .single .sectioncontent .postdate a {
   font-weight: normal;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003790}}
 .single-rotary-reveille .sectioncontent .blogcontent, .single .sectioncontent .blogcontent {
   float: left;
   pading-bottom: 15px;
   /*width:560px;*/
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003795}}
 .single-rotary-reveille .sectioncontent .blogcontent h2, .single .sectioncontent .blogcontent h2 {
   color: #187189;
 }
 
 /*search*/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003803}}
 .search h2 a {
   font-weight: normal;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003806}}
 .search .post-edit-link {
   clear: none;
   display: inline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003810}}
 .search .meta {
   margin-bottom: 15px;
 }
 
 /*blog and single post justify paragraph*/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003815}}
 .archive .sectioncontent p, .single .blogcontent p {
   text-align: justify;
 }
 
 /*blog archives, tags, categories, etc.*/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003820}}
 .archive #content article header, .blog #content article header {
   border-bottom: 1px solid #EFEFEF;
   margin-bottom: 30px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003823}}
 .archive #content article header .postdate, .blog #content article header .postdate {
   overflow: hidden;
   *zoom: 1;
   font-family: Arial, Helvetica, sans-serif;
   padding: 5px 0 10px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003828}}
 .archive #content article header br, .blog #content article header br {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003831}}
 .archive #content article header h2 a, .blog #content article header h2 a {
   color: #59595c;
   font-family: "BebasNeueRegular", Arial, sans-serif;
   font-weight: normal;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003837}}
 .archive #content article .continuereading, .blog #content article .continuereading {
   padding-top: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003840}}
 .archive #content article .excerptcontainer, .blog #content article .excerptcontainer {
   margin-left: 142px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003844}}
 .archive #content article .SectionContainer, .blog #content article .SectionContainer {
   border-bottom: 1px solid #59595c;
   color: #187189;
   height: 30px;
   margin-bottom: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003850}}
 .archive #content article .sectioncontainer, .blog #content article .sectioncontainer {
   -webkit-box-shadow: #efefef 3px 3px 5px 0;
   -moz-box-shadow: #efefef 3px 3px 5px 0;
@@ -1289,18 +1114,15 @@ hr {
   margin-left: 10px;
   width: 381px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003857}}
 .archive #content article .sectionheader, .blog #content article .sectionheader {
   background: white url(../images/archive-section-header.png) no-repeat;
   border-bottom: 1px solid #efefef;
   border-right: 1px solid #efefef;
   padding: 0 20px 20px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003862}}
 .archive #content article .sectionheader h2, .blog #content article .sectionheader h2 {
   color: #FFF;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003866}}
 .archive #content article .sectioncontent, .blog #content article .sectioncontent {
   overflow: hidden;
   *zoom: 1;
@@ -1311,7 +1133,6 @@ hr {
   position: relative;
   top: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003875}}
 .archive #content article .meta, .blog #content article .meta {
   border-top: 1px solid #808080;
   clear: left;
@@ -1322,74 +1143,61 @@ hr {
   overflow: hidden;
   padding-top: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003884}}
 .archive #content article .meta a, .blog #content article .meta a {
   color: #808080;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003887}}
 .archive #content article .meta .commentspopup, .blog #content article .meta .commentspopup {
   background-position: 0 -322px;
   padding-left: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003891}}
 .archive #content article .meta p, .blog #content article .meta p {
   margin-bottom: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003894}}
 .archive #content article .meta .post-edit-link, .blog #content article .meta .post-edit-link {
   display: inline;
   padding-top: 0;
 }
 
 /*comments*/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003903}}
 label[for="comment"] {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003906}}
 #respond, .sectioncontent > .comment, #comments-title {
   float: left;
   margin-left: 170px;
   width: 570px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003911}}
 #respond {
   clear: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003913}}
 #respond #reply-title {
   font-family: "BebasNeueRegular", Arial, sans-serif;
   text-transform: uppercase;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003920}}
 .comment div {
   float: left;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
   padding-bottom: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003925}}
 .comment div p {
   font-weight: normal;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003929}}
 .comment .avatar {
   clear: left;
   float: left;
   margin-right: 10px;
   width: 40px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003935}}
 .comment .commenttop {
   background: url(../images/comment-top-bg.jpg) no-repeat;
   height: 12px;
   padding-bottom: 0;
   width: 564px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003941}}
 .comment .commenttext {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZkZjhlZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Y5ZWZkOSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
@@ -1409,25 +1217,20 @@ label[for="comment"] {
   margin-bottom: 10px;
   width: 562px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003951}}
 .comment .commenttext p {
   padding: 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003958}}
 #commentform #author {
   margin-left: 9px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003961}}
 #commentform #email {
   margin-left: 11px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003964}}
 #commentform #url {
   margin-left: 7px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003968}}
 #comments-title {
   color: #96989b;
   font-family: "BebasNeueRegular", Arial, sans-serif;
@@ -1435,12 +1238,10 @@ label[for="comment"] {
   margin-bottom: 15px;
   text-transform: uppercase;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003974}}
 #comments-title span {
   color: #17708a;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003978}}
 .comment-reply-link {
   color: #59595c;
   clear: left;
@@ -1448,7 +1249,6 @@ label[for="comment"] {
   margin-bottom: 15px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003984}}
 .no-cssgradients .commenttext {
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FDF8EF', endColorstr='#F9EFD9');
   /* IE6 & IE7 */
@@ -1456,7 +1256,6 @@ label[for="comment"] {
   /* IE8 */
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003989}}
 #footer {
   overflow: hidden;
   *zoom: 1;
@@ -1473,34 +1272,27 @@ label[for="comment"] {
   min-height: 250px;
   padding-bottom: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\00003997}}
 #footer #colophon {
   clear: both;
   font-size: 10px;
   padding-top: 80px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\000031001}}
 #footer #colophon .alignleft {
   margin-left: 25px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\000031004}}
 #footer #colophon .alignright {
   margin-right: 25px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\000031008}}
 #footer a {
   color: #e0e0e1;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\000031011}}
 #footer a:active, #footer a:hover {
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\0000312}}
 #footer a:active:active, #footer a:active:hover, #footer a:hover:active, #footer a:hover:hover {
   color: #f5aa00;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\000031015}}
 #footer h3 {
   font-family: "BebasNeueRegular", Arial, sans-serif;
   font-size: 17px;
@@ -1508,73 +1300,58 @@ label[for="comment"] {
   margin-bottom: 15px;
   text-transform: uppercase;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\000031022}}
 #footer .search {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\000031026}}
 #footer .homepage img {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\000031029}}
 #footer .homepage .screen-reader-text {
   display: inline;
   position: static;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\000031035}}
 #footer > ul {
   float: left;
   min-height: 250px;
   width: 234px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\000031039}}
 #footer > ul > li {
   margin-left: 25px;
   margin-top: 30px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\000031045}}
 #footer li li {
   line-height: 32px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\000031048}}
 #footer .secondary {
   background: url(../images/footer-divide-bg.png) no-repeat;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\000031052}}
 #footer .wide {
   width: 556px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\000031055}}
 #footer .social {
   display: block;
   height: 32px;
   margin-bottom: 10px;
   text-indent: 45px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\000031061}}
 #footer .twitter {
   background-position: 0 -95px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\000031065}}
 #footer .facebook {
   background-position: 0 -147px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\000031068}}
 #footer .linkedin {
   background-position: 0 -43px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\000031071}}
 #footer .menu-main-container ul ul {
   display: none;
 }
 
 /*custom for about this template*/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\000031077}}
 .page-id-253 #content ul {
   margin-left: 450px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\000031080}}
 .no-cssgradients #footer {
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#30313D', endColorstr='#2f3f51');
   /* IE6 & IE7 */
@@ -1583,7 +1360,6 @@ label[for="comment"] {
 }
 
 /* slideshow */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_slideshow\.scss}line{font-family:\000032}}
 #slideshowcontainer {
   background: url(../images/slideshow-bottom-shaddow.png) no-repeat 54px 100%;
   height: 380px;
@@ -1592,36 +1368,30 @@ label[for="comment"] {
   width: 986px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_slideshow\.scss}line{font-family:\000039}}
 #slideshowleft {
   background: url(../images/slideshow-left-shadow.png) no-repeat;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_slideshow\.scss}line{font-family:\0000312}}
 #slideshowright {
   background: url(../images/slideshow-right-shadow.png) no-repeat 100% 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_slideshow\.scss}line{font-family:\0000315}}
 #slideshow {
   background: #065e77;
   left: 34px;
   width: 918px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_slideshow\.scss}line{font-family:\0000319}}
 #slideshow img {
   /*left:433px;*/
   right: 0;
   position: absolute;
   top: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_slideshow\.scss}line{font-family:\0000325}}
 #slideshow .slideinfo {
   color: #FFF;
   height: 100%;
   width: 433px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_slideshow\.scss}line{font-family:\0000329}}
 #slideshow .slideinfo h2 {
   border: none;
   color: #fff;
@@ -1630,16 +1400,13 @@ label[for="comment"] {
   padding-top: 40px;
   margin: 0 40px 40px 40px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_slideshow\.scss}line{font-family:\0000337}}
 #slideshow .slideinfo p {
   margin: 0 40px 10px 40px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_slideshow\.scss}line{font-family:\0000341}}
 #slideshow .slide {
   height: 100%;
   width: 919px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_slideshow\.scss}line{font-family:\0000345}}
 #slideshow a {
   color: #fff;
   display: block;
@@ -1647,16 +1414,13 @@ label[for="comment"] {
   padding-top: 10px;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_slideshow\.scss}line{font-family:\0000351}}
 #slideshow a:active, #slideshow a:hover {
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/style\.scss}line{font-family:\0000312}}
 #slideshow a:active:active, #slideshow a:active:hover, #slideshow a:hover:active, #slideshow a:hover:hover {
   color: #f5aa00;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_slideshow\.scss}line{font-family:\0000357}}
 #controls {
   background: url(../images/controls-bg.jpg) repeat-x 0 100%;
   height: 40px;
@@ -1667,7 +1431,6 @@ label[for="comment"] {
   width: 918px;
   z-index: 200;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_slideshow\.scss}line{font-family:\0000366}}
 #controls a {
   color: #e0e0e1;
   display: block;
@@ -1675,28 +1438,25 @@ label[for="comment"] {
   padding: 5px 5px 5px;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_slideshow\.scss}line{font-family:\0000374}}
-#controls #navsection .activeSlide, #controls #navsection a:active, #controls #navsection a:hover {
+#controls #navsection a {
+  width: 19px;
+}
+#controls #navsection a.activeSlide, #controls #navsection a:active, #controls #navsection a:hover {
   background: url(../images/selected-slide-bg.png) no-repeat;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_slideshow\.scss}line{font-family:\0000378}}
 #controls #shareshare {
   margin-left: 40px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_slideshow\.scss}line{font-family:\0000381}}
 #controls #playpause {
   margin-left: 423px;
   text-transform: uppercase;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_slideshow\.scss}line{font-family:\0000385}}
 #controls a.play span.pause {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_slideshow\.scss}line{font-family:\0000388}}
 #controls a.pause span.play {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_slideshow\.scss}line{font-family:\0000391}}
 #controls #facebookshare {
   background-position: 0 0;
   height: 14px;
@@ -1704,7 +1464,6 @@ label[for="comment"] {
   margin-top: 14px;
   width: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_slideshow\.scss}line{font-family:\0000398}}
 #controls #twittershare {
   background-position: 0 -199px;
   height: 14px;
@@ -1714,29 +1473,23 @@ label[for="comment"] {
 }
 
 /*search widget*/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\000033}}
-.widget_search #searchsubmit {
+.widget_search .searchsubmit {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\000036}}
-.widget_search #searchsubmit2 {
+.widget_search .searchsubmit2 {
   display: inline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\000039}}
 .widget_search label {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\0000312}}
 .widget_search #s {
   width: 120px;
 }
 
 /*Rotary Archive Widget*/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\0000317}}
 li.rotary-adv-archive-year {
   margin-bottom: 2px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\0000319}}
 li.rotary-adv-archive-year a.icon {
   background: url(../images/archive-bg.jpg) 0 -2px;
   color: #59595c;
@@ -1750,29 +1503,23 @@ li.rotary-adv-archive-year a.icon {
   text-decoration: none;
   width: 173px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\0000331}}
 li.rotary-adv-archive-year a.icon:active, li.rotary-adv-archive-year a.icon:hover {
   background-position: 0 -35px;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\0000335}}
 li.rotary-adv-archive-year a.icon span {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\0000340}}
 li.rotary-adv-archive-year a.less {
   background-position: 0 -35px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\0000343}}
 li.rotary-adv-archive-year ul {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\0000347}}
 li.rotary-adv-archive-year .monthlist li {
   font-size: 90%;
   margin-bottom: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\0000350}}
 li.rotary-adv-archive-year .monthlist li a {
   color: #59595c;
   display: block;
@@ -1787,7 +1534,6 @@ li.rotary-adv-archive-year .monthlist li a {
   text-indent: 10px;
   width: 173px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\0000363}}
 li.rotary-adv-archive-year .monthlist li a:active, li.rotary-adv-archive-year .monthlist li a:hover, li.rotary-adv-archive-year .monthlist li a.current {
   background: #f9efd9;
   border: 1px solid #e0d6bf;
@@ -1795,12 +1541,10 @@ li.rotary-adv-archive-year .monthlist li a:active, li.rotary-adv-archive-year .m
   text-decoration: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\0000375}}
 li.widget_rotaryarchivewidget li {
   font-size: 12px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\0000378}}
 .widgetedit {
   background-position: 0 -242px;
   overflow: hidden;
@@ -1816,7 +1560,6 @@ li.widget_rotaryarchivewidget li {
 }
 
 /*End Rotary Archive Widget*/
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\0000391}}
 aside {
   color: gray;
   float: left;
@@ -1825,30 +1568,24 @@ aside {
   margin-top: 35px;
   width: 208px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\0000398}}
 aside .textwidget ul li {
   list-style: inside disc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003101}}
 aside .textwidget ol li {
   list-style: inside decimal;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003105}}
 .single #secondary {
   margin-top: 50px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003108}}
 #home-sidebar {
   width: 230px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003111}}
 #secondary {
   margin-top: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003113}}
 #secondary > ul > li {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0icmdiYSgyMjYsIDIzMCwgMjMxLCAwLjUpIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
   background-size: 100%;
@@ -1862,31 +1599,25 @@ aside .textwidget ol li {
   padding-bottom: 10px;
   position: relative;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003119}}
 #secondary > ul > li ul, #secondary > ul > li div {
   margin: 10px 10px 0 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003122}}
 #secondary > ul > li #calendar_wrap {
   background: #fff;
   margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003127}}
 #secondary > ul .newpost {
   background: none;
   border: none;
   padding-bottom: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003131}}
 #secondary > ul .newpost a {
   font-size: 14px;
   letterspacing: .02px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003135}}
 #secondary > ul .newpost a:active, #secondary > ul .newpost a:hover {
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003139}}
 #secondary h3 {
   border-top: 5px solid #b8b7b8;
   color: #0f728b;
@@ -1896,30 +1627,24 @@ aside .textwidget ol li {
   text-indent: 10px;
   text-transform: uppercase;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003148}}
 #secondary .tagcloud a {
   color: #59595c;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003151}}
 #secondary .widget_calendar {
   background: transparent;
   border: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003154}}
 #secondary .widget_calendar h3 {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003159}}
 #secondary .blogroll li a:before {
   content: "> ";
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003163}}
 #secondary #wp-calendar {
   margin: 10px 0 50px 0;
   background: #fff;
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003167}}
 #secondary #wp-calendar caption {
   background: url("../images/calendarheader.png") no-repeat scroll 0 0 transparent;
   color: #FFFFFF;
@@ -1927,49 +1652,39 @@ aside .textwidget ol li {
   line-height: 51px;
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003174}}
 #secondary #wp-calendar thead {
   border-left: 1px solid #EFEFEF;
   border-right: 1px solid #EFEFEF;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003178}}
 #secondary #wp-calendar tr {
   margin-left: 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003181}}
 #secondary #wp-calendar td, #secondary #wp-calendar th {
   padding: 2px;
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003185}}
 #secondary #wp-calendar td {
   border: 1px solid #EFEFEF;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003189}}
 #secondary #wp-calendar tfoot td {
   border-top: 3px solid #EFEFEF;
   border-bottom: none;
   border-left: none;
   border-right: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003195}}
 #secondary #wp-calendar tfoot #prev {
   text-align: left;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003198}}
 #secondary #wp-calendar tfoot #next {
   text-align: right;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003202}}
 #secondary #wp-calendar tbody a {
   font-weight: bold;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003205}}
 #secondary #wp-calendar #today {
   background: #F2A91D;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003210}}
 .no-cssgradients #secondary > ul > li {
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#7fe2e6e7', endColorstr='#ffffff');
   /* IE6 & IE7 */
@@ -1977,31 +1692,26 @@ aside .textwidget ol li {
   /* IE8 */
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003214}}
 .no-cssgradients #secondary > ul > #calendar_wrap {
   filter: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_widgets\.scss}line{font-family:\00003217}}
 .no-cssgradients #secondary > ul .newpost {
   filter: none;
 }
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_mobile\.scss}line{font-family:\000035}}
   #signin input[type="text"], #signin input[type="password"] {
     width: 75px;
   }
 }
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_mobile\.scss}line{font-family:\0000313}}
   #signininput[type="text"], #signin input[type="password"] {
     width: 75px;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\000031}}
 .rotarymembershipcontainer {
   -webkit-box-shadow: #efefef 3px 3px 5px 0;
   -moz-box-shadow: #efefef 3px 3px 5px 0;
@@ -2009,12 +1719,10 @@ aside .textwidget ol li {
   width: 98%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\000035}}
 .page #content .rotarymembershipheader {
   background: url(../images/member-table-section-header.png) no-repeat;
   padding: 0 20px 20px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\000038}}
 .page #content .rotarymembershipheader > h2 {
   border-bottom: none;
   color: #FFF;
@@ -2028,27 +1736,22 @@ aside .textwidget ol li {
   text-transform: uppercase;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\0000321}}
 #rotarymembers_wrapper, .rotaryselections {
   margin-left: 20px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\0000324}}
 .rotaryselections {
   padding-bottom: 20px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\0000327}}
 .rotaryselections .committeecontainer {
   float: right;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\0000330}}
 .rotaryselections #committeelabel {
   margin-right: 5px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\0000333}}
 .rotarymembershipheader #rotarymembers tr td {
   border-bottom: 1px solid #b3b5b7;
   border-right: 1px dotted #b3b5b7;
@@ -2056,7 +1759,6 @@ aside .textwidget ol li {
   padding-top: 15px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\0000339}}
 .rotarymembershipheader #rotarymembers tr th {
   border-top: 2px solid #f2e6cc;
   border-right: 1px dotted #b3b5b7;
@@ -2069,23 +1771,19 @@ aside .textwidget ol li {
   text-transform: uppercase;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\0000350}}
 .rotarymembershipheader #rotarymembers tr .email {
   border-right: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\0000353}}
 #rotarymembers .odd td {
   background: #f9f4e9;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\0000357}}
 #rotarymembers .email a {
   color: #b3b5b7;
   text-transform: uppercase;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\0000361}}
 .rotarydialog {
   background: #0f7189 url(../images/rotary-member-dialog-top.png) no-repeat !important;
   color: #f2e2c0;
@@ -2093,65 +1791,54 @@ aside .textwidget ol li {
   font-size: 13px !important;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\0000367}}
 #rotarymemberdialog h2, #rotarymemberdialog h3, #rotarymemberdialog h4, .rotarydialog .ui-dialog-titlebar-close {
   color: #fff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\0000370}}
 #rotarymemberdialog h4 {
   font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\0000373}}
 #rotarymemberdialog h2, #rotarymemberdialog h3 {
   font-family: "BebasNeueRegular", Arial, sans-serif;
   text-transform: uppercase;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\0000377}}
 #rotarymemberdialog .personalinfoarea h4 {
   line-height: 18px;
   margin-top: 5px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\0000381}}
 #rotarymemberdialog h2 {
   font-size: 30px !important;
   line-height: 1.1em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\0000385}}
 #rotarymemberdialog .dialogtop {
   border-bottom: none !important;
   padding: 0 !important;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\0000389}}
 #rotarymemberdialog .namearea, #rotarymemberdialog .addressarea {
   height: 102px !important;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\0000392}}
 #rotarymemberdialog .namearea {
   background: url(../images/image-icon.png) no-repeat;
   padding-top: 20px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\0000396}}
 #rotarymemberdialog .addressarea {
   background: url(../images/location-icon.png) no-repeat;
   font-size: 17px;
   padding-top: 20px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\00003101}}
 #rotarymemberdialog .dialogmain {
   background: #0d6e8b url(../images/rotary-details-main-bg.png) repeat-x;
   padding-top: 20px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\00003105}}
 #rotarymemberdialog .profilepicture img {
   -webkit-box-shadow: #111111 3px 3px 3px 0;
   -moz-box-shadow: #111111 3px 3px 3px 0;
@@ -2162,7 +1849,6 @@ aside .textwidget ol li {
   width: 140px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\00003112}}
 #rotarymemberdialog .profilepicturebottom {
   background: url(../images/profile-image-bg.png) 5px 100% no-repeat;
   height: 11px;
@@ -2170,48 +1856,40 @@ aside .textwidget ol li {
   margin-top: -5px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\00003118}}
 #rotarymemberdialog p {
   /*font-weight:bold;*/
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\00003121}}
 #rotarymemberdialog p a {
   color: #f2e2c0;
   font-weight: normal;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\00003125}}
 #rotarymemberdialog .company h3 {
   background: url(../images/company-icon.png) no-repeat;
   text-indent: 25px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\00003129}}
 #rotarymemberdialog .contact h3 {
   background: url(../images/contact-icon.png) no-repeat;
   text-indent: 25px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\00003133}}
 #rotarymemberdialog .partner h3 {
   background: url(../images/partner-icon.png) no-repeat;
   text-indent: 25px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\00003137}}
 #rotarymemberdialog .clubinfo h3 {
   background: url(../images/club-info-icon.png) no-repeat;
   text-indent: 25px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\00003141}}
 #rotarymemberdialog .larger {
   margin-right: 0;
   padding-right: 20px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\00003145}}
 #rotarymemberdialog .dialogbottom {
   border-top: 2px solid #4a94a6;
   margin-left: 30px;
@@ -2219,12 +1897,10 @@ aside .textwidget ol li {
   padding-top: 15px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\00003151}}
 #rotarymemberdialog .company, #rotarymemberdialog .contact {
   border-bottom-color: #4a94a6;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\00003154}}
 .rotarydialog .ui-dialog-titlebar-close {
   background: url("../images/dialog-close.png") no-repeat scroll 0 10px transparent;
   display: block;
@@ -2234,13 +1910,11 @@ aside .textwidget ol li {
   width: 20px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\00003162}}
 #rotarymemberdialog .dialogbottom .clubname {
   color: #f2a700;
   font-size: 14px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/koolkat\/Documents\/websites\/rotarytheme\/wp-content\/themes\/rotary\/rotary-sass\/sass\/_membership\.scss}line{font-family:\00003166}}
 #rotarymemberdialog .dialogbottom .rotaryclub {
   color: #fff;
   font-size: 14px;

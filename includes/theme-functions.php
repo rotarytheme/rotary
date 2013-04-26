@@ -390,7 +390,7 @@ if ( $query->have_posts() ) : ?>
             	<div id="slideshow">
  <?php  while ( $query->have_posts() ) : $query->the_post();
 	if (has_post_thumbnail()) { 
-	    echo '<div class="slide';
+	    echo '<div class="slide'; 
 		if ($count > 0) {
 			echo ' hide';
 		}
@@ -408,21 +408,17 @@ if ( $query->have_posts() ) : ?>
 			}
 	
 			edit_post_link( __( 'Edit', 'Rotary' ), '<p>', '</p>' ); 
-			echo '</div>';
-			if ($showlink) {
-				echo '<a href="'.get_permalink().'">';
-			}
+			echo '</div>'; //end slideinfo
+			
 			if ($slidelink) { 
 				echo '<a href="'.$slidelink.'">';
 			}
 			else {
 				echo '<a href="'.get_permalink().'">';
 			}
-			the_post_thumbnail('slideshow-size').'</a>';
-			if ($showlink) {
-				echo '</a>';
-			}
-		echo '</div>';  //end the slide
+			the_post_thumbnail('slideshow-size');
+			
+		echo '</a></div>';  //end the slide
 	}
 	
   endwhile; ?>
@@ -436,9 +432,9 @@ if ( $query->have_posts() ) : ?>
      	</section>
         <section id="sharing">
         <a id="shareshare" target="_blank" href="http://sharethis.com/share?title=<?php echo urlencode(get_the_title()) . '&amp;url=' . urlencode(get_permalink());?>">+ Share</a>
-        <a id="facebookshare" class="icon-alone" target="_blank" href="https://www.facebook.com/sharer.php?u=<?php echo urlencode(get_permalink()).'&amp;t='.urlencode(get_the_title()); ?>"></span>
+        <a id="facebookshare" class="icon-alone" target="_blank" href="https://www.facebook.com/sharer.php?u=<?php echo urlencode(get_permalink()).'&amp;t='.urlencode(get_the_title()); ?>">
   <span class="screen-reader-text">Share on Facebook</span></a>
-        <a id="twittershare" class="icon-alone" target="_blank" href="http://twitter.com/?status=<?php echo urlencode(get_permalink()); ?>"></span>
+        <a id="twittershare" class="icon-alone" target="_blank" href="http://twitter.com/?status=<?php echo urlencode(get_permalink()); ?>">
   <span class="screen-reader-text">Share on Twitter</span></a>
         </section>
 		</div>	<!--end controls-->  

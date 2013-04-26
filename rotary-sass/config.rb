@@ -25,4 +25,4 @@ line_comments = false
 preferred_syntax = :scss
 
 
-sass_options = {:debug_info=>true} # by Compass.app 
+sass_options = {:debug_info=>false} # by Compass.app 

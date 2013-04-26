@@ -71,8 +71,11 @@
 		text-decoration:none;
 	}
 	#navsection {
-		.activeSlide, a:active, a:hover {
+		a {
+			width:19px;
+			&.activeSlide, &:active, &:hover {
 			background:url(../images/selected-slide-bg.png) no-repeat;
+			}
 		}
 	}
 	#shareshare {
