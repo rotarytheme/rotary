@@ -147,17 +147,12 @@ function upgrader_source_selection_filter($source, $remote_source=NULL, $upgrade
 		Github delivers zip files as <Username>-<TagName>-<Hash>.zip
 		must rename this zip file to the accurate theme folder
 	*/
-	echo  'source ' . $source;
-	echo 'remote source ' . $remote_source;
-	 echo 'skin ' . $upgrader->skin->theme;
 	
 	if(isset($source, $remote_source, $upgrader->skin->theme)){
 		$corrected_source = $remote_source . '/' . $upgrader->skin->theme . '/';
-		echo 'i am here';
 		if(rename($source, $corrected_source)){
 			return $corrected_source;
 		} else {
-			echo 'no rename';
 			$upgrader->skin->feedback("Unable to rename downloaded theme.");
 			return new WP_Error();
 		}

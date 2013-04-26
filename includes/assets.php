@@ -163,7 +163,6 @@ class Github_Theme_Upgrader extends Theme_Upgrader {
 
 		//Hook ability to change the source file location..
 		$source = apply_filters('upgrader_source_selection', $source, $remote_source, $this);
-		echo 'this is the source ' . $source ;
 		if ( is_wp_error($source) )
 			return $source;
 
