@@ -142,14 +142,20 @@ function transient_update_themes_filter($data){
 
 
 add_filter('upgrader_source_selection', 'upgrader_source_selection_filter', 10, 3);
+add_filter('upgrader_source_selection', 'upgrader_source_selection_filter', 10, 3);
 function upgrader_source_selection_filter($source, $remote_source=NULL, $upgrader=NULL){
 	/*
 		Github delivers zip files as <Username>-<TagName>-<Hash>.zip
 		must rename this zip file to the accurate theme folder
 	*/
+	echo $source;
+	echo $remote_source;
+	 echo $upgrader->skin->theme;
+	
 	if(isset($source, $remote_source, $upgrader->skin->theme)){
 		$corrected_source = $remote_source . '/' . $upgrader->skin->theme . '/';
 		if(@rename($source, $corrected_source)){
+			echo $corrected_source;
 			return $corrected_source;
 		} else {
 			$upgrader->skin->feedback("Unable to rename downloaded theme.");
