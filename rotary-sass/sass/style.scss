@@ -193,7 +193,7 @@ input[type="submit"] {
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#d4d0db', endColorstr='#b1aba3'); /* IE6 & IE7 */
 -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#d4d0db', endColorstr='#b1aba3')"; /* IE8 */  
 }
-input {
+input[type="text"], input [type="password"]{
 	border-radius: 0;
 	-webkit-appearance:none;
 }
