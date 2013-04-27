@@ -1807,12 +1807,13 @@ aside .textwidget ol li {
 #rotarymemberdialog .personalinfoarea h4 {
   background: url(../images/calendar-icon.png) no-repeat;
   line-height: 18px;
+  margin-left: 5px;
   margin-top: 5px;
   text-indent: 20px;
 }
 
 #rotarymemberdialog .personalinfoarea p {
-  text-indent: 20px;
+  text-indent: 25px;
 }
 
 #rotarymemberdialog h2 {

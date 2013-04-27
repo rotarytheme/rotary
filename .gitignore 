@@ -15,4 +15,5 @@ sitemap.xml.gz
 /_notes
 # SASS #
 ##########
-.sass-cache 
+.sass-cache
+rotary/.sass-cache
