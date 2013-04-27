@@ -2154,3 +2154,5 @@ when it has other properties nested beneath it.
 2013-04-26 15:27:44 overwrite stylesheets/style.css 
 2013-04-26 15:27:59 unchanged ../Users/koolkat/Documents/websites/rotarytheme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
 2013-04-26 15:28:00 overwrite stylesheets/style.css 
+2013-04-26 17:10:22 unchanged ../Users/koolkat/Documents/websites/rotarytheme/wp-content/themes/rotary/rotary-sass/images/backgrounds-s8f9fdc06fe.png
+2013-04-26 17:10:22 overwrite stylesheets/style.css 
