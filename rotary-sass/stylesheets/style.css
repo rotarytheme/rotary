@@ -427,6 +427,11 @@ hr {
   list-style: inside circle;
   margin-left: 15px;
 }
+#content .gform_body ul li {
+  list-style: none;
+  margin-left: 0;
+  text-indent: 0;
+}
 #content ol {
   padding-left: 30px;
 }
@@ -458,6 +463,14 @@ hr {
   font-size: 20px;
   height: 30px;
   margin-bottom: 5px;
+}
+#content h1 {
+  border-bottom: 1px solid #59595c;
+  color: #187189;
+  font-family: SommetHeavy, sans-serif;
+  font-size: 30px;
+  height: 40px;
+  margin-bottom: 10px;
 }
 #content h3 {
   font-size: 18px;
