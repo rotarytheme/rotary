@@ -103,7 +103,7 @@ Tags: rotary, html5
 	margin-left:30px;
 	margin-top:30px;
 	span {
-		color:#187189;
+		color:$header-font-color;
 		font-family:$emphasis-font;
 	}
 }
@@ -268,30 +268,42 @@ hr {
 	ol li li li li{
 		list-style:inside lower-alpha;
 	}
-	h1, h2 {
-		font-size: 20px;
-    	height: 50px;
-		padding-top:5px;
-    	text-transform: uppercase;
-	}
-	.SectionHeader, h2.SectionHeader {
+	
+	h1, .SectionHeader, h2.SectionHeader {
 		clear:both;
-		color:#187189;
+		color:$header-font-color;
 		font-family:$header-font;
 		font-size:20px;
 		height:30px;
 		margin-bottom:5px;
 	}
-	
+	h1 {
+		border-bottom: 1px solid $subheader-font-color;
+	}
+	h2 {
+	    color: $header-font-color;
+		font-size: 30px;
+		padding-top:5px;
+    	text-transform: uppercase;
+	}
 	h3 {
-		font-size:18px;
+		color:$subheader-font-color;
+		font-size:20px;
+		text-transform: uppercase;
+
 	}
 	h4 {
-		font-size:16px;
+		color:$subheader-font-color;
+		font-family:$body-font-family;
+		font-size:15px;
+		text-transform: uppercase;
 		
 	}
 	h5 {
-		font-size:14px;
+		color:$subheader-font-color;
+		font-family:$body-font-family;
+		font-size:12px;
+		text-transform: uppercase;
 		
 	}
 	img.size-auto,
@@ -617,6 +629,10 @@ hr {
 		position:absolute;
 		top:2px;
 	}
+	.submit {
+		margin:0;
+		padding:0;
+	}
 	.searchsubmit2 {
 		display:none;
 	}
@@ -638,7 +654,7 @@ hr {
 		margin-right:15px;
 		position:relative;
 		a {
-			color:$main-menu-color;
+			color:#FFF;
 			display: block;
 			font-size: 11px;
 			font-weight: bold;
@@ -706,18 +722,7 @@ hr {
 		margin-top:11px;
 	}
 }
-/*pages*/
-.page {
-	#content {
-		h2 {
-			border-bottom:1px solid $body-text-color;
-			color:#187189;
-			height:30px;
-			margin-bottom:15px;
-		}
-	}
-	
-}
+
 .page-template-default #content, .page-template-onecolumn-page-php #content, .single-rotary-slides #content{
 	padding-top:15px;
 }
@@ -769,7 +774,7 @@ hr {
 			background: #FFF url(../images/single-post-section-header-issue.png) no-repeat;
 	
 	}
-	.sectioncontent {
+	#content .sectioncontent {
 		@include clearfix;
 		border-left: 1px solid #efefef;
 		padding-bottom:20px;
@@ -778,6 +783,9 @@ hr {
 		top:20px;
 		> h2 {
 				color:$body-text-color;
+				font-size: 20px;
+				height: 50px;
+				padding-top: 5px;
 		}
 		.postdate {
 			/*border-bottom:1px solid #EFEFEF;*/
@@ -801,7 +809,7 @@ hr {
 			/*width:560px;*/
 			width:100%;
 			h2 {
-				color:#187189;
+				color:$header-font-color;
 			}
 		}
 	}
@@ -836,11 +844,16 @@ hr {
 	 	br {
 			display:none;
 		}
-		h2 a {
-			color:$body-text-color;
-			font-family:$button-font;
-			font-weight:normal;
-		}
+		h2 {
+			font-size: 20px;
+			height: 50px;
+			padding-top: 5px;
+			a {
+				color:$body-text-color;
+				font-family:$button-font;
+				font-weight:normal;
+			}
+		}	
 	}
 	.continuereading {
 		padding-top:15px;
@@ -851,7 +864,7 @@ hr {
 	}
 	.SectionContainer {
 		border-bottom:1px solid $body-text-color;
-		color:#187189;
+		color:$header-font-color;
 		height:30px;
 		margin-bottom:15px;
 	}

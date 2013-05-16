@@ -230,7 +230,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   margin-top: 30px;
 }
 .pagesubtitle span {
-  color: #187189;
+  color: #0f7289;
   font-family: SommetBlack;
 }
 
@@ -278,7 +278,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: #1a7089;
+  color: #0f7289;
   font-weight: bold;
   text-decoration: none;
 }
@@ -286,7 +286,7 @@ a:active, a:hover {
   text-decoration: none;
 }
 a:active:active, a:active:hover, a:hover:active, a:hover:hover {
-  color: #f5aa00;
+  color: #f2a700;
 }
 
 blockquote {
@@ -389,7 +389,7 @@ hr {
   overflow: hidden;
   *zoom: 1;
   background: #FFF;
-  color: #59595c;
+  color: #606060;
   font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
   font-size: 13px;
   margin: 0 auto;
@@ -450,28 +450,39 @@ hr {
 #content ol li li li li {
   list-style: inside lower-alpha;
 }
-#content h1, #content h2 {
-  font-size: 20px;
-  height: 50px;
-  padding-top: 5px;
-  text-transform: uppercase;
-}
-#content .SectionHeader, #content h2.SectionHeader {
+#content h1, #content .SectionHeader, #content h2.SectionHeader {
   clear: both;
-  color: #187189;
+  color: #0f7289;
   font-family: SommetHeavy, sans-serif;
   font-size: 20px;
   height: 30px;
   margin-bottom: 5px;
 }
+#content h1 {
+  border-bottom: 1px solid #606060;
+}
+#content h2 {
+  color: #0f7289;
+  font-size: 30px;
+  padding-top: 5px;
+  text-transform: uppercase;
+}
 #content h3 {
-  font-size: 18px;
+  color: #606060;
+  font-size: 20px;
+  text-transform: uppercase;
 }
 #content h4 {
-  font-size: 16px;
+  color: #606060;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
 }
 #content h5 {
-  font-size: 14px;
+  color: #606060;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
 }
 #content img.size-auto,
 #content img.size-full,
@@ -576,7 +587,7 @@ hr {
   margin: 0 25px 0 35px;
 }
 #featured .more-link {
-  color: #59595c;
+  color: #606060;
   display: block;
   line-height: 1.2em;
 }
@@ -584,7 +595,7 @@ hr {
   text-decoration: none;
 }
 #featured .more-link:active:active, #featured .more-link:active:hover, #featured .more-link:hover:active, #featured .more-link:hover:hover {
-  color: #f5aa00;
+  color: #f2a700;
 }
 #featured h4 {
   background: url(../images/date-header-bg.png) no-repeat 0 8px;
@@ -594,7 +605,7 @@ hr {
   text-indent: 25px;
 }
 #featured .featuredheader {
-  border-bottom: 1px solid #59595c;
+  border-bottom: 1px solid #606060;
   margin-bottom: 15px;
   padding-bottom: 5px;
 }
@@ -762,7 +773,7 @@ hr {
 }
 #branding section h2 {
   border: none;
-  color: #0f728b;
+  color: #0f7289;
   font-size: 14px;
   margin-bottom: 5px;
   text-transform: uppercase;
@@ -818,11 +829,11 @@ hr {
   display: block;
 }
 #branding h1 .clubname, #branding h1 a.clubname {
-  color: #f5aa00;
+  color: #f2a700;
   font-weight: normal;
 }
 #branding h1 .clubtype, #branding h1 a.clubtype {
-  color: #1a7089;
+  color: #0f7289;
   font-weight: normal;
 }
 
@@ -878,6 +889,10 @@ hr {
   position: absolute;
   top: 2px;
 }
+#mainmenu .submit {
+  margin: 0;
+  padding: 0;
+}
 #mainmenu .searchsubmit2 {
   display: none;
 }
@@ -900,7 +915,7 @@ hr {
   position: relative;
 }
 #mainmenu li a {
-  color: #e0e0e1;
+  color: #FFF;
   display: block;
   font-size: 11px;
   font-weight: bold;
@@ -965,14 +980,6 @@ hr {
   margin-top: 11px;
 }
 
-/*pages*/
-.page #content h2 {
-  border-bottom: 1px solid #59595c;
-  color: #187189;
-  height: 30px;
-  margin-bottom: 15px;
-}
-
 .page-template-default #content, .page-template-onecolumn-page-php #content, .single-rotary-slides #content {
   padding-top: 15px;
 }
@@ -1013,7 +1020,7 @@ hr {
   color: #FFF;
 }
 .single-rotary-reveille .sectionheader .topictitle, .single .sectionheader .topictitle {
-  border-bottom: 1px solid #59595c;
+  border-bottom: 1px solid #606060;
   color: #1a7089;
   font-size: 30px;
   font-family: SommetBlack;
@@ -1024,7 +1031,7 @@ hr {
 .single-rotary-reveille #inthisissue, .single-rotary-reveille div[id^="blog"], .single #inthisissue, .single div[id^="blog"] {
   background: white url(../images/single-post-section-header-issue.png) no-repeat;
 }
-.single-rotary-reveille .sectioncontent, .single .sectioncontent {
+.single-rotary-reveille #content .sectioncontent, .single #content .sectioncontent {
   overflow: hidden;
   *zoom: 1;
   border-left: 1px solid #efefef;
@@ -1033,10 +1040,13 @@ hr {
   position: relative;
   top: 20px;
 }
-.single-rotary-reveille .sectioncontent > h2, .single .sectioncontent > h2 {
-  color: #59595c;
+.single-rotary-reveille #content .sectioncontent > h2, .single #content .sectioncontent > h2 {
+  color: #606060;
+  font-size: 20px;
+  height: 50px;
+  padding-top: 5px;
 }
-.single-rotary-reveille .sectioncontent .postdate, .single .sectioncontent .postdate {
+.single-rotary-reveille #content .sectioncontent .postdate, .single #content .sectioncontent .postdate {
   /*border-bottom:1px solid #EFEFEF;*/
   float: left;
   font-family: "BebasNeueRegular", Arial, sans-serif;
@@ -1049,17 +1059,17 @@ hr {
   top: 0;
   width: 140px;
 }
-.single-rotary-reveille .sectioncontent .postdate a, .single .sectioncontent .postdate a {
+.single-rotary-reveille #content .sectioncontent .postdate a, .single #content .sectioncontent .postdate a {
   font-weight: normal;
 }
-.single-rotary-reveille .sectioncontent .blogcontent, .single .sectioncontent .blogcontent {
+.single-rotary-reveille #content .sectioncontent .blogcontent, .single #content .sectioncontent .blogcontent {
   float: left;
   pading-bottom: 15px;
   /*width:560px;*/
   width: 100%;
 }
-.single-rotary-reveille .sectioncontent .blogcontent h2, .single .sectioncontent .blogcontent h2 {
-  color: #187189;
+.single-rotary-reveille #content .sectioncontent .blogcontent h2, .single #content .sectioncontent .blogcontent h2 {
+  color: #0f7289;
 }
 
 /*search*/
@@ -1093,8 +1103,13 @@ hr {
 .archive #content article header br, .blog #content article header br {
   display: none;
 }
+.archive #content article header h2, .blog #content article header h2 {
+  font-size: 20px;
+  height: 50px;
+  padding-top: 5px;
+}
 .archive #content article header h2 a, .blog #content article header h2 a {
-  color: #59595c;
+  color: #606060;
   font-family: "BebasNeueRegular", Arial, sans-serif;
   font-weight: normal;
 }
@@ -1105,8 +1120,8 @@ hr {
   margin-left: 142px;
 }
 .archive #content article .SectionContainer, .blog #content article .SectionContainer {
-  border-bottom: 1px solid #59595c;
-  color: #187189;
+  border-bottom: 1px solid #606060;
+  color: #0f7289;
   height: 30px;
   margin-bottom: 15px;
 }
@@ -1248,7 +1263,7 @@ label[for="comment"] {
 }
 
 .comment-reply-link {
-  color: #59595c;
+  color: #606060;
   clear: left;
   display: block;
   margin-bottom: 15px;
@@ -1296,7 +1311,7 @@ label[for="comment"] {
   text-decoration: none;
 }
 #footer a:active:active, #footer a:active:hover, #footer a:hover:active, #footer a:hover:hover {
-  color: #f5aa00;
+  color: #f2a700;
 }
 #footer h3 {
   font-family: "BebasNeueRegular", Arial, sans-serif;
@@ -1423,7 +1438,7 @@ label[for="comment"] {
   text-decoration: none;
 }
 #slideshow a:active:active, #slideshow a:active:hover, #slideshow a:hover:active, #slideshow a:hover:hover {
-  color: #f5aa00;
+  color: #f2a700;
 }
 
 #controls {
@@ -1497,7 +1512,7 @@ li.rotary-adv-archive-year {
 }
 li.rotary-adv-archive-year a.icon {
   background: url(../images/archive-bg.jpg) 0 -2px;
-  color: #59595c;
+  color: #606060;
   display: block;
   font-family: "BebasNeueRegular", Arial, sans-serif;
   font-size: 20px;
@@ -1526,7 +1541,7 @@ li.rotary-adv-archive-year .monthlist li {
   margin-bottom: 10px;
 }
 li.rotary-adv-archive-year .monthlist li a {
-  color: #59595c;
+  color: #606060;
   display: block;
   font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
   font-size: 12px;
@@ -1625,7 +1640,7 @@ aside .textwidget ol li {
 }
 #secondary h3 {
   border-top: 5px solid #b8b7b8;
-  color: #0f728b;
+  color: #0f7289;
   font-size: 19px;
   margin-bottom: 2px;
   padding-top: 15px;
@@ -1633,7 +1648,7 @@ aside .textwidget ol li {
   text-transform: uppercase;
 }
 #secondary .tagcloud a {
-  color: #59595c;
+  color: #606060;
 }
 #secondary .widget_calendar {
   background: transparent;

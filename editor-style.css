@@ -47,7 +47,7 @@ code, code var {
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 body, input, textarea {
-	color: #59595c;
+	color: #606060;
   	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
   	font-size: 13px;
 }
@@ -180,29 +180,47 @@ h6 {
   	font-family: SommetHeavy, sans-serif;
   	line-height: 1.1em;
 }
-h1, h2 {
+h1, .SectionHeader {
+  clear: both;
+  color: #0f7289;
+  font-family: SommetHeavy, sans-serif;
   font-size: 20px;
-  height: 50px;
-  padding-top: 5px;
-  text-transform: uppercase;
+  height: 30px;
+  margin-bottom: 5px;
+
 
 }
-h2, .SectionHeader {
-	border-bottom: 1px solid #59595C;
-	color: #187189;
-	margin-bottom: 15px;
+h1 {
+	border-bottom:1px solid #606060;
+}
+h2  {
+	color: #0f7289;
+	font-size: 30px;
+	padding-top: 5px;
+	text-transform: uppercase;
 }
 h3 {
-	font-size: 1.4em;
+	color: #606060;
+	font-size: 20px;
+	text-transform: uppercase;
 }
 h4 {
-	font-size: 1.2em;
+	color: #606060;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	font-size: 15px;
+	text-transform: uppercase;
 }
 h5 {
-	font-size: 1em;
+	color: #606060;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	font-size: 12px;
+	text-transform: uppercase;
 }
 h6 {
-	font-size: 0.9em;
+	color: #606060;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	font-size: 10px;
+	text-transform: uppercase;
 }
 table {
 	border: 1px solid #EFEFEF !important;
