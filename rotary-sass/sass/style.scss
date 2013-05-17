@@ -279,16 +279,17 @@ hr {
 	}
 	h1 {
 		border-bottom: 1px solid $subheader-font-color;
+		font-size:30px;
 	}
 	h2 {
 	    color: $header-font-color;
-		font-size: 30px;
+		font-size: 20px;
 		padding-top:5px;
     	text-transform: uppercase;
 	}
 	h3 {
 		color:$subheader-font-color;
-		font-size:20px;
+		font-size:18px;
 		text-transform: uppercase;
 
 	}
