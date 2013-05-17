@@ -460,16 +460,17 @@ hr {
 }
 #content h1 {
   border-bottom: 1px solid #606060;
+  font-size: 30px;
 }
 #content h2 {
   color: #0f7289;
-  font-size: 30px;
+  font-size: 20px;
   padding-top: 5px;
   text-transform: uppercase;
 }
 #content h3 {
   color: #606060;
-  font-size: 20px;
+  font-size: 18px;
   text-transform: uppercase;
 }
 #content h4 {
