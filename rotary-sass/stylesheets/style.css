@@ -461,28 +461,34 @@ hr {
 #content h1 {
   border-bottom: 1px solid #606060;
   font-size: 30px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
 }
 #content h2 {
   color: #0f7289;
   font-size: 20px;
+  margin-bottom: 10px;
   padding-top: 5px;
   text-transform: uppercase;
 }
 #content h3 {
   color: #606060;
   font-size: 18px;
-  text-transform: uppercase;
+  margin-bottom: 10px;
 }
 #content h4 {
   color: #606060;
   font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
   font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 10px;
   text-transform: uppercase;
 }
 #content h5 {
   color: #606060;
   font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
   font-size: 12px;
+  margin-bottom: 10px;
   text-transform: uppercase;
 }
 #content img.size-auto,
