@@ -51,6 +51,15 @@ body, input, textarea {
   	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
   	font-size: 13px;
 }
+a {
+	color:#0f7289;
+	font-weight:bold;
+	text-decoration:none;
+}
+a:active, a:hover {
+	color:#F2A700;
+
+}
 hr {
   background: #EFEFEF;
   border: none;
@@ -61,7 +70,7 @@ hr {
 }
 /* Text elements */
 p, li {
-	line-height: 1.2em;
+	line-height: 1.4em;
 }
 
 ul,
@@ -71,7 +80,7 @@ ol {
 }
 
 ul {
-	list-style: inside disc;;
+	list-style: outside disc;;
 }
 ol {
 	list-style: decimal;
@@ -179,6 +188,7 @@ h5,
 h6 {
   	font-family: SommetHeavy, sans-serif;
   	line-height: 1.1em;
+  	margin-top:10px;
 }
 h1, .SectionHeader {
   clear: both;
@@ -210,7 +220,7 @@ h3 {
 
 }
 h4 {
-	color: #606060;
+	color: #0f7289;
 	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
 	font-size: 14px;
 	font-weight:bold;

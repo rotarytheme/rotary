@@ -14,7 +14,10 @@
 }
 #slideshow {
 	background:$slide-bg-color;
+	height: 313px; 
 	left:34px;
+	overflow: hidden;
+	position: relative;
 	width:918px;
 	img {
 		/*left:433px;*/

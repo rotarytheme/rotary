@@ -1405,7 +1405,10 @@ label[for="comment"] {
 
 #slideshow {
   background: #065e77;
+  height: 313px;
   left: 34px;
+  overflow: hidden;
+  position: relative;
   width: 918px;
 }
 #slideshow img {
