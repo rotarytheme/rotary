@@ -275,6 +275,7 @@ body.gray {
 h1, h2, h3, h4, h5, h6 {
   font-family: SommetHeavy, sans-serif;
   line-height: 1.1em;
+  margin-top: 10px;
 }
 
 a {
@@ -477,7 +478,7 @@ hr {
   margin-bottom: 10px;
 }
 #content h4 {
-  color: #606060;
+  color: #0f7289;
   font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
   font-size: 14px;
   font-weight: bold;

@@ -136,6 +136,8 @@ body.gray {
 h1, h2, h3, h4, h5, h6 {
 	font-family:$header-font;
 	line-height:1.1em;
+	margin-top:10px;
+
 }
 a {
 	color:$link-color;
@@ -297,7 +299,7 @@ hr {
 
 	}
 	h4 {
-		color:$subheader-font-color;
+		color:$header-font-color;
 		font-family:$body-font-family;
 		font-size:14px;
 		font-weight:bold;
