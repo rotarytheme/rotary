@@ -1029,6 +1029,7 @@ hr {
 }
 .single-rotary-reveille .sectionheader h2, .single .sectionheader h2 {
   color: #FFF;
+  margin-top: 0;
 }
 .single-rotary-reveille .sectionheader .topictitle, .single .sectionheader .topictitle {
   border-bottom: 1px solid #606060;
@@ -1153,6 +1154,7 @@ hr {
 }
 .archive #content article .sectionheader h2, .blog #content article .sectionheader h2 {
   color: #FFF;
+  margin-top: 0;
 }
 .archive #content article .sectioncontent, .blog #content article .sectioncontent {
   overflow: hidden;
@@ -1608,6 +1610,9 @@ aside .textwidget ul li {
 aside .textwidget ol li {
   list-style: inside decimal;
 }
+aside .widget_sp_image img {
+  margin-top: 5px;
+}
 
 .single #secondary {
   margin-top: 50px;
@@ -1657,6 +1662,7 @@ aside .textwidget ol li {
   color: #0f7289;
   font-size: 19px;
   margin-bottom: 2px;
+  margin-top: 0;
   padding-top: 15px;
   text-indent: 10px;
   text-transform: uppercase;
