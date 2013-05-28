@@ -1,0 +1,17 @@
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+	#signin input[type="text"], #signin input[type="password"] {
+		width:75px;
+	}
+}
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+	#signininput[type="text"], #signin input[type="password"] {
+		width:75px;
+	}
+	
+}

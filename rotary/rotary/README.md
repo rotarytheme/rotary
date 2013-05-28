@@ -1,0 +1,4 @@
+rotary
+======
+
+Rotary WordPress Theme

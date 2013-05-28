@@ -466,7 +466,7 @@ hr {
 		width:104%;
 	}
 	> li.widget_search {
-		height:65px;
+		min-height:65px;
 	}
 	h3 {
 		@include background-image(linear-gradient(#2e556f, #0f728b));
