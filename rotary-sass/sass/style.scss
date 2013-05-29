@@ -582,14 +582,15 @@ hr {
 		
 	}
 	h1 {
-		background:url(../images/logo-rotaryc.jpg) no-repeat;
+		background:url(../images/logo-rotaryc.jpg) no-repeat 0 15px;
 		float:left;
 		font-family:$header-font;
 		font-size:42px;
 		height:100px;
 		line-height:.9em;
 		margin-bottom:15px;
-		margin-top:15px;
+		margin-top:0;
+		padding-top:15px;
 		text-indent:90px;
 		text-shadow: 1px 1px 1px #808080;
 		text-transform:uppercase;
