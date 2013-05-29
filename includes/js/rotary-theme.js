@@ -81,15 +81,16 @@ jQuery(document).ready(function($) {
 	}
 	//if the user is an admin, he/she can edit theme customizations from the front-end	
     if ($('.headeredit').length ) {
-
 		$('#branding h1, #branding #meetingaddress').hover(
-  			function () {
-				var position= $(this).position();
-    			$(this).append($('.headeredit').css('left', position.left+'px').show());
-  					}, 
-  			function () {
-    			$('.headeredit').hide();
-  		});
-		
+  			function() {
+			var position = $(this).position();
+			var editLeft = position.left;
+			if ($(this).text() === $('#branding h1').text()) {
+				editLeft +=100;
+			}
+			$(this).append($('.headeredit').css('left', editLeft + 'px').show());
+		}, function() {
+			$('.headeredit').hide();
+		});		
 	}
 });

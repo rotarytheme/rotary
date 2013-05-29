@@ -870,6 +870,7 @@ hr {
   -o-border-radius: 0 0 12px 12px;
   border-radius: 0 0 12px 12px;
   clear: left;
+  font-family: Arial, Helvetica, sans-serif;
   height: 55px;
   /*Search*/
 }

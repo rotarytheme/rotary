@@ -38,7 +38,7 @@ Tags: rotary, html5
 	text-align:center;
 	text-decoration:none;
 	text-transform:uppercase;
-}
+	}
 @import "sommetfont";
 @import "bebesfont";
 /*@import "icons";*/
@@ -616,6 +616,7 @@ hr {
 	@include background-image(linear-gradient(#2e556f, #0f728b));
 	@include border-radius(0 0 12px 12px);
 	clear:left;
+	font-family: $menu-font-family;
 	height:55px;
 	/*Search*/
 	.searchform {
