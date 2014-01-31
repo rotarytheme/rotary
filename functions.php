@@ -8,7 +8,7 @@
  */
 
 // Set path to theme specific functions
-
+define( 'ACF_LITE' , true );
 
 $includes_path = TEMPLATEPATH . '/includes/';
 // Theme specific functionality
@@ -23,10 +23,17 @@ require_once ($includes_path . 'sidebar-init.php');			// Initialize widgetized a
 
 require_once ($includes_path . 'theme-widgets.php');		// Theme widgets
 
-require_once ($includes_path . 'admin-options.php');		// Theme widgets
+require_once ($includes_path . 'admin-options.php');		// admin options
 
-require_once ($includes_path . 'rotarythemeupdater.php');		// Theme widgets
+require_once ($includes_path . 'custom-posts.php');			// custom posts
 
+//require_once ($includes_path . 'rotarythemeupdater.php');	// theme updater
+
+require_once('wp-advanced-search/wpas.php');  //advnced search form
+
+include_once('advanced-custom-fields/acf.php' );
+include_once('acf-repeater/acf-repeater.php');
+include_once($includes_path . 'speaker-fields.php');
 /*you can put custom code below this line*/
 
 //always show author
@@ -41,6 +48,4 @@ function rotary_set_user_metaboxes($user_id=NULL) {
         $meta_value = array('postcustom','trackbacksdiv','commentstatusdiv','commentsdiv','slugdiv','revisionsdiv');
         update_user_meta( $user_id, $meta_key['hidden'], $meta_value );
    // }
-
-
-}
+  } 

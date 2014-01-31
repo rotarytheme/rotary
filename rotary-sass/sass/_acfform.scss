@@ -1,0 +1,44 @@
+.acf-form {
+	clear:left;
+	/*clicking edit button will show form*/
+	display:none;
+	textarea, input[type="text"], input[type="password"], input[type="file"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="url"], select {
+		background-color: #FFFFFF;
+		color: #333333;
+	}
+	textarea, input[type="text"], input[type="password"], input[type="file"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="url"], select {
+		border-color: #DFDFDF;
+	}
+	#poststuff {
+    	padding-top: 10px;
+	}
+	.acf_postbox .inside {
+		padding:20px !important;
+	}
+	.postbox {
+		min-width: 255px;
+		position: relative;
+		.inside {
+			line-height: 1.4em;
+			position: relative;
+		}
+
+	}
+	input[type="submit"]{
+		float:left;
+		margin:20px;
+	}
+	#acfcancel {	
+		@include button($background:linear-gradient(#FDF8EF, #F9EFD9), $color:#959595, $border:#E0E0E1);
+		float:left;
+		font-size:13px;
+		height:22px;
+		letter-spacing:.5px;
+		margin-top:20px;
+		text-transform:uppercase;
+	}
+	.no-cssgradients #acfcancel {
+		filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FDF8EF', endColorstr='#F9EFD9'); /* IE6 & IE7 */
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FDF8EF', endColorstr='#F9EFD9')"; /* IE8 */  
+	}
+}

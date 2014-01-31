@@ -139,6 +139,9 @@ h1, h2, h3, h4, h5, h6 {
 	margin-top:10px;
 
 }
+#content > h1, #content > h2 {
+	clear:both;
+}
 a {
 	color:$link-color;
 	font-weight:bold;
@@ -386,6 +389,32 @@ hr {
 		margin:0 auto 30px auto;
 	}
 }
+#content.speaker {
+	width:690px;
+	.wp-caption {
+		border-top:1px solid $speaker-border;
+		border-left:1px solid $speaker-border;
+		background-color:$speaker-bg;
+		padding-bottom:0;
+	}
+	p.wp-caption-text {
+		color:#606060;
+		font-style:italic;
+		text-shadow: 0px -1px 0px $speaker-shadow;
+	}
+	.wp-caption-bottom {
+		background:url(../images/speaker-caption-bg.png) no-repeat 100% 100%;
+		height:26px;
+		margin-left:4px;
+		width:100%;
+	}
+	.inner-caption {
+		border-right:1px solid $speaker-border;	
+		padding-right: 2px;
+		width:100%;
+	}
+	
+}
 .homecontent {
 	/*border:1px solid #EFEFEF;
 	@include background-image(linear-gradient(#E2E6E7, #FFFFFF));*/
@@ -526,6 +555,7 @@ hr {
 	label {
 		font-family:$meta-font;
 		font-weight:bold;
+		margin-left:0;
 		text-transform:lowercase;
 	}
 	background:url(../images/login-bg.jpg) no-repeat;
@@ -742,7 +772,274 @@ hr {
 }
 
 /*reveille and blog*/
+.speakercontent {
+	float:left;
+	margin:20px 20px 40px 0;
+	min-height:400px;
+	width:670px;
+}
+#speaker-archive-table_wrapper {
+	margin-top:40px;	
+}
+td {
+	cursor:pointer;
+}
+.even td{
+	background-color:#fcfaf3;
+}
+.selected.even td, .selected.odd td{
+	background-color:$table-row-rollover-bg;
+}
+#speaker-archive-table_length, #speaker-archive-table_filter {
+	display: none;
+}
+#speaker-archive-table_info, #speaker-archive-table_paginate {
+	margin-bottom:20px;
+	margin-top:20px
+}
+
+#speaker-archive-table_info {
+	margin-left:40px;
+}
+.speaker-archive-table {
+	width:100%;
+	th {
+	    @include background-image(linear-gradient(#FDF8EF, #F9EFD9));
+	    border-left: 1px solid #e9e9e9;
+	    border-right: 1px solid #e9e9e9;
+	    border-top: 1px solid #e9e9e9;
+	    border-bottom:2px solid $speaker-th-border;
+		font-family: $button-font;
+		font-size:20px;
+		height:38px;
+		padding-left:20px;
+	}
+	td {
+		border: 1px solid #e9e9e9;
+		height:38px;
+		padding-left:20px;
+	}
+}
+/*archive/blog roll page*/
+.archive.post-type-archive-rotary_speakers, .page-template-tmpl-speaker-archive-php #ui-tabs-1{
+	.pagesubtitle {
+		color:$header-font-color;
+		font-family:$header-font;
+		font-size:32px;
+		text-transform: uppercase;
+	}
+	.prevnext{
+		margin-top:10px;
+	}	
+	#content {
+		.sectioncontainer {
+			@include background-image(linear-gradient(#FFFFFF, #EEEEEE));
+			@include box-shadow(#efefef 3px 3px 5px 0);
+			border:1px solid #e9e9e9;
+			border-bottom:5px solid #b5aea7;
+			float: left;
+			margin-bottom:30px;
+			margin-right:10px;
+			width:326px;
+		}
+		.sectionheader {
+			background:none;
+		}
+		.sectioncontent {
+			padding-bottom: 20px;
+			padding-left: 20px;
+			position: relative;
+			top: 20px;
+		}
+		h2 {
+			background:url(../images/speaker-header-bg.png) no-repeat 0 100%;		
+			height:30px;
+			margin-left:0;
+			a{
+				color:$header-font-color;
+			}
+			
+		}
+		h3 {
+			font-family: $body-font-family;
+			font-size:13px;
+		}
+			
+		.speakerday {
+			color:$body-text-color;
+		}
+		.speakername {
+			background: url(../images/speaker-icon.png) no-repeat;
+			color:#606060;
+			font-family:$button-font;
+			font-size:23px;
+			margin-bottom:0;
+			margin-top:10px;
+			text-indent:40px;
+			text-transform: uppercase
+
+		}
+		.meta, header {
+			border:0;
+		}
+	}
+	
+}
+.no-cssgradients .archive.post-type-archive-rotary_speakers #content .sectionheader{
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FFFFFF', endColorstr='#EEEEEE'); /* IE6 & IE7 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FFFFFF', endColorstr='#EEEEEE')"; /* IE8 */  
+}	
+/*advanced search page*/
+.page-template-tmpl-speaker-archive-php {
+	.search-toggle {
+		background:url(../images/expand-collapse-bg.jpg) no-repeat;
+		background-position: 0 -17px;
+		display:block;
+		font-family: $button-font;
+		font-size:20px;
+		height:18px;
+		line-height:22px;
+		margin: 30px 0 0 20px;
+		outline:none;
+		text-indent:25px;
+		text-transform: uppercase;
+		&.collapsed {
+			background-position: 0 1px;
+		}
+		
+	}
+	.nopseakers {
+		margin-left:20px;
+		font-size:20px;
+		padding:10px 0 40px 0;
+		
+	}
+   	.sectionheader {
+		background: #FFF url(../images/speaker-archive-section-header.png) no-repeat;
+		border-bottom: 1px solid #e9e9e9;
+		border-right: 1px solid #e9e9e9;
+	}
+	.sectioncontent{
+		border-left: 1px solid #E9E9E9;
+		overflow:hidden;
+		h2 {
+			color:$header-font-color;
+			font-family: $button-font;
+			font-size:20px;
+			margin-left:20px;
+			padding-top:20px;
+		}
+	} 
+	#wp-advanced-search {
+		padding: 20px 20px 40px 20px;
+	}
+	label {
+		line-height:19px;
+		margin-left:5px;
+	}
+	.sublabel {
+		font-size:10px;
+		line-height:1px;
+		margin-left:5px;
+	}
+	.wpas-meta_speaker_bio, .wpas-meta_speaker_title {
+		clear:left;
+	}	
+	.wpas-field {
+	    float:left;
+	    margin-bottom:20px;
+		width:320px;
+		input[type="text"], select {
+			min-height:30px;
+			width:260px;
+		}
+		input[type="text"] {
+			@include box-shadow(#ccc 2px 2px 10px inset);
+			border:0;
+			padding:0 2px 0 2px;
+		}
+		&.wpas-submit,  &.wpas-reset{
+			@include background-image(linear-gradient(#FDF8EF, #F9EFD9));
+			margin-top:18px;
+			width:100px;
+			input {							
+				border: 1px solid #E0E0E1;
+				color:#959595;
+				font-size:20px;
+				height:35px;
+				padding:2px;
+				text-align:left;
+				text-indent:40px;
+				width:100%;
+			}
+		}
+		&.wpas-submit {
+			margin-left:10px;
+			input {
+				background:url(../images/speaker-search-icon.png) 10px 50% no-repeat;	
+			}	
+			
+		}
+		&.wpas-reset{
+		margin-left:38px;
+			width:150px;
+			input {
+				@include border-radius(5px);
+				background:url(../images/speaker-reset-icon.png) 10px 50%  no-repeat;	
+				font-family:$button-font;
+				letter-spacing: 0.5px;
+				text-transform: uppercase;
+			}
+		}  
+	}
+	.wpas-meta_speaker_date_from, .wpas-meta_speaker_date_to {
+		width:140px;
+		input[type="date"] {
+			@include box-shadow(#ccc 2px 2px 10px inset);
+			border:0;
+			min-height:30px;
+			padding:0 2px 0 2px;
+			width:115px;
+		}
+	}
+	#ui-datepicker-div {
+		background-color: #EFEFEF;
+		border:1px solid #999999;
+		td {
+			padding-right:5px;
+			text-align:right;
+		}
+		.ui-datepicker-prev {
+			float:left;
+		}
+		.ui-datepicker-next{
+			float:right;
+		}
+	}
+	.search-results{
+		clear:left;
+	}
+}
+.no-boxshadow .page-template-tmpl-speaker-archive-php .wpas-field input[type="text"],
+.no-boxshadow .page-template-tmpl-speaker-archive-php .wpas-meta_speaker_date-From input[type="date"],
+.no-boxshadow .page-template-tmpl-speaker-archive-php .wpas-meta_speaker_date-To input[type="date"] {
+	border:1px solid #666;
+}
+.no-cssgradients .page-template-tmpl-speaker-archive-php .wpas-field.wpas-submit input, .no-cssgradients .page-template-tmpl-speaker-archive-php .wpas-field.wpas-reset input {
+	background-color:#f6ecd5;
+	filter:none;
+	
+}
+
 .single-rotary-reveille, .single {
+	.speakerbottom {
+		background:url(../images/single-speaker-bottom-bg.png) no-repeat 50% 100%;
+		border-top:1px solid #ECECEC;
+		clear: both;
+		height: 27px;
+		position: relative;
+		top: 54px;
+	}
 	.postedin {
 		clear:left;
 		margin-left:170px;
@@ -761,11 +1058,65 @@ hr {
 	.singleauthor {
 		margin-left:20px;
 	}
+	.speakercontent {
+		margin-bottom:0;
+		padding-bottom:40px;
+		padding-left:20px;
+		.blogcontent {
+			margin-top:20px;
+		}
+	}	
+	.speakercontainer {
+		border-right:1px solid #ececec;
+		position:relative;
+		top:80px;
+	
+	}
+	.speakertitle {
+		padding-left:20px;
+	}
+	.speakerheader {
+		background: #fff url(../images/single-speaker-section-header.png) 0 0 no-repeat;
+	}
+	.speakersectioncontent {
+		border-left:1px solid #ececec;
+		margin-top:10px;
+		padding:0 20px 0 0;	
+		#content .speakercontent > h3 {
+			color:#187086;
+			font-family:$header-font;
+			font-size:30px;
+		}	
+	}
+	
+	.speakerdate {
+		color:#187087;
+		font-family: $button-font;
+		font-size:20px;
+		position: absolute;
+		right: 30px;
+		top:20px;
+		span {
+			color:#808080;
+		}
+	}
+	&.single-rotary_speakers .prevnext {
+		position:absolute;
+		top:-40px;
+		width:1024px;
+		a:active span, a:hover span{
+			color:$hover-link-color;
+		}
+		a span {
+			color:#808080;
+		}
+	}
 	.sectioncontainer {
 		@include box-shadow(#efefef 3px 3px 5px 0);
 		margin-bottom:30px;
 		margin-left:10px;
 	}
+	
 	.sectionheader {
 		background: #FFF url(../images/reveille-section-header.png) no-repeat;
 		border-bottom: 1px solid #efefef;
@@ -789,6 +1140,11 @@ hr {
 			background: #FFF url(../images/single-post-section-header-issue.png) no-repeat;
 	
 	}
+	div[id^="speaker"] {
+		background: #FFF url(../images/speaker-post-header.png) no-repeat;
+	}
+	
+	
 	#content .sectioncontent {
 		@include clearfix;
 		border-left: 1px solid #efefef;
@@ -802,6 +1158,7 @@ hr {
 				height: 50px;
 				padding-top: 5px;
 		}
+		
 		.postdate {
 			/*border-bottom:1px solid #EFEFEF;*/
 			float:left;
@@ -827,7 +1184,20 @@ hr {
 				color:$header-font-color;
 			}
 		}
+		
+
 	}
+}
+.speakerheader .rotary_speakers  > h2 {
+
+			background: url(../images/speaker-icon.png) 0 9px no-repeat;
+			color:#606060;
+			font-family:$button-font;
+			font-size:31px;
+			margin-bottom:0;
+			margin-top:-20px;
+			text-indent:40px;
+
 }
 /*search*/
 .search {
@@ -846,6 +1216,7 @@ hr {
 .archive .sectioncontent p, .single .blogcontent p {
 	text-align:justify;
 }
+
 /*blog archives, tags, categories, etc.*/
 .archive #content article, .blog #content article{
 	header {
@@ -890,6 +1261,7 @@ hr {
 		margin-left:10px;
 		width:381px;
 	}
+	
 	.sectionheader {
 		background: #FFF url(../images/archive-section-header.png) no-repeat;
 		border-bottom: 1px solid #efefef;
@@ -1022,7 +1394,9 @@ label[for="comment"] {
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FDF8EF', endColorstr='#F9EFD9'); /* IE6 & IE7 */
 -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FDF8EF', endColorstr='#F9EFD9')"; /* IE8 */  
 }
-
+.single-rotary_speakers #footer {
+	padding-top:80px;
+}
 #footer {
 	@include clearfix;
 	@include background-image(linear-gradient(#30313D, #2f3f51));
@@ -1122,3 +1496,6 @@ label[for="comment"] {
 @import "widgets";
 @import "mobile";
 @import "membership";
+@import "acfform";
+@import "jquerytabs";
+@import "upcomingprograms";

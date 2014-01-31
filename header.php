@@ -94,15 +94,13 @@
       	<a class="headeredit" href="<?php echo admin_url(); ?>customize.php">Edit Header</a>
   	<?php  } ?>
       <?php  $clubname = get_theme_mod( 'rotary_club_name', '' );  ?>
+      <?php  $rotaryClubBefore = get_theme_mod( 'rotary_club_first', false); ?>
             <h1>
             <?php
 			if ( !is_front_page() ) { ?>
             	<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
             <?php }  ?>
-            <?php if ($clubname) { ?>
-				<span class="clubname"><?php echo $clubname;?></span>
-            <?php }  ?>     
-			    <span class="clubtype">Rotary Club</span>
+            <?php rotary_club_header($clubname, $rotaryClubBefore);?>
              <?php if ( !is_front_page() ) { ?>
 				</a>
               <?php }  ?>  

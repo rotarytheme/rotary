@@ -47,6 +47,15 @@ $wp_customize->add_control( 'rotary_club_name', array(
 		'section' => 'rotary_main_settings',
 		'type'    => 'text',
 	) );
+$wp_customize->add_setting( 'rotary_club_first', array(
+		'default'        => false,
+		'capability'     => 'edit_theme_options',
+	) );
+$wp_customize->add_control( 'rotary_club_first', array(
+		'label'   => 'Show Rotary Club Before Club Name',
+		'section' => 'rotary_main_settings',
+		'type'    => 'checkbox',
+) );	
 /*Settings and Controls for the meeting location*/	
 	$wp_customize->add_setting( 'rotary_meeting_location', array(
 		'default'        => '',

@@ -22,6 +22,13 @@
  }
  add_action( 'after_switch_theme', 'rotary_default_link_cat' ); 
  
+ function rotary_notify_theme_activation($oldname, $oldtheme=false) {      
+     $current_user = wp_get_current_user();
+     $message = 'The theme has been activated by '.$current_user->user_login . ' at email ' . $current_user->user_email . ' at site '. site_url();
+     
+	 wp_mail( 'rotary@paulosborn.com', 'Theme Activate', $message ); 
+ }
+ add_action( 'after_switch_theme', 'rotary_notify_theme_activation', 10 ,  2);
  function rotary_set_default_pages(){
 	 wp_delete_post(1); //delete sample post
 	 wp_delete_comment(1); //delete sample comment
@@ -111,4 +118,9 @@ add_filter('post_updated_messages', 'rotary_post_updated_messages_filter');
 function rotary_post_updated_messages_filter($messages) {
   $messages['post'][99] = 'Featured image is missing';
   return $messages;
+}
+add_action ('after_setup_theme', 'rotary_add_custom_user_roles');
+function rotary_add_custom_user_roles() {
+	$userRole = get_role( 'Contributor' ); 
+	add_role( 'Scribe', 'Scribe', $userRole['capabilities'] );
 }

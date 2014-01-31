@@ -1,4 +1,6 @@
 /* CSS Document */
 #login h1 a { 
 	background-image:url(../rotary-sass/images/rotary-login.png) !important; 
+	background-size: 274px 64px !important;
+	width: 274px !important;
 }

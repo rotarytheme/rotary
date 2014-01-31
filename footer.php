@@ -35,7 +35,8 @@
     </ul>
 <section id="colophon">
 <p class="alignleft">Web Design: <a href="http://www.carolinatorres.com/" target="_blank">Carolina Torres</a> Web Development: <a href="http://www.koolkatwebdesigns.com/" target="_blank">Merrill M. Mayer</a></p>
-<p class="alignright">&copy; <?php echo date('Y'); ?> <a href="http://bbrc.net/" target="_blank">BBRC</a>. All rights reserved.</p>
+<p class="alignright">&copy; <?php echo date('Y'); ?> <a href="<?php  echo site_url();?>" target="_blank"><?php  echo get_theme_mod( 'rotary_club_name', '' );  ?>
+</a>. All rights reserved.</p>
 </section>		
 	</footer>
 </div><!--end wrapper-->

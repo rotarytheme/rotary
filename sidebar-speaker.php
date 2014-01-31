@@ -1,0 +1,74 @@
+<?php
+/**
+ * The Sidebar containing the primary and secondary widget areas.
+ *
+ * @package WordPress
+ * @subpackage Rotary
+ * @since Rotary 1.0
+ */
+?>
+
+	<aside id="speaker-sidebar" role="complementary">
+		<ul>
+		<?php  if(current_user_can('edit_page')){ ?>
+ 		<li class="newpost">
+            <ul >
+                <li>
+                    <a class="button" href="<?php echo admin_url(); ?>post-new.php?post_type=rotary_speakers">New Speaker</a>
+                  </li>
+                </ul>
+            </li>        
+			
+	<?php } ?>
+			<li>
+				<div class="speaker-side-container">
+					
+										<h3 class="speakerbio"><?php _e( 'Biography', 'Rotary' ); ?></h3>
+					<ul>
+						<li>
+							<?php the_field( 'speaker_bio' ); ?>
+						</li>
+					</ul>
+				</div>	
+				<div class="speaker-side-bottom"></div>
+			</li>
+
+			
+
+			<li>
+				<div>
+				<h3><?php _e( 'Categories', 'Rotary' ); ?></h3>
+				<ul>
+					<?php wp_list_categories( array('taxonomy' => 'rotary_speaker_cat', 'title_li' => '' )); ?> 
+				</ul>
+				</div>
+			</li>
+			<li>
+				<div>
+				<h3><?php _e( 'Photographs', 'Rotary' ); ?></h3>
+				<ul>
+					<?php if(get_field('speaker_program_images')): ?>
+						<li class="speakerthumbs">
+						<?php while(has_sub_field('speaker_program_images')): ?>
+							<?php $image = wp_get_attachment_image_src( get_sub_field('speaker_program_image'), 'thumbnail' ); ?>
+							<img class="alignleft" src="<?php echo  $image[0]?>" alt="" title=""/>
+						<?php endwhile; ?>
+						</li>
+					<?php endif; ?>
+					
+				</ul>
+				</div>
+			</li>
+				<li class="clearleft">
+				<div>
+				<h3><?php _e( 'Tags', 'Rotary' ); ?></h3>
+				<div class="tagcloud">
+					<?php wp_tag_cloud( array('taxonomy' => 'rotary_speaker_tag')); ?>
+				</div></div>
+			</li>
+ <?php // end speaker widget area ?>
+		</ul>
+
+
+	
+	</aside>

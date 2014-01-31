@@ -1,0 +1,92 @@
+#content  {
+.home-upcoming-program-ribbon {
+	background:url(../images/upcoming-ribbon.png)50% 0 no-repeat;
+		height:61px;
+	margin:0 auto;
+		position:relative;
+	text-align:center;
+	top:23px;
+	width:384px;
+	h2 {
+		color:#FFF;
+		font-family: $header-font;
+		font-size:30px;
+		padding-top:15px;
+
+	}
+}
+&.fullwidth .home-upcoming-programs {
+	.home-upcoming-program-details {
+		width:300px;
+	}
+	.home-upcoming-programs-speaker-date{
+		text-align:right;
+	}	
+}
+.home-upcoming-programs {
+	border: 8px solid #187087;
+	padding:20px;
+	article {
+		float:left;
+		width:50%;
+	}
+	
+	.speakername {
+		background:url(../images/speaker-icon-small.png) 0 5px no-repeat;
+		color:#606060;
+		font-family: $button-font;
+		font-size:23px;
+		line-height:30px;
+		margin-top:0;
+		text-indent:20px;
+	}
+	.speaker-title, .speaker-company {
+		color: #606060;
+		font-size: 12px;
+		line-height: 21px;
+		margin-bottom: 0;
+	}
+	.speaker-company {
+		font-weight:bold;
+	}
+	.speaker-program-title {
+		background: url(../images/speaker-home-title-bg.png) no-repeat scroll 0 100% ;
+		color:#187087;
+		font-family: $header-font;
+		font-size:19px;
+		line-height:21px;
+		padding:20px 0 20px 0;
+		text-transform:uppercase;
+		width:260px;
+	}
+	.home-upcoming-program-details {
+		float:left;
+		width:265px;
+	}
+	
+}
+.home-upcoming-programs-speaker-date {
+	border-bottom:1px solid #ececec;
+	float:left;
+	margin-right: 20px;
+	text-align: left;
+	width:80px;
+	span {
+		display:block;
+	}
+	.dayweek, .month {
+		font-size:14px;
+		font-family:$sub-header-font;
+		line-height:18px;
+		text-transform:uppercase;
+	}
+	.day {
+		color:#a6a8ab;
+		font-family: $button-font;
+		font-size:53px;
+	}
+	.month {
+		color:#187087;
+	}
+}
+}

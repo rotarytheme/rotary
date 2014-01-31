@@ -105,7 +105,7 @@ function transient_update_themes_filter($data){
 			}
 			
 			//set cache, just 60 seconds
-			set_transient(md5($url), $response, 30);
+			set_transient(md5($url), $response, 60 * 24);
 		}
 		$url = sprintf('https://raw.github.com/%s/%s/master', urlencode($matches['username']), urlencode($matches['repo']));
   

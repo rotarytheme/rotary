@@ -9,7 +9,13 @@ function rotary_add_javascript( ) {
 	wp_enqueue_script( 'cycle', get_bloginfo('template_directory').'/includes/js/jquery.cycle.all.js', array( 'jquery' ) );
 	
 	wp_enqueue_script( 'touch', get_bloginfo('template_directory').'/includes/js/jquery.touchwipe.min.js', array( 'jquery' ) );
-
+	
+	
+	wp_enqueue_script( 'datatables', get_bloginfo('template_directory').'/includes/js/jquery.dataTables.min.js', array( 'jquery' ) );
+	
+	wp_enqueue_script( 'jquery-ui-tabs' );
+	
+	wp_enqueue_script( 'jquery-ui-datepicker'  );
+	
 	wp_enqueue_script( 'rotary', get_bloginfo('template_directory').'/includes/js/rotary-theme.js', array( 'jquery' ) );
-
 }

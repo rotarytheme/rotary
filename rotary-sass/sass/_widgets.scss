@@ -111,6 +111,76 @@ aside {
 #home-sidebar {
 	width:230px;
 }
+#content #secondary li {
+	list-style: none;
+}
+#speaker-sidebar {
+	color:#606060;
+	margin:100px 0 20px 20px;
+	padding-bottom:54px;
+	width:272px;
+	.speaker-side-container {
+	 border-top:1px solid #e9dfc8;
+	 border-left:1px solid #e9dfc8;
+	 border-right:1px solid #e9dfc8;
+		@include background-image(linear-gradient(rgba(249, 245, 235, 0.5), #f6ecd5));
+		li {
+			line-height:18px;
+		}
+	}
+	.speakerbio {
+		background:url(../images/bio-icon-bg.png) 0 10px no-repeat;
+		text-indent:30px;
+	}
+	p  {
+		margin-bottom:5px;
+	}
+	a {
+		margin-left:5px;
+	}
+	h3{
+		color:$header-font-color;
+		font-family:$button-font;
+		font-size:20px;
+		margin: 0 0 2px 5px;
+		padding-top:15px;
+		text-indent:10px;
+		text-transform:uppercase;
+	}
+	.tagcloud a, .cat-item a {
+    	color: #a5a5a5;
+    	font-weight:normal;
+    	line-height:18px;
+	}
+	> ul > li ul,  > ul > li div {
+		margin: 10px 10px 0;
+	}
+	.speaker-side-top {
+		background: url(../images/audio-6-icon.png) no-repeat;
+		height:58px;
+		position:relative;
+		top:-10px;
+		left:-10px;
+	}
+	.speaker-side-bottom {
+		background: url(../images/speaker-container-bottom-bg.png) no-repeat;
+		height:41px;
+		margin-top:0;
+	}
+	.speakerthumbs img {
+		height:105px;
+		margin:0 5px 5px 0;
+		width:105px;
+	}
+	.speakerthumbs {
+		margin-left:5px;
+	}
+}
+.no-cssgradients #speaker-sidebar .speaker-side-container{
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#f9f4e9', endColorstr='#f6ecd5'); /* IE6 & IE7 */
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#f9f4e9', endColorstr='#f6ecd5')"; /* IE8 */  
+}
+
 #secondary {
 	margin-top:15px;
 	 > ul > li {
