@@ -27,7 +27,7 @@ require_once ($includes_path . 'admin-options.php');		// admin options
 
 require_once ($includes_path . 'custom-posts.php');			// custom posts
 
-//require_once ($includes_path . 'rotarythemeupdater.php');	// theme updater
+require_once ($includes_path . 'rotarythemeupdater.php');	// theme updater
 
 require_once('wp-advanced-search/wpas.php');  //advnced search form
 
