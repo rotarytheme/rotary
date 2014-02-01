@@ -107,7 +107,7 @@ function transient_update_themes_filter($data){
 			//set cache, just 60 seconds
 			set_transient(md5($url), $response, 60 * 24);
 		}
-		$url = sprintf('https://raw.github.com/%s/%s/master', urlencode($matches['username']), urlencode($matches['repo']));
+		$url = trailingslashit(sprintf('https://raw.github.com/%s/%s/master', urlencode($matches['username']), urlencode($matches['repo'])));
   
 		$raw_response = wp_remote_get($url, array('sslverify' => false));
 		if ( is_wp_error( $raw_response ) )
