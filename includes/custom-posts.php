@@ -5,16 +5,16 @@ function register_speaker_post_type() {
 	register_post_type( 'rotary_speakers', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
 	 	// let's now add all the options for this post type
 		array('labels' => array(
-			'name' => __('Speakers', 'rotary'), /* This is the Title of the Group */
-			'singular_name' => __('Speaker', 'rotary'), /* This is the individual type */
-			'all_items' => __('All Speakers', 'rotary'), /* the all items menu item */
+			'name' => __('Programs', 'rotary'), /* This is the Title of the Group */
+			'singular_name' => __('Program', 'rotary'), /* This is the individual type */
+			'all_items' => __('All Programs', 'rotary'), /* the all items menu item */
 			'add_new' => __('Add New', 'rotary'), /* The add new menu item */
 			'add_new_item' => __('Add New Speaker', 'rotary'), /* Add New Display Title */
 			'edit' => __( 'Edit', 'rotary' ), /* Edit Dialog */
-			'edit_item' => __('Edit Speaker', 'rotary'), /* Edit Display Title */
-			'new_item' => __('New Speaker', 'rotary'), /* New Display Title */
-			'view_item' => __('View Speaker', 'rotary'), /* View Display Title */
-			'search_items' => __('Search Speaker', 'rotary'), /* Search Custom Type Title */ 
+			'edit_item' => __('Edit Program', 'rotary'), /* Edit Display Title */
+			'new_item' => __('New Program', 'rotary'), /* New Display Title */
+			'view_item' => __('View Program', 'rotary'), /* View Display Title */
+			'search_items' => __('Search Programs', 'rotary'), /* Search Custom Type Title */ 
 			'not_found' =>  __('Nothing found.', 'rotary'), /* This displays if there are no entries yet */ 
 			'not_found_in_trash' => __('Nothing found in Trash', 'rotary'), /* This displays if there is nothing in the trash */
 			'parent_item_colon' => ''
@@ -52,16 +52,16 @@ function register_speaker_post_type() {
     	array('rotary_speakers'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
     	array('hierarchical' => true,     /* if this is true, it acts like categories */             
     		'labels' => array(
-    			'name' => __( 'Speaker Categories', 'rotary' ), /* name of the custom taxonomy */
-    			'singular_name' => __( 'Speaker Category', 'rotary' ), /* single taxonomy name */
-    			'search_items' =>  __( 'Search Speaker Categories', 'rotary' ), /* search title for taxomony */
-    			'all_items' => __( 'All Speaker Categories', 'rotary' ), /* all title for taxonomies */
-    			'parent_item' => __( 'Parent Speaker Category', 'rotary' ), /* parent title for taxonomy */
-    			'parent_item_colon' => __( 'Parent Speaker Category:', 'rotary' ), /* parent taxonomy title */
-    			'edit_item' => __( 'Edit Speaker Category', 'rotary' ), /* edit custom taxonomy title */
-    			'update_item' => __( 'Update Speaker Category', 'rotary' ), /* update title for taxonomy */
-    			'add_new_item' => __( 'Add New Speaker Category', 'rotary' ), /* add new title for taxonomy */
-    			'new_item_name' => __( 'New Custom Speaker Name', 'rotary' ) /* name title for taxonomy */
+    			'name' => __( 'Program Categories', 'rotary' ), /* name of the custom taxonomy */
+    			'singular_name' => __( 'Program Category', 'rotary' ), /* single taxonomy name */
+    			'search_items' =>  __( 'Search Program Categories', 'rotary' ), /* search title for taxomony */
+    			'all_items' => __( 'All Program Categories', 'rotary' ), /* all title for taxonomies */
+    			'parent_item' => __( 'Parent Program Category', 'rotary' ), /* parent title for taxonomy */
+    			'parent_item_colon' => __( 'Parent Program Category:', 'rotary' ), /* parent taxonomy title */
+    			'edit_item' => __( 'Edit Program Category', 'rotary' ), /* edit custom taxonomy title */
+    			'update_item' => __( 'Update Program Category', 'rotary' ), /* update title for taxonomy */
+    			'add_new_item' => __( 'Add New Program Category', 'rotary' ), /* add new title for taxonomy */
+    			'new_item_name' => __( 'New Custom Program Name', 'rotary' ) /* name title for taxonomy */
     		),
     		'show_ui' => true,
     		'query_var' => true,
@@ -74,16 +74,16 @@ function register_speaker_post_type() {
     	array('rotary_speakers'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
     	array('hierarchical' => false,    /* if this is false, it acts like tags */                
     		'labels' => array(
-    			'name' => __( 'Speaker Tags', 'rotary' ), /* name of the custom taxonomy */
-    			'singular_name' => __( 'Speaker Tag', 'rotary' ), /* single taxonomy name */
-    			'search_items' =>  __( 'Search Speaker Tags', 'rotary' ), /* search title for taxomony */
-    			'all_items' => __( 'All Speaker Tags', 'rotary' ), /* all title for taxonomies */
-    			'parent_item' => __( 'Parent Speaker Tag', 'rotary' ), /* parent title for taxonomy */
-    			'parent_item_colon' => __( 'Parent Speaker Tag:', 'rotary' ), /* parent taxonomy title */
-    			'edit_item' => __( 'Edit Speaker Tag', 'rotary' ), /* edit custom taxonomy title */
-    			'update_item' => __( 'Update Speaker Tag', 'rotary' ), /* update title for taxonomy */
-    			'add_new_item' => __( 'Add New Speaker Tag', 'rotary' ), /* add new title for taxonomy */
-    			'new_item_name' => __( 'New Speaker Tag Name', 'rotary' ) /* name title for taxonomy */
+    			'name' => __( 'Program Tags', 'rotary' ), /* name of the custom taxonomy */
+    			'singular_name' => __( 'Program Tag', 'rotary' ), /* single taxonomy name */
+    			'search_items' =>  __( 'Search Program Tags', 'rotary' ), /* search title for taxomony */
+    			'all_items' => __( 'All Program Tags', 'rotary' ), /* all title for taxonomies */
+    			'parent_item' => __( 'Parent Program Tag', 'rotary' ), /* parent title for taxonomy */
+    			'parent_item_colon' => __( 'Parent Program Tag:', 'rotary' ), /* parent taxonomy title */
+    			'edit_item' => __( 'Edit Program Tag', 'rotary' ), /* edit custom taxonomy title */
+    			'update_item' => __( 'Update Program Tag', 'rotary' ), /* update title for taxonomy */
+    			'add_new_item' => __( 'Add New Program Tag', 'rotary' ), /* add new title for taxonomy */
+    			'new_item_name' => __( 'New Program Tag Name', 'rotary' ) /* name title for taxonomy */
     		),
     		'show_ui' => true,
     		'query_var' => true,
