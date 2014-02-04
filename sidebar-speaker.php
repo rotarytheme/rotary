@@ -13,7 +13,7 @@
 			<li>
 				<div class="speaker-side-container">
 					
-										<h3 class="speakerbio"><?php _e( 'Biography', 'Rotary' ); ?></h3>
+										<h3 class="speakerbio"><?php _e( 'About the Speaker', 'Rotary' ); ?></h3>
 					<ul>
 						<li>
 							<?php the_field( 'speaker_bio' ); ?>
