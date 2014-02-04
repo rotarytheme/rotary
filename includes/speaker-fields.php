@@ -102,7 +102,6 @@ if(function_exists("register_field_group"))
 				'name' => 'speaker_bio',
 				'type' => 'textarea',
 				'instructions' => 'Enter the Speaker Bio',
-				'required' => 1,
 				'default_value' => '',
 				'placeholder' => '',
 				'maxlength' => '',
