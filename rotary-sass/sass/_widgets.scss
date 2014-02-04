@@ -118,7 +118,7 @@ aside {
 	color:#606060;
 	margin:100px 0 20px 20px;
 	padding-bottom:54px;
-	width:272px;
+	width:271px;
 	.speaker-side-container {
 	 border-top:1px solid #e9dfc8;
 	 border-left:1px solid #e9dfc8;
@@ -163,7 +163,7 @@ aside {
 		left:-10px;
 	}
 	.speaker-side-bottom {
-		background: url(../images/speaker-container-bottom-bg.png) no-repeat;
+		background: url(../images/speaker-container-bottom-bg.png)  -1px 0 no-repeat;
 		height:41px;
 		margin-top:0;
 	}

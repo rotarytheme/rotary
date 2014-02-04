@@ -50,6 +50,12 @@ Tags: rotary, html5
 	display:block;
 	padding-top:15px;
 }
+#speakerfooter .post-edit-link, #speakerfooter .post_new_link {
+	display:block;
+	float:left;
+	margin-right:10px;
+	padding-top: 15px;
+}
 .screen-reader-text { /* Reusable, toolbox kind of class */
   position: absolute;
   top: -9999px;

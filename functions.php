@@ -35,17 +35,3 @@ include_once('advanced-custom-fields/acf.php' );
 include_once('acf-repeater/acf-repeater.php');
 include_once($includes_path . 'speaker-fields.php');
 /*you can put custom code below this line*/
-
-//always show author
-add_action('admin_init', 'rotary_set_user_metaboxes');
-function rotary_set_user_metaboxes($user_id=NULL) {
-	$meta_key['hidden'] = 'metaboxhidden_post';
-	if ( ! $user_id) {
-        $user_id = get_current_user_id(); 
-	}
-	 
-    //if ( ! get_user_meta( $user_id, $meta_key['hidden'], true) ) {
-        $meta_value = array('postcustom','trackbacksdiv','commentstatusdiv','commentsdiv','slugdiv','revisionsdiv');
-        update_user_meta( $user_id, $meta_key['hidden'], $meta_value );
-   // }
-  } 

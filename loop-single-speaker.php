@@ -31,10 +31,12 @@
 							if (count($field)) { ?>
 								<?php echo($field) ?>&nbsp;&nbsp;&nbsp;
 							<?php } ?>
-							<?php $field = trim(get_field( 'speaker_email' ));
-							if (count($field)) { ?>
+							<?php if ( is_user_logged_in() ) { ?>
+								<?php $field = trim(get_field( 'speaker_email' ));
+									if (count($field)) { ?>
 										<?php echo '<a href="mailto:'.antispambot($field).'">'.antispambot($field).'</a>'; ?>
-							<?php } ?>
+									<?php } ?>
+								<?php } ?>
                    </p>
                    <div class="speakersectioncontent clearfix">
 				<div id="content" role="main" class="speaker">
@@ -47,9 +49,9 @@
                        <div class="blogcontent">
                        <?php $scribe = get_field('scribe'); ?>
                        <?php $editor = get_field('editor'); ?>
-                    	<p>Posted by: <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ))?>"><?php echo get_the_author(); ?></a>&nbsp;&nbsp;&nbsp;
-                    	<strong>Scribe:</strong> <a href="<?php echo get_author_posts_url( $scribe['ID'])?>"><?php echo $scribe['user_firstname'] .' ' .  $scribe['user_lastname']; ?></a>&nbsp;&nbsp;&nbsp;
-                    	<strong>Editor:</strong> <a href="<?php echo get_author_posts_url( $editor['ID'])?>"><?php echo $editor['user_firstname'] .' ' .  $editor['user_lastname']; ?></a>
+                    	<p>Posted by: <?php echo get_the_author(); ?>&nbsp;&nbsp;&nbsp;
+                    	<strong>Scribe:</strong> <?php echo $scribe['user_firstname'] .' ' .  $scribe['user_lastname']; ?>&nbsp;&nbsp;&nbsp;
+                    	<strong>Editor:</strong> <?php echo $editor['user_firstname'] .' ' .  $editor['user_lastname']; ?>
                     	</p>
                     	<?php
                     		//program notes are filled in after a speakers visit. If the speaker has not yet been to the club, we show the upcoming content
@@ -72,6 +74,9 @@
 			
 			<footer id="speakerfooter">
 				<?php edit_post_link( __( 'Edit', 'Rotary' ), '', '' ); ?>
+				<?php  if(current_user_can('edit_page')){ ?>
+					<a class="post_new_link" href="<?php echo admin_url(); ?>post-new.php?post_type=rotary_speakers">New Speaker</a>		
+				<?php } ?>
 				
 			</footer>
 				</div><?php get_sidebar('speaker'); ?></div>		

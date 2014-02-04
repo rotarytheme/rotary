@@ -10,16 +10,6 @@
 
 	<aside id="speaker-sidebar" role="complementary">
 		<ul>
-		<?php  if(current_user_can('edit_page')){ ?>
- 		<li class="newpost">
-            <ul >
-                <li>
-                    <a class="button" href="<?php echo admin_url(); ?>post-new.php?post_type=rotary_speakers">New Speaker</a>
-                  </li>
-                </ul>
-            </li>        
-			
-	<?php } ?>
 			<li>
 				<div class="speaker-side-container">
 					

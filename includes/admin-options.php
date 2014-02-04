@@ -99,14 +99,23 @@ add_filter( 'tiny_mce_before_init', 'rotary_unhide_kitchensink' );
 add_action('wp_insert_post_data', 'rotary_check_postdata', 99);
 function rotary_check_postdata($data) {
 	global $pagenow; 
-	if ($pagenow=='post.php'	) {
-		if ('rotary-slides' == $data['post_type']  && 'publish' ==$data['post_status']) {	
+	if ($pagenow == 'post.php'	) {
+
+		if ( 'rotary-slides' == $data['post_type']  && 'publish' ==$data['post_status'] ) {	
 			if (! has_post_thumbnail()) {
 				$data['post_status'] = 'draft';
     			add_filter('redirect_post_location', 'rotary_redirect_post_location_filter', 99);
 			}
 		}
+		if ( 'rotary_speakers' == $data['post_type']  && 'publish' ==$data['post_status']) {
+			$title = trim($data['post_title']);
+			if ($title == null || $title == '' || $title == '(no title)') {
+     				$data['post_status'] = 'draft';
+    				add_filter('redirect_post_location', 'rotary_redirect_post_location_filter', 99);
+    		}		
+		}
 	}
+	
 	return $data;
 }
 function rotary_redirect_post_location_filter($location){
@@ -116,8 +125,16 @@ function rotary_redirect_post_location_filter($location){
 }
 add_filter('post_updated_messages', 'rotary_post_updated_messages_filter');
 function rotary_post_updated_messages_filter($messages) {
-  $messages['post'][99] = 'Featured image is missing';
-  return $messages;
+
+	global $post;
+	if ( 'rotary_speakers' == get_post_type( $post->ID )) {
+		$messages['post'][99] = 'Title is missing';
+	}
+	else {
+		$messages['post'][99] = 'Featured image is missing';
+	}
+	
+	return $messages;
 }
 add_action ('after_setup_theme', 'rotary_add_custom_user_roles');
 function rotary_add_custom_user_roles() {

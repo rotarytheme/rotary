@@ -50,7 +50,7 @@ $args['fields'][] = array('type' => 'taxonomy',
                           
 $args['fields'][] = array('type' => 'meta_key',
 						  'format' => 'text',
-                          'label' => 'Biography Free Text Search',
+                          'label' => 'About the Speaker',
                           'compare' => 'IN',
                           'meta_key' => 'speaker_bio');
 
