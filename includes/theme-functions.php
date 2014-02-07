@@ -176,7 +176,18 @@ function rotary_upcoming_programs_function($atts) {
 	), $atts ) );
 	$args = array(  
             'post_type' => 'rotary_speakers',
-            'posts_per_page'  => $show
+            'posts_per_page'  => $show,
+            'order' => 'ASC',
+            'orderby' => 'meta_value',
+             'meta_key' => 'speaker_date',
+             'meta_query' => array(
+              array(
+			  	'key' => 'speaker_date',
+			  	'value' => date('Ymd'),
+			  	'type' => 'DATE',
+			 	'compare' => '>='
+			 	)	
+			 ) 
            );  
 	$the_query = new WP_Query( $args );
 	$postCount = 0;

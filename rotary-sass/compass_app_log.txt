@@ -2315,3 +2315,13 @@ when it has other properties nested beneath it.
 2014-02-03 16:12:35 overwrite stylesheets/style.css 
 2014-02-03 16:15:22 unchanged images/backgrounds-s8f9fdc06fe.png
 2014-02-03 16:15:23 overwrite stylesheets/style.css 
+2014-02-07 11:59:12    remove .sass-cache/ 
+2014-02-07 11:59:12    remove stylesheets/ie.css 
+2014-02-07 11:59:12    remove stylesheets/print.css 
+2014-02-07 11:59:12    remove stylesheets/screen.css 
+2014-02-07 11:59:13    remove stylesheets/style.css 
+2014-02-07 11:59:13    create stylesheets/ie.css 
+2014-02-07 11:59:13    create stylesheets/print.css 
+2014-02-07 11:59:13    create stylesheets/screen.css 
+2014-02-07 11:59:20    create images/backgrounds-s8f9fdc06fe.png
+2014-02-07 11:59:21    create stylesheets/style.css 

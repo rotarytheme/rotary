@@ -49,8 +49,7 @@
                        <div class="blogcontent">
                        <?php $scribe = get_field('scribe'); ?>
                        <?php $editor = get_field('editor'); ?>
-                    	<p>Posted by: <?php echo get_the_author(); ?>&nbsp;&nbsp;&nbsp;
-                    	<strong>Scribe:</strong> <?php echo $scribe['user_firstname'] .' ' .  $scribe['user_lastname']; ?>&nbsp;&nbsp;&nbsp;
+                    	<p><strong>Scribe:</strong> <?php echo $scribe['user_firstname'] .' ' .  $scribe['user_lastname']; ?>&nbsp;&nbsp;&nbsp;
                     	<strong>Editor:</strong> <?php echo $editor['user_firstname'] .' ' .  $editor['user_lastname']; ?>
                     	</p>
                     	<?php

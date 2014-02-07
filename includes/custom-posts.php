@@ -93,8 +93,12 @@ function register_speaker_post_type() {
     add_filter('manage_rotary_speakers_posts_columns' , 'rotary_speakers_cpt_columns'); 
     function rotary_speakers_cpt_columns($columns) {
 	    unset($columns['date']);
+	    unset($columns['author']);
 	    $new_columns = array(
 		'speaker_date' => __('Speaker Date', 'rotary'),
+		'speaker_first_name' => __('Speaker First Name', 'rotary'),
+		'speaker_last_name' => __('Speaker Last Name', 'rotary'),
+		'scribe' =>  __('Scribe', 'rotary'),
 		);
     	$columns = array_merge($columns, $new_columns);
 	    
@@ -107,6 +111,15 @@ function register_speaker_post_type() {
             	$speakerDate = get_post_meta( $post_id , 'speaker_date' , true );  
             	echo date('l M dS, Y', strtotime($speakerDate));
 				break;
+			case 'speaker_first_name':
+				echo get_post_meta( $post_id , 'speaker_first_name' , true ); 
+				break;
+			case 'speaker_last_name':
+				echo get_post_meta( $post_id , 'speaker_last_name' , true ); 
+				break;
+			case 'scribe':
+				echo get_post_meta( $post_id , 'scribe' , true ); 
+				break;	
 
 		}
 	    
@@ -115,6 +128,8 @@ function register_speaker_post_type() {
     function rotary_column_register_sortable( $columns )
 	{
 		$columns['speaker_date'] = 'speaker_date';
+		$columns['speaker_first_name'] = 'speaker_first_name';
+		$columns['speaker_last_name'] = 'speaker_last_name';
 		return $columns;
 	}
 	add_filter( 'request', 'rotary_speaker_column_orderby' );
@@ -125,7 +140,19 @@ function register_speaker_post_type() {
             'orderby' => 'meta_value'
         ) );
     }
- 
+	if ( isset( $vars['orderby'] ) && 'speaker_first_name' == $vars['orderby'] ) {
+        $vars = array_merge( $vars, array(
+            'meta_key' => 'speaker_first_name',
+            'orderby' => 'meta_value'
+        ) );
+    }
+    if ( isset( $vars['orderby'] ) && 'speaker_last_name' == $vars['orderby'] ) {
+        $vars = array_merge( $vars, array(
+            'meta_key' => 'speaker_last_name',
+            'orderby' => 'meta_value'
+        ) );
+    }
+
     return $vars;
 }
 
