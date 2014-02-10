@@ -26,13 +26,12 @@ function transient_update_themes_filter($data){
 
 $wp_34 = version_compare($wp_version, '3.4', '>=');
 
-//$installed_themes = $wp_34 ? wp_get_themes() : get_themes();
-//foreach ( (array) $installed_themes as $theme_title => $_theme ) {
+$installed_themes = $wp_34 ? wp_get_themes() : get_themes();
+foreach ( (array) $installed_themes as $theme_title => $_theme ) {
 // the WP_Theme object is very different now...
 // This whole function should be refactored to not directly
 // rely on the $theme variable the way it does
 if($wp_34) {
-$_theme = wp_get_theme();
 if(!$_theme->get('Github Theme URI')) {
 continue;
 } else {
@@ -115,23 +114,26 @@ continue;
 
 // check for rollback
 if(isset($_GET['rollback'])){
-	$data->response[$theme_key]['package'] = $theme['Github Theme URI'] . '/zipball/' . urlencode($_GET['rollback']);
+$data->response[$theme_key]['package'] =
+$theme['Github Theme URI'] . '/zipball/' . urlencode($_GET['rollback']);
+continue;
 }
-else if(version_compare($theme['Version'], $version, '>=')){
+
+if(version_compare($theme['Version'], $version, '>=')){
 // up-to-date!
-	$data->up_to_date[$theme_key]['rollback'] = $version;
-
+$data->up_to_date[$theme_key]['rollback'] = $version;
+continue;
 }
 
-else {
-	// new update available, add to $data
-	$download_link = $theme['Github Theme URI'] . '/zipball/master';
 
-	$update = array();
-	$update['new_version'] = $version;
-	$update['url'] = $theme['Github Theme URI'];
-	$update['package'] = $download_link;
-	$data->response[$theme_key] = $update;
+// new update available, add to $data
+$download_link = $theme['Github Theme URI'] . '/zipball/master';
+
+$update = array();
+$update['new_version'] = $version;
+$update['url'] = $theme['Github Theme URI'];
+$update['package'] = $download_link;
+$data->response[$theme_key] = $update;
 
 }
 
