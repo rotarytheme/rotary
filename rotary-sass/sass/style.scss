@@ -54,7 +54,7 @@ Tags: rotary, html5
 	display:block;
 	float:left;
 	margin-right:10px;
-	padding-top: 15px;
+	padding-top: 5px;
 }
 .screen-reader-text { /* Reusable, toolbox kind of class */
   position: absolute;
@@ -77,6 +77,11 @@ Tags: rotary, html5
 .button {
 	@include button($height:20px);
 	line-height:20px;
+}
+.home-upcoming-programs .button {
+	clear:left;
+	margin-top:20px;
+	width:100px;
 }
 .no-cssgradients .button {
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FDF8EF', endColorstr='#F9EFD9'); /* IE6 & IE7 */
@@ -113,7 +118,7 @@ Tags: rotary, html5
 		font-family:$emphasis-font;
 	}
 }
-.headeredit {
+.headeredit, .speakerdatedit {
 	@include backgrounds-sprite("edit");
 	@include hide-text;
 	display:none;
@@ -125,6 +130,7 @@ Tags: rotary, html5
 	z-index:500;
 	
 }
+
 
 strong {font-weight:bold;}
 cite, em,i {font-style:italic;}
@@ -1505,3 +1511,4 @@ label[for="comment"] {
 @import "membership";
 @import "jquerytabs";
 @import "upcomingprograms";
+@import "fancybox";

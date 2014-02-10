@@ -119,6 +119,11 @@ aside {
 	margin:100px 0 20px 20px;
 	padding-bottom:54px;
 	width:271px;
+	.speaker-sidebar-thumbnail-container img {
+		border:4px solid #E9DFC8;
+		display: block;
+		margin: 0 auto;
+	}
 	.speaker-side-container {
 	 border-top:1px solid #e9dfc8;
 	 border-left:1px solid #e9dfc8;
@@ -137,6 +142,9 @@ aside {
 	}
 	a {
 		margin-left:5px;
+	}
+	.fancybox {
+		margin-left:0;
 	}
 	h3{
 		color:$header-font-color;

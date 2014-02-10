@@ -16,6 +16,13 @@ jQuery(document).ready(function($) {
 			$('#search-toggle').on('click', this.toggleSearch);
 			$('#speaker-archive-table tbody tr').hover(this.hoverRow, this.hoverRow);
 			$('#speaker-archive-table tbody tr').on('click', this.selectRow);
+			$('.fancybox').fancybox({
+			padding : 3,
+			nextEffect	: 'fade',
+			prevEffect	: 'fade',
+			nextSpeed   : 500,
+			prevSpeed   : 500
+		});
 		},
 		toggleSearch: function(e) {
 			e.preventDefault();
@@ -177,9 +184,18 @@ jQuery(document).ready(function($) {
 					$('.headeredit').hide();
 				});
 			}
-			var acfForm = $('.acf-form');
-			$( '<button id="acfcancel" type="button">cancel</button>' ).insertAfter( '.acf-form input[type="submit"]' );	
-			
+			if ($('.speakerdatedit').length) {
+				$('.home-upcoming-programs-speaker-date').hover(
+				function() {
+					var position = $(this).position();
+					var editLeft = position.left;
+					//$(this).append($('.speakerdatedit').css('left', editLeft + 'px').show());
+					$(this).find('.speakerdatedit').show();
+				}, function() {
+					$(this).find('.speakerdatedit').hide();
+				});
+			}
+						
 		}
 	};
 	rotaryTheme.init();

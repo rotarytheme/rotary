@@ -96,8 +96,8 @@ $clearLeft='';
 					}
 					$programNotes = preg_replace('/<img[^>]+./','', $programNotes);
 					$programNotes = strip_tags($programNotes);
-					if (strlen($programNotes) > 50 ) {
-						$programNotes = substr($programNotes, 0, 50) ;
+					if (strlen($programNotes) > 100 ) {
+						$programNotes = substr($programNotes, 0, 100) ;
 					} 
 					?>
                 

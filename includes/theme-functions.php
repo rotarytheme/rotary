@@ -10,6 +10,22 @@
 
 add_filter('show_admin_bar', '__return_false');
 add_action( 'wp_print_styles', 'rotary_deregister_styles', 100 );
+function rotary_deregister_styles() {
+	wp_deregister_style( 'wp-admin' );
+}
+//add class to post edit link on single speaker page
+add_filter('edit_post_link', 'rotary_edit_post_link');
+
+function rotary_edit_post_link($output) {
+	if ('rotary_speakers' == get_post_type() && is_single()) {
+		$output = str_replace('class="post-edit-link"', 'class="post-edit-link button"', $output);
+	}
+	else if (is_front_page()) {
+		$output = str_replace('class="post-edit-link"', 'class="post-edit-link speakerdatedit"', $output);
+	}
+    
+    return $output;
+}
 //show the rotary club header
 function rotary_club_header($clubname, $rotaryClubBefore=false) {
 	if ($rotaryClubBefore) { ?>
@@ -48,9 +64,7 @@ function rotary_img_caption_shortcode( $a , $attr, $content = null) {
     . do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . '</p></div><div class="wp-caption-bottom"></div></div>';
 }
 
-function rotary_deregister_styles() {
-	wp_deregister_style( 'wp-admin' );
-}
+
 add_filter('wp_nav_menu_items','rotary_add_search_box', 10, 2);
 function rotary_add_search_box($items) {
  
@@ -211,6 +225,7 @@ function rotary_upcoming_programs_function($atts) {
                 	<span class="dayweek"><?php echo $date->format('l'); ?></span>
                 	<span class="day"><?php echo $date->format('d'); ?></span>
                 	<span class="month"><?php echo $date->format('F'); ?></span>
+                	<?php edit_post_link( __( 'Edit', 'Rotary' ), '', '' ); ?>
                 </div>
                 <div class="home-upcoming-program-details">
                 <?php $speaker = get_field('speaker_first_name').' '.get_field('speaker_last_name'); ?>
@@ -221,6 +236,10 @@ function rotary_upcoming_programs_function($atts) {
                 </div><!--.home-upcoming-program-details-->
 		 </article>
 	<?php endwhile; // End the loop. Whew. ?>
+	<?php //now add a new post button ?>
+	<?php  if(current_user_can('edit_page')){ ?>
+			<a class="post_new_link button" href="<?php echo admin_url(); ?>post-new.php?post_type=rotary_speakers">New Speaker</a>	
+	<?php } ?>
 	<?php wp_reset_postdata(); ?>
 	</div><!--.home-upcoming-programs-->
 <?php }
