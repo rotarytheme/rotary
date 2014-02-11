@@ -14,8 +14,8 @@ jQuery(document).ready(function($) {
 			$('#speakertabs').on('click', '.prevnext a', this.loadPrevNext);
 			$('#wpas-reset input').on('click', this.resetForm);
 			$('#search-toggle').on('click', this.toggleSearch);
-			$('#speaker-archive-table tbody tr').hover(this.hoverRow, this.hoverRow);
-			$('#speaker-archive-table tbody tr').on('click', this.selectRow);
+			$( '#speaker-archive-table tbody' ).on( 'mouseenter mouseleave', 'tr', this.hoverRow );
+			$('#speaker-archive-table tbody').on('click', 'tr', this.selectRow);
 			$('.fancybox').fancybox({
 			padding : 3,
 			nextEffect	: 'fade',
