@@ -7,7 +7,6 @@
  * @since Rotary 1.0
  */
 ?>
-
 	<aside id="speaker-sidebar" role="complementary">
 		<ul>
 			<li>
@@ -15,7 +14,7 @@
 					<ul>
 						<li>
 							<?php if ( has_post_thumbnail() ) {
-								the_post_thumbnail();
+								the_post_thumbnail('medium');
 							}
 							?>
 
@@ -42,7 +41,12 @@
 				<div>
 				<h3><?php _e( 'Categories', 'Rotary' ); ?></h3>
 				<ul>
-					<?php wp_list_categories( array('taxonomy' => 'rotary_speaker_cat', 'title_li' => '' )); ?> 
+					<?php $terms = wp_get_post_terms( get_the_id(), 'rotary_speaker_cat' ); ?>
+						<?php if ($terms) : ?>
+						<?php foreach ($terms as $term) : ?>
+							<li class="cat-item"><a href="<?php echo $term->slug; ?>"><?php echo $term->name; ?></a></li>				
+				<?php endforeach; ?>
+		    <?php endif; ?>
 				</ul>
 				</div>
 			</li>
@@ -67,9 +71,15 @@
 				<li class="clearleft">
 				<div>
 				<h3><?php _e( 'Tags', 'Rotary' ); ?></h3>
-				<div class="tagcloud">
-					<?php wp_tag_cloud( array('taxonomy' => 'rotary_speaker_tag')); ?>
-				</div></div>
+				<ul class="tagcloud">
+					<?php $terms = wp_get_post_terms( get_the_id(), 'rotary_speaker_tag' ); ?>
+						<?php if ($terms) : ?>
+						<?php foreach ($terms as $term) : ?>
+							<li class="cat-item"><a href="<?php echo $term->slug; ?>"><?php echo $term->name; ?></a></li>				
+				<?php endforeach; ?>
+		    <?php endif; ?>
+
+				</ul></div>
 			</li>
  <?php // end speaker widget area ?>
 		</ul>
