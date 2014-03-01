@@ -141,3 +141,8 @@ function rotary_add_custom_user_roles() {
 	$userRole = get_role( 'Contributor' ); 
 	add_role( 'Scribe', 'Scribe', $userRole['capabilities'] );
 }
+//remove program coordinator from the side bar
+add_action ('admin_menu' , 'rotary_remove_progam_coordinator_meta');
+function rotary_remove_progam_coordinator_meta() {
+	remove_meta_box( 'rotary_program_coordinator_catdiv', 'rotary_speakers', 'side' );
+}

@@ -76,6 +76,7 @@ $clearLeft='';
 					if (strlen($programNotes) > 50 ) {
 						$programNotes = substr($programNotes, 0, 50) ;
 					} 
+					
 					?>
                 
 

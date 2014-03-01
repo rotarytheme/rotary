@@ -17,7 +17,7 @@
 		</nav>
 		
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-						
+					
                 	<?php $speaker = get_field('speaker_first_name').' '.get_field('speaker_last_name'); ?>
                 	<?php $date = DateTime::createFromFormat('Ymd', get_field('speaker_date')); ?>
 					<span class="speakerdate"><span><?php echo $date->format('l');?></span> <?php echo $date->format('M dS, Y');?></span>
@@ -47,11 +47,13 @@
                      <hr/>  
  
                        <div class="blogcontent">
-                       <?php $scribe = get_field('scribe'); ?>
-                       <?php $editor = get_field('editor'); ?>
-                    	<p><strong>Scribe:</strong> <?php echo $scribe['user_firstname'] .' ' .  $scribe['user_lastname']; ?>&nbsp;&nbsp;&nbsp;
-                    	<strong>Editor:</strong> <?php echo $editor['user_firstname'] .' ' .  $editor['user_lastname']; ?>
-                    	</p>
+                       <?php if ( get_field('speaker_program_notes' )) { ?>	
+                       	<?php $scribe = get_field('scribe'); ?>
+					   	<?php $editor = get_field('editor'); ?>
+                    		<p><strong>Scribe:</strong> <?php echo $scribe['user_firstname'] .' ' .  $scribe['user_lastname']; ?>&nbsp;&nbsp;&nbsp;
+								<strong>Editor:</strong> <?php echo $editor['user_firstname'] .' ' .  $editor['user_lastname']; ?>
+							</p>
+                    	<?php } ?>
                     	<?php
                     		//program notes are filled in after a speakers visit. If the speaker has not yet been to the club, we show the upcoming content
 							$programNotes = trim(get_field('speaker_program_notes'));

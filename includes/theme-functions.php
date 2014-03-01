@@ -60,7 +60,7 @@ function rotary_img_caption_shortcode( $a , $attr, $content = null) {
  
     if ( $id ) $id = 'id="' . esc_attr($id) . '" ';
  
-    return '<div ' . $id . 'class="wp-caption ' . esc_attr($align) . '" style="width: ' . (10 + (int) $width) . 'px"><div class="inner-caption">'
+    return '<div ' . $id . 'class="wp-caption ' . esc_attr($align) . '" style="width: ' . (10 + (int) $width) . 'px"><div class="inner-caption clearfix">'
     . do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . '</p></div><div class="wp-caption-bottom"></div></div>';
 }
 
@@ -655,20 +655,21 @@ function rotary_output_archive_table($term='') { ?>
 				<?php $date = DateTime::createFromFormat('Ymd', get_field('speaker_date')); ?>
 				<td><a href="<?php the_permalink();?>">speaker link</a></td>
 				<td><?php echo $date->format('M d, Y'); ?></td>
-				<td><?php echo $term;?></td>
 				<?php $speakertitle = get_the_title();
 				if (strlen($speakertitle) > 25 ) {
 					$speakertitle = substr($speakertitle, 0, 25) . '...';
 				} ?>
 				<td><?php echo $speakertitle; ?></td>
 				<?php $speaker = get_field('speaker_first_name').' '.get_field('speaker_last_name'); ?>
-				<?php $jobtitle = trim(get_field( 'speaker_title' ));				
-				if (count($jobtitle)) { ?>
-					<?php $speaker .='/'.$jobtitle ?>
-				<?php } ?>
-
 				<td><?php echo $speaker; ?></td>
-				<td><?php the_field('speaker_company'); ?></td>
+				<?php $jobtitle = trim(get_field( 'speaker_title' ));
+				$company =	trim(get_field( 'speaker_company' ));		
+				if (count($company)) { ?>
+					<?php $jobtitle .='<br/>'.$company ?>
+				<?php } ?>
+				
+				<td><?php echo $jobtitle; ?></td>
+				<td><?php echo $term;?></td>
 			</tr>
 
 <?php }
@@ -730,16 +731,30 @@ function rotary_next_post_sort($order) {
 	return $order;
 }
 function rotary_filter_next_post_link($link) {
-    $next_post = get_next_post();    
-    $speakerDate = get_post_meta($next_post->ID, 'speaker_date', true);
-	$link = preg_replace('/<a(.+?)>.+?<\/a>/i',"<a$1><span>".date('l ', strtotime($speakerDate))."</span>".date('M dS, Y', strtotime($speakerDate))." &gt;</a>",$link);
+	if ( 'rotary_speakers' == get_post_type() && is_single()) {	
+    	$next_post = get_next_post();    
+		$speakerDate = get_post_meta($next_post->ID, 'speaker_date', true);
+		$link = preg_replace('/<a(.+?)>.+?<\/a>/i',"<a$1><span>".date('l ', strtotime($speakerDate))."</span>".date('M dS, Y', strtotime($speakerDate))." &gt;</a>",$link);
+	}
 	return $link;
 }
 
 function rotary_filter_previous_post_link($link) {
-    $previous_post = get_previous_post();
-    $speakerDate = get_post_meta($previous_post->ID, 'speaker_date', true);
-	$link = preg_replace('/<a(.+?)>.+?<\/a>/i',"<a$1>&lt; <span>".date('l ', strtotime($speakerDate))."</span>".date('M dS, Y', strtotime($speakerDate))."</a>",$link);
+	if ( 'rotary_speakers' == get_post_type() && is_single()) {	
+    	$previous_post = get_previous_post();
+		$speakerDate = get_post_meta($previous_post->ID, 'speaker_date', true);
+		$link = preg_replace('/<a(.+?)>.+?<\/a>/i',"<a$1>&lt; <span>".date('l ', strtotime($speakerDate))."</span>".date('M dS, Y', strtotime($speakerDate))."</a>",$link);
+	}
 	return $link;
 
+}
+//add the rotary speakers to custom archive
+add_filter( 'pre_get_posts', 'rotary_add_custom_types_to_archive' );
+function rotary_add_custom_types_to_archive( $query ) {
+  if( is_category() || is_tag() || is_archive() && empty( $query->query_vars['suppress_filters'] ) ) {
+    $query->set( 'post_type', array(
+     'post', 'rotary_speakers'
+		));
+	  return $query;
+    }
 }

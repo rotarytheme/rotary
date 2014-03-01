@@ -64,6 +64,7 @@ jQuery(document).ready(function($) {
 		},
 		setUpDatatables: function() {
 			$('#speaker-archive-table').dataTable({
+				'iDisplayLength': 25,
 				'aoColumnDefs': [
       				{ 'sClass': 'hide speakerlink', 'aTargets': [0]}
    				 ]

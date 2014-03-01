@@ -64,8 +64,26 @@ $clearLeft='';
    
                 <?php if ( $thumb) { ?> 
                		<section class="excerptcontainer"> 
-               <?php } ?>  
-              <?php the_excerpt(); ?>
+               <?php } ?> 
+             <?php if ( 'rotary_speakers' == get_post_type() ) { 
+	             //program notes are filled in after a speakers visit. If the speaker has not yet been to the club, we show the upcoming content
+					$programNotes = trim(get_field('speaker_program_notes'));
+					if ('' == $programNotes)
+					{
+						$programNotes = trim(get_field('speaker_program_content'));
+					}
+					$programNotes = preg_replace('/<img[^>]+./','', $programNotes);
+					$programNotes = strip_tags($programNotes);
+					if (strlen($programNotes) > 50 ) {
+						$programNotes = substr($programNotes, 0, 50) ;
+					} 
+					?>             
+					<p><?php echo $programNotes; ?> <a href="<?php the_permalink();?>">[…]</a></p>					 
+             <?php  } 
+             else {
+	             the_excerpt();
+             }
+             ?>
 
               <?php if ( $thumb) { ?> 
                 </section>

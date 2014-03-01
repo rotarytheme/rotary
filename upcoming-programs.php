@@ -88,17 +88,11 @@ $clearLeft='';
                    
                  
               <?php
-                   //program notes are filled in after a speakers visit. If the speaker has not yet been to the club, we show the upcoming content
-					$programNotes = trim(get_field('speaker_program_notes'));
-					if ('' == $programNotes)
-					{
-						$programNotes = trim(get_field('speaker_program_content'));
-					}
+                   //program notes are filled in after a speakers visit. 
+                   //Since these are upcoming speakers (future speakers), we show the upcoming content
+					$programNotes = trim(get_field('speaker_program_content'));			
 					$programNotes = preg_replace('/<img[^>]+./','', $programNotes);
 					$programNotes = strip_tags($programNotes);
-					if (strlen($programNotes) > 100 ) {
-						$programNotes = substr($programNotes, 0, 100) ;
-					} 
 					?>
                 
 

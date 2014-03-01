@@ -105,11 +105,11 @@ $query = $speaker_search->query();
 		<thead>
 			<tr>
 				<th>Speaker Link</th>
-				<th>Program Date</th>
-				<th>Category</th>
+				<th>Date</th>
 				<th>Program Title</th>
-				<th>Name/Job Title</th>
-				<th>Company</th>
+				<th>Name</th>
+				<th>Job Title/Organization</th>
+				<th>Category</th>
 			</tr>
 		</thead>
 

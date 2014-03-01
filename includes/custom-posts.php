@@ -36,12 +36,6 @@ function register_speaker_post_type() {
 	 	) /* end of options */
 	); /* end of register post type */
 	
-	
-} 
-
-	// adding the function to the Wordpress init
-	add_action( 'init', 'register_speaker_post_type');
-	
 	/*
 	for more information on taxonomies, go here:
 	http://codex.wordpress.org/Function_Reference/register_taxonomy
@@ -61,15 +55,35 @@ function register_speaker_post_type() {
     			'edit_item' => __( 'Edit Program Category', 'rotary' ), /* edit custom taxonomy title */
     			'update_item' => __( 'Update Program Category', 'rotary' ), /* update title for taxonomy */
     			'add_new_item' => __( 'Add New Program Category', 'rotary' ), /* add new title for taxonomy */
-    			'new_item_name' => __( 'New Custom Program Name', 'rotary' ) /* name title for taxonomy */
+    			'new_item_name' => __( 'New Program', 'rotary' ) /* name title for taxonomy */
     		),
     		'show_ui' => true,
     		'query_var' => true,
     		'rewrite' => array( 'slug' => 'speaker-category' ),
     	)
     );   
-    
-	// now let's add custom tags (these act like categories)
+    // now let's add custom categories for program coordinator
+        register_taxonomy( 'rotary_program_coordinator_cat', 
+    	array('rotary_speakers'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
+    	array('hierarchical' => true,     /* if this is true, it acts like categories */             
+    		'labels' => array(
+    			'name' => __( 'Program Coordinator', 'rotary' ), /* name of the custom taxonomy */
+    			'singular_name' => __( 'Program Coordinator', 'rotary' ), /* single taxonomy name */
+    			'search_items' =>  __( 'Search Program Coordinators', 'rotary' ), /* search title for taxomony */
+    			'all_items' => __( 'All Program Coordinators', 'rotary' ), /* all title for taxonomies */
+    			'parent_item' => __( 'Parent Program Coordinators', 'rotary' ), /* parent title for taxonomy */
+    			'parent_item_colon' => __( 'Parent Program Coordinators:', 'rotary' ), /* parent taxonomy title */
+    			'edit_item' => __( 'Edit Program Coordinators', 'rotary' ), /* edit custom taxonomy title */
+    			'update_item' => __( 'Update Program Coordinators', 'rotary' ), /* update title for taxonomy */
+    			'add_new_item' => __( 'Add New Program Coordinators', 'rotary' ), /* add new title for taxonomy */
+    			'new_item_name' => __( 'New Program Coordinator', 'rotary' ) /* name title for taxonomy */
+    		),
+    		'show_ui' => true,
+    		'query_var' => true,
+    		'rewrite' => array( 'slug' => 'program-coordinator' ),
+    	)
+    );   
+   	// now let's add custom tags (these act like tags)
     register_taxonomy( 'rotary_speaker_tag', 
     	array('rotary_speakers'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
     	array('hierarchical' => false,    /* if this is false, it acts like tags */                
@@ -89,16 +103,24 @@ function register_speaker_post_type() {
     		'query_var' => true,
     	)
     ); 
-    
+
+} 
+
+	// adding the function to the Wordpress init
+	add_action( 'init', 'register_speaker_post_type');
+	
+	    
     add_filter('manage_rotary_speakers_posts_columns' , 'rotary_speakers_cpt_columns'); 
     function rotary_speakers_cpt_columns($columns) {
 	    unset($columns['date']);
 	    unset($columns['author']);
+	    unset($columns['title']);
 	    $new_columns = array(
 		'speaker_date' => __('Speaker Date', 'rotary'),
+		'title' => __('Title', 'rotary'),
 		'speaker_first_name' => __('Speaker First Name', 'rotary'),
 		'speaker_last_name' => __('Speaker Last Name', 'rotary'),
-		'scribe' =>  __('Scribe', 'rotary'),
+		'speaker_company' =>  __('Organization', 'rotary'),
 		);
     	$columns = array_merge($columns, $new_columns);
 	    
@@ -117,8 +139,8 @@ function register_speaker_post_type() {
 			case 'speaker_last_name':
 				echo get_post_meta( $post_id , 'speaker_last_name' , true ); 
 				break;
-			case 'scribe':
-				echo get_post_meta( $post_id , 'scribe' , true ); 
+			case 'speaker_company':
+				echo get_post_meta( $post_id , 'speaker_company' , true ); 
 				break;	
 
 		}
