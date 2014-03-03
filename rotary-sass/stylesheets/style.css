@@ -1053,6 +1053,12 @@ hr {
 #speaker-archive-table_wrapper {
   margin-top: 40px;
 }
+#speaker-archive-table_wrapper .speakerDate {
+  min-width: 100px;
+}
+#speaker-archive-table_wrapper .speakerTitle {
+  width: 200px;
+}
 
 td {
   cursor: pointer;

@@ -792,7 +792,13 @@ hr {
 	width:670px;
 }
 #speaker-archive-table_wrapper {
-	margin-top:40px;	
+	margin-top:40px;
+	.speakerDate {
+		min-width:100px;
+	}
+	.speakerTitle {
+		width:200px;
+	}	
 }
 td {
 	cursor:pointer;

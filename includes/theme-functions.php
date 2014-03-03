@@ -656,8 +656,8 @@ function rotary_output_archive_table($term='') { ?>
 				<td><a href="<?php the_permalink();?>">speaker link</a></td>
 				<td><?php echo $date->format('M d, Y'); ?></td>
 				<?php $speakertitle = get_the_title();
-				if (strlen($speakertitle) > 25 ) {
-					$speakertitle = substr($speakertitle, 0, 25) . '...';
+				if (strlen($speakertitle) > 50 ) {
+					$speakertitle = substr($speakertitle, 0, 50) . '...';
 				} ?>
 				<td><?php echo $speakertitle; ?></td>
 				<?php $speaker = get_field('speaker_first_name').' '.get_field('speaker_last_name'); ?>
@@ -751,7 +751,7 @@ function rotary_filter_previous_post_link($link) {
 //add the rotary speakers to custom archive
 add_filter( 'pre_get_posts', 'rotary_add_custom_types_to_archive' );
 function rotary_add_custom_types_to_archive( $query ) {
-  if( is_category() || is_tag() || is_archive() && empty( $query->query_vars['suppress_filters'] ) ) {
+  if( is_category() || is_tag() || is_archive() && empty( $query->query_vars['suppress_filters'] ) && (!is_admin()) ) {
     $query->set( 'post_type', array(
      'post', 'rotary_speakers'
 		));

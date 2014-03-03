@@ -119,7 +119,7 @@ class RotaryArchiveWidget extends WP_Widget {
 	    $where = apply_filters('getarchives_where', "WHERE post_type = 'post' AND post_status = 'publish' AND $wpdb->term_taxonomy.taxonomy = 'category' AND $wpdb->term_taxonomy.term_id IN ($current_category_id)");
 			$join = apply_filters('getarchives_join', " INNER JOIN $wpdb->term_relationships ON ($wpdb->posts.ID = $wpdb->term_relationships.object_id) INNER JOIN $wpdb->term_taxonomy ON ($wpdb->term_relationships.term_taxonomy_id = $wpdb->term_taxonomy.term_taxonomy_id)");
 		} else {
-	    $where = apply_filters('getarchives_where', "WHERE (post_type = 'post' OR post_type = 'rotary_speakers')AND post_status = 'publish'");
+	    $where = apply_filters('getarchives_where', "WHERE (post_type = 'post' OR post_type = 'rotary_speakers') AND post_status = 'publish'");
 			$join = apply_filters('getarchives_join', "");
 		}
 
@@ -134,10 +134,10 @@ class RotaryArchiveWidget extends WP_Widget {
 	    global $wpdb;
 
 			if ($current_category_id) {
-		    $where = apply_filters('getarchives_where', "WHERE post_type = 'post' AND post_status = 'publish' AND YEAR(post_date) = {$year} AND $wpdb->term_taxonomy.taxonomy = 'category' AND $wpdb->term_taxonomy.term_id IN ($current_category_id)");
+		    $where = apply_filters('getarchives_where', "WHERE (post_type = 'post' OR post_type = 'rotary_speakers') AND post_status = 'publish' AND YEAR(post_date) = {$year} AND $wpdb->term_taxonomy.taxonomy = 'category' AND $wpdb->term_taxonomy.term_id IN ($current_category_id)");
 				$join = apply_filters('getarchives_join', " INNER JOIN $wpdb->term_relationships ON ($wpdb->posts.ID = $wpdb->term_relationships.object_id) INNER JOIN $wpdb->term_taxonomy ON ($wpdb->term_relationships.term_taxonomy_id = $wpdb->term_taxonomy.term_taxonomy_id)");
 			} else {
-		    $where = apply_filters('getarchives_where', "WHERE post_type = 'post' AND post_status = 'publish' AND YEAR(post_date) = {$year}");
+		    $where = apply_filters('getarchives_where', "(post_type = 'post' OR post_type = 'rotary_speakers') AND post_status = 'publish' AND YEAR(post_date) = {$year}");
 		    $join = apply_filters('getarchives_join', "");
 			}
 
