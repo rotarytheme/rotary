@@ -50,10 +50,20 @@
                        <?php if ( get_field('speaker_program_notes' )) { ?>	
                        	<?php $scribe = get_field('scribe'); ?>
 					   	<?php $editor = get_field('editor'); ?>
+					   
                     		<p><strong>Scribe:</strong> <?php echo $scribe['user_firstname'] .' ' .  $scribe['user_lastname']; ?>&nbsp;&nbsp;&nbsp;
 								<strong>Editor:</strong> <?php echo $editor['user_firstname'] .' ' .  $editor['user_lastname']; ?>
 							</p>
-                    	<?php } ?>
+                    	<?php } 
+	                    else { ?>
+	                    	<?php $terms = wp_get_post_terms( get_the_id(), 'rotary_program_coordinator_cat' ); ?> 
+	                    	 <?php if ($terms) { ?>
+		    	  		    	   		<p><strong>Program Coordinator:</strong> <?php echo $terms[0]->name; ?></p>
+				  			<?php } ?>
+		                    
+	                   <?php  }	?>
+	                    
+                    	
                     	<?php
                     		//program notes are filled in after a speakers visit. If the speaker has not yet been to the club, we show the upcoming content
 							$programNotes = trim(get_field('speaker_program_notes'));

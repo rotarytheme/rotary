@@ -114,7 +114,7 @@ $wp_customize->add_control( 'rotary_background_color', array(
 ) );
 
 /*Settings and Controls for Featured Area*/	
-/*$wp_customize->add_setting( 'rotary_home_featured', array(
+$wp_customize->add_setting( 'rotary_home_featured', array(
 		'default'        => true,
 		'capability'     => 'edit_theme_options',
 	) );
@@ -132,7 +132,7 @@ $wp_customize->add_control( 'rotary_home_featured_header', array(
 		'section' => 'rotary_main_settings',
 		'type'    => 'text',
 	) );
-*/
+
 /*Settings and Controls for Social Media*/	
 	$wp_customize->add_section( 'rotary_social_media_settings', array(
 		'title'          => 'Social Media',

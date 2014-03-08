@@ -17,10 +17,10 @@ get_header(); ?>
   class="fullwidth"
 <?php } ?>
 >
-<?php /* if (get_theme_mod( 'rotary_home_featured', true )) { 
+<?php if (get_theme_mod( 'rotary_home_featured', true )) { 
     rotary_get_featured_post(); 
 	
-} */?>
+} ?>
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
    <section class="homecontent">
       <div class="inner">

@@ -24,37 +24,21 @@ function github_extra_theme_headers( $headers ) {
 function transient_update_themes_filter($data){
 	global $wp_version;
 
-	$wp_34 = version_compare($wp_version, '3.4', '>=');
-
-	$installed_themes = $wp_34 ? wp_get_themes() : get_themes();
-	foreach ( (array) $installed_themes as $theme_title => $_theme ) {
+	$_theme = wp_get_theme();
+//	foreach ( (array) $installed_themes as $theme_title => $_theme ) {
 		// the WP_Theme object is very different now...
 		// This whole function should be refactored to not directly
 		// rely on the $theme variable the way it does
-		if($wp_34) {
-			if(!$_theme->get('Github Theme URI')) {
-				continue;
-			} else {
-				$theme = array(
-					'Github Theme URI' => $_theme->get('Github Theme URI'),
-					'Stylesheet' => $_theme->stylesheet,
-					'Version' => $_theme->version
-				);
-			}
+		if(!$_theme->get('Github Theme URI')) {
+			return;
 		} else {
-			// get the Github URI header, skip if not set
-			$theme = $_theme;
-			if(isset($theme['Stylesheet Files'][0]) && is_readable($theme['Stylesheet Files'][0])){
-				$stylesheet = $theme['Stylesheet Dir'] . '/style.css';
-
-				$theme_data = get_theme_data($stylesheet);
-				if(empty($theme_data['Github Theme URI'])){
-					continue;
-				} else {
-					$theme['Github Theme URI'] = $theme_data['Github Theme URI'];
-				}
-			};
+			$theme = array(
+				'Github Theme URI' => $_theme->get('Github Theme URI'),
+				'Stylesheet' => $_theme->stylesheet,
+				'Version' => $_theme->version
+			);
 		}
+		
 
 		$theme_key = $theme['Stylesheet'];
 
@@ -69,7 +53,7 @@ function transient_update_themes_filter($data){
 			$matches);
 		if(!isset($matches['username']) or !isset($matches['repo'])){
 			$data->response[$theme_key]['error'] = 'Incorrect github project url. Format should be (no trailing slash): <code style="background:#FFFBE4;">https://github.com/&lt;username&gt;/&lt;repo&gt;</code>';
-			continue;
+			return;
 		}
 		$version = get_site_transient( 'https://raw.github.com/rotarytheme/rotary/master/style.css_new_version' );
 		//$url = sprintf('https://api.github.com/repos/%s/%s/tags', urlencode($matches['username']), urlencode($matches['repo']));
@@ -80,7 +64,7 @@ function transient_update_themes_filter($data){
 			$raw_response = wp_remote_get($url, array('sslverify' => false, 'timeout' => 10));
 			if ( is_wp_error( $raw_response ) ){
 				$data->response[$theme_key]['error'] = "Error response from " . $url;
-				continue;
+				return;
 			}
 
 			preg_match( '#^\s*Version\:\s*(.*)$#im', $raw_response['body'], $matches );
@@ -99,7 +83,7 @@ function transient_update_themes_filter($data){
 					$errors = print_r($response->message, true);
 				}
 				$data->response[$theme_key]['error'] = sprintf('While <a href="%s">fetching tags</a> api error</a>: <span class="error">%s</span>', $url, $errors);
-				continue;
+				return;
 			}
 
 
@@ -116,13 +100,13 @@ function transient_update_themes_filter($data){
 		if(isset($_GET['rollback'])){
 			$data->response[$theme_key]['package'] =
 				$theme['Github Theme URI'] . '/zipball/' . urlencode($_GET['rollback']);
-			continue;
+			return;
 		}
 
 		if(version_compare($theme['Version'], $version, '>=')){
 			// up-to-date!
 			$data->up_to_date[$theme_key]['rollback'] = $version;
-			continue;
+			return;
 		}
 
 
@@ -135,7 +119,7 @@ function transient_update_themes_filter($data){
 		$update['package'] = $download_link;
 		$data->response[$theme_key] = $update;
 
-	}
+//	}
 
 	return $data;
 }

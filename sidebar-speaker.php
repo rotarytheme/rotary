@@ -44,7 +44,9 @@
 					<?php $terms = wp_get_post_terms( get_the_id(), 'rotary_speaker_cat' ); ?>
 						<?php if ($terms) : ?>
 						<?php foreach ($terms as $term) : ?>
-							<li class="cat-item"><a href="<?php echo $term->slug; ?>"><?php echo $term->name; ?></a></li>				
+						 <?php    
+							 $taxonomy = get_taxonomy('rotary_speaker_cat'); ?>					 							
+						 <li class="cat-item"><a href="<?php echo trailingslashit(site_url() .'/'. $taxonomy->rewrite['slug'] .'/'.$term->slug); ?>"><?php echo $term->name; ?></a></li>				
 				<?php endforeach; ?>
 		    <?php endif; ?>
 				</ul>
@@ -75,7 +77,7 @@
 					<?php $terms = wp_get_post_terms( get_the_id(), 'rotary_speaker_tag' ); ?>
 						<?php if ($terms) : ?>
 						<?php foreach ($terms as $term) : ?>
-							<li class="cat-item"><a href="<?php echo $term->slug; ?>"><?php echo $term->name; ?></a></li>				
+							<li class="cat-item"><a href="<?php echo trailingslashit(site_url() .'/rotary_speaker_tag/'.  $term->slug); ?>"><?php echo $term->name; ?></a></li>				
 				<?php endforeach; ?>
 		    <?php endif; ?>
 

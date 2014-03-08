@@ -205,7 +205,7 @@ function rotary_upcoming_programs_function($atts) {
            );  
 	$the_query = new WP_Query( $args );
 	$postCount = 0;
-	$clearLeft=''; ?>
+	$clearLeft = ''; ?>
 	<div class="home-upcoming-program-ribbon"><h2>Upcoming Speakers</h2></div>
 	<div class="home-upcoming-programs clearfix">
 	
@@ -215,7 +215,7 @@ function rotary_upcoming_programs_function($atts) {
 			  $clearLeft='';
 		 }
 		 else {
-			 $clearLeft='clearleft';
+			 $clearLeft = 'clearleft';
 		 }
 		 ?>
 		 <article id="post-<?php the_ID(); ?>" <?php post_class($clearLeft); ?>>
@@ -238,7 +238,10 @@ function rotary_upcoming_programs_function($atts) {
 	<?php endwhile; // End the loop. Whew. ?>
 	<?php //now add a new post button ?>
 	<?php  if(current_user_can('edit_page')){ ?>
+	      <?php $clearLeft = ($clearLeft == 'clearleft' ? '' : ' clearleft'); 	?>	      
+	      <div class="newspeaker<?php echo $clearLeft; ?>">
 			<a class="post_new_link button" href="<?php echo admin_url(); ?>post-new.php?post_type=rotary_speakers">New Speaker</a>	
+	      </div>	
 	<?php } ?>
 	<?php wp_reset_postdata(); ?>
 	</div><!--.home-upcoming-programs-->
@@ -444,18 +447,10 @@ endif;
 /*gets the featured post*/
 
 function rotary_get_featured_post(){
-	if (post_type_exists( 'rotary-reveille') ) {
-		$args = array(	
-			'order' => 'ASC',
-			'post_type' => 'rotary-reveille',
-		);
-	}
-	else {	
 		$args = array(
 			'posts_per_page' => 1,
 			'category_name' => 'featured',
 		);
-	}
 	
 	$query = new WP_Query( $args );
 	global $more;
@@ -465,7 +460,7 @@ function rotary_get_featured_post(){
          <?php  $more = 0; ?>
 		<section class="featuredheader">
         	<h3><?php echo get_theme_mod( 'rotary_home_featured_header', 'Featured' ); ?></h3>
-        	<p>by <span><?php echo get_the_author();?></span></p>
+        	<p>by <span><?php the_author_meta('user_firstname');?>&nbsp;<?php the_author_meta('user_lastname');?> </span></p>
         </section>
         <h4><?php the_title(); ?></h4>
         <section class="featuredcontent">
@@ -747,14 +742,4 @@ function rotary_filter_previous_post_link($link) {
 	}
 	return $link;
 
-}
-//add the rotary speakers to custom archive
-add_filter( 'pre_get_posts', 'rotary_add_custom_types_to_archive' );
-function rotary_add_custom_types_to_archive( $query ) {
-  if( is_category() || is_tag() || is_archive() && empty( $query->query_vars['suppress_filters'] ) && (!is_admin()) ) {
-    $query->set( 'post_type', array(
-     'post', 'rotary_speakers'
-		));
-	  return $query;
-    }
 }
