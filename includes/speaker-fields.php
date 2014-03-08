@@ -30,7 +30,7 @@ if(function_exists("register_field_group"))
 				'multiple' => 0,
 			),
 			array (
-				'key' => 'field_5307b119a8d14',
+				'key' => 'field_5225023932d4d',
 				'label' => 'Scribe',
 				'name' => 'scribe',
 				'type' => 'user',
@@ -39,10 +39,10 @@ if(function_exists("register_field_group"))
 					0 => 'Scribe',
 				),
 				'field_type' => 'select',
-				'allow_null' => 1,
+				'allow_null' => 0,
 			),
 			array (
-				'key' => 'field_5307b161b57f5',
+				'key' => 'field_527440d9a06b9',
 				'label' => 'Editor',
 				'name' => 'editor',
 				'type' => 'user',
@@ -152,14 +152,14 @@ if(function_exists("register_field_group"))
 				'media_upload' => 'yes',
 			),
 			array (
-				'key' => 'field_5307b1ede7a0d',
+				'key' => 'field_5225014c8fdb5',
 				'label' => 'Picture Gallery',
 				'name' => 'speaker_program_images',
 				'type' => 'repeater',
 				'instructions' => 'The picture gallery is displayed as thumbnails below “About the Speaker” to the right of the program notes.	Don’t forget to also add a featured picture.',
 				'sub_fields' => array (
 					array (
-						'key' => 'field_5307b237e7a0e',
+						'key' => 'field_529e755f4501c',
 						'label' => 'Speaker Program Image',
 						'name' => 'speaker_program_image',
 						'type' => 'image',
