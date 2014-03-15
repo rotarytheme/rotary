@@ -169,6 +169,7 @@ add_action( 'init', 'rotary_register_shortcodes');
 function rotary_register_shortcodes(){
    add_shortcode('rotary-reveille-header', 'rotary_reveille_header_function');
    add_shortcode( 'UPCOMING_SPEAKERS', 'rotary_upcoming_programs_function' );
+   add_shortcode( 'FEATURED_ITEM', 'rotary_get_featured_post' );
 }
 function rotary_reveille_header_function($atts, $content = null) {
 	extract( shortcode_atts( array(
@@ -184,6 +185,71 @@ function rotary_reveille_header_function($atts, $content = null) {
     	</div>
     </div>    
 <?php }
+
+/*gets the featured post*/
+
+function rotary_get_featured_post($atts){
+	extract( shortcode_atts( array(
+		'header' => 'Latest News',
+	), $atts ) );
+	if (post_type_exists( 'rotary_speakers') ) {
+		$args = array(	
+			'posts_per_page' => 1,
+			'post_type' => 'rotary_speakers',
+			'order' => 'DESC',
+            'orderby' => 'meta_value',
+            'meta_key' => 'speaker_date',
+		);
+    }
+    else {
+		$args = array(
+			'posts_per_page' => 1,
+			'category_name' => 'featured',
+		);
+	}
+	ob_start(); 
+	$query = new WP_Query( $args );
+	global $more;
+	if ( $query->have_posts() ) : ?>
+		<div id="featured">
+        <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
+         <?php  $more = 0; ?>
+		<section class="featuredheader">
+        	<h3><?php echo $header ?></h3>
+        	<p>by <span><?php the_author_meta('user_firstname');?>&nbsp;<?php the_author_meta('user_lastname');?> </span></p>
+        </section>
+        <h4><?php the_title(); ?></h4>
+        <?php 
+        if (post_type_exists( 'rotary_speakers')) {
+	        $content = trim(get_field('speaker_program_content'));			
+		}
+		else {
+	        $content = apply_filters(get_the_content());
+        } ?>
+        <section class="featuredcontent">
+           <?php  if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+  				the_post_thumbnail('medium'); ?>
+				<div class="hasthumb">
+					<?php echo $content; ?>
+				</div>
+			<?php } 
+            else {?>
+            	<div class="nothumb">
+        			<?php echo $content; ?>
+            	</div>
+           <?php  } ?>
+        </section>
+		<?php endwhile; ?>
+ 		</div>
+ 		<div id="featuredbottom">
+		</div>
+    <?php endif;
+	// Reset Post Data
+	wp_reset_postdata();
+	return ob_get_clean();	
+}
+
+
 function rotary_upcoming_programs_function($atts) {
 	extract( shortcode_atts( array(
 		'show' => '4',
@@ -205,7 +271,8 @@ function rotary_upcoming_programs_function($atts) {
            );  
 	$the_query = new WP_Query( $args );
 	$postCount = 0;
-	$clearLeft = ''; ?>
+	$clearLeft = ''; 
+	ob_start(); ?>
 	<div class="home-upcoming-program-ribbon"><h2>Upcoming Speakers</h2></div>
 	<div class="home-upcoming-programs clearfix">
 	
@@ -240,12 +307,13 @@ function rotary_upcoming_programs_function($atts) {
 	<?php  if(current_user_can('edit_page')){ ?>
 	      <?php $clearLeft = ($clearLeft == 'clearleft' ? '' : ' clearleft'); 	?>	      
 	      <div class="newspeaker<?php echo $clearLeft; ?>">
-			<a class="post_new_link button" href="<?php echo admin_url(); ?>post-new.php?post_type=rotary_speakers">New Speaker</a>	
+			<a class="post_new_link" href="<?php echo admin_url(); ?>post-new.php?post_type=rotary_speakers">New Speaker</a>	
 	      </div>	
 	<?php } ?>
 	<?php wp_reset_postdata(); ?>
 	</div><!--.home-upcoming-programs-->
-<?php }
+<?php 	return ob_get_clean();
+}
 function rotary_parse_shortcode_content( $content ) {
 
     $content = do_shortcode( shortcode_unautop( $content ) ); 
@@ -444,47 +512,6 @@ endif;
 		
     }  
  
-/*gets the featured post*/
-
-function rotary_get_featured_post(){
-		$args = array(
-			'posts_per_page' => 1,
-			'category_name' => 'featured',
-		);
-	
-	$query = new WP_Query( $args );
-	global $more;
-	if ( $query->have_posts() ) : ?>
-		<div id="featured">
-        <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
-         <?php  $more = 0; ?>
-		<section class="featuredheader">
-        	<h3><?php echo get_theme_mod( 'rotary_home_featured_header', 'Featured' ); ?></h3>
-        	<p>by <span><?php the_author_meta('user_firstname');?>&nbsp;<?php the_author_meta('user_lastname');?> </span></p>
-        </section>
-        <h4><?php the_title(); ?></h4>
-        <section class="featuredcontent">
-           <?php  if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-  				the_post_thumbnail('medium'); ?>
-				<div class="hasthumb">
-					<?php the_content(); ?>
-				</div>
-			<?php } 
-            else {?>
-            	<div class="nothumb">
-        			<?php the_content(); ?>
-            	</div>
-           <?php  } ?>
-        </section>
-		<?php endwhile; ?>
- 		</div>
- 		<div id="featuredbottom">
-		</div>
-    <?php endif;
-	// Reset Post Data
-	wp_reset_postdata();	
-}
-
 /*gets the slide show*/
 function rotary_get_slideshow(){
 	$args = array(

@@ -78,15 +78,6 @@ Tags: rotary, html5
 	@include button($height:20px);
 	line-height:20px;
 }
-.home-upcoming-programs .button {
-	margin-top:100px;
-	width:100px;
-}
-.home-upcoming-programs .newspeaker {
-	float:left;
-	height:220px;
-	width:50%;
-}
 .no-cssgradients .button {
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FDF8EF', endColorstr='#F9EFD9'); /* IE6 & IE7 */
 -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FDF8EF', endColorstr='#F9EFD9')"; /* IE8 */  
@@ -486,10 +477,7 @@ hr {
 		float:left;
 		margin-right:15px;
 	}
-	.hasthumb {
-		float:left;
-		width:400px;
-	}
+	
 }
 .no-cssgradients #featured {
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#fdf8ef', endColorstr='#f9efd9'); /* IE6 & IE7 */
@@ -843,7 +831,7 @@ td {
 	td {
 		border: 1px solid #e9e9e9;
 		height:38px;
-		line-height: 1.2em;
+		line-height: 1.3em;
 		padding-left:20px;
 	}
 }

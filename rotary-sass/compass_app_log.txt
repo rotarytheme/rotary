@@ -2208,3 +2208,29 @@ when it has other properties nested beneath it.
 2014-03-03 17:51:52 overwrite stylesheets/style.css 
 2014-03-07 18:11:46 unchanged images/backgrounds-s8f9fdc06fe.png
 2014-03-07 18:11:48 overwrite stylesheets/style.css 
+2014-03-12 14:04:53 unchanged images/backgrounds-s8f9fdc06fe.png
+2014-03-12 14:04:54 overwrite stylesheets/style.css 
+2014-03-12 14:14:32 unchanged images/backgrounds-s8f9fdc06fe.png
+2014-03-12 14:14:33 overwrite stylesheets/style.css 
+2014-03-13 12:21:57 unchanged images/backgrounds-s8f9fdc06fe.png
+2014-03-13 12:21:58 overwrite stylesheets/style.css 
+2014-03-13 12:26:30 unchanged images/backgrounds-s8f9fdc06fe.png
+2014-03-13 12:26:31 overwrite stylesheets/style.css 
+2014-03-13 12:27:30 unchanged images/backgrounds-s8f9fdc06fe.png
+2014-03-13 12:27:31 overwrite stylesheets/style.css 
+2014-03-13 12:28:41 unchanged images/backgrounds-s8f9fdc06fe.png
+2014-03-13 12:28:42 overwrite stylesheets/style.css 
+2014-03-13 12:32:07 unchanged images/backgrounds-s8f9fdc06fe.png
+2014-03-13 12:32:19     error sass/style.scss (Line 71 of sass/_upcomingprograms.scss: Undefined variable: "$border".)
+2014-03-13 12:32:19 overwrite stylesheets/style.css 
+2014-03-13 12:39:46 unchanged images/backgrounds-s8f9fdc06fe.png
+2014-03-13 12:39:55     error sass/style.scss (Line 72 of sass/_upcomingprograms.scss: Undefined variable: "$color".)
+2014-03-13 12:39:55 overwrite stylesheets/style.css 
+2014-03-13 12:41:28 unchanged images/backgrounds-s8f9fdc06fe.png
+2014-03-13 12:41:29 overwrite stylesheets/style.css 
+2014-03-13 12:44:01 unchanged images/backgrounds-s8f9fdc06fe.png
+2014-03-13 12:44:02 overwrite stylesheets/style.css 
+2014-03-13 12:45:43 unchanged images/backgrounds-s8f9fdc06fe.png
+2014-03-13 12:45:43 overwrite stylesheets/style.css 
+2014-03-13 12:46:41 unchanged images/backgrounds-s8f9fdc06fe.png
+2014-03-13 12:46:42 overwrite stylesheets/style.css 

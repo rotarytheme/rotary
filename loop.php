@@ -45,7 +45,11 @@ $clearLeft='';
             	<div class="sectionheader" id="blog-<?php the_ID(); ?>" >
                 	<div class="sectioncontent">
 			<header>
-                <h2><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'Rotary' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+			    <?php $title = get_the_title(); ?>
+			    <?php if (strlen($title) > 30 ) {
+					$title = substr($title, 0, 30) . '...';
+				} ?>
+                <h2><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'Rotary' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php echo $title; ?></a></h2>
                 <div class="postdate">
                 	<span class="alignleft">Posted by <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ))?>"><?php echo get_the_author();?></a></span>
                     <span class="alignright"><?php Rotary_posted_on(); ?></span>

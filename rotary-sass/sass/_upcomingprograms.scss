@@ -58,11 +58,37 @@
 		padding:20px 0 20px 0;
 		text-transform:uppercase;
 		width:260px;
+		a {
+			font-weight:400;
+		}
 	}
 	.home-upcoming-program-details {
 		float:left;
 		width:265px;
 	}
+	.post_new_link {
+		background:#F7F7F7;
+		border:1px solid #ccc;
+		color:$body-text-color;
+		display:block;
+		font-family:$button-font;
+		font-weight:normal;
+		height:20px;
+		line-height:1.8em;
+		margin:100px auto;
+		padding:2px;
+		text-align:center;
+		text-decoration:none;
+		text-transform:uppercase;
+		width:100px;
+	}
+	.newspeaker {
+		border: 4px dashed #BBBBBB;
+		float:left;
+		height:220px;
+		width:48%;
+	}
+
 	
 }
 .home-upcoming-programs-speaker-date {
