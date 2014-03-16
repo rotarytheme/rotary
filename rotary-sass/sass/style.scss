@@ -125,7 +125,17 @@ Tags: rotary, html5
 	z-index:500;
 	
 }
-
+.speakerdatedit {
+	overflow: hidden;
+	text-indent:100%;
+	white-space: nowrap;
+}
+footer .speakerdatedit {
+	background:none;
+	display:inline;
+	position: static;
+	text-indent:0;
+}
 
 strong {font-weight:bold;}
 cite, em,i {font-style:italic;}
@@ -395,6 +405,7 @@ hr {
 	}
 	#featuredbottom{
 		background:url(../images/featured-bottom-wide-bg.png) no-repeat;
+		border-left:0;
 		margin:0 auto 30px auto;
 		width:784px;
 	}
@@ -442,7 +453,6 @@ hr {
 	min-height:300px;
 	padding-bottom:15px;
 	padding-top:15px;
-	width:764px;
 	section{
 		margin:0 25px 0 35px;
 	}
@@ -485,11 +495,11 @@ hr {
 }
 
 #featuredbottom {
-	background:url(../images/featured-bottom-bg.png) no-repeat;
+	background:url(../images/featured-bottom-bg.png) no-repeat 100% 0;
+	border-left:1px solid #E6DCC5;
 	height:40px;
 	margin-bottom:30px;
 	margin-top:-1px;
-	width:784px;
 }
 
 .home aside > ul  {

@@ -20,9 +20,7 @@ function rotary_edit_post_link($output) {
 	if ('rotary_speakers' == get_post_type() && is_single()) {
 		$output = str_replace('class="post-edit-link"', 'class="post-edit-link button"', $output);
 	}
-	else if (is_front_page()) {
-		$output = str_replace('class="post-edit-link"', 'class="post-edit-link speakerdatedit"', $output);
-	}
+
     
     return $output;
 }
@@ -196,9 +194,17 @@ function rotary_get_featured_post($atts){
 		$args = array(	
 			'posts_per_page' => 1,
 			'post_type' => 'rotary_speakers',
-			'order' => 'DESC',
+			'order' => 'ASC',
             'orderby' => 'meta_value',
             'meta_key' => 'speaker_date',
+            'meta_query' => array(
+              array(
+			  	'key' => 'speaker_date',
+			  	'value' => date('Ymd'),
+			  	'type' => 'DATE',
+			 	'compare' => '>='
+			 	)
+			 )		
 		);
     }
     else {
@@ -274,7 +280,7 @@ function rotary_upcoming_programs_function($atts) {
 	$clearLeft = ''; 
 	ob_start(); ?>
 	<div class="home-upcoming-program-ribbon"><h2>Upcoming Speakers</h2></div>
-	<div class="home-upcoming-programs clearfix">
+	<div id="home-upcoming-programs"class="home-upcoming-programs clearfix">
 	
 	<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 		<?php $postCount++; 

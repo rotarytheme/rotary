@@ -5,6 +5,9 @@ jQuery(document).ready(function($) {
 			$('ul.sub-menu').parent().addClass('dropdown');
 			//append the b tag in the sidebar to hold the ribbon immge
 			$('.home aside > ul >li h3').after('<b></b>');
+			//add class to upcoming programs edit so we can target it
+			$('#home-upcoming-programs .post-edit-link').addClass('speakerdatedit');
+
 			this.setUpArchives();
 			this.setUpSlideShow();
 			this.setUpEdits();

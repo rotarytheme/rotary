@@ -21,10 +21,12 @@ get_header(); ?>
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
    <section class="homecontent">
       <div class="inner">
-	   <?php the_content();?>
-       <?php edit_post_link( __( 'Edit', 'Rotary' ), '', '' ); ?>
-     </div>
+	   	<?php the_content();?>
+       </div>
     </section>
+    <footer>
+		<?php edit_post_link( __( 'Edit', 'Rotary' ), '', '' ); ?>
+	</footer>
 <?php endwhile; ?>
 </div>
 <?php if (get_theme_mod( 'rotary_home_sidebar', true )) { 
