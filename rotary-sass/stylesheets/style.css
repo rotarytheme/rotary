@@ -663,7 +663,7 @@ hr {
   font-family: SommetBlack;
   font-size: 28px;
   margin: 0 25px 25px 35px;
-  text-indent: 25px;
+  padding-left: 25px;
 }
 #featured .featuredheader {
   border-bottom: 1px solid #606060;
@@ -672,6 +672,10 @@ hr {
 }
 #featured .featuredheader h3 {
   font-size: 24px;
+}
+#featured .featuredheader .featuredspeakername {
+  background: url(../images/speaker-icon-small.png) no-repeat;
+  text-indent: 20px;
 }
 #featured img {
   display: none;
@@ -3406,11 +3410,11 @@ aside .widget_sp_image img {
   padding: 2px;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
   width: 100px;
 }
 #content .home-upcoming-programs .newspeaker {
-  border: 4px dashed #BBBBBB;
+  border: 7px dashed #CCC;
+  border-radius: 5px;
   float: left;
   height: 220px;
   width: 48%;

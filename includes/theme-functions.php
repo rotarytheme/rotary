@@ -222,16 +222,27 @@ function rotary_get_featured_post($atts){
          <?php  $more = 0; ?>
 		<section class="featuredheader">
         	<h3><?php echo $header ?></h3>
-        	<p>by <span><?php the_author_meta('user_firstname');?>&nbsp;<?php the_author_meta('user_lastname');?> </span></p>
+        	<?php if (post_type_exists( 'rotary_speakers')) { 
+        		$speaker = get_field('speaker_first_name').' '.get_field('speaker_last_name'); ?>
+        		<p class="featuredspeakername"><span><?php echo $speaker; ?></span></p>
+        	<?php
+        	}
+        	else { ?>
+	        	<p>by <span><?php the_author_meta('user_firstname');?>&nbsp;<?php the_author_meta('user_lastname');?> </span></p>
+
+        	<?php } ?>
         </section>
-        <h4><?php the_title(); ?></h4>
+        <h4><a href="<?php the_permalink()?>"><?php the_title(); ?></a></h4>
         <?php 
         if (post_type_exists( 'rotary_speakers')) {
 	        $content = trim(get_field('speaker_program_content'));			
 		}
 		else {
 	        $content = apply_filters(get_the_content());
-        } ?>
+        } 
+        if (strlen($content) > 1024 ) {
+				$content = substr($content, 0, 1024) . '<a href="'.get_permalink().'"> ...continue reading</a>';
+		} ?>
         <section class="featuredcontent">
            <?php  if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
   				the_post_thumbnail('medium'); ?>

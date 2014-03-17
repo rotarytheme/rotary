@@ -469,7 +469,7 @@ hr {
 		font-family:$emphasis-font;
 		font-size:28px;
 		margin:0 25px 25px 35px;
-		text-indent:25px;
+		padding-left:25px;
 	}
 	.featuredheader {
 		border-bottom:1px solid $body-text-color;
@@ -477,6 +477,10 @@ hr {
 		padding-bottom:5px;
 		h3 {
 			font-size:24px;
+		}
+		.featuredspeakername {
+			background:url(../images/speaker-icon-small.png) no-repeat;
+			text-indent:20px;
 		}
 	}
 	img {
