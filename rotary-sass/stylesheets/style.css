@@ -3354,6 +3354,9 @@ aside .widget_sp_image img {
 #content.fullwidth .home-upcoming-programs .home-upcoming-programs-speaker-date {
   text-align: right;
 }
+#content.fullwidth .home-upcoming-programs .newspeaker {
+  margin-left: 100px;
+}
 #content .home-upcoming-programs {
   border: 8px solid #187087;
   padding: 20px;
@@ -3417,7 +3420,6 @@ aside .widget_sp_image img {
   border-radius: 5px;
   float: left;
   height: 220px;
-  margin-left: 100px;
   width: 240px;
 }
 #content .home-upcoming-programs-speaker-date {
