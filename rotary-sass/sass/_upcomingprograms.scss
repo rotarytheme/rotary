@@ -50,7 +50,7 @@
 		font-weight:bold;
 	}
 	.speaker-program-title {
-		background: url(../images/speaker-home-title-bg.png) no-repeat scroll 0 100% ;
+		background: url(../images/speaker-home-title-bg.png) no-repeat scroll 0 100%;
 		color:#187087;
 		font-family: $header-font;
 		font-size:19px;
@@ -73,8 +73,8 @@
 		display:block;
 		font-family:$button-font;
 		font-weight:normal;
-		height:20px;
-		line-height:1.8em;
+		height:30px;
+		line-height:2.5em;
 		margin:100px auto;
 		padding:2px;
 		text-align:center;
@@ -86,7 +86,8 @@
 		border-radius: 5px;
 		float:left;
 		height:220px;
-		width:48%;
+		margin-left:100px;
+		width:240px;
 	}
 
 	

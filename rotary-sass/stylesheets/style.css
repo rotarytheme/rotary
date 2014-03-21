@@ -3404,8 +3404,8 @@ aside .widget_sp_image img {
   display: block;
   font-family: "BebasNeueRegular", Arial, sans-serif;
   font-weight: normal;
-  height: 20px;
-  line-height: 1.8em;
+  height: 30px;
+  line-height: 2.5em;
   margin: 100px auto;
   padding: 2px;
   text-align: center;
@@ -3417,7 +3417,8 @@ aside .widget_sp_image img {
   border-radius: 5px;
   float: left;
   height: 220px;
-  width: 48%;
+  margin-left: 100px;
+  width: 240px;
 }
 #content .home-upcoming-programs-speaker-date {
   border-bottom: 1px solid #ececec;
