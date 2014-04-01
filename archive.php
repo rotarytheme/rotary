@@ -14,20 +14,24 @@ get_header(); ?>
 		the_post();
 ?>
 
-			<h1 class="pagetitle"><span><?php echo rotary_get_blog_title();?></span></h1>
+			<?php if (is_post_type_archive('rotary_speakers')) : ?>
+				<h1 class="pagetitle"><span>Speaker Program</span></h1>
+			<?php else : ?>
+				<h1 class="pagetitle"><span><?php echo rotary_get_blog_title();?></span></h1>
+			<?php endif; ?>
 <h2 class="pagesubtitle">
 <?php if ( is_day() ) : ?>
 				<?php printf( __( 'Daily Archives: %s', 'Rotary' ), '<span>'.get_the_date(). '</span>' ); ?>
 
 <?php elseif ( is_month() ) : ?>
 		<?php if (is_post_type_archive('rotary_speakers')) : ?>
-				<?php printf( __( 'Daily Archives: %s', 'Rotary' ), '<span>'.date("F", mktime(0, 0, 0, get_query_var('monthnum'), 10)). ' ' .get_query_var('year').'</span>' ); ?> 
+				<?php printf( __( 'Monthly Archives: %s', 'Rotary' ), '<span>'.date("F", mktime(0, 0, 0, get_query_var('monthnum'), 10)). ' ' .get_query_var('year').'</span>' ); ?> 
 		<?php else : ?>
 				<?php printf( __( 'Monthly Archives: %s', 'Rotary' ), '<span>'.get_the_date('F Y'). '</span>' ); ?>
 		<?php endif; ?>	
 <?php elseif ( is_year() ) : ?>
 	<?php if (is_post_type_archive('rotary_speakers')) : ?>
-				<?php printf( __( 'Daily Archives: %s', 'Rotary' ), '<span>'.get_query_var('year'). '</span>' ); ?>
+				<?php printf( __( 'Yearly Archives: %s', 'Rotary' ), '<span>'.get_query_var('year'). '</span>' ); ?>
 		<?php else : ?>
 				<?php printf( __( 'Yearly Archives: %s', 'Rotary' ), '<span>'.get_the_date('Y').'</span>' ); ?>
 		<?php endif; ?>			

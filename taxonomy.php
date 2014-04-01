@@ -9,9 +9,9 @@
 
 get_header(); ?>
 
-				<h1 class="pagetitle"><span><?php echo rotary_get_blog_title();?></span></h1>
+				<h1 class="pagetitle"><span>Speaker Program</span></h1>
                 <h2 class="pagesubtitle"><?php
-                	if ( is_tax(tax-rotary_speaker_tag) ){
+                	if ( is_tax('tax-rotary_speaker_tag') ){
 	                	printf( __( 'Tag Archives: %s', 'Rotary' ), '<span>' . single_cat_title( '', false ) . '</span>' );
                 	}
                 	else {
