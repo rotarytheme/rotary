@@ -850,7 +850,7 @@ td {
 	}
 }
 /*archive/blog roll page*/
-.archive.post-type-archive-rotary_speakers, .page-template-tmpl-speaker-archive-php #ui-tabs-1{
+.page-template-tmpl-speaker-archive-php #ui-tabs-1{
 	.pagesubtitle {
 		color:$header-font-color;
 		font-family:$header-font;
@@ -914,10 +914,7 @@ td {
 	}
 	
 }
-.no-cssgradients .archive.post-type-archive-rotary_speakers #content .sectionheader{
-	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FFFFFF', endColorstr='#EEEEEE'); /* IE6 & IE7 */
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FFFFFF', endColorstr='#EEEEEE')"; /* IE8 */  
-}	
+
 /*advanced search page*/
 .page-template-tmpl-speaker-archive-php {
 	.search-toggle {

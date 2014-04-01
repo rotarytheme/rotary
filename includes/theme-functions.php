@@ -551,15 +551,29 @@ if ( ! function_exists( 'rotary_posted_on' ) ) :
  * @since rotary 1.0
  */
 function rotary_posted_on() {
-	printf( __( 'Posted on <br/>%2$s', 'rotary' ),
-		'meta-prep meta-prep-author',
-		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time datetime="%3$s" pubdate>%4$s</time></a>',
-			get_permalink(),
-			esc_attr( get_the_time() ),
-			get_the_date('Y-m-d'),
-			get_the_date('M j, Y')
-		)
-	);
+    if ('rotary_speakers' == get_post_type() ) {
+    	$date = DateTime::createFromFormat('Ymd', get_field('speaker_date'));
+	    printf( __( 'Speaker on <br/>%2$s', 'rotary' ),
+			'meta-prep meta-prep-author',
+			sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time datetime="%3$s" pubdate>%4$s</time></a>',
+				get_permalink(),
+				esc_attr( get_the_time() ),
+				$date->format('Y-m-d'),   
+				$date->format('M j, Y')
+			)
+		);
+    }
+    else {
+		printf( __( 'Posted on <br/>%2$s', 'rotary' ),
+			'meta-prep meta-prep-author',
+			sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time datetime="%3$s" pubdate>%4$s</time></a>',
+				get_permalink(),
+				esc_attr( get_the_time() ),
+				get_the_date('Y-m-d'),
+				get_the_date('M j, Y')
+			)
+		);
+	}
 }
 endif;
 
@@ -884,4 +898,69 @@ function rotary_filter_previous_post_link($link) {
 	}
 	return $link;
 
+}
+//custom category and tags for speakers
+add_filter( 'pre_get_posts', 'rotary_pre_get_cats' );
+function rotary_pre_get_cats($query) {
+	if (is_main_query()  && !is_admin()) {
+		$taxonomy = $query->tax_query->queries[0]['taxonomy'];
+		if ( isset($taxonomy) && ('rotary_speaker_cat' == $taxonomy || 'rotary_speaker_tag' == $taxonomy )) {
+			$query->set('meta_key', 'speaker_date');
+			$query->set( 'orderby', 'meta_value' );
+		}
+	}
+	return $query;
+}
+//custom date archives
+add_filter( 'pre_get_posts', 'rotary_pre_get_archive_posts' );
+function rotary_pre_get_archive_posts($query) {
+	if (is_main_query() && is_post_type_archive('rotary_speakers') && !is_admin()) {
+		//print_r($query->query_vars);
+		//echo 'the year is '.$query->query_vars['year'];
+		//assume year if month is set
+		$speakerYear = $query->query_vars['year'];
+		
+		$speakerMonth = $query->query_vars['monthnum'];
+		
+		if( $speakerMonth) {
+			$eStart = $speakerYear.'-'.$speakerMonth.'-01';
+			$eEnd = $speakerYear.'-'.$speakerMonth.'-31';
+			$query->set('meta_key', 'speaker_date');
+			$meta_query = array(
+			array(
+				'key' => 'speaker_date',
+				'value' => array( $eStart, $eEnd ),
+				'compare' => 'BETWEEN',
+				'type' => 'DATE'
+				)
+			);
+		}
+		//just year is set
+		if( $speakerYear && !$speakerMonth) {
+			$eStart = $speakerYear.'-01-01';
+			$eEnd = $speakerYear.'-12-31';
+			$query->set('meta_key', 'speaker_date');
+			$meta_query = array(
+			array(
+				'key' => 'speaker_date',
+				'value' => array( $eStart, $eEnd ),
+				'compare' => 'BETWEEN',
+				'type' => 'DATE'
+				)
+			);
+		}
+		$query->set( 'meta_query', $meta_query );
+		$query->set( 'orderby', 'meta_value' );
+	}
+	return $query;
+}
+add_filter( 'posts_where' , 'rotary_archiveposts_where', 10, 2 );
+
+function rotary_archiveposts_where( $where, $query_obj ) {
+	if (is_main_query() && is_post_type_archive('rotary_speakers') && !is_admin()) {
+	 $newWhere = explode('AND', $where);
+	 $newWhere = array_slice($newWhere, 3);
+	 $where = 'AND '.implode('AND', $newWhere);
+	}
+	return $where; 
 }

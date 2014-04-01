@@ -74,7 +74,7 @@ function register_speaker_post_type() {
     			'parent_item' => __( 'Parent Program Coordinators', 'rotary' ), /* parent title for taxonomy */
     			'parent_item_colon' => __( 'Parent Program Coordinators:', 'rotary' ), /* parent taxonomy title */
     			'edit_item' => __( 'Edit Program Coordinators', 'rotary' ), /* edit custom taxonomy title */
-    			'update_item' => __( 'Update Program Coordinators', 'rotary' ), /* update title for taxonomy */
+    			'update_item' => __( 'Update Program Coordinator', 'rotary' ), /* update title for taxonomy */
     			'add_new_item' => __( 'Add New Program Coordinators', 'rotary' ), /* add new title for taxonomy */
     			'new_item_name' => __( 'New Program Coordinator', 'rotary' ) /* name title for taxonomy */
     		),
@@ -83,6 +83,49 @@ function register_speaker_post_type() {
     		'rewrite' => array( 'slug' => 'program-coordinator' ),
     	)
     );   
+    // now let's add custom categories for program scribe
+        register_taxonomy( 'rotary_program_scribe', 
+    	array('rotary_speakers'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
+    	array('hierarchical' => true,     /* if this is true, it acts like categories */             
+    		'labels' => array(
+    			'name' => __( 'Program Scribe', 'rotary' ), /* name of the custom taxonomy */
+    			'singular_name' => __( 'Program Scribe', 'rotary' ), /* single taxonomy name */
+    			'search_items' =>  __( 'Search Program Scribes', 'rotary' ), /* search title for taxomony */
+    			'all_items' => __( 'All Program Scribes', 'rotary' ), /* all title for taxonomies */
+    			'parent_item' => __( 'Parent Program Scribes', 'rotary' ), /* parent title for taxonomy */
+    			'parent_item_colon' => __( 'Parent Program Scribes:', 'rotary' ), /* parent taxonomy title */
+    			'edit_item' => __( 'Edit Program Scribes', 'rotary' ), /* edit custom taxonomy title */
+    			'update_item' => __( 'Update Program Scribe', 'rotary' ), /* update title for taxonomy */
+    			'add_new_item' => __( 'Add New Program Scribes', 'rotary' ), /* add new title for taxonomy */
+    			'new_item_name' => __( 'New Program Scribe', 'rotary' ) /* name title for taxonomy */
+    		),
+    		'show_ui' => true,
+    		'query_var' => true,
+    		'rewrite' => array( 'slug' => 'program-scribe' ),
+    	)
+    );   
+    // now let's add custom categories for program editor
+        register_taxonomy( 'rotary_program_editor', 
+    	array('rotary_speakers'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
+    	array('hierarchical' => true,     /* if this is true, it acts like categories */             
+    		'labels' => array(
+    			'name' => __( 'Program Editor', 'rotary' ), /* name of the custom taxonomy */
+    			'singular_name' => __( 'Program Editor', 'rotary' ), /* single taxonomy name */
+    			'search_items' =>  __( 'Search Program Editors', 'rotary' ), /* search title for taxomony */
+    			'all_items' => __( 'All Program Editors', 'rotary' ), /* all title for taxonomies */
+    			'parent_item' => __( 'Parent Program Editors', 'rotary' ), /* parent title for taxonomy */
+    			'parent_item_colon' => __( 'Parent Program Editors:', 'rotary' ), /* parent taxonomy title */
+    			'edit_item' => __( 'Edit Program Editors', 'rotary' ), /* edit custom taxonomy title */
+    			'update_item' => __( 'Update Program Editor', 'rotary' ), /* update title for taxonomy */
+    			'add_new_item' => __( 'Add New Program Editors', 'rotary' ), /* add new title for taxonomy */
+    			'new_item_name' => __( 'New Program Editor', 'rotary' ) /* name title for taxonomy */
+    		),
+    		'show_ui' => true,
+    		'query_var' => true,
+    		'rewrite' => array( 'slug' => 'program-scribe' ),
+    	)
+    );   
+
    	// now let's add custom tags (these act like tags)
     register_taxonomy( 'rotary_speaker_tag', 
     	array('rotary_speakers'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */

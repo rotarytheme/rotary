@@ -118,15 +118,24 @@ class RotaryArchiveWidget extends WP_Widget {
 		if ($current_category_id) {
 	    $where = apply_filters('getarchives_where', "WHERE post_type = 'post' AND post_status = 'publish' AND $wpdb->term_taxonomy.taxonomy = 'category' AND $wpdb->term_taxonomy.term_id IN ($current_category_id)");
 			$join = apply_filters('getarchives_join', " INNER JOIN $wpdb->term_relationships ON ($wpdb->posts.ID = $wpdb->term_relationships.object_id) INNER JOIN $wpdb->term_taxonomy ON ($wpdb->term_relationships.term_taxonomy_id = $wpdb->term_taxonomy.term_taxonomy_id)");
+		} else if ( 'rotary_speakers' == get_post_type() ) {
+			$where = apply_filters('getarchives_where', "WHERE post_type = 'rotary_speakers' AND post_status = 'publish' AND pm.meta_key = 'speaker_date'");
+			$join = apply_filters('getarchives_join', " INNER JOIN $wpdb->postmeta AS pm ON pm.post_id = $wpdb->posts.ID");	
 		} else {
 	    $where = apply_filters('getarchives_where', "WHERE post_type = 'post' AND post_status = 'publish'");
 			$join = apply_filters('getarchives_join', "");
 		}
-
-    $sql = "SELECT DISTINCT YEAR(post_date) AS `year`, count(ID) as posts ";
-    $sql .="FROM {$wpdb->posts} {$join} {$where} ";
-    $sql .="GROUP BY YEAR(post_date) ORDER BY post_date DESC";
-
+	if ( 'rotary_speakers' == get_post_type() ) {
+    	$sql = "SELECT DISTINCT YEAR(pm.meta_value) AS `year`, count(ID) as posts ";
+		$sql .="FROM {$wpdb->posts} {$join} {$where} ";
+		$sql .="GROUP BY YEAR(pm.meta_value) ORDER BY pm.meta_value DESC";
+	}	
+	else {
+		$sql = "SELECT DISTINCT YEAR(post_date) AS `year`, count(ID) as posts ";
+		$sql .="FROM {$wpdb->posts} {$join} {$where} ";
+		$sql .="GROUP BY YEAR(post_date) ORDER BY post_date DESC";
+	}	
+    
     return $wpdb->get_results($sql);
 	}
 
@@ -136,15 +145,24 @@ class RotaryArchiveWidget extends WP_Widget {
 			if ($current_category_id) {
 		    $where = apply_filters('getarchives_where', "WHERE post_type = 'post' AND post_status = 'publish' AND YEAR(post_date) = {$year} AND $wpdb->term_taxonomy.taxonomy = 'category' AND $wpdb->term_taxonomy.term_id IN ($current_category_id)");
 				$join = apply_filters('getarchives_join', " INNER JOIN $wpdb->term_relationships ON ($wpdb->posts.ID = $wpdb->term_relationships.object_id) INNER JOIN $wpdb->term_taxonomy ON ($wpdb->term_relationships.term_taxonomy_id = $wpdb->term_taxonomy.term_taxonomy_id)");
+			} else if ( 'rotary_speakers' == get_post_type() ) {
+				$where = apply_filters('getarchives_where', "WHERE post_type = 'rotary_speakers' AND post_status = 'publish' AND pm.meta_key = 'speaker_date' AND YEAR(pm.meta_value) = {$year}");
+				$join = apply_filters('getarchives_join', " INNER JOIN $wpdb->postmeta AS pm ON pm.post_id = $wpdb->posts.ID");	
 			} else {
-		    $where = apply_filters('getarchives_where', "WHERE post_type = 'post' AND post_status = 'publish' AND YEAR(post_date) = {$year}");
-		    $join = apply_filters('getarchives_join', "");
+		    	$where = apply_filters('getarchives_where', "WHERE post_type = 'post' AND post_status = 'publish' AND YEAR(post_date) = {$year}");
+				$join = apply_filters('getarchives_join', "");
 			}
-
-	    $sql = "SELECT DISTINCT YEAR(post_date) AS `year`, MONTH(post_date) AS `month`, count(ID) as posts ";
-	    $sql .="FROM {$wpdb->posts} {$join} {$where} ";
-	    $sql.= "GROUP BY YEAR(post_date), MONTH(post_date) ORDER BY post_date DESC";
-
+		if ( 'rotary_speakers' == get_post_type() ) {
+	    	$sql = "SELECT DISTINCT YEAR(pm.meta_value) AS `year`, MONTH(pm.meta_value) AS `month`, count(ID) as posts ";
+			$sql .="FROM {$wpdb->posts} {$join} {$where} ";
+			$sql.= "GROUP BY YEAR(pm.meta_value), MONTH(pm.meta_value) ORDER BY pm.meta_value DESC";
+		}
+		else {
+			$sql = "SELECT DISTINCT YEAR(post_date) AS `year`, MONTH(post_date) AS `month`, count(ID) as posts ";
+			$sql .="FROM {$wpdb->posts} {$join} {$where} ";
+			$sql.= "GROUP BY YEAR(post_date), MONTH(post_date) ORDER BY post_date DESC";
+		}	
+        
 	    return $wpdb->get_results($sql);
 	}
 
@@ -157,19 +175,35 @@ class RotaryArchiveWidget extends WP_Widget {
 		if ($current_category_id) {
 	    $where = apply_filters('getarchives_where', "WHERE post_type = 'post' AND post_status = 'publish' AND YEAR(post_date) = {$year} AND MONTH(post_date) = {$month} AND $wpdb->term_taxonomy.taxonomy = 'category' AND $wpdb->term_taxonomy.term_id IN ($current_category_id)");
 			$join = apply_filters('getarchives_join', " INNER JOIN $wpdb->term_relationships ON ($wpdb->posts.ID = $wpdb->term_relationships.object_id) INNER JOIN $wpdb->term_taxonomy ON ($wpdb->term_relationships.term_taxonomy_id = $wpdb->term_taxonomy.term_taxonomy_id)");
+		} else if ( 'rotary_speakers' == get_post_type() ) {
+			$where = apply_filters('getarchives_where', "WHERE post_type = 'rotary_speakers' AND post_status = 'publish' AND pm.meta_key = 'speaker_date' AND YEAR(pm.meta_value) = {$year} AND MONTH(pm.meta_value) = {$month}");
+			$join = apply_filters('getarchives_join', " INNER JOIN $wpdb->postmeta AS pm ON pm.post_id = $wpdb->posts.ID");	
 		} else {
 	    $where = apply_filters('getarchives_where', "WHERE post_type = 'post' AND post_status = 'publish' AND YEAR(post_date) = {$year} AND MONTH(post_date) = {$month}");
 	    $join = apply_filters('getarchives_join', "");
 		}
 
-    $sql = "SELECT ID, post_title, post_name FROM {$wpdb->posts} ";
-    $sql .="$join $where ORDER BY post_date DESC";
+    if ( 'rotary_speakers' == get_post_type() ) {
+    	$sql = "SELECT ID, post_title, post_name FROM {$wpdb->posts} ";
+		$sql .="$join $where ORDER BY pm.meta_value DESC";
+	}		
+	else {
+		$sql = "SELECT ID, post_title, post_name FROM {$wpdb->posts} ";
+		$sql .="$join $where ORDER BY post_date DESC";
+	}	
 
     return $wpdb->get_results($sql);
 	}	
 
 	function widget($args, $instance) {
 		global $wp_locale;
+		if ( 'rotary_speakers' == get_post_type() ) {
+		  	$taxonomyParam = '?post_type=rotary_speakers';
+		  } 
+		  else {
+			  $taxonomyParam = '';
+		  }
+		
     extract( $args );
 		$plugin_url = plugins_url ( plugin_basename ( dirname ( __FILE__ ) ) );
 		$showcount = false;
@@ -213,7 +247,7 @@ class RotaryArchiveWidget extends WP_Widget {
 				echo '</a>'.$count_text;
 				
 				echo '<ul class="monthlist">';
-				echo '<li><a  href="'.$year_url.'">'.__( 'All Months', 'rotary' ).'</a></li>';
+				echo '<li><a  href="'.$year_url.$taxonomyParam.'">'.__( 'All Months', 'rotary' ).'</a></li>';
 				
 				
 	      foreach ($months as $month) {
@@ -224,7 +258,7 @@ class RotaryArchiveWidget extends WP_Widget {
 					$monthname = $wp_locale->get_month($month->month);
 					
 
-					echo '<li><a href="'.$month_url.'">'.$monthname.' '.$years[$i]->year;
+					echo '<li><a href="'.$month_url.$taxonomyParam.'">'.$monthname.' '.$years[$i]->year;
 					
 					echo '</a>'.$count_text;
 				
@@ -232,14 +266,16 @@ class RotaryArchiveWidget extends WP_Widget {
 	      }
 				echo '</ul></li>';
 			} else {
+		   
+		  	
 	      foreach ($months as $month) {
 					$month_url = get_month_link($years[$i]->year, $month->month);
 	        $this_month = $this_year && (($post_id >= 0 && $month->month == $post_month) || ($post_id < 0 && $month == $months[0]));
 					$count_text = '';
 					
 					$monthname = $wp_locale->get_month($month->month);
-
-					echo '<li><a href="'.$month_url.'">'.$monthname.' '.$years[$i]->year;
+                    
+					echo '<li><a href="'.$month_url.$taxonomyParam.'">'.$monthname.' '.$years[$i]->year;
 					echo '</a>'.$count_text;
 					echo '</li>';
 	      }
