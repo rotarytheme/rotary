@@ -79,8 +79,8 @@ $clearLeft='';
 					}
 					$programNotes = preg_replace('/<img[^>]+./','', $programNotes);
 					$programNotes = strip_tags($programNotes);
-					if (strlen($programNotes) > 50 ) {
-						$programNotes = substr($programNotes, 0, 50) ;
+					if (strlen($programNotes) > 200 ) {
+						$programNotes = substr($programNotes, 0, 200) ;
 					} 
 					?>             
 					<p><?php echo $programNotes; ?> <a href="<?php the_permalink();?>">[…]</a></p>					 
