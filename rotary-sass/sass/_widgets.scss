@@ -300,3 +300,9 @@ aside {
 .no-cssgradients #secondary > ul .newpost {
 	filter:none;
 }
+/*hide calendar on speaker archive*/
+.tax-rotary_speaker_cat .widget_calendar,
+.post-type-archive-rotary_speakers .widget_calendar,
+.tax-rotary_speaker_tag .widget_calendar {
+	display:none;
+}

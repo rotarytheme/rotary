@@ -2249,6 +2249,13 @@ aside .widget_sp_image img {
   filter: none;
 }
 
+/*hide calendar on speaker archive*/
+.tax-rotary_speaker_cat .widget_calendar,
+.post-type-archive-rotary_speakers .widget_calendar,
+.tax-rotary_speaker_tag .widget_calendar {
+  display: none;
+}
+
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   #signin input[type="text"], #signin input[type="password"] {

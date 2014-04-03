@@ -43,18 +43,6 @@ if(function_exists("register_field_group"))
 				'multiple' => 0,
 			),
 			array (
-				'key' => 'field_5225023932d4d',
-				'label' => 'Scribe',
-				'name' => 'scribe',
-				'type' => 'user',
-				'instructions' => 'The scribe is the person who takes the notes during the speaker program.',
-				'role' => array (
-					0 => 'Scribe',
-				),
-				'field_type' => 'select',
-				'allow_null' => 0,
-			),
-			array (
 				'key' => 'field_533b249cd7c48',
 				'label' => 'Editor',
 				'name' => 'program_editor',
@@ -66,19 +54,6 @@ if(function_exists("register_field_group"))
 				'load_save_terms' => 1,
 				'return_format' => 'object',
 				'multiple' => 0,
-			),
-			array (
-				'key' => 'field_527440d9a06b9',
-				'label' => 'Editor',
-				'name' => 'editor',
-				'type' => 'user',
-				'instructions' => 'The editor is the person who is responsible for posting the content to the website and is often the person to be contacted in case of errors or omissions.',
-				'required' => 1,
-				'role' => array (
-					0 => 'editor',
-				),
-				'field_type' => 'select',
-				'allow_null' => 0,
 			),
 			array (
 				'key' => 'field_5225000a8fdb2',
