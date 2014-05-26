@@ -92,7 +92,7 @@ $speaker_search = new WP_Advanced_Search($args); ?>
 
 <div id="tabs-1">
 <?php //show the form ?>
-<a id="search-toggle" href="#" class="search-toggle">Advanced Search</a>
+<a id="search-toggle" href="#" class="search-toggle collapsed">Advanced Search</a>
 <?php 	$speaker_search->the_form(); ?>
 <?php $query = new WP_Query();  
 $query = $speaker_search->query();

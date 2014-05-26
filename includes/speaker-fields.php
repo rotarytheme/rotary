@@ -18,7 +18,7 @@ if(function_exists("register_field_group"))
 			),
 			array (
 				'key' => 'field_5310e7ca9c86c',
-				'label' => 'Program Coordinator',
+				'label' => 'Program Introducer',
 				'name' => 'program_coordinator',
 				'type' => 'taxonomy',
 				'instructions' => 'Select the person who organizes the speaker program',

@@ -7,25 +7,49 @@ jQuery(document).ready(function($) {
 			$('.home aside > ul >li h3').after('<b></b>');
 			//add class to upcoming programs edit so we can target it
 			$('#home-upcoming-programs .post-edit-link').addClass('speakerdatedit');
-
+			this.positionLogo();
 			this.setUpArchives();
 			this.setUpSlideShow();
 			this.setUpEdits();
 			this.setUpDatePicker();
 			this.setUpDatatables();
 			this.setUpTabs();
+			$('#morecomments').on('click', this.showMoreComments);
+			$('#lesscomments').on('click', this.hideMoreComments);
+			$('#newcomment').on('click', this.showCommentForm);
 			$('#speakertabs').on('click', '.prevnext a', this.loadPrevNext);
 			$('#wpas-reset input').on('click', this.resetForm);
 			$('#search-toggle').on('click', this.toggleSearch);
-			$( '#speaker-archive-table tbody' ).on( 'mouseenter mouseleave', 'tr', this.hoverRow );
+			$('#speaker-archive-table tbody').on('mouseenter mouseleave', 'tr', this.hoverRow);
 			$('#speaker-archive-table tbody').on('click', 'tr', this.selectRow);
 			$('.fancybox').fancybox({
-			padding : 3,
-			nextEffect	: 'fade',
-			prevEffect	: 'fade',
-			nextSpeed   : 500,
-			prevSpeed   : 500
-		});
+				padding: 3,
+				nextEffect: 'fade',
+				prevEffect: 'fade',
+				nextSpeed: 500,
+				prevSpeed: 500
+			});
+		},
+		positionLogo: function() {
+			var $logo = $('#branding h1');
+			var logoMargin = 632 - $logo.width();
+			$logo.css('margin-right', logoMargin + 'px');
+		},
+		showMoreComments: function(e) {
+			e.preventDefault();
+			$('.committeecomment').show();
+			$(this).hide();
+			$('#lesscomments').show();
+		},
+		hideMoreComments: function(e) {
+			e.preventDefault();
+			$('.committeecomment:not(:first)').hide();
+			$(this).hide();
+			$('#morecomments').show();
+		},
+		showCommentForm: function(e) {
+			e.preventDefault();
+			$('#respond').toggle();
 		},
 		toggleSearch: function(e) {
 			e.preventDefault();
@@ -34,10 +58,9 @@ jQuery(document).ready(function($) {
 		},
 		resetForm: function() {
 			var form = $(this).closest('form');
-		//	$('#wp-advanced-search')[0].reset();
-		//	alert($('#wp-advanced-search')[0]);
+			//	$('#wp-advanced-search')[0].reset();
+			//	alert($('#wp-advanced-search')[0]);
 			$(':input', form).each(function() {
-			   
 				var type = this.type;
 				var tag = this.tagName.toLowerCase(); // normalize case
 				// it's ok to reset the value attr of text inputs,
@@ -62,35 +85,65 @@ jQuery(document).ready(function($) {
 			$(this).toggleClass('selected');
 		},
 		selectRow: function() {
-			curLink = $(this).find('.speakerlink a');
+			var curLink = $(this).find('.speakerlink a');
 			window.location.href = curLink.attr('href');
 		},
 		setUpDatatables: function() {
 			$('#speaker-archive-table').dataTable({
 				'iDisplayLength': 50,
-				'aoColumnDefs': [
-      				{ 'sClass': 'hide speakerlink', 'aTargets': [0]},
-      				{ 'sClass': 'speakerDate', 'aTargets': [1]},
-      				{ 'sClass': 'speakerTitle', 'aTargets': [2]}
-   				 ]
+				'aoColumnDefs': [{
+					'sClass': 'hide speakerlink',
+					'aTargets': [0]
+				}, {
+					'sClass': 'speakerDate',
+					'aTargets': [1]
+				}, {
+					'sClass': 'speakerTitle',
+					'aTargets': [2]
+				}]
 			});
-				
 		},
 		setUpTabs: function() {
-			if($('#speakertabs').length) {
-				$('#speakertabs').tabs({ 
-					beforeLoad: function( event, ui ) {
+			if ($('#speakertabs').length) {
+				$('#speakertabs').tabs({
+					beforeLoad: function(event, ui) {
 						ui.panel.html('<p>Loading...</p>');
-						 ui.jqXHR.error(function() {
-							 ui.panel.html("Couldn't load this tab. We'll try to fix this as soon as possible. " );
-
-							});
+						ui.jqXHR.error(function() {
+							ui.panel.html("Couldn't load this tab. We'll try to fix this as soon as possible. ");
+						});
+					}
+				});
+			}
+		},
+		setUpSlideShow: function() {
+			if ($('#slideshow').length) {
+				$('#slideshow').cycle({
+					slideExpr: '.slide',
+					fx: 'scrollHorz',
+					height: '313px',
+					speed: '1000',
+					timeout: 10000,
+					delay: -2000,
+					pager: '#navsection'
+				});
+				$('#playpause').click(function(e) {
+					e.preventDefault();
+					$('#slideshow').cycle('toggle');
+					$('#playpause').toggleClass('pause');
+					$('#playpause').toggleClass('play');
+				});
+				$('#slideshow').touchwipe({
+					wipeLeft: function() {
+						$('#slideshow').cycle('next');
+					},
+					wipeRight: function() {
+						$('#slideshow').cycle('prev');
 					}
 				});
 			}
 		},
 		loadPrevNext: function(e) {
-		 	e.preventDefault();
+			e.preventDefault();
 			$('#ui-tabs-1').load(this.href);
 		},
 		setUpArchives: function() {
@@ -110,57 +163,29 @@ jQuery(document).ready(function($) {
 			if ($('.archive .pagetitle').length) {
 				var titleText = $('.archive .pagetitle').text();
 				var afterColon = $.trim(titleText.substr(titleText.indexOf(":") + 1));
-				if (afterColon == parseInt(afterColon)) {
-					$year = $('.rotary-adv-archive-year .icon:contains("' + afterColon + '")');
+				if (afterColon == parseInt(afterColon, 10)) {
+					var $year = $('.rotary-adv-archive-year .icon:contains("' + afterColon + '")');
 					//console.log($year.parent('li').text());
 					//$year.parent('li').children(' .monthlist li a:contains("All Months")').addClass('current');
 					$year.next('.monthlist').children('li:first').children('a').addClass('current');
 					$year.click();
 				} else {
-					$archiveLink = $('.monthlist li a:contains("' + afterColon + '")');
+					var $archiveLink = $('.monthlist li a:contains("' + afterColon + '")');
 					$archiveLink.addClass('current').closest('.rotary-adv-archive-year').children('.icon').click();
 				}
-			}
-		},
-		setUpSlideShow: function() {
-			//slideshow
-			if ($('#slideshow').length) {
-				$('#slideshow').cycle({
-					slideExpr: '.slide',
-					fx: 'scrollHorz',
-					height: '313px',
-					speed: '1000',
-					timeout: 10000,
-					delay: -2000,
-					pager: '#navsection'
-				});
-				$('#playpause').click(function(e)  { 
-					e.preventDefault();    
-					$('#slideshow').cycle('toggle');
-					$('#playpause').toggleClass('pause');
-					$('#playpause').toggleClass('play');
-				});
-				$("#slideshow").touchwipe({
-					wipeLeft: function() {
-						$("#slideshow").cycle("next");
-					},
-					wipeRight: function() {
-						$("#slideshow").cycle("prev");
-					}
-				});
 			}
 		},
 		setUpDatePicker: function() {
 			if (!Modernizr.inputtypes.date) {
 				if ($('.page-template-tmpl-speaker-archive-php input[type="date"]').length) {
 					$('.page-template-tmpl-speaker-archive-php input[type=date]').datepicker();
-
-				}	
+				}
 			}
 		},
 		setUpEdits: function() {
 			//if the user is an admin, he/she can edit widgets so we will allow direct access from font-end
 			if ($('.widgetedit').length) {
+				var $sidebar;
 				if ($('body').hasClass('home')) {
 					$sidebar = $('.home aside > ul > li h3');
 				} else {
@@ -183,7 +208,7 @@ jQuery(document).ready(function($) {
 					var position = $(this).position();
 					var editLeft = position.left;
 					if ($(this).text() === $('#branding h1').text()) {
-						editLeft += 100;
+						editLeft += 300;
 					}
 					$(this).append($('.headeredit').css('left', editLeft + 'px').show());
 				}, function() {
@@ -192,6 +217,7 @@ jQuery(document).ready(function($) {
 			}
 			if ($('.speakerdatedit').length) {
 				$('.home-upcoming-programs-speaker-date').hover(
+
 				function() {
 					var position = $(this).position();
 					var editLeft = position.left;
@@ -201,7 +227,6 @@ jQuery(document).ready(function($) {
 					$(this).find('.speakerdatedit').hide();
 				});
 			}
-						
 		}
 	};
 	rotaryTheme.init();

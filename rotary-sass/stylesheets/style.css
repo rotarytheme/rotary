@@ -62,7 +62,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-.backgrounds-sprite, .headeredit, .speakerdatedit, #mainmenu ul ul li.dropdown, #mainmenu ul ul .dropdown:hover > a, .archive #content article .meta .commentspopup, .blog #content article .meta .commentspopup, #footer .twitter, #footer .facebook, #footer .linkedin, #controls #facebookshare, #controls #twittershare, .widgetedit {
+.backgrounds-sprite, .headeredit, .speakerdatedit, #mainmenu ul ul li.dropdown, #mainmenu ul ul .dropdown:hover > a, .archive #content article .meta .commentspopup, .blog #content article .meta .commentspopup, .single.single-rotary-committees #content .meta .commentspopup, #footer .twitter, #footer .facebook, #footer .linkedin, #controls #facebookshare, #controls #twittershare, .widgetedit {
   background: url('../images/backgrounds-s8f9fdc06fe.png') no-repeat;
 }
 
@@ -244,7 +244,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .headeredit, .speakerdatedit {
   background-position: 0 -242px;
   overflow: hidden;
-  text-indent: -999999px;
+  text-indent: 100%;
   white-space: nowrap;
   display: none;
   height: 34px;
@@ -433,6 +433,9 @@ hr {
   margin: 20px 20px 40px 0;
   min-height: 400px;
   width: 786px;
+}
+#content.committee {
+  margin-right: 0;
 }
 #content p, #content li, #content dt, #content dd {
   line-height: 1.4em;
@@ -878,30 +881,33 @@ hr {
   width: 90px;
 }
 #branding h1 {
-  background: url(../images/logo-rotaryc.jpg) no-repeat 0 15px;
+  background: url(../images/5016_Rotary_Logo.png) no-repeat 100% 0;
   float: left;
-  font-family: SommetHeavy, sans-serif;
-  font-size: 42px;
-  height: 100px;
+  font-family: "Arial Narrow", Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  height: 120px;
   line-height: .9em;
   margin-bottom: 15px;
-  margin-top: 0;
-  padding-top: 15px;
-  text-indent: 90px;
-  text-shadow: 1px 1px 1px #808080;
-  text-transform: uppercase;
-  width: 632px;
+  min-width: 300px;
+  /*margin-right:132px;*/
+  text-align: right;
+  /*width: 500px;*/
 }
 #branding h1 span {
   display: block;
 }
 #branding h1 .clubname, #branding h1 a.clubname {
-  color: #f2a700;
-  font-weight: normal;
+  color: #17468f;
+  margin-right: 120px;
 }
 #branding h1 .clubtype, #branding h1 a.clubtype {
-  color: #0f7289;
+  color: #17468f;
   font-weight: normal;
+  margin-right: 120px;
+  margin-top: 70px;
+}
+#branding h1 .clubtype.clubbefore, #branding h1 a.clubtype.clubbefore {
+  margin-top: 90px;
 }
 
 .no-cssgradients #branding section a {
@@ -1227,6 +1233,7 @@ td {
   padding-top: 20px;
 }
 .page-template-tmpl-speaker-archive-php #wp-advanced-search {
+  display: none;
   padding: 20px 20px 40px 20px;
 }
 .page-template-tmpl-speaker-archive-php label {
@@ -1518,42 +1525,163 @@ td {
 }
 
 /*blog archives, tags, categories, etc.*/
-.archive #content article header, .blog #content article header {
+.archive #content article #respond, .archive #content article .sectioncontent > .comment, .archive #content article #comments-title, .blog #content article #respond, .blog #content article .sectioncontent > .comment, .blog #content article #comments-title, .single.single-rotary-committees #content #respond, .single.single-rotary-committees #content .sectioncontent > .comment, .single.single-rotary-committees #content #comments-title {
+  margin-left: 0;
+  width: 100%;
+}
+.archive #content article #respond textarea, .archive #content article .sectioncontent > .comment textarea, .archive #content article #comments-title textarea, .blog #content article #respond textarea, .blog #content article .sectioncontent > .comment textarea, .blog #content article #comments-title textarea, .single.single-rotary-committees #content #respond textarea, .single.single-rotary-committees #content .sectioncontent > .comment textarea, .single.single-rotary-committees #content #comments-title textarea {
+  width: 100%;
+}
+.archive #content article .committee-comment-date, .blog #content article .committee-comment-date, .single.single-rotary-committees #content .committee-comment-date {
+  border-bottom: 1px solid #8f8f8f;
+  border-top: 1px solid #8f8f8f;
+  color: gray;
+  float: left;
+  font-family: Sommet;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 15px 0 0 15px;
+  padding-top: 15px;
+  position: relative;
+  width: 90px;
+}
+.archive #content article .committee-comment-date .day, .blog #content article .committee-comment-date .day, .single.single-rotary-committees #content .committee-comment-date .day {
+  color: #8f8f8f;
+  font-family: "BebasNeueRegular", Arial, sans-serif;
+  font-size: 40px;
+}
+.archive #content article .committee-comment-date .month, .blog #content article .committee-comment-date .month, .single.single-rotary-committees #content .committee-comment-date .month {
+  color: #187084;
+  font-size: 14px;
+  position: absolute;
+}
+.archive #content article .morecomments, .archive #content article .lesscomments, .blog #content article .morecomments, .blog #content article .lesscomments, .single.single-rotary-committees #content .morecomments, .single.single-rotary-committees #content .lesscomments {
+  clear: left;
+  margin-left: 115px;
+}
+.archive #content article .morecomments::after, .blog #content article .morecomments::after, .single.single-rotary-committees #content .morecomments::after {
+  content: '\25BC';
+}
+.archive #content article .lesscomments::after, .blog #content article .lesscomments::after, .single.single-rotary-committees #content .lesscomments::after {
+  content: '\25B2';
+}
+.archive #content article .committeecomment, .blog #content article .committeecomment, .single.single-rotary-committees #content .committeecomment {
+  margin-bottom: 15px;
+  width: 90%;
+}
+.archive #content article .committeecomment p, .blog #content article .committeecomment p, .single.single-rotary-committees #content .committeecomment p {
+  margin-left: 115px;
+}
+.archive #content article .committeecontent, .blog #content article .committeecontent, .single.single-rotary-committees #content .committeecontent {
+  clear: left;
+  margin-left: 20px;
+  margin-right: 20px;
+  position: relative;
+}
+.archive #content article .committeecontent .post-edit-link, .blog #content article .committeecontent .post-edit-link, .single.single-rotary-committees #content .committeecontent .post-edit-link {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAzNDY3OSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzBmNzE4NSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #034679), color-stop(100%, #0f7185));
+  background-image: -webkit-linear-gradient(#034679, #0f7185);
+  background-image: -moz-linear-gradient(#034679, #0f7185);
+  background-image: -o-linear-gradient(#034679, #0f7185);
+  background-image: linear-gradient(#034679, #0f7185);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #e0e0e1;
+  color: white;
+  display: block;
+  font-family: "BebasNeueRegular", Arial, sans-serif;
+  font-weight: normal;
+  height: 40px;
+  line-height: normal;
+  padding: 2px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+}
+.archive #content article h2, .blog #content article h2, .single.single-rotary-committees #content h2 {
+  border-bottom: 1px solid #B5B5B5;
+  border-top: 1px solid #B5B5B5;
+  clear: left;
+  padding: 22px 0 20px 0;
+}
+.archive #content article .committeeblogtop, .blog #content article .committeeblogtop, .single.single-rotary-committees #content .committeeblogtop {
+  border-top: 1px solid #eda200;
+  clear: both;
+  height: 60px;
+  position: relative;
+  top: 30px;
+}
+.archive #content article .committeeribbon, .blog #content article .committeeribbon, .single.single-rotary-committees #content .committeeribbon {
+  background: white url(../images/committee-blog-roll-banner.png) no-repeat;
+  height: 47px;
+  margin: 0 auto;
+  position: relative;
+  top: -57px;
+  width: 220px;
+}
+.archive #content article .committeeribbon h3, .blog #content article .committeeribbon h3, .single.single-rotary-committees #content .committeeribbon h3 {
+  font-family: Sommet;
+  left: 20px;
+  position: absolute;
+  top: 5px;
+}
+.archive #content article .committeeribbon h3 a, .blog #content article .committeeribbon h3 a, .single.single-rotary-committees #content .committeeribbon h3 a {
+  text-shadow: rgba(0, 0, 0, 0.27) 1px 1px 2px;
+  color: #fff;
+  text-transform: uppercase;
+}
+.archive #content article header, .blog #content article header, .single.single-rotary-committees #content header {
   border-bottom: 1px solid #EFEFEF;
   margin-bottom: 30px;
 }
-.archive #content article header .postdate, .blog #content article header .postdate {
+.archive #content article header .postdate, .blog #content article header .postdate, .single.single-rotary-committees #content header .postdate {
   overflow: hidden;
   *zoom: 1;
   font-family: Arial, Helvetica, sans-serif;
   padding: 5px 0 10px 0;
+  position: static;
+  float: none;
+  font-size: inherit;
+  width: 100%;
 }
-.archive #content article header br, .blog #content article header br {
+.archive #content article header br, .blog #content article header br, .single.single-rotary-committees #content header br {
   display: none;
 }
-.archive #content article header h2, .blog #content article header h2 {
+.archive #content article header h2, .blog #content article header h2, .single.single-rotary-committees #content header h2 {
+  border-top: 0;
   font-size: 20px;
   height: 50px;
   padding-top: 5px;
 }
-.archive #content article header h2 a, .blog #content article header h2 a {
+.archive #content article header h2 a, .blog #content article header h2 a, .single.single-rotary-committees #content header h2 a {
   color: #606060;
   font-family: "BebasNeueRegular", Arial, sans-serif;
   font-weight: normal;
 }
-.archive #content article .continuereading, .blog #content article .continuereading {
+.archive #content article .continuereading, .blog #content article .continuereading, .single.single-rotary-committees #content .continuereading {
   padding-top: 15px;
 }
-.archive #content article .excerptcontainer, .blog #content article .excerptcontainer {
+.archive #content article .excerptcontainer, .blog #content article .excerptcontainer, .single.single-rotary-committees #content .excerptcontainer {
   margin-left: 142px;
 }
-.archive #content article .SectionContainer, .blog #content article .SectionContainer {
+.archive #content article .SectionContainer, .blog #content article .SectionContainer, .single.single-rotary-committees #content .SectionContainer {
   border-bottom: 1px solid #606060;
   color: #0f7289;
   height: 30px;
   margin-bottom: 15px;
 }
-.archive #content article .sectioncontainer, .blog #content article .sectioncontainer {
+.archive #content article .sectioncontainer, .blog #content article .sectioncontainer, .single.single-rotary-committees #content .sectioncontainer {
   -webkit-box-shadow: #efefef 3px 3px 5px 0;
   -moz-box-shadow: #efefef 3px 3px 5px 0;
   box-shadow: #efefef 3px 3px 5px 0;
@@ -1562,17 +1690,17 @@ td {
   margin-left: 10px;
   width: 381px;
 }
-.archive #content article .sectionheader, .blog #content article .sectionheader {
+.archive #content article .sectionheader, .blog #content article .sectionheader, .single.single-rotary-committees #content .sectionheader {
   background: white url(../images/archive-section-header.png) no-repeat;
   border-bottom: 1px solid #efefef;
   border-right: 1px solid #efefef;
   padding: 0 20px 20px 0;
 }
-.archive #content article .sectionheader h2, .blog #content article .sectionheader h2 {
+.archive #content article .sectionheader h2, .blog #content article .sectionheader h2, .single.single-rotary-committees #content .sectionheader h2 {
   color: #FFF;
   margin-top: 0;
 }
-.archive #content article .sectioncontent, .blog #content article .sectioncontent {
+.archive #content article .sectioncontent, .blog #content article .sectioncontent, .single.single-rotary-committees #content .sectioncontent {
   overflow: hidden;
   *zoom: 1;
   border-left: 1px solid #efefef;
@@ -1582,7 +1710,7 @@ td {
   position: relative;
   top: 20px;
 }
-.archive #content article .meta, .blog #content article .meta {
+.archive #content article .meta, .blog #content article .meta, .single.single-rotary-committees #content .meta {
   border-top: 1px solid #808080;
   clear: left;
   color: #808080;
@@ -1592,23 +1720,27 @@ td {
   overflow: hidden;
   padding-top: 15px;
 }
-.archive #content article .meta a, .blog #content article .meta a {
+.archive #content article .meta a, .blog #content article .meta a, .single.single-rotary-committees #content .meta a {
   color: #808080;
 }
-.archive #content article .meta .commentspopup, .blog #content article .meta .commentspopup {
+.archive #content article .meta .commentspopup, .blog #content article .meta .commentspopup, .single.single-rotary-committees #content .meta .commentspopup {
   background-position: 0 -322px;
   padding-left: 15px;
 }
-.archive #content article .meta p, .blog #content article .meta p {
+.archive #content article .meta p, .blog #content article .meta p, .single.single-rotary-committees #content .meta p {
   margin-bottom: 0;
 }
-.archive #content article .meta .post-edit-link, .blog #content article .meta .post-edit-link {
+.archive #content article .meta .post-edit-link, .blog #content article .meta .post-edit-link, .single.single-rotary-committees #content .meta .post-edit-link {
   display: inline;
   padding-top: 0;
 }
 
 /*comments*/
 label[for="comment"] {
+  display: none;
+}
+
+.committee #respond {
   display: none;
 }
 
@@ -1647,17 +1779,40 @@ label[for="comment"] {
   padding-bottom: 0;
   width: 564px;
 }
-.comment .commenttext {
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZkZjhlZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Y5ZWZkOSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+.comment .commentbottom {
+  background: url(../images/committee-comment-bottom-bg.png) no-repeat;
+  height: 47px;
+  width: 100%;
+}
+.comment .commentbottom a {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VlYTMwMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2YyYmE0MCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fdf8ef), color-stop(100%, #f9efd9));
-  background-image: -webkit-linear-gradient(#fdf8ef, #f9efd9);
-  background-image: -moz-linear-gradient(#fdf8ef, #f9efd9);
-  background-image: -o-linear-gradient(#fdf8ef, #f9efd9);
-  background-image: linear-gradient(#fdf8ef, #f9efd9);
-  -webkit-box-shadow: #e6decd 3px 3px 5px 0;
-  -moz-box-shadow: #e6decd 3px 3px 5px 0;
-  box-shadow: #e6decd 3px 3px 5px 0;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eea300), color-stop(100%, #f2ba40));
+  background-image: -webkit-linear-gradient(#eea300, #f2ba40);
+  background-image: -moz-linear-gradient(#eea300, #f2ba40);
+  background-image: -o-linear-gradient(#eea300, #f2ba40);
+  background-image: linear-gradient(#eea300, #f2ba40);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #e0e0e1;
+  color: white;
+  display: block;
+  font-family: "BebasNeueRegular", Arial, sans-serif;
+  font-weight: normal;
+  height: 38px;
+  line-height: normal;
+  padding: 2px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 38px;
+  margin-left: 600px;
+  width: 128px;
+}
+.comment .commenttext, .comment .commentcommittetext {
   border-bottom: 1px solid #e6decd;
   border-left: 1px solid #e6decd;
   border-right: 1px solid #e6decd;
@@ -1666,8 +1821,41 @@ label[for="comment"] {
   margin-bottom: 10px;
   width: 562px;
 }
-.comment .commenttext p {
+.comment .commenttext p, .comment .commentcommittetext p {
   padding: 10px;
+}
+.comment .commenttext {
+  -webkit-box-shadow: #e6decd 3px 3px 5px 0;
+  -moz-box-shadow: #e6decd 3px 3px 5px 0;
+  box-shadow: #e6decd 3px 3px 5px 0;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZkZjhlZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Y5ZWZkOSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fdf8ef), color-stop(100%, #f9efd9));
+  background-image: -webkit-linear-gradient(#fdf8ef, #f9efd9);
+  background-image: -moz-linear-gradient(#fdf8ef, #f9efd9);
+  background-image: -o-linear-gradient(#fdf8ef, #f9efd9);
+  background-image: linear-gradient(#fdf8ef, #f9efd9);
+}
+.comment .commentcommittetext {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZkZjhlZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Y0ZWFkMyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fdf8ef), color-stop(100%, #f4ead3));
+  background-image: -webkit-linear-gradient(#fdf8ef, #f4ead3);
+  background-image: -moz-linear-gradient(#fdf8ef, #f4ead3);
+  background-image: -o-linear-gradient(#fdf8ef, #f4ead3);
+  background-image: linear-gradient(#fdf8ef, #f4ead3);
+  border-bottom: 0;
+  border-top: 1px solid #e6decd;
+  margin-bottom: 0;
+  padding-top: 15px;
+  width: 784px;
+}
+
+.no-cssgradients .commentbottom a {
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#eea300', endColorstr='#f2ba40');
+  /* IE6 & IE7 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#eea300', endColorstr='#f2ba40')";
+  /* IE8 */
 }
 
 #commentform #author {
@@ -1702,6 +1890,13 @@ label[for="comment"] {
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FDF8EF', endColorstr='#F9EFD9');
   /* IE6 & IE7 */
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FDF8EF', endColorstr='#F9EFD9')";
+  /* IE8 */
+}
+
+.no-cssgradients .commentcommittetext {
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FDF8EF', endColorstr='#f4ead3');
+  /* IE6 & IE7 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FDF8EF', endColorstr='#f4ead3')";
   /* IE8 */
 }
 
@@ -2004,7 +2199,7 @@ li.widget_rotaryarchivewidget li {
 .widgetedit {
   background-position: 0 -242px;
   overflow: hidden;
-  text-indent: -999999px;
+  text-indent: 100%;
   white-space: nowrap;
   display: none;
   height: 34px;
@@ -2254,6 +2449,65 @@ aside .widget_sp_image img {
 .post-type-archive-rotary_speakers .widget_calendar,
 .tax-rotary_speaker_tag .widget_calendar {
   display: none;
+}
+
+#committee-sidebar {
+  margin-right: 22px;
+  margin-top: 80px;
+  border-bottom: 1px solid #b5b5b5;
+  border-left: 1px solid #b5b5b5;
+  border-right: 1px solid #b5b5b5;
+  border-top: 6px solid #b5b5b5;
+  line-height: 22px;
+  width: 204px;
+}
+#committee-sidebar > ul {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0 0 7px inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.25) 0 0 7px inset;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 0 7px inset;
+  padding: 20px 5px 0 15px;
+}
+#committee-sidebar ul ul {
+  color: #a2a2a2;
+  padding-bottom: 25px;
+}
+#committee-sidebar h3 {
+  margin-top: 0;
+  padding-top: 5px;
+}
+#committee-sidebar a[href^="mailto"] {
+  color: #a2a2a2;
+  font-weight: normal;
+}
+#committee-sidebar .avatarcontainer {
+  border-top: 2px solid #B5B5B5;
+  padding-top: 25px;
+}
+#committee-sidebar .avatarcontainer img {
+  height: auto;
+  width: 180px;
+}
+#committee-sidebar .committeemembers {
+  border-top: 2px solid #B5B5B5;
+  padding-top: 20px;
+}
+#committee-sidebar .committeemembers h3 {
+  font-family: "BebasNeueRegular", Arial, sans-serif;
+  color: #177083;
+  font-size: 20px;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+}
+#committee-sidebar .committeemembers li {
+  border-top: 1px solid #b5b5b5;
+  color: #0F7285;
+  padding: 10px 0 10px 0;
+}
+#committee-sidebar .committeemembers li:last-child {
+  border-bottom: 1px solid #B5B5B5;
+}
+#committee-sidebar .committeemembers li .avatar {
+  vertical-align: middle;
 }
 
 /* Smartphones (portrait and landscape) ----------- */

@@ -162,7 +162,6 @@ class RotaryArchiveWidget extends WP_Widget {
 			$sql .="FROM {$wpdb->posts} {$join} {$where} ";
 			$sql.= "GROUP BY YEAR(post_date), MONTH(post_date) ORDER BY post_date DESC";
 		}	
-        
 	    return $wpdb->get_results($sql);
 	}
 

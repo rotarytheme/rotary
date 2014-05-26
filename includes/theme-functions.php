@@ -27,16 +27,15 @@ function rotary_edit_post_link($output) {
 //show the rotary club header
 function rotary_club_header($clubname, $rotaryClubBefore=false) {
 	if ($rotaryClubBefore) { ?>
-		<span class="clubtype">Rotary Club Of</span>
 	    <?php if ($clubname) { ?>
-				 <span class="clubname"><?php echo $clubname;?></span>
+				 <span class="clubtype clubbefore">Club Of <?php echo $clubname;?></span>
 		<?php }    
      } 
      else { 
 	    if ($clubname) { ?>
 				<span class="clubname"><?php echo $clubname;?></span>
         <?php }  ?>     
-			    <span class="clubtype">Rotary Club</span>
+			    <span class="clubtype">Club</span>
      <?php   }           
 
 }
@@ -502,7 +501,47 @@ function rotary_comment( $comment, $args, $depth ) {
 	endswitch;
 }
 endif;
-
+/**
+ * Template for committee comments 
+ *
+ * @since rotary 1.0
+ */
+function rotary_committee_comment( ) { ?>
+	<?php $GLOBALS['comment'] = $comment; ?>
+	<?php $args = array(
+	'order' => 'DESC',
+	'post_type' => 'rotary-committees',
+	'status' => 'approve',
+	'type' => 'comment',
+	'number' => 5
+); ?>
+	<?php $comments = get_comments($args); ?>
+	
+	<?php if (is_array($comments)) : ?>
+		<?php foreach($comments as $comment) : ?>
+		<?php $firstComment = false; ?>
+		<?php if ($comment === reset($comments)) : ?>
+			<?php $firstComment = true;  ?>
+		<?php  endif; ?>
+		<div class="clearleft committeecomment <?php if (!$firstComment) {echo ' hide';} ?>" id="comment-<?php echo $comment->comment_post_ID ?>">
+			<div class="committee-comment-date">
+			 	<?php $date = new DateTime($comment->comment_date); ?>
+				<span class="day"><?php echo $date->format('d'); ?></span>
+				<span class="month"><?php  echo $date->format('F'); ?></span>
+				<span class="year"><?php echo $date->format('Y'); ?></span>
+				</div>
+				<p><?php echo $comment->comment_content; ?></p>
+				<p>Posted by: <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ))?>"><?php echo $comment->comment_author;?></a></p>			
+				</div>
+				<?php if ($firstComment && get_comments_number() > 1 ) : ?>
+				<p><a href="#" class="morecomments" id="morecomments">Show More Announcements</a></p>
+				<?php  endif; ?>
+				<?php if ($comment === end($comments)) : ?>
+					<p><a href="#" class="lesscomments hide" id="lesscomments">Hide Announcements</a></p>
+				<?php  endif; ?>
+			<?php  endforeach; ?>
+		<?php  endif; ?>
+<?php }
 /**
  * Closes comments and pingbacks with </article> instead of </li>.
  *
@@ -902,7 +941,7 @@ function rotary_filter_previous_post_link($link) {
 //custom category and tags for speakers
 add_filter( 'pre_get_posts', 'rotary_pre_get_cats' );
 function rotary_pre_get_cats($query) {
-	if (is_main_query()  && !is_admin()) {
+	if ($query->is_main_query()  && !is_admin()) {
 		$taxonomy = $query->tax_query->queries[0]['taxonomy'];
 		if ( isset($taxonomy) && ('rotary_speaker_cat' == $taxonomy || 'rotary_speaker_tag' == $taxonomy )) {
 			$query->set('meta_key', 'speaker_date');
@@ -914,7 +953,7 @@ function rotary_pre_get_cats($query) {
 //custom date archives
 add_filter( 'pre_get_posts', 'rotary_pre_get_archive_posts' );
 function rotary_pre_get_archive_posts($query) {
-	if (is_main_query() && is_post_type_archive('rotary_speakers') && !is_admin()) {
+	if ($query->is_main_query() && is_post_type_archive('rotary_speakers') && !is_admin()) {
 		//print_r($query->query_vars);
 		//echo 'the year is '.$query->query_vars['year'];
 		//assume year if month is set
@@ -957,7 +996,7 @@ function rotary_pre_get_archive_posts($query) {
 add_filter( 'posts_where' , 'rotary_archiveposts_where', 10, 2 );
 
 function rotary_archiveposts_where( $where, $query_obj ) {
-	if (is_main_query() && is_post_type_archive('rotary_speakers') && !is_admin()) {
+	if ($query_obj->is_main_query() && is_post_type_archive('rotary_speakers') && !is_admin()) {
 	 $newWhere = explode('AND', $where);
 	 $newWhere = array_slice($newWhere, 3);
 	 $where = 'AND '.implode('AND', $newWhere);
