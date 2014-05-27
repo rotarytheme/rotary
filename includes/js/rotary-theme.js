@@ -32,7 +32,7 @@ jQuery(document).ready(function($) {
 		},
 		positionLogo: function() {
 			var $logo = $('#branding h1');
-			var logoMargin = 632 - $logo.width();
+			var logoMargin = 627 - $logo.width();
 			$logo.css('margin-right', logoMargin + 'px');
 		},
 		showMoreComments: function(e) {
