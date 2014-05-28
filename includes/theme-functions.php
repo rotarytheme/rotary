@@ -36,7 +36,7 @@ function rotary_club_header($clubname, $rotaryClubBefore=false) {
 	    if ($clubname) { ?>
 				<span class="clubname namebefore"><?php echo $clubname;?></span>
         <?php }  ?>     
-			   <!-- <span class="clubtype">Club</span>-->
+			   <span class="clubtype">Rotary Club</span>
      <?php   }           
 
 }

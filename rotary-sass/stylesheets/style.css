@@ -886,7 +886,7 @@ hr {
   font-family: "Arial Narrow", Arial, Helvetica, sans-serif;
   font-size: 30px;
   height: 120px;
-  line-height: .9em;
+  line-height: 1em;
   margin-bottom: 15px;
   width: 632px;
 }
@@ -898,7 +898,7 @@ hr {
   margin-left: 305px;
 }
 #branding h1 .clubname.namebefore, #branding h1 a.clubname.namebefore {
-  padding-top: 40px;
+  padding-top: 30px;
 }
 #branding h1 .clubtype, #branding h1 a.clubtype {
   color: #17468f;
