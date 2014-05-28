@@ -28,14 +28,15 @@ function rotary_edit_post_link($output) {
 function rotary_club_header($clubname, $rotaryClubBefore=false) {
 	if ($rotaryClubBefore) { ?>
 	    <?php if ($clubname) { ?>
-				 <span class="clubtype clubbefore">Club Of <?php echo $clubname;?></span>
+				 <span class="clubtype clubbefore">Club Of</span>
+				 <span class="clubname"><?php echo $clubname;?></span>
 		<?php }    
      } 
      else { 
 	    if ($clubname) { ?>
-				<span class="clubname"><?php echo $clubname;?></span>
+				<span class="clubname namebefore"><?php echo $clubname;?></span>
         <?php }  ?>     
-			    <span class="clubtype">Club</span>
+			   <!-- <span class="clubtype">Club</span>-->
      <?php   }           
 
 }

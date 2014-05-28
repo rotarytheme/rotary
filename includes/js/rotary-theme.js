@@ -7,7 +7,6 @@ jQuery(document).ready(function($) {
 			$('.home aside > ul >li h3').after('<b></b>');
 			//add class to upcoming programs edit so we can target it
 			$('#home-upcoming-programs .post-edit-link').addClass('speakerdatedit');
-			this.positionLogo();
 			this.setUpArchives();
 			this.setUpSlideShow();
 			this.setUpEdits();
@@ -29,11 +28,6 @@ jQuery(document).ready(function($) {
 				nextSpeed: 500,
 				prevSpeed: 500
 			});
-		},
-		positionLogo: function() {
-			var $logo = $('#branding h1');
-			var logoMargin = 627 - $logo.width();
-			$logo.css('margin-right', logoMargin + 'px');
 		},
 		showMoreComments: function(e) {
 			e.preventDefault();

@@ -881,34 +881,32 @@ hr {
   width: 90px;
 }
 #branding h1 {
-  background: url(../images/5016_Rotary_Logo.png) no-repeat 100% 0;
+  background: url(../images/5016_Rotary_Logo.png) no-repeat 5px 0;
   float: left;
   font-family: "Arial Narrow", Arial, Helvetica, sans-serif;
   font-size: 30px;
   height: 120px;
   line-height: .9em;
   margin-bottom: 15px;
-  margin-left: 5px;
-  min-width: 300px;
-  /*margin-right:132px;*/
-  text-align: right;
-  /*width: 500px;*/
+  width: 632px;
 }
 #branding h1 span {
   display: block;
 }
 #branding h1 .clubname, #branding h1 a.clubname {
   color: #17468f;
-  margin-right: 120px;
+  margin-left: 305px;
+}
+#branding h1 .clubname.namebefore, #branding h1 a.clubname.namebefore {
+  padding-top: 40px;
 }
 #branding h1 .clubtype, #branding h1 a.clubtype {
   color: #17468f;
   font-weight: normal;
-  margin-right: 120px;
-  margin-top: 70px;
+  margin-left: 305px;
 }
 #branding h1 .clubtype.clubbefore, #branding h1 a.clubtype.clubbefore {
-  margin-top: 90px;
+  padding-top: 30px;
 }
 
 .no-cssgradients #branding section a {
