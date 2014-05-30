@@ -453,7 +453,7 @@ hr {
 	border-right:1px solid #e6dcc5;
 	@include background-image(linear-gradient(#fdf8ef, #f9efd9));
 	@include clearfix;
-	min-height:300px;
+	min-height:200px;
 	padding-bottom:15px;
 	padding-top:15px;
 	section{
@@ -657,7 +657,6 @@ hr {
 		}
 		.clubtype, a.clubtype {
 			color:#17468f;
-			font-weight:normal;
 			margin-left:305px;
 			&.clubbefore {
 				padding-top:30px;
@@ -1260,6 +1259,7 @@ td {
 			width:100%;
 		}
 	}
+	
 	.committee-comment-date {
 		border-bottom: 1px solid #8f8f8f;
 		border-top: 1px solid #8f8f8f;
@@ -1282,6 +1282,7 @@ td {
 			color:#187084;
 			font-size:14px;
 			position:absolute;
+			text-transform:uppercase;
 		}
 	}
 	.morecomments, .lesscomments {
@@ -1508,13 +1509,13 @@ label[for="comment"] {
 		font-weight:normal;
 		margin-bottom:10px;
 		width:562px;
-		p {
-			padding:10px;
-		}
 	}
 	.commenttext {
 		@include box-shadow(#e6decd 3px 3px 5px 0);
 		@include background-image(linear-gradient(#FDF8EF, #F9EFD9));
+		p {
+			padding:10px;
+		}
 	}	
 	.commentcommittetext{
 		@include background-image(linear-gradient(#FDF8EF, #f4ead3));
@@ -1523,6 +1524,12 @@ label[for="comment"] {
 		margin-bottom:0;
 		padding-top:15px;
 		width:784px;
+		p {
+			padding: 10px 10px 0;
+		}
+		.committeecommentdetail {
+			font-size:1.2em;
+		}
 	}	
 	
 }

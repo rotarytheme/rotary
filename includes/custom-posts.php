@@ -63,20 +63,20 @@ function register_speaker_post_type() {
     	)
     );   
     // now let's add custom categories for program coordinator
-        register_taxonomy( 'rotary_program_coordinator_cat', 
+        register_taxonomy( 'rotary_program_introducer_cat', 
     	array('rotary_speakers'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
     	array('hierarchical' => true,     /* if this is true, it acts like categories */             
     		'labels' => array(
-    			'name' => __( 'Program Coordinator', 'rotary' ), /* name of the custom taxonomy */
-    			'singular_name' => __( 'Program Coordinator', 'rotary' ), /* single taxonomy name */
-    			'search_items' =>  __( 'Search Program Coordinators', 'rotary' ), /* search title for taxomony */
-    			'all_items' => __( 'All Program Coordinators', 'rotary' ), /* all title for taxonomies */
-    			'parent_item' => __( 'Parent Program Coordinators', 'rotary' ), /* parent title for taxonomy */
-    			'parent_item_colon' => __( 'Parent Program Coordinators:', 'rotary' ), /* parent taxonomy title */
-    			'edit_item' => __( 'Edit Program Coordinators', 'rotary' ), /* edit custom taxonomy title */
-    			'update_item' => __( 'Update Program Coordinator', 'rotary' ), /* update title for taxonomy */
-    			'add_new_item' => __( 'Add New Program Coordinators', 'rotary' ), /* add new title for taxonomy */
-    			'new_item_name' => __( 'New Program Coordinator', 'rotary' ) /* name title for taxonomy */
+    			'name' => __( 'Program Introducer', 'rotary' ), /* name of the custom taxonomy */
+    			'singular_name' => __( 'Program Introducer', 'rotary' ), /* single taxonomy name */
+    			'search_items' =>  __( 'Search Program Introducers', 'rotary' ), /* search title for taxomony */
+    			'all_items' => __( 'All Program Introducer', 'rotary' ), /* all title for taxonomies */
+    			'parent_item' => __( 'Parent Program Introducers', 'rotary' ), /* parent title for taxonomy */
+    			'parent_item_colon' => __( 'Parent Program Introducers:', 'rotary' ), /* parent taxonomy title */
+    			'edit_item' => __( 'Edit Program Introducers', 'rotary' ), /* edit custom taxonomy title */
+    			'update_item' => __( 'Update Program Introducer', 'rotary' ), /* update title for taxonomy */
+    			'add_new_item' => __( 'Add New Program Introducer', 'rotary' ), /* add new title for taxonomy */
+    			'new_item_name' => __( 'New Program Introducer', 'rotary' ) /* name title for taxonomy */
     		),
     		'show_ui' => true,
     		'query_var' => true,

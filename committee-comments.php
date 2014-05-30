@@ -53,6 +53,10 @@
 <?php // no comment navigation ?>
 </article>
 <?php $args = array(
-		'title_reply' => 'New Announcement');
+		'title_reply' => 'New Announcement',
+		'comment_notes_after'  => '',
+		'logged_in_as'  => '',
+		'label_submit'  => 'Save Announcement'
+		);
     ?> 
 <?php comment_form($args); ?>

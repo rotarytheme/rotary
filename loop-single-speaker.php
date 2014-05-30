@@ -60,9 +60,9 @@ if (count($field)) { ?>
 				  		   <?php } ?>
                     	<?php }
 							else { ?>
-	                    	<?php $terms = wp_get_post_terms( get_the_id(), 'rotary_program_coordinator_cat' ); ?>
+	                    	<?php $terms = wp_get_post_terms( get_the_id(), 'rotary_program_introducer_cat' ); ?>
 	                    	 <?php if ($terms) { ?>
-		    	  		    	   		<p><strong>Program Coordinator:</strong> <?php echo $terms[0]->name; ?></p>
+		    	  		    	   		<p><strong>Introduced By:</strong> <?php echo $terms[0]->name; ?></p>
 				  			<?php } ?>
                         </p>	
 	                   <?php  } ?>

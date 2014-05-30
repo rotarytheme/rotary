@@ -45,10 +45,10 @@
 					<?php } ?>
 					</ul>
 			 <?php } ?>
-			 <?php if(get_field('committee_featured_image')) { ?>
+			 <?php if(has_post_thumbnail()) { ?>
 					<ul class="avatarcontainer">				
-					<?php $image = wp_get_attachment_image_src( get_field('committee_featured_image'), 'medium' ); ?>
-					<li><img src="<?php echo  $image[0]?>" alt="Committee Featured Image" title=""/> </li>
+					
+					<li><?php the_post_thumbnail('medium');?> </li>
 					</ul>
 				<?php } ?>
 				<ul class="committeemembers">

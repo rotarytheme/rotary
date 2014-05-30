@@ -28,7 +28,7 @@ function rotary_edit_post_link($output) {
 function rotary_club_header($clubname, $rotaryClubBefore=false) {
 	if ($rotaryClubBefore) { ?>
 	    <?php if ($clubname) { ?>
-				 <span class="clubtype clubbefore">Club Of</span>
+				 <span class="clubtype clubbefore">Rotary Club Of</span>
 				 <span class="clubname"><?php echo $clubname;?></span>
 		<?php }    
      } 
@@ -514,6 +514,7 @@ function rotary_committee_comment( ) { ?>
 	'post_type' => 'rotary-committees',
 	'status' => 'approve',
 	'type' => 'comment',
+	'post_id' => get_the_id(),
 	'number' => 5
 ); ?>
 	<?php $comments = get_comments($args); ?>
@@ -531,8 +532,8 @@ function rotary_committee_comment( ) { ?>
 				<span class="month"><?php  echo $date->format('F'); ?></span>
 				<span class="year"><?php echo $date->format('Y'); ?></span>
 				</div>
-				<p><?php echo $comment->comment_content; ?></p>
-				<p>Posted by: <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ))?>"><?php echo $comment->comment_author;?></a></p>			
+				<p class="committeecommentdetail"><?php echo $comment->comment_content; ?></p>
+				<p><strong>Posted by</strong> <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ))?>"><?php echo $comment->comment_author;?></a></p>			
 				</div>
 				<?php if ($firstComment && get_comments_number() > 1 ) : ?>
 				<p><a href="#" class="morecomments" id="morecomments">Show More Announcements</a></p>

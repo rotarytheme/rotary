@@ -144,5 +144,5 @@ function rotary_add_custom_user_roles() {
 //remove program coordinator from the side bar
 add_action ('admin_menu' , 'rotary_remove_progam_coordinator_meta');
 function rotary_remove_progam_coordinator_meta() {
-	remove_meta_box( 'rotary_program_coordinator_catdiv', 'rotary_speakers', 'side' );
+	remove_meta_box( 'rotary_program_introducer_catdiv', 'rotary_speakers', 'side' );
 }

@@ -643,7 +643,7 @@ hr {
   background-image: linear-gradient(#fdf8ef, #f9efd9);
   overflow: hidden;
   *zoom: 1;
-  min-height: 300px;
+  min-height: 200px;
   padding-bottom: 15px;
   padding-top: 15px;
 }
@@ -902,7 +902,6 @@ hr {
 }
 #branding h1 .clubtype, #branding h1 a.clubtype {
   color: #17468f;
-  font-weight: normal;
   margin-left: 305px;
 }
 #branding h1 .clubtype.clubbefore, #branding h1 a.clubtype.clubbefore {
@@ -1553,6 +1552,7 @@ td {
   color: #187084;
   font-size: 14px;
   position: absolute;
+  text-transform: uppercase;
 }
 .archive #content article .morecomments, .archive #content article .lesscomments, .blog #content article .morecomments, .blog #content article .lesscomments, .single.single-rotary-committees #content .morecomments, .single.single-rotary-committees #content .lesscomments {
   clear: left;
@@ -1820,9 +1820,6 @@ label[for="comment"] {
   margin-bottom: 10px;
   width: 562px;
 }
-.comment .commenttext p, .comment .commentcommittetext p {
-  padding: 10px;
-}
 .comment .commenttext {
   -webkit-box-shadow: #e6decd 3px 3px 5px 0;
   -moz-box-shadow: #e6decd 3px 3px 5px 0;
@@ -1834,6 +1831,9 @@ label[for="comment"] {
   background-image: -moz-linear-gradient(#fdf8ef, #f9efd9);
   background-image: -o-linear-gradient(#fdf8ef, #f9efd9);
   background-image: linear-gradient(#fdf8ef, #f9efd9);
+}
+.comment .commenttext p {
+  padding: 10px;
 }
 .comment .commentcommittetext {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZkZjhlZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Y0ZWFkMyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
@@ -1848,6 +1848,12 @@ label[for="comment"] {
   margin-bottom: 0;
   padding-top: 15px;
   width: 784px;
+}
+.comment .commentcommittetext p {
+  padding: 10px 10px 0;
+}
+.comment .commentcommittetext .committeecommentdetail {
+  font-size: 1.2em;
 }
 
 .no-cssgradients .commentbottom a {
