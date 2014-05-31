@@ -1538,7 +1538,7 @@ td {
   font-family: Sommet;
   font-size: 14px;
   font-weight: 400;
-  margin: 15px 0 0 15px;
+  margin: 16px 0 0 15px;
   padding-top: 15px;
   position: relative;
   width: 90px;
@@ -1846,7 +1846,7 @@ label[for="comment"] {
   border-bottom: 0;
   border-top: 1px solid #e6decd;
   margin-bottom: 0;
-  padding-top: 15px;
+  padding: 15px 0 0 0;
   width: 784px;
 }
 .comment .commentcommittetext p {
@@ -2458,7 +2458,7 @@ aside .widget_sp_image img {
 
 #committee-sidebar {
   margin-right: 22px;
-  margin-top: 80px;
+  margin-top: 69px;
   border-bottom: 1px solid #b5b5b5;
   border-left: 1px solid #b5b5b5;
   border-right: 1px solid #b5b5b5;
@@ -2485,8 +2485,9 @@ aside .widget_sp_image img {
   font-weight: normal;
 }
 #committee-sidebar .avatarcontainer {
-  border-top: 2px solid #B5B5B5;
-  padding-top: 25px;
+  border-bottom: 2px solid #B5B5B5;
+  margin-bottom: 15px;
+  padding: 15px 0px 15px 0;
 }
 #committee-sidebar .avatarcontainer img {
   height: auto;

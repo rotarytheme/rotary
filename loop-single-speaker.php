@@ -58,14 +58,14 @@ if (count($field)) { ?>
 	                    	<?php if ($terms) { ?>
 		    	  		    	   		<strong>Editor:</strong> <?php echo $terms[0]->name; ?>
 				  		   <?php } ?>
-                    	<?php }
-							else { ?>
+                    	<?php } ?>
+
 	                    	<?php $terms = wp_get_post_terms( get_the_id(), 'rotary_program_introducer_cat' ); ?>
 	                    	 <?php if ($terms) { ?>
 		    	  		    	   		<p><strong>Introduced By:</strong> <?php echo $terms[0]->name; ?></p>
 				  			<?php } ?>
-                        </p>	
-	                   <?php  } ?>
+                        </p>
+
 
 
                     	<?php

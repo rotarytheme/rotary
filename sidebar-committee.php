@@ -12,14 +12,13 @@
 	<aside id="committee-sidebar" role="complementary">
 		<ul>
 			<li>
-				<?php if(get_field('committeemission')) { ?>
-					<h3>Mission</h3>
-					<ul>
-					<li><?php the_field('committeemission'); ?></li>
-					</ul>
+				<?php if(has_post_thumbnail()) { ?>
+					<ul class="avatarcontainer">
 
+					<li><?php the_post_thumbnail('medium');?> </li>
+					</ul>
 				<?php } ?>
-				
+
 				<?php if(get_field('committee_chair_email')) { ?>
 					<h3>Chair</h3>
 					<ul>
@@ -45,11 +44,12 @@
 					<?php } ?>
 					</ul>
 			 <?php } ?>
-			 <?php if(has_post_thumbnail()) { ?>
-					<ul class="avatarcontainer">				
-					
-					<li><?php the_post_thumbnail('medium');?> </li>
+			 <?php if(get_field('committeemission')) { ?>
+					<h3>Mission</h3>
+					<ul>
+					<li><?php the_field('committeemission'); ?></li>
 					</ul>
+
 				<?php } ?>
 				<ul class="committeemembers">
 				<?php
@@ -62,9 +62,9 @@ $users = get_users( array(
 <?php
 foreach ($users as $user) :
 	$usermeta = get_user_meta($user->ID);
-	$memberName = $usermeta['first_name'][0]. ' ' .$usermeta['last_name'][0]; ?>
+$memberName = $usermeta['first_name'][0]. ' ' .$usermeta['last_name'][0]; ?>
 
-					<li><?php echo get_avatar( $user->user_email, '16', '',  $memberName). ' ' .$memberName;?></li>
+					<li><?php echo get_avatar( $user->user_email, '32', '',  $memberName). ' ' .$memberName;?></li>
 			<?php
 endforeach;
 ?>

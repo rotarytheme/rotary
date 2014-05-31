@@ -308,7 +308,7 @@ aside {
 }
 #committee-sidebar {
 	margin-right:22px;
-	margin-top:80px;
+	margin-top:69px;
 	border-bottom: 1px solid #b5b5b5;
 	border-left: 1px solid #b5b5b5;
 	border-right: 1px solid #b5b5b5;
@@ -332,8 +332,9 @@ aside {
 		font-weight:normal;
 	}
 	.avatarcontainer {
-		border-top: 2px solid #B5B5B5;
-		padding-top:25px;
+		border-bottom: 2px solid #B5B5B5;
+		margin-bottom:15px;
+		padding:15px 0px 15px 0;
 		img {
 			height:auto;
 			width:180px;
