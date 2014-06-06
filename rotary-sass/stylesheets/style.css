@@ -895,6 +895,7 @@ hr {
 }
 #branding h1 .clubname, #branding h1 a.clubname {
   color: #17468f;
+  font-weight: bold;
   margin-left: 305px;
 }
 #branding h1 .clubname.namebefore, #branding h1 a.clubname.namebefore {
@@ -902,6 +903,7 @@ hr {
 }
 #branding h1 .clubtype, #branding h1 a.clubtype {
   color: #17468f;
+  font-weight: bold;
   margin-left: 305px;
 }
 #branding h1 .clubtype.clubbefore, #branding h1 a.clubtype.clubbefore {
