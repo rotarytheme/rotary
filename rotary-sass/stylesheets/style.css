@@ -586,11 +586,22 @@ hr {
 .home #content .comment {
   width: 100%;
 }
+.home #content .comment div {
+  float: none;
+}
+.home #content .committeecommentdetail {
+  padding-top: 0;
+}
+.home #content .committee-comment-date {
+  padding-bottom: 0;
+}
 .home #content .commentcommittetext {
   border-bottom: 1px solid #E6DECD;
   border-right: 1px solid #E6DECD;
+  clear: left;
   padding-bottom: 40px;
   padding-left: 35px;
+  margin-bottom: 20px;
   margin-right: 25px;
   width: 100%;
 }
@@ -605,32 +616,8 @@ hr {
   margin-bottom: 0;
   margin-right: 55px;
 }
-.home #content .committee-comment-date {
-  border-bottom: 1px solid #8F8F8F;
-  border-top: 1px solid #8F8F8F;
-  color: #808080;
-  float: left;
-  font-family: Sommet;
-  font-size: 14px;
-  font-weight: 400;
-  margin: 16px 0 15px 15px;
-  padding-top: 15px;
-  position: relative;
-  width: 90px;
-}
-.home #content .committee-comment-date .day {
-  color: #8F8F8F;
-  font-family: "BebasNeueRegular",Arial,sans-serif;
-  font-size: 40px;
-}
-.home #content .committee-comment-date .month {
-  color: #187084;
-  font-size: 14px;
-  position: absolute;
-  text-transform: uppercase;
-}
-.home #content .committeecommentdetail {
-  margin-left: 115px;
+.home #content .commentcommittetext p {
+  padding-left: 0;
 }
 
 #content.fullwidth {

@@ -299,7 +299,7 @@ function rotary_get_committee_announcements($atts){
 			<?php  $committeeArray[get_the_title()] = get_permalink() . '?open=open'; ?>
 			<?php
 	$args = array(
-		'order' => 'ASC',
+		'order' => 'DESC',
 		'orderby' => 'title',
 		'post_type' => 'rotary-committees',
 		'status' => 'approve',

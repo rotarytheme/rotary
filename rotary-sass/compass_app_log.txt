@@ -2784,3 +2784,19 @@ when it has other properties nested beneath it.
 2014-06-19 16:21:49 overwrite stylesheets/style.css 
 2014-06-19 16:26:23 unchanged images/backgrounds-s8f9fdc06fe.png
 2014-06-19 16:26:23 overwrite stylesheets/style.css 
+2014-06-20 09:59:05 unchanged images/backgrounds-s8f9fdc06fe.png
+2014-06-20 09:59:05 overwrite stylesheets/style.css 
+2014-06-20 10:00:27     error sass/style.scss (Line 1711: Invalid CSS after "...ort "fancybox";": expected "}", was "")
+2014-06-20 10:00:27 overwrite stylesheets/style.css 
+2014-06-20 10:01:11 unchanged images/backgrounds-s8f9fdc06fe.png
+2014-06-20 10:01:11 overwrite stylesheets/style.css 
+2014-06-20 10:02:47 unchanged images/backgrounds-s8f9fdc06fe.png
+2014-06-20 10:02:47 overwrite stylesheets/style.css 
+2014-06-20 10:04:34 unchanged images/backgrounds-s8f9fdc06fe.png
+2014-06-20 10:04:35 overwrite stylesheets/style.css 
+2014-06-20 10:05:08 unchanged images/backgrounds-s8f9fdc06fe.png
+2014-06-20 10:05:09 overwrite stylesheets/style.css 
+2014-06-20 10:06:53 unchanged images/backgrounds-s8f9fdc06fe.png
+2014-06-20 10:06:54 overwrite stylesheets/style.css 
+2014-06-20 10:08:05 unchanged images/backgrounds-s8f9fdc06fe.png
+2014-06-20 10:08:05 overwrite stylesheets/style.css 

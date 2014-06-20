@@ -46,6 +46,7 @@ jQuery(document).ready(function($) {
 				var open = this.getUrlParameter('open');
 				if ('open' === open) {
 					$('#respond').toggle();
+					$('#comment').focus();
 				}
 			}	
 		},
