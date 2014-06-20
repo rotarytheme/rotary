@@ -317,13 +317,13 @@ function rotary_get_committee_announcements($atts){
 					<?php $date = new DateTime($comment->comment_date); ?>
 					<?php $today = new DateTime(); ?>
 					<?php $interval = $today->diff($date); ?>
-					<?php if( abs($interval->d) < 10){ ?>										
-					<div class="clearleft committeecomment">
-						<div class="committee-comment-date">
+					<?php if( abs($interval->d) < 10){ ?>	
+					<div class="committee-comment-date">
 							<span class="day"><?php echo $date->format('d'); ?></span>
 							<span class="month"><?php  echo $date->format('F'); ?></span>
 							<span class="year"><?php echo $date->format('Y'); ?></span>
-						</div>
+						</div>									
+					<div class="clearleft committeecomment">
 						<p class="committeecommentdetail"><?php echo $comment->comment_content; ?></p>
 						
 					</div>

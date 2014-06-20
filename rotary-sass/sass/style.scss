@@ -408,30 +408,35 @@ hr {
 		   float:none;
 	   }
 	}
+	.committeecomment {
+		padding-bottom:0;
+	}
 	.committeecommentdetail {
 		padding-top:0;
 	}
 	.committee-comment-date {
+		display:inline;
 		padding-bottom:0;
 	}
 	.commentcommittetext{
 		border-bottom: 1px solid #E6DECD;
 		border-right: 1px solid #E6DECD;
 		clear:left;
-		padding-bottom:40px;
+		padding-bottom:20px;
 		padding-left:35px;
 		margin-bottom:20px;
 		margin-right:25px;
 		width:100%;
 		h4 {
 			clear:left;
+			display:inline;
+			margin-right:5px;
 		}
 		hr {
 			border:0;
 			color: #E6DECD;
 			background: #E6DECD;
 			height:1px;
-			margin-bottom:0;
 			margin-right:55px;
 		}
 		p {
