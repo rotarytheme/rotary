@@ -874,7 +874,7 @@ if (!class_exists('WP_Advanced_Search')) {
             $this->wp_query_args['paged'] = $paged;
 			
             $this->wp_query = new WP_Query($this->wp_query_args);
-
+            
             $query = $this->wp_query;
             $query->query_vars['post_type'] = $this->wp_query_args['post_type'];
 

@@ -21,8 +21,8 @@ function rotary_edit_post_link($output) {
 		$output = str_replace('class="post-edit-link"', 'class="post-edit-link button"', $output);
 	}
 
-    
-    return $output;
+
+	return $output;
 }
 //show the rotary club header
 function rotary_club_header($clubname, $rotaryClubBefore=false) {
@@ -30,72 +30,72 @@ function rotary_club_header($clubname, $rotaryClubBefore=false) {
 	    <?php if ($clubname) { ?>
 				 <span class="clubtype clubbefore">Rotary Club Of</span>
 				 <span class="clubname"><?php echo $clubname;?></span>
-		<?php }    
-     } 
-     else { 
-	    if ($clubname) { ?>
+		<?php }
+	}
+	else {
+		if ($clubname) { ?>
 				<span class="clubname namebefore"><?php echo $clubname;?></span>
-        <?php }  ?>     
+        <?php }  ?>
 			   <span class="clubtype">Rotary Club</span>
-     <?php   }           
+     <?php   }
 
 }
 //Add the filter to override the standard shortcode
 add_filter( 'img_caption_shortcode', 'rotary_img_caption_shortcode', 10, 3 );
 function rotary_img_caption_shortcode( $a , $attr, $content = null) {
- 
-    extract(shortcode_atts(array(
-        'id'    => '',
-        'align' => 'alignnone',
-        'width' => '',
-        'caption' => ''
-    ), $attr));
- 
-    if ( 1 > (int) $width || empty($caption) )
-        return $content;
- 
-    
- 
-    if ( $id ) $id = 'id="' . esc_attr($id) . '" ';
- 
-    return '<div ' . $id . 'class="wp-caption ' . esc_attr($align) . '" style="width: ' . (10 + (int) $width) . 'px"><div class="inner-caption clearfix">'
-    . do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . '</p></div><div class="wp-caption-bottom"></div></div>';
+
+	extract(shortcode_atts(array(
+				'id'    => '',
+				'align' => 'alignnone',
+				'width' => '',
+				'caption' => ''
+			), $attr));
+
+	if ( 1 > (int) $width || empty($caption) )
+		return $content;
+
+
+
+	if ( $id ) $id = 'id="' . esc_attr($id) . '" ';
+
+	return '<div ' . $id . 'class="wp-caption ' . esc_attr($align) . '" style="width: ' . (10 + (int) $width) . 'px"><div class="inner-caption clearfix">'
+		. do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . '</p></div><div class="wp-caption-bottom"></div></div>';
 }
 
 
 add_filter('wp_nav_menu_items','rotary_add_search_box', 10, 2);
 function rotary_add_search_box($items) {
- 
-ob_start();
-        get_search_form();
-        $searchform = ob_get_contents();
-        ob_end_clean();
- 
-$items .= '<li class="search">' . $searchform . '</li>';
- 
-return $items;
+
+	ob_start();
+	get_search_form();
+	$searchform = ob_get_contents();
+	ob_end_clean();
+
+	$items .= '<li class="search">' . $searchform . '</li>';
+
+	return $items;
 }
 add_filter( 'wp_nav_menu_items', 'add_home_link', 10, 2 );
 function add_home_link($items, $args) {
-  
-        if (is_front_page())
-            $class = 'class="current_page_item homepage"';
-        else
-            $class = 'class="homepage"';
-  
-        $homeMenuItem =
-                '<li ' . $class . '>' .
-                $args->before .
-                '<a href="' . home_url( '/' ) . '" title="Home">' .
-				
-                $args->link_before . '<span class="screen-reader-text">Home</span>' . $args->link_after .'<img src="'. get_template_directory_uri().'/rotary-sass/images/home-icon.png" alt="home" title="home"/></a>' .
-                
-                $args->after .
-                '</li>';
-  
-        $items = $homeMenuItem . $items;
-  
-    return $items;
+
+	if (is_front_page())
+		$class = 'class="current_page_item homepage"';
+	else
+		$class = 'class="homepage"';
+
+	$homeMenuItem =
+		'<li ' . $class . '>' .
+		$args->before .
+		'<a href="' . home_url( '/' ) . '" title="Home">' .
+
+		$args->link_before . '<span class="screen-reader-text">Home</span>' . $args->link_after .'<img src="'. get_template_directory_uri().'/rotary-sass/images/home-icon.png" alt="home" title="home"/></a>' .
+
+		$args->after .
+		'</li>';
+
+	$items = $homeMenuItem . $items;
+
+	return $items;
 }
 
 /**
@@ -103,85 +103,86 @@ function add_home_link($items, $args) {
  * filter stylesheet_uri
  * @see get_stylesheet_uri()
  */
- add_filter('stylesheet_uri','rotary_stylesheet_uri',10,2);
+add_filter('stylesheet_uri','rotary_stylesheet_uri',10,2);
 function rotary_stylesheet_uri($stylesheet_uri, $stylesheet_dir_uri){
 
-    return $stylesheet_dir_uri.'/rotary-sass/stylesheets/style.css';
+	return $stylesheet_dir_uri.'/rotary-sass/stylesheets/style.css';
 }
 /** Tell WordPress to run Rotary_setup() when the 'after_setup_theme' hook is run. */
 add_action( 'after_setup_theme', 'rotary_setup' );
 
 if ( ! function_exists( 'rotary_setup' ) ):
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * @since rotary 1.0
- */
-function rotary_setup() {
-    //support editor style
-	add_editor_style();
-	// This theme uses post thumbnails
-	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 130, 130, true);
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
+	 *
+	 * @since rotary 1.0
+	 */
+	function rotary_setup() {
+		//support editor style
+		add_editor_style();
+		// This theme uses post thumbnails
+		add_theme_support( 'post-thumbnails' );
+		set_post_thumbnail_size( 130, 130, true);
 
-	// Add default posts and comments RSS feed links to head
-	add_theme_support( 'automatic-feed-links' );
+		// Add default posts and comments RSS feed links to head
+		add_theme_support( 'automatic-feed-links' );
 
-	// Make theme available for translation
-	// Translations can be filed in the /languages/ directory
-	load_theme_textdomain( 'rotary', TEMPLATEPATH . '/languages' );
+		// Make theme available for translation
+		// Translations can be filed in the /languages/ directory
+		load_theme_textdomain( 'rotary', TEMPLATEPATH . '/languages' );
 
-	$locale = get_locale();
-	$locale_file = TEMPLATEPATH . "/languages/$locale.php";
-	if ( is_readable( $locale_file ) )
-		require_once( $locale_file );
+		$locale = get_locale();
+		$locale_file = TEMPLATEPATH . "/languages/$locale.php";
+		if ( is_readable( $locale_file ) )
+			require_once( $locale_file );
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'primary' => __( 'Primary Navigation', 'rotary' ),
-	) );
-}
+		// This theme uses wp_nav_menu() in one location.
+		register_nav_menus( array(
+				'primary' => __( 'Primary Navigation', 'rotary' ),
+			) );
+	}
 endif;
 
 if ( ! function_exists( 'rotary_menu' ) ):
-/**
- * Set our wp_nav_menu() fallback, rotary_menu().
- *
- * @since rotary 1.0
- */
-function rotary_menu() {
-	$excludepage = get_page_by_title ('Home');
-	echo '<nav id="mainmenu" class="menu-main-container"><ul id="menu-main" class="menu"><li><a href="'.get_bloginfo('url').'">Home</a></li>';
-	wp_list_pages('title_li=&exclude='.$excludepage->ID);
-	echo '</ul></nav>';
-}
+	/**
+	 * Set our wp_nav_menu() fallback, rotary_menu().
+	 *
+	 * @since rotary 1.0
+	 */
+	function rotary_menu() {
+		$excludepage = get_page_by_title ('Home');
+		echo '<nav id="mainmenu" class="menu-main-container"><ul id="menu-main" class="menu"><li><a href="'.get_bloginfo('url').'">Home</a></li>';
+		wp_list_pages('title_li=&exclude='.$excludepage->ID);
+		echo '</ul></nav>';
+	}
 endif;
 //content filter for tags
 //add_filter('the_content','rotary_add_tags_to_title');
 //function rotary_add_tags_to_title($content) {
-//	return $content;
+// return $content;
 //}
 
 //shortcodes
 add_action( 'init', 'rotary_register_shortcodes');
 function rotary_register_shortcodes(){
-   add_shortcode('rotary-reveille-header', 'rotary_reveille_header_function');
-   add_shortcode( 'UPCOMING_SPEAKERS', 'rotary_upcoming_programs_function' );
-   add_shortcode( 'FEATURED_ITEM', 'rotary_get_featured_post' );
+	add_shortcode('rotary-reveille-header', 'rotary_reveille_header_function');
+	add_shortcode( 'UPCOMING_SPEAKERS', 'rotary_upcoming_programs_function' );
+	add_shortcode( 'FEATURED_ITEM', 'rotary_get_featured_post' );
+	add_shortcode( 'COMMITTEE_ANNOUNCEMENTS', 'rotary_get_committee_announcements' );
 }
 function rotary_reveille_header_function($atts, $content = null) {
 	extract( shortcode_atts( array(
-		'id' => 'inthisissue',
-		'class' => 'sectionheader',
-	), $atts ) );
+				'id' => 'inthisissue',
+				'class' => 'sectionheader',
+			), $atts ) );
 	$content = rotary_parse_shortcode_content( $content ); ?>
     <div class="sectioncontainer">
 		<div id="<?php echo $id ?>" class="<?php echo $class;?>">
            <div class="sectioncontent">
      		<?php echo $content; ?>
-           </div> 
+           </div>
     	</div>
-    </div>    
+    </div>
 <?php }
 /*
 @param string $text String to truncate.
@@ -208,18 +209,18 @@ function rotary_truncate_text($text, $length = 100, $ending = '...', $exact = fa
 				// if it's an "empty element" with or without xhtml-conform closing slash
 				if (preg_match('/^<(\s*.+?\/\s*|\s*(img|br|input|hr|area|base|basefont|col|frame|isindex|link|meta|param)(\s.+?)?)>$/is', $line_matchings[1])) {
 					// do nothing
-				// if tag is a closing tag
+					// if tag is a closing tag
 				} else if (preg_match('/^<\s*\/([^\s]+?)\s*>$/s', $line_matchings[1], $tag_matchings)) {
-					// delete tag from $open_tags list
-					$pos = array_search($tag_matchings[1], $open_tags);
-					if ($pos !== false) {
-					unset($open_tags[$pos]);
+						// delete tag from $open_tags list
+						$pos = array_search($tag_matchings[1], $open_tags);
+						if ($pos !== false) {
+							unset($open_tags[$pos]);
+						}
+						// if tag is an opening tag
+					} else if (preg_match('/^<\s*([^\s>!]+).*?>$/s', $line_matchings[1], $tag_matchings)) {
+						// add tag to the beginning of $open_tags list
+						array_unshift($open_tags, strtolower($tag_matchings[1]));
 					}
-				// if tag is an opening tag
-				} else if (preg_match('/^<\s*([^\s>!]+).*?>$/s', $line_matchings[1], $tag_matchings)) {
-					// add tag to the beginning of $open_tags list
-					array_unshift($open_tags, strtolower($tag_matchings[1]));
-				}
 				// add html-tag to $truncate'd text
 				$truncate .= $line_matchings[1];
 			}
@@ -281,37 +282,112 @@ function rotary_truncate_text($text, $length = 100, $ending = '...', $exact = fa
 	return $truncate;
 }
 
+/*gets the current announcements*/
+function rotary_get_committee_announcements($atts){
+	$args = array(
+		'posts_per_page' => -1,
+		'post_type' => 'rotary-committees',
+		'order' => 'ASC'
+	);
+	$committeeArray = array();
+	ob_start();
+	$query = new WP_Query( $args );
+	if ( $query->have_posts() ) : ?>
+	<div class="comment">
+	 <div class="commentcommittetext">
+	 		<?php  while ( $query->have_posts() ) : $query->the_post(); ?>
+			<?php  $committeeArray[get_the_title()] = get_permalink() . '?open=open'; ?>
+			<?php
+	$args = array(
+		'order' => 'ASC',
+		'orderby' => 'title',
+		'post_type' => 'rotary-committees',
+		'status' => 'approve',
+		'type' => 'comment',
+		'post_id' => get_the_id(),
+		'number' => 1
+	);
+	$comments = get_comments( $args ); ?>
+			<?php if ( is_array($comments )) : ?>
+                <?php $count = count($comments); ?>
+                <?php if ( $count > 0 ) { ?>
+                	<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+               <?php  } ?>
+				<?php foreach($comments as $comment) : ?>
+					<?php $date = new DateTime($comment->comment_date); ?>
+					<?php $today = new DateTime(); ?>
+					<?php $interval = $today->diff($date); ?>
+					<?php if( abs($interval->d) < 10){ ?>										
+					<div class="clearleft committeecomment">
+						<div class="committee-comment-date">
+							<span class="day"><?php echo $date->format('d'); ?></span>
+							<span class="month"><?php  echo $date->format('F'); ?></span>
+							<span class="year"><?php echo $date->format('Y'); ?></span>
+						</div>
+						<p class="committeecommentdetail"><?php echo $comment->comment_content; ?></p>
+						
+					</div>
+					<hr/>
+					<?php } ?>
+				<?php  endforeach; ?>
+			<?php  endif; ?>
+
+		<?php endwhile; ?>
+			<?php if (!is_user_logged_in()) { ?>
+			<p>Please <?php echo wp_loginout( site_url(), false ); ?> to add a new announcment</p>
+			<?php }
+	else { ?>
+				<select id="committeeselect" name="committeeselect">
+					<option value="">-- Select a committee to add a new announcement --</option>
+					<?php
+		foreach($committeeArray as $key => $value):
+			echo '<option value="'.$value.'">'.$key.'</option>';
+		endforeach;
+?>
+					</select>
+			<?php } ?>
+
+			</div>
+		</div>
+
+	<?php endif; ?>
+
+	<?php // Reset Post Data
+	wp_reset_postdata();
+	return ob_get_clean();
+
+}
 
 /*gets the featured post*/
 
 function rotary_get_featured_post($atts){
 	extract( shortcode_atts( array(
-		'header' => 'Latest News',
-	), $atts ) );
+				'header' => 'Latest News',
+			), $atts ) );
 	if (post_type_exists( 'rotary_speakers') ) {
-		$args = array(	
+		$args = array(
 			'posts_per_page' => 1,
 			'post_type' => 'rotary_speakers',
 			'order' => 'ASC',
-            'orderby' => 'meta_value',
-            'meta_key' => 'speaker_date',
-            'meta_query' => array(
-              array(
-			  	'key' => 'speaker_date',
-			  	'value' => date('Ymd'),
-			  	'type' => 'DATE',
-			 	'compare' => '>='
-			 	)
-			 )		
+			'orderby' => 'meta_value',
+			'meta_key' => 'speaker_date',
+			'meta_query' => array(
+				array(
+					'key' => 'speaker_date',
+					'value' => date('Ymd'),
+					'type' => 'DATE',
+					'compare' => '>='
+				)
+			)
 		);
-    }
-    else {
+	}
+	else {
 		$args = array(
 			'posts_per_page' => 1,
 			'category_name' => 'featured',
 		);
 	}
-	ob_start(); 
+	ob_start();
 	$query = new WP_Query( $args );
 	global $more;
 	if ( $query->have_posts() ) : ?>
@@ -320,35 +396,35 @@ function rotary_get_featured_post($atts){
          <?php  $more = 0; ?>
 		<section class="featuredheader">
         	<h3><?php echo $header ?></h3>
-        	<?php if (post_type_exists( 'rotary_speakers')) { 
-        		$speaker = get_field('speaker_first_name').' '.get_field('speaker_last_name'); ?>
+        	<?php if (post_type_exists( 'rotary_speakers')) {
+		$speaker = get_field('speaker_first_name').' '.get_field('speaker_last_name'); ?>
         		<p class="featuredspeakername"><span><?php echo $speaker; ?></span></p>
         	<?php
-        	}
-        	else { ?>
+	}
+	else { ?>
 	        	<p>by <span><?php the_author_meta('user_firstname');?>&nbsp;<?php the_author_meta('user_lastname');?> </span></p>
 
         	<?php } ?>
         </section>
         <h4><a href="<?php the_permalink()?>"><?php the_title(); ?></a></h4>
-        <?php 
-        if (post_type_exists( 'rotary_speakers')) {
-	        $content = trim(get_field('speaker_program_content'));			
-		}
-		else {
-	        $content = apply_filters(get_the_content());
-        } 
-        if (strlen($content) > 1024 ) {
-				$content = rotary_truncate_text($content, 1024, '', false, true) . '<a href="'.get_permalink().'"> ...continue reading</a>';
-		} ?>
+        <?php
+	if (post_type_exists( 'rotary_speakers')) {
+		$content = trim(get_field('speaker_program_content'));
+	}
+	else {
+		$content = apply_filters(get_the_content());
+	}
+	if (strlen($content) > 1024 ) {
+		$content = rotary_truncate_text($content, 1024, '', false, true) . '<a href="'.get_permalink().'"> ...continue reading</a>';
+	} ?>
         <section class="featuredcontent">
            <?php  if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-  				the_post_thumbnail('medium'); ?>
+		the_post_thumbnail('medium'); ?>
 				<div class="hasthumb">
 					<?php echo $content; ?>
 				</div>
-			<?php } 
-            else {?>
+			<?php }
+	else {?>
             	<div class="nothumb">
         			<?php echo $content; ?>
             	</div>
@@ -361,45 +437,45 @@ function rotary_get_featured_post($atts){
     <?php endif;
 	// Reset Post Data
 	wp_reset_postdata();
-	return ob_get_clean();	
+	return ob_get_clean();
 }
 
 
 function rotary_upcoming_programs_function($atts) {
 	extract( shortcode_atts( array(
-		'show' => '4',
-	), $atts ) );
-	$args = array(  
-            'post_type' => 'rotary_speakers',
-            'posts_per_page'  => $show,
-            'order' => 'ASC',
-            'orderby' => 'meta_value',
-             'meta_key' => 'speaker_date',
-             'meta_query' => array(
-              array(
-			  	'key' => 'speaker_date',
-			  	'value' => date('Ymd'),
-			  	'type' => 'DATE',
-			 	'compare' => '>='
-			 	)	
-			 ) 
-           );  
+				'show' => '4',
+			), $atts ) );
+	$args = array(
+		'post_type' => 'rotary_speakers',
+		'posts_per_page'  => $show,
+		'order' => 'ASC',
+		'orderby' => 'meta_value',
+		'meta_key' => 'speaker_date',
+		'meta_query' => array(
+			array(
+				'key' => 'speaker_date',
+				'value' => date('Ymd'),
+				'type' => 'DATE',
+				'compare' => '>='
+			)
+		)
+	);
 	$the_query = new WP_Query( $args );
 	$postCount = 0;
-	$clearLeft = ''; 
+	$clearLeft = '';
 	ob_start(); ?>
 	<div class="home-upcoming-program-ribbon"><h2>Upcoming Speakers</h2></div>
 	<div id="home-upcoming-programs"class="home-upcoming-programs clearfix">
-	
+
 	<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-		<?php $postCount++; 
-		 if ($postCount % 2 == 0) {
-			  $clearLeft='';
-		 }
-		 else {
-			 $clearLeft = 'clearleft';
-		 }
-		 ?>
+		<?php $postCount++;
+	if ($postCount % 2 == 0) {
+		$clearLeft='';
+	}
+	else {
+		$clearLeft = 'clearleft';
+	}
+?>
 		 <article id="post-<?php the_ID(); ?>" <?php post_class($clearLeft); ?>>
 				<?php $date = DateTime::createFromFormat('Ymd', get_field('speaker_date')); ?>
 
@@ -412,7 +488,7 @@ function rotary_upcoming_programs_function($atts) {
                 <div class="home-upcoming-program-details">
                 <?php $speaker = get_field('speaker_first_name').' '.get_field('speaker_last_name'); ?>
                 	<h3 class="speakername"><?php echo $speaker?></h3>
-                	<p class="speaker-title"><?php the_field( 'speaker_title' );	?>	</p>	
+                	<p class="speaker-title"><?php the_field( 'speaker_title' ); ?>	</p>
 					<p class="speaker-company"><?php the_field('speaker_company'); ?></p>
 					<p class="speaker-program-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
                 </div><!--.home-upcoming-program-details-->
@@ -420,21 +496,21 @@ function rotary_upcoming_programs_function($atts) {
 	<?php endwhile; // End the loop. Whew. ?>
 	<?php //now add a new post button ?>
 	<?php  if(current_user_can('edit_page')){ ?>
-	      <?php $clearLeft = ($clearLeft == 'clearleft' ? '' : ' clearleft'); 	?>	      
+	      <?php $clearLeft = ($clearLeft == 'clearleft' ? '' : ' clearleft');  ?>
 	      <div class="newspeaker<?php echo $clearLeft; ?>">
-			<a class="post_new_link" href="<?php echo admin_url(); ?>post-new.php?post_type=rotary_speakers">New Speaker</a>	
-	      </div>	
+			<a class="post_new_link" href="<?php echo admin_url(); ?>post-new.php?post_type=rotary_speakers">New Speaker</a>
+	      </div>
 	<?php } ?>
 	<?php wp_reset_postdata(); ?>
 	</div><!--.home-upcoming-programs-->
-<?php 	return ob_get_clean();
+<?php  return ob_get_clean();
 }
 function rotary_parse_shortcode_content( $content ) {
 
-    $content = do_shortcode( shortcode_unautop( $content ) ); 
-   $content = preg_replace('#^<\/p>|^<br \/>|<p>$#', '', $content);
-   $content = str_replace ('<p></p>', '', $content);
-   
+	$content = do_shortcode( shortcode_unautop( $content ) );
+	$content = preg_replace('#^<\/p>|^<br \/>|<p>$#', '', $content);
+	$content = str_replace('<p></p>', '', $content);
+
 	return $content;
 }
 /**
@@ -458,16 +534,16 @@ if ( version_compare( $GLOBALS['wp_version'], '3.1', '<' ) )
 	add_filter( 'gallery_style', 'rotary_remove_gallery_css' );
 
 if ( ! function_exists( 'rotary_comment' ) ) :
-/**
- * Template for comments and pingbacks.
- *
- * @since rotary 1.0
- */
-function rotary_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
-	switch ( $comment->comment_type ) :
+	/**
+	 * Template for comments and pingbacks.
+	 *
+	 * @since rotary 1.0
+	 */
+	function rotary_comment( $comment, $args, $depth ) {
+		$GLOBALS['comment'] = $comment;
+		switch ( $comment->comment_type ) :
 		case '' :
-	?>
+?>
 	<article <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
 			<?php echo get_avatar( $comment, 40 ); ?>
             <div>
@@ -479,46 +555,45 @@ function rotary_comment( $comment, $args, $depth ) {
 
 		<p><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 			<?php
-				/* translators: 1: date, 2: time */
-				printf( __( '%1$s at %2$s', 'rotary' ), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)', 'rotary' ), ' ' );
-			?><p>
+		/* translators: 1: date, 2: time */
+		printf( __( '%1$s at %2$s', 'rotary' ), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)', 'rotary' ), ' ' );
+		?><p>
          </div>
          <div class="commenttop"></div>
          <div class="commenttext">
 		<?php comment_text(); ?>
         </div>
-		
+
 			<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 
 	<?php
-			break;
-		case 'pingback'  :
-		case 'trackback' :
-	?>
+		break;
+	case 'pingback'  :
+	case 'trackback' :
+?>
 	<article <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
 		<p><?php _e( 'Pingback:', 'rotary' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __('(Edit)', 'rotary'), ' ' ); ?></p>
 	<?php
-			break;
-	endswitch;
-}
+		break;
+		endswitch;
+	}
 endif;
 /**
- * Template for committee comments 
+ * Template for committee comments
  *
  * @since rotary 1.0
  */
 function rotary_committee_comment( ) { ?>
-	<?php $GLOBALS['comment'] = $comment; ?>
 	<?php $args = array(
-	'order' => 'DESC',
-	'post_type' => 'rotary-committees',
-	'status' => 'approve',
-	'type' => 'comment',
-	'post_id' => get_the_id(),
-	'number' => 5
-); ?>
+		'order' => 'DESC',
+		'post_type' => 'rotary-committees',
+		'status' => 'approve',
+		'type' => 'comment',
+		'post_id' => get_the_id(),
+		'number' => 5
+	); ?>
 	<?php $comments = get_comments($args); ?>
-	
+
 	<?php if (is_array($comments)) : ?>
 		<?php foreach($comments as $comment) : ?>
 		<?php $firstComment = false; ?>
@@ -533,8 +608,8 @@ function rotary_committee_comment( ) { ?>
 				<span class="year"><?php echo $date->format('Y'); ?></span>
 				</div>
 				<p class="committeecommentdetail"><?php echo $comment->comment_content; ?></p>
-				<p><strong>Posted by</strong> <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ))?>"><?php echo $comment->comment_author;?></a></p>			
-				</div>
+				<p><strong>Posted by</strong> <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ))?>"><?php echo $comment->comment_author;?></a></p>
+			</div>
 				<?php if ($firstComment && get_comments_number() > 1 ) : ?>
 				<p><a href="#" class="morecomments" id="morecomments">Show More Announcements</a></p>
 				<?php  endif; ?>
@@ -559,18 +634,18 @@ function rotary_comment_close() {
  * @since rotary 1.0
  */
 function rotary_comment_fields($fields) {
-$commenter = wp_get_current_commenter();
-$req = get_option( 'require_name_email' );
-$aria_req = ( $req ? " aria-required='true'" : '' );
-$fields =  array(
-	'author' => '<p><label for="author">' . __( 'Name' ) . '</label> ' . ( $req ? '*' : '' ) .
-	'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>',
-	'email'  => '<p><label for="email">' . __( 'Email' ) . '</label> ' . ( $req ? '*' : '' ) .
-	'<input id="email" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>',
-	'url'    => '<p><label for="url">' . __( 'Website' ) . '</label>' .
-	'<input id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>',
-);
-return $fields;
+	$commenter = wp_get_current_commenter();
+	$req = get_option( 'require_name_email' );
+	$aria_req = ( $req ? " aria-required='true'" : '' );
+	$fields =  array(
+		'author' => '<p><label for="author">' . __( 'Name' ) . '</label> ' . ( $req ? '*' : '' ) .
+		'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>',
+		'email'  => '<p><label for="email">' . __( 'Email' ) . '</label> ' . ( $req ? '*' : '' ) .
+		'<input id="email" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>',
+		'url'    => '<p><label for="url">' . __( 'Website' ) . '</label>' .
+		'<input id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>',
+	);
+	return $fields;
 }
 add_filter('comment_form_default_fields','rotary_comment_fields');
 
@@ -586,154 +661,154 @@ function rotary_remove_recent_comments_style() {
 add_action( 'widgets_init', 'rotary_remove_recent_comments_style' );
 
 if ( ! function_exists( 'rotary_posted_on' ) ) :
-/**
- * Prints HTML with meta information for the current post—date/time and author.
- *
- * @since rotary 1.0
- */
-function rotary_posted_on() {
-    if ('rotary_speakers' == get_post_type() ) {
-    	$date = DateTime::createFromFormat('Ymd', get_field('speaker_date'));
-	    printf( __( 'Speaker on <br/>%2$s', 'rotary' ),
-			'meta-prep meta-prep-author',
-			sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time datetime="%3$s" pubdate>%4$s</time></a>',
-				get_permalink(),
-				esc_attr( get_the_time() ),
-				$date->format('Y-m-d'),   
-				$date->format('M j, Y')
-			)
-		);
-    }
-    else {
-		printf( __( 'Posted on <br/>%2$s', 'rotary' ),
-			'meta-prep meta-prep-author',
-			sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time datetime="%3$s" pubdate>%4$s</time></a>',
-				get_permalink(),
-				esc_attr( get_the_time() ),
-				get_the_date('Y-m-d'),
-				get_the_date('M j, Y')
-			)
-		);
+	/**
+	 * Prints HTML with meta information for the current post—date/time and author.
+	 *
+	 * @since rotary 1.0
+	 */
+	function rotary_posted_on() {
+		if ('rotary_speakers' == get_post_type() ) {
+			$date = DateTime::createFromFormat('Ymd', get_field('speaker_date'));
+			printf( __( 'Speaker on <br/>%2$s', 'rotary' ),
+				'meta-prep meta-prep-author',
+				sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time datetime="%3$s" pubdate>%4$s</time></a>',
+					get_permalink(),
+					esc_attr( get_the_time() ),
+					$date->format('Y-m-d'),
+					$date->format('M j, Y')
+				)
+			);
+		}
+		else {
+			printf( __( 'Posted on <br/>%2$s', 'rotary' ),
+				'meta-prep meta-prep-author',
+				sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time datetime="%3$s" pubdate>%4$s</time></a>',
+					get_permalink(),
+					esc_attr( get_the_time() ),
+					get_the_date('Y-m-d'),
+					get_the_date('M j, Y')
+				)
+			);
+		}
 	}
-}
 endif;
 
 if ( ! function_exists( 'rotary_posted_in' ) ) :
-/**
- * Prints HTML with meta information for the current post (category, tags and permalink).
- *
- * @since rotary 1.0
- */
-function rotary_posted_in() {
-	// Retrieves tag list of current post, separated by commas.
-	echo '<div class="postedin">';
-	$tag_list = get_the_tag_list( '', ', ' );
-	if ( $tag_list ) {
-		$posted_in = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'rotary' );
-	} elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
-		$posted_in = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'rotary' );
-	} else {
-		$posted_in = __( 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'rotary' );
-	}
-	// Prints the string, replacing the placeholders.
-	printf(
-		$posted_in,
-		get_the_category_list( ', ' ),
-		$tag_list,
-		get_permalink(),
-		the_title_attribute( 'echo=0' )
-	);
-	echo '</div>';
-}
-endif;
-//custom post types for slideshows   
-      add_action('init', 'rotary_slides_register');  
-      
-    function rotary_slides_register() {
-		$labels = array(
-			'add_new_item' => 'Add Slides Item',
-			'edit_item' => 'Edit Slides Item',
-			'new_item' => 'New Slides Item',
-			'view_item' => 'View Slides Item',
-			'search_items' => 'Search Slides'
-		);   
-  
-        $args = array(  
-            'label' => __('Slides'),  
-			'labels' => $labels,
-            'singular_label' => __('Slides Item'),
-			'query_var' => true,  
-            'public' => true,  
-            'show_ui' => true, 
-	        'capability_type' => 'post',  
-            'hierarchical' => false,  
-			'rewrite' => array("slug" => "slides"),
-            'supports' => array('title','editor', 'thumbnail', 'excerpt')  
-           );  
-      
-        register_post_type( 'rotary-slides' , $args );  
-		// Register custom taxonomy
-		$labels_taxo = array(
-			'name' => _x('Slides Category', 'post type general name'),
-			'all_items' => _x('All Slides', 'all items'),
-			'add_new_item' => _x('Add Slides Category', 'adding a new item'),
-			'new_item_name' => _x('New Slides Category Name', 'adding a new item'),
+	/**
+	 * Prints HTML with meta information for the current post (category, tags and permalink).
+	 *
+	 * @since rotary 1.0
+	 */
+	function rotary_posted_in() {
+		// Retrieves tag list of current post, separated by commas.
+		echo '<div class="postedin">';
+		$tag_list = get_the_tag_list( '', ', ' );
+		if ( $tag_list ) {
+			$posted_in = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'rotary' );
+		} elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
+			$posted_in = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'rotary' );
+		} else {
+			$posted_in = __( 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'rotary' );
+		}
+		// Prints the string, replacing the placeholders.
+		printf(
+			$posted_in,
+			get_the_category_list( ', ' ),
+			$tag_list,
+			get_permalink(),
+			the_title_attribute( 'echo=0' )
 		);
-		
-    }  
- 
+		echo '</div>';
+	}
+endif;
+//custom post types for slideshows
+add_action('init', 'rotary_slides_register');
+
+function rotary_slides_register() {
+	$labels = array(
+		'add_new_item' => 'Add Slides Item',
+		'edit_item' => 'Edit Slides Item',
+		'new_item' => 'New Slides Item',
+		'view_item' => 'View Slides Item',
+		'search_items' => 'Search Slides'
+	);
+
+	$args = array(
+		'label' => __('Slides'),
+		'labels' => $labels,
+		'singular_label' => __('Slides Item'),
+		'query_var' => true,
+		'public' => true,
+		'show_ui' => true,
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'rewrite' => array("slug" => "slides"),
+		'supports' => array('title','editor', 'thumbnail', 'excerpt')
+	);
+
+	register_post_type( 'rotary-slides' , $args );
+	// Register custom taxonomy
+	$labels_taxo = array(
+		'name' => _x('Slides Category', 'post type general name'),
+		'all_items' => _x('All Slides', 'all items'),
+		'add_new_item' => _x('Add Slides Category', 'adding a new item'),
+		'new_item_name' => _x('New Slides Category Name', 'adding a new item'),
+	);
+
+}
+
 /*gets the slide show*/
 function rotary_get_slideshow(){
 	$args = array(
-	'order' => 'ASC',
-	'post_type' => 'rotary-slides',
-);
-$query = new WP_Query( $args );
-$count = 0;
+		'order' => 'ASC',
+		'post_type' => 'rotary-slides',
+	);
+	$query = new WP_Query( $args );
+	$count = 0;
 
-if ( $query->have_posts() ) : ?>
+	if ( $query->have_posts() ) : ?>
 	<div id="slideshowcontainer">
 		<div id="slideshowleft">
         	<div id="slideshowright">
             	<div id="slideshow">
  <?php  while ( $query->have_posts() ) : $query->the_post();
-	if (has_post_thumbnail()) { 
-	    echo '<div class="slide'; 
-		if ($count > 0) {
-			echo ' hide';
-		}
-	 	echo'">';
-	 $count++;
+		if (has_post_thumbnail()) {
+			echo '<div class="slide';
+			if ($count > 0) {
+				echo ' hide';
+			}
+			echo'">';
+			$count++;
 			echo '<div class="slideinfo">';
 			the_title('<h2>', '</h2>');
 			echo '<p>'.get_the_excerpt().'</p>';
-			$slidelink = get_post_meta(get_the_ID(), 'slidelink', true); 
+			$slidelink = get_post_meta(get_the_ID(), 'slidelink', true);
 			if ($slidelink) {
 				echo '<p><a href="'.$slidelink.'">Keep Reading...</a></p>';
 			}
 			else {
 				echo '<p><a href="'.get_permalink().'">Keep Reading...</a></p>';
 			}
-	
-			edit_post_link( __( 'Edit', 'Rotary' ), '<p>', '</p>' ); 
+
+			edit_post_link( __( 'Edit', 'Rotary' ), '<p>', '</p>' );
 			echo '</div>'; //end slideinfo
-			
-			if ($slidelink) { 
+
+			if ($slidelink) {
 				echo '<a href="'.$slidelink.'">';
 			}
 			else {
 				echo '<a href="'.get_permalink().'">';
 			}
 			the_post_thumbnail('slideshow-size');
-			
-		echo '</a></div>';  //end the slide
-	}
-	
-  endwhile; ?>
-				</div>	<!--end slideshow-->   
-            </div>	<!--end slideshowright-->    
+
+			echo '</a></div>';  //end the slide
+		}
+
+	endwhile; ?>
+				</div>	<!--end slideshow-->
+            </div>	<!--end slideshowright-->
 		</div>	<!--end slideshowleft-->
-   
+
      	<div id="controls">
      		<a class ="pause" id="playpause" href="#"><span class="play">> Play</span><span class="pause"> > Pause</span></a>
      	<section id="navsection">
@@ -745,37 +820,37 @@ if ( $query->have_posts() ) : ?>
         <a id="twittershare" class="icon-alone" target="_blank" href="http://twitter.com/?status=<?php echo urlencode(get_permalink()); ?>">
   <span class="screen-reader-text">Share on Twitter</span></a>
         </section>
-		</div>	<!--end controls-->  
+		</div>	<!--end controls-->
 
-		    
-   </div>	<!--end slideshowcontainer-->   
-    
+
+   </div>	<!--end slideshowcontainer-->
+
 <?php endif;
-// Reset Post Data
-wp_reset_postdata();
+	// Reset Post Data
+	wp_reset_postdata();
 
-	
+
 }//custom images sizes for slideshow
 if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'slideshow-size', 486, 313, true ); //(cropped)
 
 }
- 
+
 add_filter('image_size_names_choose', 'rotary_image_sizes');
 function rotary_image_sizes($sizes) {
-        $new_sizes = array();
-	     
-	    $added_sizes = get_intermediate_image_sizes();
-	     
-	    // $added_sizes is an indexed array, therefore need to convert it
-	    // to associative array, using $value for $key and $value
-	    foreach( $added_sizes as $key => $value) {
-	        $new_sizes[$value] = $value;
-	    }
-		
-	    // This preserves the labels in $sizes, and merges the two arrays
-	    $new_sizes = array_merge( $new_sizes, $sizes );
-	    return $new_sizes;
+	$new_sizes = array();
+
+	$added_sizes = get_intermediate_image_sizes();
+
+	// $added_sizes is an indexed array, therefore need to convert it
+	// to associative array, using $value for $key and $value
+	foreach( $added_sizes as $key => $value) {
+		$new_sizes[$value] = $value;
+	}
+
+	// This preserves the labels in $sizes, and merges the two arrays
+	$new_sizes = array_merge( $new_sizes, $sizes );
+	return $new_sizes;
 }
 
 function rotary_excerpt_length( $length ) {
@@ -804,35 +879,35 @@ function rotary_add_slide_link_metabox() {
 }
 add_action( 'save_post', 'rotary_save_slide_link_metabox', 10, 2);
 function rotary_save_slide_link_metabox($post_id, $post) {
-	 if ( !isset( $_POST['rotary_slide_link_nonce'] ) || !wp_verify_nonce( $_POST['rotary_slide_link_nonce'], basename( __FILE__ ) ) )
-         return $post_id;
-		 
-		/* Get the post type object. */
-	    $post_type = get_post_type_object( $post->post_type );
-	 
-	    /* Check if the current user has permission to edit the post. */
-	    if ( !current_user_can( $post_type->cap->edit_post, $post_id ) ) {
-	        return $post_id;	
-		}
-		if (!isset($_POST['slidelink'])) {	 
-			return $post_id;	
-		} 
-	    /* Get the meta key. */
-    	$meta_key = 'slidelink';	 	    /* Get the meta value of the custom field key. */
-	    $meta_value = get_post_meta( $post_id, $meta_key, true );
-		$new_meta_value = strip_tags($_POST['slidelink']);
-		
-		/* If a new meta value was added and there was no previous value, add it. */
-	    if ( $new_meta_value && '' == $meta_value )
-	        add_post_meta( $post_id, $meta_key, $new_meta_value, true );
-	 
-	    /* If the new meta value does not match the old value, update it. */
-	    elseif ( $new_meta_value && $new_meta_value != $meta_value )
-	        update_post_meta( $post_id, $meta_key, $new_meta_value );	 
-	    /* If there is no new meta value but an old value exists, delete it. */
-	    elseif ( '' == $new_meta_value && $meta_value )
-	        delete_post_meta( $post_id, $meta_key, $meta_value );
-		 
+	if ( !isset( $_POST['rotary_slide_link_nonce'] ) || !wp_verify_nonce( $_POST['rotary_slide_link_nonce'], basename( __FILE__ ) ) )
+		return $post_id;
+
+	/* Get the post type object. */
+	$post_type = get_post_type_object( $post->post_type );
+
+	/* Check if the current user has permission to edit the post. */
+	if ( !current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+		return $post_id;
+	}
+	if (!isset($_POST['slidelink'])) {
+		return $post_id;
+	}
+	/* Get the meta key. */
+	$meta_key = 'slidelink';       /* Get the meta value of the custom field key. */
+	$meta_value = get_post_meta( $post_id, $meta_key, true );
+	$new_meta_value = strip_tags($_POST['slidelink']);
+
+	/* If a new meta value was added and there was no previous value, add it. */
+	if ( $new_meta_value && '' == $meta_value )
+		add_post_meta( $post_id, $meta_key, $new_meta_value, true );
+
+	/* If the new meta value does not match the old value, update it. */
+	elseif ( $new_meta_value && $new_meta_value != $meta_value )
+		update_post_meta( $post_id, $meta_key, $new_meta_value );
+	/* If there is no new meta value but an old value exists, delete it. */
+	elseif ( '' == $new_meta_value && $meta_value )
+		delete_post_meta( $post_id, $meta_key, $meta_value );
+
 }
 
 function rotary_show_slide_link_metabox($object) {
@@ -848,18 +923,18 @@ function rotary_output_archive_table($term='') { ?>
 				<td><a href="<?php the_permalink();?>">speaker link</a></td>
 				<td><?php echo $date->format('M d, Y'); ?></td>
 				<?php $speakertitle = get_the_title();
-				if (strlen($speakertitle) > 50 ) {
-					$speakertitle = substr($speakertitle, 0, 50) . '...';
-				} ?>
+	if (strlen($speakertitle) > 50 ) {
+		$speakertitle = substr($speakertitle, 0, 50) . '...';
+	} ?>
 				<td><?php echo $speakertitle; ?></td>
 				<?php $speaker = get_field('speaker_first_name').' '.get_field('speaker_last_name'); ?>
 				<td><?php echo $speaker; ?></td>
 				<?php $jobtitle = trim(get_field( 'speaker_title' ));
-				$company =	trim(get_field( 'speaker_company' ));		
-				if (count($company)) { ?>
+	$company = trim(get_field( 'speaker_company' ));
+	if (count($company)) { ?>
 					<?php $jobtitle .='<br/>'.$company ?>
 				<?php } ?>
-				
+
 				<td><?php echo $jobtitle; ?></td>
 				<td><?php echo $term;?></td>
 			</tr>
@@ -867,7 +942,7 @@ function rotary_output_archive_table($term='') { ?>
 <?php }
 add_filter('get_previous_post_join', 'rotary_post_join');
 add_filter('get_next_post_join', 'rotary_post_join');
-add_filter('get_previous_post_where', 'rotary_prev_post_where');
+add_filter('get_previous_post_                                                                                     ', 'rotary_prev_post_where');
 add_filter('get_next_post_where', 'rotary_next_post_where');
 add_filter('get_previous_post_sort', 'rotary_prev_post_sort');
 add_filter('get_next_post_sort', 'rotary_next_post_sort');
@@ -882,19 +957,19 @@ function rotary_post_join($join) {
 		$join = " INNER JOIN $wpdb->postmeta AS pm ON pm.post_id = p.ID";
 	}
 	return $join;
-	
+
 }
 function rotary_prev_post_where($where) {
 	global $wpdb, $post;
 	$speakerDate = get_post_meta($post->ID, 'speaker_date', true);
-	
+
 	if ( 'rotary_speakers' == get_post_type() && is_single()) {
 		$where = $wpdb->prepare(" WHERE pm.meta_key = %s AND pm.meta_value < '$speakerDate' AND p.post_type = %s AND p.post_status = 'publish'", 'speaker_date', 'rotary_speakers');
 	}
-	
+
 	return $where;
 
-	
+
 }
 function rotary_next_post_where($where) {
 	global $wpdb, $post;
@@ -905,26 +980,26 @@ function rotary_next_post_where($where) {
 	}
 	return $where;
 
-	
+
 }
 
-function rotary_prev_post_sort($order) {	
+function rotary_prev_post_sort($order) {
 
-	if ( 'rotary_speakers' == get_post_type() && is_single()) {	
+	if ( 'rotary_speakers' == get_post_type() && is_single()) {
 		$order = " ORDER BY pm.meta_value DESC LIMIT 1";
 	}
-	
+
 	return $order;
 }
-function rotary_next_post_sort($order) {	
-	if ( 'rotary_speakers' == get_post_type() && is_single()) {	
+function rotary_next_post_sort($order) {
+	if ( 'rotary_speakers' == get_post_type() && is_single()) {
 		$order = " ORDER BY pm.meta_value ASC LIMIT 1";
 	}
 	return $order;
 }
 function rotary_filter_next_post_link($link) {
-	if ( 'rotary_speakers' == get_post_type() && is_single()) {	
-    	$next_post = get_next_post();    
+	if ( 'rotary_speakers' == get_post_type() && is_single()) {
+		$next_post = get_next_post();
 		$speakerDate = get_post_meta($next_post->ID, 'speaker_date', true);
 		$link = preg_replace('/<a(.+?)>.+?<\/a>/i',"<a$1><span>".date('l ', strtotime($speakerDate))."</span>".date('M dS, Y', strtotime($speakerDate))." &gt;</a>",$link);
 	}
@@ -932,8 +1007,8 @@ function rotary_filter_next_post_link($link) {
 }
 
 function rotary_filter_previous_post_link($link) {
-	if ( 'rotary_speakers' == get_post_type() && is_single()) {	
-    	$previous_post = get_previous_post();
+	if ( 'rotary_speakers' == get_post_type() && is_single()) {
+		$previous_post = get_previous_post();
 		$speakerDate = get_post_meta($previous_post->ID, 'speaker_date', true);
 		$link = preg_replace('/<a(.+?)>.+?<\/a>/i',"<a$1>&lt; <span>".date('l ', strtotime($speakerDate))."</span>".date('M dS, Y', strtotime($speakerDate))."</a>",$link);
 	}
@@ -943,7 +1018,7 @@ function rotary_filter_previous_post_link($link) {
 //custom category and tags for speakers
 add_filter( 'pre_get_posts', 'rotary_pre_get_cats' );
 function rotary_pre_get_cats($query) {
-	if ($query->is_main_query()  && !is_admin()) {
+	if ($query->is_main_query()  && !is_admin() && 'rotary_speakers' == get_post_type()) {
 		$taxonomy = $query->tax_query->queries[0]['taxonomy'];
 		if ( isset($taxonomy) && ('rotary_speaker_cat' == $taxonomy || 'rotary_speaker_tag' == $taxonomy )) {
 			$query->set('meta_key', 'speaker_date');
@@ -960,19 +1035,19 @@ function rotary_pre_get_archive_posts($query) {
 		//echo 'the year is '.$query->query_vars['year'];
 		//assume year if month is set
 		$speakerYear = $query->query_vars['year'];
-		
+
 		$speakerMonth = $query->query_vars['monthnum'];
-		
+
 		if( $speakerMonth) {
 			$eStart = $speakerYear.'-'.$speakerMonth.'-01';
 			$eEnd = $speakerYear.'-'.$speakerMonth.'-31';
 			$query->set('meta_key', 'speaker_date');
 			$meta_query = array(
-			array(
-				'key' => 'speaker_date',
-				'value' => array( $eStart, $eEnd ),
-				'compare' => 'BETWEEN',
-				'type' => 'DATE'
+				array(
+					'key' => 'speaker_date',
+					'value' => array( $eStart, $eEnd ),
+					'compare' => 'BETWEEN',
+					'type' => 'DATE'
 				)
 			);
 		}
@@ -982,11 +1057,11 @@ function rotary_pre_get_archive_posts($query) {
 			$eEnd = $speakerYear.'-12-31';
 			$query->set('meta_key', 'speaker_date');
 			$meta_query = array(
-			array(
-				'key' => 'speaker_date',
-				'value' => array( $eStart, $eEnd ),
-				'compare' => 'BETWEEN',
-				'type' => 'DATE'
+				array(
+					'key' => 'speaker_date',
+					'value' => array( $eStart, $eEnd ),
+					'compare' => 'BETWEEN',
+					'type' => 'DATE'
 				)
 			);
 		}
@@ -999,9 +1074,9 @@ add_filter( 'posts_where' , 'rotary_archiveposts_where', 10, 2 );
 
 function rotary_archiveposts_where( $where, $query_obj ) {
 	if ($query_obj->is_main_query() && is_post_type_archive('rotary_speakers') && !is_admin()) {
-	 $newWhere = explode('AND', $where);
-	 $newWhere = array_slice($newWhere, 3);
-	 $where = 'AND '.implode('AND', $newWhere);
+		$newWhere = explode('AND', $where);
+		$newWhere = array_slice($newWhere, 3);
+		$where = 'AND '.implode('AND', $newWhere);
 	}
-	return $where; 
+	return $where;
 }

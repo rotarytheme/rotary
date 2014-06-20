@@ -13,6 +13,8 @@ jQuery(document).ready(function($) {
 			this.setUpDatePicker();
 			this.setUpDatatables();
 			this.setUpTabs();
+			this.checkOpen();
+			$('#committeeselect').on('change', this.showCommittee);
 			$('#morecomments').on('click', this.showMoreComments);
 			$('#lesscomments').on('click', this.hideMoreComments);
 			$('#newcomment').on('click', this.showCommentForm);
@@ -28,6 +30,31 @@ jQuery(document).ready(function($) {
 				nextSpeed: 500,
 				prevSpeed: 500
 			});
+		},
+		getUrlParameter: function(sParam) {
+			var sPageURL = window.location.search.substring(1);
+			var sURLVariables = sPageURL.split('&');
+			for (var i = 0; i < sURLVariables.length; i++) {
+				var sParameterName = sURLVariables[i].split('=');
+				if (sParameterName[0] == sParam) {
+					return sParameterName[1];
+				}
+			}
+		},
+		checkOpen: function() {
+			if ($('.single-rotary-committees').length) {
+				var open = this.getUrlParameter('open');
+				if ('open' === open) {
+					$('#respond').toggle();
+				}
+			}	
+		},
+		showCommittee: function() {
+			var committee = $(this).val();
+			if (committee.length > 0) {
+				window.location.href = committee;
+			}
+			
 		},
 		showMoreComments: function(e) {
 			e.preventDefault();
