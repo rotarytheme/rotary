@@ -2879,6 +2879,7 @@ aside .widget_sp_image img {
   height: 100%;
 }
 .speakertabs.ui-tabs {
+  background-color: #fff;
   position: relative;
   /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
   padding: 25px .2em;
