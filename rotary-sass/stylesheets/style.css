@@ -1322,6 +1322,7 @@ td {
 .page-template-tmpl-speaker-archive-php .wpas-field.wpas-submit input, .page-template-tmpl-speaker-archive-php .wpas-field.wpas-reset input {
   border: 1px solid #E0E0E1;
   color: #959595;
+  font-family: "BebasNeueRegular", Arial, sans-serif;
   font-size: 20px;
   height: 35px;
   padding: 2px;
