@@ -132,6 +132,7 @@ aside {
 		@include background-image(linear-gradient(rgba(249, 245, 235, 0.5), #f6ecd5));
 		li {
 			line-height:18px;
+			min-height:10px;
 		}
 	}
 	.speakerbio {

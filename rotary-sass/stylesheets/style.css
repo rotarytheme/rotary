@@ -2319,6 +2319,7 @@ aside .widget_sp_image img {
 }
 #speaker-sidebar .speaker-side-container li {
   line-height: 18px;
+  min-height: 10px;
 }
 #speaker-sidebar .speakerbio {
   background: url(../images/bio-icon-bg.png) 0 10px no-repeat;
