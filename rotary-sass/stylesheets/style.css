@@ -254,6 +254,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   width: 34px;
   z-index: 500;
 }
+.headeredit:active, .headeredit:hover, .headeredit:focus, .speakerdatedit:active, .speakerdatedit:hover, .speakerdatedit:focus {
+  outline: none;
+  text-decoration: none;
+}
 
 .speakerdatedit {
   overflow: hidden;
@@ -603,8 +607,7 @@ hr {
   border-bottom: 1px solid #E6DECD;
   border-right: 1px solid #E6DECD;
   clear: left;
-  padding-bottom: 20px;
-  padding-left: 35px;
+  padding: 15px 30px 20px 35px;
   margin-bottom: 20px;
   margin-right: 25px;
   width: 90%;
@@ -1534,7 +1537,6 @@ td {
 }
 .single-rotary-reveille #content .sectioncontent .blogcontent, .single #content .sectioncontent .blogcontent {
   float: left;
-  pading-bottom: 15px;
   /*width:560px;*/
   width: 100%;
 }
@@ -1622,6 +1624,7 @@ td {
   clear: left;
   margin-left: 20px;
   margin-right: 20px;
+  min-height: 50px;
   position: relative;
 }
 .archive #content article .committeecontent .post-edit-link, .blog #content article .committeecontent .post-edit-link, .single.single-rotary-committees #content .committeecontent .post-edit-link {
@@ -1664,7 +1667,7 @@ td {
 .archive #content article .committeeblogtop, .blog #content article .committeeblogtop, .single.single-rotary-committees #content .committeeblogtop {
   border-top: 1px solid #eda200;
   clear: both;
-  height: 60px;
+  height: 40px;
   position: relative;
   top: 30px;
 }
@@ -1673,7 +1676,7 @@ td {
   height: 47px;
   margin: 0 auto;
   position: relative;
-  top: -57px;
+  top: -37px;
   width: 220px;
 }
 .archive #content article .committeeribbon h3, .blog #content article .committeeribbon h3, .single.single-rotary-committees #content .committeeribbon h3 {
@@ -1684,7 +1687,7 @@ td {
 }
 .archive #content article .committeeribbon h3 a, .blog #content article .committeeribbon h3 a, .single.single-rotary-committees #content .committeeribbon h3 a {
   text-shadow: rgba(0, 0, 0, 0.27) 1px 1px 2px;
-  color: #fff;
+  margin-left: 25px;
   text-transform: uppercase;
 }
 .archive #content article header, .blog #content article header, .single.single-rotary-committees #content header {
@@ -1845,18 +1848,20 @@ label[for="comment"] {
   border-radius: 5px;
   border: 1px solid #e0e0e1;
   color: white;
-  display: block;
+  display: inline-block;
   font-family: "BebasNeueRegular", Arial, sans-serif;
   font-weight: normal;
-  height: 38px;
-  line-height: normal;
+  height: 30px;
+  line-height: 30px;
   padding: 2px;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  float: right;
+  font-size: 14px;
   line-height: 38px;
-  margin-left: 600px;
-  width: 128px;
+  margin-right: 30px;
+  width: 120px;
 }
 .comment .commenttext, .comment .commentcommittetext {
   border-bottom: 1px solid #e6decd;
@@ -1894,7 +1899,7 @@ label[for="comment"] {
   border-top: 1px solid #e6decd;
   margin-bottom: 0;
   padding: 15px 0 0 0;
-  width: 784px;
+  width: 783px;
 }
 .comment .commentcommittetext p {
   padding: 10px 10px 0;
@@ -2405,11 +2410,11 @@ aside .widget_sp_image img {
 #secondary > ul .newpost {
   background: none;
   border: none;
-  padding-bottom: none;
+  padding-bottom: 0;
 }
 #secondary > ul .newpost a {
   font-size: 14px;
-  letterspacing: .02px;
+  letter-spacing: .02px;
 }
 #secondary > ul .newpost a:active, #secondary > ul .newpost a:hover {
   text-decoration: none;
@@ -2927,7 +2932,7 @@ aside .widget_sp_image img {
 .speakertabs.ui-tabs .ui-tabs-panel {
   display: block;
   border-width: 0;
-  padding-top: 1em 0 1em 0;
+  padding: 1em 0 1em 0;
   background: none;
 }
 .speakertabs .ui-widget-content {

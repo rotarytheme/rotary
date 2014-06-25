@@ -24,16 +24,16 @@ Tags: rotary, html5
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
   zoom: 1;
 }
-@mixin button($background:linear-gradient(#FDF8EF, #F9EFD9), $border:$main-menu-color, $color:#959595, $height:auto) {
+@mixin button($background:linear-gradient(#FDF8EF, #F9EFD9), $border:$main-menu-color, $color:#959595, $height:auto, $display:block, $line-height:normal) {
 	@include background-image($background);
 	@include border-radius(5px);
 	border:1px solid $border;
 	color:$color;
-	display:block;
+	display:$display;
 	font-family:$button-font;
 	font-weight:normal;
 	height:$height;
-	line-height:normal;
+	line-height:$line-height;
 	padding:2px;
 	text-align:center;
 	text-decoration:none;
@@ -123,7 +123,10 @@ Tags: rotary, html5
 	top:10px;
 	width:34px;
 	z-index:500;
-	
+	&:active, &:hover, &:focus {
+		outline:none;
+		text-decoration: none;
+	}
 }
 .speakerdatedit {
 	overflow: hidden;
@@ -422,8 +425,7 @@ hr {
 		border-bottom: 1px solid #E6DECD;
 		border-right: 1px solid #E6DECD;
 		clear:left;
-		padding-bottom:20px;
-		padding-left:35px;
+		padding:15px 30px 20px 35px;
 		margin-bottom:20px;
 		margin-right:25px;
 		width:90%;
@@ -1258,7 +1260,6 @@ td {
 		}
 		.blogcontent {
 			float:left;
-			pading-bottom:15px;
 			/*width:560px;*/
 			width:100%;
 			h2 {
@@ -1355,6 +1356,7 @@ td {
 		clear:left;
 		margin-left:20px;
 		margin-right:20px;
+		min-height:50px;
 		position:relative; 
 		.post-edit-link {
 				@include button($color:#FFF, $height:40px, $background:linear-gradient(#034679, #0f7185));
@@ -1376,7 +1378,7 @@ td {
 	.committeeblogtop {
 		border-top:1px solid #eda200;
 		clear:both;
-		height:60px;
+		height:40px;
 		position:relative;
 		top:30px;
 	}
@@ -1385,7 +1387,7 @@ td {
 		height:47px;
 		margin:0 auto;
 		position:relative;
-		top:-57px;
+		top:-37px;
 		width:220px;
 		h3 {
 			font-family:$sub-header-font;
@@ -1394,7 +1396,7 @@ td {
 			top: 5px;
 			a{
 				@include text-shadow(rgba(black, 0.27) 1px 1px 2px);
-				color:#fff;			
+				margin-left:25px;		
 				text-transform: uppercase;
 			}	
 		}
@@ -1543,10 +1545,13 @@ label[for="comment"] {
 		height:47px;
 		width:100%;
 		a {
-			@include button($color:#FFF, $height:38px, $background:linear-gradient(#eea300, #f2ba40));
+			@include button($color:#FFF, $height:30px, $background:linear-gradient(#eea300, #f2ba40), $display:inline-block, $line-height:30px);
+			float:right;
+			font-size:14px;
 			line-height: 38px;
-			margin-left:600px;
-			width:128px;
+			margin-right:30px;
+			width:120px;
+						
 		}
 	}
 	.commenttext, .commentcommittetext{
@@ -1571,7 +1576,7 @@ label[for="comment"] {
 		border-top:1px solid #e6decd;
 		margin-bottom:0;
 		padding:15px 0 0 0;
-		width:784px;
+		width:783px;
 		p {
 			padding: 10px 10px 0;
 		}

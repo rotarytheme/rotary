@@ -33,7 +33,13 @@
 					rotary_committee_comment();
 				?>
 	</div>
-	<div class="commentbottom"><a id="newcomment" href="#respond">New Announcement</a></div>
+	<div class="commentbottom">
+	<?php if(current_user_can('edit_page')) { ?>
+		<a id="newpost" class="newpost" href="<?php echo admin_url(); ?>post-new.php?committeeid=<?php the_id(); ?>" target="_blank">New Updates</a>
+	<?php } ?>
+	<a id="newcomment" class="newcomment" href="#respond">New Announcement</a>
+
+	</div>
 <?php else : // or, if we don't have comments:
 
 	if ( ! comments_open() ) :
@@ -43,7 +49,12 @@
 	<div class="commentcommittetext">
 	<p><?php _e( 'No announcements.', 'Rotary' ); ?></p>
 	</div>
-	<div class="commentbottom"><a id="newcomment" href="#respond">New Announcement</a></div>
+	<div class="commentbottom">
+	<?php if(current_user_can('edit_page')) { ?>
+		<a id="newpost" class="newpost" href="<?php echo admin_url(); ?>post-new.php?committeeid=<?php the_id()?>" target="_blank">New Updates</a>
+	<?php } ?>
+		<a id="newcomment" class="newcomment" href="#respond">New Announcement</a>
+	</div>
 	
 <?php endif; // end ! comments_open() ?>
 

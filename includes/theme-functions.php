@@ -465,7 +465,7 @@ function rotary_upcoming_programs_function($atts) {
 	$clearLeft = '';
 	ob_start(); ?>
 	<div class="home-upcoming-program-ribbon"><h2>Upcoming Speakers</h2></div>
-	<div id="home-upcoming-programs"class="home-upcoming-programs clearfix">
+	<div id="home-upcoming-programs" class="home-upcoming-programs clearfix">
 
 	<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 		<?php $postCount++;
@@ -1080,3 +1080,106 @@ function rotary_archiveposts_where( $where, $query_obj ) {
 	}
 	return $where;
 }
+function rotary_save_post_for_committee( $post_id ) {
+	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+	if ( isset( $_REQUEST['committeeid'] ) ) {
+			//post to post
+		p2p_type( 'committees_to_posts' )->connect( $_REQUEST['committeeid'], $post_id, array('date' => current_time('mysql')
+			) );
+		
+	}
+}
+add_action( 'save_post', 'rotary_save_post_for_committee' );
+//output the standard blog roll 
+//also used for posts connected to committees by post to posts
+function rotary_output_blogroll($postCount, $clearLeft) {
+ 		$postCount++; 
+		  if ($postCount % 2 == 0) {
+			  $clearLeft='';
+		  }
+		  else {
+			  $clearLeft='clearleft';
+		  }
+			  
+		?>
+
+     
+        <article id="post-<?php the_ID(); ?>" <?php post_class($clearLeft); ?>>
+         	<div class="sectioncontainer">
+            	<div class="sectionheader" id="blog-<?php the_ID(); ?>" >
+                	<div class="sectioncontent">
+			<header>
+			    <?php $title = get_the_title(); ?>
+			    <?php if (strlen($title) > 30 ) {
+					$title = substr($title, 0, 30) . '...';
+				} ?>
+                <h2><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'Rotary' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php echo $title; ?></a></h2>
+                <div class="postdate">
+                	<span class="alignleft">Posted by <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ))?>"><?php echo get_the_author();?></a></span>
+                	
+                    <span class="alignright"><?php Rotary_posted_on(); ?></span>
+                </div>    
+            </header>
+ 
+   
+                <?php $thumb = has_post_thumbnail(); ?>
+                <?php if ( $thumb) { // check if the post has a Post Thumbnail assigned to it.
+				        $attr = array(
+							'class'	=> 'alignleft',
+							);?>
+
+  						<a href="<?php the_permalink(); ?> "><?php the_post_thumbnail('post-thumbnail', $attr);?></a>
+					<?php } ?>
+   
+                <?php if ( $thumb) { ?> 
+               		<section class="excerptcontainer"> 
+               <?php } ?> 
+             <?php if ( 'rotary_speakers' == get_post_type() ) { 
+	             //program notes are filled in after a speakers visit. If the speaker has not yet been to the club, we show the upcoming content
+					$programNotes = trim(get_field('speaker_program_notes'));
+					if ('' == $programNotes)
+					{
+						$programNotes = trim(get_field('speaker_program_content'));
+					}
+					$programNotes = preg_replace('/<img[^>]+./','', $programNotes);
+					$programNotes = strip_tags($programNotes);
+					if (strlen($programNotes) > 200 ) {
+						$programNotes = substr($programNotes, 0, 200) ;
+					} 
+					?>             
+					<p><?php echo $programNotes; ?> <a href="<?php the_permalink();?>">[…]</a></p>					 
+             <?php  } 
+             else {
+	             the_excerpt();
+             }
+             ?>
+
+              <?php if ( $thumb) { ?> 
+                </section>
+              <?php } ?>    
+              
+  
+            <footer class="meta">
+            <p>
+                <?php edit_post_link( __( 'Edit', 'Rotary' ), '', ' &middot;' ); ?>
+                <?php comments_popup_link( __( 'Leave a comment', 'Rotary' ), __( '1 Comment', 'Rotary' ), __( '% Comments', 'Rotary' ), 'commentspopup' ); ?></p>
+                <?php if ( count( get_the_category() ) ) : ?>
+                        <p><?php printf( __( 'Posted in %2$s', 'Rotary' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?></p>
+                <?php endif; ?>
+                <?php
+                    $tags_list = get_the_tag_list( '', ', ' );
+                    if ( $tags_list ):
+                ?>
+                        <p><?php printf( __( 'Tagged %2$s', 'Rotary' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?></p>
+                <?php endif; ?>
+                
+                
+                 
+            </footer>
+               				</div><!--.sectioncontent-->
+                </div> <!--.sectionheader-->
+			</div><!--.sectioncontainer-->
+		</article>
+       <?php return $postCount; ?>
+	
+<?php }

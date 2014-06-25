@@ -210,10 +210,10 @@ aside {
  	> ul .newpost {
 		background:none;
 		border:none;
-		padding-bottom:none;
+		padding-bottom:0;
 		a {
 			font-size:14px;
-			letterspacing:.02px;
+			letter-spacing:.02px;
 		}
 		a:active, a:hover {
 			text-decoration:none;
