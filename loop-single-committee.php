@@ -22,11 +22,14 @@
 	) ); ?>
 
 			<?php if ( $connected->have_posts() ) : ?>
+				<div class="committeeribbon">
+					<h3>
+						<a href=" <?php echo get_post_type_archive_link( 'rotary-committees' ); ?>?committeeid=<?php the_id(); ?>">Committee News</a>
+					</h3>
+				</div>
 				<?php  while ( $connected->have_posts() ) : $connected->the_post();?>
 					<?php $postCount = rotary_output_blogroll($postCount, $clearLeft); ?>
 				<?php endwhile;?>
-			<?php else : ?>
-				<p>No committee news.</p>
 			<?php endif;?>
 			<?php // Reset Post Data
 wp_reset_postdata();?>

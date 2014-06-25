@@ -35,7 +35,7 @@
 	</div>
 	<div class="commentbottom">
 	<?php if(current_user_can('edit_page')) { ?>
-		<a id="newpost" class="newpost" href="<?php echo admin_url(); ?>post-new.php?committeeid=<?php the_id(); ?>" target="_blank">New Updates</a>
+		<a id="newpost" class="newpost" href="<?php echo admin_url(); ?>post-new.php?committeeid=<?php the_id(); ?>" target="_blank">Committee News</a>
 	<?php } ?>
 	<a id="newcomment" class="newcomment" href="#respond">New Announcement</a>
 
@@ -51,7 +51,7 @@
 	</div>
 	<div class="commentbottom">
 	<?php if(current_user_can('edit_page')) { ?>
-		<a id="newpost" class="newpost" href="<?php echo admin_url(); ?>post-new.php?committeeid=<?php the_id()?>" target="_blank">New Updates</a>
+		<a id="newpost" class="newpost" href="<?php echo admin_url(); ?>post-new.php?committeeid=<?php the_id()?>" target="_blank">Committee News</a>
 	<?php } ?>
 		<a id="newcomment" class="newcomment" href="#respond">New Announcement</a>
 	</div>

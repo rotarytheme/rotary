@@ -1391,7 +1391,7 @@ td {
 		width:220px;
 		h3 {
 			font-family:$sub-header-font;
-			left: 20px;
+			left: 5px;
 			position: absolute;
 			top: 5px;
 			a{
@@ -1548,8 +1548,8 @@ label[for="comment"] {
 			@include button($color:#FFF, $height:30px, $background:linear-gradient(#eea300, #f2ba40), $display:inline-block, $line-height:30px);
 			float:right;
 			font-size:14px;
-			line-height: 38px;
 			margin-right:30px;
+			margin-top: 10px;
 			width:120px;
 						
 		}

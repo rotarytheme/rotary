@@ -1681,7 +1681,7 @@ td {
 }
 .archive #content article .committeeribbon h3, .blog #content article .committeeribbon h3, .single.single-rotary-committees #content .committeeribbon h3 {
   font-family: Sommet;
-  left: 20px;
+  left: 5px;
   position: absolute;
   top: 5px;
 }
@@ -1859,8 +1859,8 @@ label[for="comment"] {
   text-transform: uppercase;
   float: right;
   font-size: 14px;
-  line-height: 38px;
   margin-right: 30px;
+  margin-top: 10px;
   width: 120px;
 }
 .comment .commenttext, .comment .commentcommittetext {

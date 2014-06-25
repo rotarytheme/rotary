@@ -14,11 +14,7 @@ get_header(); ?>
 	<?php comments_template( '/committee-comments.php' ); ?> 
 	<div class="committeeblogtop">
 				</div>
-				<div class="committeeribbon">
-					<h3>
-						<a href=" <?php echo get_post_type_archive_link( 'rotary-committees' ); ?>?committeeid=<?php the_id(); ?>">News Updates</a>
-					</h3>
-				</div>
+				
 		<?php get_template_part( 'loop', 'single-committee' ); ?>
     </div>
 
