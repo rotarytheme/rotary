@@ -25,7 +25,7 @@
 			
 			<?php if ( $connected->have_posts() ) : ?>
 			 <?php   $committeePost = get_post( $_REQUEST['committeeid'] ); ?>
-				<h2><?php echo $committeePost->post_title; ?></h2>
+				<h2 class="pagesubtitle"><?php echo $committeePost->post_title; ?></h2>
 				<?php  while ( $connected->have_posts() ) : $connected->the_post();?>
 					<?php $postCount = rotary_output_blogroll($postCount, $clearLeft); ?>
 				<?php endwhile;?>
