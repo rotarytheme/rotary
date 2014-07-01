@@ -2569,6 +2569,11 @@ aside .widget_sp_image img {
   vertical-align: middle;
 }
 
+#committeewidget {
+  margin: 0 10px 0 10px;
+  width: 90%;
+}
+
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   #signin input[type="text"], #signin input[type="password"] {
