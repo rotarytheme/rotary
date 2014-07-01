@@ -14,7 +14,7 @@ jQuery(document).ready(function($) {
 			this.setUpDatatables();
 			this.setUpTabs();
 			this.checkOpen();
-			$('#committeeselect').on('change', this.showCommittee);
+			$('#committeeselect, #committeewidget').on('change', this.showCommittee);
 			$('#morecomments').on('click', this.showMoreComments);
 			$('#lesscomments').on('click', this.hideMoreComments);
 			$('#newcomment').on('click', this.showCommentForm);

@@ -337,6 +337,89 @@ function rotary_register_rotary_archive_widget() {
 }
 add_action('widgets_init', 'rotary_register_rotary_archive_widget');
 
+class Rotary_Committee_Links extends WP_Widget {
+	/**
+	 * Sets up the widgets name etc
+	 */
+	public function __construct() {
+		// widget actual processes
+		parent::WP_Widget('rotaryCommitteeLinks', $name = 'Rotary Committees');
+	}
+
+	/**
+	 * Outputs the content of the widget
+	 *
+	 * @param array $args
+	 * @param array $instance
+	 */
+	public function widget( $args, $instance ) {
+		// outputs the content of the widget
+		extract($args, EXTR_SKIP);
+		$title = apply_filters( 'widget_title', $instance['title'] );
+
+		echo $args['before_widget'];
+		if ( ! empty( $title ) )
+			echo $args['before_title'] . $title . $args['after_title'];
+		$args = array(
+			'posts_per_page' => -1,
+			'post_type' => 'rotary-committees',
+			'order' => 'ASC'
+		);
+		$query = new WP_Query( $args );
+		if ( $query->have_posts() ) : ?>
+			<select id="committeewidget" name="committeewidget">
+			<option value="">-- Select a committee --</option>
+			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+				
+					<option value="<?php the_permalink() . '?open=open' ?>"><?php the_title(); ?></option>
+				
+			<?php endwhile; ?>
+			</select>
+		<?php endif;
+		echo $args['after_widget'];
+	}
+
+	/**
+	 * Outputs the options form on admin
+	 *
+	 * @param array $instance The widget options
+	 */
+	public function form( $instance ) {
+		// outputs the options form on admin
+		if ( isset( $instance[ 'title' ] ) ) {
+			$title = $instance[ 'title' ];
+		}
+		else {
+			$title = __( 'Committees', 'text_domain' );
+		}
+		?>
+		<p>
+		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+		</p>
+		<?php 
+	}
+
+	/**
+	 * Processing widget options on save
+	 *
+	 * @param array $new_instance The new options
+	 * @param array $old_instance The previous options
+	 */
+	public function update( $new_instance, $old_instance ) {
+		// processes widget options to be saved
+		$instance = array();
+		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+
+		return $instance;
+	}
+}		
+// Run code and init
+function rotary_register_committee_links() {
+	register_widget('Rotary_Committee_Links');
+}
+add_action('widgets_init', 'rotary_register_committee_links');	
+
 
 /*---------------------------------------------------------------------------------*/
 
