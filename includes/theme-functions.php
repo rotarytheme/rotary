@@ -942,7 +942,7 @@ function rotary_output_archive_table($term='') { ?>
 <?php }
 add_filter('get_previous_post_join', 'rotary_post_join');
 add_filter('get_next_post_join', 'rotary_post_join');
-add_filter('get_previous_post_                                                                                     ', 'rotary_prev_post_where');
+add_filter('get_previous_post_where', 'rotary_prev_post_where');
 add_filter('get_next_post_where', 'rotary_next_post_where');
 add_filter('get_previous_post_sort', 'rotary_prev_post_sort');
 add_filter('get_next_post_sort', 'rotary_next_post_sort');
