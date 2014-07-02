@@ -371,8 +371,7 @@ class Rotary_Committee_Links extends WP_Widget {
 			<option value="">-- Select a committee --</option>
 			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 				
-					<option value="<?php the_permalink() . '?open=open' ?>"><?php the_title(); ?></option>
-				
+					<option value=<?php echo get_post_type_archive_link( 'rotary-committees' ); ?>?committeeid=<?php the_id(); ?>"><?php the_title(); ?></option>  				
 			<?php endwhile; ?>
 			</select>
 		<?php endif;
