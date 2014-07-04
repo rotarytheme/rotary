@@ -290,49 +290,53 @@ function rotary_get_committee_announcements($atts){
 		'order' => 'ASC'
 	);
 	$committeeArray = array();
+	$commentDisplayed = 0;
 	ob_start();
 	$query = new WP_Query( $args );
 	if ( $query->have_posts() ) : ?>
 	<div class="comment">
-	 <div class="commentcommittetext">
-	 		<?php  while ( $query->have_posts() ) : $query->the_post(); ?>
-			<?php  $committeeArray[get_the_title()] = get_permalink() . '?open=open'; ?>
-			<?php
-	$args = array(
-		'order' => 'DESC',
-		'orderby' => 'title',
-		'post_type' => 'rotary-committees',
-		'status' => 'approve',
-		'type' => 'comment',
-		'post_id' => get_the_id(),
-		'number' => 1
-	);
-	$comments = get_comments( $args ); ?>
-			<?php if ( is_array($comments )) : ?>
+		 <div class="commentcommittetext">
+		 <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
+				<?php  $committeeArray[get_the_title()] = get_permalink() . '?open=open'; ?>
+		<?php
+		$args = array(
+			'order' => 'DESC',
+			'orderby' => 'title',
+			'post_type' => 'rotary-committees',
+			'status' => 'approve',
+			'type' => 'comment',
+			'post_id' => get_the_id(),
+			'number' => 1
+		);
+		$comments = get_comments( $args ); ?>
+		<?php if ( is_array($comments )) : ?>
                 <?php $count = count($comments); ?>
-                <?php if ( $count > 0 ) { ?>
-                	<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-               <?php  } ?>
-				<?php foreach($comments as $comment) : ?>
-					<?php $date = new DateTime($comment->comment_date); ?>
-					<?php $today = new DateTime(); ?>
-					<?php $interval = $today->diff($date); ?>
-					<?php if( abs($interval->d) < 10){ ?>	
-					<div class="committee-comment-date">
-							<span class="day"><?php echo $date->format('d'); ?></span>
-							<span class="month"><?php  echo $date->format('F'); ?></span>
-							<span class="year"><?php echo $date->format('Y'); ?></span>
-						</div>									
-					<div class="clearleft committeecomment">
-						<p class="committeecommentdetail"><?php echo $comment->comment_content; ?></p>
-						
-					</div>
-					<hr/>
-					<?php } ?>
-				<?php  endforeach; ?>
-			<?php  endif; ?>
-
-		<?php endwhile; ?>
+                <?php if ( $count > 0 ) : ?>      
+					<?php foreach($comments as $comment) : ?>
+						<?php $date = new DateTime($comment->comment_date); ?>
+						<?php $today = new DateTime(); ?>
+						<?php $interval = $today->diff($date); ?>
+						<?php //only show comments less than 10 days old ?>
+						<?php if( abs($interval->d) < 10) : ?>	
+							<?php $commentDisplayed++; ?>	
+							<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+							<div class="committee-comment-date">
+								<span class="day"><?php echo $date->format( 'd') ; ?></span>
+								<span class="month"><?php  echo $date->format( 'F' ); ?></span>
+								<span class="year"><?php echo $date->format( 'Y' ); ?></span>
+							</div>									
+							<div class="clearleft committeecomment">
+								<p class="committeecommentdetail"><?php echo $comment->comment_content; ?></p>						
+						</div>
+						<hr />
+						<?php endif; //end check for comment age over 10 days ?>
+					<?php  endforeach; //end comment loop ?>
+				<?php  endif; //end check for comment count ?>
+			<?php  endif; //end is_array check?>
+		<?php endwhile; //end wp_query loop ?>
+		<?php if ( 0 == $commentDisplayed ) :?>
+			<p>There are no current committee announcements.</p>
+		<?php  endif; ?>
 			<?php if (!is_user_logged_in()) { ?>
 			<p>Please <?php echo wp_loginout( site_url(), false ); ?> to add a new announcment</p>
 			<?php }
