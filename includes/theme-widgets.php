@@ -232,8 +232,10 @@ class RotaryArchiveWidget extends WP_Widget {
 		
 		echo $before_widget;
 		echo $before_title . $title . $after_title;
+
+		$jal_options['expandcurrent'] = false;
 		echo '<ul>';
-	  for ($i = 0; $x < count($years[$i]); $i++) {
+	  for ($i = 0; $i < count($years); $i++) {
 			$this_year = $jal_options['expandcurrent'] && $years[$i]->year == $post_year;
 			$months = $this->get_months($years[$i]->year, $current_category_id);
 			
@@ -357,7 +359,9 @@ class Rotary_Committee_Links extends WP_Widget {
 		extract($args, EXTR_SKIP);
 		$title = apply_filters( 'widget_title', $instance['title'] );
 
-		echo $args['before_widget'];
+		if ( isset( $args['before_widget'] ) ) {
+			echo $args['before_widget'];
+		}
 		if ( ! empty( $title ) )
 			echo $args['before_title'] . $title . $args['after_title'];
 		$args = array(
@@ -374,8 +378,12 @@ class Rotary_Committee_Links extends WP_Widget {
 					<option value=<?php echo get_post_type_archive_link( 'rotary-committees' ); ?>?committeeid=<?php the_id(); ?>"><?php the_title(); ?></option>  				
 			<?php endwhile; ?>
 			</select>
+			<?php // Reset Post Data
+				wp_reset_postdata(); ?>
 		<?php endif;
-		echo $args['after_widget'];
+		if ( isset( $args['after_widget'] ) ) {
+			echo $args['after_widget'];
+		}	
 	}
 
 	/**

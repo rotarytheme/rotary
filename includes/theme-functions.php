@@ -1004,8 +1004,10 @@ function rotary_next_post_sort($order) {
 function rotary_filter_next_post_link($link) {
 	if ( 'rotary_speakers' == get_post_type() && is_single()) {
 		$next_post = get_next_post();
-		$speakerDate = get_post_meta($next_post->ID, 'speaker_date', true);
-		$link = preg_replace('/<a(.+?)>.+?<\/a>/i',"<a$1><span>".date('l ', strtotime($speakerDate))."</span>".date('M dS, Y', strtotime($speakerDate))." &gt;</a>",$link);
+		if( is_object( $next_post ) ) {
+			$speakerDate = get_post_meta($next_post->ID, 'speaker_date', true);
+			$link = preg_replace('/<a(.+?)>.+?<\/a>/i',"<a$1><span>".date('l ', strtotime($speakerDate))."</span>".date('M dS, Y', strtotime($speakerDate))." &gt;</a>",$link);
+		}	
 	}
 	return $link;
 }
@@ -1013,8 +1015,10 @@ function rotary_filter_next_post_link($link) {
 function rotary_filter_previous_post_link($link) {
 	if ( 'rotary_speakers' == get_post_type() && is_single()) {
 		$previous_post = get_previous_post();
-		$speakerDate = get_post_meta($previous_post->ID, 'speaker_date', true);
-		$link = preg_replace('/<a(.+?)>.+?<\/a>/i',"<a$1>&lt; <span>".date('l ', strtotime($speakerDate))."</span>".date('M dS, Y', strtotime($speakerDate))."</a>",$link);
+		if( is_object( $previous_post ) ) {
+			$speakerDate = get_post_meta($previous_post->ID, 'speaker_date', true);
+			$link = preg_replace('/<a(.+?)>.+?<\/a>/i',"<a$1>&lt; <span>".date('l ', strtotime($speakerDate))."</span>".date('M dS, Y', strtotime($speakerDate))."</a>",$link);
+		}	
 	}
 	return $link;
 
