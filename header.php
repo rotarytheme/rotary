@@ -68,6 +68,17 @@
      */
     wp_head();
 ?>
+<?php 
+    /* show custom styles set in theme customizer
+     * 
+     */
+     $customCSS = get_theme_mod( 'rotary_custom_css', false);
+     if ( $customCSS ) { ?>
+	     <style type="text/css">
+	     	<?php echo $customCSS; ?>
+	     </style>
+    <?php }
+?>
 <!--[if lte IE 7]>
 <script src="<?php echo get_bloginfo('template_directory').'/includes/js/lte-ie7.js'; ?>" type="text/javascript"></script >
 <![endif]-->

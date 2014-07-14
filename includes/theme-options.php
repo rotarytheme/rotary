@@ -150,5 +150,20 @@ $wp_customize->add_control( 'rotary_background_color', array(
 		'type'    => 'text',
 	) );
 
-	
+	/*Settings and Controls for the custom css*/	
+	$wp_customize->add_section( 'rotary_style_settings', array(
+		'title'          => 'Styles',
+		'priority'       => 36,
+	) );
+	$wp_customize->add_setting( 'rotary_custom_css', array(
+		'default'        => '',
+		'capability'     => 'edit_theme_options',
+	) );
+
+
+	$wp_customize->add_control( new Rotary_Textarea_Control( $wp_customize, 'rotary_meeting_location', array(
+	'label'   => 'Custom CSS',
+	'section' => 'rotary_style_settings',
+	'settings'   => 'rotary_custom_css',
+) ) );
 }
