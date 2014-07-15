@@ -161,7 +161,7 @@ $wp_customize->add_control( 'rotary_background_color', array(
 	) );
 
 
-	$wp_customize->add_control( new Rotary_Textarea_Control( $wp_customize, 'rotary_meeting_location', array(
+	$wp_customize->add_control( new Rotary_Textarea_Control( $wp_customize, 'rotary_custom_css', array(
 	'label'   => 'Custom CSS',
 	'section' => 'rotary_style_settings',
 	'settings'   => 'rotary_custom_css',
