@@ -317,7 +317,7 @@ function rotary_get_committee_announcements($atts){
 						<?php $today = new DateTime(); ?>
 						<?php $interval = $today->diff($date); ?>
 						<?php //only show comments less than 10 days old ?>
-						<?php if( abs($interval->d) < 10) : ?>	
+						<?php if( abs($interval->days) < 10) : ?>	
 							<?php $commentDisplayed++; ?>	
 							<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 							<div class="committee-comment-date">
