@@ -34,4 +34,5 @@ require_once('wp-advanced-search/wpas.php');  //advnced search form
 include_once('advanced-custom-fields/acf.php' );
 include_once('acf-repeater/acf-repeater.php');
 include_once($includes_path . 'speaker-fields.php');
+include_once($includes_path . 'project-fields.php');
 /*you can put custom code below this line*/

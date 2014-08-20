@@ -54,6 +54,16 @@ function rotary_widgets_init() {
 		'before_title' => '<h3>',
 		'after_title' => '</h3>',
 	) );
+	// Area 5, located on the projects archive. Empty by default.
+	register_sidebar( array(
+		'name' => __( 'Projects Widget Area', 'rotary' ),
+		'id' => 'projects-widget-area',
+		'description' => __( 'The projects widget area', 'rotary' ),
+		'before_widget' => '<li>',
+		'after_widget' => '</li>',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>',
+	) );
 
 }
 /** Register sidebars by running rotary_widgets_init() on the widgets_init hook. */

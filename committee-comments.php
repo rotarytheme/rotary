@@ -20,22 +20,30 @@
 	endif;
 ?>
 
+
 <?php
 	// You can start editing here -- including this comment!
 ?>
 <article <?php comment_class(); ?>>	
 
-
+<?php $currentPostType = get_post_type(); ?>
 <?php if ( have_comments() ) : ?>
+	
 	<div class="commentcommittetext">
 				<?php
 					//wp_list_comments( array( 'style' => 'div', 'callback' => 'rotary_committee_comment', type => 'comment', 'per_page' => 5, 'reverse_top_level'  => true) );
-					rotary_committee_comment();
+					rotary_committee_comment( $currentPostType );
 				?>
 	</div>
 	<div class="commentbottom">
 	<?php if(current_user_can('edit_page')) { ?>
-		<a id="newpost" class="newpost" href="<?php echo admin_url(); ?>post-new.php?committeeid=<?php the_id(); ?>" target="_blank">Committee News</a>
+	    <?php if ('rotary_projects' == $currentPostType ) { ?>
+		    <a id="newpost" class="newpost" href="<?php echo admin_url(); ?>post-new.php?projectid=<?php the_id(); ?>" target="_blank">Project News</a>
+	    <?php } 
+	     else { ?>
+		    <a id="newpost" class="newpost" href="<?php echo admin_url(); ?>post-new.php?committeeid=<?php the_id(); ?>" target="_blank">Committee News</a>
+	    <?php } ?>
+		
 	<?php } ?>
 	<a id="newcomment" class="newcomment" href="#respond">New Announcement</a>
 
@@ -50,8 +58,14 @@
 	<p><?php _e( 'No announcements.', 'Rotary' ); ?></p>
 	</div>
 	<div class="commentbottom">
+
 	<?php if(current_user_can('edit_page')) { ?>
-		<a id="newpost" class="newpost" href="<?php echo admin_url(); ?>post-new.php?committeeid=<?php the_id()?>" target="_blank">Committee News</a>
+		<?php if ('rotary_projects' == $currentPostType ) { ?>
+		    <a id="newpost" class="newpost" href="<?php echo admin_url(); ?>post-new.php?projectid=<?php the_id(); ?>" target="_blank">Project News</a>
+	    <?php } 
+	     else { ?>
+		    <a id="newpost" class="newpost" href="<?php echo admin_url(); ?>post-new.php?committeeid=<?php the_id(); ?>" target="_blank">Committee News</a>
+	    <?php } ?>
 	<?php } ?>
 		<a id="newcomment" class="newcomment" href="#respond">New Announcement</a>
 	</div>

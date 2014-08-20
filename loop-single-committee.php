@@ -14,11 +14,12 @@
 	//secondary loop
 	$postCount = 0;
 	$clearLeft='';
+	$committeeID = get_the_id(); 
 	$connected = new WP_Query( array(
 		'connected_type'  => 'committees_to_posts',
 		'connected_items' => $post,
 		'posts_per_page' => 2, 
-		'nopaging'        => false,
+		'nopaging'        => true,
 	) ); ?>
 
 			<?php if ( $connected->have_posts() ) : ?>
@@ -30,12 +31,54 @@
 				<?php  while ( $connected->have_posts() ) : $connected->the_post();?>
 					<?php $postCount = rotary_output_blogroll($postCount, $clearLeft); ?>
 				<?php endwhile;?>
+				<?php // Reset Post Data
+					wp_reset_postdata();?>
 			<?php endif;?>
-			<?php // Reset Post Data
-wp_reset_postdata();?>
-
-
-
+			
+ <?php  //now get projects ?>
+ 	
+ 	<?php $connected = new WP_Query( array(
+		'connected_type'  => 'projects_to_committees',
+		'connected_items' => get_queried_object_id(),
+		'posts_per_page' => 1, 
+		'order' => 'DESC',
+		'orderby' => 'meta_value',
+        'meta_key' => 'rotary_project_date',
+		'nopaging'        => false,
+	) ); ?>
+	
+	<?php if ( $connected->have_posts() ) : ?>
+			<?php  while ( $connected->have_posts() ) : $connected->the_post();?>
+				<div class="connectedprojects clearleft">
+				<div class="connectedprojectscontainer clearfix">
+					<p class="projectheader">Latest Events/Projects</p>
+					<b></b>
+					<?php if(current_user_can('edit_page')) { ?>
+						<a href="<?php echo admin_url();?>post-new.php?post_type=rotary_projects&committee=<?php echo $committeeID; ?>" class="new-project-link">New Project</a>
+					<?php } ?>	
+					<h2><?php the_title(); ?></h2>
+					<div class="alignleft">
+					<?php if ( get_field( 'rotary_project_date' ) ) : ?>
+						<?php $date = DateTime::createFromFormat('Ymd', get_field( 'rotary_project_date' ) ); ?>
+						<div class="committee-comment-date">
+							<span class="day"><?php echo $date->format( 'd') ; ?></span>
+							<span class="month"><?php  echo $date->format( 'M' ); ?></span>
+							<span class="year"><?php echo $date->format( 'Y' ); ?></span>
+						</div>
+					<?php endif; ?>	
+						<?php the_content(); ?>
+						</div>		
+						<?php if (has_post_thumbnail()) : ?>
+						<div class="alignleft">
+							<?php the_post_thumbnail('medium'); ?>
+						</div>		
+				<?php endif; ?>
+				</div>
+				</div>	
+			<?php endwhile;?>
+		<?php // Reset Post Data
+			wp_reset_postdata();?>
+		<?php endif;?>
 
 
 		<div class="committeecontent">

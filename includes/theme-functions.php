@@ -587,10 +587,10 @@ endif;
  *
  * @since rotary 1.0
  */
-function rotary_committee_comment( ) { ?>
+function rotary_committee_comment( $postType =  'rotary-committees') { ?>
 	<?php $args = array(
 		'order' => 'DESC',
-		'post_type' => 'rotary-committees',
+		'post_type' =>  $postType,
 		'status' => 'approve',
 		'type' => 'comment',
 		'post_id' => get_the_id(),
@@ -1097,7 +1097,24 @@ function rotary_save_post_for_committee( $post_id ) {
 		
 	}
 }
+function rotary_save_post_for_project ( $post_id ) {
+	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+	if ( isset( $_REQUEST['projectid'] ) ) {
+			//post to post
+		p2p_type( 'projects_to_posts' )->connect( $_REQUEST['projectid'], $post_id, array('date' => current_time('mysql')
+		) );		
+	}
+	
+}
+function rotary_save_committee_for_project ( $project_id ) {
+	if ( isset( $_REQUEST['committee'] ) && 'rotary_projects' ==  $_REQUEST['post_type'] ) {
+			p2p_type( 'projects_to_committees' )->connect( $project_id, $_REQUEST['committee'], array('date' => current_time('mysql')
+			) );
+	}  
+}
 add_action( 'save_post', 'rotary_save_post_for_committee' );
+add_action( 'save_post', 'rotary_save_post_for_project' );
+add_action( 'save_post', 'rotary_save_committee_for_project' );
 //output the standard blog roll 
 //also used for posts connected to committees by post to posts
 function rotary_output_blogroll($postCount, $clearLeft) {

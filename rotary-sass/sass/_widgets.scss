@@ -307,7 +307,7 @@ aside {
 .tax-rotary_speaker_tag .widget_calendar {
 	display:none;
 }
-#committee-sidebar {
+#committee-sidebar, #projects-sidebar {
 	margin-right:22px;
 	margin-top:69px;
 	border-bottom: 1px solid #b5b5b5;
@@ -318,7 +318,7 @@ aside {
 	width:204px;
 	> ul {
 	    @include box-shadow(rgba(0, 0, 0, 0.25) 0 0 7px inset);
-		padding:20px 5px 0 15px;
+		padding:20px 10px 0 10px;
 	}
 	ul ul {
 		color:#a2a2a2;
@@ -365,6 +365,55 @@ aside {
 		}
 
 		
+	}
+	.project-date {
+		border-bottom: 1px solid #B5B5B5;
+		padding-bottom: 10px;
+		text-align:center;
+		.dayweek {
+			font-family:$button-font;
+			font-size:27px;
+		}
+		.day, .month, .year {
+			font-family: $sub-header-font;
+			font-size:18px;
+		}
+	}
+	.acf-map {
+		width: 100%;
+		height: 220px;
+		margin: 20px 0;
+	}
+	.location {
+		text-align:center;
+		.meetingsite {
+			color:#0f7284;
+			font-family: $header-font;
+			font-size:13px;
+			text-transform: uppercase
+		}
+	}
+	.instructions {
+		font-size:11px;
+	}
+	.speakerthumbs img {
+		height:85px;
+		margin:0 5px 5px 0;
+		width:85px;
+	}
+		
+}
+.single-rotary_projects #projects-sidebar {
+	margin: 85px 12px 30px 10px;
+	h3 {
+		color:#177086;
+		font-size:20px;
+		text-transform: uppercase;
+	}
+	.tagcloud a, .cat-item a {
+		color: #a5a5a5;
+		font-weight: normal;
+		line-height: 18px;
 	}
 		
 }

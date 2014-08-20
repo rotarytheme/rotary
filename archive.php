@@ -14,8 +14,10 @@ get_header(); ?>
 		the_post();
 ?>
 
-			<?php if (is_post_type_archive('rotary_speakers')) : ?>
-				<h1 class="pagetitle"><span>Speaker Program</span></h1>
+			<?php if (is_post_type_archive( 'rotary_speakers' )) : ?>
+				<h1 class="pagetitle"><span>Speaker Program</span></h1>	
+			<?php elseif (is_post_type_archive( 'rotary_projects' )) : ?>
+				<h1 class="pagetitle"><span>Projects</span></h1>	
 			<?php else : ?>
 				<h1 class="pagetitle"><span><?php echo rotary_get_blog_title();?></span></h1>
 			<?php endif; ?>

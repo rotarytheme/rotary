@@ -364,12 +364,12 @@ class Rotary_Committee_Links extends WP_Widget {
 		}
 		if ( ! empty( $title ) )
 			echo $args['before_title'] . $title . $args['after_title'];
-		$args = array(
+		$queryargs = array(
 			'posts_per_page' => -1,
 			'post_type' => 'rotary-committees',
 			'order' => 'ASC'
 		);
-		$query = new WP_Query( $args );
+		$query = new WP_Query( $queryargs );
 		if ( $query->have_posts() ) : ?>
 			<select id="committeewidget" name="committeewidget">
 			<option value="">-- Select a committee --</option>
@@ -427,6 +427,110 @@ function rotary_register_committee_links() {
 }
 add_action('widgets_init', 'rotary_register_committee_links');	
 
+/*Project Widget*/
+class Rotary_Project_Links extends WP_Widget {
+	/**
+	 * Sets up the widgets name etc
+	 */
+	public function __construct() {
+		// widget actual processes
+		parent::WP_Widget('rotaryProjectLinks', $name = 'Rotary Projects');
+	}
+
+	/**
+	 * Outputs the content of the widget
+	 *
+	 * @param array $args
+	 * @param array $instance
+	 */
+	public function widget( $args, $instance ) {
+		// outputs the content of the widget
+		extract($args, EXTR_SKIP);
+		$title = apply_filters( 'widget_title', $instance['title'] );
+		if ( empty( $instance['number'] ) || ! $number = absint( $instance['number'] ) )
+ 			$number = 5;
+
+		if ( isset( $args['before_widget'] ) ) {
+			echo $args['before_widget'];
+		}
+		if ( ! empty( $title ) )
+			echo $args['before_title'] . $title . $args['after_title'];
+		$queryargs = array(
+			'posts_per_page' => -1,
+			'post_type' => 'rotary_projects',
+			'posts_per_page' => $number,
+			'order' => 'DESC',
+			'orderby' => 'meta_value',
+            'meta_key' => 'rotary_project_date',
+		);
+		$query = new WP_Query( $queryargs );
+		if ( $query->have_posts() ) : ?>
+			
+			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+				<div>
+				<p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+				<?php if ( get_field( 'rotary_project_date' ) ) : ?>
+					<?php $date = DateTime::createFromFormat('Ymd', get_field( 'rotary_project_date' ) ); ?>
+					<p><small><?php echo $date->format('M d, Y'); ?></small></p>	
+				<?php endif; ?>	
+				</div>		
+			<?php endwhile; ?>
+			<?php // Reset Post Data
+				wp_reset_postdata(); ?>
+		   	
+		<?php endif;
+		if ( isset( $args['after_widget'] ) ) {
+			echo $args['after_widget'];
+		}	
+	}
+	/**
+	 * Outputs the options form on admin
+	 *
+	 * @param array $instance The widget options
+	 */
+	public function form( $instance ) {
+		// outputs the options form on admin
+		if ( isset( $instance[ 'title' ] ) ) {
+			$title = $instance[ 'title' ];
+		}
+		else {
+			$title = __( 'Projects', 'text_domain' );
+		}
+		$number    = isset( $instance['number'] ) ? absint( $instance['number'] ) : 5;
+		?>
+		<p>
+		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+		</p>
+		<p>
+		<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts to show:' ); ?></label>
+		<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" />
+		</p>
+		<?php 
+	}
+
+	/**
+	 * Processing widget options on save
+	 *
+	 * @param array $new_instance The new options
+	 * @param array $old_instance The previous options
+	 */
+	public function update( $new_instance, $old_instance ) {
+		// processes widget options to be saved
+		$instance = array();
+		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+		$instance['number'] = (int) $new_instance['number'];
+
+		return $instance;
+	}
+
+
+}
+// Run code and init
+function rotary_register_project_links() {
+	register_widget('Rotary_Project_Links');
+}
+add_action('widgets_init', 'rotary_register_project_links');
 
 /*---------------------------------------------------------------------------------*/
 

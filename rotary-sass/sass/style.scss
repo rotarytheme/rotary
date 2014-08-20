@@ -86,7 +86,7 @@ Tags: rotary, html5
 .alignleft		{ float: left; }
 .alignright		{ float: right; }
 .pagetitle {
-	background:#033551 url(../images/header-arrows-before.jpg) no-repeat;
+	background:#033551 url(../images/header-arrows-before.jpg) no-repeat -1px 0;
 	color:#FFF;
 	font-family:$button-font;
 	font-size:40px;
@@ -112,6 +112,12 @@ Tags: rotary, html5
 		color:$header-font-color;
 		font-family:$emphasis-font;
 	}
+}
+.pagecommitteetitle {
+	font-family: $body-font-family;
+	font-size:12px;
+	margin-left:30px;
+	text-transform: uppercase;
 }
 .headeredit, .speakerdatedit {
 	@include backgrounds-sprite("edit");
@@ -252,6 +258,10 @@ hr {
 	width:786px;
 	&.committee {
 		margin-right:0;
+	}
+	&.projects {
+		margin-right:0;
+		margin-top:85px;
 	}
 	p, li, dt, dd {
 		line-height:1.4em;
@@ -1270,6 +1280,9 @@ td {
 
 	}
 }
+.single-rotary_projects .speakercontainer {
+	top:30px;
+}
 .speakerheader .rotary_speakers  > h2 {
 
 			background: url(../images/speaker-icon.png) 0 9px no-repeat;
@@ -1300,7 +1313,8 @@ td {
 }
 
 /*blog archives, tags, categories, etc.*/
-.archive #content article, .blog #content article, .single.single-rotary-committees #content{
+
+.archive #content article, .blog #content article, .single.single-rotary-committees #content, .single.single-rotary_projects #content{
 	#respond, .sectioncontent > .comment, #comments-title {
 		margin-left:0;
 		width:100%;
@@ -1308,7 +1322,64 @@ td {
 			width:100%;
 		}
 	}
-	
+	.connectedprojects {
+		background:linear-gradient(#d9dee1, #fff);
+		@include box-shadow(#efefef 0 3px 5px 0);
+		margin-bottom:50px;
+		width:782px;
+		h2 {
+			border:0;
+			font-weight:400;
+		}
+		b {
+			background: url(../images/project-header-bottom-bg.png) no-repeat;
+			display: block;
+			height: 7px;
+			left: -1px;
+			position: absolute;
+			width: 8px;
+		}
+		.alignleft {
+			margin-right:20px;
+			width:340px;
+		}
+		.connectedprojectscontainer {
+			left:-5px;
+			padding-bottom:20px;
+			position:relative;
+			> h2 {
+				margin-left:20px;
+			}
+		}
+		.projectheader {
+			background:linear-gradient(#a0957f, #544636);
+			color:#FFF;
+			font-family:$sub-header-font;
+			font-size:18px;
+			margin-left:0;
+			margin-bottom:0;
+			padding:5px 0 5px 0;
+			text-indent: 20px;
+			text-transform: uppercase;
+			width:250px;
+			background: linear-gradient(#a0957f, #544636) repeat scroll 0 0 rgba(0, 0, 0, 0);
+		}
+		.alignleft {
+			margin-left:20px;
+		}
+		.committee-comment-date {
+			margin:5px 15px 0 0;
+		}
+		.new-project-link {
+				@include button($color:#FFF, $height:40px, $background:linear-gradient(#034679, #0f7185));
+				font-size:15px;
+				line-height:40px;
+				position:absolute;
+				top:0;
+				right:0;
+				width:120px;
+		}
+	}
 	.committee-comment-date {
 		border-bottom: 1px solid #8f8f8f;
 		border-top: 1px solid #8f8f8f;
@@ -1497,12 +1568,26 @@ td {
 		
 	}
 }
+.no-cssgradients .connectedprojects{
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#d9dee1', endColorstr='#ffffff'); /* IE6 & IE7 */
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#d9dee1', endColorstr='#ffffff')"; /* IE8 */  
+}
+.no-cssgradients .projectheader{
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#a0957f', endColorstr='#544636'); /* IE6 & IE7 */
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#a0957f', endColorstr='#544636')"; /* IE8 */  
+}
 
+.single.single-rotary_projects #content h2 {
+	border:0;
+	a {
+		font-weight:normal;
+	}
+}
 /*comments*/
 label[for="comment"] {
 	display:none;
 }
-.committee #respond{
+.committee #respond, .projects #respond{
 	display: none;
 }
 #respond, .sectioncontent > .comment, #comments-title {
@@ -1590,6 +1675,7 @@ label[for="comment"] {
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#eea300', endColorstr='#f2ba40'); /* IE6 & IE7 */
 -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#eea300', endColorstr='#f2ba40')"; /* IE8 */  
 }
+
 
 #commentform {
 	#author {

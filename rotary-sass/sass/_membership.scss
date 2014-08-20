@@ -2,11 +2,15 @@
 	@include box-shadow(#efefef 3px 3px 5px 0);
 	width:98%;
 }
-.page #content .rotarymembershipheader {
+.single-rotary_projects .rotarymembershipcontainer {
+	clear:left;
+}
+.page #content .rotarymembershipheader, .single-rotary_projects #content .rotarymembershipheader{
 	background:url(../images/member-table-section-header.png) no-repeat;
 	padding: 0 20px 20px 0;
 	> h2 {
 		border-bottom:none;
+		border-top:none;
 		color:#FFF;
 		font-family:$button-font;
 		font-size: 20px;
@@ -18,7 +22,14 @@
 		text-transform: uppercase;
 	}
 }
-#rotarymembers_wrapper, .rotaryselections {
+.single-rotary_projects #content .rotarymembershipheader h2 {
+	background: url(../images/participant-bg.jpg) 12px 12px no-repeat;
+	text-indent:65px;
+}
+.single-rotary_projects #rotaryprojects_filter {
+	display:none;
+}
+#rotarymembers_wrapper {
 	margin-left:20px;
 }
 .rotaryselections {
@@ -27,16 +38,25 @@
 .rotaryselections .committeecontainer {
 	float:right;
 }
+.rotaryselections .usercontainer {
+	float:right;
+	position:relative;
+	top:-50px;
+}
+.rotaryselections .usercontainer select{
+	height:30px;
+}
 .rotaryselections #committeelabel {
 	margin-right:5px;
 }
-.rotarymembershipheader #rotarymembers tr td {
+
+.rotarymembershipheader #rotarymembers tr td, .rotarymembershipheader #rotaryprojects tr td{
 	border-bottom:1px solid #b3b5b7;
 	border-right: 1px dotted #b3b5b7;
 	padding-bottom:15px;
 	padding-top:15px;
 }
-.rotarymembershipheader #rotarymembers tr th{
+.rotarymembershipheader #rotarymembers tr th, .rotarymembershipheader #rotaryprojects tr th{
 	border-top:2px solid #f2e6cc;
 	border-right: 1px dotted #b3b5b7;
 	color:#b3b5b7;
@@ -47,14 +67,14 @@
 	padding-top:15px;
 	text-transform:uppercase;
 }
-.rotarymembershipheader #rotarymembers tr .email {
+.rotarymembershipheader #rotarymembers tr .email, .rotarymembershipheader #rotaryprojects tr .email {
 	border-right:none;
 }
-#rotarymembers .odd td {
+#rotarymembers .odd td, #rotaryprojects .odd td {
 	background: #f9f4e9;
 	
 }
-#rotarymembers .email a{
+#rotarymembers .email a, #rotaryprojects .email a{
 	color:#b3b5b7;
 	text-transform:uppercase;
 }

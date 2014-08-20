@@ -1,6 +1,6 @@
 <?php
-// let's create the function for the custom type
-function register_speaker_post_type() { 
+// let's create the function for the speaker program custom type
+function rotary_register_speaker_post_type() { 
 	// creating (registering) the custom type 
 	register_post_type( 'rotary_speakers', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
 	 	// let's now add all the options for this post type
@@ -150,7 +150,7 @@ function register_speaker_post_type() {
 } 
 
 	// adding the function to the Wordpress init
-	add_action( 'init', 'register_speaker_post_type');
+	add_action( 'init', 'rotary_register_speaker_post_type');
 	
 	    
     add_filter('manage_rotary_speakers_posts_columns' , 'rotary_speakers_cpt_columns'); 
@@ -222,5 +222,4 @@ function register_speaker_post_type() {
 }
 
 
-    
 ?>

@@ -62,7 +62,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-.backgrounds-sprite, .headeredit, .speakerdatedit, #mainmenu ul ul li.dropdown, #mainmenu ul ul .dropdown:hover > a, .archive #content article .meta .commentspopup, .blog #content article .meta .commentspopup, .single.single-rotary-committees #content .meta .commentspopup, #footer .twitter, #footer .facebook, #footer .linkedin, #controls #facebookshare, #controls #twittershare, .widgetedit {
+.backgrounds-sprite, .headeredit, .speakerdatedit, #mainmenu ul ul li.dropdown, #mainmenu ul ul .dropdown:hover > a, .archive #content article .meta .commentspopup, .blog #content article .meta .commentspopup, .single.single-rotary-committees #content .meta .commentspopup, .single.single-rotary_projects #content .meta .commentspopup, #footer .twitter, #footer .facebook, #footer .linkedin, #controls #facebookshare, #controls #twittershare, .widgetedit {
   background: url('../images/backgrounds-s8f9fdc06fe.png') no-repeat;
 }
 
@@ -212,7 +212,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 .pagetitle {
-  background: #033551 url(../images/header-arrows-before.jpg) no-repeat;
+  background: #033551 url(../images/header-arrows-before.jpg) no-repeat -1px 0;
   color: #FFF;
   font-family: "BebasNeueRegular", Arial, sans-serif;
   font-size: 40px;
@@ -239,6 +239,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .pagesubtitle span {
   color: #0f7289;
   font-family: SommetBlack;
+}
+
+.pagecommitteetitle {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+  font-size: 12px;
+  margin-left: 30px;
+  text-transform: uppercase;
 }
 
 .headeredit, .speakerdatedit {
@@ -440,6 +447,10 @@ hr {
 }
 #content.committee {
   margin-right: 0;
+}
+#content.projects {
+  margin-right: 0;
+  margin-top: 85px;
 }
 #content p, #content li, #content dt, #content dd {
   line-height: 1.4em;
@@ -1544,6 +1555,10 @@ td {
   color: #0f7289;
 }
 
+.single-rotary_projects .speakercontainer {
+  top: 30px;
+}
+
 .speakerheader .rotary_speakers > h2 {
   background: url(../images/speaker-icon.png) 0 9px no-repeat;
   color: #606060;
@@ -1572,14 +1587,96 @@ td {
 }
 
 /*blog archives, tags, categories, etc.*/
-.archive #content article #respond, .archive #content article .sectioncontent > .comment, .archive #content article #comments-title, .blog #content article #respond, .blog #content article .sectioncontent > .comment, .blog #content article #comments-title, .single.single-rotary-committees #content #respond, .single.single-rotary-committees #content .sectioncontent > .comment, .single.single-rotary-committees #content #comments-title {
+.archive #content article #respond, .archive #content article .sectioncontent > .comment, .archive #content article #comments-title, .blog #content article #respond, .blog #content article .sectioncontent > .comment, .blog #content article #comments-title, .single.single-rotary-committees #content #respond, .single.single-rotary-committees #content .sectioncontent > .comment, .single.single-rotary-committees #content #comments-title, .single.single-rotary_projects #content #respond, .single.single-rotary_projects #content .sectioncontent > .comment, .single.single-rotary_projects #content #comments-title {
   margin-left: 0;
   width: 100%;
 }
-.archive #content article #respond textarea, .archive #content article .sectioncontent > .comment textarea, .archive #content article #comments-title textarea, .blog #content article #respond textarea, .blog #content article .sectioncontent > .comment textarea, .blog #content article #comments-title textarea, .single.single-rotary-committees #content #respond textarea, .single.single-rotary-committees #content .sectioncontent > .comment textarea, .single.single-rotary-committees #content #comments-title textarea {
+.archive #content article #respond textarea, .archive #content article .sectioncontent > .comment textarea, .archive #content article #comments-title textarea, .blog #content article #respond textarea, .blog #content article .sectioncontent > .comment textarea, .blog #content article #comments-title textarea, .single.single-rotary-committees #content #respond textarea, .single.single-rotary-committees #content .sectioncontent > .comment textarea, .single.single-rotary-committees #content #comments-title textarea, .single.single-rotary_projects #content #respond textarea, .single.single-rotary_projects #content .sectioncontent > .comment textarea, .single.single-rotary_projects #content #comments-title textarea {
   width: 100%;
 }
-.archive #content article .committee-comment-date, .blog #content article .committee-comment-date, .single.single-rotary-committees #content .committee-comment-date {
+.archive #content article .connectedprojects, .blog #content article .connectedprojects, .single.single-rotary-committees #content .connectedprojects, .single.single-rotary_projects #content .connectedprojects {
+  background: linear-gradient(#d9dee1, #ffffff);
+  -webkit-box-shadow: #efefef 0 3px 5px 0;
+  -moz-box-shadow: #efefef 0 3px 5px 0;
+  box-shadow: #efefef 0 3px 5px 0;
+  margin-bottom: 50px;
+  width: 782px;
+}
+.archive #content article .connectedprojects h2, .blog #content article .connectedprojects h2, .single.single-rotary-committees #content .connectedprojects h2, .single.single-rotary_projects #content .connectedprojects h2 {
+  border: 0;
+  font-weight: 400;
+}
+.archive #content article .connectedprojects b, .blog #content article .connectedprojects b, .single.single-rotary-committees #content .connectedprojects b, .single.single-rotary_projects #content .connectedprojects b {
+  background: url(../images/project-header-bottom-bg.png) no-repeat;
+  display: block;
+  height: 7px;
+  left: -1px;
+  position: absolute;
+  width: 8px;
+}
+.archive #content article .connectedprojects .alignleft, .blog #content article .connectedprojects .alignleft, .single.single-rotary-committees #content .connectedprojects .alignleft, .single.single-rotary_projects #content .connectedprojects .alignleft {
+  margin-right: 20px;
+  width: 340px;
+}
+.archive #content article .connectedprojects .connectedprojectscontainer, .blog #content article .connectedprojects .connectedprojectscontainer, .single.single-rotary-committees #content .connectedprojects .connectedprojectscontainer, .single.single-rotary_projects #content .connectedprojects .connectedprojectscontainer {
+  left: -5px;
+  padding-bottom: 20px;
+  position: relative;
+}
+.archive #content article .connectedprojects .connectedprojectscontainer > h2, .blog #content article .connectedprojects .connectedprojectscontainer > h2, .single.single-rotary-committees #content .connectedprojects .connectedprojectscontainer > h2, .single.single-rotary_projects #content .connectedprojects .connectedprojectscontainer > h2 {
+  margin-left: 20px;
+}
+.archive #content article .connectedprojects .projectheader, .blog #content article .connectedprojects .projectheader, .single.single-rotary-committees #content .connectedprojects .projectheader, .single.single-rotary_projects #content .connectedprojects .projectheader {
+  background: linear-gradient(#a0957f, #544636);
+  color: #FFF;
+  font-family: Sommet;
+  font-size: 18px;
+  margin-left: 0;
+  margin-bottom: 0;
+  padding: 5px 0 5px 0;
+  text-indent: 20px;
+  text-transform: uppercase;
+  width: 250px;
+  background: linear-gradient(#a0957f, #544636) repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.archive #content article .connectedprojects .alignleft, .blog #content article .connectedprojects .alignleft, .single.single-rotary-committees #content .connectedprojects .alignleft, .single.single-rotary_projects #content .connectedprojects .alignleft {
+  margin-left: 20px;
+}
+.archive #content article .connectedprojects .committee-comment-date, .blog #content article .connectedprojects .committee-comment-date, .single.single-rotary-committees #content .connectedprojects .committee-comment-date, .single.single-rotary_projects #content .connectedprojects .committee-comment-date {
+  margin: 5px 15px 0 0;
+}
+.archive #content article .connectedprojects .new-project-link, .blog #content article .connectedprojects .new-project-link, .single.single-rotary-committees #content .connectedprojects .new-project-link, .single.single-rotary_projects #content .connectedprojects .new-project-link {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAzNDY3OSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzBmNzE4NSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #034679), color-stop(100%, #0f7185));
+  background-image: -webkit-linear-gradient(#034679, #0f7185);
+  background-image: -moz-linear-gradient(#034679, #0f7185);
+  background-image: -o-linear-gradient(#034679, #0f7185);
+  background-image: linear-gradient(#034679, #0f7185);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #e0e0e1;
+  color: white;
+  display: block;
+  font-family: "BebasNeueRegular", Arial, sans-serif;
+  font-weight: normal;
+  height: 40px;
+  line-height: normal;
+  padding: 2px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+}
+.archive #content article .committee-comment-date, .blog #content article .committee-comment-date, .single.single-rotary-committees #content .committee-comment-date, .single.single-rotary_projects #content .committee-comment-date {
   border-bottom: 1px solid #8f8f8f;
   border-top: 1px solid #8f8f8f;
   color: gray;
@@ -1592,42 +1689,42 @@ td {
   position: relative;
   width: 90px;
 }
-.archive #content article .committee-comment-date .day, .blog #content article .committee-comment-date .day, .single.single-rotary-committees #content .committee-comment-date .day {
+.archive #content article .committee-comment-date .day, .blog #content article .committee-comment-date .day, .single.single-rotary-committees #content .committee-comment-date .day, .single.single-rotary_projects #content .committee-comment-date .day {
   color: #8f8f8f;
   font-family: "BebasNeueRegular", Arial, sans-serif;
   font-size: 40px;
 }
-.archive #content article .committee-comment-date .month, .blog #content article .committee-comment-date .month, .single.single-rotary-committees #content .committee-comment-date .month {
+.archive #content article .committee-comment-date .month, .blog #content article .committee-comment-date .month, .single.single-rotary-committees #content .committee-comment-date .month, .single.single-rotary_projects #content .committee-comment-date .month {
   color: #187084;
   font-size: 14px;
   position: absolute;
   text-transform: uppercase;
 }
-.archive #content article .morecomments, .archive #content article .lesscomments, .blog #content article .morecomments, .blog #content article .lesscomments, .single.single-rotary-committees #content .morecomments, .single.single-rotary-committees #content .lesscomments {
+.archive #content article .morecomments, .archive #content article .lesscomments, .blog #content article .morecomments, .blog #content article .lesscomments, .single.single-rotary-committees #content .morecomments, .single.single-rotary-committees #content .lesscomments, .single.single-rotary_projects #content .morecomments, .single.single-rotary_projects #content .lesscomments {
   clear: left;
   margin-left: 115px;
 }
-.archive #content article .morecomments::after, .blog #content article .morecomments::after, .single.single-rotary-committees #content .morecomments::after {
+.archive #content article .morecomments::after, .blog #content article .morecomments::after, .single.single-rotary-committees #content .morecomments::after, .single.single-rotary_projects #content .morecomments::after {
   content: '\25BC';
 }
-.archive #content article .lesscomments::after, .blog #content article .lesscomments::after, .single.single-rotary-committees #content .lesscomments::after {
+.archive #content article .lesscomments::after, .blog #content article .lesscomments::after, .single.single-rotary-committees #content .lesscomments::after, .single.single-rotary_projects #content .lesscomments::after {
   content: '\25B2';
 }
-.archive #content article .committeecomment, .blog #content article .committeecomment, .single.single-rotary-committees #content .committeecomment {
+.archive #content article .committeecomment, .blog #content article .committeecomment, .single.single-rotary-committees #content .committeecomment, .single.single-rotary_projects #content .committeecomment {
   margin-bottom: 15px;
   width: 90%;
 }
-.archive #content article .committeecomment p, .blog #content article .committeecomment p, .single.single-rotary-committees #content .committeecomment p {
+.archive #content article .committeecomment p, .blog #content article .committeecomment p, .single.single-rotary-committees #content .committeecomment p, .single.single-rotary_projects #content .committeecomment p {
   margin-left: 115px;
 }
-.archive #content article .committeecontent, .blog #content article .committeecontent, .single.single-rotary-committees #content .committeecontent {
+.archive #content article .committeecontent, .blog #content article .committeecontent, .single.single-rotary-committees #content .committeecontent, .single.single-rotary_projects #content .committeecontent {
   clear: left;
   margin-left: 20px;
   margin-right: 20px;
   min-height: 50px;
   position: relative;
 }
-.archive #content article .committeecontent .post-edit-link, .blog #content article .committeecontent .post-edit-link, .single.single-rotary-committees #content .committeecontent .post-edit-link {
+.archive #content article .committeecontent .post-edit-link, .blog #content article .committeecontent .post-edit-link, .single.single-rotary-committees #content .committeecontent .post-edit-link, .single.single-rotary_projects #content .committeecontent .post-edit-link {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAzNDY3OSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzBmNzE4NSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #034679), color-stop(100%, #0f7185));
@@ -1658,20 +1755,20 @@ td {
   right: 0;
   width: 60px;
 }
-.archive #content article h2, .blog #content article h2, .single.single-rotary-committees #content h2 {
+.archive #content article h2, .blog #content article h2, .single.single-rotary-committees #content h2, .single.single-rotary_projects #content h2 {
   border-bottom: 1px solid #B5B5B5;
   border-top: 1px solid #B5B5B5;
   clear: left;
   padding: 22px 0 20px 0;
 }
-.archive #content article .committeeblogtop, .blog #content article .committeeblogtop, .single.single-rotary-committees #content .committeeblogtop {
+.archive #content article .committeeblogtop, .blog #content article .committeeblogtop, .single.single-rotary-committees #content .committeeblogtop, .single.single-rotary_projects #content .committeeblogtop {
   border-top: 1px solid #eda200;
   clear: both;
   height: 40px;
   position: relative;
   top: 30px;
 }
-.archive #content article .committeeribbon, .blog #content article .committeeribbon, .single.single-rotary-committees #content .committeeribbon {
+.archive #content article .committeeribbon, .blog #content article .committeeribbon, .single.single-rotary-committees #content .committeeribbon, .single.single-rotary_projects #content .committeeribbon {
   background: white url(../images/committee-blog-roll-banner.png) no-repeat;
   height: 47px;
   margin: 0 auto;
@@ -1679,22 +1776,22 @@ td {
   top: -37px;
   width: 220px;
 }
-.archive #content article .committeeribbon h3, .blog #content article .committeeribbon h3, .single.single-rotary-committees #content .committeeribbon h3 {
+.archive #content article .committeeribbon h3, .blog #content article .committeeribbon h3, .single.single-rotary-committees #content .committeeribbon h3, .single.single-rotary_projects #content .committeeribbon h3 {
   font-family: Sommet;
   left: 5px;
   position: absolute;
   top: 5px;
 }
-.archive #content article .committeeribbon h3 a, .blog #content article .committeeribbon h3 a, .single.single-rotary-committees #content .committeeribbon h3 a {
+.archive #content article .committeeribbon h3 a, .blog #content article .committeeribbon h3 a, .single.single-rotary-committees #content .committeeribbon h3 a, .single.single-rotary_projects #content .committeeribbon h3 a {
   text-shadow: rgba(0, 0, 0, 0.27) 1px 1px 2px;
   margin-left: 25px;
   text-transform: uppercase;
 }
-.archive #content article header, .blog #content article header, .single.single-rotary-committees #content header {
+.archive #content article header, .blog #content article header, .single.single-rotary-committees #content header, .single.single-rotary_projects #content header {
   border-bottom: 1px solid #EFEFEF;
   margin-bottom: 30px;
 }
-.archive #content article header .postdate, .blog #content article header .postdate, .single.single-rotary-committees #content header .postdate {
+.archive #content article header .postdate, .blog #content article header .postdate, .single.single-rotary-committees #content header .postdate, .single.single-rotary_projects #content header .postdate {
   overflow: hidden;
   *zoom: 1;
   font-family: Arial, Helvetica, sans-serif;
@@ -1704,33 +1801,33 @@ td {
   font-size: inherit;
   width: 100%;
 }
-.archive #content article header br, .blog #content article header br, .single.single-rotary-committees #content header br {
+.archive #content article header br, .blog #content article header br, .single.single-rotary-committees #content header br, .single.single-rotary_projects #content header br {
   display: none;
 }
-.archive #content article header h2, .blog #content article header h2, .single.single-rotary-committees #content header h2 {
+.archive #content article header h2, .blog #content article header h2, .single.single-rotary-committees #content header h2, .single.single-rotary_projects #content header h2 {
   border-top: 0;
   font-size: 20px;
   height: 50px;
   padding-top: 5px;
 }
-.archive #content article header h2 a, .blog #content article header h2 a, .single.single-rotary-committees #content header h2 a {
+.archive #content article header h2 a, .blog #content article header h2 a, .single.single-rotary-committees #content header h2 a, .single.single-rotary_projects #content header h2 a {
   color: #606060;
   font-family: "BebasNeueRegular", Arial, sans-serif;
   font-weight: normal;
 }
-.archive #content article .continuereading, .blog #content article .continuereading, .single.single-rotary-committees #content .continuereading {
+.archive #content article .continuereading, .blog #content article .continuereading, .single.single-rotary-committees #content .continuereading, .single.single-rotary_projects #content .continuereading {
   padding-top: 15px;
 }
-.archive #content article .excerptcontainer, .blog #content article .excerptcontainer, .single.single-rotary-committees #content .excerptcontainer {
+.archive #content article .excerptcontainer, .blog #content article .excerptcontainer, .single.single-rotary-committees #content .excerptcontainer, .single.single-rotary_projects #content .excerptcontainer {
   margin-left: 142px;
 }
-.archive #content article .SectionContainer, .blog #content article .SectionContainer, .single.single-rotary-committees #content .SectionContainer {
+.archive #content article .SectionContainer, .blog #content article .SectionContainer, .single.single-rotary-committees #content .SectionContainer, .single.single-rotary_projects #content .SectionContainer {
   border-bottom: 1px solid #606060;
   color: #0f7289;
   height: 30px;
   margin-bottom: 15px;
 }
-.archive #content article .sectioncontainer, .blog #content article .sectioncontainer, .single.single-rotary-committees #content .sectioncontainer {
+.archive #content article .sectioncontainer, .blog #content article .sectioncontainer, .single.single-rotary-committees #content .sectioncontainer, .single.single-rotary_projects #content .sectioncontainer {
   -webkit-box-shadow: #efefef 3px 3px 5px 0;
   -moz-box-shadow: #efefef 3px 3px 5px 0;
   box-shadow: #efefef 3px 3px 5px 0;
@@ -1739,17 +1836,17 @@ td {
   margin-left: 10px;
   width: 381px;
 }
-.archive #content article .sectionheader, .blog #content article .sectionheader, .single.single-rotary-committees #content .sectionheader {
+.archive #content article .sectionheader, .blog #content article .sectionheader, .single.single-rotary-committees #content .sectionheader, .single.single-rotary_projects #content .sectionheader {
   background: white url(../images/archive-section-header.png) no-repeat;
   border-bottom: 1px solid #efefef;
   border-right: 1px solid #efefef;
   padding: 0 20px 20px 0;
 }
-.archive #content article .sectionheader h2, .blog #content article .sectionheader h2, .single.single-rotary-committees #content .sectionheader h2 {
+.archive #content article .sectionheader h2, .blog #content article .sectionheader h2, .single.single-rotary-committees #content .sectionheader h2, .single.single-rotary_projects #content .sectionheader h2 {
   color: #FFF;
   margin-top: 0;
 }
-.archive #content article .sectioncontent, .blog #content article .sectioncontent, .single.single-rotary-committees #content .sectioncontent {
+.archive #content article .sectioncontent, .blog #content article .sectioncontent, .single.single-rotary-committees #content .sectioncontent, .single.single-rotary_projects #content .sectioncontent {
   overflow: hidden;
   *zoom: 1;
   border-left: 1px solid #efefef;
@@ -1759,7 +1856,7 @@ td {
   position: relative;
   top: 20px;
 }
-.archive #content article .meta, .blog #content article .meta, .single.single-rotary-committees #content .meta {
+.archive #content article .meta, .blog #content article .meta, .single.single-rotary-committees #content .meta, .single.single-rotary_projects #content .meta {
   border-top: 1px solid #808080;
   clear: left;
   color: #808080;
@@ -1769,19 +1866,40 @@ td {
   overflow: hidden;
   padding-top: 15px;
 }
-.archive #content article .meta a, .blog #content article .meta a, .single.single-rotary-committees #content .meta a {
+.archive #content article .meta a, .blog #content article .meta a, .single.single-rotary-committees #content .meta a, .single.single-rotary_projects #content .meta a {
   color: #808080;
 }
-.archive #content article .meta .commentspopup, .blog #content article .meta .commentspopup, .single.single-rotary-committees #content .meta .commentspopup {
+.archive #content article .meta .commentspopup, .blog #content article .meta .commentspopup, .single.single-rotary-committees #content .meta .commentspopup, .single.single-rotary_projects #content .meta .commentspopup {
   background-position: 0 -322px;
   padding-left: 15px;
 }
-.archive #content article .meta p, .blog #content article .meta p, .single.single-rotary-committees #content .meta p {
+.archive #content article .meta p, .blog #content article .meta p, .single.single-rotary-committees #content .meta p, .single.single-rotary_projects #content .meta p {
   margin-bottom: 0;
 }
-.archive #content article .meta .post-edit-link, .blog #content article .meta .post-edit-link, .single.single-rotary-committees #content .meta .post-edit-link {
+.archive #content article .meta .post-edit-link, .blog #content article .meta .post-edit-link, .single.single-rotary-committees #content .meta .post-edit-link, .single.single-rotary_projects #content .meta .post-edit-link {
   display: inline;
   padding-top: 0;
+}
+
+.no-cssgradients .connectedprojects {
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#d9dee1', endColorstr='#ffffff');
+  /* IE6 & IE7 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#d9dee1', endColorstr='#ffffff')";
+  /* IE8 */
+}
+
+.no-cssgradients .projectheader {
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#a0957f', endColorstr='#544636');
+  /* IE6 & IE7 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#a0957f', endColorstr='#544636')";
+  /* IE8 */
+}
+
+.single.single-rotary_projects #content h2 {
+  border: 0;
+}
+.single.single-rotary_projects #content h2 a {
+  font-weight: normal;
 }
 
 /*comments*/
@@ -1789,7 +1907,7 @@ label[for="comment"] {
   display: none;
 }
 
-.committee #respond {
+.committee #respond, .projects #respond {
   display: none;
 }
 
@@ -2509,7 +2627,7 @@ aside .widget_sp_image img {
   display: none;
 }
 
-#committee-sidebar {
+#committee-sidebar, #projects-sidebar {
   margin-right: 22px;
   margin-top: 69px;
   border-bottom: 1px solid #b5b5b5;
@@ -2519,54 +2637,103 @@ aside .widget_sp_image img {
   line-height: 22px;
   width: 204px;
 }
-#committee-sidebar > ul {
+#committee-sidebar > ul, #projects-sidebar > ul {
   -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0 0 7px inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.25) 0 0 7px inset;
   box-shadow: rgba(0, 0, 0, 0.25) 0 0 7px inset;
-  padding: 20px 5px 0 15px;
+  padding: 20px 10px 0 10px;
 }
-#committee-sidebar ul ul {
+#committee-sidebar ul ul, #projects-sidebar ul ul {
   color: #a2a2a2;
   padding-bottom: 25px;
 }
-#committee-sidebar h3 {
+#committee-sidebar h3, #projects-sidebar h3 {
   margin-top: 0;
   padding-top: 5px;
 }
-#committee-sidebar a[href^="mailto"] {
+#committee-sidebar a[href^="mailto"], #projects-sidebar a[href^="mailto"] {
   color: #a2a2a2;
   font-weight: normal;
 }
-#committee-sidebar .avatarcontainer {
+#committee-sidebar .avatarcontainer, #projects-sidebar .avatarcontainer {
   border-bottom: 2px solid #B5B5B5;
   margin-bottom: 15px;
   padding: 15px 0px 15px 0;
 }
-#committee-sidebar .avatarcontainer img {
+#committee-sidebar .avatarcontainer img, #projects-sidebar .avatarcontainer img {
   height: auto;
   width: 180px;
 }
-#committee-sidebar .committeemembers {
+#committee-sidebar .committeemembers, #projects-sidebar .committeemembers {
   border-top: 2px solid #B5B5B5;
   padding-top: 20px;
 }
-#committee-sidebar .committeemembers h3 {
+#committee-sidebar .committeemembers h3, #projects-sidebar .committeemembers h3 {
   font-family: "BebasNeueRegular", Arial, sans-serif;
   color: #177083;
   font-size: 20px;
   padding-bottom: 10px;
   text-transform: uppercase;
 }
-#committee-sidebar .committeemembers li {
+#committee-sidebar .committeemembers li, #projects-sidebar .committeemembers li {
   border-top: 1px solid #b5b5b5;
   color: #0F7285;
   padding: 10px 0 10px 0;
 }
-#committee-sidebar .committeemembers li:last-child {
+#committee-sidebar .committeemembers li:last-child, #projects-sidebar .committeemembers li:last-child {
   border-bottom: 1px solid #B5B5B5;
 }
-#committee-sidebar .committeemembers li .avatar {
+#committee-sidebar .committeemembers li .avatar, #projects-sidebar .committeemembers li .avatar {
   vertical-align: middle;
+}
+#committee-sidebar .project-date, #projects-sidebar .project-date {
+  border-bottom: 1px solid #B5B5B5;
+  padding-bottom: 10px;
+  text-align: center;
+}
+#committee-sidebar .project-date .dayweek, #projects-sidebar .project-date .dayweek {
+  font-family: "BebasNeueRegular", Arial, sans-serif;
+  font-size: 27px;
+}
+#committee-sidebar .project-date .day, #committee-sidebar .project-date .month, #committee-sidebar .project-date .year, #projects-sidebar .project-date .day, #projects-sidebar .project-date .month, #projects-sidebar .project-date .year {
+  font-family: Sommet;
+  font-size: 18px;
+}
+#committee-sidebar .acf-map, #projects-sidebar .acf-map {
+  width: 100%;
+  height: 220px;
+  margin: 20px 0;
+}
+#committee-sidebar .location, #projects-sidebar .location {
+  text-align: center;
+}
+#committee-sidebar .location .meetingsite, #projects-sidebar .location .meetingsite {
+  color: #0f7284;
+  font-family: SommetHeavy, sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+#committee-sidebar .instructions, #projects-sidebar .instructions {
+  font-size: 11px;
+}
+#committee-sidebar .speakerthumbs img, #projects-sidebar .speakerthumbs img {
+  height: 85px;
+  margin: 0 5px 5px 0;
+  width: 85px;
+}
+
+.single-rotary_projects #projects-sidebar {
+  margin: 85px 12px 30px 10px;
+}
+.single-rotary_projects #projects-sidebar h3 {
+  color: #177086;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.single-rotary_projects #projects-sidebar .tagcloud a, .single-rotary_projects #projects-sidebar .cat-item a {
+  color: #a5a5a5;
+  font-weight: normal;
+  line-height: 18px;
 }
 
 #committeewidget {
@@ -2593,12 +2760,17 @@ aside .widget_sp_image img {
   width: 98%;
 }
 
-.page #content .rotarymembershipheader {
+.single-rotary_projects .rotarymembershipcontainer {
+  clear: left;
+}
+
+.page #content .rotarymembershipheader, .single-rotary_projects #content .rotarymembershipheader {
   background: url(../images/member-table-section-header.png) no-repeat;
   padding: 0 20px 20px 0;
 }
-.page #content .rotarymembershipheader > h2 {
+.page #content .rotarymembershipheader > h2, .single-rotary_projects #content .rotarymembershipheader > h2 {
   border-bottom: none;
+  border-top: none;
   color: #FFF;
   font-family: "BebasNeueRegular", Arial, sans-serif;
   font-size: 20px;
@@ -2610,7 +2782,16 @@ aside .widget_sp_image img {
   text-transform: uppercase;
 }
 
-#rotarymembers_wrapper, .rotaryselections {
+.single-rotary_projects #content .rotarymembershipheader h2 {
+  background: url(../images/participant-bg.jpg) 12px 12px no-repeat;
+  text-indent: 65px;
+}
+
+.single-rotary_projects #rotaryprojects_filter {
+  display: none;
+}
+
+#rotarymembers_wrapper {
   margin-left: 20px;
 }
 
@@ -2622,18 +2803,28 @@ aside .widget_sp_image img {
   float: right;
 }
 
+.rotaryselections .usercontainer {
+  float: right;
+  position: relative;
+  top: -50px;
+}
+
+.rotaryselections .usercontainer select {
+  height: 30px;
+}
+
 .rotaryselections #committeelabel {
   margin-right: 5px;
 }
 
-.rotarymembershipheader #rotarymembers tr td {
+.rotarymembershipheader #rotarymembers tr td, .rotarymembershipheader #rotaryprojects tr td {
   border-bottom: 1px solid #b3b5b7;
   border-right: 1px dotted #b3b5b7;
   padding-bottom: 15px;
   padding-top: 15px;
 }
 
-.rotarymembershipheader #rotarymembers tr th {
+.rotarymembershipheader #rotarymembers tr th, .rotarymembershipheader #rotaryprojects tr th {
   border-top: 2px solid #f2e6cc;
   border-right: 1px dotted #b3b5b7;
   color: #b3b5b7;
@@ -2645,15 +2836,15 @@ aside .widget_sp_image img {
   text-transform: uppercase;
 }
 
-.rotarymembershipheader #rotarymembers tr .email {
+.rotarymembershipheader #rotarymembers tr .email, .rotarymembershipheader #rotaryprojects tr .email {
   border-right: none;
 }
 
-#rotarymembers .odd td {
+#rotarymembers .odd td, #rotaryprojects .odd td {
   background: #f9f4e9;
 }
 
-#rotarymembers .email a {
+#rotarymembers .email a, #rotaryprojects .email a {
   color: #b3b5b7;
   text-transform: uppercase;
 }
