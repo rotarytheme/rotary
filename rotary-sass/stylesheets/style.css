@@ -1587,6 +1587,50 @@ td {
 }
 
 /*blog archives, tags, categories, etc.*/
+.new-project-link {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAzNDY3OSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzBmNzE4NSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #034679), color-stop(100%, #0f7185));
+  background-image: -webkit-linear-gradient(#034679, #0f7185);
+  background-image: -moz-linear-gradient(#034679, #0f7185);
+  background-image: -o-linear-gradient(#034679, #0f7185);
+  background-image: linear-gradient(#034679, #0f7185);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #e0e0e1;
+  color: white;
+  display: block;
+  font-family: "BebasNeueRegular", Arial, sans-serif;
+  font-weight: normal;
+  height: 40px;
+  line-height: normal;
+  padding: 2px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  float: right;
+  margin-right: 40px;
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 40px;
+  right: 0;
+  top: 0;
+  width: 120px;
+}
+.new-project-link:active, .new-project-link:hover {
+  color: #FFF;
+}
+
+.no-cssgradients .new-project-link {
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#034679', endColorstr='#0f7185');
+  /* IE6 & IE7 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#034679', endColorstr='#0f7185')";
+  /* IE8 */
+}
+
 .archive #content article #respond, .archive #content article .sectioncontent > .comment, .archive #content article #comments-title, .blog #content article #respond, .blog #content article .sectioncontent > .comment, .blog #content article #comments-title, .single.single-rotary-committees #content #respond, .single.single-rotary-committees #content .sectioncontent > .comment, .single.single-rotary-committees #content #comments-title, .single.single-rotary_projects #content #respond, .single.single-rotary_projects #content .sectioncontent > .comment, .single.single-rotary_projects #content #comments-title {
   margin-left: 0;
   width: 100%;
@@ -1644,37 +1688,6 @@ td {
 }
 .archive #content article .connectedprojects .committee-comment-date, .blog #content article .connectedprojects .committee-comment-date, .single.single-rotary-committees #content .connectedprojects .committee-comment-date, .single.single-rotary_projects #content .connectedprojects .committee-comment-date {
   margin: 5px 15px 0 0;
-}
-.archive #content article .connectedprojects .new-project-link, .blog #content article .connectedprojects .new-project-link, .single.single-rotary-committees #content .connectedprojects .new-project-link, .single.single-rotary_projects #content .connectedprojects .new-project-link {
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAzNDY3OSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzBmNzE4NSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
-  background-size: 100%;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #034679), color-stop(100%, #0f7185));
-  background-image: -webkit-linear-gradient(#034679, #0f7185);
-  background-image: -moz-linear-gradient(#034679, #0f7185);
-  background-image: -o-linear-gradient(#034679, #0f7185);
-  background-image: linear-gradient(#034679, #0f7185);
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
-  border: 1px solid #e0e0e1;
-  color: white;
-  display: block;
-  font-family: "BebasNeueRegular", Arial, sans-serif;
-  font-weight: normal;
-  height: 40px;
-  line-height: normal;
-  padding: 2px;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 15px;
-  line-height: 40px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 120px;
 }
 .archive #content article .committee-comment-date, .blog #content article .committee-comment-date, .single.single-rotary-committees #content .committee-comment-date, .single.single-rotary_projects #content .committee-comment-date {
   border-bottom: 1px solid #8f8f8f;
@@ -1895,10 +1908,11 @@ td {
   /* IE8 */
 }
 
-.single.single-rotary_projects #content h2 {
+.single.single-rotary_projects #content .blogtitle {
   border: 0;
+  margin-left: 20px;
 }
-.single.single-rotary_projects #content h2 a {
+.single.single-rotary_projects #content .blogtitle a {
   font-weight: normal;
 }
 

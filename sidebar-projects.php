@@ -34,10 +34,10 @@
  
 					if( !empty($location) ) { ?>
 						<div class="location">
-							<p class="meetingsite">Meeting Site Address</p>
+							<p class="meetingsite">Address</p>
 							<?php $address = preg_replace('/,/', '<br />', $location["address"], 1);  ?>
 							<?php echo $address; ?>
-							<p class="instructions"><a href="http://maps.google.com/maps?daddr=<?php echo $location['address'] ?>" target="_blank">Meeting Directions</a></p>
+							<p class="instructions"><a href="http://maps.google.com/maps?daddr=<?php echo $location['address'] ?>" target="_blank">Larger Map</a></p>
 						</div>
 						<div class="acf-map">
 							<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>" data-address="<?php echo $location['address']; ?>">

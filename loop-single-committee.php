@@ -53,10 +53,8 @@
 				<div class="connectedprojectscontainer clearfix">
 					<p class="projectheader">Latest Events/Projects</p>
 					<b></b>
-					<?php if(current_user_can('edit_page')) { ?>
-						<a href="<?php echo admin_url();?>post-new.php?post_type=rotary_projects&committee=<?php echo $committeeID; ?>" class="new-project-link">New Project</a>
-					<?php } ?>	
-					<h2><?php the_title(); ?></h2>
+					
+					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 					<div class="alignleft">
 					<?php if ( get_field( 'rotary_project_date' ) ) : ?>
 						<?php $date = DateTime::createFromFormat('Ymd', get_field( 'rotary_project_date' ) ); ?>

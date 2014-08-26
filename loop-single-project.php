@@ -25,7 +25,7 @@
 	) ); ?>
 
 			<?php if ( $connected->have_posts() ) : ?>
-					<h2>
+					<h2 class="blogtitle">
 						<a href=" <?php echo get_post_type_archive_link( 'rotary_projects' ); ?>?projectid=<?php the_id(); ?>">Project News</a>
 					</h2>
 				<?php  while ( $connected->have_posts() ) : $connected->the_post();?>

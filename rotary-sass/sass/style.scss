@@ -1313,7 +1313,25 @@ td {
 }
 
 /*blog archives, tags, categories, etc.*/
-
+.new-project-link {
+	@include button($color:#FFF, $height:40px, $background:linear-gradient(#034679, #0f7185));
+	float:right;
+	margin-right:40px;
+	margin-top:10px;
+	font-size:15px;
+	line-height:40px;
+	right:0;
+	top:0;
+	width:120px;
+	&:active, &:hover {
+		color:#FFF;
+	}
+}
+	
+.no-cssgradients .new-project-link{
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#034679', endColorstr='#0f7185'); /* IE6 & IE7 */
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#034679', endColorstr='#0f7185')"; /* IE8 */  
+}
 .archive #content article, .blog #content article, .single.single-rotary-committees #content, .single.single-rotary_projects #content{
 	#respond, .sectioncontent > .comment, #comments-title {
 		margin-left:0;
@@ -1370,15 +1388,7 @@ td {
 		.committee-comment-date {
 			margin:5px 15px 0 0;
 		}
-		.new-project-link {
-				@include button($color:#FFF, $height:40px, $background:linear-gradient(#034679, #0f7185));
-				font-size:15px;
-				line-height:40px;
-				position:absolute;
-				top:0;
-				right:0;
-				width:120px;
-		}
+		
 	}
 	.committee-comment-date {
 		border-bottom: 1px solid #8f8f8f;
@@ -1577,8 +1587,9 @@ td {
 -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#a0957f', endColorstr='#544636')"; /* IE8 */  
 }
 
-.single.single-rotary_projects #content h2 {
+.single.single-rotary_projects #content .blogtitle {
 	border:0;
+	margin-left:20px;
 	a {
 		font-weight:normal;
 	}
