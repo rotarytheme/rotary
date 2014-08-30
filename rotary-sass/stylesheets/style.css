@@ -3117,6 +3117,7 @@ aside .widget_sp_image img {
 }
 .speakertabs.ui-tabs .ui-tabs-nav li a {
   display: block;
+  float: none;
   height: 100%;
   margin: 10px auto 0;
   outline: medium none;
