@@ -10,7 +10,7 @@
 ?>
 
 	<aside id="committee-sidebar" role="complementary">
-		<ul>
+		<ul class="projectcontainer">
 			<li>
 				<?php if(has_post_thumbnail()) { ?>
 					<ul class="avatarcontainer">

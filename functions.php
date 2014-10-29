@@ -17,6 +17,10 @@ require_once ($includes_path . 'theme-options.php'); 		// Options panel settings
 
 require_once ($includes_path . 'theme-functions.php'); 		// Custom theme functions
 
+
+require_once ($includes_path . 'committee-project-functions.php'); 		// Custom functions for committees and projects
+
+
 require_once ($includes_path . 'theme-js.php');				// Load javascript in wp_head
 
 require_once ($includes_path . 'sidebar-init.php');			// Initialize widgetized areas

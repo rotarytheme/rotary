@@ -8,10 +8,27 @@
  */
 ?>
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-	<div class="committeecontent clearleft">
-			<?php the_content(); ?>
-			<?php edit_post_link( __( 'Edit', 'Rotary' ), '', '' ); ?>
+    <?php $hascontent = ''; ?>
+    <?php $committeeTitle = get_the_title(); ?>
+    <?php if ( '' != trim( get_the_content() ) ) : ?>
+    	<?php $hascontent = ' hascontent'; ?>
+    <?php endif; ?>	
+	<div class="committeecontent project">
+		<div class="committeeheadercontainer<?php echo $hascontent; ?>">
+			<h3 class="committeeheader">Description</h3>
+			<?php if ( !$hascontent ) : ?>
+				<?php if ( is_user_logged_in()) : ?>
+						<p class="addcontent">No Description at the moment, add one!</p>
+					<?php else : ?>
+						<p class="addcontent">No Description at the moment, <?php wp_loginout( $_SERVER['REQUEST_URI'], true ); ?>!</p>
+					<?php endif; ?>
+			<?php endif; ?>
+			<?php edit_post_link( __( 'Edit <span>></span>', 'Rotary' ), '', '' ); ?>
 		</div>
+		<div class="committee">
+			<?php the_content(); ?>
+		</div>
+	</div>
 
 			<?php
 	//secondary loop
@@ -23,23 +40,16 @@
 		'posts_per_page' => 2, 
 		'nopaging'        => false,
 	) ); ?>
-
-			<?php if ( $connected->have_posts() ) : ?>
-					<h2 class="blogtitle">
-						<a href=" <?php echo get_post_type_archive_link( 'rotary_projects' ); ?>?projectid=<?php the_id(); ?>">Project News</a>
-					</h2>
-				<?php  while ( $connected->have_posts() ) : $connected->the_post();?>
-					<?php $postCount = rotary_output_blogroll($postCount, $clearLeft); ?>
-				<?php endwhile;?>
-			<?php endif;?>
-			<?php // Reset Post Data
+	<?php $hascontent = ''; ?>
+	<?php $link1 =  admin_url() . 'post-new.php?projectid=' . get_the_id(); ?>
+	<?php $link2 = get_post_type_archive_link( 'rotary_projects' ).'?projectid='.get_the_id();  ?>
+	<?php if ( $connected->have_posts() ) : ?>
+		<?php $hascontent = ' hascontent'; ?>
+		<?php rotary_show_committee_header_container($hascontent, 'Update', $link1, $link2, ' project'); ?>
+			<?php  while ( $connected->have_posts() ) : $connected->the_post();?>
+				<?php $postCount = rotary_output_blogroll($postCount, $clearLeft); ?>
+			<?php endwhile;?>
+	<?php endif;?>
+	<?php // Reset Post Data
 wp_reset_postdata();?>
-
-
-
-
-
-		
-
-
 <?php endwhile; // end of the loop. ?>

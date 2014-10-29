@@ -17,7 +17,13 @@ get_header(); ?>
 			<?php if (is_post_type_archive( 'rotary_speakers' )) : ?>
 				<h1 class="pagetitle"><span>Speaker Program</span></h1>	
 			<?php elseif (is_post_type_archive( 'rotary_projects' )) : ?>
-				<h1 class="pagetitle"><span>Projects</span></h1>	
+				<?php   if ( isset( $_REQUEST['projectid'] ) ) : ?>	
+					<h1 class="pagetitle"><span><?php echo get_the_title($_REQUEST['projectid']); ?></span></h1>
+				<?php else : ?>	
+					<h1 class="pagetitle"><span>Projects</span></h1>
+				<?php endif; ?>
+			<?php elseif (is_post_type_archive( 'rotary-committees' )) : ?>	
+				<h1 class="pagetitle"><span>Committee News</span></h1>
 			<?php else : ?>
 				<h1 class="pagetitle"><span><?php echo rotary_get_blog_title();?></span></h1>
 			<?php endif; ?>
@@ -37,15 +43,18 @@ get_header(); ?>
 		<?php else : ?>
 				<?php printf( __( 'Yearly Archives: %s', 'Rotary' ), '<span>'.get_the_date('Y').'</span>' ); ?>
 		<?php endif; ?>			
-<?php else : ?>
+<?php elseif ( is_post_type_archive( 'post' )) : ?>
 				<?php _e( 'Blog Archives', 'Rotary' ); ?>
 <?php endif; ?>
 </h2>
 <?php
 	rewind_posts(); ?>
 <div id="content" role="main">
-<?php	get_template_part( 'loop', 'archive' );
-?>
+	<?php if (is_post_type_archive( 'rotary-committees' )) : ?>	
+		<?php get_template_part( 'loop', 'archive-committees' ); ?>
+	<?php else : ?>
+		<?php get_template_part( 'loop', 'archive' ); ?>
+	<?php endif; ?>	
 </div>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

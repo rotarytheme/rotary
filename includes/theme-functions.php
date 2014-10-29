@@ -282,86 +282,6 @@ function rotary_truncate_text($text, $length = 100, $ending = '...', $exact = fa
 	return $truncate;
 }
 
-/*gets the current announcements*/
-function rotary_get_committee_announcements($atts){
-	$args = array(
-		'posts_per_page' => -1,
-		'post_type' => 'rotary-committees',
-		'order' => 'ASC'
-	);
-	$committeeArray = array();
-	$commentDisplayed = 0;
-	ob_start();
-	$query = new WP_Query( $args );
-	if ( $query->have_posts() ) : ?>
-	<div class="comment">
-		 <div class="commentcommittetext">
-		 <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
-				<?php  $committeeArray[get_the_title()] = get_permalink() . '?open=open'; ?>
-		<?php
-		$args = array(
-			'order' => 'DESC',
-			'orderby' => 'title',
-			'post_type' => 'rotary-committees',
-			'status' => 'approve',
-			'type' => 'comment',
-			'post_id' => get_the_id(),
-			'number' => 1
-		);
-		$comments = get_comments( $args ); ?>
-		<?php if ( is_array($comments )) : ?>
-                <?php $count = count($comments); ?>
-                <?php if ( $count > 0 ) : ?>      
-					<?php foreach($comments as $comment) : ?>
-						<?php $date = new DateTime($comment->comment_date); ?>
-						<?php $today = new DateTime(); ?>
-						<?php $interval = $today->diff($date); ?>
-						<?php //only show comments less than 10 days old ?>
-						<?php if( abs($interval->days) < 10) : ?>	
-							<?php $commentDisplayed++; ?>	
-							<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-							<div class="committee-comment-date">
-								<span class="day"><?php echo $date->format( 'd') ; ?></span>
-								<span class="month"><?php  echo $date->format( 'F' ); ?></span>
-								<span class="year"><?php echo $date->format( 'Y' ); ?></span>
-							</div>									
-							<div class="clearleft committeecomment">
-								<p class="committeecommentdetail"><?php echo $comment->comment_content; ?></p>						
-						</div>
-						<hr />
-						<?php endif; //end check for comment age over 10 days ?>
-					<?php  endforeach; //end comment loop ?>
-				<?php  endif; //end check for comment count ?>
-			<?php  endif; //end is_array check?>
-		<?php endwhile; //end wp_query loop ?>
-		<?php if ( 0 == $commentDisplayed ) :?>
-			<p>There are no current committee announcements.</p>
-		<?php  endif; ?>
-			<?php if (!is_user_logged_in()) { ?>
-			<p>Please <?php echo wp_loginout( site_url(), false ); ?> to add a new announcment</p>
-			<?php }
-	else { ?>
-				<select id="committeeselect" name="committeeselect">
-					<option value="">-- Select a committee to add a new announcement --</option>
-					<?php
-		foreach($committeeArray as $key => $value):
-			echo '<option value="'.$value.'">'.$key.'</option>';
-		endforeach;
-?>
-					</select>
-			<?php } ?>
-
-			</div>
-		</div>
-
-	<?php endif; ?>
-
-	<?php // Reset Post Data
-	wp_reset_postdata();
-	return ob_get_clean();
-
-}
-
 /*gets the featured post*/
 
 function rotary_get_featured_post($atts){
@@ -582,47 +502,6 @@ if ( ! function_exists( 'rotary_comment' ) ) :
 		endswitch;
 	}
 endif;
-/**
- * Template for committee comments
- *
- * @since rotary 1.0
- */
-function rotary_committee_comment( $postType =  'rotary-committees') { ?>
-	<?php $args = array(
-		'order' => 'DESC',
-		'post_type' =>  $postType,
-		'status' => 'approve',
-		'type' => 'comment',
-		'post_id' => get_the_id(),
-		'number' => 5
-	); ?>
-	<?php $comments = get_comments($args); ?>
-
-	<?php if (is_array($comments)) : ?>
-		<?php foreach($comments as $comment) : ?>
-		<?php $firstComment = false; ?>
-		<?php if ($comment === reset($comments)) : ?>
-			<?php $firstComment = true;  ?>
-		<?php  endif; ?>
-		<div class="clearleft committeecomment <?php if (!$firstComment) {echo ' hide';} ?>" id="comment-<?php echo $comment->comment_post_ID ?>">
-			<div class="committee-comment-date">
-			 	<?php $date = new DateTime($comment->comment_date); ?>
-				<span class="day"><?php echo $date->format('d'); ?></span>
-				<span class="month"><?php  echo $date->format('F'); ?></span>
-				<span class="year"><?php echo $date->format('Y'); ?></span>
-				</div>
-				<p class="committeecommentdetail"><?php echo $comment->comment_content; ?></p>
-				<p><strong>Posted by</strong> <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ))?>"><?php echo $comment->comment_author;?></a></p>
-			</div>
-				<?php if ($firstComment && get_comments_number() > 1 ) : ?>
-				<p><a href="#" class="morecomments" id="morecomments">Show More Announcements</a></p>
-				<?php  endif; ?>
-				<?php if ($comment === end($comments)) : ?>
-					<p><a href="#" class="lesscomments hide" id="lesscomments">Hide Announcements</a></p>
-				<?php  endif; ?>
-			<?php  endforeach; ?>
-		<?php  endif; ?>
-<?php }
 /**
  * Closes comments and pingbacks with </article> instead of </li>.
  *
@@ -1088,33 +967,7 @@ function rotary_archiveposts_where( $where, $query_obj ) {
 	}
 	return $where;
 }
-function rotary_save_post_for_committee( $post_id ) {
-	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
-	if ( isset( $_REQUEST['committeeid'] ) ) {
-			//post to post
-		p2p_type( 'committees_to_posts' )->connect( $_REQUEST['committeeid'], $post_id, array('date' => current_time('mysql')
-			) );
-		
-	}
-}
-function rotary_save_post_for_project ( $post_id ) {
-	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
-	if ( isset( $_REQUEST['projectid'] ) ) {
-			//post to post
-		p2p_type( 'projects_to_posts' )->connect( $_REQUEST['projectid'], $post_id, array('date' => current_time('mysql')
-		) );		
-	}
-	
-}
-function rotary_save_committee_for_project ( $project_id ) {
-	if ( isset( $_REQUEST['committee'] ) && 'rotary_projects' ==  $_REQUEST['post_type'] ) {
-			p2p_type( 'projects_to_committees' )->connect( $project_id, $_REQUEST['committee'], array('date' => current_time('mysql')
-			) );
-	}  
-}
-add_action( 'save_post', 'rotary_save_post_for_committee' );
-add_action( 'save_post', 'rotary_save_post_for_project' );
-add_action( 'save_post', 'rotary_save_committee_for_project' );
+
 //output the standard blog roll 
 //also used for posts connected to committees by post to posts
 function rotary_output_blogroll($postCount, $clearLeft) {

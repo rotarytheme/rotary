@@ -24,29 +24,30 @@
 <?php
 	// You can start editing here -- including this comment!
 ?>
-<article <?php comment_class(); ?>>	
-
 <?php $currentPostType = get_post_type(); ?>
+<?php $hascontent = ''; ?>
+<?php $hasThumbnail = ''; ?>
+<?php if ( 'rotary_projects' == $currentPostType ) :
+	if (has_post_thumbnail()) :
+		$hasThumbnail = 'hasthumbnail';
+	endif;
+endif; ?>	
+
+<article <?php comment_class($hasThumbnail); ?>>	
+
 <?php if ( have_comments() ) : ?>
-	
-	<div class="commentcommittetext">
+	<?php $hascontent = ' hascontent'; ?>
+	<div class="commentcommittetext<?php echo $hascontent; ?>">
 				<?php
 					//wp_list_comments( array( 'style' => 'div', 'callback' => 'rotary_committee_comment', type => 'comment', 'per_page' => 5, 'reverse_top_level'  => true) );
 					rotary_committee_comment( $currentPostType );
 				?>
+		
+
 	</div>
 	<div class="commentbottom">
-	<?php if(current_user_can('edit_page')) { ?>
-	    <?php if ('rotary_projects' == $currentPostType ) { ?>
-		    <a id="newpost" class="newpost" href="<?php echo admin_url(); ?>post-new.php?projectid=<?php the_id(); ?>" target="_blank">Project News</a>
-	    <?php } 
-	     else { ?>
-		    <a id="newpost" class="newpost" href="<?php echo admin_url(); ?>post-new.php?committeeid=<?php the_id(); ?>" target="_blank">Committee News</a>
-	    <?php } ?>
-		
-	<?php } ?>
-	<a id="newcomment" class="newcomment" href="#respond">New Announcement</a>
-
+	
+	
 	</div>
 <?php else : // or, if we don't have comments:
 
@@ -54,20 +55,21 @@
 ?>
 	<p><?php _e( 'Announcements are closed.', 'Rotary' ); ?></p>
 	<?php else : ?>
+	
 	<div class="commentcommittetext">
-	<p><?php _e( 'No announcements.', 'Rotary' ); ?></p>
+		<div class="committeecomment">
+		<h2><?php _e( 'No Announcements at the Moment', 'Rotary' ); ?></h2>
+		<?php if ( is_user_logged_in() ) : ?>
+			<p><?php _e( 'Would you like to add one', 'Rotary' ); ?>?</p>
+			<a id="newcomment" class="newcomment" href="#respond">New Announcement <span>></span></a>
+		<?php else : ?>
+			<p><?php _e( 'Would you like to ', 'Rotary' ); ?> <?php  wp_loginout($_SERVER['REQUEST_URI'], true ); ?>?</p>
+		<?php endif; ?>
+		</div>
 	</div>
 	<div class="commentbottom">
 
-	<?php if(current_user_can('edit_page')) { ?>
-		<?php if ('rotary_projects' == $currentPostType ) { ?>
-		    <a id="newpost" class="newpost" href="<?php echo admin_url(); ?>post-new.php?projectid=<?php the_id(); ?>" target="_blank">Project News</a>
-	    <?php } 
-	     else { ?>
-		    <a id="newpost" class="newpost" href="<?php echo admin_url(); ?>post-new.php?committeeid=<?php the_id(); ?>" target="_blank">Committee News</a>
-	    <?php } ?>
-	<?php } ?>
-		<a id="newcomment" class="newcomment" href="#respond">New Announcement</a>
+			
 	</div>
 	
 <?php endif; // end ! comments_open() ?>

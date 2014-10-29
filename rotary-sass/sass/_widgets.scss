@@ -309,15 +309,17 @@ aside {
 }
 #committee-sidebar, #projects-sidebar {
 	margin-right:22px;
-	margin-top:69px;
-	border-bottom: 1px solid #b5b5b5;
-	border-left: 1px solid #b5b5b5;
-	border-right: 1px solid #b5b5b5;
+	margin-top:69px;	
 	border-top: 6px solid #b5b5b5;
 	line-height:22px;
 	width:204px;
-	> ul {
+	.projectcontainer {
+		background:#f3f3f3;
+		border-bottom: 1px solid #b5b5b5;
+		border-left: 1px solid #b5b5b5;
+		border-right: 1px solid #b5b5b5;
 	    @include box-shadow(rgba(0, 0, 0, 0.25) 0 0 7px inset);
+	    margin-bottom:25px;
 		padding:20px 10px 0 10px;
 	}
 	ul ul {
@@ -325,6 +327,7 @@ aside {
 		padding-bottom:25px
 	}
 	h3 {
+		font-family: $button-font;
 		margin-top:0;
 		padding-top:5px;
 	}
@@ -404,7 +407,14 @@ aside {
 		
 }
 .single-rotary_projects #projects-sidebar {
-	margin: 85px 12px 30px 10px;
+	margin: 50px 12px 30px 10px;
+	position:relative;
+	h2 {
+		color:#177086;
+		font-family:$emphasis-font;
+		font-size:23px;
+		text-transform: uppercase;
+	}
 	h3 {
 		color:#177086;
 		font-size:20px;

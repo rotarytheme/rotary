@@ -14,12 +14,16 @@ function rotary_add_javascript( ) {
 	
 	wp_enqueue_script( 'jquery-ui-tabs' );
 	
-	wp_enqueue_script( 'jquery-ui-datepicker'  );
+	wp_enqueue_script( 'jquery-ui-datepicker' );
+	
+	wp_enqueue_script( 'jquery-masonry' );
 	
 	wp_enqueue_script( 'fancybox', get_bloginfo('template_directory').'/includes/js/jquery.fancybox.pack.js', array( 'jquery' ) );
 	
 	wp_enqueue_script('googlemaps', 'http://maps.googleapis.com/maps/api/js?sensor=false', false, '3');
 	
 	wp_enqueue_script( 'rotary', get_bloginfo('template_directory').'/includes/js/rotary-theme.js', array( 'jquery' ) );
+	
+	wp_localize_script( 'rotary', 'rotaryparticipants', array('ajaxURL' => admin_url('admin-ajax.php'),'rotaryNonce' => wp_create_nonce( 'rotary-participant-nonce' )) );
 	
 }

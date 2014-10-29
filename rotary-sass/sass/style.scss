@@ -24,9 +24,9 @@ Tags: rotary, html5
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
   zoom: 1;
 }
-@mixin button($background:linear-gradient(#FDF8EF, #F9EFD9), $border:$main-menu-color, $color:#959595, $height:auto, $display:block, $line-height:normal) {
+@mixin button($background:linear-gradient(#FDF8EF, #F9EFD9), $border:$main-menu-color, $color:#959595, $height:auto, $display:block, $line-height:normal, $border-radius:5px) {
 	@include background-image($background);
-	@include border-radius(5px);
+	@include border-radius($border-radius);
 	border:1px solid $border;
 	color:$color;
 	display:$display;
@@ -113,12 +113,7 @@ Tags: rotary, html5
 		font-family:$emphasis-font;
 	}
 }
-.pagecommitteetitle {
-	font-family: $body-font-family;
-	font-size:12px;
-	margin-left:30px;
-	text-transform: uppercase;
-}
+
 .headeredit, .speakerdatedit {
 	@include backgrounds-sprite("edit");
 	@include hide-text;
@@ -261,7 +256,7 @@ hr {
 	}
 	&.projects {
 		margin-right:0;
-		margin-top:85px;
+		margin-top:50px;
 	}
 	p, li, dt, dd {
 		line-height:1.4em;
@@ -409,6 +404,10 @@ hr {
 	}
 	
 }
+.no-cssgradients #content .committeeheadercontainer .newpost{
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#034679', endColorstr='#0f7185'); /* IE6 & IE7 */
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#034679', endColorstr='#0f7185')"; /* IE8 */  
+}
 .home #content {
 	margin-top:35px;
 	width:764px;
@@ -428,6 +427,7 @@ hr {
 		padding-top:0;
 	}
 	.committee-comment-date {
+		border:none;
 		display:inline;
 		padding-bottom:0;
 	}
@@ -1332,6 +1332,7 @@ td {
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#034679', endColorstr='#0f7185'); /* IE6 & IE7 */
 -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#034679', endColorstr='#0f7185')"; /* IE8 */  
 }
+
 .archive #content article, .blog #content article, .single.single-rotary-committees #content, .single.single-rotary_projects #content{
 	#respond, .sectioncontent > .comment, #comments-title {
 		margin-left:0;
@@ -1340,115 +1341,19 @@ td {
 			width:100%;
 		}
 	}
-	.connectedprojects {
-		background:linear-gradient(#d9dee1, #fff);
-		@include box-shadow(#efefef 0 3px 5px 0);
-		margin-bottom:50px;
-		width:782px;
-		h2 {
-			border:0;
-			font-weight:400;
-		}
-		b {
-			background: url(../images/project-header-bottom-bg.png) no-repeat;
-			display: block;
-			height: 7px;
-			left: -1px;
-			position: absolute;
-			width: 8px;
-		}
-		.alignleft {
-			margin-right:20px;
-			width:340px;
-		}
-		.connectedprojectscontainer {
-			left:-5px;
-			padding-bottom:20px;
-			position:relative;
-			> h2 {
-				margin-left:20px;
-			}
-		}
-		.projectheader {
-			background:linear-gradient(#a0957f, #544636);
-			color:#FFF;
-			font-family:$sub-header-font;
-			font-size:18px;
-			margin-left:0;
-			margin-bottom:0;
-			padding:5px 0 5px 0;
-			text-indent: 20px;
-			text-transform: uppercase;
-			width:250px;
-			background: linear-gradient(#a0957f, #544636) repeat scroll 0 0 rgba(0, 0, 0, 0);
-		}
-		.alignleft {
-			margin-left:20px;
-		}
-		.committee-comment-date {
-			margin:5px 15px 0 0;
-		}
-		
-	}
-	.committee-comment-date {
-		border-bottom: 1px solid #8f8f8f;
-		border-top: 1px solid #8f8f8f;
-		color:$aside-text-color;
-		float:left;
-		font-family:$sub-header-font;
-		font-size:14px;
-		font-weight:400;
-		margin:16px 0 0 15px;
-		padding-top:15px;
-		position:relative;
-		width:90px;
-		.day {
-			color:#8f8f8f;
-			font-family: $button-font;
-			font-size:40px;
-			
-		}
-		.month{
-			color:#187084;
-			font-size:14px;
-			position:absolute;
-			text-transform:uppercase;
-		}
-	}
-	.morecomments, .lesscomments {
-		clear:left;
-		margin-left:115px;
-	}
-	.morecomments::after {
-		content: '\25BC';
-	}
-	.lesscomments::after {
-		content: '\25B2';
-	}
-
+	
+	
 	.committeecomment {
 		margin-bottom:15px;
 		width:90%;
 		p {
-			margin-left:115px;
+			margin-left:20px;
 		}
 	}
-	.committeecontent {
-		clear:left;
-		margin-left:20px;
-		margin-right:20px;
-		min-height:50px;
-		position:relative; 
-		.post-edit-link {
-				@include button($color:#FFF, $height:40px, $background:linear-gradient(#034679, #0f7185));
-				font-size:15px;
-				line-height:40px;
-				position:absolute;
-				top:0;
-				right:0;
-				width:60px;
+	.hascontent .committeecomment {
+		p {
+			margin-left:115px;
 		}
-		
 	}
 	h2 {
 		border-bottom: 1px solid #B5B5B5;
@@ -1456,33 +1361,13 @@ td {
 		clear:left;
 		padding: 22px 0 20px 0;
 	}
+	
 	.committeeblogtop {
 		border-top:1px solid #eda200;
 		clear:both;
 		height:40px;
 		position:relative;
 		top:30px;
-	}
-	.committeeribbon {
-		background:#fff url(../images/committee-blog-roll-banner.png) no-repeat;
-		height:47px;
-		margin:0 auto;
-		position:relative;
-		top:-37px;
-		width:220px;
-		h3 {
-			font-family:$sub-header-font;
-			left: 5px;
-			position: absolute;
-			top: 5px;
-			a{
-				@include text-shadow(rgba(black, 0.27) 1px 1px 2px);
-				margin-left:25px;		
-				text-transform: uppercase;
-			}	
-		}
-			
-			
 	}
 	header {
 		border-bottom:1px solid #EFEFEF;
@@ -1578,13 +1463,9 @@ td {
 		
 	}
 }
-.no-cssgradients .connectedprojects{
-	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#d9dee1', endColorstr='#ffffff'); /* IE6 & IE7 */
--ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#d9dee1', endColorstr='#ffffff')"; /* IE8 */  
-}
-.no-cssgradients .projectheader{
-	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#a0957f', endColorstr='#544636'); /* IE6 & IE7 */
--ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#a0957f', endColorstr='#544636')"; /* IE8 */  
+.no-cssgradients .single.single-rotary_projects #content .committeecontent .post-edit-link{
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#034679', endColorstr='#0f7185'); /* IE6 & IE7 */
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#034679', endColorstr='#0f7185')"; /* IE8 */  
 }
 
 .single.single-rotary_projects #content .blogtitle {
@@ -1614,6 +1495,13 @@ label[for="comment"] {
 	}
 	
 }
+.committee {
+	.comment .commentbottom{
+		margin-bottom:40px;
+	}
+	
+}
+
 .comment {
 	div {
 		float:left;
@@ -1640,15 +1528,6 @@ label[for="comment"] {
 		background:url(../images/committee-comment-bottom-bg.png) no-repeat;
 		height:47px;
 		width:100%;
-		a {
-			@include button($color:#FFF, $height:30px, $background:linear-gradient(#eea300, #f2ba40), $display:inline-block, $line-height:30px);
-			float:right;
-			font-size:14px;
-			margin-right:30px;
-			margin-top: 10px;
-			width:120px;
-						
-		}
 	}
 	.commenttext, .commentcommittetext{
 		border-bottom:1px solid #e6decd;
@@ -1668,13 +1547,13 @@ label[for="comment"] {
 	}	
 	.commentcommittetext{
 		@include background-image(linear-gradient(#FDF8EF, #f4ead3));
-		border-bottom:0;
+		border-bottom:none;
 		border-top:1px solid #e6decd;
 		margin-bottom:0;
 		padding:15px 0 0 0;
 		width:783px;
 		p {
-			padding: 10px 10px 0;
+			padding: 0 10px 0;
 		}
 		.committeecommentdetail {
 			font-size:1.2em;
@@ -1682,11 +1561,6 @@ label[for="comment"] {
 	}	
 	
 }
-.no-cssgradients .commentbottom a{
-	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#eea300', endColorstr='#f2ba40'); /* IE6 & IE7 */
--ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#eea300', endColorstr='#f2ba40')"; /* IE8 */  
-}
-
 
 #commentform {
 	#author {
@@ -1827,4 +1701,5 @@ label[for="comment"] {
 @import "membership";
 @import "jquerytabs";
 @import "upcomingprograms";
+@import "commitees";
 @import "fancybox";

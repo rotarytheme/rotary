@@ -22,6 +22,10 @@
 		text-transform: uppercase;
 	}
 }
+.single-rotary_projects #content .rotarymembershipheader{
+	background:url(../images/project-member-table-section-header.png) no-repeat;
+
+}
 .single-rotary_projects #content .rotarymembershipheader h2 {
 	background: url(../images/participant-bg.jpg) 12px 12px no-repeat;
 	text-indent:65px;
@@ -114,7 +118,7 @@
 	padding-top:20px;
 }
 #rotarymemberdialog .addressarea {
-	background:url(../images/location-icon.png) no-repeat;
+	background:url(../images/member-location-icon.png) no-repeat;
 	font-size:17px;
 	padding-top:20px;
 }

@@ -146,3 +146,11 @@ add_action ('admin_menu' , 'rotary_remove_progam_coordinator_meta');
 function rotary_remove_progam_coordinator_meta() {
 	remove_meta_box( 'rotary_program_introducer_catdiv', 'rotary_speakers', 'side' );
 }
+
+function rotary_acf_update_project_date($value, $post_id, $field) {
+	if ( '' == trim( $value ) ) :
+		$value = date('Ymd');
+	endif;
+	return $value;
+}
+add_filter('acf/update_value/key=field_53e29fcd38551', 'rotary_acf_update_project_date', 10, 3);

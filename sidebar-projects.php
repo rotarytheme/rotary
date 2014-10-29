@@ -10,8 +10,14 @@
 ?>
 
 	<aside id="projects-sidebar" role="complementary">
-		<ul>
+		<ul class="projectcontainer">
 			<li>
+				<ul>
+					<li><h2><?php the_title(); ?></h2></li>
+				</ul>
+				<ul>
+					<li><?php rotary_show_project_icons(); ?></li>
+				</ul>
 				<ul>
 					<li>
 						<img class="aligncenter project-calendar" src="<?php echo get_template_directory_uri() ?>/rotary-sass/images/project-calendar.png" alt="project calendar image" />
@@ -47,6 +53,10 @@
 					
 				</li>
 				</ul>
+			</li>
+		</ul>
+		<ul>
+			<li>
 				<h3><?php _e( 'Categories', 'Rotary' ); ?></h3>
 				<ul>
 					<?php $terms = wp_get_post_terms( get_the_id(), 'rotary_project_cat' ); ?>

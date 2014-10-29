@@ -89,7 +89,7 @@
     <section id="signin">
      <?php if (is_user_logged_in()) { 
 	   $currentuser = wp_get_current_user();
-	   echo '<p class="loggedin"><span>You are currently logged in as '.$currentuser->display_name .'</span>'. wp_loginout(get_permalink(), false ) .'</p>';
+	   echo '<p class="loggedin"><span>You are currently logged in as '.$currentuser->display_name .'</span>'. wp_loginout($_SERVER['REQUEST_URI'], false ) .'</p>';
 	 } 
     else {
      $args = array(

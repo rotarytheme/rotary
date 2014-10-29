@@ -8,10 +8,30 @@
  */
 ?>
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-
+    <?php $hascontent = ''; ?>
+    <?php $committeeTitle = get_the_title(); ?>
+    <?php if ( '' != trim( get_the_content() ) ) : ?>
+    	<?php $hascontent = ' hascontent'; ?>
+    <?php endif; ?>	
+	<div class="committeecontent">
+		<div class="committeeheadercontainer<?php echo $hascontent; ?>">
+			<h3 class="committeeheader">Description</h3>
+			<?php if ( !$hascontent ) : ?>
+				<?php if ( is_user_logged_in()) : ?>
+					<p class="addcontent">No Description at the moment, add one!</p>
+				<?php else : ?>
+					<p class="addcontent">No Description at the moment, <?php wp_loginout( $_SERVER['REQUEST_URI'], true ); ?>!</p>
+				<?php endif; ?>
+			<?php endif; ?>
+			<?php edit_post_link( __( 'Edit <span>></span>', 'Rotary' ), '', '' ); ?>
+		</div>
+		<div class="committee">
+			<?php the_content(); ?>
+		</div>
+	</div>
 
 			<?php
-	//secondary loop
+	//secondary loop to get blog posts attached to the commitee
 	$postCount = 0;
 	$clearLeft='';
 	$committeeID = get_the_id(); 
@@ -21,18 +41,22 @@
 		'posts_per_page' => 2, 
 		'nopaging'        => true,
 	) ); ?>
-
+			<?php $hascontent = ''; ?>
+			<?php $link1 =  admin_url() . 'post-new.php?committeeid=' . get_the_id(); ?>
+			<?php $link2 = get_post_type_archive_link( 'rotary-committees' ).'?committeeid='.get_the_id();  ?>
 			<?php if ( $connected->have_posts() ) : ?>
-				<div class="committeeribbon">
-					<h3>
-						<a href=" <?php echo get_post_type_archive_link( 'rotary-committees' ); ?>?committeeid=<?php the_id(); ?>">Committee News</a>
-					</h3>
-				</div>
-				<?php  while ( $connected->have_posts() ) : $connected->the_post();?>
-					<?php $postCount = rotary_output_blogroll($postCount, $clearLeft); ?>
+				<?php $hascontent = ' hascontent'; ?>
+				<?php rotary_show_committee_header_container($hascontent, 'Update', $link1, $link2); ?>
+				
+				<div class="committeeblogrollcontainer clearfix">
+					<?php  while ( $connected->have_posts() ) : $connected->the_post();?>
+							<?php $postCount = rotary_output_blogroll($postCount, $clearLeft); ?>
 				<?php endwhile;?>
+				</div>
 				<?php // Reset Post Data
 					wp_reset_postdata();?>
+			<?php else: ?>
+				<?php rotary_show_committee_header_container($hascontent, 'Update', $link1, $link2); ?>
 			<?php endif;?>
 			
  <?php  //now get projects ?>
@@ -40,49 +64,29 @@
  	<?php $connected = new WP_Query( array(
 		'connected_type'  => 'projects_to_committees',
 		'connected_items' => get_queried_object_id(),
-		'posts_per_page' => 1, 
+		'posts_per_page' => 2, 
 		'order' => 'DESC',
 		'orderby' => 'meta_value',
         'meta_key' => 'rotary_project_date',
 		'nopaging'        => false,
 	) ); ?>
-	
+	<?php $hascontent = ''; ?>
+	<?php $link1 =  admin_url() . 'post_type=rotary_projects&committee=' . get_the_id(); ?>
+	<?php $link2 = get_post_type_archive_link( 'rotary_projects' ).'?committeeid='.get_the_id();  ?>
 	<?php if ( $connected->have_posts() ) : ?>
-			<?php  while ( $connected->have_posts() ) : $connected->the_post();?>
-				<div class="connectedprojects clearleft">
-				<div class="connectedprojectscontainer clearfix">
-					<p class="projectheader">Latest Events/Projects</p>
-					<b></b>
-					
-					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-					<div class="alignleft">
-					<?php if ( get_field( 'rotary_project_date' ) ) : ?>
-						<?php $date = DateTime::createFromFormat('Ymd', get_field( 'rotary_project_date' ) ); ?>
-						<div class="committee-comment-date">
-							<span class="day"><?php echo $date->format( 'd') ; ?></span>
-							<span class="month"><?php  echo $date->format( 'M' ); ?></span>
-							<span class="year"><?php echo $date->format( 'Y' ); ?></span>
-						</div>
-					<?php endif; ?>	
-						<?php the_content(); ?>
-						</div>		
-						<?php if (has_post_thumbnail()) : ?>
-						<div class="alignleft">
-							<?php the_post_thumbnail('medium'); ?>
-						</div>		
-				<?php endif; ?>
-				</div>
-				</div>	
-			<?php endwhile;?>
+			<?php $hascontent = ' hascontent'; ?>
+			<?php rotary_show_committee_header_container($hascontent, 'Project', $link1, $link2); ?>
+			<div class="connectedprojects clearleft clearfix">				
+			<?php show_project_blogroll( $connected, 'no', $committeeTitle ); ?>		
+			</div>
 		<?php // Reset Post Data
 			wp_reset_postdata();?>
-		<?php endif;?>
+		<?php else: ?>
+				<?php rotary_show_committee_header_container($hascontent, 'Project', $link1, $link2); ?>
+			<?php endif;?>
 
 
-		<div class="committeecontent">
-			<?php the_content(); ?>
-			<?php edit_post_link( __( 'Edit', 'Rotary' ), '', '' ); ?>
-		</div>
+		
 
 
 <?php endwhile; // end of the loop. ?>
