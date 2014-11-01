@@ -8,6 +8,8 @@
  */
 
 get_header(); ?>
+<?php //get the project ID to use in the connected committee loop where the ID reflect the committee and not the project ?>
+<?php $projectID = get_the_ID(); ?>
 <h1 class="pagetitle"><span><?php the_title();  ?></span></h1>
 <?php $connected = new WP_Query( array(
 		'connected_type'  => 'projects_to_committees',
@@ -32,8 +34,7 @@ get_header(); ?>
 			<?php // wp_loginout($_SERVER['REQUEST_URI'], true ); ?>
 		<?php endif; ?>
 	<?php endif; ?>
-		<a class="newcommitteepost second" href="<?php echo get_post_type_archive_link( 'rotary_projects' ).'?projectid='.get_the_id();?>">New Update</a>
-		
+		<a class="newcommitteepost second" href="<?php echo admin_url(); ?>post-new.php?projectid=<?php echo $projectID; ?>" target="_blank">New Update</a>		
 </div>
 	
 <?php wp_reset_postdata();?>
@@ -43,9 +44,10 @@ get_header(); ?>
 		<?php the_post_thumbnail('large'); ?>
 	<?php endif; ?>
 	<?php comments_template( '/committee-comments.php' ); ?> 			
-		<?php get_template_part( 'loop', 'single-project' ); ?>
-		<div class="clearleft"></div>
+		<div class="clear"></div>
 		<?php echo do_shortcode('[MEMBER_DIRECTORY type="projects" id="'.get_the_id().'"]'); ?>
+		<div class="clearleft"></div>
+		<?php get_template_part( 'loop', 'single-project' ); ?>
     </div>
     
 </div><!--#content-->

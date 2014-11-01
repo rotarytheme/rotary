@@ -456,7 +456,6 @@ class Rotary_Project_Links extends WP_Widget {
 		if ( ! empty( $title ) )
 			echo $args['before_title'] . $title . $args['after_title'];
 		$queryargs = array(
-			'posts_per_page' => -1,
 			'post_type' => 'rotary_projects',
 			'posts_per_page' => $number,
 			'order' => 'DESC',

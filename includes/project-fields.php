@@ -6,12 +6,30 @@ if(function_exists("register_field_group"))
 		'title' => 'Projects',
 		'fields' => array (
 			array (
+				'key' => 'field_5436e8c7c79e3',
+				'label' => 'Long Term Project',
+				'name' => 'long_term_project',
+				'type' => 'true_false',
+				'message' => '',
+				'default_value' => 0,
+			),
+			array (
 				'key' => 'field_53e29fcd38551',
 				'label' => 'Project Date',
 				'name' => 'rotary_project_date',
 				'type' => 'date_picker',
 				'instructions' => 'Enter the project date.',
-				'required' => 1,
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5436e8c7c79e3',
+							'operator' => '!=',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
 				'date_format' => 'yymmdd',
 				'display_format' => 'mm/dd/yy',
 				'first_day' => 1,

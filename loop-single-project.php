@@ -49,6 +49,9 @@
 			<?php  while ( $connected->have_posts() ) : $connected->the_post();?>
 				<?php $postCount = rotary_output_blogroll($postCount, $clearLeft); ?>
 			<?php endwhile;?>
+	<?php else: ?>
+		<?php rotary_show_committee_header_container($hascontent, 'Update', $link1, $link2, ' project'); ?>
+		
 	<?php endif;?>
 	<?php // Reset Post Data
 wp_reset_postdata();?>

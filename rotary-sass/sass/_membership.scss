@@ -71,9 +71,12 @@
 	padding-top:15px;
 	text-transform:uppercase;
 }
-.rotarymembershipheader #rotarymembers tr .email, .rotarymembershipheader #rotaryprojects tr .email {
+.rotarymembershipheader #rotarymembers tr .email, .rotarymembershipheader #rotaryprojects tr .delete {
 	border-right:none;
 }
+.rotarymembershipheader #rotaryprojects tr .delete {
+	text-align:center;
+}	
 #rotarymembers .odd td, #rotaryprojects .odd td {
 	background: #f9f4e9;
 	
@@ -86,7 +89,8 @@
 	background:#0f7189 url(../images/rotary-member-dialog-top.png) no-repeat !important;
 	color:#f2e2c0;
 	font-family:$body-font-family;
-	font-size:13px !important;  
+	font-size:13px !important; 
+	z-index:200; 
 }
 #rotarymemberdialog h2, #rotarymemberdialog h3, #rotarymemberdialog h4, .rotarydialog .ui-dialog-titlebar-close  {
 	color:#fff;

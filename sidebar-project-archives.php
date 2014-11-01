@@ -24,7 +24,7 @@ if(current_user_can('edit_page')){
                 	<?php } elseif ('rotary-committees' == $currentPostType && isset($_REQUEST['committeeid'])) { ?>               		
                 		<a class="button" href="<?php echo admin_url(); ?>post-new.php?committeeid=<?php echo $_REQUEST['committeeid']?>" target="_blank">Committee News</a> 
                 	<?php } elseif ('rotary_projects' == $currentPostType && isset($_REQUEST['projectid'])) { ?>               		
-                		<a class="button" href="<?php echo admin_url(); ?>post-new.php?committeeid=<?php echo $_REQUEST['projectid']?>" target="_blank">Project News</a> 	             		
+                		<a class="button" href="<?php echo admin_url(); ?>post-new.php?projectid=<?php echo $_REQUEST['projectid']?>" target="_blank">New Project Update</a> 	             		
 					<?php } else { ?>
 						<a class="button" href="<?php echo admin_url(); ?>post-new.php">New Post</a>     
 					<?php } ?>

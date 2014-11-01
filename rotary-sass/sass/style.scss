@@ -74,6 +74,9 @@ Tags: rotary, html5
 .clearleft {
 	clear:left;
 }
+.clear {
+	clear:both;
+}
 .button {
 	@include button($height:20px);
 	line-height:20px;

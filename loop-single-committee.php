@@ -71,7 +71,7 @@
 		'nopaging'        => false,
 	) ); ?>
 	<?php $hascontent = ''; ?>
-	<?php $link1 =  admin_url() . 'post_type=rotary_projects&committee=' . get_the_id(); ?>
+	<?php $link1 =  admin_url() . 'post-new.php?post_type=rotary_projects&committee=' . get_the_id(); ?>
 	<?php $link2 = get_post_type_archive_link( 'rotary_projects' ).'?committeeid='.get_the_id();  ?>
 	<?php if ( $connected->have_posts() ) : ?>
 			<?php $hascontent = ' hascontent'; ?>

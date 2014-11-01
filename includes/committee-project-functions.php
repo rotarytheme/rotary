@@ -48,7 +48,7 @@ function rotary_committee_comment( $postType =  'rotary-committees') { ?>
 						<p class="morecommentcontainer"><a href="#" class="morecomments" id="morecomments">Show More Announcements</a></p>	
 				<?php  endif; ?>
 				<?php if ($comment === end($comments)) : ?>
-					<p class="morecommentcontainer"><a href="#" class="lesscomments hide" id="lesscomments">Hide Announcements</a></p>
+					<p class="morecommentcontainer"><a href="#" class="lesscomments hide" id="lesscomments">Show Less Announcements</a></p>
 				<?php  endif; ?>
 			<?php  endforeach; ?>
 		<?php  endif; ?>
@@ -227,7 +227,7 @@ function rotary_show_project_icons() {
 		<?php if ($location) : ?>
 				<?php $googleLink = 'http://www.google.com/maps?daddr='.$location["address"]; ?>
 		<?php endif; ?>
-		<a class="location icon" href="<?php echo $googleLink; ?>">Location</a>
+		<a class="location icon" href="<?php echo $googleLink; ?>" target="_blank">Location</a>
 		
 		 
 		<span class="participants icon" >Participants</span>
