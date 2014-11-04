@@ -18,18 +18,7 @@ if(function_exists("register_field_group"))
 				'label' => 'Project Date',
 				'name' => 'rotary_project_date',
 				'type' => 'date_picker',
-				'instructions' => 'Enter the project date.',
-				'conditional_logic' => array (
-					'status' => 1,
-					'rules' => array (
-						array (
-							'field' => 'field_5436e8c7c79e3',
-							'operator' => '!=',
-							'value' => '1',
-						),
-					),
-					'allorany' => 'all',
-				),
+				'instructions' => 'Enter the project date. If left blank, it will default to the current date.',
 				'date_format' => 'yymmdd',
 				'display_format' => 'mm/dd/yy',
 				'first_day' => 1,

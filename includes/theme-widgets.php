@@ -375,7 +375,7 @@ class Rotary_Committee_Links extends WP_Widget {
 			<option value="">-- Select a committee --</option>
 			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 				
-					<option value=<?php echo get_post_type_archive_link( 'rotary-committees' ); ?>?committeeid=<?php the_id(); ?>"><?php the_title(); ?></option>  				
+					<option value="<?php echo get_post_type_archive_link( 'rotary-committees' ); ?>?committeeid=<?php the_id(); ?>"><?php the_title(); ?></option>  				
 			<?php endwhile; ?>
 			</select>
 			<?php // Reset Post Data
@@ -447,8 +447,6 @@ class Rotary_Project_Links extends WP_Widget {
 		// outputs the content of the widget
 		extract($args, EXTR_SKIP);
 		$title = apply_filters( 'widget_title', $instance['title'] );
-		if ( empty( $instance['number'] ) || ! $number = absint( $instance['number'] ) )
- 			$number = 5;
 
 		if ( isset( $args['before_widget'] ) ) {
 			echo $args['before_widget'];
@@ -457,23 +455,19 @@ class Rotary_Project_Links extends WP_Widget {
 			echo $args['before_title'] . $title . $args['after_title'];
 		$queryargs = array(
 			'post_type' => 'rotary_projects',
-			'posts_per_page' => $number,
+			'posts_per_page' => -1,
 			'order' => 'DESC',
 			'orderby' => 'meta_value',
             'meta_key' => 'rotary_project_date',
 		);
 		$query = new WP_Query( $queryargs );
 		if ( $query->have_posts() ) : ?>
-			
-			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-				<div>
-				<p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-				<?php if ( get_field( 'rotary_project_date' ) ) : ?>
-					<?php $date = DateTime::createFromFormat('Ymd', get_field( 'rotary_project_date' ) ); ?>
-					<p><small><?php echo $date->format('M d, Y'); ?></small></p>	
-				<?php endif; ?>	
-				</div>		
+			<select id="projectwidget" name="projectwidget">
+			<option value="">-- Select a project --</option>
+			<?php while ( $query->have_posts() ) : $query->the_post(); ?>				
+					<option value="<?php echo get_post_type_archive_link( 'rotary_projects' ); ?>?projectid=<?php the_id(); ?>"><?php the_title(); ?></option>  				
 			<?php endwhile; ?>
+			</select>	
 			<?php // Reset Post Data
 				wp_reset_postdata(); ?>
 		   	
@@ -495,16 +489,12 @@ class Rotary_Project_Links extends WP_Widget {
 		else {
 			$title = __( 'Projects', 'text_domain' );
 		}
-		$number    = isset( $instance['number'] ) ? absint( $instance['number'] ) : 5;
 		?>
 		<p>
 		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
 		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
 		</p>
-		<p>
-		<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts to show:' ); ?></label>
-		<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" />
-		</p>
+		
 		<?php 
 	}
 
@@ -518,8 +508,6 @@ class Rotary_Project_Links extends WP_Widget {
 		// processes widget options to be saved
 		$instance = array();
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-		$instance['number'] = (int) $new_instance['number'];
-
 		return $instance;
 	}
 

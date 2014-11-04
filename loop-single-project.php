@@ -29,7 +29,9 @@
 			<?php the_content(); ?>
 		</div>
 	</div>
-
+	<?php //show participants ?>
+	<?php echo do_shortcode('[MEMBER_DIRECTORY type="projects" id="'.get_the_id().'"]'); ?>
+	<div class="clearleft"></div>
 			<?php
 	//secondary loop
 	$postCount = 0;

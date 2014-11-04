@@ -1615,7 +1615,7 @@ td {
   width: 100%;
 }
 .archive #content article .committeecomment, .blog #content article .committeecomment, .single.single-rotary-committees #content .committeecomment, .single.single-rotary_projects #content .committeecomment {
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   width: 90%;
 }
 .archive #content article .committeecomment p, .blog #content article .committeecomment p, .single.single-rotary-committees #content .committeecomment p, .single.single-rotary_projects #content .committeecomment p {
@@ -2451,6 +2451,9 @@ aside .widget_sp_image img {
   margin-bottom: 25px;
   padding: 20px 10px 0 10px;
 }
+#committee-sidebar .projecticons, #projects-sidebar .projecticons {
+  margin-bottom: 0;
+}
 #committee-sidebar ul ul, #projects-sidebar ul ul {
   color: #a2a2a2;
   padding-bottom: 25px;
@@ -2552,7 +2555,7 @@ aside .widget_sp_image img {
   line-height: 18px;
 }
 
-#committeewidget {
+#committeewidget, #projectwidget {
   margin: 0 10px 0 10px;
   width: 90%;
 }
@@ -2578,6 +2581,7 @@ aside .widget_sp_image img {
 
 .single-rotary_projects .rotarymembershipcontainer {
   clear: left;
+  margin-bottom: 20px;
 }
 
 .page #content .rotarymembershipheader, .single-rotary_projects #content .rotarymembershipheader {
@@ -2601,10 +2605,13 @@ aside .widget_sp_image img {
 .single-rotary_projects #content .rotarymembershipheader {
   background: url(../images/project-member-table-section-header.png) no-repeat;
 }
-
-.single-rotary_projects #content .rotarymembershipheader h2 {
+.single-rotary_projects #content .rotarymembershipheader > h2 {
   background: url(../images/participant-bg.jpg) 12px 12px no-repeat;
+  margin-bottom: 0;
   text-indent: 65px;
+}
+.single-rotary_projects #content .rotaryselections, .single-rotary_projects #content #rotaryprojects_wrapper {
+  border-left: 1px solid #efefef;
 }
 
 .single-rotary_projects #rotaryprojects_filter {
@@ -3960,6 +3967,12 @@ aside .widget_sp_image img {
 }
 .projecticons .imgoing {
   background: url(../images/check-icon.png) 10px 13px no-repeat;
+}
+.projecticons .imgoing.going {
+  background-position: 10px -50px;
+}
+.projecticons .imgoing.notgoing {
+  background-position: 10px -110px;
 }
 .projecticons .location {
   background: url(../images/project-location-icon.png) 0 8px no-repeat;

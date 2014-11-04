@@ -322,6 +322,9 @@ aside {
 	    margin-bottom:25px;
 		padding:20px 10px 0 10px;
 	}
+	.projecticons {
+		margin-bottom:0;
+	}
 	ul ul {
 		color:#a2a2a2;
 		padding-bottom:25px
@@ -427,7 +430,7 @@ aside {
 	}
 		
 }
-#committeewidget{
+#committeewidget, #projectwidget{
 	margin:0 10px 0 10px;
 	width:90%;
 }

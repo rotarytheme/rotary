@@ -143,6 +143,12 @@
 	}
 	.imgoing {
 		background:url(../images/check-icon.png) 10px 13px no-repeat;
+		&.going {
+			background-position: 10px -50px;
+		}
+		&.notgoing {
+			background-position: 10px -110px;
+		}
 	}
 	.location {
 		background:url(../images/project-location-icon.png) 0 8px no-repeat;

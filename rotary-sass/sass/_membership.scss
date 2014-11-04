@@ -4,6 +4,7 @@
 }
 .single-rotary_projects .rotarymembershipcontainer {
 	clear:left;
+	margin-bottom:20px;
 }
 .page #content .rotarymembershipheader, .single-rotary_projects #content .rotarymembershipheader{
 	background:url(../images/member-table-section-header.png) no-repeat;
@@ -22,14 +23,20 @@
 		text-transform: uppercase;
 	}
 }
-.single-rotary_projects #content .rotarymembershipheader{
-	background:url(../images/project-member-table-section-header.png) no-repeat;
+.single-rotary_projects #content {
+	.rotarymembershipheader{
+		background:url(../images/project-member-table-section-header.png) no-repeat;
+	}
+	.rotarymembershipheader > h2 {
+		background: url(../images/participant-bg.jpg) 12px 12px no-repeat;
+		margin-bottom:0;
+		text-indent:65px;
+	}
+	.rotaryselections, #rotaryprojects_wrapper {
+		border-left:1px solid #efefef;
+	}
+}
 
-}
-.single-rotary_projects #content .rotarymembershipheader h2 {
-	background: url(../images/participant-bg.jpg) 12px 12px no-repeat;
-	text-indent:65px;
-}
 .single-rotary_projects #rotaryprojects_filter {
 	display:none;
 }
@@ -39,6 +46,7 @@
 .rotaryselections {
 	padding-bottom:20px;
 }
+
 .rotaryselections .committeecontainer {
 	float:right;
 }

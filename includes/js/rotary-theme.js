@@ -16,7 +16,7 @@ jQuery(document).ready(function($) {
 			this.checkOpen();
 			this.setupMaps();
 			this.layoutProjects();
-			$('#committeeselect, #committeewidget').on('change', this.showCommittee);
+			$('#committeeselect, #committeewidget, #projectwidget').on('change', this.showCommittee);
 			$('#morecomments').on('click', this.showMoreComments);
 			$('#lesscomments').on('click', this.hideMoreComments);
 			$('#newcomment, #newcommentproject').on('click', this.showCommentForm);
@@ -200,10 +200,10 @@ jQuery(document).ready(function($) {
 							$rotaryTables.fnReloadAjax();
 						}
 						
-						$el.toggleClass('going');
+						$el.toggleClass('going').toggleClass('notgoing');
 						var $prevel = $el.prev('.imgoingtext');
 						$prevel.text(goingText);
-						$prevel.toggleClass('going');
+						$prevel.toggleClass('going').toggleClass('notgoing');
 					}	
 				}
 			}	

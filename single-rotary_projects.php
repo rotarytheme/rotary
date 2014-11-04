@@ -45,8 +45,6 @@ get_header(); ?>
 	<?php endif; ?>
 	<?php comments_template( '/committee-comments.php' ); ?> 			
 		<div class="clear"></div>
-		<?php echo do_shortcode('[MEMBER_DIRECTORY type="projects" id="'.get_the_id().'"]'); ?>
-		<div class="clearleft"></div>
 		<?php get_template_part( 'loop', 'single-project' ); ?>
     </div>
     

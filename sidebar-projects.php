@@ -18,6 +18,7 @@
 				<ul>
 					<li><?php rotary_show_project_icons(); ?></li>
 				</ul>
+				<?php if (! get_field( 'long_term_project' ) ) : ?>
 				<ul>
 					<li>
 						<img class="aligncenter project-calendar" src="<?php echo get_template_directory_uri() ?>/rotary-sass/images/project-calendar.png" alt="project calendar image" />
@@ -34,6 +35,7 @@
                 	     </div>
 					</li>
 				</ul>
+				<?php endif; ?>
 				<ul>
 				<li>
 					<?php $location = get_field('rotary_project_location');

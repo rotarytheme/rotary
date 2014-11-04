@@ -25,9 +25,6 @@ function rotary_committee_comment( $postType =  'rotary-committees') { ?>
 			<?php $firstComment = true;  ?>
 		<?php  endif; ?>
 		<div class="clearleft committeecomment <?php if (!$firstComment) {echo ' hide';} ?>" id="comment-<?php echo $comment->comment_post_ID ?>">
-			<?php if ( 'rotary_projects' == $postType ) : ?>
-				<h2>Announcement for Project</h2>
-			<?php endif; ?>
 			<div class="committee-comment-date">
 			 	<?php $date = new DateTime($comment->comment_date); ?>
 				<span class="day"><?php echo $date->format('d'); ?></span>
@@ -158,11 +155,13 @@ function rotary_save_post_for_project ( $post_id ) {
 	
 }
 function rotary_save_committee_for_project ( $project_id ) {
+	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
 	if ( isset( $_REQUEST['committee'] ) && 'rotary_projects' ==  $_REQUEST['post_type'] ) {
 			p2p_type( 'projects_to_committees' )->connect( $project_id, $_REQUEST['committee'], array('date' => current_time('mysql')
 			) );
 	}  
 }
+
 add_action( 'save_post', 'rotary_save_post_for_committee' );
 add_action( 'save_post', 'rotary_save_post_for_project' );
 add_action( 'save_post', 'rotary_save_committee_for_project' );
@@ -212,14 +211,19 @@ function rotary_show_project_icons() {
 	)); ?>
 	<div class="projecticons">
 		<?php $particpate = ''; ?>
-		<?php $userID = get_current_user_id(); ?>
 		
-		<?php $p2p_id = p2p_type( 'projects_to_users' )->get_p2p_id( get_the_id(), wp_get_current_user() ); ?>
-		 <?php if ( $p2p_id ) : ?>
-		 	<?php $particpate = ' going';?>
-		 	<div class="hide imgoingtext<?php echo $particpate; ?>">I'm going</div>
-		 <?php else : ?>
-		 	<div class="hide imgoingtext">I'm not going</div>
+		<?php if ( is_user_logged_in() ) : ?>
+			<?php $userID = get_current_user_id(); ?>
+			<?php $p2p_id = p2p_type( 'projects_to_users' )->get_p2p_id( get_the_id(), wp_get_current_user() ); ?>
+			<?php if ( $p2p_id ) : ?>
+		 		<?php $particpate = ' going';?>
+		 			<div class="hide imgoingtext<?php echo $particpate; ?>">I'm going</div>
+		 		<?php else : ?>
+		 			<?php $particpate = ' notgoing';?>
+		 			<div class="hide imgoingtext<?php echo $particpate; ?>">I'm not going</div>
+		 	<?php endif; ?>
+		 <?php else: ?>
+		 	<div class="hide imgoingtext">I haven't replied</div>
 		 <?php endif; ?>
 		<span class="imgoing icon<?php echo $particpate; ?>" data-postid="<?php the_ID(); ?>">Im going</span>		
 		<?php $location = get_field('rotary_project_location'); ?>
