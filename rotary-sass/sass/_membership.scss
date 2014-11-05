@@ -27,10 +27,13 @@
 	.rotarymembershipheader{
 		background:url(../images/project-member-table-section-header.png) no-repeat;
 	}
-	.rotarymembershipheader > h2 {
-		background: url(../images/participant-bg.jpg) 12px 12px no-repeat;
-		margin-bottom:0;
-		text-indent:65px;
+	.rotarymembershipheader {
+		padding-bottom:40px;
+		> h2 {
+		 	background: url(../images/participant-bg.jpg) 12px 12px no-repeat;
+		 	margin-bottom:0;
+		 	text-indent:65px;
+		}
 	}
 	.rotaryselections, #rotaryprojects_wrapper {
 		border-left:1px solid #efefef;

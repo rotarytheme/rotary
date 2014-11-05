@@ -31,8 +31,13 @@ function rotary_committee_comment( $postType =  'rotary-committees') { ?>
 				<span class="month"><?php  echo $date->format('M'); ?></span>
 				<span class="year"><?php echo $date->format('Y'); ?></span>
 				</div>
-				<p class="committeecommentdetail"><?php echo $comment->comment_content; ?></p>
-				<p class="announcedby"><em>Announced by</em> <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ))?>"><?php echo $comment->comment_author;?></a></p>
+				<?php if ( 'rotary-committees' ==  $postType ) : ?>
+					<p class="committeecommentdetail"><?php echo $comment->comment_content; ?></p>
+					<p class="announcedby"><em>Announced by</em> <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ))?>"><?php echo $comment->comment_author;?></a></p>
+				<?php else: ?>
+					<p class="announcedby"><em>Announced by</em> <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ))?>"><?php echo $comment->comment_author;?></a></p>
+					<p class="committeecommentdetail"><?php echo $comment->comment_content; ?></p>
+				<?php endif; ?>
 				<?php if ($firstComment ) : ?>
 					<?php if ( is_user_logged_in() ) : ?>
 						<a id="newcomment" class="newcomment" href="#respond">New Announcement <span>></span></a>
@@ -217,23 +222,25 @@ function rotary_show_project_icons() {
 			<?php $p2p_id = p2p_type( 'projects_to_users' )->get_p2p_id( get_the_id(), wp_get_current_user() ); ?>
 			<?php if ( $p2p_id ) : ?>
 		 		<?php $particpate = ' going';?>
-		 			<div class="hide imgoingtext<?php echo $particpate; ?>">I'm going</div>
+		 			<div class="hide imgoingtext hovertext<?php echo $particpate; ?>">I'm going</div>
 		 		<?php else : ?>
 		 			<?php $particpate = ' notgoing';?>
-		 			<div class="hide imgoingtext<?php echo $particpate; ?>">I'm not going</div>
+		 			<div class="hide imgoingtext hovertext<?php echo $particpate; ?>">I'm not going</div>
 		 	<?php endif; ?>
 		 <?php else: ?>
-		 	<div class="hide imgoingtext">I haven't replied</div>
+		 	<div class="hide imgoingtext hovertext">I haven't replied</div>
 		 <?php endif; ?>
-		<span class="imgoing icon<?php echo $particpate; ?>" data-postid="<?php the_ID(); ?>">Im going</span>		
+		<span class="imgoing icon<?php echo $particpate; ?>" data-postid="<?php the_ID(); ?>">Im going</span>	
+		
 		<?php $location = get_field('rotary_project_location'); ?>
 		<?php $googleLink = '#'; ?>
 		<?php if ($location) : ?>
 				<?php $googleLink = 'http://www.google.com/maps?daddr='.$location["address"]; ?>
 		<?php endif; ?>
+		<div class="hide locationtext hovertext">Map</div>
 		<a class="location icon" href="<?php echo $googleLink; ?>" target="_blank">Location</a>
 		
-		 
+		 <div class="hide participanttext hovertext">Attendees</div>
 		<span class="participants icon" >Participants</span>
 		<span class="count"><?php echo count($users); ?></span>
 	</div>
@@ -250,7 +257,7 @@ function rotary_show_project_icons() {
  * @return void
  */
 function show_project_blogroll($query, $showthumb = 'no', $committeeTitle = '') {
-	$hasCommitteeTitle = ( '' == trim( $committeeTitle) ? false : true); 
+	$hasCommitteeTitle = ( '' == trim( $committeeTitle) ? false : true);
  	while ( $query->have_posts() ) : $query->the_post();?>		
 		  <?php if (! $hasCommitteeTitle) : ?>
 		  	<?php $committeeTitle = rotary_get_committee_title_from_project( get_the_id() ); ?>

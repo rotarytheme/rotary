@@ -27,14 +27,6 @@ get_header(); ?>
 	<?php else : ?>
 		<h2>Club Committee</h2>
 	<?php endif; ?>
-	<?php if (comments_open()) : ?>
-		<?php if ( is_user_logged_in() ) : ?>
-			<a id="newcommentproject" class="newcommitteepost" href="#">New Announcement</a>
-		<?//else : ?>
-			<?php // wp_loginout($_SERVER['REQUEST_URI'], true ); ?>
-		<?php endif; ?>
-	<?php endif; ?>
-		<a class="newcommitteepost second" href="<?php echo admin_url(); ?>post-new.php?projectid=<?php echo $projectID; ?>" target="_blank">New Update</a>		
 </div>
 	
 <?php wp_reset_postdata();?>

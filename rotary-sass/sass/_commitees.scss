@@ -7,7 +7,7 @@
 .single-rotary_projects .projectcommitteetitle {
 	background: #eca900 url(../images/projectcommitteetitle-bg.jpg) no-repeat;
 	color: #fff;
-	font-size:19px;
+	font-size:22px;
 	height: 72px;	
 	margin-top:30px;
 	position: relative;
@@ -82,20 +82,18 @@
 	margin-bottom:0;
 	margin-left:25px;
 }
-.imgoingtext {
+.imgoingtext, .locationtext, .participanttext {
   background-color:#f3f3f3;
   border: 2px solid #d8dadb;
   font-size: 11px;
   font-weight: bold;
-  left:2px;
+  left:-25px;
   padding: 10px 5px;
   position: absolute;
   text-align: center;
   text-transform: uppercase;
-  top: 120px;
-  &.going {
-	  left:17px;
-  }
+  top: -40px;
+ 
   &:after {	    
 	  border: solid transparent; 
 	  border-color: rgba(216, 218, 243, 0); 
@@ -110,25 +108,27 @@
 	  top: 100%;
 	  width: 0;   }
 }
-.single-rotary-committees .imgoingtext {
-	top:150px;
+.locationtext {
+	left:60px;
 }
-#projects-sidebar .imgoingtext{
-	left:-10px;
-	top:40px;
-	&.going {
-	  left:-2px;
-  }
+.participanttext {
+	left:100px;
+}	
+#projects-sidebar {
+ 	.imgoingtext{
+		left:-20px;
+		top:-40px;
+	}
 }
-.logged-in .imgoing {
-	cursor:pointer;
-}
+
 .projecticons {
 	border-bottom:1px solid #efefef;
 	border-top:1px solid #efefef;
 	height:50px;
 	margin-bottom:25px;
-	span, a {		   
+	position:relative;
+	span, a {	
+		cursor:pointer;	   
 		display:inline-block;
 		height:50px;
 		width:50px;
@@ -196,9 +196,15 @@
    #content .committeecomment p {
 	   margin-left:10px !important;
    }
+   .committeecommentdetail {
+	   clear:left;
+   }
+   .announcedby {
+	   float:left;
+	   margin-top: -2px;
+   }
    .committee-comment-date {
 	   border:none;
-	   float:none;
 	   margin-left:20px;
 	   margin-top:0;
 	   padding-top:0;
@@ -220,15 +226,15 @@
 			.post-edit-link {
 				margin-left:0;
 				position:absolute;
-				top:2px;
+				top:6px;
 				right:6px;
 
 			}
 		}
 		.post-edit-link {
-				@include button($color:#FFF, $height:40px, $background:linear-gradient(#034679, #0f7185), $border-radius:0);
+				@include button($color:#FFF, $height:30px, $background:linear-gradient(#034679, #0f7185), $border-radius:0);
 				font-size:15px;
-				line-height:40px;
+				line-height:30px;
 				margin-left:20px;
 				width:60px;
 				span {
@@ -394,6 +400,7 @@
 				@include text-shadow(rgba(black, 0.27) 1px 1px 2px);
 				background: url(../images/project-icon.png) 5px 20px no-repeat;
 				color:#FFF;
+				font-size:14px;
 				padding-top:20px;
 				text-indent:45px;
 				text-transform: uppercase;
@@ -446,6 +453,8 @@
 .single-rotary-committees, .single-rotary_projects {
 	.hascontent .newcomment {
 		float:right;
+		margin-left:0;
+		margin-top:-35px;
 	}
 	.newcomment {
 		@include button($color:#FFF, $height:30px, $background:linear-gradient(#034679, #0f7185), $display:inline-block, $line-height:30px, $border-radius:0);	
@@ -467,7 +476,9 @@
 		padding-bottom:0;
 	}
 }
-
+.single-rotary-committees .committeecommentdetail{
+	padding-top:5px;
+}
 .single-rotary_projects .newcomment{
 	@include background-image(linear-gradient(#f3c55b, #f3c55b));
 	span {
@@ -478,6 +489,9 @@
 	float:right;
 	margin-left:0;
 }
+.single-rotary_projects .hascontent .newcomment {
+	margin-top:-60px;
+}	
 .no-cssgradients .single-rotary-committees .newcomment, .no-cssgradients committeeheadercontainer .newpost{
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#034679', endColorstr='#0f7185'); /* IE6 & IE7 */
 -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#034679', endColorstr='#0f7185')"; /* IE8 */  

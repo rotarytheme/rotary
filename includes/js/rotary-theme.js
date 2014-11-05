@@ -25,7 +25,7 @@ jQuery(document).ready(function($) {
 			$('#search-toggle').on('click', this.toggleSearch);
 			$('#speaker-archive-table tbody').on('mouseenter mouseleave', 'tr', this.hoverRow);
 			$('#speaker-archive-table tbody').on('click', 'tr', this.selectRow);
-			$('.logged-in .projecticons').on('mouseenter mouseleave', '.imgoing', this.hoverParticpant);
+			$('.projecticons').on('mouseenter mouseleave', '.icon', this.hoverIcons);
 			$('.logged-in .projecticons').on('click', '.imgoing', this.toggleParticpant);
 			$('.fancybox').fancybox({
 				padding: 3,
@@ -174,8 +174,8 @@ jQuery(document).ready(function($) {
 		hoverRow: function() {
 			$(this).toggleClass('selected');
 		},
-		hoverParticpant: function() {
-			$(this).prev('.imgoingtext').toggleClass('hide');
+		hoverIcons: function() {
+			$(this).prev('.hovertext').toggleClass('hide');
 		},
 		toggleParticpant: function() {
 			var $el = $(this);

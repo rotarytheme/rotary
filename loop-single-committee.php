@@ -8,6 +8,20 @@
  */
 ?>
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+	<?php  //now get projects first ?>
+	<?php $hascontent = ''; ?>
+	<?php $link1 =  admin_url() . 'post-new.php?post_type=rotary_projects&committee=' . get_the_id(); ?>
+	<?php $link2 = get_post_type_archive_link( 'rotary_projects' ).'?committeeid='.get_the_id();  ?>
+	<?php $connected = new WP_Query( array(
+		'connected_type'  => 'projects_to_committees',
+		'connected_items' => get_queried_object_id(),
+		'posts_per_page' => 2, 
+		'order' => 'DESC',
+		'orderby' => 'meta_value',
+        'meta_key' => 'rotary_project_date',
+		'nopaging'        => false,
+	) ); ?>
+
     <?php $hascontent = ''; ?>
     <?php $committeeTitle = get_the_title(); ?>
     <?php if ( '' != trim( get_the_content() ) ) : ?>
@@ -18,9 +32,9 @@
 			<h3 class="committeeheader">Description</h3>
 			<?php if ( !$hascontent ) : ?>
 				<?php if ( is_user_logged_in()) : ?>
-					<p class="addcontent">No Description at the moment, add one!</p>
+					<p class="addcontent">No description at the moment, add one!</p>
 				<?php else : ?>
-					<p class="addcontent">No Description at the moment, <?php wp_loginout( $_SERVER['REQUEST_URI'], true ); ?>!</p>
+					<p class="addcontent">No description at the moment, <?php wp_loginout( $_SERVER['REQUEST_URI'], true ); ?>!</p>
 				<?php endif; ?>
 			<?php endif; ?>
 			<?php edit_post_link( __( 'Edit <span>></span>', 'Rotary' ), '', '' ); ?>
