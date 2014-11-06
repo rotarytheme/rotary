@@ -222,10 +222,10 @@ function rotary_show_project_icons() {
 			<?php $p2p_id = p2p_type( 'projects_to_users' )->get_p2p_id( get_the_id(), wp_get_current_user() ); ?>
 			<?php if ( $p2p_id ) : ?>
 		 		<?php $particpate = ' going';?>
-		 			<div class="hide imgoingtext hovertext<?php echo $particpate; ?>">I'm going</div>
+		 			<div class="hide imgoingtext hovertext<?php echo $particpate; ?>">I'm going<br />Click to<br />change RSVP</div>
 		 		<?php else : ?>
 		 			<?php $particpate = ' notgoing';?>
-		 			<div class="hide imgoingtext hovertext<?php echo $particpate; ?>">I'm not going</div>
+		 			<div class="hide imgoingtext hovertext<?php echo $particpate; ?>">I'm not going<br />Click to<br />change RSVP</div>
 		 	<?php endif; ?>
 		 <?php else: ?>
 		 	<div class="hide imgoingtext hovertext">I haven't replied</div>

@@ -54,7 +54,7 @@
 				<?php endwhile;?>
 				</div>
 				<?php else: ?>
-				<?php rotary_show_committee_header_container($hascontent, 'Update', $link1, $link2); ?>
+				<?php rotary_show_committee_header_container($hascontent, 'update', $link1, $link2); ?>
 			<?php endif;?>
 	<?php // Reset Post Data
 	wp_reset_postdata();?>

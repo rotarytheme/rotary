@@ -179,7 +179,7 @@ jQuery(document).ready(function($) {
 		},
 		toggleParticpant: function() {
 			var $el = $(this);
-			var goingText = "I'm not going";
+			var goingText = "I'm not going<br />Click to<br />change RSVP";
 			var participate = ''; 
 			var $rotaryTables = $('#rotaryprojects').dataTable();
 			if ($el.hasClass( 'going' )) {
@@ -194,7 +194,7 @@ jQuery(document).ready(function($) {
 				if (200 == jqXHR.status && 'success' == textStatus) {
 					if ('success' == response.status) {
 						if ('yes' === response.message) {
-							goingText = "I'm going";
+							goingText = "I'm going<br />Click to<br />change RSVP";
 						}
 						if ( $rotaryTables.length ) {
 							$rotaryTables.fnReloadAjax();
@@ -202,7 +202,7 @@ jQuery(document).ready(function($) {
 						
 						$el.toggleClass('going').toggleClass('notgoing');
 						var $prevel = $el.prev('.imgoingtext');
-						$prevel.text(goingText);
+						$prevel.html(goingText);
 						$prevel.toggleClass('going').toggleClass('notgoing');
 					}	
 				}
