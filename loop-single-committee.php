@@ -8,20 +8,6 @@
  */
 ?>
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-	<?php  //now get projects first ?>
-	<?php $hascontent = ''; ?>
-	<?php $link1 =  admin_url() . 'post-new.php?post_type=rotary_projects&committee=' . get_the_id(); ?>
-	<?php $link2 = get_post_type_archive_link( 'rotary_projects' ).'?committeeid='.get_the_id();  ?>
-	<?php $connected = new WP_Query( array(
-		'connected_type'  => 'projects_to_committees',
-		'connected_items' => get_queried_object_id(),
-		'posts_per_page' => 2, 
-		'order' => 'DESC',
-		'orderby' => 'meta_value',
-        'meta_key' => 'rotary_project_date',
-		'nopaging'        => false,
-	) ); ?>
-
     <?php $hascontent = ''; ?>
     <?php $committeeTitle = get_the_title(); ?>
     <?php if ( '' != trim( get_the_content() ) ) : ?>
@@ -67,11 +53,11 @@
 							<?php $postCount = rotary_output_blogroll($postCount, $clearLeft); ?>
 				<?php endwhile;?>
 				</div>
-				<?php // Reset Post Data
-					wp_reset_postdata();?>
-			<?php else: ?>
+				<?php else: ?>
 				<?php rotary_show_committee_header_container($hascontent, 'Update', $link1, $link2); ?>
 			<?php endif;?>
+	<?php // Reset Post Data
+	wp_reset_postdata();?>
 			
  <?php  //now get projects ?>
  	
@@ -93,12 +79,12 @@
 			<div class="connectedprojects clearleft clearfix">				
 			<?php show_project_blogroll( $connected, 'no', $committeeTitle ); ?>		
 			</div>
-		<?php // Reset Post Data
-			wp_reset_postdata();?>
+		
 		<?php else: ?>
 				<?php rotary_show_committee_header_container($hascontent, 'Project', $link1, $link2); ?>
 			<?php endif;?>
-
+		<?php // Reset Post Data
+		wp_reset_postdata();?>
 
 		
 
