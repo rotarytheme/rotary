@@ -118,7 +118,7 @@ function rotary_get_committee_announcements($atts){
 			<p>There are no current committee announcements.</p>
 		<?php  endif; ?>
 			<?php if (!is_user_logged_in()) { ?>
-			<p>Please <?php echo wp_loginout( site_url(), false ); ?> to add a new announcment</p>
+			<p>Please <?php echo wp_loginout( site_url(), false ); ?> to add a new announcement</p>
 			<?php }
 	else { ?>
 				<select id="committeeselect" name="committeeselect">

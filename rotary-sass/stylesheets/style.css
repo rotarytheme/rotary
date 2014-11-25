@@ -63,7 +63,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-.backgrounds-sprite, .headeredit, .speakerdatedit, #mainmenu ul ul li.dropdown, #mainmenu ul ul .dropdown:hover > a, .archive #content article .meta .commentspopup, .blog #content article .meta .commentspopup, .single.single-rotary-committees #content .meta .commentspopup, .single.single-rotary_projects #content .meta .commentspopup, #footer .twitter, #footer .facebook, #footer .linkedin, #controls #facebookshare, #controls #twittershare, .widgetedit {
+.backgrounds-sprite, .speakerdatedit, .headeredit, #mainmenu ul ul li.dropdown, #mainmenu ul ul .dropdown:hover > a, .archive #content article .meta .commentspopup, .blog #content article .meta .commentspopup, .single.single-rotary-committees #content .meta .commentspopup, .single.single-rotary_projects #content .meta .commentspopup, #footer .twitter, #footer .facebook, #footer .linkedin, #controls #facebookshare, #controls #twittershare, .widgetedit {
   background-image: url('../images/backgrounds-sfa3b4ba9a2.png');
   background-repeat: no-repeat;
 }
@@ -240,11 +240,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-family: SommetBlack;
 }
 
-.headeredit, .speakerdatedit {
+.speakerdatedit, .headeredit {
   background-position: 0 -84px;
-  overflow: hidden;
-  text-indent: 100%;
-  white-space: nowrap;
   display: none;
   height: 34px;
   position: absolute;
@@ -253,9 +250,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: 34px;
   z-index: 500;
 }
-.headeredit:active, .headeredit:hover, .headeredit:focus, .speakerdatedit:active, .speakerdatedit:hover, .speakerdatedit:focus {
+.speakerdatedit:active, .speakerdatedit:hover, .speakerdatedit:focus, .headeredit:active, .headeredit:hover, .headeredit:focus {
   outline: none;
   text-decoration: none;
+}
+
+.headeredit {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  padding-top: 20px;
+  top: 20px;
 }
 
 .speakerdatedit {

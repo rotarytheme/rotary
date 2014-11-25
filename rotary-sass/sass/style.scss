@@ -117,9 +117,8 @@ Tags: rotary, html5
 	}
 }
 
-.headeredit, .speakerdatedit {
+.speakerdatedit, .headeredit {
 	@include backgrounds-sprite("edit");
-	@include hide-text;
 	display:none;
 	height:34px;
 	position:absolute;
@@ -131,6 +130,11 @@ Tags: rotary, html5
 		outline:none;
 		text-decoration: none;
 	}
+}
+.headeredit {
+	@include hide-text;
+	padding-top:20px;
+	top:20px;
 }
 .speakerdatedit {
 	overflow: hidden;

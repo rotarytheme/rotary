@@ -75,13 +75,13 @@
 	<?php $link2 = get_post_type_archive_link( 'rotary_projects' ).'?committeeid='.get_the_id();  ?>
 	<?php if ( $connected->have_posts() ) : ?>
 			<?php $hascontent = ' hascontent'; ?>
-			<?php rotary_show_committee_header_container($hascontent, 'Project', $link1, $link2); ?>
+			<?php rotary_show_committee_header_container($hascontent, 'project', $link1, $link2); ?>
 			<div class="connectedprojects clearleft clearfix">				
 			<?php show_project_blogroll( $connected, 'no', $committeeTitle ); ?>		
 			</div>
 		
 		<?php else: ?>
-				<?php rotary_show_committee_header_container($hascontent, 'Project', $link1, $link2); ?>
+				<?php rotary_show_committee_header_container($hascontent, 'project', $link1, $link2); ?>
 			<?php endif;?>
 		<?php // Reset Post Data
 		wp_reset_postdata();?>
