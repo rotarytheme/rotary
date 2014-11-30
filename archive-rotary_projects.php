@@ -1,6 +1,6 @@
 <?php
 /**
- * The projects connected posts template.
+ * Template Name: Project Archive
  *
  * @package WordPress
  * @subpackage Rotary
@@ -20,6 +20,13 @@
 <?php else: ?>
 	<h1 class="pagetitle"><span>Project Blog Roll</span></h1>
 	<div id="content" class="fullwidth" role="main"> 
+		<?php $args = array( 
+				'post_type'		=> 'rotary_projects',
+				'meta_key'		=> 'rotary_project_date',
+				'orderby'		=> 'meta_value_num',
+				'order'			=> 'DESC'
+			);?>
+		<?php $wp_query = new WP_Query( $args ); ?>
 		<?php get_template_part( 'loop', 'blogroll-projects' ); ?>
 	</div>
 	<?php endif; ?>

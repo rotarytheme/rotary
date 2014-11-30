@@ -3807,6 +3807,12 @@ aside .widget_sp_image img {
   text-transform: uppercase;
 }
 
+.page-template-archive-rotary_projects-php #content .connectedprojectscontainer {
+  margin-bottom: 40px;
+  margin-right: 0;
+  width: 280px;
+}
+
 .single-rotary_projects .projectcommitteetitle {
   background: #eca900 url(../images/projectcommitteetitle-bg.jpg) no-repeat;
   color: #fff;

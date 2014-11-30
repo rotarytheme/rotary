@@ -336,9 +336,9 @@ jQuery(document).ready(function($) {
 					if ($(this).text() === $('#branding h1').text()) {
 						editLeft += 300;
 					}
-					$('.headeredit').css('left', editLeft + 'px').show();
+					$('.headeredit').stop().css('left', editLeft + 'px').show();
 				}, function() {
-					$('.headeredit').css('left', '70%').hide();
+					$('.headeredit').stop().css('left', '70%').hide();
 				});
 			}
 			if ($('.speakerdatedit').length) {
