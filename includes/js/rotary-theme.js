@@ -317,7 +317,7 @@ jQuery(document).ready(function($) {
 				} else {
 					$sidebar = $('#secondary > ul > li h3');
 				}
-				$($sidebar).hover(
+				$($sidebar).hoverIntent(
 
 				function() {
 					var position = $(this).position();
@@ -328,21 +328,28 @@ jQuery(document).ready(function($) {
 			}
 			//if the user is an admin, he/she can edit theme customizations from the front-end	
 			if ($('.headeredit').length) {
-				$('#branding h1, #branding #meetingaddress').hover(
-
-				function() {
+				$('#branding h1, #branding #meetingaddress').hoverIntent({
+				sensitivity: 1, // number = sensitivity threshold (must be 1 or higher)    
+				interval: 10,  // number = milliseconds for onMouseOver polling interval    
+				timeout: 1200,   // number = milliseconds delay before onMouseOut 
+				over: function() {
 					var position = $(this).position();
 					var editLeft = position.left;
 					if ($(this).text() === $('#branding h1').text()) {
 						editLeft += 300;
 					}
-					$('.headeredit').stop().css('left', editLeft + 'px').show();
-				}, function() {
-					$('.headeredit').stop().css('left', '70%').hide();
+					$('.headeredit').css('left', editLeft + 'px').show();
+				}, 
+				out: function(event) {
+					//this is the original element the event handler was assigned to
+					event.stopPropagation();
+					event.preventDefault();
+					$('.headeredit').css('left', '70%').hide();
+				}	
 				});
 			}
 			if ($('.speakerdatedit').length) {
-				$('.home-upcoming-programs-speaker-date').hover(
+				$('.home-upcoming-programs-speaker-date').hoverIntent(
 
 				function() {
 					var position = $(this).position();

@@ -243,7 +243,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .speakerdatedit, .headeredit {
   background-position: 0 -84px;
   display: none;
-  height: 34px;
+  height: 32px;
   position: absolute;
   left: 70%;
   top: 10px;
