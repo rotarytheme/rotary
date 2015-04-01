@@ -3998,6 +3998,9 @@ aside .widget_sp_image img {
 .single.single-rotary_projects #content .sectioncontainer {
   width: 375px !important;
 }
+.single.single-rotary_projects #content header .postdate {
+  text-transform: capitalize;
+}
 
 .single-rotary_projects .morecomments, .single-rotary_projects .lesscomments {
   margin-left: 10px;
@@ -4700,4 +4703,9 @@ aside .widget_sp_image img {
     background-size: 24px 24px;
     /*The size of the normal image, half the size of the hi-res image*/
   }
+}
+.gallery-item {
+  display: inline-block;
+  margin-right: 10px;
+  width: 150px;
 }

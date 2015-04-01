@@ -7,18 +7,40 @@ if(function_exists("register_field_group"))
 		'fields' => array (
 			array (
 				'key' => 'field_5436e8c7c79e3',
-				'label' => 'Long Term Project',
+				'label' => 'Allow Multiple Updates',
 				'name' => 'long_term_project',
 				'type' => 'true_false',
+				'instructions' => 'Enables multiple posts to be associated with this project.	Use this setting if this is a trip or long term project for which several updates will be posted.',
 				'message' => '',
 				'default_value' => 0,
 			),
 			array (
 				'key' => 'field_53e29fcd38551',
-				'label' => 'Project Date',
+				'label' => 'Project Start Date',
 				'name' => 'rotary_project_date',
 				'type' => 'date_picker',
 				'instructions' => 'Enter the project date. If left blank, it will default to the current date.',
+				'date_format' => 'yymmdd',
+				'display_format' => 'mm/dd/yy',
+				'first_day' => 1,
+			),
+			array (
+				'key' => 'field_550cabe282129',
+				'label' => 'Project End Date',
+				'name' => 'rotary_project_end_date',
+				'type' => 'date_picker',
+				'instructions' => 'Enter the end project date. If left blank, it will default to the current date.',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5436e8c7c79e3',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
 				'date_format' => 'yymmdd',
 				'display_format' => 'mm/dd/yy',
 				'first_day' => 1,
@@ -85,4 +107,3 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));
 }
-?>

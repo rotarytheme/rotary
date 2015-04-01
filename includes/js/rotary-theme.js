@@ -27,7 +27,7 @@ jQuery(document).ready(function($) {
 			$('#speaker-archive-table tbody').on('click', 'tr', this.selectRow);
 			$('.projecticons').on('mouseenter mouseleave', '.icon', this.hoverIcons);
 			$('.logged-in .projecticons').on('click', '.imgoing', this.toggleParticpant);
-			$('.fancybox').fancybox({
+			$('.fancybox, .gallery-item a').fancybox({
 				padding: 3,
 				nextEffect: 'fade',
 				prevEffect: 'fade',
@@ -48,9 +48,13 @@ jQuery(document).ready(function($) {
 		},
 		renderMap: function($el) {
 			var $markers = $el.find('.marker');
+			var mapZoom = 16;
+			if ( $el.hasClass( 'longterm') ) {
+				mapZoom = 8;
+			}
 			var args = {
-				zoom: 16,
-				center: new google.maps.LatLng(0, 0),
+				zoom: mapZoom,
+				center: new google.maps.LatLng($markers.attr('data-lat'), $markers.attr('data-lng')),
 				mapTypeId: google.maps.MapTypeId.ROADMAP
 			};
 			// create map
@@ -62,7 +66,7 @@ jQuery(document).ready(function($) {
 				rotaryTheme.add_marker($(this), map);
 			});
 			// center map
-			rotaryTheme.center_map(map);
+			//rotaryTheme.center_map(map);
 		},
 		add_marker: function($marker, map) {
 			var latlng = new google.maps.LatLng($marker.attr('data-lat'), $marker.attr('data-lng'));
