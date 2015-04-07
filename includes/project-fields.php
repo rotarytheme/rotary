@@ -29,7 +29,7 @@ if(function_exists("register_field_group"))
 				'label' => 'Project End Date',
 				'name' => 'rotary_project_end_date',
 				'type' => 'date_picker',
-				'instructions' => 'Enter the end project date. If left blank, it will default to the current date.',
+				'instructions' => 'Enter the end project date. ',
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (

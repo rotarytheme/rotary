@@ -23,7 +23,7 @@
 				<?php $endDate = DateTime::createFromFormat('Ymd', get_field( 'rotary_project_end_date' ) ); ?>
 				<?php if ( get_field( 'long_term_project' ) ) : ?>
 					<?php $longTermClass = ' longterm'; ?>
-					<?php if ( isset( $startDate )  && isset( $endDate ) && ( '' != trim( get_field( 'rotary_project_end_date' ) ) ) ) : ?>
+					<?php if ( isset( $startDate )  && isset( $endDate )  ) : ?>
 						 <?php if ( $startDate  !=  $endDate  ) : ?>
 						 	<ul>
 								<li>
@@ -33,13 +33,17 @@
 							<ul>
 								<li>					
 									<div class="project-date">
-										<span class="day"><?php echo $startDate->format('dS'); ?></span>
+										<span class="day"><?php echo $startDate->format('jS'); ?></span>
 										<span class="month"><?php echo $startDate->format('F'); ?></span>
 										<span class="year"><?php echo $startDate->format('Y'); ?></span>
-										<br /><span>To</span><br />
-										<span class="day"><?php echo $endDate->format('dS'); ?></span>
-										<span class="month"><?php echo $endDate->format('F'); ?></span>
-										<span class="year"><?php echo $endDate->format('Y'); ?></span>
+										<?php if ( '' != trim( get_field( 'rotary_project_end_date' ) ) ) : ?>
+											<br /><span>To</span><br />
+											<span class="day"><?php echo $endDate->format('iS'); ?></span>
+											<span class="month"><?php echo $endDate->format('F'); ?></span>
+											<span class="year"><?php echo $endDate->format('Y'); ?></span>
+										<?php else : ?>
+											<span> (ongoing)</span>
+										<?endif; ?>
 			                	     </div>
 								</li>
 							</ul>

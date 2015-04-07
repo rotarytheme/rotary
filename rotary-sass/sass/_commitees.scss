@@ -171,6 +171,9 @@
 	}
 	header .postdate {
 		text-transform: capitalize;
+		a {
+			font-weight:bold;
+		}
 	}
 }
 .single-rotary_projects {
