@@ -274,15 +274,27 @@ function show_project_blogroll($query, $showthumb = 'no', $committeeTitle = '') 
 			<h2 class="projecttitle"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 				
 			<?php rotary_show_project_icons(); ?>
-			
-			<?php if (! get_field( 'long_term_project' ) ) : ?>
-				<?php if ( get_field( 'rotary_project_date' ) ) : ?>
-					<?php $date = DateTime::createFromFormat('Ymd', get_field( 'rotary_project_date' ) ); ?>
-					<div class="rotary_project_date">
-						<span class="day"><?php echo $date->format( 'l') ; ?></span><br />
-						<span class="fulldate"><?php  echo $date->format( 'jS F Y' ); ?></span>
-					</div>
+			<?php $startDate = DateTime::createFromFormat('Ymd', get_field( 'rotary_project_date' ) ); ?>
+			<?php $endDate = DateTime::createFromFormat('Ymd', get_field( 'rotary_project_end_date' ) ); ?>
+			<?php if (get_field( 'long_term_project' ) ) : ?>
+				<?php if ( isset( $startDate )  && isset( $endDate )  ) : ?>
+						 <?php if ( $startDate  !=  $endDate  ) : ?>
+							 <div class="rotary_project_date">
+								 <span class="fulldate"><?php  echo $startDate->format( 'jS F Y' ); ?></span>
+								 <?php if ( '' != trim( get_field( 'rotary_project_end_date' ) ) ) : ?>
+										<br /><span>To</span><br />
+										<span class="fulldate"><?php  echo $endDate->format( 'jS F Y' ); ?></span>	
+								  <?php else: ?>
+								  		<span> (ongoing)</span>
+								  <?php endif; ?>
+							 </div>
+						<?php endif; ?>
 				<?php endif; ?>
+			<?php else : ?>
+				<div class="rotary_project_date">
+					<span class="day"><?php echo $startDate->format( 'l') ; ?></span><br />
+					<span class="fulldate"><?php  echo $startDate->format( 'jS F Y' ); ?></span>
+				</div>
 			<?php endif; ?>	
 			<?php if ( 'yes' == $showthumb ) : ?>
 				<?php if ( has_post_thumbnail() ) : ?>

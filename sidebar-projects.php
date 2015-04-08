@@ -38,7 +38,7 @@
 										<span class="year"><?php echo $startDate->format('Y'); ?></span>
 										<?php if ( '' != trim( get_field( 'rotary_project_end_date' ) ) ) : ?>
 											<br /><span>To</span><br />
-											<span class="day"><?php echo $endDate->format('iS'); ?></span>
+											<span class="day"><?php echo $endDate->format('jS'); ?></span>
 											<span class="month"><?php echo $endDate->format('F'); ?></span>
 											<span class="year"><?php echo $endDate->format('Y'); ?></span>
 										<?php else : ?>
@@ -61,7 +61,7 @@
 							
 							<div class="project-date">
 								<p class="dayweek"><?php echo $startDate->format('l'); ?></p>
-								<span class="day"><?php echo $startDate->format('dS'); ?></span>
+								<span class="day"><?php echo $startDate->format('jS'); ?></span>
 								<span class="month"><?php echo $startDate->format('F'); ?></span>
 								<span class="year"><?php echo $startDate->format('Y'); ?></span>
 	                	     </div>

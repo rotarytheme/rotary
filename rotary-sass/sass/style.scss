@@ -1236,6 +1236,7 @@ td {
 			padding-bottom:5px;
 		}
 	}
+	
 	#inthisissue, div[id^="blog"] {  
 			background: #FFF url(../images/single-post-section-header-issue.png) no-repeat;
 	
@@ -1286,6 +1287,11 @@ td {
 		
 
 	}
+}
+/*overrides for slides*/
+.single.single-rotary-slides article > h2 {
+	 font-family: SommetHeavy, sans-serif;
+	 line-height: 1.1em;
 }
 .single-rotary_projects .speakercontainer {
 	top:30px;

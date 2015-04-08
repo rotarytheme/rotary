@@ -1539,6 +1539,12 @@ td {
   color: #0f7289;
 }
 
+/*overrides for slides*/
+.single.single-rotary-slides article > h2 {
+  font-family: SommetHeavy, sans-serif;
+  line-height: 1.1em;
+}
+
 .single-rotary_projects .speakercontainer {
   top: 30px;
 }
@@ -4346,6 +4352,13 @@ aside .widget_sp_image img {
   /* IE6 & IE7 */
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#a0957f', endColorstr='#544636')";
   /* IE8 */
+}
+
+.single.single-rotary-committees #content header .postdate {
+  text-transform: capitalize;
+}
+.single.single-rotary-committees #content header .postdate a {
+  font-weight: bold;
 }
 
 .single-rotary-committees .hascontent .newcomment, .single-rotary_projects .hascontent .newcomment {

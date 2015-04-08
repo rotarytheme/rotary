@@ -466,6 +466,15 @@
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#a0957f', endColorstr='#544636'); /* IE6 & IE7 */
 -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#a0957f', endColorstr='#544636')"; /* IE8 */  
 }
+.single.single-rotary-committees #content {
+	header .postdate {
+		text-transform: capitalize;
+		a {
+			font-weight:bold;
+		}
+	}
+
+}
 .single-rotary-committees, .single-rotary_projects {
 	.hascontent .newcomment {
 		float:right;
