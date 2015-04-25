@@ -85,10 +85,6 @@ $args['form'] = array('method' => 'POST');
 $speaker_search = new WP_Advanced_Search($args); ?>
 <h1 class="pagetitle"><span>Speaker Program</span></h1>
 <div id="speakertabs" class="speakertabs">
-	 <ul>
-<li id="archive-tab"><a href="#tabs-1">Archive</a></li>
-<li id="upcoming-tab"><a href="<?php echo get_template_directory_uri() ?>/upcoming-programs.php">Upcoming Speakers</a></li>
-</ul>
 
 <div id="tabs-1">
 <?php //show the form ?>
@@ -137,7 +133,7 @@ $query = $speaker_search->query();
 	// Reset Post Data
 	wp_reset_postdata();?>
 </div><!--end div search-results-->
-</div><!--end tab 2-->
+</div><!--end tab 1-->
 </div> <!--end div speakertabs-->
 
 

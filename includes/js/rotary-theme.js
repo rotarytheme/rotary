@@ -12,7 +12,7 @@ jQuery(document).ready(function($) {
 			this.setUpEdits();
 			this.setUpDatePicker();
 			this.setUpDatatables();
-			this.setUpTabs();
+			//this.setUpTabs();
 			this.checkOpen();
 			this.setupMaps();
 			this.layoutProjects();
