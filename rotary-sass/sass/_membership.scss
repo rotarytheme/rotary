@@ -48,22 +48,42 @@
 }
 .rotaryselections {
 	padding-bottom:20px;
+	.committeecontainer{
+		float:right;
+	}
+	.sendemail {
+		clear:right;
+		float:right;
+		margin-top:15px;
+		input {
+			@include button();
+			cursor:pointer;
+			padding:4px 10px 4px 10px;
+		}
+	}
+	.usercontainer {
+		float:right;
+		position:relative;
+		top:-50px;
+		select{
+			height:30px;
+		}
+
+	}
+	#committeelabel {
+		margin-right:5px;
+	}
+
+}
+.single-rotary_projects .rotaryselections .sendemail {
+	margin-bottom:15px;
+	margin-top:-25px;
+}
+.no-cssgradients .rotaryselections .sendemail input{
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FDF8EF', endColorstr='#F9EFD9'); /* IE6 & IE7 */
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FDF8EF', endColorstr='#F9EFD9')"; /* IE8 */  
 }
 
-.rotaryselections .committeecontainer {
-	float:right;
-}
-.rotaryselections .usercontainer {
-	float:right;
-	position:relative;
-	top:-50px;
-}
-.rotaryselections .usercontainer select{
-	height:30px;
-}
-.rotaryselections #committeelabel {
-	margin-right:5px;
-}
 
 .rotarymembershipheader #rotarymembers tr td, .rotarymembershipheader #rotaryprojects tr td{
 	border-bottom:1px solid #b3b5b7;

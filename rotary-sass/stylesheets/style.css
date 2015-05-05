@@ -2639,23 +2639,60 @@ aside .widget_sp_image img {
 .rotaryselections {
   padding-bottom: 20px;
 }
-
 .rotaryselections .committeecontainer {
   float: right;
 }
-
+.rotaryselections .sendemail {
+  clear: right;
+  float: right;
+  margin-top: 15px;
+}
+.rotaryselections .sendemail input {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZkZjhlZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Y5ZWZkOSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fdf8ef), color-stop(100%, #f9efd9));
+  background-image: -moz-linear-gradient(#fdf8ef, #f9efd9);
+  background-image: -webkit-linear-gradient(#fdf8ef, #f9efd9);
+  background-image: linear-gradient(#fdf8ef, #f9efd9);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #e0e0e1;
+  color: #959595;
+  display: block;
+  font-family: "BebasNeueRegular", Arial, sans-serif;
+  font-weight: normal;
+  height: auto;
+  line-height: normal;
+  padding: 2px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 4px 10px 4px 10px;
+}
 .rotaryselections .usercontainer {
   float: right;
   position: relative;
   top: -50px;
 }
-
 .rotaryselections .usercontainer select {
   height: 30px;
 }
-
 .rotaryselections #committeelabel {
   margin-right: 5px;
+}
+
+.single-rotary_projects .rotaryselections .sendemail {
+  margin-bottom: 15px;
+  margin-top: -25px;
+}
+
+.no-cssgradients .rotaryselections .sendemail input {
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FDF8EF', endColorstr='#F9EFD9');
+  /* IE6 & IE7 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FDF8EF', endColorstr='#F9EFD9')";
+  /* IE8 */
 }
 
 .rotarymembershipheader #rotarymembers tr td, .rotarymembershipheader #rotaryprojects tr td {
