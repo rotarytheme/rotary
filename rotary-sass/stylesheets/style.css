@@ -2714,7 +2714,7 @@ aside .widget_sp_image img {
   text-transform: uppercase;
 }
 
-.rotarymembershipheader #rotarymembers tr .email, .rotarymembershipheader #rotaryprojects tr .delete {
+.rotarymembershipheader #rotarymembers tr .groupemail, .rotarymembershipheader #rotaryprojects tr .delete {
   border-right: none;
 }
 
