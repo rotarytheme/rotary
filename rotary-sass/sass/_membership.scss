@@ -46,18 +46,24 @@
 #rotarymembers_wrapper {
 	margin-left:20px;
 }
+#rotarymembers_filter {
+	clear:right;
+	float:right;
+}
 .rotaryselections {
 	padding-bottom:20px;
 	.committeecontainer{
 		float:right;
 	}
 	.sendemail {
-		clear:right;
-		float:right;
+		clear:both;
+		float:left;
+		margin-bottom:15px;
 		margin-top:15px;
 		input {
 			@include button();
 			cursor:pointer;
+			display:inline-block;
 			padding:4px 10px 4px 10px;
 		}
 	}
