@@ -6,6 +6,79 @@
  * @subpackage Rotary
  * @since Rotary 1.0
  */
+ require_once('class-tgm-plugin-activation.php'); 
+ 
+ //install required plugins
+ add_action( 'tgmpa_register', 'rotary_register_all_required_plugins' );
+ function rotary_register_all_required_plugins () {
+	/**
+	 * Array of plugin arrays. Required keys are name and slug.
+	 * If the source is NOT from the .org repo, then source is also required.
+	 */
+	$plugins = array(
+
+
+
+		// This is an example of how to include a plugin from the WordPress Plugin Repository
+		array(
+			'name' 		=> 'Contact Form 7',
+			'slug' 		=> 'contact-form-7',
+			'required' 	=> true,
+			'force_activation' => true
+		),
+
+	);
+
+	// Change this to your theme text domain, used for internationalising strings
+	$theme_text_domain = 'rotary';
+
+	/**
+	 * Array of configuration settings. Amend each line as needed.
+	 * If you want the default strings to be available under your own theme domain,
+	 * leave the strings uncommented.
+	 * Some of the strings are added into a sprintf, so see the comments at the
+	 * end of each line for what each argument will be.
+	 */
+	$config = array(
+		'parent_menu_slug'  => 'plugins.php',         // Default parent menu slug
+        'parent_url_slug'   => 'plugins.php',
+		'strings'      		=> array(
+		),
+	);
+
+	tgmpa( $plugins, $config );
+
+ }
+ //since we require contact form 7 above, lets create a custom template
+ add_filter('wpcf7_default_template', 'rotary_wpcf7_default_template', 99, 2);
+ function rotary_wpcf7_default_template($template, $prop) {
+	if ( 'form' == $prop ) :
+		$template =
+			'<div id="rotaryemaildialog">
+		    	<div class="rotaryemail-sectionheader">
+        			<div class="rotaryemail-sectioncontent">
+		        		<p>
+		        		<label for="rotaryemailto">To</label>
+		        		<input id="rotaryemailto" class="rotaryemailto" type="text" name="rotaryemailto" disabled="disabled"/>
+		        		</p>
+		        		<p>
+		        		<label for="rotaryemailsubject">Subject</label>
+		        		<input id="rotaryemailsubject" class="rotaryemailsubject" type="text" name="rotaryemailsubject"/>
+		        		</p>
+		        		<p>
+		        		<label for="rotaryemailmessage">Message</label>
+		        		<textarea id="rotaryemailmessage" class="rotaryemailmessage" rows=10 cols="50" name="rotaryemailmessage"></textarea>
+		        		</p>
+		        		<p>
+		        		<input class="rotaryemailsubmit" name="rotaryemailsubmit" type="submit" value="send">
+		        		</p>
+	        		</div>
+	        	</div>
+        	</div>';
+			return $template;
+	endif;
+ } 
+ 
  function rotary_default_link_cat(){
 	 
 	 //add custom blogroll category
