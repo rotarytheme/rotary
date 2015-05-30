@@ -4,6 +4,6 @@ Github Theme URI: https://github.com/rotarytheme/rotary
 Description: An HTML 5 theme designed for Rotary Clubs.
 Author: Merrill M. Mayer (development) and  Carolina Torres (design)
 Tags: rotary, html5
-Version: 3.315
+Version: 3.316
 */
 /*NOTE this stylesheet is empty because we are overriding the stylesheet css in our functions.php file. This is because we are using COMPASS.app to compile SCSS into CSS. The resulting stylesheet is in:/rotary-sass/stylesheets/style.css */
