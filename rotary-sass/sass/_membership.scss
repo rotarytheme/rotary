@@ -123,19 +123,17 @@
 	text-transform:uppercase;
 }
 .rotaryemaildialog {
-	@include background-image(linear-gradient(#fcfcfc, #ffffff));
-	@include box-shadow(3px 3px 5px 0 #efefef);
-	.ui-dialog-titlebar {
-		position:absolute;
-		right:10px;
+	width:786px;
+	input[type="text"], input[type="email"]{
+		height:40px;
+		width:53%;
 	}
-	input[type="text"], textarea {
+	input[type="text"], input[type="email"], textarea {
 		border-left:0;
 		border-top: 1px solid #efefef;
 		@include box-shadow(2px 2px 10px 0 #efefef);
 		color:#a8aaac;
 		font-size:13px;
-		height:40px;
 		width:390px;
 	}
 	label {
@@ -155,14 +153,6 @@
 		font-size:16px;
 		margin-left:465px;
 		padding:5px 10px 5px 10px;
-	}
-}
-#rotaryemaildialog {
-	width:786px;
-	input[type="text"]{
-		width:53%;
-		padding-bottom:5px;
-		padding-top:5px;
 	}
 }
 .rotaryemail-sectionheader {

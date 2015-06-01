@@ -54,29 +54,34 @@
  function rotary_wpcf7_default_template($template, $prop) {
 	if ( 'form' == $prop ) :
 		$template =
-			'<div id="rotaryemaildialog">
+			'<div id="rotaryemaildialog" class="rotaryemaildialog">
 		    	<div class="rotaryemail-sectionheader">
         			<div class="rotaryemail-sectioncontent">
+        				<p>
+        				<label for="rotaryemailname">Your Name*</label>
+        				[text* your-name id:rotaryemailname class:rotaryemailname]
+						</p>
 		        		<p>
-		        		<label for="rotaryemailto">To</label>
-		        		<input id="rotaryemailto" class="rotaryemailto" type="text" name="rotaryemailto" disabled="disabled"/>
+		        		<label for="rotaryemailfrom">Your Email*</label>
+		        		[email* your-email id:rotaryemailfrom class:rotaryemailfrom]
 		        		</p>
 		        		<p>
 		        		<label for="rotaryemailsubject">Subject</label>
-		        		<input id="rotaryemailsubject" class="rotaryemailsubject" type="text" name="rotaryemailsubject"/>
+		        		[text your-subject id:rotaryemailsubject class:rotaryemailsubject]
 		        		</p>
 		        		<p>
 		        		<label for="rotaryemailmessage">Message</label>
-		        		<textarea id="rotaryemailmessage" class="rotaryemailmessage" rows=10 cols="50" name="rotaryemailmessage"></textarea>
+		        		[textarea textarea-507 50x10 id:rotaryemailmessage class:rotaryemailmessage]
 		        		</p>
 		        		<p>
-		        		<input class="rotaryemailsubmit" name="rotaryemailsubmit" type="submit" value="send">
+		        		[submit id:rotaryemailsubmit class:rotaryemailsubmit "send"]
 		        		</p>
 	        		</div>
 	        	</div>
         	</div>';
-			return $template;
+			
 	endif;
+	return $template;
  } 
  
  function rotary_default_link_cat(){
