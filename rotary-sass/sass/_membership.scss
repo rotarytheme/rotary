@@ -134,16 +134,31 @@
 		@include box-shadow(2px 2px 10px 0 #efefef);
 		color:#a8aaac;
 		font-size:13px;
-		width:390px;
+		width:570px;
 	}
 	label {
+		@include background-image(linear-gradient(#f9f3e6, #f7edd6));
+		border: solid #E5DCC8 1px;
 		clear:left;
 		color:#6d6e70;
 		display:block;
-		float:left;
-		font-family:$button-font;
+		font-size:1.3em;
+		font-family:$button-font;	
+		left: -13px;
+		padding: 10px 5px 8px 16px;
+		position: relative;
+		top: 30px;
 		width:120px;
-		
+		z-index: 10;
+		&:after {
+			content: "";
+			background: url( ../images/brown-swish.png ) 0 0 no-repeat;
+			position:absolute;
+			bottom:-13px;
+			left:0; 
+			width:10px;
+			height:13px;
+		}	
 	}
 	p {
 		padding:10px 0 10px 0;
