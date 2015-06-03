@@ -146,6 +146,10 @@
 	color: #CC0000;
 }
 
+.acf_postbox .field.require_bug label span.required {
+    color: #CC0000;
+}
+
 .acf_postbox label.field_label:first-child {
 	padding-top: 0;
 }
