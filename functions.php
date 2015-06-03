@@ -13,6 +13,14 @@ define( 'ACF_LITE' , true );
 $includes_path = TEMPLATEPATH . '/includes/';
 // Theme specific functionality
 
+//
+function special_js($hook) {
+    wp_enqueue_script( 'special_js',  get_template_directory_uri(). '/includes/js/special_js.js' );
+}
+add_action( 'admin_enqueue_scripts', 'special_js' );
+
+//
+
 require_once ($includes_path . 'theme-options.php'); 		// Options panel settings and custom settings
 
 require_once ($includes_path . 'theme-functions.php'); 		// Custom theme functions
