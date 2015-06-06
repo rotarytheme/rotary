@@ -286,25 +286,51 @@ function rotary_truncate_text($text, $length = 100, $ending = '...', $exact = fa
 
 function rotary_get_featured_post($atts){
 	extract( shortcode_atts( array(
-				'header' => 'Latest News',
+	'header' => 'Latest News',
+	'fetch'  => 'next'
 			), $atts ) );
-	if (post_type_exists( 'rotary_speakers') ) {
-		$args = array(
-			'posts_per_page' => 1,
-			'post_type' => 'rotary_speakers',
-			'order' => 'ASC',
-			'orderby' => 'meta_value',
-			'meta_key' => 'speaker_date',
-			'meta_query' => array(
-				array(
-					'key' => 'speaker_date',
-					'value' => date('Ymd'),
-					'type' => 'DATE',
-					'compare' => '>='
-				)
-			)
-		);
-	}
+			if (post_type_exists( 'rotary_speakers' ) && 'next' == $fetch )  {
+				$args = array(
+						'posts_per_page' => 1,
+						'post_type' => 'rotary_speakers',
+						'order' => 'ASC',
+						'orderby' => 'meta_value',
+						'meta_key' => 'speaker_date',
+						'meta_query' => array(
+								array(
+										'key' => 'speaker_date',
+										'value' => date('Ymd'),
+										'type' => 'DATE',
+										'compare' => '>='
+								)
+						)
+				);
+			}
+			// Added by PAO to show the latest, completed Reveille
+			elseif (post_type_exists( 'rotary_speakers') && 'last' == $fetch ) {
+				$args = array(
+						'posts_per_page' => 1,
+						'post_type' => 'rotary_speakers',
+						'order' => 'DESC',
+						'orderby' => 'meta_value',
+						'meta_key' => 'speaker_date',
+						'meta_query' => array(
+								'relation' => 'AND',
+								array(
+										'key' => 'speaker_date',
+										'value' => date('Ymd'),
+										'type' => 'DATE',
+										'compare' => '<='
+								),
+								array(
+										'key' => 'speaker_program_notes',
+										'value' => '',
+										'type' => 'CHAR',
+										'compare' => '>'
+								)
+						)
+				);
+			}
 	else {
 		$args = array(
 			'posts_per_page' => 1,
@@ -333,7 +359,7 @@ function rotary_get_featured_post($atts){
         <h4><a href="<?php the_permalink()?>"><?php the_title(); ?></a></h4>
         <?php
 	if (post_type_exists( 'rotary_speakers')) {
-		$content = trim(get_field('speaker_program_content'));
+		$content = ( 'next' == $fetch ) ? trim(get_field('speaker_program_content')) : trim(get_field('speaker_program_notes')) ;
 	}
 	else {
 		$content = apply_filters(get_the_content());
@@ -363,7 +389,6 @@ function rotary_get_featured_post($atts){
 	wp_reset_postdata();
 	return ob_get_clean();
 }
-
 
 function rotary_upcoming_programs_function($atts) {
 	extract( shortcode_atts( array(

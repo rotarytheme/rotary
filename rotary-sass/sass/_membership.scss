@@ -126,7 +126,6 @@
 	width:786px;
 	input[type="text"], input[type="email"]{
 		height:40px;
-		width:53%;
 	}
 	input[type="text"], input[type="email"], textarea {
 		border-left:0;
@@ -134,7 +133,12 @@
 		@include box-shadow(2px 2px 10px 0 #efefef);
 		color:#a8aaac;
 		font-size:13px;
+		padding-left:150px;
 		width:570px;
+	}
+	.rotaryemailmessage {
+		padding: 40px 10px 10px 15px;
+		width: 693px;
 	}
 	label {
 		@include background-image(linear-gradient(#f9f3e6, #f7edd6));
@@ -166,8 +170,8 @@
 	input[type="submit"] {
 		@include button($background:linear-gradient(#f9f3e6, #f7edd6), $color:#6d6e70, $border:#efefef, $border-radius:0);
 		font-size:16px;
-		margin-left:465px;
-		padding:5px 10px 5px 10px;
+		margin-left:632px;
+		padding:12px 30px 9px;
 	}
 }
 .rotaryemail-sectionheader {
@@ -177,7 +181,7 @@
 }
 .rotaryemail-sectioncontent {
 	border-left: 1px solid #efefef;
-	padding:100px 30px 30px 30px;
+	padding:65px 30px 30px 30px;
 }	
 .rotarydialog {
 	background:#0f7189 url(../images/rotary-member-dialog-top.png) no-repeat !important;
