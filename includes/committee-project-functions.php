@@ -299,7 +299,7 @@ function show_project_blogroll($query, $showthumb = 'no', $committeeTitle = '') 
 			<?php if ( 'yes' == $showthumb ) : ?>
 				<?php if ( has_post_thumbnail() ) : ?>
 					<?php the_post_thumbnail('medium') ; ?>
-				<?endif; ?>
+				<?php endif; ?>
 			<?php endif; ?>
 			<?php the_excerpt(); ?>
 			<p><a href="<?php the_permalink(); ?>">> Keep Reading</a></p>

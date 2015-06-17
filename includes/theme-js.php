@@ -3,6 +3,13 @@
 if (!is_admin()) add_action( 'wp_enqueue_scripts', 'rotary_add_javascript' );
 
 function rotary_add_javascript( ) {
+	//style not script but it is the correct spot
+	
+	global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
+    $protocol = is_ssl() ? 'https' : 'http';
+	$query_args = array(
+		'family' => 'Istok+Web:400,700,400italic,700italic');
+	wp_enqueue_style( 'rotary-istok-font', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ), array(), null 	);	
 
 	wp_enqueue_script( 'modernizr', get_bloginfo('template_directory').'/includes/js/modernizr.custom.js', array( 'jquery' ) );
 	
