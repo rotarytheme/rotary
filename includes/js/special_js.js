@@ -23,4 +23,8 @@ jQuery(document).ready(function($) {
          return bug_div.val();
          }*/
     }
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> origin/master

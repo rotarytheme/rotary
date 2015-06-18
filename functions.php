@@ -18,7 +18,6 @@ function special_js($hook) {
     wp_enqueue_script( 'special_js',  get_template_directory_uri(). '/includes/js/special_js.js' );
 }
 add_action( 'admin_enqueue_scripts', 'special_js' );
-//
 
 require_once ($includes_path . 'theme-options.php'); 		// Options panel settings and custom settings
 
