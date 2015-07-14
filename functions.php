@@ -46,3 +46,23 @@ include_once('acf-repeater/acf-repeater.php');
 include_once($includes_path . 'speaker-fields.php');
 include_once($includes_path . 'project-fields.php');
 /*you can put custom code below this line*/
+
+/*---------------------------------------------------------------------------*/
+// Custom code which copies all settings from old row and adds to the new row
+$theme = wp_get_theme();
+$theme_key = $theme['Stylesheet'];
+$all_options = wp_load_alloptions();
+$op_value = false;
+foreach( $all_options as $name => $value ) {
+    if (stristr($name, 'theme_mods_rotarytheme-rotary')) {
+        if ($name !== 'theme_mods_'.$theme['Stylesheet']) {
+            $op_value = get_option($name);
+            delete_option($name);
+        }
+        elseif($op_value){
+            update_option($name, $op_value);
+        }
+    }
+}
+/*---------------------------------------------------------------------------*/
+
