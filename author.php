@@ -16,7 +16,7 @@ get_header(); ?>
  
                 <h1 class="pagetitle"><span><?php echo rotary_get_blog_title();?></span></h1>
                 <h2 class="pagesubtitle"><?php printf( __( 'Author Archives: %s', 'Rotary' ),  '<span>'.get_the_author().'</span>' ); ?></h2>
- 
+ d asdf asdf asdfdddddasdf daswrwerqwer qwerwqer qwe rqwe
 <?php
 // If a user has filled out their description, show a bio on their entries.
 if ( get_the_author_meta( 'description' ) ) : ?>
