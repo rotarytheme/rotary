@@ -9,8 +9,8 @@
  ?>
  
 <?php get_header(); ?>
-<h1 class="pagetitle"><span>Committee News</span></h1>
- 
+<h1 class="pagetitle"><span><?php echo rotary_get_blog_title();?></span></h1>
+<h2 class="pagesubtitle"><?php printf( __( 'Committee %s', 'Rotary' ), '<br /><span>'. get_the_title($_REQUEST['committeeid']) . '</span>' ); ?></h2>
 <div id="content" role="main"> 
 
 <?php   if ( isset( $_REQUEST['committeeid'] ) ) {			
@@ -25,12 +25,11 @@
 			
 			<?php if ( $connected->have_posts() ) : ?>
 			 <?php   $committeePost = get_post( $_REQUEST['committeeid'] ); ?>
-				<h2 class="pagesubtitle"><?php echo $committeePost->post_title; ?></h2>
 				<?php  while ( $connected->have_posts() ) : $connected->the_post();?>
 					<?php $postCount = rotary_output_blogroll($postCount, $clearLeft); ?>
 				<?php endwhile;?>
 			<?php else : ?>
-				<p>No committee news.</p>
+				<p>No posts found.</p>
 			<?php endif;?>
 			<?php // Reset Post Data
 			wp_reset_postdata();

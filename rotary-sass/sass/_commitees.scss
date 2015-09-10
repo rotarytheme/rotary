@@ -1,3 +1,8 @@
+.project {
+	h1, h2 {
+		color: #FCAB1C!important;
+	}
+}
 .pagecommitteetitle {
 	font-family: $body-font-family;
 	font-size:12px;
@@ -12,48 +17,31 @@
 .single-rotary_projects .projectcommitteetitle {
 	background: #eca900 url(../images/projectcommitteetitle-bg.jpg) no-repeat;
 	color: #fff;
-	font-size:22px;
+	font-size:24px;
 	height: 72px;	
 	margin-top:30px;
 	position: relative;
 	text-indent: 70px;
 	text-transform: uppercase;
 	h2 {
-		@include text-shadow(rgba(black, 0.27) 1px 1px 2px);
-		font-family: $button-font;
+		font-family: $header-font;
 		line-height:72px;
+		font-weight: 700;
 	}
 	a {
-		color: #197b8f;
-		font-weight:400;
+		color: $header-font-color;
+		font-weight:700;
 		&:active, &:hover {
-			color: #197b8f;
+			color: $header-font-color
 		}
 	}
-	.newcommitteepost, .newcomment {
-		@include button($color:#FFF, $background:none, $border: #bc8700, $height:30px, $border-radius:0);
-		@include box-shadow(rgba(188, 135, 0, 0.8) 0 0 5px inset);
-		background-color:#d49800;
-		font-size:15px;
-		line-height:30px;		
-		margin-left:0;
-		position:absolute;
-		top:20px;
-		right:200px;
-		text-indent:0;
-		width:180px;
-		&.second {
-			right:6px;
-		}
-		&:active, &:hover {
-			color: #FFF;
-		}
-	}
+	
 	
 }
 .announcedby {
 	display:inline-block;
-	margin-left:10px !important;
+	float: right;
+	margin: 10px 0px 0px 115px !important;
 	max-width:50%;
 	padding-top:0;
 }
@@ -71,7 +59,7 @@
 }
 
 
-.projects .wp-post-image {
+.projects > .wp-post-image {
 	clear: both;
 	display: block;
 	height:auto;
@@ -82,10 +70,18 @@
 .committeeblogrollcontainer {
 	margin-bottom:40px;
 }
-.single.single-rotary-committees #content .commentcommittetext h2 {
-	border:none;
-	margin-bottom:0;
-	margin-left:25px;
+.single.single-rotary-committees #content {
+	 .commentcommittetext h2 {
+		border:none;
+		margin-bottom:0;
+		margin-left:25px;
+	}
+	.committeecomment {
+	    margin-bottom: 0px;
+	    width: 95%;
+	    position: relative;
+	}
+
 }
 .imgoingtext, .locationtext, .participanttext {
   background-color:#f3f3f3;
@@ -127,11 +123,15 @@
  	.imgoingtext{
 		left:-20px;
 	}
+
+	h2 {
+		font-weight: 400;
+	}
 }
 
 .projecticons {
-	border-bottom:1px solid #efefef;
-	border-top:1px solid #efefef;
+	border-bottom:1px solid #ccc;
+	border-top:1px solid #ccc;
 	height:50px;
 	margin-bottom:25px;
 	position:relative;
@@ -146,8 +146,13 @@
 		@include hide-text;
 	}
 	.count {
-		vertical-align: middle;
-		width:10px;
+		color: $med-gray-color;
+		font-family: $header-font;
+		font-size: 18px;
+		font-weight: 700;
+		padding-top: 12px;
+		vertical-align: top;
+		width:14px;
 	}
 	.imgoing {
 		background:url(../images/check-icon.png) 10px 13px no-repeat;
@@ -166,14 +171,20 @@
 	}
 }
 .single.single-rotary_projects #content {
+	.committeecomment {
+	    margin-bottom: 0px;
+	    width: 95%;
+	    position: relative;
+	    p {
+			margin-left: 25px !important;
+		}
+	}
+
 	.sectioncontainer {
 		width:375px !important;
 	}
 	header .postdate {
 		text-transform: capitalize;
-		a {
-			font-weight:bold;
-		}
 	}
 }
 .single-rotary_projects {
@@ -201,7 +212,21 @@
 		border-left:3px solid #e6decd;
 		border-right:3px solid #e6decd;
 		border-top:3px solid #e6decd;
-		width:778px
+		width:778px;
+		&:before {
+			color: $header-font-color;
+			content: "Announcement";
+			font-family: Open Sans Condensed;
+		    font-size: 25px;
+		    font-weight:700;
+		     left: 24px;
+		     position: absolute;
+		    text-shadow: 2px 2px #FFF;
+		    text-transform: uppercase;
+		    top: 15px;
+		    width: 250px;
+		    z-index: 100;
+		}
 	}
 	 .comment .commentbottom {
 	   background: url(../images/project-comment-bottom-bg.png) no-repeat;
@@ -214,6 +239,11 @@
    }
    .committeecommentdetail {
 	   clear:left;
+	   color: #555;
+	   font-size: 16px;
+	   font-weight: normal;
+	   text-transform: none;
+    
    }
    .announcedby {
 	   float:left;
@@ -224,12 +254,7 @@
 	   margin-left:20px;
 	   margin-top:0;
 	   padding-top:0;
-	   .month, .day, .year {
-		   color:#6b6b6b;
-		   font-family: $menu-font-family;
-		   font-size:12px;
-		   position:static;
-	   }
+
    }
  
 }
@@ -242,31 +267,9 @@
 			.post-edit-link {
 				margin-left:0;
 				position:absolute;
-				top:6px;
+				top:4px;
 				right:6px;
 
-			}
-		}
-		.post-edit-link {
-				@include button($color:#FFF, $height:30px, $background:linear-gradient(#034679, #0f7185), $border-radius:0);
-				font-size:15px;
-				line-height:30px;
-				margin-left:20px;
-				width:60px;
-				span {
-					color:$link-arrow-color;
-				}
-				&:active, &:hover {
-					color:#fff;
-				}
-		}
-		&.project {
-				clear:both;
-			.post-edit-link{
-				@include background-image(linear-gradient(#f3c55b, #f3c55b));
-				span {
-						color:$project-link-arrow-color;
-				}
 			}
 		}
 		.committee {
@@ -283,19 +286,31 @@
 	}
 
 .committeeheadercontainer {
-		@include box-shadow(rgba(0, 0, 0, 0.25) 0 0 7px inset);
 		background-color: #FAFAFA;
 		border: 1px solid #B5B5B5;
+		clear:both;
 		height:160px;
 		margin-bottom:20px;
 		position:relative;
+		
+		h3 {
+			background-color: #e7e7e8;
+			/*-webkit-clip-path:polygon(0 0, 100% 0, 95% 50%, 100% 100%, 0 100%, 0 0);
+			-moz-clip-path:polygon(0 0, 100% 0, 95% 50%, 100% 100%, 0 100%, 0 0);
+			-ms-clip-path:polygon(0 0, 100% 0, 95% 50%, 100% 100%, 0 100%, 0 0);
+			clip-path:polygon(0 0, 100% 0, 95% 50%, 100% 100%, 0 100%, 0 0);*/
+			}
+		//parent selector or additional class
+		.project & h3, &.project h3 {
+			color: $gold-bg-color !important;
+		}	
 		&.hascontent {
 			height:auto;
 			.newpost {
 				margin-left:0;
 				position:absolute;
-				top:6px;
-				right:138px;
+				top:4px;
+				right:150px;
 				&.second {
 					right:6px;
 				}
@@ -308,39 +323,21 @@
 		}
 		
 		.newpost {
-			@include button($color:#FFF, $height:30px, $background:linear-gradient(#034679, #0f7185), $border-radius:0);
-				font-size:15px;
-				line-height:30px;	
-				margin-left:25px;
-				width:120px;			
-				span {
-					color:$link-arrow-color;
-				}
-				
-				&:active, &:hover {
-					color:#fff;
-				}
-
-		}
-		&.project .newpost {
-			@include background-image(linear-gradient(#f3c55b, #f3c55b));
-			span {
-				color:$project-link-arrow-color;
-			}
+			margin-left:25px;
 		}	
 	}
 #content .committeeheader {
-		@include text-shadow(rgba(black, 0.27) 1px 1px 2px);
-		background:url(../images/committee-header-bg.png) no-repeat;
-		color:#FFF;
-		font-family: $emphasis-font;
-		font-size:20px;
+		/*background:url(../images/committee-header-bg.png) no-repeat;*/
+		color:$header-font-color;
+		font-family: $header-font;
+		font-size:30px;
+		font-weight: 700;
 		line-height: 48px;
 		margin:0;
 		height:48px;
 		text-indent:30px;
 		text-transform: uppercase;
-		width:200px;
+		width:100%;
 		
 	}
 	.committeeblogrollcontainer {
@@ -365,7 +362,7 @@
 }	
 #content .connectedprojectscontainer {
 	@include box-shadow(#bfbfbf 0 5px 5px 0);
-	@include background-image(linear-gradient(#FFF, #F1F1F1));
+	background-color: #F1F1F1;
 	background-color:#fff;
 	border:1px solid #efefef;
 	float:left;
@@ -380,48 +377,63 @@
 		}
 		.projecttitle {
 			border:0 !important;
-			font-family:$emphasis-font;
-			font-size:17px;			
+			font-family:$header-font;
+			font-size:26px;			
 			a {
-				font-weight:400;	
+				color: $header-font-color;
+				font-size: 26px;
+				font-weight:700 !important;
+				text-transform: uppercase;	
 			}
 		}
 		.projectcontent {
 			margin-left:10px;
+			a {
+				font-weight: normal;
+			}
 		}
 		.rotary_project_date {
 			background:url(../images/committee-calendar-icon.png) no-repeat;
+			color: $header-font-color;
 			margin-bottom:25px;
+			font-family: $header-font;
+			font-weight: 700;
+			text-transform:uppercase;
 			span {
 				display:inline-block;
 				margin-left:45px;
 			}
-			.fulldate {
-				
-			}
 			.day {
-				font-family: $button-font;
-				font-size: 20px;
+				color: $med-gray-color;
+				font-family: $header-font;
+				font-size: 17px;
+				font-weight: 700;
 				text-transform: uppercase;
 			}
 			.fulldate {
+				color: $header-font-color;
 				font-family:$sub-header-font;
-				font-size:19px;
+				font-size:22px;
+				font-weight: 700;
+				text-transform: uppercase;
 			}
 		}
 		.projectheader {
 			background: url(../images/project-header-bg.jpg) no-repeat;
 			height:76px;
 			h3 {
-				@include text-shadow(rgba(black, 0.27) 1px 1px 2px);
 				background: url(../images/project-icon.png) 5px 20px no-repeat;
 				color:#FFF;
-				font-size:14px;
+				font-size:21px;
+				font-weight: 700;
+				line-height:18px;
 				padding-top:20px;
 				text-indent:45px;
 				text-transform: uppercase;
 				span {
 					margin-left: 45px;
+					font-size: 19px;
+					text-transform: capitalize;
 				}
 			}
 		}
@@ -441,31 +453,33 @@
 		font-family:$sub-header-font;
 		font-size:14px;
 		font-weight:400;
-		margin:16px 0 0 15px;
+		margin: 10px 0 0 15px;
 		padding-top:15px;
 		position:relative;
 		width:90px;
 		.day {
 			color:#8f8f8f;
 			font-family: $button-font;
-			font-size:40px;
+			font-size:53px;
+			position: static;
 			
 		}
 		.month{
-			color:#187084;
-			font-size:14px;
+			color:$body-text-color;
+			font-size:18px;
+			font-family:$header-font;
+			margin-top: 6px;
 			position:absolute;
 			text-transform:uppercase;
 		}
+		.year {
+			color: #6b6b6b;
+		    font-family: $header-font;
+		    font-size: 16px;
+		    font-weight: 700;
+		    position: static;
+		}
 	}
-.no-cssgradients .connectedprojects{
-	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#d9dee1', endColorstr='#ffffff'); /* IE6 & IE7 */
--ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#d9dee1', endColorstr='#ffffff')"; /* IE8 */  
-}
-.no-cssgradients .projectheader{
-	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#a0957f', endColorstr='#544636'); /* IE6 & IE7 */
--ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#a0957f', endColorstr='#544636')"; /* IE8 */  
-}
 .single.single-rotary-committees #content {
 	header .postdate {
 		text-transform: capitalize;
@@ -477,28 +491,21 @@
 }
 .single-rotary-committees, .single-rotary_projects {
 	.hascontent .newcomment {
-		float:right;
-		margin-left:0;
-		margin-right:0;
-		margin-top:-35px;
-		
+		margin:0;
+		position: absolute;
+		right:0;
+		top: -33px;		
 	}
 	.committeecommentdetail {
+		color:$subheader-font-color;
+		font-family: $body-font-family;
+		font-size:16px;
 		max-width:60%;
+		font-weight: 700;
+		text-transform: uppercase
 	}
 	.newcomment {
-		@include button($color:#FFF, $height:30px, $background:linear-gradient(#034679, #0f7185), $display:inline-block, $line-height:30px, $border-radius:0);	
-		font-size:14px;
-		margin-left:25px;
-		margin-right:60px;
-		margin-top: 0;
-		width:120px;
-		span {
-			color:$link-arrow-color;
-		}
-		&:active, &:hover {
-			color:#FFF;
-		}
+		margin-left:20px;
 	}
 	#content .commentcommittetext h2 {
 		border:none;
@@ -506,27 +513,35 @@
 		padding-bottom:0;
 	}
 }
-.single-rotary-committees .committeecommentdetail{
-	padding-top:5px;
-}
-.single-rotary_projects .newcomment{
-	@include background-image(linear-gradient(#f3c55b, #f3c55b));
-	span {
-		color:$project-link-arrow-color;
+.single-rotary-committees {
+	.committeecommentdetail{
+		padding-top:5px;
+		color: #555;
+	    font-family: $body-font-family;
+	    font-size: 16px;
+	    font-weight: normal;
+	    max-width:none;
+	    padding-top:5px;
+	    text-transform: none;
+	}
+	.commentcommittetext:before {
+		color: $header-font-color;
+		content: "Announcement";
+		font-family: Open Sans Condensed;
+	    font-size: 25px;
+	    font-weight:700;
+	     left: 24px;
+	     position: absolute;
+	    text-shadow: 2px 2px #FFF;
+	    text-transform: uppercase;
+	    top: 15px;
+	    width: 250px;
+	    z-index: 100;
 	}
 }
+
 .single-rotary-committees .hascontent .newcomment, .single-rotary_projects .hascontent .newcomment {
 	float:right;
 	margin-left:0;
 }
-.single-rotary_projects .hascontent .newcomment {
-	margin-top:-60px;
-}	
-.no-cssgradients .single-rotary-committees .newcomment, .no-cssgradients committeeheadercontainer .newpost{
-	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#034679', endColorstr='#0f7185'); /* IE6 & IE7 */
--ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#034679', endColorstr='#0f7185')"; /* IE8 */  
-}
-.no-cssgradients .single-rotary_projects .newcomment, .no-cssgradients committeeheadercontainer .newpost.project{
-	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#f3c55b', endColorstr='#f3c55b'); /* IE6 & IE7 */
--ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#f3c55b', endColorstr='#f3c55b')"; /* IE8 */  
-}
+	

@@ -1,45 +1,8 @@
-/* @license
- * MyFonts Webfont Build ID 2378126, 2012-10-04T15:11:34-0400
- * 
- * The fonts listed in this notice are subject to the End User License
- * Agreement(s) entered into by the website owner. All other parties are 
- * explicitly restricted from using the Licensed Webfonts(s).
- * 
- * You may obtain a valid license at the URLs below.
- * 
- * Webfont: Sommet Heavy by insigne
- * URL: http://www.myfonts.com/fonts/insigne/sommet/heavy/
- * Licensed pageviews: 10,000
- * 
- * Webfont: Sommet by insigne
- * URL: http://www.myfonts.com/fonts/insigne/sommet/regular/
- * Licensed pageviews: unspecified
- * 
- * Webfont: Sommet Black by insigne
- * URL: http://www.myfonts.com/fonts/insigne/sommet/black/
- * Licensed pageviews: unspecified
- * 
- * 
- * License: http://www.myfonts.com/viewlicense?type=web&buildid=2378126
- * Webfonts copyright: Copyright (c) 2010 by Jeremy Dooley. All rights reserved.
- * 
- * © 2012 Bitstream Inc
-*/
-
-
-  
- @font-face {font-family: 'SommetHeavy';src: url('rotary-sass/stylesheets/webfonts/24498E_0_0.eot');src: url('webfonts/24498E_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/24498E_0_0.woff') format('woff'),url('webfonts/24498E_0_0.ttf') format('truetype');}
- 
-  
- @font-face {font-family: 'Sommet';src: url('rotary-sass/stylesheets/webfonts/24498E_1_0.eot');src: url('webfonts/24498E_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/24498E_1_0.woff') format('woff'),url('webfonts/24498E_1_0.ttf') format('truetype');}
- 
-  
- @font-face {font-family: 'SommetBlack';src: url('rotary-sass/stylesheets/webfonts/24498E_2_0.eot');src: url('webfonts/24498E_2_0.eot?#iefix') format('embedded-opentype'),url('webfonts/24498E_2_0.woff') format('woff'),url('webfonts/24498E_2_0.ttf') format('truetype');}
 html .mceContentBody {
 	max-width: 640px;
 }
 * {
-	color: #59595c;
+	color: #555;
 	
 }
 
@@ -47,9 +10,9 @@ code, code var {
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 body, input, textarea {
-	color: #606060;
-  	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
-  	font-size: 13px;
+	color: #555;
+  	font-family: Georgia,Times,"Times New Roman",serif;
+  	font-size: 16px;
 }
 a {
 	color:#0f7289;
@@ -186,14 +149,14 @@ h3,
 h4,
 h5,
 h6 {
-  	font-family: SommetHeavy, sans-serif;
+  	font-family: 'Open Sans Condensed', 'Open Sans', Helvetica, sans-serif;
   	line-height: 1.1em;
   	margin-top:10px;
 }
 h1, .SectionHeader {
   clear: both;
   color: #0f7289;
-  font-family: SommetHeavy, sans-serif;
+  font-family: 'Open Sans Condensed', 'Open Sans', Helvetica, sans-serif;
   font-size: 20px;
   height: 30px;
   margin-bottom: 5px;
@@ -201,42 +164,60 @@ h1, .SectionHeader {
 
 }
 h1 {
-	border-bottom:1px solid #606060;
-	font-size:30px;
-	margin-bottom: 20px;
-	padding-bottom:10px;
-}
-h2  {
-	color: #0f7289;
-	font-size: 20px;
-	margin-bottom: 10px;
-	padding-top: 5px;
+	color: #17458f;
+	font-family: 'Open Sans Condensed', 'Open Sans', Helvetica, sans-serif;
+	font-size: 38px;
+	font-weight: 300;
+	margin-bottom: 24px;
+	margin-top: 48px;
+	padding:0;
 	text-transform: uppercase;
 }
+h2  {
+	color: #17458f;
+	font-family: 'Open Sans Condensed', Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    margin-top:24px;
+	padding:0;
+}
 h3 {
-	color: #606060;
-	font-size: 18px;
-	margin-bottom: 10px;
+	color: #555;
+	font-size: 25px;
+	font-weight: 700;
+	margin-bottom: 4px;
+	margin-top: 20px;
+	padding:0;
+	text-transform: uppercase;
 
 }
 h4 {
-	color: #0f7289;
-	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
-	font-size: 14px;
-	font-weight:bold;
-	margin-bottom: 10px;
+	color: #555;
+	font-family: 'Open Sans Condensed', Arial, Helvetica, sans-serif;
+	font-size: 21px;
+	font-weight: 700;
+	margin-bottom: 0;
+	margin-top: 10px;
+	padding:0;
 	text-transform: uppercase;
 }
 h5 {
-	color: #606060;
-	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
-	font-size: 12px;margin-bottom: 10px;
+	color: #555;
+	font-family: Georgia, Times, "Times New Roman", serif;
+	font-weight: 300;
+	font-size: 18px;
+	margin-bottom: 0;
+	margin-top:16px;
+	padding:0;
 	text-transform: uppercase;
 }
 h6 {
-	color: #606060;
-	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
-	font-size: 10px;margin-bottom: 10px;
+	color: #555
+	font-family: Georgia, Times, "Times New Roman", serif;
+	font-size: 10px;
+	margin-bottom: 10px;
+	padding:0;
 	text-transform: uppercase;
 }
 table {
@@ -297,20 +278,35 @@ img.aligncenter {
 	margin-bottom: 12px;
 }
 .wp-caption {
-	background: #dfe0e0;
+	background-color: #fff;
+	border:1px solid #ff9933;
   line-height: 18px;
   margin-bottom: 20px;
   max-width: 632px !important;
   /* prevent too-wide images from breaking layout */
-  padding: 4px;
+  padding: 0;
   text-align: center;
 }
 .wp-caption img {
 	margin: 5px;
+	max-width:98%;
 }
 .wp-caption p.wp-caption-text {
 	margin: 0 0 4px;
+	font-style:italic;
 }
 .wp-smiley {
 	margin: 0;
+}
+ol li {
+    list-style: decimal outside;
+    margin-left: 20px;
+    padding-left: 5px;
+	text-indent:0;
+}
+ul li {
+    list-style: square outside;
+    margin-left: 20px;
+    padding-left: 5px;
+	text-indent:0;
 }

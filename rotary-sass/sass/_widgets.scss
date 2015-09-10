@@ -13,23 +13,28 @@
 		width:120px;
 	}
 }
+.cat-item a {
+    font-weight: normal;
+    line-height: 1.6em;
+    padding-left: 10px;
+}
 /*Rotary Archive Widget*/
 li.rotary-adv-archive-year {
 	margin-bottom:2px;
 	a.icon {
-	background:url(../images/archive-bg.jpg) 0 -2px;
+	background: #f0f1f1 url(../images/archive-bg.png) 100% 50% no-repeat;
 	color:$body-text-color;
 	display:block;
-	font-family:$button-font;
-	font-size:20px;
-	font-weight:normal;
+	font-family:$header-font;
+	font-size:16px;
+	font-weight:700;
     height:32px;
 	line-height: 32px;
 	text-indent:10px;
 	text-decoration: none;
 	width:173px;
 	&:active, &:hover {
-		background-position: 0 -35px;
+		background: darken(#f0f1f1,5%) url(../images/archive-bg.png) 100% 50% no-repeat;
 		text-decoration: none;
 	}
 		span {
@@ -38,7 +43,7 @@ li.rotary-adv-archive-year {
 	}
 
 	a.less {
-		background-position: 0 -35px;
+		background: darken(#f0f1f1,5%) url(../images/archive-bg.png) 100% 50%  no-repeat;
 	}
 	ul {
 		display: none;
@@ -51,10 +56,10 @@ li.rotary-adv-archive-year {
 				color:$body-text-color;
 				display:block;
 				font-family:$body-font-family;
-				font-size:12px;
+				font-size:15px;
 				font-weight:normal;
-				height:27px;
-				line-height:27px;
+				height:24px;
+				line-height:25px;
 				margin-left:-10px;
 				padding:1px;
 				text-decoration:none;
@@ -110,12 +115,22 @@ aside {
 }
 #home-sidebar {
 	width:230px;
+	 > ul >li h3:after {
+		background:url(../images/sidebar-header-bottom-bg.png) no-repeat;
+		content: '';
+		display:block;
+		height:7px;
+		left:-2px;
+		position:absolute;
+		width:8px;
+		
+	}
 }
 #content #secondary li {
 	list-style: none;
 }
 #speaker-sidebar {
-	color:#606060;
+	color:$med-gray-color;
 	margin:100px 0 20px 20px;
 	padding-bottom:54px;
 	width:271px;
@@ -126,12 +141,9 @@ aside {
 		max-width: 100%;
 	}
 	.speaker-side-container {
-	 border-top:1px solid #e9dfc8;
-	 border-left:1px solid #e9dfc8;
-	 border-right:1px solid #e9dfc8;
-		@include background-image(linear-gradient(rgba(249, 245, 235, 0.5), #f6ecd5));
+	 background-color:#f8f1e3;
 		li {
-			line-height:18px;
+			line-height:25px;
 			min-height:10px;
 		}
 	}
@@ -150,17 +162,19 @@ aside {
 	}
 	h3{
 		color:$header-font-color;
-		font-family:$button-font;
-		font-size:20px;
+		font-family:$header-font;
+		font-size:24px;
 		margin: 0 0 2px 5px;
 		padding-top:15px;
 		text-indent:10px;
 		text-transform:uppercase;
 	}
 	.tagcloud a, .cat-item a {
-    	color: #a5a5a5;
+    	color: #006DAA;
+    	font-size: 16px;
     	font-weight:normal;
-    	line-height:18px;
+    	line-height:20px;
+
 	}
 	> ul > li ul,  > ul > li div {
 		margin: 10px 10px 0;
@@ -186,15 +200,11 @@ aside {
 		margin-left:5px;
 	}
 }
-.no-cssgradients #speaker-sidebar .speaker-side-container{
-	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#f9f4e9', endColorstr='#f6ecd5'); /* IE6 & IE7 */
--ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#f9f4e9', endColorstr='#f6ecd5')"; /* IE8 */  
-}
 
 #secondary {
 	margin-top:15px;
 	 > ul > li {
-		@include background-image(linear-gradient(rgba(226, 230, 231, 0.5), #fff));
+		background-color: #f9f9f9;
 		border: 1px solid #EFEFEF;
 		margin:10px 0 30px 0;
 		padding-bottom:10px;
@@ -211,23 +221,33 @@ aside {
 		background:none;
 		border:none;
 		padding-bottom:0;
-		a {
-			font-size:14px;
-			letter-spacing:.02px;
-		}
-		a:active, a:hover {
-			text-decoration:none;
-		}
 	}
 	h3 {
-		border-top:5px solid #b8b7b8;
-		color:$header-font-color;
+		/*@include background-image(linear-gradient(#2e556f, #0f728b));*/
+		background: none;
+		border-top: 5px solid #B8B7B8;
+		 color: $header-font-color;
+		font-family:$header-font;
 		font-size:19px;
-		margin-bottom:2px;
+		height:30px;
+		line-height:30px;
+		margin-bottom: 10px;
+		margin-left:-6px;
 		margin-top:0;
-		padding-top:15px;
+		padding-right:0;
+		padding-top: 10px;
 		text-indent:10px;
 		text-transform:uppercase;
+		width:102%;
+		/*&:after {
+			background:url(../images/sidebar-header-bottom-bg.png) no-repeat;
+			content: '';
+			display:block;
+			height:7px;
+			left:-6px;
+			width:8px;
+			position:absolute;
+		}*/
 	}
 	.tagcloud a{
 		color:$body-text-color;
@@ -291,16 +311,6 @@ aside {
 		}
 	}
 }
-.no-cssgradients #secondary > ul > li {
-	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#7fe2e6e7', endColorstr='#ffffff'); /* IE6 & IE7 */
--ms-filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#7fe2e6e7', endColorstr='#ffffff'); /* IE8 */  
-}
-.no-cssgradients #secondary > ul > #calendar_wrap {
-	filter:none;
-}
-.no-cssgradients #secondary > ul .newpost {
-	filter:none;
-}
 /*hide calendar on speaker archive*/
 .tax-rotary_speaker_cat .widget_calendar,
 .post-type-archive-rotary_speakers .widget_calendar,
@@ -308,10 +318,14 @@ aside {
 	display:none;
 }
 #committee-sidebar, #projects-sidebar {
+	border-top: 6px solid #B5B5B5;
+    color: #006DAA;
+    font-family: $body-font-family;
+    font-size:15px;
+    line-height:22px;
 	margin-right:22px;
 	margin-top:69px;	
-	border-top: 6px solid #b5b5b5;
-	line-height:22px;
+	padding: 0px 0 10px 0;
 	width:204px;
 	.projectcontainer {
 		background:#f3f3f3;
@@ -326,13 +340,17 @@ aside {
 		margin-bottom:0;
 	}
 	ul ul {
-		color:#a2a2a2;
+		color: $body-text-color;
 		padding-bottom:25px
 	}
 	h3 {
-		font-family: $button-font;
+		color: $header-font-color;
+		font-family: $header-font;
+		font-size: 19px;
 		margin-top:0;
 		padding-top:5px;
+		text-transform: uppercase;
+    
 	}
 	a[href^="mailto"] {
 		color:#a2a2a2;
@@ -351,20 +369,23 @@ aside {
 		border-top: 2px solid #B5B5B5;
 		padding-top:20px;
 		h3{
-			font-family: $button-font;
-			color: #177083;
-			font-size: 20px	;
+			font-family: $header-font;
+			color: $header-font-color;
+			font-size: 19px	;
 			padding-bottom:10px;
 			text-transform: uppercase;
 		}
 		li {
 			border-top: 1px solid #b5b5b5;
-			color: #0F7285;
+			color: $blue-bg-hover-color;
+			font-family: $body-font-family;
+			font-size: 13px;
 			padding:10px 0 10px 0;
 			&:last-child {
 				border-bottom: 1px solid #B5B5B5;
 			}
 			.avatar {
+				margin-right: 7px;
 				vertical-align: middle;
 			}
 			
@@ -374,15 +395,25 @@ aside {
 	}
 	.project-date {
 		border-bottom: 1px solid #B5B5B5;
+		color: $header-font-color;
+		font-family:$header-font;
+		font-size: 17px;
+	    font-weight: 700;
 		padding-bottom: 10px;
 		text-align:center;
+		text-transform: uppercase;
 		.dayweek {
-			font-family:$button-font;
-			font-size:27px;
+			color: $med-gray-color;
+			font-family:$header-font;
+			font-size:19px;
+			margin-bottom: 4px;
 		}
 		.day, .month, .year {
-			font-family: $sub-header-font;
-			font-size:18px;
+			color: $header-font-color;
+			font-family: $header-font;
+			font-size: 17px;
+			font-weight: 700;
+
 		}
 	}
 	.acf-map {
@@ -391,12 +422,17 @@ aside {
 		margin: 20px 0;
 	}
 	.location {
+    	color: $med-gray-color;
+		font-size: 14px;
 		text-align:center;
 		.meetingsite {
-			color:#0f7284;
+			color:$header-font-color;
 			font-family: $header-font;
-			font-size:13px;
-			text-transform: uppercase
+			font-size:19px;
+			font-weight: 700;
+			margin-bottom: 20px;
+			text-transform: uppercase;
+			font-size: 23px;    
 		}
 	}
 	.instructions {
@@ -413,17 +449,19 @@ aside {
 	margin: 50px 12px 30px 10px;
 	position:relative;
 	h2 {
-		color:#177086;
-		font-family:$emphasis-font;
-		font-size:23px;
+		color:$header-font-color;
+		font-family:$header-font;
+		font-size:30px;
+		font-weight:700;
 		text-transform: uppercase;
 	}
 	h3 {
-		color:#177086;
-		font-size:20px;
+		color:$header-font-color;
+		font-size:23px;
+		font-weight: 700px;
 		text-transform: uppercase;
 	}
-	.tagcloud a, .cat-item a {
+	.tagcloud a {
 		color: #a5a5a5;
 		font-weight: normal;
 		line-height: 18px;
@@ -431,6 +469,6 @@ aside {
 		
 }
 #committeewidget, #projectwidget{
-	margin:0 10px 0 10px;
+	margin:5px 10px 0 10px;
 	width:90%;
 }

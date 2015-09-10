@@ -58,6 +58,6 @@
 
 <?php endif; // end have_comments() ?>
 <?php $args = array(
-		'title_reply' => 'reply');
+		'title_reply' => 'LEAVE A COMMENT');
     ?> 
 <?php comment_form($args); ?>

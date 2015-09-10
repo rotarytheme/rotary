@@ -8,9 +8,11 @@ function rotary_add_javascript( ) {
 	global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
     $protocol = is_ssl() ? 'https' : 'http';
 	$query_args = array(
-		'family' => 'Istok+Web:400,700,400italic,700italic');
-	wp_enqueue_style( 'rotary-istok-font', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ), array(), null 	);	
+		'family' => 'Open+Sans+Condensed:300,700,300italic');
+	wp_enqueue_style( 'rotary-opensanscondensed-font', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ), array(), null 	);	
 
+	wp_enqueue_style( 'rotary-styles', get_bloginfo('template_directory').'/rotary-sass/stylesheets/style.css');
+	
 	wp_enqueue_script( 'modernizr', get_bloginfo('template_directory').'/includes/js/modernizr.custom.js', array( 'jquery' ) );
 	
 	wp_enqueue_script( 'cycle', get_bloginfo('template_directory').'/includes/js/jquery.cycle.all.js', array( 'jquery' ) );

@@ -1,7 +1,7 @@
 #content  {
 .home-upcoming-program-ribbon {
 	background:url(../images/upcoming-ribbon.png)50% 0 no-repeat;
-		height:61px;
+	height:61px;
 	margin:0 auto;
 		position:relative;
 	text-align:center;
@@ -10,9 +10,9 @@
 	h2 {
 		color:#FFF;
 		font-family: $header-font;
-		font-size:30px;
-		padding-top:15px;
-
+		font-size:34px;
+		padding-top:10px;
+		text-transform: uppercase;
 	}
 }
 &.fullwidth .home-upcoming-programs {
@@ -27,7 +27,7 @@
 	}	
 }
 .home-upcoming-programs {
-	border: 8px solid #187087;
+	border: 8px solid $header-font-color;
 	padding:20px;
 	article {
 		float:left;
@@ -36,17 +36,19 @@
 	
 	.speakername {
 		background:url(../images/speaker-icon-small.png) 0 5px no-repeat;
-		color:#606060;
-		font-family: $button-font;
-		font-size:23px;
+		color:$med-gray-color;
+		font-family: $header-font;
+		font-size:24px;
+		font-weight: 700;
 		line-height:30px;
-		margin-top:0;
-		text-indent:20px;
+		margin-top:15px;
+		text-indent:45px;
+		text-transform:none;
 	}
 	.speaker-title, .speaker-company {
-		color: #606060;
-		font-size: 12px;
-		line-height: 21px;
+		color: $med-gray-color;
+		font-size: 16px;
+		line-height: 22px;
 		margin-bottom: 0;
 	}
 	.speaker-company {
@@ -54,15 +56,16 @@
 	}
 	.speaker-program-title {
 		background: url(../images/speaker-home-title-bg.png) no-repeat scroll 0 100%;
-		color:#187087;
+		color:$header-font-color;
 		font-family: $header-font;
-		font-size:19px;
-		line-height:21px;
+		font-size:24px;
+		font-weight: 700;
+		line-height:27px;
 		padding:20px 0 20px 0;
 		text-transform:uppercase;
 		width:260px;
 		a {
-			font-weight:400;
+			font-weight:700;
 		}
 	}
 	.home-upcoming-program-details {
@@ -70,25 +73,14 @@
 		width:265px;
 	}
 	.post_new_link {
-		background:#F7F7F7;
-		border:1px solid #ccc;
-		color:$body-text-color;
-		display:block;
-		font-family:$button-font;
-		font-weight:normal;
-		height:30px;
-		line-height:2.5em;
 		margin:100px auto;
-		padding:2px;
-		text-align:center;
-		text-decoration:none;
-		width:100px;
 	}
 	.newspeaker {
 		border: 7px dashed #CCC;
 		border-radius: 5px;
 		float:left;
 		height:220px;
+		text-align:center;
 		width:240px;
 	}
 
@@ -105,8 +97,9 @@
 		display:block;
 	}
 	.dayweek, .month {
-		font-size:14px;
+		font-size:17px;
 		font-family:$sub-header-font;
+		font-weight: 700;
 		line-height:18px;
 		text-transform:uppercase;
 	}
@@ -114,9 +107,11 @@
 		color:#a6a8ab;
 		font-family: $button-font;
 		font-size:53px;
+		padding-left: 5px;
 	}
 	.month {
-		color:#187087;
+		color:$header-font-color;
+		font-weight: 700;
 	}
 }
 }
