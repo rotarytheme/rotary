@@ -2,7 +2,7 @@ html .mceContentBody {
 	max-width: 640px;
 }
 * {
-	color: #555;
+	color: #58585F;
 	
 }
 
@@ -10,18 +10,25 @@ code, code var {
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 body, input, textarea {
-	color: #555;
+	color: #58585F;
   	font-family: Georgia,Times,"Times New Roman",serif;
   	font-size: 16px;
 }
-a {
-	color:#0f7289;
-	font-weight:bold;
-	text-decoration:none;
-}
 a:active, a:hover {
-	color:#F2A700;
-
+    text-decoration: underline; none
+}
+a:visited {
+    color: #1a7089; #17458f
+    text-decoration: none;
+}
+a:link {
+    color: #1a7089; #17458f
+    text-decoration: none;
+}
+a {
+    color: #0f7289; #17458f
+    font-weight: bold;
+    text-decoration: none;
 }
 hr {
   background: #EFEFEF;

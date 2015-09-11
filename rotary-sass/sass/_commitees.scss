@@ -461,6 +461,7 @@
 			color:#8f8f8f;
 			font-family: $button-font;
 			font-size:53px;
+			line-height:45px;
 			position: static;
 			
 		}
@@ -468,6 +469,7 @@
 			color:$body-text-color;
 			font-size:18px;
 			font-family:$header-font;
+			line-height: 18px;
 			margin-top: 6px;
 			position:absolute;
 			text-transform:uppercase;
@@ -476,6 +478,7 @@
 			color: #6b6b6b;
 		    font-family: $header-font;
 		    font-size: 16px;
+		    line-height:16px;
 		    font-weight: 700;
 		    position: static;
 		}

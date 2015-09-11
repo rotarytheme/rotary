@@ -1742,9 +1742,8 @@ label[for="comment"] {
 	}
 	
 }
-
-.comment {
-	//commentdepth indent
+.single-format-standard .comment {
+	//commentdepth indent for standard posts
 	$i: 1;
 	@for $i from 1 through 8 {
 		&.depth-#{$i} {
@@ -1752,6 +1751,9 @@ label[for="comment"] {
 		}
 			
 	}
+	
+}
+.comment {
 		
 	div {
 		float:left;
@@ -1775,9 +1777,8 @@ label[for="comment"] {
 		width:564px;
 	}
 	.commentbottom {
-		background:url(../images/committee-comment-bottom-bg.png) 100% 0 no-repeat;
+		background:url(../images/committee-comment-bottom-bg.png)  no-repeat;
 		height:47px;
-		padding-right:12px;
 		width:100%;
 	}
 	.commenttext, .commentcommittetext{

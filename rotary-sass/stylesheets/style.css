@@ -1903,30 +1903,31 @@ label[for="comment"] {
   margin-bottom: 40px;
 }
 
-.comment.depth-1 {
+.single-format-standard .comment.depth-1 {
   margin-left: 30px;
 }
-.comment.depth-2 {
+.single-format-standard .comment.depth-2 {
   margin-left: 40px;
 }
-.comment.depth-3 {
+.single-format-standard .comment.depth-3 {
   margin-left: 50px;
 }
-.comment.depth-4 {
+.single-format-standard .comment.depth-4 {
   margin-left: 60px;
 }
-.comment.depth-5 {
+.single-format-standard .comment.depth-5 {
   margin-left: 70px;
 }
-.comment.depth-6 {
+.single-format-standard .comment.depth-6 {
   margin-left: 80px;
 }
-.comment.depth-7 {
+.single-format-standard .comment.depth-7 {
   margin-left: 90px;
 }
-.comment.depth-8 {
+.single-format-standard .comment.depth-8 {
   margin-left: 100px;
 }
+
 .comment div {
   float: left;
   font-weight: bold;
@@ -1949,9 +1950,8 @@ label[for="comment"] {
   width: 564px;
 }
 .comment .commentbottom {
-  background: url(../images/committee-comment-bottom-bg.png) 100% 0 no-repeat;
+  background: url(../images/committee-comment-bottom-bg.png) no-repeat;
   height: 47px;
-  padding-right: 12px;
   width: 100%;
 }
 .comment .commenttext, .comment .commentcommittetext {
@@ -4076,6 +4076,7 @@ div.wpcf7-validation-errors {
   color: #a6a8ab;
   font-family: "BebasNeueRegular", Arial, sans-serif;
   font-size: 53px;
+  line-height: 45px;
   padding-left: 5px;
 }
 #content .home-upcoming-programs-speaker-date .month {
@@ -4544,12 +4545,14 @@ div.wpcf7-validation-errors {
   color: #8f8f8f;
   font-family: "BebasNeueRegular", Arial, sans-serif;
   font-size: 53px;
+  line-height: 45px;
   position: static;
 }
 .committee-comment-date .month {
   color: #58585A;
   font-size: 18px;
   font-family: "Open Sans Condensed", Arial, Helvetica, sans-serif;
+  line-height: 18px;
   margin-top: 6px;
   position: absolute;
   text-transform: uppercase;
@@ -4558,6 +4561,7 @@ div.wpcf7-validation-errors {
   color: #6b6b6b;
   font-family: "Open Sans Condensed", Arial, Helvetica, sans-serif;
   font-size: 16px;
+  line-height: 16px;
   font-weight: 700;
   position: static;
 }
