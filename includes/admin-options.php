@@ -156,6 +156,16 @@ function rotary_login_css() {
 	wp_enqueue_style( 'login_css', get_template_directory_uri() . '/css/login.css' );
 }
 add_action('login_head', 'rotary_login_css');
+
+//add open sans condensed
+function rotary_admin_enqueue_scripts() {
+	global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
+    $protocol = is_ssl() ? 'https' : 'http';
+	$query_args = array(
+		'family' => 'Open+Sans+Condensed:300,700,300italic');
+	wp_enqueue_style( 'opensanscondensed-css', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ), array(), null 	);	
+}
+add_action('admin_enqueue_scripts', 'rotary_admin_enqueue_scripts');
 // Custom WordPress Footer d
 function rotary_custom_footer_admin () {
 	echo '&copy;'. date("Y").' - Rotary WordPress Theme';

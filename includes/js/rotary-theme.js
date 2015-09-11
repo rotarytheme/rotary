@@ -3,10 +3,9 @@ jQuery(document).ready(function($) {
 		init: function() {
 			//add extra class so we know if there are child items
 			$('ul.sub-menu').parent().addClass('dropdown');
-			//append the b tag in the sidebar to hold the ribbon immge
-			$('.home aside > ul >li h3').after('<b></b>');
 			//add class to upcoming programs edit so we can target it
 			$('#home-upcoming-programs .post-edit-link').addClass('speakerdatedit');
+			$('.single-rotary_projects .meta .post-edit-link').removeClass('rotarybutton-largewhite');
 			this.setUpArchives();
 			this.setUpSlideShow();
 			this.setUpEdits();

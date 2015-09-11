@@ -23,7 +23,7 @@
 						<p class="addcontent">No description at the moment, <?php wp_loginout( $_SERVER['REQUEST_URI'], true ); ?>!</p>
 					<?php endif; ?>
 			<?php endif; ?>
-			<?php edit_post_link( __( 'Edit <span>></span>', 'Rotary' ), '', '' ); ?>
+			<?php edit_post_link( __( 'Edit', 'Rotary' ), '', '' ); ?>
 		</div>
 		<div class="committee">
 			<?php the_content(); ?>

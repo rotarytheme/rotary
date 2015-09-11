@@ -10,7 +10,11 @@
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
     <h1 class="pagetitle"><span><?php the_title(); ?></span></h1>
-    <div id="content" role="main" class="fullwidth">
+    <?php $width_class = ' class="fullwidth"'; ?>
+    <?php if ( is_page_template( 'tmpl-posts.php' ) ) : ?>
+    	<?php $width_class = ''; ?>
+    <?php endif; ?>
+    <div id="content" role="main"<?php echo $width_class; ?>>
     	<div class="inner">
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>	
 

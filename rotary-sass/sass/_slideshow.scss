@@ -1,24 +1,17 @@
 /* slideshow */
 #slideshowcontainer {
-	background:url(../images/slideshow-bottom-shaddow.png) no-repeat 54px 100%;
 	height:380px;
-	margin:35px auto 0 auto;
+	margin:0 auto 0 auto;
 	position:relative;
-	width:986px;
-}
-#slideshowleft {
-	background:url(../images/slideshow-left-shadow.png) no-repeat;
-}
-#slideshowright {
-	background:url(../images/slideshow-right-shadow.png) no-repeat 100% 0;
+	width:100%;
 }
 #slideshow {
 	background:$slide-bg-color;
 	height: 313px; 
-	left:34px;
+	left:0;
 	overflow: hidden;
 	position: relative;
-	width:918px;
+	width:100%;
 	img {
 		/*left:433px;*/
 		right:0;
@@ -33,12 +26,14 @@
 			border:none;
 			color:#fff;
 			font-family:$sub-header-font;
-			font-size:30px;
+			font-size:34px;
 			padding-top:40px;
 			margin:0 40px 40px 40px;
 		}
 		p {
+			color:#E1EDF0;
 			margin:0 40px 10px 40px;
+			line-height: 20px;
 		}
 	}
 	.slide {
@@ -52,32 +47,36 @@
 		padding-top:10px;
 		text-decoration:none;
 		&:active, &:hover {
-			@include hover-link;
+			color:#fff;
+			text-decoration:underline;
 		}
 	}
 }
 
 #controls {
 	background:url(../images/controls-bg.jpg) repeat-x 0 100%;
+	font-family:$header-font;
 	height:40px;
-	left:34px;
+	left:0;
 	line-height:40px;
 	position:absolute;
 	top:307px;
-	width:918px;
+	width:100%;
 	z-index:200;
 		a {
-		color:$main-menu-color;
+		color:#E7E7E8;
 		display:block;
 		float:left;
 		padding: 5px 5px 5px;
 		text-decoration:none;
+		text-transform: uppercase;
 	}
 	#navsection {
 		a {
 			width:19px;
 			&.activeSlide, &:active, &:hover {
-			background:url(../images/selected-slide-bg.png) no-repeat;
+				background:url(../images/selected-slide-bg.png) no-repeat;
+				color:#fff;
 			}
 		}
 	}

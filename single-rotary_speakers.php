@@ -14,5 +14,4 @@ get_header(); ?>
 			<?php get_template_part( 'loop', 'single-speaker' ); ?>
 	</div><!--#speakerheader-->
 </div><!--#speakercontainer-->
-<div class="speakerbottom"></div>
 <?php get_footer(); ?>

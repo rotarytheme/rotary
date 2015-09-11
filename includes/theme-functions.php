@@ -17,10 +17,10 @@ function rotary_deregister_styles() {
 add_filter('edit_post_link', 'rotary_edit_post_link');
 
 function rotary_edit_post_link($output) {
-	if ('rotary_speakers' == get_post_type() && is_single()) {
-		$output = str_replace('class="post-edit-link"', 'class="post-edit-link button"', $output);
-	}
+	if (! is_home() &&  ! is_archive() && ( 'rotary-slides' != get_post_type())) :
+		$output = str_replace('class="post-edit-link"', 'class="post-edit-link rotarybutton-largewhite"', $output);
 
+		endif;
 
 	return $output;
 }
@@ -447,7 +447,7 @@ function rotary_upcoming_programs_function($atts) {
 	<?php  if(current_user_can('edit_page')){ ?>
 	      <?php $clearLeft = ($clearLeft == 'clearleft' ? '' : ' clearleft');  ?>
 	      <div class="newspeaker<?php echo $clearLeft; ?>">
-			<a class="post_new_link" href="<?php echo admin_url(); ?>post-new.php?post_type=rotary_speakers">New Speaker</a>
+			<a class="post_new_link rotarybutton-largewhite" href="<?php echo admin_url(); ?>post-new.php?post_type=rotary_speakers">New Speaker</a>
 	      </div>
 	<?php } ?>
 	<?php wp_reset_postdata(); ?>
@@ -1009,7 +1009,7 @@ function rotary_output_blogroll($postCount, $clearLeft) {
      
         <article id="post-<?php the_ID(); ?>" <?php post_class($clearLeft); ?>>
          	<div class="sectioncontainer">
-            	<div class="sectionheader" id="blog-<?php the_ID(); ?>" >
+            	<div class="sectionheader blogroll" id="blog-<?php the_ID(); ?>" >
                 	<div class="sectioncontent">
 			<header>
 			    <?php $title = get_the_title(); ?>
@@ -1063,7 +1063,7 @@ function rotary_output_blogroll($postCount, $clearLeft) {
   
             <footer class="meta">
             <p>
-                <?php edit_post_link( __( 'Edit', 'Rotary' ), '', ' &middot;' ); ?>
+                <?php edit_post_link( __( 'Edit', 'Rotary' ), '', ' ' ); ?>
                 <?php comments_popup_link( __( 'Leave a comment', 'Rotary' ), __( '1 Comment', 'Rotary' ), __( '% Comments', 'Rotary' ), 'commentspopup' ); ?></p>
                 <?php if ( count( get_the_category() ) ) : ?>
                         <p><?php printf( __( 'Posted in %2$s', 'Rotary' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?></p>

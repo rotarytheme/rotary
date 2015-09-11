@@ -52,4 +52,4 @@
 
 	
 
-<?php endwhile; // end of the loop. ?>
+<?php endwhile; // end of the loop ?>

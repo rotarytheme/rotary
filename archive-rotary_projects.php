@@ -11,8 +11,8 @@
 <?php get_header(); ?>
 
 <?php   if ( isset( $_REQUEST['projectid'] ) ) : ?>	
-	<h1 class="pagetitle"><span><?php echo get_the_title($_REQUEST['projectid']); ?></span></h1>
- 
+	<h1 class="pagetitle"><span><?php echo rotary_get_blog_title();?></span></h1>
+	<h2 class="pagesubtitle"><?php printf( __( 'Project %s', 'Rotary' ), '<br /><span>'. get_the_title($_REQUEST['projectid']) . '</span>' ); ?></h2>
 	<div id="content" role="main"> 
 		<?php get_template_part( 'loop', 'archive-projects' ); ?>	
 	</div>

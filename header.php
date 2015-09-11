@@ -36,7 +36,7 @@
     ?></title>
   <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/rotary-sass/images/favicon.ico" />    
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+
 <!--[if IE]>
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'template_directory' ); ?>/rotary-sass/stylesheets/ie.css" />
 <![endif]-->
@@ -122,7 +122,7 @@
         <h2>Become a member</h2>
         <?php  $pageID = get_theme_mod( 'rotary_more_info_button', '' );  ?>
 		<?php if ($pageID) {?>
-          <a href="<?php echo get_permalink($pageID);?>">Get More Info</a>
+          <a class="rotarybutton-largegold" href="<?php echo get_permalink($pageID);?>">Get More Info</a>
         <?php }?>
 
         </section>
