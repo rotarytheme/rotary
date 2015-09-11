@@ -14,7 +14,7 @@
 ?>
 
 <?php if ( post_password_required() ) : ?>
-				<p><?php _e( 'This post is password protected. Enter the password to view any comments.', 'Rotary' ); ?></p>
+		<p><?php _e( 'This post is password protected. Enter the password to view any comments.', 'Rotary' ); ?></p>
 <?php
 		return;
 	endif;
@@ -27,7 +27,9 @@
 <?php $currentPostType = get_post_type(); ?>
 <?php $hascontent = ''; ?>
 <?php $hasThumbnail = ''; ?>
+<?php $commentid = 'committeecommentform'; ?>
 <?php if ( 'rotary_projects' == $currentPostType ) :
+	$commentid = 'projectcommentform';
 	if (has_post_thumbnail()) :
 		$hasThumbnail = 'hasthumbnail';
 	endif;
@@ -58,10 +60,15 @@ endif; ?>
 	
 	<div class="commentcommittetext">
 		<div class="committeecomment">
-		<h2><?php _e( 'No Announcements at the Moment', 'Rotary' ); ?></h2>
+			<?php if ( 'rotary-committees' ==  $currentPostType ) : ?>
+				<?php $button_class = "rotarybutton-largeblue"; ?>
+				<?php else: ?>
+					<?php $button_class = "rotarybutton-largegold"; ?>
+				<?php endif; ?>
+		<p><?php _e( 'No Announcements at the Moment', 'Rotary' ); ?></p>
 		<?php if ( is_user_logged_in() ) : ?>
 			<p><?php _e( 'Would you like to add one', 'Rotary' ); ?>?</p>
-			<a id="newcomment" class="newcomment" href="#respond">New Announcement <span>></span></a>
+			<a id="newcomment" class="newcomment <?php echo $button_class; ?>" href="#respond">New Announcement</a>
 		<?php else : ?>
 			<p><?php _e( 'Would you like to ', 'Rotary' ); ?> <?php  wp_loginout($_SERVER['REQUEST_URI'], true ); ?>?</p>
 		<?php endif; ?>
@@ -83,7 +90,8 @@ endif; ?>
 		'title_reply' => 'New Announcement',
 		'comment_notes_after'  => '',
 		'logged_in_as'  => '',
-		'label_submit'  => 'Save Announcement'
+		'label_submit'  => 'Save Announcement',
+		'id_form'       => $commentid
 		);
     ?> 
 <?php comment_form($args); ?>

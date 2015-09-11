@@ -1,0 +1,22 @@
+/* Visual Composer theme mods */
+.vc_inline-link {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 18px;
+    letter-spacing: 0.25px;
+    margin: 0;
+    padding: 6px 13px;
+    background-color: #fff;
+    border: 1px solid #005daa;
+    color: #005daa;
+font-family: "Open sans condensed", "Arial Narrow", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.vc_inline-link:hover {
+    background-color: #E7E7E8;
+    border: 1px solid #0077DA;
+    color: #0077DA;
+}

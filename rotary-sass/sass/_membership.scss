@@ -12,10 +12,10 @@
 	> h2 {
 		border-bottom:none;
 		border-top:none;
-		color:#FFF;
-		font-family:$button-font;
-		font-size: 20px;
-		font-weight:normal;
+		color:#58585F;
+		font-family:$header-font;
+		font-size: 22px;
+		font-weight:700;
 		height: 50px;
 		line-height:50px;
 		padding-top: 5px;
@@ -23,6 +23,28 @@
 		text-transform: uppercase;
 	}
 }
+span.wpcf7-not-valid-tip {
+    color: #F00;
+    font-size: 1.05em;
+    display: block;
+    font-family: $header-font;
+    font-weight: bold;
+}
+
+
+div.wpcf7-validation-errors {
+    border: none;
+    background-color: #F00;
+    color: #FFF;
+    font-weight: 700;
+    font-family: $header-font;
+    padding: 15px;
+    font-size: 1.2em;
+    text-align: center;
+    width: 730px;
+    margin-top: 20px;
+}
+
 .single-rotary_projects #content {
 	.rotarymembershipheader{
 		background:url(../images/project-member-table-section-header.png) no-repeat;
@@ -43,6 +65,9 @@
 .single-rotary_projects #rotaryprojects_filter {
 	display:none;
 }
+.rotarymembernotloggedin {
+	clear:both;
+}
 #rotarymembers_wrapper {
 	margin-left:20px;
 }
@@ -60,12 +85,6 @@
 		float:left;
 		margin-bottom:15px;
 		margin-top:15px;
-		input {
-			@include button();
-			cursor:pointer;
-			display:inline-block;
-			padding:4px 10px 4px 10px;
-		}
 	}
 	.usercontainer {
 		float:right;
@@ -83,11 +102,8 @@
 }
 .single-rotary_projects .rotaryselections .sendemail {
 	margin-bottom:15px;
-	margin-top:-25px;
-}
-.no-cssgradients .rotaryselections .sendemail input{
-	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FDF8EF', endColorstr='#F9EFD9'); /* IE6 & IE7 */
--ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#FDF8EF', endColorstr='#F9EFD9')"; /* IE8 */  
+	margin-left:15px;
+	margin-top:-15px;
 }
 
 
@@ -100,9 +116,10 @@
 .rotarymembershipheader #rotarymembers tr th, .rotarymembershipheader #rotaryprojects tr th{
 	border-top:2px solid #f2e6cc;
 	border-right: 1px dotted #b3b5b7;
-	color:#b3b5b7;
-	font-family:$button-font;
-	font-size:17px;
+	color:$body-text-color;
+	font-family: $header-font;
+	font-size:19px;
+	font-weight:700;
 	padding-bottom:15px;
 	padding-left:6px;
 	padding-top:15px;
@@ -118,6 +135,12 @@
 	background: #f9f4e9;
 	
 }
+.wpcf7-form {
+	margin-bottom:80px;
+}
+#content #rotaryemailsubmit {
+	margin-top:10px;
+}
 #rotarymembers .email a, #rotaryprojects .email a{
 	color:#b3b5b7;
 	text-transform:uppercase;
@@ -129,10 +152,10 @@
 	}
 	input[type="text"], input[type="email"], textarea {
 		border-left:0;
-		border-top: 1px solid #efefef;
-		@include box-shadow(2px 2px 10px 0 #efefef);
-		color:#a8aaac;
-		font-size:13px;
+		border: 1px solid #efefef;
+		color:$med-gray-color;
+		font-family:$body-font-family;
+		font-size:18px;
 		padding-left:150px;
 		width:570px;
 	}
@@ -141,17 +164,19 @@
 		width: 693px;
 	}
 	label {
-		@include background-image(linear-gradient(#f9f3e6, #f7edd6));
+		background-color: #f9f3e6;
 		border: solid #E5DCC8 1px;
 		clear:left;
-		color:#6d6e70;
+		color:$med-gray-color;
 		display:block;
-		font-size:1.3em;
-		font-family:$button-font;	
-		left: -13px;
+		font-size:19px;
+		font-family:$header-font;
+		font-weight: 700;
+		left: -12px;
 		padding: 10px 5px 8px 16px;
 		position: relative;
-		top: 30px;
+		text-transform: uppercase;
+		top: 15px;
 		width:120px;
 		z-index: 10;
 		&:after {
@@ -165,26 +190,35 @@
 		}	
 	}
 	p {
-		padding:10px 0 10px 0;
+		margin-top: -40px;
+		padding: 0 !important;
 	}
-	input[type="submit"] {
-		@include button($background:linear-gradient(#f9f3e6, #f7edd6), $color:#6d6e70, $border:#efefef, $border-radius:0);
-		font-size:16px;
-		margin-left:632px;
-		padding:12px 30px 9px;
-	}
+	
 }
 .rotaryemail-sectionheader {
-	background:url(../images/contact-form-header.png) no-repeat;
-	border-bottom: 1px solid #efefef;
-	border-right: 1px solid #efefef;
+	background:#E7E7E8 url(../images/contact-form-header.png) no-repeat;
+	background: url(../images/contact-form-header.png) no-repeat;
 }
 .rotaryemail-sectioncontent {
-	border-left: 1px solid #efefef;
-	padding:65px 30px 30px 30px;
+	 
+    background-color: #fafafa;
+	border-left: 1px #EBEBEB solid;
+    border-right: 1px #EBEBEB solid;
+    border-bottom: 1px #EBEBEB solid;
+    display: inline-block;
+    margin-top: 66px;
+    padding: 34px 25px 55px 35px;
+   
+	p {
+		margin-bottom: 0 !important;
+	}
+	span.wpcf7-form-control-wrap {
+		top: -40px;
+	}
 }	
 .rotarydialog {
-	background:#0f7189 url(../images/rotary-member-dialog-top.png) no-repeat !important;
+	background-color:$hover-link-color !important;
+	background-image: none !important;
 	color:#f2e2c0;
 	font-family:$body-font-family;
 	font-size:13px !important; 
@@ -225,7 +259,7 @@
 	padding-top:20px;
 }
 #rotarymemberdialog .dialogmain {
-	background:#0d6e8b url(../images/rotary-details-main-bg.png) repeat-x;
+	background-color:$blue-bg-hover-color;
 	padding-top:20px;
 }
 #rotarymemberdialog .profilepicture img {
@@ -269,13 +303,13 @@
 	padding-right:20px;
 }
 #rotarymemberdialog .dialogbottom {
-	border-top: 2px solid #4a94a6;
+	border-top: 2px solid #fff;
 	margin-left:30px;
 	margin-right:30px;
 	padding-top:15px;
 }
 #rotarymemberdialog .company, #rotarymemberdialog .contact {
-	border-bottom-color:#4a94a6;
+	border-bottom-color:#fff;
 }
 .rotarydialog .ui-widget-header .ui-dialog-titlebar-close,
 .rotaryemaildialog .ui-widget-header .ui-dialog-titlebar-close {
@@ -292,7 +326,7 @@
 	background: url("../images/emaildialog-close.png") no-repeat scroll 0 10px transparent !important;
 }
 #rotarymemberdialog .dialogbottom .clubname {
-	color:#f2a700;
+	color:$gold-bg-color;
 	font-size:14px;
 }
 #rotarymemberdialog .dialogbottom .rotaryclub {

@@ -34,13 +34,15 @@ function rotary_committee_comment( $postType =  'rotary-committees') { ?>
 				<?php if ( 'rotary-committees' ==  $postType ) : ?>
 					<p class="committeecommentdetail"><?php echo $comment->comment_content; ?></p>
 					<p class="announcedby"><em>Announced by</em> <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ))?>"><?php echo $comment->comment_author;?></a></p>
+					<?php $button_class = "rotarybutton-largeblue"; ?>
 				<?php else: ?>
 					<p class="announcedby"><em>Announced by</em> <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ))?>"><?php echo $comment->comment_author;?></a></p>
 					<p class="committeecommentdetail"><?php echo $comment->comment_content; ?></p>
+					<?php $button_class = "rotarybutton-largegold"; ?>
 				<?php endif; ?>
 				<?php if ($firstComment ) : ?>
 					<?php if ( is_user_logged_in() ) : ?>
-						<a id="newcomment" class="newcomment" href="#respond">New Announcement <span>></span></a>
+						<a id="newcomment" class="newcomment <?php echo $button_class; ?>" href="#respond">New Announcement</a>
 					<?php else : ?>
 						<?php  wp_loginout($_SERVER['REQUEST_URI'], true ); ?>
 					<?php endif; ?>
@@ -66,7 +68,8 @@ function rotary_committee_comment( $postType =  'rotary-committees') { ?>
 function rotary_get_committee_announcements($atts){
 	$args = array(
 		'posts_per_page' => -1,
-		'post_type' => 'rotary-committees',
+		'post_type' => array ('rotary-committees', 'rotary_projects'),
+		'orderby' => 'type',
 		'order' => 'ASC'
 	);
 	$committeeArray = array();
@@ -81,8 +84,8 @@ function rotary_get_committee_announcements($atts){
 		<?php
 		$args = array(
 			'order' => 'DESC',
-			'orderby' => 'title',
-			'post_type' => 'rotary-committees',
+			'orderby' => array('type', 'title'),
+			'post_type' => array ('rotary-committees', 'rotary_projects'),
 			'status' => 'approve',
 			'type' => 'comment',
 			'post_id' => get_the_id(),
@@ -115,7 +118,7 @@ function rotary_get_committee_announcements($atts){
 			<?php  endif; //end is_array check?>
 		<?php endwhile; //end wp_query loop ?>
 		<?php if ( 0 == $commentDisplayed ) :?>
-			<p>There are no current committee announcements.</p>
+			<p>There are no current committee or project announcements.</p>
 		<?php  endif; ?>
 			<?php if (!is_user_logged_in()) { ?>
 			<p>Please <?php echo wp_loginout( site_url(), false ); ?> to add a new announcement</p>
@@ -124,7 +127,12 @@ function rotary_get_committee_announcements($atts){
 				<select id="committeeselect" name="committeeselect">
 					<option value="">-- Select a committee to add a new announcement --</option>
 					<?php
+		$project_printed = false;
 		foreach($committeeArray as $key => $value):
+		    if ( !$project_printed && strpos( $value, 'project' ) ) :
+		    	$project_printed = true; ?>
+		    	<option value="">-- Select a project to add a new announcement --</option>
+		    <?php endif;
 			echo '<option value="'.$value.'">'.$key.'</option>';
 		endforeach;
 ?>
@@ -194,10 +202,10 @@ function rotary_show_committee_header_container($hascontent, $title, $link1, $li
 					<?php endif; ?>
 			<?php endif; ?>
 			<?php if ( current_user_can( 'edit_page' ) ) : ?>   
-				<a class="newpost" href="<?php echo $link1; ?>" target="_blank">New <?php echo $title; ?> <span>></span></a>
+				<a class="newpost rotarybutton-largewhite" href="<?php echo $link1; ?>" target="_blank">New <?php echo $title; ?></a>
 			<?php endif; ?>	 
 			<?php if ( $hascontent ) : ?>
-				<a class="newpost second" href="<?php echo $link2; ?>">More <?php echo $title . 's'; ?> <span>></span></a>	
+				<a class="newpost rotarybutton-largewhite second" href="<?php echo $link2; ?>">More <?php echo $title . 's'; ?></a>	
 			<?php endif; ?>							  		
 	</div>
 <?php }

@@ -11,7 +11,7 @@ get_header(); ?>
 
 				<h1 class="pagetitle"><span><?php echo rotary_get_blog_title();?></span></h1>
                 <h2 class="pagesubtitle"><?php
-					printf( __( 'Category Archives: %s', 'Rotary' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+					printf( __( 'Category Archive %s', 'Rotary' ), '<br /><span>' . single_cat_title( '', false ) . '</span>' );
 				?></h2>
 				<?php
 					$category_description = category_description();

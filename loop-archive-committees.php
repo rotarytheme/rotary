@@ -26,7 +26,7 @@
 					<?php $postCount = rotary_output_blogroll($postCount, $clearLeft); ?>
 				<?php endwhile;?>
 			<?php else : ?>
-				<p>No committee news.</p>
+				<p>No posts found.</p>
 			<?php endif;?>
 			<?php // Reset Post Data
 			wp_reset_postdata();
