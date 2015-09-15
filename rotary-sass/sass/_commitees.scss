@@ -258,7 +258,10 @@
    }
  
 }
-
+.projects .comment.depth-1,
+.committee .comment.depth-1 {
+    margin-left: 0!important;
+}
 .committeecontent {
 		clear:left;
 		min-height:50px;
@@ -434,6 +437,7 @@
 					margin-left: 45px;
 					font-size: 19px;
 					text-transform: capitalize;
+					white-space: nowrap;
 				}
 			}
 		}
@@ -470,7 +474,7 @@
 			font-size:18px;
 			font-family:$header-font;
 			line-height: 18px;
-			margin-top: 6px;
+			margin-top: -10px;
 			position:absolute;
 			text-transform:uppercase;
 		}
@@ -546,5 +550,8 @@
 .single-rotary-committees .hascontent .newcomment, .single-rotary_projects .hascontent .newcomment {
 	float:right;
 	margin-left:0;
+}
+.single-rotary_projects .committee-comment-date {
+    margin-top: 10px;
 }
 	

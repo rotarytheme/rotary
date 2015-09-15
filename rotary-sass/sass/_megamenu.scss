@@ -1,0 +1,15 @@
+/********** Max Mega Menu ***************/
+li {
+	.current_page_item.homepage {
+		display: none!important;
+	}
+	.homepage {
+    	display: none!important;
+	}
+	.search {
+    	display: none!important;
+	}
+}
+#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li ul.mega-sub-menu li ul.mega-sub-menu {
+    margin-left: 30px;
+}

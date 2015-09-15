@@ -117,26 +117,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   clear: both;
 }
 
-.button {
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  background: #f2a700;
-  border: 0px solid #ffffff;
-  color: #17458f;
-  display: block;
-  font-family: "BebasNeueRegular", Arial, sans-serif;
-  font-size: 19px;
-  font-weight: normal;
-  height: 20px;
-  line-height: normal;
-  padding: 5px;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  line-height: 20px;
-}
-
 .aligncenter {
   display: block;
   margin: 0 auto;
@@ -151,22 +131,21 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 .pagetitle {
-  background: #005daa url(../images/header-arrows-before.jpg) no-repeat -1px 0;
+  background-color: #01B4E7;
   color: #FFF;
   font-family: "Open Sans Condensed", Arial, Helvetica, sans-serif;
   font-size: 34px;
   height: 47px;
-  margin-top: 2px;
+  margin-top: 0;
   position: relative;
   text-transform: uppercase;
 }
 .pagetitle span {
-  background: url("../images/header-arrows-after.jpg") no-repeat scroll 100% 0 transparent;
   padding-bottom: 3px;
   padding-right: 50px;
   padding: 4px 50px 5px 0;
   position: absolute;
-  left: 55px;
+  left: 30px;
   top: 0;
 }
 
@@ -1780,6 +1759,10 @@ td {
   font-family: "Open Sans Condensed", Arial, Helvetica, sans-serif;
   font-weight: 700;
 }
+.archive #content article .blogroll a.post-edit-link, .blog #content article .blogroll a.post-edit-link, .single.single-rotary-committees #content .blogroll a.post-edit-link, .single.single-rotary_projects #content .blogroll a.post-edit-link {
+  margin-left: 0;
+  padding-left: 0;
+}
 .archive #content article .blogroll header h2 a, .blog #content article .blogroll header h2 a, .single.single-rotary-committees #content .blogroll header h2 a, .single.single-rotary_projects #content .blogroll header h2 a {
   font-family: "BebasNeueRegular", Arial, sans-serif;
   font-weight: 400;
@@ -2047,6 +2030,10 @@ label[for="comment"] {
   padding-top: 80px;
 }
 
+footer a.post-edit-link {
+  clear: both;
+}
+
 #footer {
   overflow: hidden;
   *zoom: 1;
@@ -2211,8 +2198,8 @@ label[for="comment"] {
   height: 40px;
   left: 0;
   line-height: 40px;
-  position: absolute;
-  top: 307px;
+  position: relative;
+  top: -5px;
   width: 100%;
   z-index: 200;
 }
@@ -2257,6 +2244,10 @@ label[for="comment"] {
   margin-left: 14px;
   margin-top: 14px;
   width: 15px;
+}
+
+.widget a {
+  font-weight: normal;
 }
 
 /*search widget*/
@@ -2730,6 +2721,21 @@ aside .widget_sp_image img {
   width: 90%;
 }
 
+/********** Max Mega Menu ***************/
+li .current_page_item.homepage {
+  display: none !important;
+}
+li .homepage {
+  display: none !important;
+}
+li .search {
+  display: none !important;
+}
+
+#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li ul.mega-sub-menu li ul.mega-sub-menu {
+  margin-left: 30px;
+}
+
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   #signin input[type="text"], #signin input[type="password"] {
@@ -2969,6 +2975,28 @@ div.wpcf7-validation-errors {
 }
 .rotaryemail-sectioncontent span.wpcf7-form-control-wrap {
   top: -40px;
+}
+.rotaryemail-sectioncontent input.wpcf7-form-control.wpcf7-captchar {
+  padding: 5px;
+  width: 100px;
+  height: auto;
+  border: #58585A 1px solid;
+}
+.rotaryemail-sectioncontent div.wpcf7 img.ajax-loader {
+  float: none;
+}
+.rotaryemail-sectioncontent span.wpcf7-form-control-wrap {
+  top: 0;
+}
+
+div.wpcf7-mail-sent-ok {
+  border: none;
+  background-color: #398f14;
+  color: #FFF;
+  width: 500px;
+  text-align: center;
+  font-family: open sans condensed,arial narrow,san-serif;
+  font-weight: 700;
 }
 
 .rotarydialog {
@@ -4075,8 +4103,12 @@ div.wpcf7-validation-errors {
   line-height: 18px;
   text-transform: uppercase;
 }
+#content .home-upcoming-programs-speaker-date .dayweek {
+  margin-bottom: 14px;
+}
 #content .home-upcoming-programs-speaker-date .day {
   color: #a6a8ab;
+  display: inline-block;
   font-family: "BebasNeueRegular", Arial, sans-serif;
   font-size: 53px;
   line-height: 45px;
@@ -4346,6 +4378,11 @@ div.wpcf7-validation-errors {
   padding-top: 0;
 }
 
+.projects .comment.depth-1,
+.committee .comment.depth-1 {
+  margin-left: 0 !important;
+}
+
 .committeecontent {
   clear: left;
   min-height: 50px;
@@ -4523,6 +4560,7 @@ div.wpcf7-validation-errors {
   margin-left: 45px;
   font-size: 19px;
   text-transform: capitalize;
+  white-space: nowrap;
 }
 #content .connectedprojectscontainer .alignleft {
   margin-left: 20px;
@@ -4556,7 +4594,7 @@ div.wpcf7-validation-errors {
   font-size: 18px;
   font-family: "Open Sans Condensed", Arial, Helvetica, sans-serif;
   line-height: 18px;
-  margin-top: 6px;
+  margin-top: -10px;
   position: absolute;
   text-transform: uppercase;
 }
@@ -4627,6 +4665,10 @@ div.wpcf7-validation-errors {
 .single-rotary-committees .hascontent .newcomment, .single-rotary_projects .hascontent .newcomment {
   float: right;
   margin-left: 0;
+}
+
+.single-rotary_projects .committee-comment-date {
+  margin-top: 10px;
 }
 
 /*! fancyBox v2.1.5 fancyapps.com | fancyapps.com/fancybox/#license */
@@ -4905,6 +4947,10 @@ div.wpcf7-validation-errors {
   display: inline-block;
   margin-right: 10px;
   width: 150px;
+}
+
+dd.gallery-caption {
+  font-size: 14px;
 }
 
 /* Visual Composer theme mods */
