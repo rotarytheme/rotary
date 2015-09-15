@@ -129,13 +129,13 @@ jQuery(document).ready(function($) {
 		},
 		showMoreComments: function(e) {
 			e.preventDefault();
-			$('.committeecomment').show();
+			$('.announcement').show();
 			$(this).hide();
 			$('#lesscomments').show();
 		},
 		hideMoreComments: function(e) {
 			e.preventDefault();
-			$('.committeecomment:not(:first)').hide();
+			$('.announcement:not(:first)').hide();
 			$(this).hide();
 			$('#morecomments').show();
 		},
