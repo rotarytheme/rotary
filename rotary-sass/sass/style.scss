@@ -128,29 +128,25 @@ Tags: rotary, html5
 .clear {
 	clear:both;
 }	
-.button {
-	@include button($height:20px);
-	line-height:20px;
-}
+
 .aligncenter	{ display: block; margin: 0 auto; }
 .alignleft		{ float: left; }
 .alignright		{ float: right; }
 .pagetitle {
-	background:$blue-bg-hover-color url(../images/header-arrows-before.jpg) no-repeat -1px 0;
+	background-color:#01B4E7;
 	color:#FFF;
 	font-family:$header-font;
 	font-size:34px;
 	height:47px;
-	margin-top:2px;
+	margin-top:0;
 	position:relative;
 	text-transform:uppercase;
 	span {
-		background: url("../images/header-arrows-after.jpg") no-repeat scroll 100% 0 transparent;
 		padding-bottom:3px;
 		padding-right:50px;
 		padding:4px 50px 5px 0;
 		position: absolute;
-		left:55px;
+		left:30px;
 		top:0;
 	}
 }
@@ -1615,6 +1611,11 @@ td {
 			}
 		}	
 	}
+	.blogroll a.post-edit-link {
+	    margin-left: 0;
+		padding-left: 0;
+	}
+
 	.blogroll header h2 a{
 		font-family:$button-font;
 		font-weight:400;
@@ -1872,6 +1873,9 @@ label[for="comment"] {
 .single-rotary_speakers #footer {
 	padding-top:80px;
 }
+footer a.post-edit-link {
+clear:both;
+}
 #footer {
 	@include clearfix;
 	background: #E7E7E8;
@@ -1978,6 +1982,7 @@ label[for="comment"] {
 
 @import "slideshow";
 @import "widgets";
+@import "megamenu";
 @import "mobile";
 @import "membership";
 @import "jquerytabs";

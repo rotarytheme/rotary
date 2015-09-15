@@ -215,6 +215,27 @@ div.wpcf7-validation-errors {
 	span.wpcf7-form-control-wrap {
 		top: -40px;
 	}
+	input.wpcf7-form-control.wpcf7-captchar {
+	  padding: 5px;
+	  width: 100px;
+	  height: auto;
+	  border:#58585A 1px solid;
+	}
+	div.wpcf7 img.ajax-loader {
+		float: none;
+	}
+	span.wpcf7-form-control-wrap {
+    	top: 0;
+	}
+}
+div.wpcf7-mail-sent-ok {
+    border: none;
+    background-color: #398f14;
+    color: #FFF;
+    width: 500px;
+    text-align: center;
+    font-family: open sans condensed,arial narrow,san-serif;
+    font-weight: 700;
 }	
 .rotarydialog {
 	background-color:$hover-link-color !important;
