@@ -162,14 +162,46 @@ endif;
 // return $content;
 //}
 
-//shortcodes
+/************************************************************************************/
+/* shortcodes
+/************************************************************************************/
 add_action( 'init', 'rotary_register_shortcodes');
 function rotary_register_shortcodes(){
-	add_shortcode('rotary-reveille-header', 'rotary_reveille_header_function');
-	add_shortcode( 'UPCOMING_SPEAKERS', 'rotary_upcoming_programs_function' );
-	add_shortcode( 'FEATURED_ITEM', 'rotary_get_featured_post' );
-	add_shortcode( 'COMMITTEE_ANNOUNCEMENTS', 'rotary_get_committee_announcements' );
+	add_shortcode( 'rotary-reveille-header', 'rotary_reveille_header_function' );
+	add_shortcode( 'UPCOMING_SPEAKERS', 'rotary_upcoming_speakers_function' );
+	add_shortcode( 'FEATURED_ITEM', 'rotary_featured_function' );
+	add_shortcode( 'FEATURED', 'rotary_featured_function' );
+	add_shortcode( 'COMMITTEE_ANNOUNCEMENTS', 'rotary_announcements_function' );
+	add_shortcode( 'ANNOUNCEMENTS', 'rotary_announcements_function' );
 }
+
+/* ANNOUNCEMENTS */
+function rotary_announcements_function( $atts ) {
+	global $includes_path;
+	require_once ( $includes_path . 'shortcode-announcements.php' );		// load the shortcode file
+	$shortcode = rotary_get_announcements_html( $atts );
+	return $shortcode;
+}
+
+/* UPCOMING_SPEAKERS */
+function rotary_upcoming_speakers_function( $atts ) {
+	global $includes_path;
+	require_once ( $includes_path . 'shortcode-upcoming-speakers.php' );	// load the shortcode file
+	$shortcode = rotary_get_upcoming_speakers_html( $atts );
+	return $shortcode;
+}
+
+/* FEATURED */
+function rotary_featured_function( $atts ) {
+	global $includes_path;
+	require_once ( $includes_path . 'shortcode-featured.php' );	// load the shortcode file
+	$shortcode = rotary_get_featured_html( $atts );
+	return $shortcode;
+}
+
+
+
+/************************************************************************************/
 function rotary_reveille_header_function($atts, $content = null) {
 	extract( shortcode_atts( array(
 				'id' => 'inthisissue',
@@ -282,178 +314,6 @@ function rotary_truncate_text($text, $length = 100, $ending = '...', $exact = fa
 	return $truncate;
 }
 
-/*gets the featured post*/
-
-function rotary_get_featured_post($atts){
-	extract( shortcode_atts( array(
-	'header' => 'Latest News',
-	'fetch'  => 'next'
-			), $atts ) );
-			if (post_type_exists( 'rotary_speakers' ) && 'next' == $fetch )  {
-				$args = array(
-						'posts_per_page' => 1,
-						'post_type' => 'rotary_speakers',
-						'order' => 'ASC',
-						'orderby' => 'meta_value',
-						'meta_key' => 'speaker_date',
-						'meta_query' => array(
-								array(
-										'key' => 'speaker_date',
-										'value' => date('Ymd'),
-										'type' => 'DATE',
-										'compare' => '>='
-								)
-						)
-				);
-			}
-			// Added by PAO to show the latest, completed Reveille
-			elseif (post_type_exists( 'rotary_speakers') && 'last' == $fetch ) {
-				$args = array(
-						'posts_per_page' => 1,
-						'post_type' => 'rotary_speakers',
-						'order' => 'DESC',
-						'orderby' => 'meta_value',
-						'meta_key' => 'speaker_date',
-						'meta_query' => array(
-								'relation' => 'AND',
-								array(
-										'key' => 'speaker_date',
-										'value' => date('Ymd'),
-										'type' => 'DATE',
-										'compare' => '<='
-								),
-								array(
-										'key' => 'speaker_program_notes',
-										'value' => '',
-										'type' => 'CHAR',
-										'compare' => '>'
-								)
-						)
-				);
-			}
-	else {
-		$args = array(
-			'posts_per_page' => 1,
-			'category_name' => 'featured',
-		);
-	}
-	ob_start();
-	$query = new WP_Query( $args );
-	global $more;
-	if ( $query->have_posts() ) : ?>
-		<div id="featured">
-        <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
-         <?php  $more = 0; ?>
-		<section class="featuredheader">
-        	<h3><?php echo $header ?></h3>
-        	<?php if (post_type_exists( 'rotary_speakers')) {
-		$speaker = get_field('speaker_first_name').' '.get_field('speaker_last_name'); ?>
-        		<p class="featuredspeakername"><span><?php echo $speaker; ?></span></p>
-        	<?php
-	}
-	else { ?>
-	        	<p>by <span><?php the_author_meta('user_firstname');?>&nbsp;<?php the_author_meta('user_lastname');?> </span></p>
-
-        	<?php } ?>
-        </section>
-        <h4><a href="<?php the_permalink()?>"><?php the_title(); ?></a></h4>
-        <?php
-	if (post_type_exists( 'rotary_speakers')) {
-		$content = ( 'next' == $fetch ) ? trim(get_field('speaker_program_content')) : trim(get_field('speaker_program_notes')) ;
-	}
-	else {
-		$content = apply_filters(get_the_content());
-	}
-	if (strlen($content) > 1024 ) {
-		$content = rotary_truncate_text($content, 1024, '', false, true) . '<a href="'.get_permalink().'"> ...continue reading</a>';
-	} ?>
-        <section class="featuredcontent">
-           <?php  if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-		the_post_thumbnail('medium'); ?>
-				<div class="hasthumb">
-					<?php echo $content; ?>
-				</div>
-			<?php }
-	else {?>
-            	<div class="nothumb">
-        			<?php echo $content; ?>
-            	</div>
-           <?php  } ?>
-        </section>
-		<?php endwhile; ?>
- 		</div>
- 		<div id="featuredbottom">
-		</div>
-    <?php endif;
-	// Reset Post Data
-	wp_reset_postdata();
-	return ob_get_clean();
-}
-
-function rotary_upcoming_programs_function($atts) {
-	extract( shortcode_atts( array(
-				'show' => '4',
-			), $atts ) );
-	$args = array(
-		'post_type' => 'rotary_speakers',
-		'posts_per_page'  => $show,
-		'order' => 'ASC',
-		'orderby' => 'meta_value',
-		'meta_key' => 'speaker_date',
-		'meta_query' => array(
-			array(
-				'key' => 'speaker_date',
-				'value' => date('Ymd'),
-				'type' => 'DATE',
-				'compare' => '>='
-			)
-		)
-	);
-	$the_query = new WP_Query( $args );
-	$postCount = 0;
-	$clearLeft = '';
-	ob_start(); ?>
-	<div class="home-upcoming-program-ribbon"><h2>Upcoming Speakers</h2></div>
-	<div id="home-upcoming-programs" class="home-upcoming-programs clearfix">
-
-	<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-		<?php $postCount++;
-	if ($postCount % 2 == 0) {
-		$clearLeft='';
-	}
-	else {
-		$clearLeft = 'clearleft';
-	}
-?>
-		 <article id="post-<?php the_ID(); ?>" <?php post_class($clearLeft); ?>>
-				<?php $date = DateTime::createFromFormat('Ymd', get_field('speaker_date')); ?>
-
-                <div class="home-upcoming-programs-speaker-date">
-                	<span class="dayweek"><?php echo $date->format('l'); ?></span>
-                	<span class="day"><?php echo $date->format('d'); ?></span>
-                	<span class="month"><?php echo $date->format('F'); ?></span>
-                	<?php edit_post_link( __( 'Edit', 'Rotary' ), '', '' ); ?>
-                </div>
-                <div class="home-upcoming-program-details">
-                <?php $speaker = get_field('speaker_first_name').' '.get_field('speaker_last_name'); ?>
-                	<h3 class="speakername"><?php echo $speaker?></h3>
-                	<p class="speaker-title"><?php the_field( 'speaker_title' ); ?>	</p>
-					<p class="speaker-company"><?php the_field('speaker_company'); ?></p>
-					<p class="speaker-program-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-                </div><!--.home-upcoming-program-details-->
-		 </article>
-	<?php endwhile; // End the loop. Whew. ?>
-	<?php //now add a new post button ?>
-	<?php  if(current_user_can('edit_page')){ ?>
-	      <?php $clearLeft = ($clearLeft == 'clearleft' ? '' : ' clearleft');  ?>
-	      <div class="newspeaker<?php echo $clearLeft; ?>">
-			<a class="post_new_link rotarybutton-largewhite" href="<?php echo admin_url(); ?>post-new.php?post_type=rotary_speakers">New Speaker</a>
-	      </div>
-	<?php } ?>
-	<?php wp_reset_postdata(); ?>
-	</div><!--.home-upcoming-programs-->
-<?php  return ob_get_clean();
-}
 function rotary_parse_shortcode_content( $content ) {
 
 	$content = do_shortcode( shortcode_unautop( $content ) );
@@ -996,6 +856,8 @@ function rotary_archiveposts_where( $where, $query_obj ) {
 //output the standard blog roll 
 //also used for posts connected to committees by post to posts
 function rotary_output_blogroll($postCount, $clearLeft) {
+	
+	 /* THIS IS ANTI-RESPONSIVE
  		$postCount++; 
 		  if ($postCount % 2 == 0) {
 			  $clearLeft='';
@@ -1003,8 +865,9 @@ function rotary_output_blogroll($postCount, $clearLeft) {
 		  else {
 			  $clearLeft='clearleft';
 		  }
-			  
+	*/	  
 		?>
+		
 
      
         <article id="post-<?php the_ID(); ?>" <?php post_class($clearLeft); ?>>
