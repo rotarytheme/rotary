@@ -74,7 +74,7 @@ function rotary_get_featured_html( $atts ){
 
         	<?php } ?>
         </section>
-        <h4><a href="<?php the_permalink()?>"><?php the_title(); ?></a></h4>
+        <h1><a href="<?php the_permalink()?>"><?php the_title(); ?></a></h1>
         <?php
 	if (post_type_exists( 'rotary_speakers')) {
 		$content = ( 'next' == $fetch ) ? trim(get_field('speaker_program_content')) : trim(get_field('speaker_program_notes')) ;
@@ -82,8 +82,8 @@ function rotary_get_featured_html( $atts ){
 	else {
 		$content = apply_filters(get_the_content());
 	}
-	if (strlen($content) > 1024 ) {
-		$content = rotary_truncate_text($content, 1024, '', false, true) . '<a href="'.get_permalink().'"> ...continue reading</a>';
+	if (strlen( $content ) > 1024 ) {
+		$content = rotary_truncate_text( $content, 1024, '', false, true ) . '<a href="'.get_permalink().'"> ...continue reading</a>';
 	} ?>
         <section class="featuredcontent">
            <?php  if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.

@@ -100,40 +100,43 @@
     	wp_login_form($args); 
     }   ?> 
     </section>
-    <header id="branding" role="banner">  
-   	<?php if(current_user_can('manage_options')){ ?>
-      	<a class="headeredit" href="<?php echo admin_url(); ?>customize.php">Edit Header</a>
-  	<?php  } ?>
-      <?php  $clubname = get_theme_mod( 'rotary_club_name', '' );  ?>
-      <?php  $rotaryClubBefore = get_theme_mod( 'rotary_club_first', false); ?>
-            <h1>
-            <?php
-			if ( !is_front_page() ) { ?>
-            	<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-            <?php }  ?>
-            <?php rotary_club_header($clubname, $rotaryClubBefore);?>
-             <?php if ( !is_front_page() ) { ?>
-				</a>
-              <?php }  ?>  
-            </h1>
-  
-
-        <section id="membership">
-        <h2>Become a member</h2>
-        <?php  $pageID = get_theme_mod( 'rotary_more_info_button', '' );  ?>
-		<?php if ($pageID) {?>
-          <a class="rotarybutton-largegold" href="<?php echo get_permalink($pageID);?>">Get More Info</a>
-        <?php }?>
-
-        </section>
-        <section id="meetingaddress">
-        <h2>MEETING SITE ADDRESS</h2>
-        <?php  $meetingaddress = get_theme_mod( 'rotary_meeting_location', '' );  
-		   if ($meetingaddress) {
-			   echo '<p>'.nl2br($meetingaddress).'</p>';
-		   }
-		?>
-        </section>
+    <header role="banner">
+    	<div id="branding">
+	   	<?php if(current_user_can('manage_options')){ ?>
+	      	<a class="headeredit" href="<?php echo admin_url(); ?>customize.php">Edit Header</a>
+	  	<?php  } ?>
+	      <?php  $clubname = get_theme_mod( 'rotary_club_name', '' );  ?>
+	      <?php  $rotaryClubBefore = get_theme_mod( 'rotary_club_first', false); ?>
+	            <h1>
+	            <?php
+				if ( !is_front_page() ) { ?>
+	            	<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+	            <?php }  ?>
+	            <?php rotary_club_header($clubname, $rotaryClubBefore);?>
+	             <?php if ( !is_front_page() ) { ?>
+					</a>
+	              <?php }  ?>  
+	            </h1>
+	  
+				<div class="membership-address-container">
+			        <section id="membership">
+			        <h2>Become a member</h2>
+			        <?php  $pageID = get_theme_mod( 'rotary_more_info_button', '' );  ?>
+					<?php if ($pageID) {?>
+			          <a class="rotarybutton-largegold" href="<?php echo get_permalink($pageID);?>">Get More Info</a>
+			        <?php }?>
+			
+			        </section>
+			        <section id="meetingaddress">
+			        <h2>MEETING SITE ADDRESS</h2>
+			        <?php  $meetingaddress = get_theme_mod( 'rotary_meeting_location', '' );  
+					   if ($meetingaddress) {
+						   echo '<p>'.nl2br($meetingaddress).'</p>';
+					   }
+					?>
+			        </section>
+			    </div>
+    	</div>
         <?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to the 'Rotary_menu' function which can be found in functions.php.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
         <?php wp_nav_menu( array( 'container_id'=> 'mainmenu', 'container' => 'nav', 'fallback_cb' => 'Rotary_menu', 'theme_location' => 'primary' ) ); ?>
     </header>

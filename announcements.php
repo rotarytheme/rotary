@@ -88,5 +88,7 @@
 		'id_form'       => $commentid
 		);
     ?> 
-<?php comment_form( $args );
+    <div id="new-announcement-form">
+		<?php comment_form( $args ); ?>
+	</div>
 

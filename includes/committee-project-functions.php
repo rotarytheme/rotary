@@ -114,19 +114,17 @@ function rotary_get_single_post_announcements_html( $postType =  'rotary-committ
 		'post_id' => get_the_id(),
 		'number' => 5
 	); 
-	$comments = get_comments( $args );  
+	$comments = get_comments( $args );
 	if (is_array( $comments )) : 
-		foreach( $comments as $comment ) : $firstComment = false; 
-			if ( $comment === reset($comments )) : 
-	 			$firstComment = true;  
-	  		endif; 
+		foreach( $comments as $comment ) : 
+			$firstComment = ( $comment === reset($comments )) ? true : false;  
 	  		$extra_classes = array( 'clearleft', (( !$firstComment ) ? 'hide' : '' )); 
 			rotary_get_announcement_html( $stub, $comment, $extra_classes );
 			if ($firstComment && get_comments_number() > 1 ) : ?>
 				<p class="morecommentcontainer"><a href="#" class="morecomments" id="morecomments">Show More Announcements</a></p>	
 			<?php  
 			endif; 
-			if ($comment === end($comments)) : ?>
+			if ($comment === end( $comments )) : ?>
 				<p class="morecommentcontainer"><a href="#" class="lesscomments hide" id="lesscomments">Show Less Announcements</a></p>
 			 <?php endif;
 		endforeach;
