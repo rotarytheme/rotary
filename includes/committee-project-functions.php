@@ -53,6 +53,7 @@ function rotary_get_announcement_html( $context, $announcement, $extra_classes )
 						$posted_in_committee = get_the_title();
 					endwhile;
 				endif;
+			wp_reset_postdata();
 			break;
 		case 'rotary_committee':
 			break;
@@ -112,20 +113,21 @@ function rotary_get_single_post_announcements_html( $postType =  'rotary-committ
 		'status' => 'approve',
 		'type' => 'comment',
 		'post_id' => get_the_id(),
-		'number' => 5
+		'number' => 10
 	); 
 	$comments = get_comments( $args );
 	if (is_array( $comments )) : 
 		foreach( $comments as $comment ) : 
-			$firstComment = ( $comment === reset($comments )) ? true : false;  
+			$firstComment = ( $comment === reset( $comments )) ? true : false;  
 	  		$extra_classes = array( 'clearleft', (( !$firstComment ) ? 'hide' : '' )); 
+			$count++;
 			rotary_get_announcement_html( $stub, $comment, $extra_classes );
-			if ($firstComment && get_comments_number() > 1 ) : ?>
-				<p class="morecommentcontainer"><a href="#" class="morecomments" id="morecomments">Show More Announcements</a></p>	
+			if ( $firstComment && get_comments_number() > 1 ) : ?>
+				<p class="morecommentcontainer"><a href="#" class="morecomments" id="morecomments"><?php echo  _e( 'Show More', 'Rotary') . '&nbsp;[+' . intval(intval(get_comments_number()) - 1.0) . ']'; ?></a></p>	
 			<?php  
 			endif; 
-			if ($comment === end( $comments )) : ?>
-				<p class="morecommentcontainer"><a href="#" class="lesscomments hide" id="lesscomments">Show Less Announcements</a></p>
+			if ( $comment === end( $comments ) && !$firstComment ) : ?>
+				<p class="morecommentcontainer"><a href="#" class="lesscomments hide" id="lesscomments"><?php echo _e( 'Show Less', 'Rotary'); ?></a></p>
 			 <?php endif;
 		endforeach;
 	endif;
