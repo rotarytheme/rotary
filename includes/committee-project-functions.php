@@ -1,62 +1,143 @@
 <?php
 
 /**
+ * rotary_get_single_post_announcements_html
+ * renamed from
  * rotary_committee_comment function.
  * 
  * @access public
  * @param string $postType (default: 'rotary-committees')
  * @return void
  */
-function rotary_committee_comment( $postType =  'rotary-committees') { ?>
-	<?php $args = array(
+/*
+comment_ID			(integer) The comment ID
+comment_post_ID		(integer) The ID of the post/page that this comment responds to
+comment_author		(string) The comment author's name
+comment_author_email	(string) The comment author's email
+comment_author_url	(string) The comment author's webpage
+comment_author_IP	(string) The comment author's IP
+comment_date		(string) The datetime of the comment (YYYY-MM-DD HH:MM:SS)
+comment_date_gmt	(string) The GMT datetime of the comment (YYYY-MM-DD HH:MM:SS)
+comment_content		(string) The comment's content
+comment_karma		(integer) The comment's karma
+comment_approved	(string) The comment approval level (0, 1 or "spam")
+comment_agent		(string) The commenter's user agent (browser, operating system, etc.)
+comment_type		(string) The comment's type if meaningfull (pingback|trackback), empty for normal comments
+comment_parent		(string) The parent comment's ID for nested comments (0 for top level)
+user_id				(integer) The comment author's ID if s/he is registered (0 otherwise)
+*/
+function rotary_get_announcement_html( $context, $announcement, $extra_classes ) {
+	
+	$id = $announcement->comment_ID;
+	$posted_in = get_the_title( $announcement->comment_post_ID );
+	$posted_in_permalink = get_the_permalink( $announcement->comment_post_ID );
+	$title = get_comment_meta( $announcement, 'title' ); //TODO: add title metadata field
+	$call_to_action = get_comment_meta( $announcement, 'call_to_action' ); //TODO: add call to action metadata field
+	$announcement_text = apply_filters ("the_content", $announcement->comment_content);
+	$announced_by = '<a href="' . get_author_posts_url( $anouncement->user_id ) . '">' . $announcement->comment_author . '</a>';
+	$post_type = get_post_type( $announcement->comment_post_ID );
+	$date = new DateTime( $announcement->comment_date );
+	if ( $context ) $extra_classes[] =  $context . '-announcement';
+	
+	switch ( $post_type ) {
+		case 'rotary_projects':
+			$connected = new WP_Query( array(
+					'connected_type'  => 'projects_to_committees',
+					'connected_items' => get_the_id(),
+					'posts_per_page'  => 1,
+					'nopaging'        => false,
+				) ); 
+				if ( $connected->have_posts() ) : 
+					while ( $connected->have_posts() ) : $connected->the_post();
+						$posted_in_committee_permalink = get_the_permalink();
+						$posted_in_committee = get_the_title();
+					endwhile;
+				endif;
+			wp_reset_postdata();
+			break;
+		case 'rotary_committee':
+			break;
+	}
+	?>
+		<article id="announcement-<?php echo $id; ?>" <?php comment_class( $extra_classes ); ?>>
+			
+			<?php switch ( $context ) { 
+			 case 'shortcode': ?>
+				<div class="announcement-header">
+					<h3><?php $title; ?></h3>
+					<h4><a href="<?php echo $posted_in_permalink;?>"><?php echo $posted_in; ?></a></h4>
+					<?php if ( $posted_in_committee) :?>
+						<h5 class="organizing-committee">Project organized by <a href="<?php echo $posted_in_committee_permalink; ?>"><?php echo $posted_in_committee; ?></a></h5>
+					<?php endif;?>
+				</div>				
+				<p class="announced-by">by <?php echo $announced_by ?></p>
+				<div class="announcement-date">
+					<span class="day"><?php echo $date->format( 'd') ; ?></span>
+					<span class="month"><?php  echo $date->format( 'M' ); ?></span>
+					<span class="year"><?php echo $date->format( 'Y' ); ?></span>
+				</div>					
+				<div class="announcement-body">
+					<?php echo $announcement_text; ?>			
+				</div>
+			<?php 
+				break; 
+			case 'project': 
+			case 'committee':
+			default: ?>
+				<div class="announcement-date">
+					<span class="day"><?php echo $date->format( 'd') ; ?></span>
+					<span class="month"><?php  echo $date->format( 'M' ); ?></span>
+					<span class="year"><?php echo $date->format( 'Y' ); ?></span>
+				</div>
+				<div class="announcement-content">
+					<div class="announcement-header">
+						<h3><?php echo ( $title ) ? $title : _e( 'New Announcement!', 'Rotary' ); ?></h3>
+						<p class="announced-by">by <?php echo $announced_by ?></p>
+					</div>							
+					<div class="announcement-body">
+						<?php echo $announcement_text; ?>			
+					</div>
+				</div>		
+			<?php }?>
+			
+			<div class="announcement-call-to-action"><?php $call_to_action; ?></div>
+			<hr class="announcement-hr" />
+		</article>
+	<?php 
+}
+
+function rotary_get_single_post_announcements_html( $postType =  'rotary-committees', $stub = 'committee' ) {
+	$args = array(
 		'order' => 'DESC',
 		'post_type' =>  $postType,
 		'status' => 'approve',
 		'type' => 'comment',
 		'post_id' => get_the_id(),
-		'number' => 5
-	); ?>
-	<?php $comments = get_comments($args); ?>
+		'number' => 10
+	); 
+	$comments = get_comments( $args );
+	if (is_array( $comments )) : 
+		foreach( $comments as $comment ) : 
+			$firstComment = ( $comment === reset( $comments )) ? true : false;  
+	  		$extra_classes = array( 'clearleft', (( !$firstComment ) ? 'hide' : '' )); 
+			$count++;
+			rotary_get_announcement_html( $stub, $comment, $extra_classes );
+			if ( $firstComment && get_comments_number() > 1 ) : ?>
+				<p class="morecommentcontainer"><a href="#" class="morecomments" id="morecomments"><?php echo  _e( 'Show More', 'Rotary') . '&nbsp;[+' . intval(intval(get_comments_number()) - 1.0) . ']'; ?></a></p>	
+			<?php  
+			endif; 
+			if ( $comment === end( $comments ) && !$firstComment ) : ?>
+				<p class="morecommentcontainer"><a href="#" class="lesscomments hide" id="lesscomments"><?php echo _e( 'Show Less', 'Rotary'); ?></a></p>
+			 <?php endif;
+		endforeach;
+	endif;
+ }
 
-	<?php if (is_array($comments)) : ?>
-		<?php foreach($comments as $comment) : ?>
-		<?php $firstComment = false; ?>
-		<?php if ($comment === reset($comments)) : ?>
-			<?php $firstComment = true;  ?>
-		<?php  endif; ?>
-		<div class="clearleft committeecomment <?php if (!$firstComment) {echo ' hide';} ?>" id="comment-<?php echo $comment->comment_post_ID ?>">
-			<div class="committee-comment-date">
-			 	<?php $date = new DateTime($comment->comment_date); ?>
-				<span class="day"><?php echo $date->format('d'); ?></span>
-				<span class="month"><?php  echo $date->format('M'); ?></span>
-				<span class="year"><?php echo $date->format('Y'); ?></span>
-				</div>
-				<?php if ( 'rotary-committees' ==  $postType ) : ?>
-					<p class="committeecommentdetail"><?php echo $comment->comment_content; ?></p>
-					<p class="announcedby"><em>Announced by</em> <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ))?>"><?php echo $comment->comment_author;?></a></p>
-					<?php $button_class = "rotarybutton-largeblue"; ?>
-				<?php else: ?>
-					<p class="announcedby"><em>Announced by</em> <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ))?>"><?php echo $comment->comment_author;?></a></p>
-					<p class="committeecommentdetail"><?php echo $comment->comment_content; ?></p>
-					<?php $button_class = "rotarybutton-largegold"; ?>
-				<?php endif; ?>
-				<?php if ($firstComment ) : ?>
-					<?php if ( is_user_logged_in() ) : ?>
-						<a id="newcomment" class="newcomment <?php echo $button_class; ?>" href="#respond">New Announcement</a>
-					<?php else : ?>
-						<?php  wp_loginout($_SERVER['REQUEST_URI'], true ); ?>
-					<?php endif; ?>
-				<?php  endif; ?>
-			</div>
-				<?php if ($firstComment && get_comments_number() > 1 ) : ?>
-						<p class="morecommentcontainer"><a href="#" class="morecomments" id="morecomments">Show More Announcements</a></p>	
-				<?php  endif; ?>
-				<?php if ($comment === end($comments)) : ?>
-					<p class="morecommentcontainer"><a href="#" class="lesscomments hide" id="lesscomments">Show Less Announcements</a></p>
-				<?php  endif; ?>
-			<?php  endforeach; ?>
-		<?php  endif; ?>
-<?php }
+ function rotary_save_announcement_title( $comment_id ) {
+ 	add_comment_meta( $comment_id, 'my_custom_comment_field', $_POST['my_custom_comment_field'] );
+ }
+ add_action( 'comment_post', 'rotary_save_announcement_title' );
+
 
 function rotary_save_post_for_committee( $post_id ) {
 	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
@@ -83,6 +164,7 @@ function rotary_save_committee_for_project ( $project_id ) {
 			) );
 	}  
 }
+
 
 add_action( 'save_post', 'rotary_save_post_for_committee' );
 add_action( 'save_post', 'rotary_save_post_for_project' );

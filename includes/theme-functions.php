@@ -448,7 +448,7 @@ if ( ! function_exists( 'rotary_posted_on' ) ) :
 			);
 		}
 		else {
-			printf( __( 'Posted on <br/>%2$s', 'rotary' ),
+			printf( __( 'Posted on<br/>%2$s', 'Rotary' ),
 				'meta-prep meta-prep-author',
 				sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time datetime="%3$s" pubdate>%4$s</time></a>',
 					get_permalink(),
@@ -802,7 +802,7 @@ function rotary_pre_get_cats($query) {
 //custom date archives
 add_filter( 'pre_get_posts', 'rotary_pre_get_archive_posts' );
 function rotary_pre_get_archive_posts($query) {
-	if ($query->is_main_query() && is_post_type_archive('rotary_speakers') && !is_admin()) {
+	if ($query->is_main_query() && is_post_type_archive( 'rotary_speakers' ) && !is_admin()) {
 		//print_r($query->query_vars);
 		//echo 'the year is '.$query->query_vars['year'];
 		//assume year if month is set
@@ -855,96 +855,74 @@ function rotary_archiveposts_where( $where, $query_obj ) {
 
 //output the standard blog roll 
 //also used for posts connected to committees by post to posts
-function rotary_output_blogroll($postCount, $clearLeft) {
-	
-	 /* THIS IS ANTI-RESPONSIVE
- 		$postCount++; 
-		  if ($postCount % 2 == 0) {
-			  $clearLeft='';
-		  }
-		  else {
-			  $clearLeft='clearleft';
-		  }
-	*/	  
+function rotary_output_blogroll() {
 		?>
-		
+	<article id="post-<?php the_ID(); ?>">
+		<div class="sectioncontainer">
+			<div class="sectionheader blogroll" id="blog-<?php the_ID(); ?>" >
+				<div class="sectioncontent">
+					<header>
+					    <?php 
+				    	$title = get_the_title(); 
+			    		if (strlen($title) > 30 ) {
+							$title = substr($title, 0, 30) . '...';
+						} 
+						?>
+		                <h2>
+		                	<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'Rotary' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php echo $title; ?></a>
+		                </h2>
+		                <div class="postdate">
+		                	<span class="alignleft">Posted by <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ))?>"><?php echo get_the_author();?></a></span>
+		                    <span class="alignright"><?php Rotary_posted_on(); ?></span>	
+		                </div>    
+		            </header>
 
-     
-        <article id="post-<?php the_ID(); ?>" <?php post_class($clearLeft); ?>>
-         	<div class="sectioncontainer">
-            	<div class="sectionheader blogroll" id="blog-<?php the_ID(); ?>" >
-                	<div class="sectioncontent">
-			<header>
-			    <?php $title = get_the_title(); ?>
-			    <?php if (strlen($title) > 30 ) {
-					$title = substr($title, 0, 30) . '...';
-				} ?>
-                <h2><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'Rotary' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php echo $title; ?></a></h2>
-                               <div class="postdate">
-                	<span class="alignleft">Posted by <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ))?>"><?php echo get_the_author();?></a></span>
-                    <span class="alignright"><?php Rotary_posted_on(); ?></span>	
-                </div>    
-            </header>
- 
-   
-                <?php $thumb = has_post_thumbnail(); ?>
-                <?php if ( $thumb) { // check if the post has a Post Thumbnail assigned to it.
-				        $attr = array(
-							'class'	=> 'alignleft',
-							);?>
-
-  						<a href="<?php the_permalink(); ?> "><?php the_post_thumbnail('post-thumbnail', $attr);?></a>
-					<?php } ?>
-   
-                <?php if ( $thumb) { ?> 
-               		<section class="excerptcontainer"> 
-               <?php } ?> 
-             <?php if ( 'rotary_speakers' == get_post_type() ) { 
-	             //program notes are filled in after a speakers visit. If the speaker has not yet been to the club, we show the upcoming content
-					$programNotes = trim(get_field('speaker_program_notes'));
-					if ('' == $programNotes)
-					{
-						$programNotes = trim(get_field('speaker_program_content'));
-					}
-					$programNotes = preg_replace('/<img[^>]+./','', $programNotes);
-					$programNotes = strip_tags($programNotes);
-					if (strlen($programNotes) > 200 ) {
-						$programNotes = substr($programNotes, 0, 200) ;
-					} 
-					?>             
-					<p><?php echo $programNotes; ?> <a href="<?php the_permalink();?>">[…]</a></p>					 
-             <?php  } 
-             else {
-	             the_excerpt();
-             }
-             ?>
-
-              <?php if ( $thumb) { ?> 
-                </section>
-              <?php } ?>    
+			 		<?php $thumb = ( has_post_thumbnail() ) ? 'hasthumbnail' : '';?>
+					<section class="excerptcontainer <?php echo $thumb;?>">
+				        <?php if ( $thumb) : // check if the post has a Post Thumbnail assigned to it. 
+							$attr = array(
+											'class'	=> 'alignleft',
+										);?>
+								<a  class="blog-thumbnail" href="<?php the_permalink(); ?> "><?php the_post_thumbnail('post-thumbnail', $attr);?></a>
+						<?php endif; ?>
+	             		<?php if ( 'rotary_speakers' == get_post_type() ) { 
+			             	//program notes are filled in after a speakers visit. If the speaker has not yet been to the club, we show the upcoming content
+							$programNotes = trim(get_field('speaker_program_notes'));
+							if ( '' == $programNotes) {
+								$programNotes = trim(get_field( 'speaker_program_content' ));
+							}
+							$programNotes = preg_replace( '/<img[^>]+./','', $programNotes );
+							$programNotes = strip_tags( $programNotes );
+							if (strlen( $programNotes ) > 200 ) {
+								$programNotes = substr($programNotes, 0, 200) ;
+							} ?>             
+							<p><?php echo $programNotes; ?> <a href="<?php echo the_permalink();?>">[…]</a></p>	
+		             	<?php  } 
+			             else {
+				             the_excerpt();
+			             }?>
+					</section>		
               
-  
-            <footer class="meta">
-            <p>
-                <?php edit_post_link( __( 'Edit', 'Rotary' ), '', ' ' ); ?>
-                <?php comments_popup_link( __( 'Leave a comment', 'Rotary' ), __( '1 Comment', 'Rotary' ), __( '% Comments', 'Rotary' ), 'commentspopup' ); ?></p>
-                <?php if ( count( get_the_category() ) ) : ?>
-                        <p><?php printf( __( 'Posted in %2$s', 'Rotary' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?></p>
-                <?php endif; ?>
-                <?php
-                    $tags_list = get_the_tag_list( '', ', ' );
-                    if ( $tags_list ):
-                ?>
-                        <p><?php printf( __( 'Tagged %2$s', 'Rotary' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?></p>
-                <?php endif; ?>
-                
-                
-                 
-            </footer>
-               				</div><!--.sectioncontent-->
-                </div> <!--.sectionheader-->
-			</div><!--.sectioncontainer-->
-		</article>
-       <?php return $postCount; ?>
-	
+		            <footer class="meta">
+		            <p>
+		                <?php 
+		                // edit_post_link( __( 'Edit', 'Rotary' ), '', ' ' ); 
+		                comments_popup_link( __( 'Leave a comment', 'Rotary' ), __( '1 Comment', 'Rotary' ), __( '% Comments', 'Rotary' ), 'commentspopup' ); ?></p>
+		                <?php if ( count( get_the_category() ) ) : 
+		                ?>
+		                        <p><?php printf( __( 'Posted in %2$s', 'Rotary' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?></p>
+		                <?php 
+		                endif;
+		                    $tags_list = get_the_tag_list( '', ', ' );
+		                    if ( $tags_list ):
+		                ?>
+		                        <p><?php printf( __( 'Tagged %2$s', 'Rotary' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?></p>
+		                <?php endif; ?>
+		            </footer>
+            
+			</div><!--.sectioncontent-->
+		</div> <!--.sectionheader-->
+	</div><!--.sectioncontainer-->
+</article>
+
 <?php }

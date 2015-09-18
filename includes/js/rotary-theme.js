@@ -129,13 +129,13 @@ jQuery(document).ready(function($) {
 		},
 		showMoreComments: function(e) {
 			e.preventDefault();
-			$('.committeecomment').show();
+			$('article.committee-announcement,article.project-announcement').show();
 			$(this).hide();
 			$('#lesscomments').show();
 		},
 		hideMoreComments: function(e) {
 			e.preventDefault();
-			$('.committeecomment:not(:first)').hide();
+			$('article.committee-announcement:not(:first),article.project-announcement:not(:first)').hide();
 			$(this).hide();
 			$('#morecomments').show();
 		},

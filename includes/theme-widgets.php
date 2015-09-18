@@ -253,7 +253,7 @@ class RotaryArchiveWidget extends WP_Widget {
 				
 	      foreach ($months as $month) {
 					$month_url = get_month_link($years[$i]->year, $month->month);
-	        $this_month = $this_year && (($post_id >= 0 && $month->month == $post_month) || ($post_id < 0 && $month == $months[0]));
+	        		$this_month = $this_year && (($post_id >= 0 && $month->month == $post_month) || ($post_id < 0 && $month == $months[0]));
 					$count_text = '';
 					
 					$monthname = $wp_locale->get_month($month->month);
@@ -271,7 +271,7 @@ class RotaryArchiveWidget extends WP_Widget {
 		  	
 	      foreach ($months as $month) {
 					$month_url = get_month_link($years[$i]->year, $month->month);
-	        $this_month = $this_year && (($post_id >= 0 && $month->month == $post_month) || ($post_id < 0 && $month == $months[0]));
+	        		$this_month = $this_year && (($post_id >= 0 && $month->month == $post_month) || ($post_id < 0 && $month == $months[0]));
 					$count_text = '';
 					
 					$monthname = $wp_locale->get_month($month->month);
@@ -372,10 +372,9 @@ class Rotary_Committee_Links extends WP_Widget {
 		$query = new WP_Query( $queryargs );
 		if ( $query->have_posts() ) : ?>
 			<select id="committeewidget" name="committeewidget">
-			<option value="">-- Select a committee --</option>
+			<option value=""><?php echo _e( 'Select Committee', 'Rotary'); ?></option>
 			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-				
-					<option value="<?php echo get_post_type_archive_link( 'rotary-committees' ); ?>?committeeid=<?php the_id(); ?>"><?php the_title(); ?></option>  				
+					<option value="<?php echo get_site_url(); ?>/posts/?committeeid=<?php the_id(); ?>"  <?php echo ( get_the_id() == $_REQUEST['committeeid'] ) ? 'selected="selected"' : ''; ?>><?php the_title(); ?></option>  				
 			<?php endwhile; ?>
 			</select>
 			<?php // Reset Post Data
@@ -463,9 +462,9 @@ class Rotary_Project_Links extends WP_Widget {
 		$query = new WP_Query( $queryargs );
 		if ( $query->have_posts() ) : ?>
 			<select id="projectwidget" name="projectwidget">
-			<option value="">-- Select a project --</option>
-			<?php while ( $query->have_posts() ) : $query->the_post(); ?>				
-					<option value="<?php echo get_post_type_archive_link( 'rotary_projects' ); ?>?projectid=<?php the_id(); ?>"><?php the_title(); ?></option>  				
+			<option value=""><?php echo _e( 'Select Project', 'Rotary'); ?></option>
+			<?php while ( $query->have_posts() ) : $query->the_post(); ?>			
+				<option value="<?php echo get_site_url(); ?>/posts/?projectid=<?php the_id(); ?>" <?php echo ( get_the_id() == $_REQUEST['projectid'] ) ? 'selected="selected"' : ''; ?>><?php the_title(); ?></option>  				
 			<?php endwhile; ?>
 			</select>	
 			<?php // Reset Post Data

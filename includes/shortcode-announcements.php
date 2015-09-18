@@ -9,11 +9,18 @@
  * to enable the shortcode to live on any page
  * 
  * Redundant Styles:
- * .home #content .committee-comment-date
- * .home #content .comment
- * .home #content .comment div
- * .home #content .commentcommittetext
  *
+			.home #content #committeeselect 
+			.home #content .comment 
+			.home #content .comment div 
+			.home #content .committeecomment 
+			.home #content .committeecommentdetail 
+			.home #content .committee-comment-date 
+			.home #content .commentcommittetext 
+			.home #content .commentcommittetext h4 
+			.home #content .commentcommittetext hr 
+			.home #content .commentcommittetext p 
+
  *
  * NEW Styles:  Here are some starter styles
  * 
@@ -94,54 +101,37 @@ function rotary_get_announcements_html( $atts ){
 	if ( $query->have_posts() ) : ?>
 	<div class="shortcode-announcements">
 		 <div class="announcements-container">
-		 <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
-				<?php  $committeeArray[get_the_title()] = get_permalink() . '?open=open'; ?>
-				<?php
-				$args = array(
-					'order' => 'DESC',
-					'orderby' => array('type', 'title'),
-					'post_type' => array ('rotary-committees', 'rotary_projects'),
-					'status' => 'approve',
-					'type' => 'comment',
-					'post_id' => get_the_id(),
-					'number' => 1
-				);
-				$comments = get_comments( $args ); ?>
-				<?php if ( is_array( $comments )) : ?>
-		                <?php $count = count($comments); ?>
-		                <?php if ( $count > 0 ) : ?>      
-							<?php foreach($comments as $comment) : ?>
-								<?php $date = new DateTime($comment->comment_date); ?>
-								<?php $today = new DateTime(); ?>
-								<?php $interval = $today->diff($date); ?>
-								<?php $announcement_text = apply_filters ("the_content", $comment->comment_content); ?>
-								<?php //only show comments less than 10 days old, or whatever the lookback is (in days) ?>
-								<?php if( abs($interval->days) < $lookback ) : ?>	
-									<?php $commentDisplayed++; ?>
-									<div class="announcement">
-									<div class="announcement-header">
-										<h4 class="announcement-title">
-											<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-										</h4>
-										<div class="announcement-date">
-											<span class="day"><?php echo $date->format( 'd') ; ?></span>
-											<span class="month"><?php  echo $date->format( 'M' ); ?></span>
-											<span class="year"><?php echo $date->format( 'Y' ); ?></span>
-										</div>
-									</div>									
-									<div class="announcement-body">
-										<?php echo $announcement_text; ?>			
-									</div>
-									<div class="announcement-call-to-action"></div>
-								<hr class="announcement-hr" />
-								</div>
-								<?php endif; //end check for comment age over 10 (lookback period) days ?>
-							<?php  endforeach; //end comment loop ?>
-						<?php  endif; //end check for comment count ?>
-					<?php  endif; //end is_array check?>
-		<?php endwhile; //end wp_query loop ?>
-		<?php if ( 0 == $commentDisplayed ) :?>
-			<p>No announcements have been made in the last <?php  echo $atts['lookback']; ?> days old</p>
+		 <?php 
+		  while ( $query->have_posts() ) : $query->the_post(); 
+			$committeeArray[get_the_title()] = get_permalink() . '?open=open'; 
+			$args = array(
+				'order' => 'DESC',
+				'orderby' => array('type', 'title'),
+				'post_type' => array ('rotary-committees', 'rotary_projects'),
+				'status' => 'approve',
+				'type' => 'comment',
+				'post_id' => get_the_id(),
+				'number' => 1
+			);
+			$comments = get_comments( $args ); 
+			if ( is_array( $comments )) : 
+                $count = count($comments); 
+                if ( $count > 0 ) :       
+					foreach($comments as $comment) : 
+						$date = new DateTime( $comment->comment_date ); 
+						$today = new DateTime(); 
+						$interval = $today->diff( $date ); 
+						if( abs($interval->days) < $lookback ) : 	
+							$extra_classes = ''; 
+							$commentDisplayed++; 
+							rotary_get_announcement_html( 'shortcode', $comment, $extra_classes ); 
+						endif; //end check for comment age over 10 (lookback period) days 
+					 endforeach; //end comment loop 
+				 endif; //end check for comment count 
+			 endif; //end is_array check
+		endwhile; //end wp_query loop 
+		if ( 0 == $commentDisplayed ) :
+		?>	<p>No new announcements have been made in the last <?php  echo $atts['lookback']; ?> days</p>
 		<?php  endif; ?>
 			<?php if (!is_user_logged_in()) { ?>
 			<p>Please <?php echo wp_loginout( site_url(), false ); ?> to make an announcement</p>
