@@ -63,7 +63,7 @@ function rotary_img_caption_shortcode( $a , $attr, $content = null) {
 }
 
 
-add_filter('wp_nav_menu_items','rotary_add_search_box', 10, 2);
+//add_filter('wp_nav_menu_items','rotary_add_search_box', 10, 2);
 function rotary_add_search_box($items) {
 
 	ob_start();
@@ -75,7 +75,7 @@ function rotary_add_search_box($items) {
 
 	return $items;
 }
-add_filter( 'wp_nav_menu_items', 'add_home_link', 10, 2 );
+//add_filter( 'wp_nav_menu_items', 'add_home_link', 10, 2 );
 function add_home_link($items, $args) {
 
 	if (is_front_page())

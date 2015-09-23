@@ -10,6 +10,9 @@
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); 
 
+	$speaker = get_field('speaker_first_name').' '.get_field('speaker_last_name');
+	$date = DateTime::createFromFormat('Ymd', get_field( 'speaker_date' ));
+
 	 if ( get_field('speaker_program_notes' )) :
 	 	$terms = wp_get_post_terms( get_the_id(), 'rotary_program_scribe' );
 	 	$scribe = $terms[0]->name;
@@ -21,8 +24,7 @@
  
  	$speaker_title = trim( get_field( 'speaker_title' ));
  	$speaker_company = trim( get_field( 'speaker_company' ));
- 	$speaker_email = trim( get_field( 'speaker_email' ));
- 	if ( is_user_logged_in() ) $speakertitle = trim( get_field( 'speaker_title' ));
+ 	if ( is_user_logged_in() )  $speaker_email = trim( get_field( 'speaker_email' ));
 ?>
 
 		<nav class="prevnext">
@@ -35,14 +37,29 @@
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<div id="speakerheader">
-                <?php $speaker = get_field('speaker_first_name').' '.get_field('speaker_last_name'); ?>
-                <?php $date = DateTime::createFromFormat('Ymd', get_field( 'speaker_date' )); ?>
 				<span id="speakerdate"><span id="weekday"><?php echo $date->format('l');?></span> <?php echo $date->format('M dS, Y');?></span>
+				
+				
+				
+				<?php 
+				/***************** START MAILCHIMP CAMPAIGN CUSTOMIZATION ****************/
+				if( is_user_logged_in() || 1==1) :?>
+					<div id="mailchimpcampaign">
+						<input id="sendemailtest" type="button" class="rotarybutton-largewhite" value="<?php echo __( 'Send Test Email', 'Rotary'); ?>" ng-click="saveCampaign()" />
+						<input id="sendemailblast"type="button" class="rotarybutton-largeblue" value="<?php echo __( 'Send Email Blast', 'Rotary'); ?>" ng-click="sendCampaign(1)" />
+					</div>
+				<?php endif;
+				/***************** END MAILCHIMP CAMPAIGN CUSTOMIZATION ****************/
+				?>
+				
+				
+				
+				
 				<h2> <?php echo $speaker; ?> </h2>
 				<p id="speakertitle">
 					<?php if( count( $speaker_title) ) ?> <span id="speaker-title" class="speaker-info"><?php echo( $speaker_title );?></span>
- 					<?php if( count( $speaker_company) ) ?> <span id="speaker-title" class="speaker-info"><?php echo( $speaker_company );?></span>
- 					<?php if( count( $speaker_email) ) ?> <span id="speaker-title" class="speaker-info"><?php echo '<a href="mailto:'.antispambot( $speaker_email ) . '">' . _e( 'email', 'Rotary') . '</a>'; ?></span>
+ 					<?php if( count( $speaker_company) ) ?> <span id="speaker-company" class="speaker-info"><?php echo( $speaker_company );?></span>
+ 					<?php if( count( $speaker_email) ) ?> <span id="speaker-email" class="speaker-info"><?php echo '<a href="mailto:'.antispambot( $speaker_email ) . '">' . _e( 'email', 'Rotary') . '</a>'; ?></span>
 				</p>
              </div>
 			<div id="speakerbody" >
@@ -74,4 +91,16 @@
 			</footer>
 		</article>
 
-<?php endwhile; // end of the loop. ?>
+<?php endwhile; // end of the loop. 
+				
+				
+				
+				
+/***************** START MAILCHIMP CAMPAIGN CUSTOMIZATION ****************/?>
+				
+	<!-- some cool stuff from Najeeb -->
+	<script type="text/javascript"></script>
+	
+	
+	
+				
