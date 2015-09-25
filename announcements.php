@@ -70,9 +70,9 @@
 			<p><?php _e( 'No Announcements at the Moment', 'Rotary' ); ?></p>
 			<?php if ( is_user_logged_in() ) : ?>
 				<p><?php _e( 'Would you like to make one', 'Rotary' ); ?>?</p>
-				<a id="newcomment" class="newcomment <?php echo $button_class; ?>" href="#respond">New Announcement</a>
+				<a id="newcomment" class="newcomment <?php echo $button_class; ?>" href="#respond"><?php _e( 'New Announcement', 'rotary' );?></a>
 			<?php else : ?>
-				<p><?php _e( 'Would you like to ', 'Rotary' ); ?> <?php  wp_loginout($_SERVER['REQUEST_URI'], true ); ?>?</p>
+				<p><?php _e( sprintf( 'Would you like to %s ?', 'Rotary' ),  wp_loginout($_SERVER['REQUEST_URI'], true ) ); ?></p>
 			<?php endif; ?>
 		</div>
 		<?php endif; // end ! comments_open() ?>

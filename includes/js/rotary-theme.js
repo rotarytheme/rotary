@@ -124,7 +124,8 @@ jQuery(document).ready(function($) {
 		showCommittee: function() {
 			var committee = $(this).val();
 			if (committee.length > 0) {
-				window.location.href = committee;
+				//window.location.href = committee;
+				window.open( committee, '_announcement' );
 			}
 		},
 		showMoreComments: function(e) {

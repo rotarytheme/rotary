@@ -43,7 +43,7 @@
 				
 				<?php 
 				/***************** START MAILCHIMP CAMPAIGN CUSTOMIZATION ****************/
-				if( is_user_logged_in() || 1==1) :?>
+				if( is_user_logged_in() && current_user_can( 'create_mailchimp_campaigns' ) ):?>
 					<div id="mailchimpcampaign">
 						<input id="sendemailtest" type="button" class="rotarybutton-largewhite" value="<?php echo __( 'Send Test Email', 'Rotary'); ?>" ng-click="saveCampaign()" />
 						<input id="sendemailblast"type="button" class="rotarybutton-largeblue" value="<?php echo __( 'Send Email Blast', 'Rotary'); ?>" ng-click="sendCampaign(1)" />
@@ -59,7 +59,7 @@
 				<p id="speakertitle">
 					<?php if( count( $speaker_title) ) ?> <span id="speaker-title" class="speaker-info"><?php echo( $speaker_title );?></span>
  					<?php if( count( $speaker_company) ) ?> <span id="speaker-company" class="speaker-info"><?php echo( $speaker_company );?></span>
- 					<?php if( count( $speaker_email) ) ?> <span id="speaker-email" class="speaker-info"><?php echo '<a href="mailto:'.antispambot( $speaker_email ) . '">' . _e( 'email', 'Rotary') . '</a>'; ?></span>
+ 					<?php if( $speaker_email ) {?> <span id="speaker-email" class="speaker-info"><a href="mailto:<?php echo antispambot( $speaker_email ); ?>"><?php echo  _e( 'Email', 'Rotary'); ?></a></span><?php }?>
 				</p>
              </div>
 			<div id="speakerbody" >
@@ -68,7 +68,7 @@
                        	<p id="program-roles">
 						<?php if( !empty( $scribe )) {?><span id="scribe"><span class="speaker-term-label"><?php echo _e( 'Scribe', 'Rotary' ); ?>:</span> <?php echo $scribe; ?></span><?php }?>
 						<?php if( !empty( $editor )) {?><span id="editor"><span class="speaker-term-label"><?php echo _e( 'Editor', 'Rotary' ); ?>:</span> <?php echo $editor; ?></span><?php }?>
-						<?php if(!empty( $introducer )) {?><span id="introducer"><span class="speaker-term-label"><?php echo _e( 'Introduced by', 'Rotary' ); ?>:</span> <?php echo $introducer; ?></span><?php }?>
+						<?php if( !empty( $introducer )) {?><span id="introducer"><span class="speaker-term-label"><?php echo _e( 'Introduced by', 'Rotary' ); ?>:</span> <?php echo $introducer; ?></span><?php }?>
 						</p>
 				</div>
 				<div id="speakerinfo" <?php if( empty( $scribe ) && empty( $editor ) && empty( $introducer )) echo 'class="noroles"'; ?>>
@@ -81,6 +81,10 @@
 					if ( empty( $programNotes) ) the_field('speaker_program_content');
 						else echo $programNotes;
 				?>
+					<div id="speakerannouncements">
+						<h2><?php echo _e( 'Announcements', 'rotary' );?></h2>
+						<?php echo do_shortcode( '[ANNOUNCEMENTS lookback=4 speakerdate="' . $date->format('c') . '" context="speaker"]');?>
+					</div>
 				</div>
 			</div><!--.speakerbody-->
 			<footer id="speakerfooter">

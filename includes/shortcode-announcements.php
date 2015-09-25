@@ -85,80 +85,68 @@
 function rotary_get_announcements_html( $atts ){
 	extract( shortcode_atts(
 			array(
-					'lookback' => 10
+					'lookback' => 10,
+					'lookforward' => 3,
+					'speakerdate'	=> null,
+					'context'	=> 'shortcode'
 			), $atts, 'announcements' ));
 	
+	$today = ( $speakerdate ) ? new DateTime( $speakerdate ) : new DateTime();  //if we've passed through a speaker date, then make the lookback relative to this date, and not today
+	$lookforwarddate = ( $speakerdate ) ? new DateTime( $speakerdate ) : new DateTime();  //if we've passed through a speaker date, then make the lookback relative to this date, and not today
+	$lookbackdate = ( $speakerdate ) ? new DateTime( $speakerdate ) : new DateTime();  //if we've passed through a speaker date, then make the lookback relative to this date, and not today
+	
+	$lookforwarddate->add(new DateInterval( 'P' . $lookforward . 'D' ) ) ;
+	$lookbackdate->sub(new DateInterval( 'P' . $lookback . 'D' ) ) ;
+
+		
 	$args = array(
-			'posts_per_page' => -1,
-			'post_type' => array ( 'rotary-committees', 'rotary_projects' ),
-			'orderby' => 'type',
-			'order' => 'ASC'
-	);
-	$committeeArray = array();
-	$commentDisplayed = 0;
-	ob_start();
-	$query = new WP_Query( $args );
-	if ( $query->have_posts() ) : ?>
-	<div class="shortcode-announcements">
-		 <div class="announcements-container">
-		 <?php 
-		  while ( $query->have_posts() ) : $query->the_post(); 
-			$committeeArray[get_the_title()] = get_permalink() . '?open=open'; 
-			$args = array(
-				'order' => 'DESC',
-				'orderby' => array('type', 'title'),
-				'post_type' => array ('rotary-committees', 'rotary_projects'),
-				'status' => 'approve',
-				'type' => 'comment',
-				'post_id' => get_the_id(),
-				'number' => 1
+			'order' => 'DESC',
+			'orderby' => array( 'comment_date', 'post_type',  'title'),
+			'post_type' => array ('rotary-committees', 'rotary_projects'),
+			'status' => 'approve',
+			'date_query' => array( 
+					array( 
+						'column' => 'comment_date', 
+						array( 
+							'after' => date_format( $lookbackdate, 'c' ),
+							'before' => date_format( $lookforwarddate, 'c' )
+						),
+					'inclusive' => true	
+					)
+				)
 			);
-			$comments = get_comments( $args ); 
-			if ( is_array( $comments )) : 
-                $count = count($comments); 
-                if ( $count > 0 ) :       
-					foreach($comments as $comment) : 
-						$date = new DateTime( $comment->comment_date ); 
-						$today = new DateTime(); 
-						$interval = $today->diff( $date ); 
-						if( abs($interval->days) < $lookback ) : 	
-							$extra_classes = ''; 
-							$commentDisplayed++; 
-							rotary_get_announcement_html( 'shortcode', $comment, $extra_classes ); 
-						endif; //end check for comment age over 10 (lookback period) days 
-					 endforeach; //end comment loop 
-				 endif; //end check for comment count 
-			 endif; //end is_array check
-		endwhile; //end wp_query loop 
-		if ( 0 == $commentDisplayed ) :
-		?>	<p>No new announcements have been made in the last <?php  echo $atts['lookback']; ?> days</p>
-		<?php  endif; ?>
-			<?php if (!is_user_logged_in()) { ?>
-			<p>Please <?php echo wp_loginout( site_url(), false ); ?> to make an announcement</p>
+	$comments = get_comments( $args );
+	
+	$commentDisplayed = 0;
+	
+	ob_start();
+	?>
+	<div class="<?php echo $context;?>-announcements">
+		<?php if (!is_user_logged_in()) { ?>
+				<p><?php echo sprintf( 'Please %s to make an announcement', wp_loginout( site_url(), false ) ) ;?></p>
 			<?php }
-	else { ?>
-				<select id="committeeselect" name="committeeselect">
-					<option value="">-- Select a committee to add a new announcement --</option>
-					<?php
-		$project_printed = false;
-		foreach($committeeArray as $key => $value):
-		    if ( !$project_printed && strpos( $value, 'project' ) ) :
-		    	$project_printed = true; ?>
-		    	<option value="">-- Select a project to add a new announcement --</option>
-		    <?php endif;
-			echo '<option value="'.$value.'">'.$key.'</option>';
-		endforeach;
-?>
-					</select>
-			<?php } ?>
-
-			</div>
+		else { 
+				 rotary_project_and_committee_announcement_dropdown();
+		} ?>
+		 <div class="announcements-container">
+		 	<?php 
+			if ( is_array( $comments )  ) : 
+			$count = count( $comments );
+			if($count > 0 ) :
+				foreach( $comments as $comment ) : 
+						$extra_classes = ''; 
+						$commentDisplayed++; 
+						rotary_get_announcement_html( $context, $comment, $extra_classes ); 
+				 endforeach; //end comment loop 
+			
+				 endif;
+			 endif; //end is_array check
+			 
+			if ( 0 == $commentDisplayed ) :
+				?>	<p><?php echo printf( 'No new announcements have been made in the last %s days', $lookback );?></p>
+			<?php  endif; ?>
 		</div>
+	</div>
 
-	<?php endif; ?>
-
-	<?php // Reset Post Data
-	wp_reset_postdata();
-	return ob_get_clean();
-
+<?php return ob_get_clean();
 }

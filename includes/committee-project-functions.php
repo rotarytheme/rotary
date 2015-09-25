@@ -37,8 +37,11 @@ function rotary_get_announcement_html( $context, $announcement, $extra_classes )
 	$announced_by = '<a href="' . get_author_posts_url( $anouncement->user_id ) . '">' . $announcement->comment_author . '</a>';
 	$post_type = get_post_type( $announcement->comment_post_ID );
 	$date = new DateTime( $announcement->comment_date );
-	if ( $context ) $extra_classes[] =  $context . '-announcement';
 	
+	if ( $context ) $extra_classes[] =  $context . '-announcement';
+	//$extra_classes[] = 'shortcode-announcement';
+	
+	// where did this announcement come from - a project, or a committee??
 	switch ( $post_type ) {
 		case 'rotary_projects':
 			$connected = new WP_Query( array(
@@ -62,20 +65,27 @@ function rotary_get_announcement_html( $context, $announcement, $extra_classes )
 		<article id="announcement-<?php echo $id; ?>" <?php comment_class( $extra_classes ); ?>>
 			
 			<?php switch ( $context ) { 
-			 case 'shortcode': ?>
+			 case 'shortcode':
+			 case 'speaker':  ?>
 				<div class="announcement-header">
-					<h3><?php $title; ?></h3>
-					<h4><a href="<?php echo $posted_in_permalink;?>"><?php echo $posted_in; ?></a></h4>
+					<?php if( $title ) :?>
+						<h3><?php $title; ?></h3>
+						<h4><a href="<?php echo $posted_in_permalink;?>"><?php echo $posted_in; ?></a></h4>
+					<?php else:?>
+						<h3><a href="<?php echo $posted_in_permalink;?>"><?php echo $posted_in; ?></a></h3>
+					<?php endif;?>
 					<?php if ( $posted_in_committee) :?>
-						<h5 class="organizing-committee">Project organized by <a href="<?php echo $posted_in_committee_permalink; ?>"><?php echo $posted_in_committee; ?></a></h5>
+						<h5 class="organizing-committee"><?php echo _e( 'Project organized by', 'rotary' );?> <a href="<?php echo $posted_in_committee_permalink; ?>"><?php echo $posted_in_committee; ?></a></h5>
 					<?php endif;?>
 				</div>				
-				<p class="announced-by">by <?php echo $announced_by ?></p>
+				<p class="announced-by"><?php echo sprintf( 'by %s', $announced_by ); ?></p>
+				<?php if( 'shortcode' == $context ) : ?>
 				<div class="announcement-date">
 					<span class="day"><?php echo $date->format( 'd') ; ?></span>
 					<span class="month"><?php  echo $date->format( 'M' ); ?></span>
 					<span class="year"><?php echo $date->format( 'Y' ); ?></span>
-				</div>					
+				</div>
+				<?php endif;?>					
 				<div class="announcement-body">
 					<?php echo $announcement_text; ?>			
 				</div>
@@ -101,10 +111,63 @@ function rotary_get_announcement_html( $context, $announcement, $extra_classes )
 			<?php }?>
 			
 			<div class="announcement-call-to-action"><?php $call_to_action; ?></div>
-			<hr class="announcement-hr" />
+			<!-- <hr class="announcement-hr" /> -->
 		</article>
 	<?php 
 }
+
+
+function rotary_project_and_committee_announcement_dropdown() {
+?>
+	<select id="committeeselect" name="committeeselect">
+		<option value=""><?php echo __( 'SELECT A PROJECT OR COMMITTEE TO ADD A NEW ANNOUNCEMENT', 'rotary' );?></option>
+		<?php 
+
+		/* PROJECTS */
+		$args = array(
+				'posts_per_page' => -1,
+				'post_type' =>'rotary_projects',
+				'orderby' => 'post_date',
+				'status' => 'publish',
+				'order' => 'DESC',
+				'date_query' => array(
+						array(
+								'after' => '2015-06-01' //FIXME: put a proper cut-off date based on project end dates
+						)
+				)
+		);
+		$query = new WP_Query( $args );
+		if ( $query->have_posts() ) :
+		?><option value="">~~~~~~~~~~ <?php _e( 'Projects' ,'rotary' );?> ~~~~~~~~~~</option><?php
+		    while ( $query->have_posts() ) : $query->the_post();
+				echo '<option value="' . get_permalink() . '?open=open' . '">' . get_the_title() . '</option>';
+			endwhile;
+		endif;
+		wp_reset_postdata();
+		
+		
+		/* COMMITTEES */
+		
+	    $args = array(
+	    		'posts_per_page' => -1,
+	    		'post_type' => 'rotary-committees',
+	    		'orderby' => 'title',
+				'status' => 'publish',
+	    		'order' => 'ASC'
+	    );
+	    $query = new WP_Query( $args );
+		?><option value="">~~~~~~~~~~ <?php _e( 'Committees' ,'rotary' );?> ~~~~~~~~~~</option><?php 
+	    if ( $query->have_posts() ) : 
+		    while ( $query->have_posts() ) : $query->the_post();
+			echo '<option value="' . get_permalink() . '?open=open' . '">' . get_the_title() . '</option>';
+			endwhile;
+		endif;
+		wp_reset_postdata();
+
+		?></select><?php
+}
+
+
 
 function rotary_get_single_post_announcements_html( $postType =  'rotary-committees', $stub = 'committee' ) {
 	$args = array(
