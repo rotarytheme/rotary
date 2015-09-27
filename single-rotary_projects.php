@@ -34,6 +34,14 @@ get_header(); ?>
 	<?php get_sidebar( 'projects' ); ?>
 	
 	<div id="content" class="projects" role="main">
+	
+
+
+<?php 
+    //show participants first
+    echo do_shortcode( '[MEMBER_DIRECTORY type="projects" id="'.get_the_id().'"]' );
+    ?>
+    
 		<?php if ( has_post_thumbnail() ) : ?>
 			<?php the_post_thumbnail('large'); ?>
 		<?php endif; ?>

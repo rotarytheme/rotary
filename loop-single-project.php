@@ -16,8 +16,6 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
     	$hascontent = ' hascontent';
     endif; 
     
-    //show participants first
-    do_shortcode( '[MEMBER_DIRECTORY type="projects" id="'.get_the_id().'"]' );
     ?>
     
     

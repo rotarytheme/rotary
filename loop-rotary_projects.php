@@ -18,7 +18,7 @@
 	</div>
 	<?php get_sidebar('project-archives'); ?>
 	<?php else: ?>
-	<h1 class="pagetitle"><span>Project Blog Roll</span></h1>
+	<h1 class="pagetitle"><span><?php echo _e( 'Project Blog Roll', 'rotary' ); ?></span></h1>
 	<div id="content" class="fullwidth" role="main"> 
 		<?php 
 		$args = array( 
