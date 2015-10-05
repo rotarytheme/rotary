@@ -39,7 +39,12 @@ get_header(); ?>
 
 <?php 
     //show participants first
-    echo do_shortcode( '[MEMBER_DIRECTORY type="projects" id="'.get_the_id().'"]' );
+
+	if ( 1 == get_field( 'participants_table_flag' )) :
+    	echo do_shortcode( '[MEMBER_DIRECTORY type="projects" id="' . get_the_id() . '"]' );
+	elseif ( 2 == get_field( 'participants_table_flag' )) :
+    	echo do_shortcode( '[MEMBER_DIRECTORY type="form" id="' . get_the_id() . '"]' );
+	endif;
     ?>
     
 		<?php if ( has_post_thumbnail() ) : ?>

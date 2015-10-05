@@ -120,7 +120,7 @@ function rotary_get_announcement_html( $context, $announcement, $extra_classes )
 function rotary_project_and_committee_announcement_dropdown() {
 ?>
 	<select id="committeeselect" name="committeeselect">
-		<option value=""><?php echo __( 'SELECT A PROJECT OR COMMITTEE TO ADD A NEW ANNOUNCEMENT', 'rotary' );?></option>
+		<option value=""><?php echo __( 'SELECT A PROJECT OR AFFINITY TO ADD A NEW ANNOUNCEMENT', 'rotary' );?></option>
 		<?php 
 
 		/* PROJECTS */
@@ -156,7 +156,7 @@ function rotary_project_and_committee_announcement_dropdown() {
 	    		'order' => 'ASC'
 	    );
 	    $query = new WP_Query( $args );
-		?><option value="">~~~~~~~~~~ <?php _e( 'Committees' ,'rotary' );?> ~~~~~~~~~~</option><?php 
+		?><option value="">~~~~~~~~~~ <?php _e( 'Affinities' ,'rotary' );?> ~~~~~~~~~~</option><?php 
 	    if ( $query->have_posts() ) : 
 		    while ( $query->have_posts() ) : $query->the_post();
 			echo '<option value="' . get_permalink() . '?open=open' . '">' . get_the_title() . '</option>';

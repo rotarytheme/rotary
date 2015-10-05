@@ -15,9 +15,11 @@
 				<ul id="project-title">
 					<li><h2><?php the_title(); ?></h2></li>
 				</ul>
-				<ul id="project-icons">
-					<li><?php rotary_show_project_icons(); ?></li>
-				</ul>
+				<?php if ( get_field( 'participants_table_flag' ) ) :?>
+					<ul id="project-icons">
+						<li><?php rotary_show_project_icons(); ?></li>
+					</ul>
+				<?php endif;?>
 				
 	<?php //get the project start and end dates ?>
 	<?php $startDate = DateTime::createFromFormat('Ymd', get_field( 'rotary_project_date' ) ); ?>
@@ -36,7 +38,7 @@
 							<span class="month"><?php echo $startDate->format('F'); ?></span>
 							<span class="year"><?php echo $startDate->format('Y'); ?></span>
 							<?php if ( '' != trim( get_field( 'rotary_project_end_date' ) ) ) : ?>
-								<br /><span>To</span><br />
+								<br /><span><?php _e( 'To', 'Rotary' ); ?></span><br />
 								<span class="day"><?php echo $endDate->format('jS'); ?></span>
 								<span class="month"><?php echo $endDate->format('F'); ?></span>
 								<span class="year"><?php echo $endDate->format('Y'); ?></span>
@@ -50,6 +52,8 @@
 		<?php endif; ?>
 	<?php else : ?>
 		<?php $longTermClass = ''; ?>
+		<?php $startTime = new DateTime( $startDate->format( 'Y-m-d' ) . ' ' . get_field( 'rotary_project_start_time' ) ); ?>
+		<?php $endTime = new DateTime( $startDate->format( 'Y-m-d' ) . ' ' . get_field( 'rotary_project_end_time' ) ); ?>
 				<ul id="project-date">
 					<li id="project-calendar-image">
 						<img class="aligncenter project-calendar" src="<?php echo get_template_directory_uri() ?>/rotary-sass/images/project-calendar.png" alt="project calendar image" />
@@ -60,6 +64,10 @@
 							<span class="day"><?php echo $startDate->format('jS'); ?></span>
 							<span class="month"><?php echo $startDate->format('F'); ?></span>
 							<span class="year"><?php echo $startDate->format('Y'); ?></span>
+								<br />
+								<span class="time"><?php echo $startTime->format('g:i a'); ?></span>
+								<span><?php _e( 'To', 'Rotary' ); ?></span>
+								<span class="time"><?php echo $endTime->format('g:i a'); ?></span>
                 	     </div>
 					</li>
 				</ul>

@@ -926,3 +926,11 @@ function rotary_output_blogroll() {
 </article>
 
 <?php }
+
+
+
+
+
+
+
+

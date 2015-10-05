@@ -85,17 +85,22 @@
 function rotary_get_announcements_html( $atts ){
 	extract( shortcode_atts(
 			array(
-					'lookback' => 10,
-					'lookforward' => 3,
+					'lookback' 		=> 10,
+					'lookforward' 	=> 3,
 					'speakerdate'	=> null,
-					'context'	=> 'shortcode'
+					'context'		=> 'shortcode'
 			), $atts, 'announcements' ));
 	
 	$today = ( $speakerdate ) ? new DateTime( $speakerdate ) : new DateTime();  //if we've passed through a speaker date, then make the lookback relative to this date, and not today
 	$lookforwarddate = ( $speakerdate ) ? new DateTime( $speakerdate ) : new DateTime();  //if we've passed through a speaker date, then make the lookback relative to this date, and not today
 	$lookbackdate = ( $speakerdate ) ? new DateTime( $speakerdate ) : new DateTime();  //if we've passed through a speaker date, then make the lookback relative to this date, and not today
+
+	if( $lookforward >= 0) :
+		$lookforwarddate->add(new DateInterval( 'P' . $lookforward . 'D' ) ) ;
+	else:
+		$lookforwarddate->sub(new DateInterval( 'P' . abs( $lookforward ) . 'D' ) ) ;
+	endif;
 	
-	$lookforwarddate->add(new DateInterval( 'P' . $lookforward . 'D' ) ) ;
 	$lookbackdate->sub(new DateInterval( 'P' . $lookback . 'D' ) ) ;
 
 		
@@ -122,7 +127,7 @@ function rotary_get_announcements_html( $atts ){
 	ob_start();
 	?>
 	<div class="<?php echo $context;?>-announcements">
-		<?php if (!is_user_logged_in()) { ?>
+		<?php if ( !is_user_logged_in() ) { ?>
 				<p><?php echo sprintf( 'Please %s to make an announcement', wp_loginout( site_url(), false ) ) ;?></p>
 			<?php }
 		else { 
