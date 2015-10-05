@@ -15,7 +15,7 @@
 				<ul id="project-title">
 					<li><h2><?php the_title(); ?></h2></li>
 				</ul>
-				<?php if ( get_field( 'participants_table_flag' ) ) :?>
+				<?php if ( 1 == get_field( 'participants_table_flag' ) ) :?>
 					<ul id="project-icons">
 						<li><?php rotary_show_project_icons(); ?></li>
 					</ul>

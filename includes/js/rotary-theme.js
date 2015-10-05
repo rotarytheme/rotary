@@ -18,6 +18,7 @@ jQuery(document).ready(function($) {
 			$('#committeeselect, #committeewidget, #projectwidget').on('change', this.showCommittee);
 			$('#morecomments').on('click', this.showMoreComments);
 			$('#lesscomments').on('click', this.hideMoreComments);
+			$('#showregistrationform, #cancelregistrationform').on('click', this.toggleForm);
 			$('#newcomment, #newcommentproject').on('click', this.showCommentForm);
 			$('#speakertabs').on('click', '.prevnext a', this.loadPrevNext);
 			$('#wpas-reset input').on('click', this.resetForm);
@@ -144,6 +145,10 @@ jQuery(document).ready(function($) {
 			e.preventDefault();
 			$('#respond').toggle();
 			$("#comment").focus();
+		},
+		toggleForm: function(e) {
+			e.preventDefault();
+			$('#gravityform, #showregistrationform, #cancelregistrationform, #rotaryform_wrapper').toggle();
 		},
 		toggleSearch: function(e) {
 			e.preventDefault();

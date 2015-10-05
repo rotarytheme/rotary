@@ -271,6 +271,8 @@ function rotary_show_committee_header_container($hascontent, $title, $link1, $li
  */
 function rotary_show_project_icons() { 
 	//get the users connected to the project ?>
+	get_field
+	<?php ?>
 	<?php $users = get_users( array(
 		'connected_type' => 'projects_to_users',
 		'connected_items' => get_the_id(),
@@ -284,15 +286,15 @@ function rotary_show_project_icons() {
 			<?php $p2p_id = p2p_type( 'projects_to_users' )->get_p2p_id( get_the_id(), wp_get_current_user() ); ?>
 			<?php if ( $p2p_id ) : ?>
 		 		<?php $particpate = ' going';?>
-		 			<div class="hide imgoingtext hovertext<?php echo $particpate; ?>">I'm going<br />Click to<br />change RSVP</div>
+		 			<div class="hide imgoingtext hovertext<?php echo $particpate; ?>"><?php echo _e( 'I\'m going <br />Click to<br />change RSVP', 'Rotary'); ?></div>
 		 		<?php else : ?>
 		 			<?php $particpate = ' notgoing';?>
-		 			<div class="hide imgoingtext hovertext<?php echo $particpate; ?>">I'm not going<br />Click to<br />change RSVP</div>
+		 			<div class="hide imgoingtext hovertext<?php echo $particpate; ?>">><?php echo _e( 'I\'m not going<br />Click to<br />change RSVP', 'Rotary'); ?></div>
 		 	<?php endif; ?>
 		 <?php else: ?>
 		 	<div class="hide imgoingtext hovertext">I haven't replied</div>
 		 <?php endif; ?>
-		<span class="imgoing icon<?php echo $particpate; ?>" data-postid="<?php the_ID(); ?>">Im going</span>	
+		<span class="imgoing icon<?php echo $particpate; ?>" data-postid="<?php the_ID(); ?>"><?php echo _e( 'I\'m going', 'Rotary'); ?></span>	
 		
 		<?php $location = get_field('rotary_project_location'); ?>
 		<?php $googleLink = '#'; ?>

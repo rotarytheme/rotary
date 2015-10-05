@@ -17,7 +17,7 @@ if( function_exists("register_field_group") )
 				'name' => 'long_term_project',
 				'type' => 'true_false',
 				'instructions' => 'Enables multiple posts to be associated with this project.	Use this setting if this is a trip or long term project for which several updates will be posted, or for a shorter event or project where there is a start and end time.',
-				'message' => _x( 'Multi-day Project','Label to toggle project updates and start/end times', 'Rotary' ),
+				'message' => 'Multi-day Project','Label to toggle project updates and start/end times',
 				'default_value' => 0
 			),
 			array (
@@ -51,9 +51,9 @@ if( function_exists("register_field_group") )
 				),
 			),
 			array (
-				'key' => 'field_rotary_project_end_time',
+				'key' => 'field_rotary_project__nd_time',
 				'label' => 'End Time',
-				'name' => 'rotary_project_end_time',
+				'name' => 'rotary_project__nd_time',
 				'default_value' => '9:00 pm',
 				'required' => 1,
 				'type' => 'text',
@@ -73,9 +73,9 @@ if( function_exists("register_field_group") )
 			array (
 				'key' => 'field_550cabe282129',
 				'label' => 'Project End Date',
-				'name' => 'rotary_project_end_date',
+				'name' => 'rotary_project__nd_date',
 				'type' => 'date_picker',
-				'instructions' => 'Enter the end project date. ',
+				'instructions' => 'Enter the end project date.',
 				'date_format' => 'yymmdd',
 				'display_format' => 'mm/dd/yy',
 				'first_day' => 1,
@@ -98,7 +98,7 @@ if( function_exists("register_field_group") )
 				'type' => 'radio',
 				'choices' => array(
 								0 => 'None',
-								1 => 'Simple Sign-Up Table ',
+								1 => 'Member Sign-Up Table ',
 								2 => 'Custom Registration Form'						
 							),
 				'instructions' => 'Select the type of participation you want to be made availalbe.  Payments require a custom registration form',
@@ -205,11 +205,14 @@ if( function_exists("register_field_group") )
 				'default_value' => 'Register',
 				'required' => 1,
 				'choices' => array(
-								'Register' => 'Register',
-								'Signup' => 'Signup',
-								'Volunteer' => 'Volunteer',
-								'Support' => 'Support',
-								'Purchase' => 'Purchase'								
+								'Register' => 'Register', 
+								'Signup' => 'Signup', 
+								'Volunteer' => 'Volunteer', 
+								'Support' => 'Support', 
+								'Purchase' => 'Purchase', 
+								'Purchase' => 'Advocate', 
+								'Purchase' => 'Donate', 	
+								'Purchase' => 'Purchase', 					
 							),
 				'conditional_logic' => array (
 					'status' => 1,
@@ -251,7 +254,7 @@ if( function_exists("register_field_group") )
 				'label' => 'Project Location',
 				'name' => 'rotary_project_location',
 				'type' => 'google_map',
-				'instructions' => 'Enter a google-map recognizable address ',
+				'instructions' => 'Enter a google-map recognizable address',
 				'center_lat' => '47.611066',
 				'center_lng' => '-122.201916',
 				'zoom' => '12',
