@@ -1,0 +1,1212 @@
+//new styles
+.speaker-announcements {
+    width: 100%;
+}
+#content .speaker-announcement h3 a {
+    color: #58585A;
+    &:hover {
+	    color: #CCC;
+    }
+}
+#content article.speaker-announcement .announcement-date {
+    display: inline-block;
+    font-family: $header-font;
+    font-size: 19px;
+    color: #58585A;
+    white-space: nowrap;
+    margin: 0;
+    padding: 0;
+    float: right;
+}
+select#committeeselect {
+    display: block;
+    clear:both;
+}
+
+.upcoming-program-shortcode {
+    clear: both;
+}
+div#featured {
+    padding-bottom: 20px;
+    clear: both;
+}
+//ROTARY MEMBERS TABLE
+
+.rotarymembershipheader #rotarymembers tr td, .rotarymembershipheader #rotaryprojects tr td {padding-bottom: 7px; padding-top: 8px;}
+
+#rotarymembers {	
+	.phonecol {
+		display:table-cell; white-space:nowrap;
+		a.email {font-size:14px;text-transform:uppercase;font-family:$header-font;font-weight:700;}
+	}	
+	.classificationcol, .homephonecol, table .businessphonecol, .partnercol, .emailcol {display:none;}
+}
+//ROTARY MEMBERS TABLE - Full directory
+#rotarymembers_wrapper {
+    margin-left: 5px;
+}
+.rotarymembershipcontainer {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    width: 97%;
+}
+#rotarymembers {
+    border-left: 1px solid #e7e7e8;
+}
+
+.rotarymembershipheader {
+    background: url(../rotarytheme-responsive/rotary-sass/images/member-table-section-header.png) no-repeat;
+    padding: 0 20px 20px 0;
+    padding-top: 0px;
+    padding-right: 20px;
+    padding-bottom: 40px;
+    padding-left: 10px;
+    border-right:1px solid #e7e7e8;
+    border-left:1px solid #e7e7e8;
+    border-bottom:1px solid #e7e7e8;
+}
+#content .rotarymembershipheader > h2 {
+    border-bottom: none;
+    border-top: none;
+    color: #58585F;
+    font-family: $header-font;
+    font-size: 22px;
+    font-weight: 700;
+    height: 50px;
+    line-height: 50px;
+    padding-top: 5px;
+    text-indent: 20px;
+    text-transform: uppercase;
+}
+.rotaryselections { padding-left: 8px; font-size: 14px; z-index:99;}
+.rotaryselections .usercontainer{float: left;top: 5px; left: 2px;position:relative;}
+select#committees {max-width:250px;}
+.single-rotary_projects .rotaryselections .sendemail { margin-left: 10px;margin-top: 15px;}
+
+
+.rotaryselections .committeecontainer {
+    margin-bottom: 15px;
+    margin-top: 10px;
+    position:relative;
+    float: right; 
+    z-index:99;
+}
+
+#rotarymembers_filter label {font-size:14px;}
+
+
+.rotaryselections .sendemail {clear: none; float: left; padding-right: 20px; margin-bottom: 0px;margin-top: 0px;}
+div#namedisplayorder {float: left;padding-top: 5px;}
+#rotarymembers_filter {position: relative;Float:right;top:-3px;}
+#rotarymembers_wrapper { margin-left: 8px; position: relative; top: 50px;}
+div#rotarymembers_processing {clear: left;}
+
+.single-rotary_projects #content .rotarymembershipheader > h2 {
+    margin-top: 0;
+}
+//attendees
+#rotaryprojects {
+	.phonecol {
+		display:table-cell; white-space:nowrap;
+		a.email {font-size:14px;text-transform:uppercase;font-family:$header-font;font-weight:700;}
+	}
+	.homephonecol, table .businessphonecol, .emailcol {display:none;}
+
+}
+//participation forms
+.gform_wrapper {
+    background-color: #E7E7E8;
+    border: 1px solid #CCC;
+}
+.rotarymembershipheader #gravityform {
+	margin: 0 10px;
+    width: 100%;
+}
+
+.rotarymembershipheader #rotaryform tr th {
+    border-top: 2px solid #f2e6cc;
+    border-right: 1px dotted #b3b5b7;
+    color: #58585A;
+    font-family: $header-font;
+    font-size: 19px;
+    font-weight: 700;
+    padding-bottom: 15px;
+    padding-left: 6px;
+    padding-top: 15px;
+    text-transform: uppercase;
+}
+
+#rotaryform .odd td {
+    background: #f9f4e9;
+}
+#rotaryform .even td {
+    background-color: #fcfaf3;
+}
+#rotaryform {
+	width:100%;
+}
+#rotaryform tr {
+    max-width: 100%;
+}
+.single-rotary_projects #content .rotarymembershipheader > h2 {
+    margin-top: 0;
+}
+
+#rotaryform tr td {
+    border-bottom: 1px solid #b3b5b7;
+    border-right: 1px dotted #b3b5b7;
+    border-right-width: 1px;
+    border-right-style: dotted;
+    border-right-color: #B3B5B7;
+    padding: 6px;
+}
+.single-post div#blog {
+    background: #fff url(../rotarytheme-responsive/rotary-sass/images/single-post-section-header-issue.png) no-repeat;
+}
+
+#content .updates-container article header .postdate a,
+#content .updates-container article header .postdate a {font-weight: normal!important;}
+
+/* there is a height 30px which is messing things up for the h1 style */
+#content h1 { height: auto;}
+
+/* need to remove this important flag */
+#content .updates-container article .sectioncontainer {
+}
+.rotaryemail-sectioncontent span.wpcf7-form-control-wrap.captcha-224 {
+    top: 0;
+}
+.rotaryemail-sectioncontent span.wpcf7-form-control-wrap {
+  top: -40px;
+}
+
+#committee-sidebar .projectcontainer {
+    padding-top: 0;
+}
+
+
+.single-rotary_projects .projectcommitteetitle {text-indent: 0; }
+
+// when upcoming speaker date float to left, top alignment is out becuase of this 
+#content .home-upcoming-programs .speakername {margin-top: 0;}
+#content .home-upcoming-programs-speaker-date {margin-bottom: 15px;}
+
+
+.w3eden .link-btn {background-color: #01B4E7;max-width:450px;}
+
+
+
+select#cat {
+    margin: 5px 10px 0 10px;
+    width: 90%;
+}
+//ACF
+input.hasDatepicker {
+	width: 100px;
+}
+//Page turn footers
+div#featured:after,
+#speaker-side-container:after,
+#content.committee .committee-announcements:after{
+    content: "";
+    background: url(../rotarytheme-responsive/rotary-sass/images/featured-bottom-corner.png) 0 0 no-repeat; 
+    width: 23px;
+    height: 22px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+#content.projects .project-announcements:after {
+    content: "";
+    background: url(../rotarytheme-responsive/rotary-sass/images/project-comment-bottom-corner.png) 0 0 no-repeat;
+    width: 25px;
+    height: 28px;
+    position: absolute;
+    bottom: -3px;
+    right: -3px;
+}
+
+.comment .commentcommittetext {
+	margin-bottom:40px;
+}
+
+#content.fullwidth #featured {
+    width: 97%;
+    position: relative;
+    margin:0;
+}
+
+.single-rotary_projects .commentcommittetext {
+    border-bottom: 3px solid #e6decd;
+}
+
+// until the code is changed to remove these blocks completely, lets just hide them... 
+#featuredbottom,
+.committee .comment .commentbottom,
+.single-rotary_projects .comment .commentbottom,
+.single-rotary_projects .comment.hasthumbnail .commentbottom {
+	display: none;
+}
+
+#content .home-upcoming-programs .speaker-program-title {
+    background: none;
+    border-bottom:1px solid #f1a600;
+    position: relative;
+}
+#content .home-upcoming-programs .speaker-program-title:after {
+    content: "";
+    background: url(../rotarytheme-responsive/rotary-sass/images/speaker-home-title-corner.png) 0 0 no-repeat;
+    width: 48px;
+    height: 30px;
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+}
+//Page
+#page footer {
+    margin-bottom: 20px;
+    clear:both;
+}
+
+.homecontent { padding-bottom: 50px;}
+#page {	padding-left:10px;}
+#page.nomargin {padding-left:0;}
+
+#content {margin: 20px 0 20px 0;}
+.home #content {width: 100%;}
+#home-sidebar {
+    width: 80%;
+    margin: 0 auto 50px;
+    float: none;
+    clear: both;
+    min-width: 260px;
+}
+.home aside > ul > li {width: 101%;}
+.home aside > ul li p, 
+.home aside > ul li ul li, 
+.home aside > ul li ol li { margin: 5px 25px 20px 15px;}
+.home aside {margin-bottom:35px;}
+
+.projectblogrollcontainer {
+	margin-left: -7px;
+}
+
+#content.home.fullwidth {
+	max-width:100%;
+}
+#content.home.sidebar {
+	max-width:70%;
+}
+
+aside#secondary {display:none;}
+#content.hassidebar {width:97%;}
+#content.hassidebar-wide {max-width:97%;}
+h1.pagetitle{
+	padding-top:10px;
+	padding-left:25px;
+}
+h2 span.pagesubtitle-h4 {
+    color: #58585A;
+    font-family: $header-font;
+    font-size: 25px;
+    font-weight: 300;
+    margin-bottom: 0;
+    margin-top: 10px;
+    padding: 0;
+    text-transform: uppercase;
+}
+h2 span.pagesubtitle-h1 {
+    color: #17458f;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    margin-top: 24px;
+    padding: 0;
+    line-height: 35px;
+}
+//footer
+p#twentyfive-tag {
+    clear: both;
+    text-align: center;
+    margin-top: 35px;
+    text-transform: uppercase;
+    font-family: $header-font;
+    font-size: 17px;
+}
+//sidebars
+.hassubtitle aside#secondary {
+    margin-top: -55px;
+}
+aside#secondary {
+    margin-top: 0;
+    margin-right: 0;
+    float: right;
+}
+
+/* centers the new post button */
+#secondary > ul .newpost {
+    text-align: center;
+    margin-bottom: 0;
+}
+#secondary #new-post-button a {
+	width:81%;
+}
+
+//buttons
+a.rotarybutton-largegold,
+a.rotarybutton-largeblue,
+a.rotarybutton-largewhite {font-size: 12px;padding: 8px 4px;}
+//headings
+.pagetitle {font-size: 19px;height: 47px;} 
+.pagetitle span {left: 10px;}
+#content .committeeheader { font-size: 22px; text-indent: 7px;}
+.single-rotary-committees .commentcommittetext:before {font-size: 18px; left: 10px;}
+#content h1 { font-size: 30px;}
+#content h2 { font-size: 25px;}
+#content h3 { font-size: 20px;}
+#content h4 { font-size: 17px;}
+//LOGIN AND HEADER SECTION
+/* design at 312px (Iphone 4) */
+
+#wrapper {
+	width:100%!important;
+	min-width:312px;
+}
+
+// WRAPPER, HEADER AND LOGIN
+
+#signin .loggedin {float: right;}
+#signin .loggedin { margin-left: 0;}
+#loginform { margin-top: 0;}
+#signin #loginform { float: left;}
+
+#branding {
+    clear: left;
+    width: auto;
+    display: block;
+}
+.membership-address-container {
+	display:none;
+    border-top: 1px #59595B solid;
+    margin-top: -15px;
+    min-height: 95px;
+    padding-top: 15px;
+    width: 100%;
+}
+
+#branding section {margin-top: 0;float:left;}
+
+#branding h1 .clubname.namebefore,#branding h1 a.clubname.namebefore {padding-top: 15px;}
+#branding h1 .clubtype, #branding h1 a.clubtype { margin-left: 160px;}
+#branding h1 .clubname, #branding h1 a.clubname {margin-left: 160px;}
+#branding h1 {font-size: 17px;height: 71px; margin-bottom: 15px;width: auto; background-size: 150px;}
+
+#branding section {border-left:none;height: auto;min-height:none;padding-bottom: 0;padding-left: 9px;padding-right: 0;width: 144px;}
+#branding section p {font-size: 12px;}
+#branding section h2 {font-size: 15px;}
+//Slideshow
+#slideshowcontainer {display:none;}
+//Footer
+#footer .wide {width: 100%;}
+#footer > ul {min-height: 0;}
+//COMMITTEE AND PROJECTS
+aside#committee-sidebar, aside#projects-sidebar {margin-top: 20px;margin-bottom: 5px; width: 97%;margin-left: 0;}
+aside#committee-sidebar .committeemembers li:last-child, aside#projects-sidebar .committeemembers li:last-child {border-bottom: none;}
+.comment .commentcommittetext {width: 100%;}
+
+#committee-sidebar .avatarcontainer img, #projects-sidebar .avatarcontainer img {width: 100%;}
+
+aside#committee-sidebar .committeemembers li, 
+aside#projects-sidebar .committeemembers li {
+    display: inline-block;
+    padding-left: 10px;
+    width: 95%;
+    white-space:nowrap;
+}
+.committeeheadercontainer.hascontent .newpost {right: 100px;}
+#content.committee, #content.projects {width: 97%;}
+
+#committee-sidebar .projectcontainer, #projects-sidebar .projectcontainer {margin-bottom: 5px; padding: 10px 10px 0 10px;}
+#committee-sidebar ul ul, #projects-sidebar ul ul { padding-bottom: 10px;}
+#project-date, #project-address {width:45%; margin: 0 5px;display:inline-block;float:left;}
+#project-date {border-right:1px solid #B5B5B5; padding-top: 10px;}
+li#project-calendar-image {display: none;}
+h3.meetingsite {display: none;}
+#project-date-text .project-date {border-bottom: none;}
+ul#project-categories-photos-tags-container {display: none;}
+.single-rotary_projects #projects-sidebar { margin: 10px 12px 0 0;position: relative;}
+#content.projects { margin-right: 0;margin-top: 10px;}
+
+.single-rotary_projects .projectcommitteetitle h2 {line-height: 19px;padding-left: 70px; font-size:18px;padding-top: 10px;}
+//project committee updates
+.archive #content article header, 
+.blog #content article header, 
+#content .updates-container article header, 
+#content .updates-container article header {
+    margin-bottom: 20px;
+}
+
+.projects > .wp-post-image { width: 100%;}
+article.clearleft { clear:none;}
+//ON PROJECTS AND COMMITTEES
+#content .updates-container {
+	margin-bottom:30px;
+}
+.blog #content article  header h2,
+#content .updates-container article  header h2 {height: auto;}
+#content .updates-container article .excerptcontainer {margin-bottom: 100px;}
+#content .updates-container article .excerptcontainer.hasthumbnail {min-height: 120px;}
+
+//Thin Posts
+#content .updates-container article .sectioncontainer {margin-bottom: 10px;margin-left: 0;	width: 300px;}
+#content .updates-container article .sectionheader {padding: 0 10px 5px 0;background-size: 355px;}
+#content .updates-container article .sectioncontent {padding-bottom: 10px;padding-left: 10px;top: 15px;font-size: 14.5px;}
+#content .updates-container article  header h2{margin-bottom: 10px;}
+#content .updates-container article .excerptcontainer {margin-left: 0;}
+// end thin posts
+#content .updates-container article .sectioncontent {height: auto;}
+//posts
+.archive #content article header h2, .blog #content article header h2, #content .updates-container article header h2, #content .updates-container article header h2 {
+    height: auto;
+}
+.archive #content article .excerptcontainer, 
+.blog #content article .excerptcontainer, 
+#content .updates-container article .excerptcontainer, 
+#content .updates-container article .excerptcontainer {
+    margin-left: 0;
+}
+
+.blog #content article .excerptcontainer {margin-bottom: 100px;}
+.blog #content article .excerptcontainer.hasthumbnail {min-height: 120px;}
+
+// Thin Posts 
+.blog #content article .sectioncontainer {margin-bottom: 10px;margin-left: 0;	width: 300px;}
+.blog #content article .sectionheader {padding: 0 10px 5px 0;background-size: 355px;}
+.blog #content article .sectioncontent {padding-bottom: 10px;padding-left: 10px;top: 15px;font-size: 14.5px;}
+.blog #content article  header h2{margin-bottom: 10px;}
+.blog #content article .excerptcontainer.hasthumbnail p {margin-left: 0;}
+// 
+.blog #content article .sectioncontent {height: auto;}
+//connected projects
+#content .connectedprojects { width: 100%;padding:0;}
+#content .connectedprojectscontainer {margin: 10px; width:285px;}
+//upcoming speakers
+#featured h1 {
+    background: url(../rotarytheme-responsive/rotary-sass/images/date-header-bg.png) no-repeat 0 8px;
+    font-size: 30px;
+    margin: 0 25px 10px 20px;
+    padding-left: 25px;
+}
+#featured h1 a {
+    font-weight:300;
+}
+div#featured {
+    padding-bottom: 20px;
+}
+.upcoming-program-shortcode {width: 97%;}
+#content.fullwidth .home-upcoming-programs .newspeaker, 
+#content.fullwidth .home-upcoming-programs .newspeaker,
+#content .home-upcoming-programs .newspeaker {margin-left:0;}
+
+#content .home-upcoming-programs .speaker-program-title {width: 80%;}
+#content.fullwidth .home-upcoming-programs .home-upcoming-program-details {width: 262px;}
+#content.fullwidth .home-upcoming-programs .home-upcoming-program-details.newspeaker {width: 248px;}
+
+#content .home-upcoming-program-ribbon {height: 38px;top: 20px;width: 220px;}
+#content .home-upcoming-program-ribbon h2 {font-size: 22px; padding-top: 5px;}
+#content .home-upcoming-programs {border: 5px solid #17458f;padding: 25px 10px;}
+#content .home-upcoming-programs article {width: 262px;margin-bottom: 50px;}
+#content .home-upcoming-programs .home-upcoming-program-details {width: 262px;}
+#content .home-upcoming-programs .home-upcoming-program-details.newspeaker {width: 248px;}
+#content .home-upcoming-programs .speaker-program-title {font-size: 19px; line-height: 23px; padding: 10px 0 20px 0;}
+#content .home-upcoming-programs .speaker-title, #content .home-upcoming-programs .speaker-company {font-size: 14px;line-height: 20px;}
+
+#content .home-upcoming-programs .home-upcoming-programs-speaker-date {text-align: left;}
+#content.fullwidth .home-upcoming-programs .home-upcoming-programs-speaker-date {text-align: left;}
+//ANNOUNCEMENTS
+.morecomments, .lesscomments {
+    margin-left: 0;
+    font-family: $header-font;
+}
+
+.single-rotary-committees #new-announcement-form #respond,.single-rotary_projects #new-announcement-form #respond {
+	margin-left:25px;
+	max-width: 500px; /*need to scales this for responsiveness */
+	width:97%;
+}
+.single-rotary-committees #new-announcement-form #respond #submit,.single-rotary_projects #new-announcement-form #respond  #submit {
+	margin-top:15px;
+    margin-bottom: 20px;
+}
+
+strong {
+   /* font-weight:normal!important;  some bug creating extra strong tags*/
+}
+.shortcode-announcements {
+    width: 97%;
+    margin: 0 auto;
+}
+.announcements-container {
+    width: 100%;
+}
+.announcement {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+#content div.announcement-header {
+    width: 100%;
+    padding-bottom:5px;
+}
+#content h4.announcement-title {
+    clear: left;
+    display: inline;
+    margin: 0;
+    font-size: 22px;
+    padding-bottom: 8px;
+    float: left;
+    text-transform: none;
+    color: #58585A;
+    font-family: $header-font;
+    font-weight: 700;
+    padding: 0;
+}
+#content h5.organizing-committee {
+    font-size: 13px;
+    margin: 3px 0;
+    font-family: $header-font;
+}
+#content p.announced-by {
+	float:left;
+	display:inline-block;
+	margin: 0;
+}
+#content article.shortcode-announcement .announcement-date {
+    display: inline-block;
+    font-family: $header-font;
+    font-size: 19px;
+    color: #58585A;
+    white-space: nowrap;
+    margin: 0;
+    padding:0;
+    float: right;
+}
+#content .announcement-body {
+    clear: both;
+	padding-bottom: 5px;
+    border-top: 1px solid #B8A3A0;
+    padding-top: 8px;
+    width:100%;
+}
+.announcement-call-to-action {}
+.announcement-hr {
+    height: 0;
+}
+//headers
+#content.projects .project-announcements {
+    background: #fff;
+    border: 3px solid #e6decd;
+    padding: 70px 0 0 25px;
+    position: relative;
+    clear: left;
+    font-weight: normal;
+    margin-bottom:35px;
+}
+#content.projects .hasthumbnail .project-announcements {
+    float: right;
+    margin-right: 10px;
+    margin-top: -80px;
+    position: relative;
+    z-index: 100;
+}
+.single-rotary-committees .hascontent .newcomment, .single-rotary_projects .hascontent .newcomment {
+    margin: 0;
+    position: absolute;
+    right: 12px;
+    top: 7px;
+}
+#content.committee .committee-announcements.nocontent,
+#content.projects .project-announcements.nocontent {
+	padding-top:20px;
+	padding-bottom:30px;
+}
+
+
+#content.committee .committee-announcements {
+    background-color: #f8f1e3;
+    border-bottom: none;
+    margin-bottom: 0;
+    padding: 45px 0 0 25px;
+    position: relative;
+}
+
+
+#content article.committee-announcement .announcement-content,
+#content article.project-announcement  .announcement-content {
+	float:left;
+}
+
+
+#content article.committee-announcement .announcement-header,
+#content article.project-announcement .announcement-header {
+	float:left;
+    width: 100%;
+    padding-bottom:5px;
+}
+
+#content article.committee-announcement  .announcement-body,
+#content article.project-announcement  .announcement-body {
+    width: 100%;
+    border-top: 1px solid #B8A3A0;
+    padding-top: 8px;
+}
+
+
+#content article.committee-announcement .announced-by, 
+#content article.project-announcement .announced-by {
+    font-family:$header-font;
+    font-size:12px;
+    text-transform:uppercase;
+}
+//date format
+#content article.committee-announcement .announcement-date, 
+#content article.project-announcement .announcement-date {
+    border-bottom: 1px solid #8f8f8f;
+    border-top: 1px solid #8f8f8f;
+    color: #808080;
+    float: left;
+    font-family: $header-font;
+    font-size: 14px;
+    font-weight: 400;
+    margin-right: 15px;
+    padding-top: 15px;
+    position: relative;
+    width: 75px;
+}
+
+#content article.committee-announcement .announcement-date .year,
+#content article.project-announcement .announcement-date .year {
+    color: #6b6b6b;
+    font-family: $header-font;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 700;
+    position: static;
+}
+
+#content article.committee-announcement .announcement-date .month,
+#content article.project-announcement .announcement-date .month {
+    color: #58585A;
+    font-size: 18px;
+    font-family: $header-font;
+    line-height: 18px;
+    margin-top: 3px;
+    position: absolute;
+    text-transform: uppercase;
+}
+
+#content article.committee-announcement .announcement-date .day,
+#content article.project-announcement .announcement-date .day {
+    color: #8f8f8f;
+    font-family: $button-font;
+    font-size: 53px;
+    line-height: 45px;
+    position: static;
+}
+//body
+#content article.committee-announcement .announcement-body,
+#content article.project-announcement .announcement-body {
+    clear: both;
+	padding-bottom: 5px;
+    border-top: none;
+    padding-top: 0;
+    width:100%;
+}
+
+
+#content article.committee-announcement  h3,
+#content article.project-announcement h3 {
+	margin-top: 0;
+}
+
+#content article.committee-announcement ,
+#content article.project-announcement {
+	display:inline-block;
+}
+#content article.committee-announcement.hide ,
+#content article.project-announcement.hide {
+	display:none;
+}
+//committee announcements
+#content article.committee-announcement  .announcement-content, #content article.project-announcement  .announcement-content { width: 85%;}
+// PROJECT ANNOUNCEMENTS
+#content.projects .hasthumbnail .project-announcements { width: 85%;}
+
+//speaker program
+span.speaker-info {
+	margin-right:10px;
+    white-space: nowrap;
+}
+#content.speaker {
+    margin-top: 0;
+    width: 100%;
+}
+
+
+.single.single-rotary_speakers .prevnext {
+    width: 100%;
+    margin:20px 0;
+    top:0;
+    position:relative;
+}
+
+.single-rotary_speakers #page {
+	margin-right:20px;
+}
+.single-rotary_speakers article.type-rotary_speakers #speakerdate {
+    color: #17458f;
+    font-family: $header-font;
+    font-weight: bold;
+    right: 30px;
+    text-transform: uppercase;
+    top: 20px;
+}
+.single-rotary_speakers article.type-rotary_speakers #weekday {
+    color: #58585A;
+}
+.single-rotary_speakers article.type-rotary_speakers {
+    border: 1px solid #ececec; 
+    position: relative;
+}
+.single-rotary_speakers article.type-rotary_speakers:before {
+    content: "";
+	background: none;
+    width: 665px;
+    height: 73px;
+    position: absolute;
+    top: -1px;
+    left: -1px;;
+    background-size:contain;
+}
+.rotary_speakers #speakerheader > h2 {
+    background: url(../rotarytheme-responsive/rotary-sass/images/speaker-icon.png) 0 9px no-repeat;
+    color: #58585A;
+    font-family: $header-font;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-indent: 40px;
+    line-height: 50px;
+    margin-left: 20px;
+    text-transform: uppercase;
+}
+
+
+.single-rotary_speakers article.type-rotary_speakers #speakertitle {
+	padding-left: 20px;
+}
+.single-rotary-reveille #speakerheader, 
+.single #speakerheader {
+    background: none;
+    border-top: 5px solid #F4B52B;
+    border-bottom: 1px solid #F4B52B;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+.single-rotary_speakers article.type-rotary_speakers #speakerbody {
+    margin: 10px 12px 40px 20px;
+    min-height: 400px;
+}
+.single-rotary_speakers article.type-rotary_speakers #blogheader h1 {
+	margin-top:40px;
+	border-bottom: 2px solid #E7E7E8;
+	padding-bottom: 10px;
+}
+#blogheader #program-roles {
+	margin-left:-15px;
+}
+#blogheader #program-roles span{
+	white-space:nowrap;
+}
+#blogheader .speaker-term-label {
+	font-weight:bold;
+	margin-left:15px;
+}
+#content #speaker-sidebar ul {padding:0;margin:0;list-style: none;}
+#content #speaker-sidebar ul li {padding:0;margin:0;list-style: none;}
+#content #speaker-sidebar > ul > li ul, 
+#content #speaker-sidebar > ul > li div { 
+	margin: 10px 10px 0;
+}
+#speaker-sidebar {
+    margin: 0;
+    float:right;
+}
+#content #speaker-sidebar li#speaker-sidebar-thumbnail-container img {
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+}
+#content #speaker-sidebar > ul > li ul, #content #speaker-sidebar > ul > li div {
+    margin: 10px 10px 0;
+}
+#speaker-sidebar .speakerbio {
+    background: url( ../rotarytheme-responsive/rotary-sass/images/bio-icon-bg.png) 4px 16px no-repeat;
+    text-indent: 30px;
+}
+#speakerinfo.noroles  {
+    margin-top: -20px;
+}
+#content #speaker-sidebar li#speaker-bio,
+#content #speaker-sidebar-wide li#speaker-bio {
+    padding-bottom: 20px;
+}
+.single #speakerdate {
+		font-size: 17px;position: static;padding-left:20px;
+}
+#content #speaker-sidebar li#speaker-side-container {
+	position: relative;
+    background-color: #f8f1e3;
+	margin-top:0;
+}
+
+
+.rotary_speakers #speakerheader > h2 { font-size: 20px; text-indent: 30px;line-height: 35px;}
+#content #speaker-sidebar li#speaker-sidebar-thumbnail-container {margin: 0;}
+#speakerinfo { margin: 0; padding-bottom: 0; width: auto;float: left;}
+#content #speaker-sidebar li#speaker-side-footer {display:none;}
+div#blogcontent {float:left;width:100%;}
+#speaker-sidebar { margin: 0;float: none; width: 100%;}
+.single-rotary_speakers article.type-rotary_speakers #blogheader h1 {margin-top: 10px;font-size: 30px;}
+.single-rotary_speakers article.type-rotary_speakers #speakertitle {font-size: 13px;}
+//SINGLE POSTS
+.single .postdate {font-size: 17px;margin-top: 0;text-transform: none; top: 57px; width: 100px;line-height: 17px;}
+p#posted-by{font-size:12px;}
+.sectioncontent #respond {display:none;}
+
+//MEDIA QUERIES
+@media only screen and (min-width: 420px) {
+	//page
+	#page {	padding-left:20px;}
+	//buttons
+	a.rotarybutton-largegold,
+	a.rotarybutton-largeblue,
+	a.rotarybutton-largewhite {font-size: 15px;padding: 8px 6px;}
+	//headings
+	.single-rotary-committees .commentcommittetext:before {font-size: 23px; left: 15px;}
+	.pagetitle {font-size: 23px;height: 54px;}
+	#content .committeeheader { font-size: 24px; text-indent: 10px;}
+	#content h1 { font-size: 34px;}
+	#content h2 { font-size: 29px;}
+	#content h3 { font-size: 22px;}
+	#content h4 { font-size: 18px;}
+	// WRAPPER, HEADER AND LOGIN
+	membership-address-container { display:inline-block;}
+	#branding {width: 420px;}
+	#branding section {padding-left: 20px; width: 180px;}
+	#branding section p {font-size: 13px;}
+	#branding section h2 {font-size: 18px;}
+	#branding h1 .clubname.namebefore,#branding h1 a.clubname.namebefore { padding-top: 21px;}
+	#branding h1 .clubtype, #branding h1 a.clubtype { margin-left: 220px;}
+	#branding h1 .clubname, #branding h1 a.clubname {margin-left: 220px;}
+	#branding h1 {font-size: 23px; height: 90px;background-size: 210px;}
+	//committees and projects
+	.single-rotary_projects .projectcommitteetitle h2 {line-height: 24px;padding-left: 70px; font-size:22px;padding-top: 12px;}
+	aside#committee-sidebar .committeemembers li, aside#projects-sidebar .committeemembers li {width: 45%;}
+	.committeeheadercontainer.hascontent .newpost {right: 120px;}
+	//posts
+	#content .updates-container article .sectioncontainer {margin-bottom: 25px;margin-left: 0;width: 97%;	}
+	#content .updates-container article .sectionheader {padding: 0 20px 20px 0;background-size: 355px;}
+	#content .updates-container article .sectioncontent {padding-bottom: 20px;padding-left: 20px;top: 20px;font-size: 16px;}
+	#content .updates-container article header {margin-bottom: 20px;border-bottom: 1px solid #EFEFEF;}
+	#content .updates-container article  header h2 {margin-bottom: 15px;}
+	#content .updates-container article .excerptcontainer.hasthumbnail p {margin-left: 142px;}
+	.blog #content article .sectioncontainer {margin-bottom: 25px;margin-left: 0;width: 97%;	}
+	.blog #content article .sectionheader {padding: 0 20px 20px 0;background-size: 355px;}
+	.blog #content article .sectioncontent {padding-bottom: 20px;padding-left: 20px;top: 20px;font-size: 16px;}
+	.blog #content article header {margin-bottom: 20px;border-bottom: 1px solid #EFEFEF;}
+	.blog #content article  header h2 {margin-bottom: 15px;}
+	.blog #content article .excerptcontainer.hasthumbnail p {margin-left: 142px;}
+	//upcoming speakers
+	#content .home-upcoming-programs .home-upcoming-programs-speaker-date{text-align: right;}
+	#content.fullwidth .home-upcoming-programs .home-upcoming-programs-speaker-date {text-align: right;}
+	#content .home-upcoming-program-ribbon {height: 40px;top: 21px;width: 280px;}
+	#content .home-upcoming-program-ribbon h2 {font-size: 27px; padding-top: 5px;}
+	#content .home-upcoming-programs {border: 8px solid #17458f;padding: 25px 10px;}
+	#content .home-upcoming-programs article {width: 365px;margin-bottom: 30px;}
+	#content .home-upcoming-programs .home-upcoming-program-details {width: 262px;} 
+	#content .home-upcoming-programs .home-upcoming-program-details.newspeaker {width: 248px;}
+	#content .home-upcoming-programs .speaker-program-title {font-size: 19px; line-height: 23px; padding: 10px 0 20px 0;}
+	#content .home-upcoming-programs .speaker-title, #content .home-upcoming-programs .speaker-company {font-size: 14px;line-height: 20px;}
+	//committee announcements
+	#content article.committee-announcement  .announcement-content, #content article.project-announcement  .announcement-content { width: 73%;}
+	// PROJECT ANNOUNCEMENTS
+	#content.projects .hasthumbnail .project-announcements { width: 85%;}
+	//speaker programs
+	.single-rotary_speakers article.type-rotary_speakers #speakertitle {font-size: initial;}
+	//single posts
+	.sectioncontent #respond {display:block;}
+	p#posted-by{font-size:initial;}
+}
+@media only screen and (min-width: 767px) {
+	//ROTARY MEMBERS TABLE - Full directory
+	#rotarymembers {
+		.partnercol, .classificationcol {display:table-cell;}
+	}
+	#rotaryprojects {
+		.emailcol {display:table-cell;}
+		.phonecol a.email {display:none;}
+	}
+	.rotaryselections .usercontainer {float: right; top: -35px;}	
+	#rotarymembers_filter {top: -8px;}
+	div#rotarymembers_processing {top: -60px; }
+	#rotarymembers_wrapper { top:0;}
+	//page
+	aside#secondary {display:block;}
+	#content.hassidebar {max-width:70%}
+	#content.hassidebar-wide {max-width:75%;width:100%;}
+	//headings
+	.single-rotary-committees .commentcommittetext:before {font-size: 25px; left: 24px;}
+	.pagetitle {font-size: 34px;height: 47px;}
+	.pagetitle span {left: 30px;}
+	#content .committeeheader { font-size: 30px; text-indent: 30px;}
+	#content h1 { font-size: 38px;}
+	#content h2 { font-size: 34px;}
+	#content h3 { font-size: 25px;}
+	#content h4 { font-size: 22px;}
+	// WRAPPER, HEADER AND LOGIN
+	#branding {margin: 0; width: 100%}
+	.membership-address-container {border-top: none; display: inline;float: right;width: auto; margin-top: 20px;padding-top: 0;}
+	#branding h1 .clubname.namebefore,#branding h1 a.clubname.namebefore { padding-top: 28px;}
+	#branding h1 .clubtype, #branding h1 a.clubtype { margin-left: 315px;}
+	#branding h1 .clubname, #branding h1 a.clubname {margin-left: 315px;}
+	#branding h1 {font-size: 30px; height: 125px;background-size: 300px;}
+	#branding section {border-left: #e7e7e8 solid 2px; margin: 0 0 5px; min-height: 95px; padding: 0 0 0 10px; width: 175px;}
+	section#membership {display: none;}
+	//SLIDESHOW 
+	#slideshowcontainer {display:block;}
+	.slide {width: 100%!important;}
+	#slideshow .slideinfo {width: 35%;}	
+	#slideshow .slideinfo h2 {font-size: 24px;padding-top: 20px;margin: 0 10px 10px 10px;}
+	#slideshow .slideinfo p { margin: 0 10px 10px 10px;}
+	//footer
+	#footer .wide {width: 465px;}
+	//committees and projects
+	aside#committee-sidebar, aside#projects-sidebar {margin-bottom: 30px;width: 208px;}
+	#content.committee, #content.projects {width: 510px;}
+	#committee-sidebar .committeemembers li, #projects-sidebar .committeemembers li {padding-left: 0;display:block;}
+	#committee-sidebar .committeemembers li:last-child, #projects-sidebar .committeemembers li:last-child {border-bottom: 1px solid #B5B5B5;}
+	
+	#committee-sidebar .projectcontainer, #projects-sidebar .projectcontainer {margin-bottom: 25px; padding: 20px 10px 0 10px;}
+	#committee-sidebar ul ul, #projects-sidebar ul ul { padding-bottom: 25px;}
+	#project-date, #project-address {width:auto; margin: 0 5px;display:list-item;float:none;}
+	#project-date {border-right:none; padding-top: 10px; }
+	li#project-calendar-image {display: list-item;}
+	h3.meetingsite {display: block;}
+	#project-date-text .project-date {border-bottom: 1px solid #B5B5B5;}
+	ul#project-categories-photos-tags-container {display: list-item;}	
+	.single-rotary_projects #projects-sidebar { margin: 50px 12px 30px 0;}
+	#content.projects { margin-top: 50px;}	
+	.single-rotary_projects .projectcommitteetitle h2 {padding-top: 26px;}
+	//posts
+	#content .updates-container article .sectioncontainer {margin-bottom: 25px;margin-left: 5px;width: 250px;}
+	#content .updates-container article .sectionheader {padding: 0 10px 5px 0;background-size: 300px;}
+	#content .updates-container article .sectioncontent { padding-bottom: 10px;padding-left: 10px;top: 15px;font-size: 13px;}
+	#content .updates-container article header {margin-bottom: 10px;border-bottom: 1px solid #EFEFEF;}
+	#content .updates-container article header h2 {margin-bottom: 5px;}
+	#content .updates-container article .excerptcontainer.hasthumbnail p {margin-left: 0; }
+	#content .updates-container article .sectioncontent {height: 380px;}
+	.blog #content article .sectioncontainer {margin-bottom: 25px;margin-left: 5px;width: 250px;}
+	.blog #content article .sectionheader {padding: 0 10px 5px 0;background-size: 300px;}
+	.blog #content article .sectioncontent {padding-bottom: 10px;padding-left: 10px;top: 15px;font-size: 13px;}
+	.blog #content article header {margin-bottom: 10px;border-bottom: 1px solid #EFEFEF;}
+	.blog #content article header h2 {margin-bottom: 5px;}
+	.blog #content article .excerptcontainer.hasthumbnail p {margin-left: 0; }
+	.blog #content  article .sectioncontent {height: 380px;}
+	//upcoming speakers
+	#content .home-upcoming-programs .home-upcoming-programs-speaker-date {text-align: left;}
+	#content.fullwidth .home-upcoming-programs .home-upcoming-programs-speaker-date {text-align: left;}
+	#content .home-upcoming-programs article {width: 350px;margin-bottom: 50px;}
+	#content .home-upcoming-programs .home-upcoming-program-details {width: 250px;}
+	#content .home-upcoming-programs .home-upcoming-program-details.newspeaker {width: 236px;}
+	//committee announcements
+	#content article.committee-announcement  .announcement-content, #content  article.project-announcement  .announcement-content  { width: 380px;}
+	#content .hasthumbnail article.project-announcement  .announcement-content {width: 370px;}
+	//project announcements
+	#content.projects .hasthumbnail .project-announcements { width: 470px;}
+	//speaker programs
+	.rotary_speakers #speakerheader > h2 { font-size: 24px; text-indent: 40px;line-height: 50px;}
+	#content #speaker-sidebar li#speaker-sidebar-thumbnail-container {margin: 0 10px;}
+	#speakerinfo {margin: -55px 0 20px 20px; padding-bottom: 50px; width: 271px;float:right;}
+	#content #speaker-sidebar li#speaker-side-footer {display:initial;}
+	.single-rotary_speakers article.type-rotary_speakers:before {width: 550px;background: url(../rotarytheme-responsive/rotary-sass/images/single-speaker-section-header.png) no-repeat;background-size: contain;}
+	.single-rotary_speakers article.type-rotary_speakers #speakerheader {background: none;border:none;padding:0;}
+	.rotary_speakers #speakerheader > h2 {line-height: 35px;}
+	.single-rotary_speakers article.type-rotary_speakers #speakerdate {font-size: 19px;position: absolute;right:5px}
+	div#blogheader, div#blogcontent {width:60%;}
+	div#speakerinfo {max-width:28%;float:right;}
+	.single-rotary_speakers article.type-rotary_speakers #blogheader h1 {margin-top: 40px;border-bottom: 2px solid #E7E7E8;font-size: 34px;}
+}
+@media only screen and (min-width: 960px) {
+	//ROTARY MEMBERS TABLE - Full directory
+	#rotarymembers {
+		.emailcol {display:table-cell;}
+		.phonecol a.email {display:none;}
+	}
+	//attendees
+	#rotaryprojects {
+		.emailcol {display:table-cell;}
+		.phonecol a.email {display:none;}
+	}	
+	.rotarymembershipheader #rotarymembers tr td, .rotarymembershipheader #rotaryprojects tr td {padding-bottom: 15px; padding-top: 15px;}
+	//participation forms
+	.rotarymembershipheader #rotaryform tr td {padding-bottom: 15px; padding-top: 15px;}
+	//page
+	.home aside > ul > li {width: 104%;}
+	.home aside > ul li p, .home aside > ul li ul li, .home aside > ul li ol li { margin: 5px 10px 15px 10px;}
+	aside#home-sidebar {float: right;clear:none; width: 250px;margin-right: 10px; margin-top: 35px;}
+	#content.hassidebar {max-width:75%; width:100%;}
+	#content.hassidebar-wide {max-width:70%; }
+	//buttons
+	a.rotarybutton-largegold,
+	a.rotarybutton-largeblue,
+	a.rotarybutton-largewhite {font-size: 18px;padding: 9px 13px;}
+	// WRAPPER, HEADER AND LOGIN
+	#signin #loginform { float: right;}
+	#branding { width: auto;min-width: 960px;}
+	#branding section p {font-size: 14px;}
+	#branding section h2 {font-size: 16px;margin-top:0;}
+	#branding h1 .clubname.namebefore,#branding h1 a.clubname.namebefore { padding-top: 30px;}
+	#branding h1 .clubtype, #branding h1 a.clubtype { margin-left: 305px;}
+	#branding h1 .clubname, #branding h1 a.clubname {margin-left: 305px;}
+	#branding h1 {font-size: 30px;height: 120px;background-size: 293px;}
+	section#membership {display: inline-block;}
+	//slideshow
+	.slide {width: inherit!important;}
+	#slideshow .slideinfo {width: 433px;}
+	#slideshow .slideinfo h2 {font-size: 34px;padding-top: 40px;margin: 0 40px 40px 40px;}	
+	#slideshow .slideinfo p {margin: 0 40px 10px 40px;}
+	//committees and projects
+	.single-rotary_projects .projectcommitteetitle h2 {line-height: 26px; padding-top: 22px;font-size: 26px;}
+	.committeeheadercontainer.hascontent .newpost {right: 150px;}
+	#content.committee, #content.projects {width: 700px;}
+	//posts
+	#content .updates-container article .sectioncontainer {margin-bottom: 15px;margin-left: 15px;width: 335px;}
+	#content .updates-container article .sectionheader {padding: 0 10px 5px 0; background-size: 355px;}
+	#content .updates-container article .sectioncontent {padding-bottom: 10px;padding-left: 10px;top: 15px;font-size: 14.5px;}
+	#content .updates-container article header h2 {margin-bottom: 26px;}
+	#content .updates-container article .excerptcontainer.hasthumbnail p {margin-left: 0;}
+	#content .updates-container article .sectioncontent {height: 360px;}
+	.blog #content article .sectioncontainer {margin-bottom: 15px;margin-left: 15px;width: 335px;}
+	.blog #content article .sectionheader {padding: 0 10px 5px 0; background-size: 355px;}
+	.blog #content article .sectioncontent {padding-bottom: 10px;padding-left: 10px;top: 15px;font-size: 14.5px;}
+	.blog #content article header h2 {margin-bottom: 26px;}
+	.blog #content article .excerptcontainer.hasthumbnail p {margin-left: 0;}
+	.blog #content  article .sectioncontent {height: 360px;}
+	//upcoming speakers
+	#content .home-upcoming-programs .home-upcoming-programs-speaker-date{text-align: right;}
+	#content.fullwidth .home-upcoming-programs .home-upcoming-programs-speaker-date {text-align: right;}
+	#content .home-upcoming-program-ribbon {height: 61px;top: 23px;width: 384px;}
+	#content .home-upcoming-program-ribbon h2 {font-size: 34px; padding-top: 10px;}
+	#content .home-upcoming-programs {border: 8px solid #17458f;padding: 35px 20px;}
+	#content .home-upcoming-programs .speaker-title, #content .home-upcoming-programs .speaker-company {font-size: 16px;line-height: 22px;}
+	#content .home-upcoming-programs .speaker-program-title {font-size: 24px; line-height: 27px; padding: 20px 0 20px 0;}
+//full width
+	#content.fullwidth .home-upcoming-programs article {width: 435px;margin-bottom: 75px;}
+	#content.fullwidth .home-upcoming-programs .home-upcoming-program-details {width: 325px;}
+	#content.fullwidth .home-upcoming-programs .home-upcoming-program-details.newspeaker {width: 311px;}
+	//committee announcements
+	#content article.committee-announcement  .announcement-content, #content  article.project-announcement  .announcement-content  { width: 550px;}
+	#content .hasthumbnail article.project-announcement  .announcement-content {width: 480px;}
+//project announcements
+	#content.projects .hasthumbnail .project-announcements { width: 580px;}
+	//speaker programs
+	.rotary_speakers #speakerheader > h2 {line-height: 50px;}
+	.single-rotary_speakers article.type-rotary_speakers #speakerdate {right:20px}
+	.single-rotary_speakers article.type-rotary_speakers:before { width: 665px;}
+	div#blogheader, div#blogcontent {width:68%;}
+	//single posts
+	.single .postdate {font-size: 22px;margin-top: -15px;text-transform: uppercase;top: 0;width: 140px;line-height: 22px;}
+}
+@media only screen and (min-width: 1024px) {
+	//ROTARY MEMBERS TABLE - Full directory
+	#rotarymembers {
+		.homephonecol, table .businessphonecol {display:table-cell;}
+		.phonecol {display:none;}
+	}
+	//attendees
+	#rotaryprojects{
+		.homephonecol, table .businessphonecol {display:table-cell;}
+		.phonecol {display:none;}
+	}
+	//page
+	#content.hassidebar {max-width:79%;	}
+	#content.hassidebar-wide {max-width:71%;}
+	aside#home-sidebar { width: 280px;}
+	// WRAPPER, HEADER AND LOGIN
+	#branding { width: auto;min-width: 1024px;}
+	#branding section { width: 190px;}
+	//footer
+	#footer > ul {min-height: 250px;}
+	//committees and projects
+	#content.committee, #content.projects {width: 773px;}
+	//posts
+	#content .updates-container article .sectioncontainer {margin-bottom: 30px;margin-left: 10px;width: 375px;;	}
+	#content .updates-container article .sectionheader {padding: 0 20px 20px 0;background-size: 355px;}
+	#content .updates-container article .sectioncontent {padding-bottom: 20px;padding-left: 20px;top: 20px;font-size: 16px;}
+	#content .updates-container article header {margin-bottom: 20px;border-bottom: 1px solid #EFEFEF;}
+	#content .updates-container article  header h2 {margin-bottom: 25px;}
+	#content .updates-container article .excerptcontainer.hasthumbnail p{margin-left: 142px;}
+	#content .updates-container article .sectioncontent {height: 390px;}
+	
+	.blog #content article .sectioncontainer {margin-bottom: 30px;margin-left: 10px;width: 379px;;	}
+	.blog #content article .sectionheader {padding: 0 20px 20px 0;background-size: 355px;}
+	.blog #content article .sectioncontent {padding-bottom: 20px;padding-left: 20px;top: 20px;font-size: 16px;}
+	.blog #content article header {margin-bottom: 20px;border-bottom: 1px solid #EFEFEF;}
+	.blog #content article  header h2 {margin-bottom: 25px;}
+	.blog #content article .excerptcontainer.hasthumbnail p {margin-left: 142px;}
+	.blog #content  article .sectioncontent {height: 390px;}
+	//committee announcements
+	#content article.committee-announcement  .announcement-content, #content  article.project-announcement  .announcement-content  { width: 650px;}
+	#content .hasthumbnail article.project-announcement  .announcement-content {width: 480px;}
+
+}
+@media only screen and (min-width: 1136px) {
+	//ROTARY MEMBERS TABLE - Full directory
+	#rotarymembers .classificationcol {display:table-cell;}
+	//page
+	#page {	padding: 0;}
+	#content.hassidebar {max-width:81%;	}
+	#content.hassidebar-wide {max-width:74%;}
+	// WRAPPER, HEADER AND LOGIN
+	#wrapper {max-width:1136px;}
+	//committees and projects
+	#content.committee, #content.projects {width: 906px;}
+	//posts
+	#content .updates-container article .sectioncontainer {margin-bottom: 30px;margin-left: 10px;width: 443px;;	}
+	#content .updates-container article .sectionheader {padding: 0 20px 20px 0;background-size: 355px;}
+	#content .updates-container article .sectioncontent {padding-bottom: 20px;padding-left: 20px;top: 20px;font-size: 16px;}
+	#content .updates-container article header {margin-bottom: 20px;border-bottom: 1px solid #EFEFEF;}
+	#content .updates-container article  header h2 {margin-bottom: 25px;}
+	#content .updates-container article .excerptcontainer.hasthumbnail p{margin-left: 142px;}
+	#content .updates-container article .sectioncontent {height: 340px;}
+	.blog #content article .sectioncontainer {margin-bottom: 20px;margin-left: 10px;	width: 290px;}
+	.blog #content article .sectionheader {padding: 0 10px 5px 0;background-size: 355px;}
+	.blog #content article .sectioncontent {padding-bottom: 10px;padding-left: 10px;top: 15px;font-size: 14.5px;}
+	.blog #content article  header h2{margin-bottom: 15px;}
+	.blog #content article .excerptcontainer.hasthumbnail p {margin-left: 0;}
+	.blog #content  article .sectioncontent {height: 410px;}
+	//committee announcements
+	#content article.committee-announcement  .announcement-content, #content  article.project-announcement  .announcement-content  { width: 770px;}
+	#content .hasthumbnail article.project-announcement  .announcement-content {width: 600px;}
+	//project announcements
+	#content.projects .hasthumbnail .project-announcements { width: 700px;}
+	//speaker program
+	div#blogheader, div#blogcontent {width:72%;}
+	div#speakerinfo {max-width:27%;float:right;}
+}
+
+
+	
