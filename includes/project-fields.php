@@ -51,9 +51,9 @@ if( function_exists("register_field_group") )
 				),
 			),
 			array (
-				'key' => 'field_rotary_project__nd_time',
+				'key' => 'field_rotary_project_end_time',
 				'label' => 'End Time',
-				'name' => 'rotary_project__nd_time',
+				'name' => 'rotary_project_end_time',
 				'default_value' => '9:00 pm',
 				'required' => 1,
 				'type' => 'text',
@@ -73,7 +73,7 @@ if( function_exists("register_field_group") )
 			array (
 				'key' => 'field_550cabe282129',
 				'label' => 'Project End Date',
-				'name' => 'rotary_project__nd_date',
+				'name' => 'rotary_project_end_date',
 				'type' => 'date_picker',
 				'instructions' => 'Enter the end project date.',
 				'date_format' => 'yymmdd',
