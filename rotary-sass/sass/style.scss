@@ -1289,8 +1289,8 @@ td {
 
 .single-post .sectioncontent time {
     font-weight: bold;
-}
-.single-rotary-reveille, .single {
+} 
+.single {
 	.postedin {
 		clear:left;
 		font-family: $header-font;
@@ -1397,13 +1397,6 @@ td {
 		}
 	}
 	
-	#inthisissue, div[id^="blog"] {  
-			background: #fff url(../images/single-post-section-header-issue.png) no-repeat;
-	
-	}
-	div[id^="speaker"] {
-		background: #FFF url(../images/speaker-post-header.png) no-repeat;
-	}
 	
 	
 	#content .sectioncontent {
@@ -1600,10 +1593,6 @@ td {
 			display:none;
 		}
 		h2 {
-			border-top:0;
-			font-size: 19px;
-			height: 50px;
-			padding-top: 5px;
 			a {
 				color:$body-text-color;
 				font-family:$header-font;
@@ -1991,3 +1980,4 @@ clear:both;
 @import "fancybox";
 @import "gallery";
 @import "visualcomposer";
+@import "responsive";
