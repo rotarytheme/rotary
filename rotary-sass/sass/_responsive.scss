@@ -56,7 +56,7 @@ div#featured {
 }
 
 .rotarymembershipheader {
-    background: url(../rotarytheme-responsive/rotary-sass/images/member-table-section-header.png) no-repeat;
+    background: url(../images/member-table-section-header.png) no-repeat;    
     padding: 0 20px 20px 0;
     padding-top: 0px;
     padding-right: 20px;
@@ -162,7 +162,7 @@ div#rotarymembers_processing {clear: left;}
     padding: 6px;
 }
 .single-post div#blog {
-    background: #fff url(../rotarytheme-responsive/rotary-sass/images/single-post-section-header-issue.png) no-repeat;
+    background: #fff url(../images/single-post-section-header-issue.png) no-repeat;
 }
 
 #content .updates-container article header .postdate a,
@@ -210,7 +210,7 @@ div#featured:after,
 #speaker-side-container:after,
 #content.committee .committee-announcements:after{
     content: "";
-    background: url(../rotarytheme-responsive/rotary-sass/images/featured-bottom-corner.png) 0 0 no-repeat; 
+    background: url(../images/featured-bottom-corner.png) 0 0 no-repeat; 
     width: 23px;
     height: 22px;
     position: absolute;
@@ -219,7 +219,7 @@ div#featured:after,
 }
 #content.projects .project-announcements:after {
     content: "";
-    background: url(../rotarytheme-responsive/rotary-sass/images/project-comment-bottom-corner.png) 0 0 no-repeat;
+    background: url(../images/project-comment-bottom-corner.png) 0 0 no-repeat;   
     width: 25px;
     height: 28px;
     position: absolute;
@@ -256,7 +256,7 @@ div#featured:after,
 }
 #content .home-upcoming-programs .speaker-program-title:after {
     content: "";
-    background: url(../rotarytheme-responsive/rotary-sass/images/speaker-home-title-corner.png) 0 0 no-repeat;
+    background: url(../images/speaker-home-title-corner.png) 0 0 no-repeat;
     width: 48px;
     height: 30px;
     position: absolute;
@@ -491,9 +491,15 @@ article.clearleft { clear:none;}
 //connected projects
 #content .connectedprojects { width: 100%;padding:0;}
 #content .connectedprojectscontainer {margin: 10px; width:285px;}
+#content .connectedprojectscontainer .rotary_project_date .dayweek {
+    color: #58585A;
+    font-size: 17px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
 //upcoming speakers
 #featured h1 {
-    background: url(../rotarytheme-responsive/rotary-sass/images/date-header-bg.png) no-repeat 0 8px;
+    background: url(../images/date-header-bg.png) no-repeat 0 8px;
     font-size: 30px;
     margin: 0 25px 10px 20px;
     padding-left: 25px;
@@ -532,7 +538,7 @@ div#featured {
 
 .single-rotary-committees #new-announcement-form #respond,.single-rotary_projects #new-announcement-form #respond {
 	margin-left:25px;
-	max-width: 500px; /*need to scales this for responsiveness */
+	//max-width: 500px; 
 	width:97%;
 }
 .single-rotary-committees #new-announcement-form #respond #submit,.single-rotary_projects #new-announcement-form #respond  #submit {
@@ -790,7 +796,7 @@ span.speaker-info {
     background-size:contain;
 }
 .rotary_speakers #speakerheader > h2 {
-    background: url(../rotarytheme-responsive/rotary-sass/images/speaker-icon.png) 0 9px no-repeat;
+    background: url(../images/speaker-icon.png) 0 9px no-repeat;
     color: #58585A;
     font-family: $header-font;
     font-size: 24px;
@@ -853,7 +859,7 @@ span.speaker-info {
     margin: 10px 10px 0;
 }
 #speaker-sidebar .speakerbio {
-    background: url( ../rotarytheme-responsive/rotary-sass/images/bio-icon-bg.png) 4px 16px no-repeat;
+    background: url(../images/bio-icon-bg.png) 4px 16px no-repeat;
     text-indent: 30px;
 }
 #speakerinfo.noroles  {
@@ -1041,7 +1047,8 @@ p#posted-by{font-size:12px;}
 	#content #speaker-sidebar li#speaker-sidebar-thumbnail-container {margin: 0 10px;}
 	#speakerinfo {margin: -55px 0 20px 20px; padding-bottom: 50px; width: 271px;float:right;}
 	#content #speaker-sidebar li#speaker-side-footer {display:initial;}
-	.single-rotary_speakers article.type-rotary_speakers:before {width: 550px;background: url(../rotarytheme-responsive/rotary-sass/images/single-speaker-section-header.png) no-repeat;background-size: contain;}
+	.single-rotary_speakers article.type-rotary_speakers:before {width: 550px;background: url(../images/single-speaker-section-header.png) no-repeat;background-size: contain;}
+	
 	.single-rotary_speakers article.type-rotary_speakers #speakerheader {background: none;border:none;padding:0;}
 	.rotary_speakers #speakerheader > h2 {line-height: 35px;}
 	.single-rotary_speakers article.type-rotary_speakers #speakerdate {font-size: 19px;position: absolute;right:5px}
