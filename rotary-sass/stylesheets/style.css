@@ -63,7 +63,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 .backgrounds-sprite, #content .post-edit-link.speakerdatedit, .headeredit, #mainmenu ul ul li.dropdown, #mainmenu ul ul .dropdown:hover > a, .archive #content article .meta .commentspopup, .blog #content article .meta .commentspopup, .single.single-rotary-committees #content .meta .commentspopup, .single.single-rotary_projects #content .meta .commentspopup, #footer .twitter, #footer .facebook, #footer .linkedin, #controls #facebookshare, #controls #twittershare, .widgetedit {
-  background-image: url('/wp-content/themes/rotary/rotary-sass/images/backgrounds-sfa3b4ba9a2.png');
+  background-image: url('../images/backgrounds-sfa3b4ba9a2.png');
   background-repeat: no-repeat;
 }
 
@@ -1719,10 +1719,6 @@ td {
   position: relative;
   top: 30px;
 }
-.archive #content article header, .blog #content article header, .single.single-rotary-committees #content header, .single.single-rotary_projects #content header {
-  border-bottom: 1px solid #EFEFEF;
-  margin-bottom: 30px;
-}
 .archive #content article header .postdate, .blog #content article header .postdate, .single.single-rotary-committees #content header .postdate, .single.single-rotary_projects #content header .postdate {
   overflow: hidden;
   *zoom: 1;
@@ -1755,9 +1751,6 @@ td {
 .archive #content article .continuereading, .blog #content article .continuereading, .single.single-rotary-committees #content .continuereading, .single.single-rotary_projects #content .continuereading {
   padding-top: 15px;
 }
-.archive #content article .excerptcontainer, .blog #content article .excerptcontainer, .single.single-rotary-committees #content .excerptcontainer, .single.single-rotary_projects #content .excerptcontainer {
-  margin-left: 142px;
-}
 .archive #content article .SectionContainer, .blog #content article .SectionContainer, .single.single-rotary-committees #content .SectionContainer, .single.single-rotary_projects #content .SectionContainer {
   border-bottom: 1px solid #58585A;
   color: #17458f;
@@ -1779,16 +1772,6 @@ td {
 .archive #content article .sectionheader h2, .blog #content article .sectionheader h2, .single.single-rotary-committees #content .sectionheader h2, .single.single-rotary_projects #content .sectionheader h2 {
   color: #FFF;
   margin-top: 0;
-}
-.archive #content article .sectioncontent, .blog #content article .sectioncontent, .single.single-rotary-committees #content .sectioncontent, .single.single-rotary_projects #content .sectioncontent {
-  overflow: hidden;
-  *zoom: 1;
-  border-left: 1px solid #efefef;
-  height: 450px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  position: relative;
-  top: 20px;
 }
 .archive #content article .meta, .blog #content article .meta, .single.single-rotary-committees #content .meta, .single.single-rotary_projects #content .meta {
   border-top: 1px solid #808080;
@@ -2643,12 +2626,6 @@ aside .widget_sp_image img {
   font-family: "Open Sans Condensed", Arial, Helvetica, sans-serif;
   font-size: 19px;
   margin-bottom: 4px;
-}
-#committee-sidebar .project-date .day, #committee-sidebar .project-date .month, #committee-sidebar .project-date .year, #projects-sidebar .project-date .day, #projects-sidebar .project-date .month, #projects-sidebar .project-date .year {
-  color: #17458f;
-  font-family: "Open Sans Condensed", Arial, Helvetica, sans-serif;
-  font-size: 17px;
-  font-weight: 700;
 }
 #committee-sidebar .acf-map, #projects-sidebar .acf-map {
   width: 100%;
@@ -5032,7 +5009,7 @@ div#featured {
 }
 
 .rotarymembershipheader {
-  background: url(../rotarytheme-responsive/rotary-sass/images/member-table-section-header.png) no-repeat;
+  background: url(../images/member-table-section-header.png) no-repeat;
   padding: 0 20px 20px 0;
   padding-top: 0px;
   padding-right: 20px;
@@ -5191,7 +5168,7 @@ div#rotarymembers_processing {
 }
 
 .single-post div#blog {
-  background: #fff url(../rotarytheme-responsive/rotary-sass/images/single-post-section-header-issue.png) no-repeat;
+  background: #fff url(../images/single-post-section-header-issue.png) no-repeat;
 }
 
 #content .updates-container article header .postdate a,
@@ -5247,7 +5224,7 @@ div#featured:after,
 #speaker-side-container:after,
 #content.committee .committee-announcements:after {
   content: "";
-  background: url(../rotarytheme-responsive/rotary-sass/images/featured-bottom-corner.png) 0 0 no-repeat;
+  background: url(../images/featured-bottom-corner.png) 0 0 no-repeat;
   width: 23px;
   height: 22px;
   position: absolute;
@@ -5257,7 +5234,7 @@ div#featured:after,
 
 #content.projects .project-announcements:after {
   content: "";
-  background: url(../rotarytheme-responsive/rotary-sass/images/project-comment-bottom-corner.png) 0 0 no-repeat;
+  background: url(../images/project-comment-bottom-corner.png) 0 0 no-repeat;
   width: 25px;
   height: 28px;
   position: absolute;
@@ -5294,7 +5271,7 @@ div#featured:after,
 
 #content .home-upcoming-programs .speaker-program-title:after {
   content: "";
-  background: url(../rotarytheme-responsive/rotary-sass/images/speaker-home-title-corner.png) 0 0 no-repeat;
+  background: url(../images/speaker-home-title-corner.png) 0 0 no-repeat;
   width: 48px;
   height: 30px;
   position: absolute;
@@ -5772,8 +5749,15 @@ article.clearleft {
   width: 285px;
 }
 
+#content .connectedprojectscontainer .rotary_project_date .dayweek {
+  color: #58585A;
+  font-size: 17px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 #featured h1 {
-  background: url(../rotarytheme-responsive/rotary-sass/images/date-header-bg.png) no-repeat 0 8px;
+  background: url(../images/date-header-bg.png) no-repeat 0 8px;
   font-size: 30px;
   margin: 0 25px 10px 20px;
   padding-left: 25px;
@@ -5864,8 +5848,6 @@ div#featured {
 
 .single-rotary-committees #new-announcement-form #respond, .single-rotary_projects #new-announcement-form #respond {
   margin-left: 25px;
-  max-width: 500px;
-  /*need to scales this for responsiveness */
   width: 97%;
 }
 
@@ -6140,7 +6122,7 @@ span.speaker-info {
 }
 
 .rotary_speakers #speakerheader > h2 {
-  background: url(../rotarytheme-responsive/rotary-sass/images/speaker-icon.png) 0 9px no-repeat;
+  background: url(../images/speaker-icon.png) 0 9px no-repeat;
   color: #58585A;
   font-family: "Open Sans Condensed", Arial, Helvetica, sans-serif;
   font-size: 24px;
@@ -6223,7 +6205,7 @@ span.speaker-info {
 }
 
 #speaker-sidebar .speakerbio {
-  background: url(../rotarytheme-responsive/rotary-sass/images/bio-icon-bg.png) 4px 16px no-repeat;
+  background: url(../images/bio-icon-bg.png) 4px 16px no-repeat;
   text-indent: 30px;
 }
 
@@ -6873,7 +6855,7 @@ p#posted-by {
 
   .single-rotary_speakers article.type-rotary_speakers:before {
     width: 550px;
-    background: url(../rotarytheme-responsive/rotary-sass/images/single-speaker-section-header.png) no-repeat;
+    background: url(../images/single-speaker-section-header.png) no-repeat;
     background-size: contain;
   }
 

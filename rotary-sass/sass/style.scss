@@ -1574,8 +1574,6 @@ td {
 		top:30px;
 	}
 	header {
-		border-bottom:1px solid #EFEFEF;
-		margin-bottom:30px;
 		//parent
 		.postdate {
 			@include clearfix;
@@ -1616,10 +1614,6 @@ td {
 	.continuereading {
 		padding-top:15px;
 	}
-	.excerptcontainer {
-		margin-left:142px;
-			
-	}
 	.SectionContainer {
 		border-bottom:1px solid $body-text-color;
 		color:$header-font-color;
@@ -1642,15 +1636,6 @@ td {
 			color:#FFF;
 			margin-top:0;
 		}
-	}
-	.sectioncontent {
-		@include clearfix;
-		border-left: 1px solid #efefef;
-		height:450px;
-		padding-bottom:20px;
-		padding-left:20px;
-		position:relative;
-		top:20px;
 	}
 	.meta {
 		border-top: 1px solid $light-gray-color;
