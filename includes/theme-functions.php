@@ -8,6 +8,12 @@
  */
 /*remove the admin bar*/
 
+add_action('wp_enqueue_scripts', 'my_enqueue_mce');
+function my_enqueue_mce() {
+	wp_enqueue_script( 'tiny_mce' );
+	if (function_exists('wp_tiny_mce')) wp_tiny_mce();
+}
+
 add_filter('show_admin_bar', '__return_false');
 add_action( 'wp_print_styles', 'rotary_deregister_styles', 100 );
 function rotary_deregister_styles() {
@@ -162,6 +168,7 @@ endif;
 // return $content;
 //}
 
+
 /************************************************************************************/
 /* shortcodes
 /************************************************************************************/
@@ -177,25 +184,25 @@ function rotary_register_shortcodes(){
 
 /* ANNOUNCEMENTS */
 function rotary_announcements_function( $atts ) {
-	global $includes_path;
-	require_once ( $includes_path . 'shortcode-announcements.php' );		// load the shortcode file
-	$shortcode = rotary_get_announcements_html( $atts );
+	global $shortcodes_path;
+	require_once ( $shortcodes_path . 'shortcode-announcements.php' );		// load the shortcode file
+	$shortcode = rotary_get_announcements_shortcode_html( $atts );
 	return $shortcode;
 }
 
 /* UPCOMING_SPEAKERS */
 function rotary_upcoming_speakers_function( $atts ) {
-	global $includes_path;
-	require_once ( $includes_path . 'shortcode-upcoming-speakers.php' );	// load the shortcode file
-	$shortcode = rotary_get_upcoming_speakers_html( $atts );
+	global $shortcodes_path;
+	require_once ( $shortcodes_path . 'shortcode-upcoming-speakers.php' );	// load the shortcode file
+	$shortcode = rotary_get_upcoming_speakers_shortcode_html( $atts );
 	return $shortcode;
 }
 
 /* FEATURED */
 function rotary_featured_function( $atts ) {
-	global $includes_path;
-	require_once ( $includes_path . 'shortcode-featured.php' );	// load the shortcode file
-	$shortcode = rotary_get_featured_html( $atts );
+	global $shortcodes_path;
+	require_once ( $shortcodes_path . 'shortcode-featured.php' );	// load the shortcode file
+	$shortcode = rotary_get_featured_shortcode_html( $atts );
 	return $shortcode;
 }
 

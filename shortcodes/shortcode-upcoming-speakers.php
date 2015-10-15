@@ -1,6 +1,6 @@
 <?php
 
-function rotary_get_upcoming_speakers_html( $atts ) {
+function rotary_get_upcoming_speakers_shortcode_html( $atts ) {
 	extract( shortcode_atts( array(
 	'show' => '4',
 	), $atts ) );

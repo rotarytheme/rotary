@@ -14,9 +14,11 @@ get_header(); ?>
 <div id="page">
 	<?php get_sidebar('committee'); ?>
 	<div id="content" class="committee" role="main">
-	<?php comments_template( '/announcements.php' ); ?> 
-				
+	
+	<?php comments_template( '/tmpl-committee-announcements.php' ); ?> 
+	
 	<?php get_template_part( 'loop', 'single-committee' ); ?>
+	
     </div>
 </div>
 

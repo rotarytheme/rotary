@@ -5,65 +5,27 @@
  * http://www.advancedcustomfields.com/resources/register-fields-via-php/ 
  */
 
-if( function_exists("register_field_group") )
+if( function__xists("register_field_group") )
 {
-
-	global $ProjectType, $RegistrationVerb;
-	
 	register_field_group(array (
 		'id' => 'acf_projects',
 		'title' => 'Projects',
 		'fields' => array (
 			array (
-				'key' => 'field_project_type',
-				'label' => 'Project/Event Type',
-				'name' => 'project_type',
-				'type' => 'select',
-				'choices' => $ProjectType,
-				'instructions' => 'Select the type of activity or project',
-				'message' => '',
-				'default_value' => 2
-			),array (
 				'key' => 'field_5436e8c7c79e3',
 				'label' => 'Project Dates',
 				'name' => 'long_term_project',
 				'type' => 'true_false',
 				'instructions' => 'Enables multiple posts to be associated with this project.	Use this setting if this is a trip or long term project for which several updates will be posted, or for a shorter event or project where there is a start and end time.',
 				'message' => 'Multi-day Project','Label to toggle project updates and start/end times',
-				'default_value' => 0,
-				'conditional_logic' => array (
-					'status' => 1,
-					'rules' => array (
-							array (
-									'field' => 'field_project_type',
-									'operator' => '==',
-									'value' => '2'
-							),
-							array (
-									'field' => 'field_project_type',
-									'operator' => '==',
-									'value' => '3'
-							),
-							array (
-									'field' => 'field_project_type',
-									'operator' => '==',
-									'value' => '4'
-							),
-							array (
-									'field' => 'field_project_type',
-									'operator' => '==',
-									'value' => '5'
-							),
-					),
-					'allorany' => 'any',
-				),
+				'default_value' => 0
 			),
 			array (
 				'key' => 'field_53e29fcd38551',
 				'label' => 'Project Start Date',
 				'name' => 'rotary_project_date',
 				'type' => 'date_picker',
-				'instructions' => __('Enter the project date. If left blank, it will default to the current date.'),
+				'instructions' => 'Enter the project date. If left blank, it will default to the current date.',
 				'date_format' => 'yymmdd',
 				'display_format' => 'mm/dd/yy',
 				'first_day' => 1
@@ -89,9 +51,9 @@ if( function_exists("register_field_group") )
 				),
 			),
 			array (
-				'key' => 'field_rotary_project_end_time',
+				'key' => 'field_rotary_project__nd_time',
 				'label' => 'End Time',
-				'name' => 'rotary_project_end_time',
+				'name' => 'rotary_project__nd_time',
 				'default_value' => '9:00 pm',
 				'required' => 1,
 				'type' => 'text',
@@ -111,7 +73,7 @@ if( function_exists("register_field_group") )
 			array (
 				'key' => 'field_550cabe282129',
 				'label' => 'Project End Date',
-				'name' => 'rotary_project_end_date',
+				'name' => 'rotary_project__nd_date',
 				'type' => 'date_picker',
 				'instructions' => 'Enter the end project date.',
 				'date_format' => 'yymmdd',
@@ -135,9 +97,9 @@ if( function_exists("register_field_group") )
 				'name' => 'participants_table_flag',
 				'type' => 'radio',
 				'choices' => array(
-								0 => __( 'None' ),
-								1 => __( 'Member Sign-Up Table' ),
-								2 => __( 'Custom Registration Form' )						
+								0 => 'None',
+								1 => 'Member Sign-Up Table ',
+								2 => 'Custom Registration Form'						
 							),
 				'instructions' => 'Select the type of participation you want to be made availalbe.  Payments require a custom registration form',
 				'layout' => 'horizontal',
@@ -195,7 +157,6 @@ if( function_exists("register_field_group") )
 								'label' => 'Column Heading',
 								'name' => 'form_field_column_header',
 								'type' => 'text',
-								'required' => 1,
 								'column_width' => 40,
 								'default_value' => '',
 								'placeholder' => 'Column Header',
@@ -243,7 +204,16 @@ if( function_exists("register_field_group") )
 				'instructions' => '',
 				'default_value' => 'Register',
 				'required' => 1,
-				'choices' => $RegistrationVerb,
+				'choices' => array(
+								'Register' => 'Register', 
+								'Signup' => 'Signup', 
+								'Volunteer' => 'Volunteer', 
+								'Support' => 'Support', 
+								'Purchase' => 'Purchase', 
+								'Purchase' => 'Advocate', 
+								'Purchase' => 'Donate', 	
+								'Purchase' => 'Purchase', 					
+							),
 				'conditional_logic' => array (
 					'status' => 1,
 					'rules' => array (
@@ -319,7 +289,7 @@ if( function_exists("register_field_group") )
 	));
 }
 
-// This dynamically populates the repeater dropdown to select Fravity Form fields to include in the Registration table
+
 function rotary_form_field_column_selector_choices( $acf_field ) {
 	global  $id;
 

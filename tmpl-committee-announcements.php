@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying Announcements.
+ * The template for displaying Announcements on the committee and project pages
  *
  * The area of the page that contains both current comments
  * and the comment form.  The actual display of comments is
@@ -28,35 +28,59 @@
 <?php $hasThumbnail = ''; ?>
 <?php switch ( $currentPostType ) {
 		case 'rotary_projects':
-			$stub = 'project';
+			$context = 'project';
 			$button_class = "rotarybutton-largegold";
 			if (has_post_thumbnail()) :
 				$hasThumbnail = 'hasthumbnail';
 			endif;
 			break;
 		case 'rotary-committees':
-			$stub = 'committee';
+			$context = 'committee';
 			$button_class = "rotarybutton-largeblue";
 			break;
 		default:
-			$stub = $currentPostType;
+			$context = $currentPostType;
 			$button_class = "rotarybutton-largeblue";
 }?>	
-<?php $commentid = $stub .'-announcement-form'; ?>
+<?php $commentid = $context .'-announcement-form'; ?>
 
-<div class="<?php echo $stub?> <?php echo $hasThumbnail; ?>">	
+<div class="<?php echo $context?> <?php echo $hasThumbnail; ?>">	
 
 <?php if ( have_comments() ) : ?>
-		<div class="<?php echo $stub?>-announcements hascontent">
+		<div class="<?php echo $context?>-announcements hascontent">
 		<?php if ( is_user_logged_in() ) : ?>
 			<a id="newcomment" class="newcomment <?php echo $button_class; ?>" href="#respond">New Announcement</a>
 		<?php else : ?>
 			<?php  wp_loginout($_SERVER['REQUEST_URI'], true ); ?>
 		<?php endif; ?>
 			<?php
-				//wp_list_comments( array( 'style' => 'div', 'callback' => 'rotary_committee_comment', type => 'comment', 'per_page' => 5, 'reverse_top_level'  => true) );
-				// rotary_committee_comment( $currentPostType );  renamed by PAO 2015-09-13
-				rotary_get_single_post_announcements_html( $currentPostType, $stub );
+				$args = array(
+					'order' => 'DESC',
+					'post_type' =>  $postType,
+					'status' => 'approve',
+					'type' => 'comment',
+					'post_id' => get_the_id(),
+					'number' => 10
+				); 
+				$announcements = get_comments( $args );
+				if (is_array( $comments )) : 
+					foreach( $announcements as $announcement ) : 
+						$firstAnnouncement = ( $announcement === reset( $announcements )) ? true : false;  
+				  		$extra_classes = array( 'clearleft', (( !$firstAnnouncement ) ? 'hide' : '' )); 
+						$count++;
+						// Display the announcement body.  We need to have set $announcement, $context, and $extra_classes before calling this
+							include ( get_template_directory() . '/loop-single-announcement.php'); 
+						
+						
+						if ( $firstAnnouncement && get_comments_number() > 1 ) : ?>
+							<p class="morecommentcontainer"><a href="#" class="morecomments" id="morecomments"><?php echo  _e( 'Show More', 'Rotary') . '&nbsp;[+' . intval(intval(get_comments_number()) - 1.0) . ']'; ?></a></p>	
+						<?php  
+						endif; 
+						if ( $announcement === end( $announcements ) && !$firstAnnouncement ) : ?>
+							<p class="morecommentcontainer"><a href="#" class="lesscomments hide" id="lesscomments"><?php echo _e( 'Show Less', 'Rotary'); ?></a></p>
+						 <?php endif;
+					endforeach;
+				endif;
 			?>
 		</div>
 	<?php else : // or, if we don't have comments:
@@ -66,7 +90,7 @@
 		<p><?php _e( 'Announcements are closed.', 'Rotary' ); ?></p>
 		<?php else : ?>
 		
-		<div class="<?php echo $stub; ?>-announcements nocontent">
+		<div class="<?php echo $context; ?>-announcements nocontent">
 			<p><?php _e( 'No Announcements at the Moment', 'Rotary' ); ?></p>
 			<?php if ( is_user_logged_in() ) : ?>
 				<p><?php _e( 'Would you like to make one', 'Rotary' ); ?>?</p>
@@ -81,11 +105,11 @@
 </div>
 
 <?php $args = array(
-		'title_reply' => 'New Announcement',
-		'comment_notes_after'  => '',
+		'title_reply' => __( 'New Announcement' ),
+		'comment_notes_after'  => rotary_comment_notes_after( ),
 		'logged_in_as'  => '',
-		'label_submit'  => 'Save Announcement',
-		'id_form'       => $commentid
+		'label_submit'  => __( 'Save Announcement' ),
+		'id_form'       => $commentid,
 		);
     ?> 
     <div id="new-announcement-form">

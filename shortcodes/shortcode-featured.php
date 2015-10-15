@@ -2,7 +2,7 @@
 
 /*gets the featured post*/
 
-function rotary_get_featured_html( $atts ){
+function rotary_get_featured_shortcode_html( $atts ){
 	extract( shortcode_atts( array(
 	'header' => 'Latest News',
 	'fetch'  => 'next'
