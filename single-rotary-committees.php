@@ -9,13 +9,15 @@
 
 get_header(); ?>
 
-<?php get_sidebar('committee'); ?>
 <h1 class="pagetitle"><span><?php the_title();  ?></span></h1>
-	
+
+<div id="page">
+	<?php get_sidebar('committee'); ?>
 	<div id="content" class="committee" role="main">
-	<?php comments_template( '/committee-comments.php' ); ?> 
+	<?php comments_template( '/announcements.php' ); ?> 
 				
 	<?php get_template_part( 'loop', 'single-committee' ); ?>
     </div>
+</div>
 
 <?php get_footer(); ?>

@@ -8,10 +8,7 @@
  */
 get_header(); ?>
 <h1 class="pagetitle"><span>Speaker Program</span></h1>
-<div class="speakercontainer">
-	<div class="speakerheader">
-		
+<div id="page">
 			<?php get_template_part( 'loop', 'single-speaker' ); ?>
-	</div><!--#speakerheader-->
 </div><!--#speakercontainer-->
 <?php get_footer(); ?>

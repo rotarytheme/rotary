@@ -8,6 +8,10 @@
  */
 
 get_header(); ?>
+
 	<?php get_template_part( 'loop', 'page' ); ?>
-<?php get_sidebar(); ?>
+	<div class="hassidebar">
+		<?php get_sidebar(); ?>
+	</div>
+	
 <?php get_footer(); ?>
