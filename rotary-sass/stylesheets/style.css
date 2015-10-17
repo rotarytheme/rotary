@@ -1703,7 +1703,7 @@ td {
 }
 .archive #content article h2, .blog #content article h2, .single.single-rotary-committees #content h2, .single.single-rotary_projects #content h2 {
   clear: left;
-  padding-top: 22px;
+  padding-top: 5px;
 }
 .archive #content article h2 a, .blog #content article h2 a, .single.single-rotary-committees #content h2 a, .single.single-rotary_projects #content h2 a {
   font-size: 21px;
@@ -5679,7 +5679,7 @@ article.clearleft {
 }
 
 #content .updates-container article header h2 {
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 }
 
 #content .updates-container article .excerptcontainer {
@@ -6399,7 +6399,7 @@ p#posted-by {
   #content .updates-container article .sectioncontent {
     padding-bottom: 20px;
     padding-left: 20px;
-    top: 20px;
+    top: 5px;
     font-size: 16px;
   }
 
@@ -6409,7 +6409,7 @@ p#posted-by {
   }
 
   #content .updates-container article header h2 {
-    margin-bottom: 15px;
+    margin-bottom: 35px;
   }
 
   #content .updates-container article .excerptcontainer.hasthumbnail p {
@@ -6743,7 +6743,7 @@ p#posted-by {
   #content .updates-container article .sectioncontent {
     padding-bottom: 10px;
     padding-left: 10px;
-    top: 15px;
+    top: 5px;
     font-size: 13px;
   }
 
@@ -6753,7 +6753,7 @@ p#posted-by {
   }
 
   #content .updates-container article header h2 {
-    margin-bottom: 5px;
+    margin-bottom: 15px;
   }
 
   #content .updates-container article .excerptcontainer.hasthumbnail p {
@@ -7033,7 +7033,7 @@ p#posted-by {
   #content .updates-container article .sectioncontent {
     padding-bottom: 10px;
     padding-left: 10px;
-    top: 15px;
+    top: 5px;
     font-size: 14.5px;
   }
 
@@ -7222,7 +7222,7 @@ p#posted-by {
   #content .updates-container article .sectioncontent {
     padding-bottom: 20px;
     padding-left: 20px;
-    top: 20px;
+    top: 5px;
     font-size: 16px;
   }
 
@@ -7318,15 +7318,15 @@ p#posted-by {
   }
 
   #content .updates-container article .sectionheader {
-    padding: 0 20px 20px 0;
+    padding: 0 10px 5px 0;
     background-size: 355px;
   }
 
   #content .updates-container article .sectioncontent {
     padding-bottom: 20px;
     padding-left: 20px;
-    top: 20px;
-    font-size: 16px;
+    top: 5px;
+    font-size: 14.5px;
   }
 
   #content .updates-container article header {
@@ -7335,7 +7335,7 @@ p#posted-by {
   }
 
   #content .updates-container article header h2 {
-    margin-bottom: 25px;
+    margin-bottom: 15px;
   }
 
   #content .updates-container article .excerptcontainer.hasthumbnail p {
@@ -7343,7 +7343,7 @@ p#posted-by {
   }
 
   #content .updates-container article .sectioncontent {
-    height: 340px;
+    height: 410px;
   }
 
   .blog #content article .sectioncontainer {

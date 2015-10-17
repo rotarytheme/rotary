@@ -131,7 +131,7 @@ function rotary_get_announcements_html( $atts ){
 			 endif; //end is_array check
 		endwhile; //end wp_query loop 
 		if ( 0 == $commentDisplayed ) :
-		?>	<p>No new announcements have been made in the last <?php  echo $atts['lookback']; ?> days</p>
+		?>	<p>No new announcements have been made in the last <?php  echo $lookback; ?> days</p>
 		<?php  endif; ?>
 			<?php if (!is_user_logged_in()) { ?>
 			<p>Please <?php echo wp_loginout( site_url(), false ); ?> to make an announcement</p>
