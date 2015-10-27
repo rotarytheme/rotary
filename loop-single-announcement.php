@@ -66,7 +66,11 @@
 				<div class="announcement-body">
 					<?php echo $announcement_text; ?>			
 				</div>
-				 <a href="javascript:void(null)" data-comment-id="<?php echo $id; ?>" class="rotarybutton-smallwhite editannouncementbutton"><?php echo __( 'Edit Announcement' ); ?></a>
+				<?php if( $allowedits ) :?>?>
+				 <div class="editannouncementbutton-container">
+				 	<a href="javascript:void(null)" data-comment-id="<?php echo $id; ?>" class="rotarybutton-smallwhite editannouncementbutton"><?php echo __( 'Edit Announcement' ); ?></a>
+				 </div>
+				<?php  endif; ?>
 			<?php 
 				break; 
 			case 'project': 

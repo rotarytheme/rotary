@@ -10,13 +10,13 @@ class NM_MC_Front
 		add_action( 'admin_enqueue_scripts', array($this, 'nm_mailchimp_admin_scripts'));
 		add_action('admin_menu', array($this, 'nm_mailchimp_front_settings'));
 		add_action('wp_ajax_nm_mc_front_save_settings', array($this, 'nm_mc_front_save_settings'));
-		add_action('the_content', array($this, 'nm_mc_front_insert_id'));
 		add_action('wp_ajax_nm_front_camp', array($this, 'nm_front_camp'));
 		add_action('wp_head', array($this, 'insert_loader'));
 	}
 
 	function insert_loader(){
-		echo '<div id="ajax-loader"></div>';
+		global $post;
+		echo '<div id="ajax-loader"></div><span class="nmid" data-nmid="'.$post->ID.'" ></span>';
 	}
 
 	function nm_mailchimp_admin_scripts($slug){
@@ -99,15 +99,6 @@ class NM_MC_Front
 		}
 	}
 
-	function nm_mc_front_insert_id($content){
-		global $post;
-		if (is_singular()) {
-			return $content.'<span class="nmid" data-nmid="'.$post->ID.'" ></span>';
-		} else {
-			return $content;
-		}
-	}
-
 	function nm_front_camp(){
 
 		$saved_options = get_option( 'nm_mc_front_save_settings' );
@@ -115,10 +106,8 @@ class NM_MC_Front
 		global $nm_mailchimp;
 		global $current_user;
 		get_currentuserinfo();
-		
-		$post_id = $_REQUEST['postid']
 
-		 = $post_title = get_the_title( $_REQUEST['postid'] );
+		$post_title = get_the_title( $_REQUEST['postid'] );
 		
 		$type = 'regular';
 		$options = array();
@@ -130,34 +119,17 @@ class NM_MC_Front
 		$options['generate_text'] = ($saved_options['generate_text'] == 'true' ? true : false);
 		$options['auto_tweet'] = ($saved_options['auto_tweet'] == 'true' ? true : false);
 		$options['auto_fb_post'] =  explode(',', $saved_options['auto_post']);
-		
 
-		$html_email_content = '<h1>'.$post_title.'</h1><hr>';
-		$html_email_content .= '<table><tr>';
-		
-		
-		
-// PAUL OSBORN MODS  - WHAT DO YOU THINK OF SOMETHING LIKE THIS, RAMEEZ??
-		$args = array (
-					'post_id' => $post_id
-				);
-		$query = new WP_Query( $args );
 		ob_start();
-		include_once ( '../mailchimp-campaign/email-rotary_speakers.php' );
-		wp_reset_postdata();
-		
-		$html_body = nm_add_inline_styles ( ob_get_clean() ); // not needed if we are using helper/inlinecss, I think?
-		$html_email_content .= $html_body;
-		//$html_email_content .= '<td style="width: 70%; vertical-align: top;">'.$_REQUEST['content'].'</td>';
-		//$html_email_content .= '<td style="width: 30%; vertical-align: top;">'.$_REQUEST['sidebar'].'</td>';	
-// end mode
 
+		include 'generate_table.php';
 
-		
-		$html_email_content .= '</tr></table>';
+		$post_html = ob_get_clean();
 
-		$content = array(	'html'	=> stripcslashes($html_email_content),
-				 			'text'	=> stripcslashes($html_email_content)
+		$html_inline_css = $nm_mailchimp -> mc -> helper -> inlineCss($post_html);
+
+		$content = array(	'html'	=> stripcslashes($html_inline_css['html']),
+				 			'text'	=> stripcslashes($html_inline_css['html'])
 		);
 
 		$resp = $nm_mailchimp -> mc -> campaigns -> create($type, $options, $content);
@@ -193,17 +165,4 @@ if ( is_plugin_active( 'nm-mailchimp-campaign/index.php' ) && class_exists('NM_M
 	$just_init = new NM_MC_Front;
 }
 
-
-// Something like this? 
-function nm_add_inline_styles ( $html ) {
-	$dom = new DOMDocument;
-	$dom->loadHTML( $html );
-	
-	$h1s = $dom->getElementsByTagName('h1');
-	foreach ($h1s as $h1) {
-		$dh1_style = $h1->getAttribute('style');
-			$h1->setAttribute('style','background-color:red;');
-		}
-	
-	return $dom->saveHTML();
-}
+ ?>

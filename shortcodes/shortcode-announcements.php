@@ -29,6 +29,7 @@ function rotary_get_announcements_shortcode_html( $atts ){
 					'context'		=> 'shortcode'
 			), $atts, 'announcements' ));
 	
+	
 	// Prepare the query arguments to fetch the appropriate comments depedning where this is being called from	
 	$args = array(
 				'order' => 'DESC',
@@ -71,17 +72,21 @@ function rotary_get_announcements_shortcode_html( $atts ){
 	
 	$announcements = get_comments( $args );
 	$announcementsDisplayed = 0;
+	// Wwe can't introduce a second comments form a page where there is already another comments form.
+	$allowedits = ( in_array( get_post_type() , array( 'rotary-committees', 'rotary_projects' )) && comments_open() ) ? false : true;
 	
 	ob_start();
 	?>
 	<div class="<?php echo $context;?>-announcements">
-		<?php if ( !is_user_logged_in() ) { ?>
+	<?php if( $allowedits ) :?>
+		<?php if ( !is_user_logged_in() ) : ?>
 				<p><?php echo sprintf( __( 'Please %s to make an announcement' ), wp_loginout( site_url(), false ) ) ;?></p>
-			<?php }
-		else { 
+			<?php
+		else : 
 				 rotary_project_and_committee_announcement_dropdown();
 				 ?><div id="new_announcement_div"></div><?php 
-		} ?>
+		endif;
+	endif; ?>
 							
 							
 		 <div class="announcements-container">

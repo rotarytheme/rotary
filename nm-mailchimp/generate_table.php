@@ -7,16 +7,15 @@
  * @since Rotary HTML5 3.2
  */
 	$args = array(
-		'p'         => 1,
-		'post_type' => array('post'),
+		'p'         => $_REQUEST['postid'],
+		'post_type' => array('rotary_speakers'),
 	);
 	$query = new WP_Query( $args );
 
 ?>
 
 <?php if ( $query->have_posts() ) while ( $query->have_posts() ) : $query->the_post();
-	setup_postdata($query->the_post());
-
+	// setup_postdata($query->the_post());
 	$speaker = get_field('speaker_first_name').' '.get_field('speaker_last_name');
  	$speaker_title = trim( get_field( 'speaker_title' ));
  	$speaker_company = trim( get_field( 'speaker_company' ));
@@ -36,7 +35,7 @@
 ?>
 
 <!--  As per http://blog.mailchimp.com/turn-any-web-page-into-html-email-part-2/ ??? or however you want to do this...    media="email"-->
-<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/mailchimp-campaign/email.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/nm-mailchimp/email.css" />
 
 <style>
 

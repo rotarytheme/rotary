@@ -8,6 +8,8 @@
  */
 ?>
 
+register
+
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); 
 
 	$speaker = get_field('speaker_first_name').' '.get_field('speaker_last_name');

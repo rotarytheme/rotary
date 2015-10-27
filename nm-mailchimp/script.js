@@ -5,8 +5,6 @@ jQuery(document).ready(function($) {
 		var data = {
 			action: 'nm_front_camp',
 			postid: $('.nmid').data('nmid'),
-			content: $('article.status-publish #blogcontent').html(),
-			sidebar: $('aside#speaker-sidebar').html(),
 			sendtype: 'test'
 		}
 		$.post(nmOptions.ajaxurl, data, function(resp) {
@@ -20,8 +18,6 @@ jQuery(document).ready(function($) {
 		var data = {
 			action: 'nm_front_camp',
 			postid: $('.nmid').data('nmid'),
-			content: $('article.status-publish #blogcontent').html(),
-			sidebar: $('aside#speaker-sidebar').html(),
 			sendtype: 'send'
 		}
 		$.post(nmOptions.ajaxurl, data, function(resp) {
