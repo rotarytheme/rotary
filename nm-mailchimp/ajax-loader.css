@@ -1,0 +1,14 @@
+#ajax-loader {
+    width: 100%;
+    height: 100%;
+    background-image: url('loader.gif');
+    position: fixed;
+    top: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    left: 0;
+    background-color: #FFF;
+    opacity: .9;
+    display: none;
+    z-index: 99999999999;
+}

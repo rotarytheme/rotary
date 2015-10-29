@@ -1,1 +1,4 @@
-~Current Version:3.325~
+rotary
+======
+
+Rotary WordPress Theme

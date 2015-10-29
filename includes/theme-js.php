@@ -11,7 +11,7 @@ function rotary_add_javascript( ) {
 		'family' => 'Open+Sans+Condensed:300,700,300italic');
 	wp_enqueue_style( 'rotary-opensanscondensed-font', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ), array(), null 	);	
 
-	wp_enqueue_style( 'rotary-styles', get_bloginfo('template_directory').'/rotary-sass/stylesheets/style.css');
+	wp_enqueue_style( 'rotary-styles', get_bloginfo('template_directory').'/rotary-sass/stylesheets/style.min.css');
 	
 	wp_enqueue_script( 'modernizr', get_bloginfo('template_directory').'/includes/js/modernizr.custom.js', array( 'jquery' ) );
 	
@@ -36,6 +36,12 @@ function rotary_add_javascript( ) {
 	
 	wp_enqueue_script( 'rotary', get_bloginfo('template_directory').'/includes/js/rotary-theme.js', array( 'jquery' ) );
 	
-	wp_localize_script( 'rotary', 'rotaryparticipants', array('ajaxURL' => admin_url('admin-ajax.php'),'rotaryNonce' => wp_create_nonce( 'rotary-participant-nonce' )) );
+	wp_localize_script( 'rotary', 'rotaryparticipants', 
+									array(
+										'ajaxURL' => admin_url('admin-ajax.php')
+										,'rotaryNonce' => wp_create_nonce( 'rotary-participant-nonce' )
+										,'templateURL' => get_template_directory_uri()
+									) 
+								);
 	
 }

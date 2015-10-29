@@ -1,0 +1,45 @@
+.gform_wrapper {
+    background-color: #E7E7E8;
+    border: 1px solid #CCC;
+}
+.rotarymembershipheader {
+	#gravityform {
+		margin: 0 10px;
+	    width: 100%;
+	}
+	#rotaryform tr th {
+	    border-top: 2px solid #f2e6cc;
+	    border-right: 1px dotted #b3b5b7;
+	    color: #58585A;
+	    font-family: "Open Sans Condensed", Arial, Helvetica, sans-serif;
+	    font-size: 19px;
+	    font-weight: 700;
+	    padding-bottom: 15px;
+	    padding-left: 6px;
+	    padding-top: 15px;
+	    text-transform: uppercase;
+	}
+}
+#rotaryform {
+	width:100%;
+	.odd td {
+	    background: #f9f4e9;
+	}
+	.even td {
+	    background-color: #fcfaf3;
+	}
+	tr {
+	    max-width: 100%;
+	}
+	tr td {
+	    border-bottom: 1px solid #b3b5b7;
+	    border-right: 1px dotted #b3b5b7;
+	    border-right-width: 1px;
+	    border-right-style: dotted;
+	    border-right-color: #B3B5B7;
+	    padding: 6px;
+	}
+}
+@media only screen and (min-width: 960px) {
+	.rotarymembershipheader #rotaryform tr td {padding-bottom: 15px; padding-top: 15px;}
+}

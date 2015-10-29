@@ -54,15 +54,26 @@ function rotary_widgets_init() {
 		'before_title' => '<h3>',
 		'after_title' => '</h3>',
 	) );
-	// Area 5, located on the projects archive. Empty by default.
+	// Area 5, located in the footer - right side. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'Projects Widget Area', 'rotary' ),
-		'id' => 'projects-widget-area',
-		'description' => __( 'The projects widget area', 'rotary' ),
+		'name' => __( 'Right Footer Widget Area', 'rotary' ),
+		'id' => 'third-footer-widget-area',
+		'description' => __( 'The third footer widget area', 'rotary' ),
 		'before_widget' => '<li>',
 		'after_widget' => '</li>',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>',
+	) );
+
+	// Area 6, located on the projects archive. Empty by default.
+	register_sidebar( array(
+	'name' => __( 'Projects Widget Area', 'rotary' ),
+	'id' => 'projects-widget-area',
+	'description' => __( 'The projects widget area', 'rotary' ),
+	'before_widget' => '<li>',
+	'after_widget' => '</li>',
+	'before_title' => '<h3>',
+	'after_title' => '</h3>',
 	) );
 
 }

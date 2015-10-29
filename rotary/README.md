@@ -1,4 +1,0 @@
-rotary
-======
-
-Rotary WordPress Theme
