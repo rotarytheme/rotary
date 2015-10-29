@@ -14,6 +14,11 @@
 
 ?>
 
+
+<table>
+<tr>
+<td>
+
 <?php if ( $query->have_posts() ) while ( $query->have_posts() ) : $query->the_post();
 	// setup_postdata($query->the_post());
 	$speaker = get_field('speaker_first_name').' '.get_field('speaker_last_name');
@@ -34,19 +39,28 @@
  	
 ?>
 
-<!--  As per http://blog.mailchimp.com/turn-any-web-page-into-html-email-part-2/ ??? or however you want to do this...    media="email"-->
+<!--  As per http://blog.mailchimp.com/turn-any-web-page-into-html-email-part-2/ ? -->
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/nm-mailchimp/email.css" />
 
-<style>
-
-	
-</style>
+    <table id="branding">
+    	<tr>
+    		<td>
+		      <?php  $clubname = get_theme_mod( 'rotary_club_name', '' );  ?>
+		      <?php  $rotaryClubBefore = get_theme_mod( 'rotary_club_first', false); ?>
+	            <h1>
+	            	<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+	            <?php rotary_club_header($clubname, $rotaryClubBefore);?>
+					</a>
+	            </h1>
+    		</td>
+    	</tr>
+    </table>
 
 	<table id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<tr id="speakerheader">
 			<td id="speakertitle" class="goldborder-bottom firstcol">
 				<h2> <?php echo $speaker; ?> </h2>
-				<p>
+				<p id="speaker-info-container">
 					<?php if( count( $speaker_title) ) ?> <span id="speaker-title" class="speaker-info"><?php echo( $speaker_title );?></span>
  					<?php if( count( $speaker_company) ) ?> <span id="speaker-company" class="speaker-info"><?php echo( $speaker_company );?></span>
 				</p>
@@ -55,19 +69,18 @@
 			<td id="speakerdate" class="greyborder-right greyborder-top thirdcol"><span id="weekday"><?php echo $date->format('l');?></span> <?php echo $date->format('M dS, Y');?></span></td>
 		</tr>
 		<tr >
-			<td id="blogheader" colspan="2" class="greyborder-left">
+			<td id="blogheader" colspan="3" class="greyborder-left greyborder-right">
 				<?php the_title('<h1>', '</h1>'); ?>
+			</td>
+		</tr>
+		<tr >
+			<td id="blogcontent" colspan="2" class="greyborder-left greyborder-bottom">
 				<hr>
 				<p id="program-roles">
 				<?php if( !empty( $scribe )) {?><span id="scribe"><span class="speaker-term-label"><?php echo _e( 'Scribe', 'Rotary' ); ?>:</span> <?php echo $scribe; ?></span><?php }?>
 				<?php if( !empty( $editor )) {?><span id="editor"><span class="speaker-term-label"><?php echo _e( 'Editor', 'Rotary' ); ?>:</span> <?php echo $editor; ?></span><?php }?>
 				<?php if( !empty( $introducer )) {?><span id="introducer"><span class="speaker-term-label"><?php echo _e( 'Introduced by', 'Rotary' ); ?>:</span> <?php echo $introducer; ?></span><?php }?>
 				</p>
-			</td>
-			<td class="greyborder-right">&nbsp;</td>
-		</tr>
-		<tr >
-			<td id="blogcontent" colspan="2" class="greyborder-left greyborder-bottom">
 				<?php
 					//program notes are filled in after a speakers visit. If the speaker has not yet been to the club, we show the upcoming content
 					$programNotes = trim( get_field( 'speaker_program_notes' ));
@@ -92,7 +105,10 @@
 	</table>
 
 
-<?php endwhile; // end of the loop. 
+<?php endwhile; // end of the loop.?>
+</td>
+</tr>
+</table>
 	
 	
 				

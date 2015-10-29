@@ -113,7 +113,7 @@ class NM_MC_Front
 		$options = array();
 
 		$options['list_id'] =  $saved_options['list_id'];
-		$options['subject'] =  $post_title;
+		$options['subject'] =   str_replace( '&#038;', '&' , str_replace( '&#8217;', '\'' , str_replace( '&#8220;', '"' , str_replace( '&#8221;', '"' , $post_title)))) ;
 		$options['from_email'] =  $current_user->user_email;
 		$options['from_name'] =  $current_user->user_firstname.' '.$current_user->user_lastname;
 		$options['generate_text'] = ($saved_options['generate_text'] == 'true' ? true : false);

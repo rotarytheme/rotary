@@ -45,8 +45,8 @@
 				/***************** START MAILCHIMP CAMPAIGN CUSTOMIZATION ****************/
 				if( is_user_logged_in() && current_user_can( 'create_mailchimp_campaigns' ) ):?>
 					<div id="mailchimpcampaign">
-						<input id="sendemailtest" type="button" class="rotarybutton-largewhite" value="<?php echo __( 'Send Test Email', 'Rotary'); ?>" ng-click="saveCampaign()" />
-						<input id="sendemailblast"type="button" class="rotarybutton-largeblue" value="<?php echo __( 'Send Email Blast', 'Rotary'); ?>" ng-click="sendCampaign(1)" />
+						<a id="sendemailtest" class="rotarybutton-largewhite" href="javascript:void" ng-click="saveCampaign()" ><?php echo __( 'Send Test Email', 'Rotary'); ?></a>
+						<a id="sendemailblast" class="rotarybutton-largeblue" href="javascript:void" ng-click="sendCampaign(1)" ><?php echo __( 'Send Email Blast', 'Rotary'); ?></a>
 					</div>
 				<?php endif;
 				/***************** END MAILCHIMP CAMPAIGN CUSTOMIZATION ****************/

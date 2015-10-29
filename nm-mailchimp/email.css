@@ -4,13 +4,39 @@
 *  SPEAKER PROGRAM
 ******************************************************/
 
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
+
+	a {
+		text-decoration: none;
+		color: #17458F;
+	}
+	#branding h1 {
+	    background: url(http://bbrc.staging.wpengine.com/wp-content/themes/rotarytheme-integrated/rotary-sass/images/5016_Rotary_Logo.png) 5px 0 no-repeat;
+	    float: left;
+	    font-family: Arial Narrow,Arial,Helvetica,sans-serif;
+	    font-weight: 700;
+	    line-height: 1em;
+	    font-size: 30px;
+	    height: 125px;
+	    background-size: 300px;
+	}
+	#branding h1 span {
+	    display: block;
+	    margin-left:315px;
+	}
+	#branding h1 .clubname.namebefore, 
+	#branding h1 a.clubname.namebefore {
+	    padding-top: 28px;
+	}
+
 	table {
 		font-family: Georgia, Times New Roman, Serif;
 		color: #58585A;
-		font-size: 17px;
+		font-size: 16px;
 		line-height:25px;
 		width:800px;
-		margin:100px auto;
+		margin:0px auto;
+		border-spacing: 0;
 	}
 	table td {
 		cursor: auto;
@@ -19,9 +45,9 @@
 	table td p {
 		margin-top:10px;
 	}
-	.firstcol {width:50%}
-	.secondcol {width:100px;}
-	.thirdcol {width:30%}
+	.firstcol {width:500px;}
+	.secondcol {width:60px; height:60px;}
+	.thirdcol {width:240px;}
 	.single table #speakerheader {border:none}
 	
 	table .greyborder-right {border-right: solid 2px #ececec;padding-right:10px;}
@@ -32,51 +58,141 @@
 	.speaker-term-label {font-weight:bold;}
 	table #blogheader h1 {
 	    color: #17458f;
-    	font-family: "Open Sans Condensed", Arial, Helvetica, sans-serif;
-    	font-size: 36px;
-    	font-weight: bold;
-		text-transform: capitalize;
+    	font-family: Open Sans Condensed, Arial Narrow, Arial, Helvetica, sans-serif;
+    	font-size: 32px;
+    	line-height:34px;
+    	font-weight: normal;
+		text-transform: uppercase;
 	    margin-bottom: 4px;
 	    margin-top: 24px;
 	    padding: 0;
 	}
 	table #speakertitle h2{
-	    background: url(../images/speaker-icon.png) 0 9px no-repeat;
+	    background: url(http://bbrc.staging.wpengine.com/wp-content/themes/rotarytheme-integrated/rotary-sass/images/speaker-icon.png) 0 0 no-repeat;
+   		background-size: 25px;
 	    color: #58585A;
-	    font-family: "Open Sans Condensed", Arial, Helvetica, sans-serif;
-	    font-size: 24px;
+	    font-family: Open Sans Condensed, Arial, Helvetica, sans-serif;
+	    font-size: 21px;
 	    font-weight: bold;
 	    margin-bottom: 0;
-	    margin-top: -20px;
-	    text-indent: 40px;    
-	    line-height: 50px;
+	    margin-top: 0px;
+	    padding-left: 30px;   
+	    padding-bottom: 3px;    
+	    line-height: 23px;
     	margin-left: 20px;
     	text-transform: uppercase;
 	}
-	table .speakerdate {
+	table #speaker-info-container {
+		margin-left:20px;
+		font-size:16px;
+		margin-top:0px;
+	}
+	table #speakerdate {
 	    color: #17458f;
-	    font-family: "Open Sans Condensed", Arial, Helvetica, sans-serif;
+	    font-family: Open Sans Condensed, Arial, Helvetica, sans-serif;
 	    font-size: 19px;
 	    font-weight: bold;
-	    position: absolute;
-	    right: 30px;
 	    text-transform: uppercase;
-	    top: 20px;
+	    padding-top: 20px;
+	    padding-right: 15px;
+	    text-align:right;
 	}
-	table .speakerdate span {
+	table #speakerdate span {
     	color: #58585A;
 	}
+	
+	#blogcontent h2 {
+	    color: #17458f;
+	    font-family: Open Sans Condensed, Arial, Helvetica, sans-serif;
+	    font-weight: 700;
+	    margin-bottom: 12px;
+	    margin-top: 22px;
+	    padding: 0;
+	    font-size: 28px;
+	}
+	
+	#blogcontent h3 {
+	    color: #58585A;
+		font-family: Open Sans Condensed, Arial, Helvetica, sans-serif;
+	    font-weight: 700;
+	    margin-bottom: 4px;
+	    margin-top: 24px;
+	    padding: 0;
+	    text-transform: uppercase;
+		font-size: 22px;
+	}
+	
+	#blogcontent  img.alignleft {
+	    display: inline;
+	    float: left;
+	    margin-right: 12px;
+	    margin-top: 4px;
+	}
+	#blogcontent img.alignright {
+		display: inline;
+	    float: right;
+	    margin-left: 12px;
+	    margin-top: 4px;
+	}
+	#blogcontent .aligncenter {
+    display: block;
+    margin: 0 auto;
+}
+	.wp-caption {
+	    border-left: 1px solid #f93;
+	    background-color: #FFF;
+	    line-height: 18px;
+	    margin-bottom: 20px;
+	    max-width: 632px!important;
+	    padding: 0;
+	    text-align: center;
+	}
+	#blogcontent .wp-caption .inner-caption {
+	    border-right: 1px solid #f93;
+	    border-top: 1px solid #f93;
+	    padding: 4px;
+	    width: 100%;
+	}
+	#blogcontent .wp-caption .wp-caption-bottom {
+	    background: url(http://bbrc.staging.wpengine.com/wp-content/themes/rotarytheme-integrated/rotary-sass/images/speaker-caption-bg.png) 100% 100% no-repeat,url(http://bbrc.staging.wpengine.com/wp-content/themes/rotarytheme-integrated/rotary-sass/images/caption-repeater.png) 0 100% repeat-x;
+	    height: 26px;
+	    padding-left: 9px;
+	    width: 100%;
+	}
+	
+	
 	table #speaker-side-container {
 	    background-color: #f8f1e3;
-	    padding: 10px 10px 0 10px;
+	    padding: 10px 10px 25px 10px;
 	}
+	table #speaker-side-container {
+    background-image: url(http://bbrc.staging.wpengine.com/wp-content/themes/rotarytheme-integrated/rotary-sass/images/featured-bottom-corner.png);
+    background-size: 23px 22px;
+    background-repeat:no-repeat;
+    background-position: right bottom;
+}
+	
+	
 	table #speaker-side-container h3 {
 	    color: #17458f;
-	    font-family: "Open Sans Condensed", Arial, Helvetica, sans-serif;
-	    font-size: 24px;
-	    margin: 0 0 2px 5px;
-	    padding-top: 15px;
-	    text-indent: 10px;
+	    font-family: Open Sans Condensed, Arial, Helvetica, sans-serif;
+	    font-size: 20px;
+	    margin-bottom: 2px;
 	    text-transform: uppercase;
     	font-weight: 700;
 	}
+	h3.speakerbio {
+		background: url(http://bbrc.staging.wpengine.com/wp-content/themes/rotarytheme-integrated/rotary-sass/images/bio-icon-bg.png) 0 0 no-repeat;
+		background-size: 20px;
+		padding-left:25px;
+	    padding-top: 2px;
+	}
+	
+	table #speakerinfo ul { list-style-type: none;}
+	
+	table .cutaway_image {
+		 background: url(http://bbrc.staging.wpengine.com/wp-content/themes/rotarytheme-integrated/rotary-sass/images/speaker-home-title-email-corner.png);
+		 background-repeat: no-repeat;
+		 background-size:cover;
+	}
+	
