@@ -1,0 +1,556 @@
+.project {
+	h1, h2 {
+		color: #FCAB1C!important;
+	}
+}
+.pagecommitteetitle {
+	font-family: $body-font-family;
+	font-size:12px;
+	margin-left:30px;
+	text-transform: uppercase;
+}
+.page-template-archive-rotary_projects-php #content .connectedprojectscontainer  {
+  margin-bottom: 40px;
+  margin-right: 0;
+  width: 280px;
+}
+.single-rotary_projects .projectcommitteetitle {
+	background: #eca900 url(../images/projectcommitteetitle-bg.jpg) no-repeat;
+	color: #fff;
+	font-size:24px;
+	height: 72px;	
+	margin-top:30px;
+	position: relative;
+	text-indent: 70px;
+	text-transform: uppercase;
+	h2 {
+		font-family: $header-font;
+		line-height:72px;
+		font-weight: 700;
+	}
+	a {
+		color: $header-font-color;
+		font-weight:700;
+		&:active, &:hover {
+			color: $header-font-color
+		}
+	}
+	
+	
+}
+.announcedby {
+	display:inline-block;
+	float: right;
+	margin: 10px 0px 0px 115px !important;
+	max-width:50%;
+	padding-top:0;
+}
+.morecommentcontainer {
+	clear:both;
+}
+.morecomments, .lesscomments {
+	margin-left:115px;
+}
+.morecomments::after {
+	content: '\25BC';
+}
+.lesscomments::after {
+	content: '\25B2';
+}
+
+
+.projects > .wp-post-image {
+	clear: both;
+	display: block;
+	height:auto;
+	margin-left: auto;
+	margin-right: auto;
+	width:783px;
+}
+.committeeblogrollcontainer {
+	margin-bottom:40px;
+}
+.single.single-rotary-committees #content {
+	 .commentcommittetext h2 {
+		border:none;
+		margin-bottom:0;
+		margin-left:25px;
+	}
+	.committeecomment {
+	    margin-bottom: 0px;
+	    width: 95%;
+	    position: relative;
+	}
+
+}
+.imgoingtext, .locationtext, .participanttext {
+  background-color:#f3f3f3;
+  border: 2px solid #d8dadb;
+  font-size: 10px;
+  font-weight: bold;
+  left:-25px;
+  line-height: normal;
+  padding: 10px 5px;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  top: -40px;
+ 
+  &:after {	    
+	  border: solid transparent; 
+	  border-color: rgba(216, 218, 243, 0); 
+	  border-top-color: #d8dadb; 
+	  border-width: 10px;
+	  content: " "; 
+	  height: 0;
+	  left: 50%;
+	  margin-left: -10px;
+	  pointer-events: none;
+	  position: absolute;
+	  top: 100%;
+	  width: 0;   }
+}
+.imgoingtext {
+	top:-65px;
+}
+.locationtext {
+	left:60px;
+}
+.participanttext {
+	left:100px;
+}	
+#projects-sidebar {
+ 	.imgoingtext{
+		left:-20px;
+	}
+
+	h2 {
+		font-weight: 400;
+	}
+}
+
+.projecticons {
+	border-bottom:1px solid #ccc;
+	border-top:1px solid #ccc;
+	height:50px;
+	margin-bottom:25px;
+	position:relative;
+	span, a {	
+		cursor:pointer;	   
+		display:inline-block;
+		height:50px;
+		width:50px;
+				
+	}
+	.icon {
+		@include hide-text;
+	}
+	.count {
+		color: $med-gray-color;
+		font-family: $header-font;
+		font-size: 18px;
+		font-weight: 700;
+		padding-top: 12px;
+		vertical-align: top;
+		width:14px;
+	}
+	.imgoing {
+		background:url(../images/check-icon.png) 10px 13px no-repeat;
+		&.going {
+			background-position: 10px -50px;
+		}
+		&.notgoing {
+			background-position: 10px -110px;
+		}
+	}
+	.location {
+		background:url(../images/project-location-icon.png) 0 8px no-repeat;
+	}
+	.participants {
+		background:url(../images/participant-icon.png) 0 10px no-repeat;
+	}
+}
+.single.single-rotary_projects #content {
+	.committeecomment {
+	    margin-bottom: 0px;
+	    width: 95%;
+	    position: relative;
+	    p {
+			margin-left: 25px !important;
+		}
+	}
+
+	.sectioncontainer {
+		width:375px !important;
+	}
+	header .postdate {
+		text-transform: capitalize;
+	}
+}
+.single-rotary_projects {
+	.morecomments, .lesscomments {
+		margin-left:10px;
+	}
+	.comment.hasthumbnail {
+		float:right;
+		margin-right:5px;
+		margin-top: -40px;
+		position: relative;
+		width: 670px;
+		z-index: 100;
+		.commentcommittetext {
+			width:669px;
+		}
+		.commentbottom {
+			background: url(../images/project-comment-bottom-small-bg.png) no-repeat;
+			width:677px;
+		}
+	}
+
+	.commentcommittetext {
+		background:#fff;
+		border-left:3px solid #e6decd;
+		border-right:3px solid #e6decd;
+		border-top:3px solid #e6decd;
+		width:778px;
+		&:before {
+			color: $header-font-color;
+			content: "Announcement";
+			font-family: Open Sans Condensed;
+		    font-size: 25px;
+		    font-weight:700;
+		     left: 24px;
+		     position: absolute;
+		    text-shadow: 2px 2px #FFF;
+		    text-transform: uppercase;
+		    top: 15px;
+		    width: 250px;
+		    z-index: 100;
+		}
+	}
+	 .comment .commentbottom {
+	   background: url(../images/project-comment-bottom-bg.png) no-repeat;
+   }
+   #content > p {
+	   margin-left:25px;
+   }
+   #content .committeecomment p {
+	   margin-left:10px !important;
+   }
+   .committeecommentdetail {
+	   clear:left;
+	   color: #555;
+	   font-size: 16px;
+	   font-weight: normal;
+	   text-transform: none;
+    
+   }
+   .announcedby {
+	   float:left;
+	   margin-top: -2px;
+   }
+   .committee-comment-date {
+	   border:none;
+	   margin-left:20px;
+	   margin-top:0;
+	   padding-top:0;
+
+   }
+ 
+}
+.projects .comment.depth-1,
+.committee .comment.depth-1 {
+    margin-left: 0!important;
+}
+.committeecontent {
+		clear:left;
+		min-height:50px;
+		position:relative; 
+		.hascontent {
+			.post-edit-link {
+				margin-left:0;
+				position:absolute;
+				top:4px;
+				right:6px;
+
+			}
+		}
+		.committee {
+			margin-bottom: 40px;
+			margin-left:20px;
+			
+		}
+			 
+		h2 {
+			border:none !important;
+			padding-top:0;
+		}
+				
+	}
+
+.committeeheadercontainer {
+		background-color: #FAFAFA;
+		border: 1px solid #B5B5B5;
+		clear:both;
+		height:160px;
+		margin-bottom:20px;
+		position:relative;
+		
+		h3 {
+			background-color: #e7e7e8;
+			/*-webkit-clip-path:polygon(0 0, 100% 0, 95% 50%, 100% 100%, 0 100%, 0 0);
+			-moz-clip-path:polygon(0 0, 100% 0, 95% 50%, 100% 100%, 0 100%, 0 0);
+			-ms-clip-path:polygon(0 0, 100% 0, 95% 50%, 100% 100%, 0 100%, 0 0);
+			clip-path:polygon(0 0, 100% 0, 95% 50%, 100% 100%, 0 100%, 0 0);*/
+			}
+		//parent selector or additional class
+		.project & h3, &.project h3 {
+			color: $gold-bg-color !important;
+		}	
+		&.hascontent {
+			height:auto;
+			.newpost {
+				margin-left:0;
+				position:absolute;
+				top:4px;
+				right:150px;
+				&.second {
+					right:6px;
+				}
+			}
+			
+		}
+		.addcontent {
+			margin-left:25px;
+			margin:30px 0 15px 25px;
+		}
+		
+		.newpost {
+			margin-left:25px;
+		}	
+	}
+#content .committeeheader {
+		/*background:url(../images/committee-header-bg.png) no-repeat;*/
+		color:$header-font-color;
+		font-family: $header-font;
+		font-size:30px;
+		font-weight: 700;
+		line-height: 48px;
+		margin:0;
+		height:48px;
+		text-indent:30px;
+		text-transform: uppercase;
+		width:100%;
+		
+	}
+	.committeeblogrollcontainer {
+		margin-bottom:40px;
+	}
+.projectblogrollcontainer {
+	margin-left:8px;
+	padding-bottom: 40px;
+}
+.post-type-archive #content .connectedprojectscontainer {
+	margin-bottom:40px;
+	margin-right:0;
+	width:280px;
+	}
+#content .connectedprojects {
+		background-color:#FAFAFA;
+		color:#898989;
+		@include box-shadow(rgba(0, 0, 0, 0.25) 0 0 7px inset);
+		margin-bottom:50px;
+		padding:25px 0 25px 55px;
+		width:732px;
+}	
+#content .connectedprojectscontainer {
+	@include box-shadow(#bfbfbf 0 5px 5px 0);
+	background-color: #F1F1F1;
+	background-color:#fff;
+	border:1px solid #efefef;
+	float:left;
+	margin-right:25px;
+	padding:15px 20px;
+	position: relative;
+	width:291px;
+		.wp-post-image {
+			height:auto;
+			margin-bottom:20px;
+			width:270px
+		}
+		.projecttitle {
+			border:0 !important;
+			font-family:$header-font;
+			font-size:26px;			
+			a {
+				color: $header-font-color;
+				font-size: 26px;
+				font-weight:700 !important;
+				text-transform: uppercase;	
+			}
+		}
+		.projectcontent {
+			margin-left:10px;
+			a {
+				font-weight: normal;
+			}
+		}
+		.rotary_project_date {
+			background:url(../images/committee-calendar-icon.png) no-repeat;
+			color: $header-font-color;
+			margin-bottom:25px;
+			font-family: $header-font;
+			font-weight: 700;
+			text-transform:uppercase;
+			span {
+				display:inline-block;
+				margin-left:45px;
+			}
+			.day {
+				color: $med-gray-color;
+				font-family: $header-font;
+				font-size: 17px;
+				font-weight: 700;
+				text-transform: uppercase;
+			}
+			.fulldate {
+				color: $header-font-color;
+				font-family:$sub-header-font;
+				font-size:22px;
+				font-weight: 700;
+				text-transform: uppercase;
+			}
+		}
+		.projectheader {
+			background: url(../images/project-header-bg.jpg) no-repeat;
+			height:76px;
+			h3 {
+				background: url(../images/project-icon.png) 5px 20px no-repeat;
+				color:#FFF;
+				font-size:21px;
+				font-weight: 700;
+				line-height:18px;
+				padding-left: 45px;
+				padding-top:20px;
+				text-transform: uppercase;
+				span {
+					font-size: 19px;
+					text-transform: capitalize;
+					white-space: nowrap;
+				}
+			}
+		}
+		.alignleft {
+			margin-left:20px;
+		}
+		.committee-comment-date {
+			margin:5px 15px 0 0;
+		}
+
+}
+.committee-comment-date {
+		border-bottom: 1px solid #8f8f8f;
+		border-top: 1px solid #8f8f8f;
+		color:$aside-text-color;
+		float:left;
+		font-family:$sub-header-font;
+		font-size:14px;
+		font-weight:400;
+		margin: 10px 0 0 15px;
+		padding-top:15px;
+		position:relative;
+		width:90px;
+		.day {
+			color:#8f8f8f;
+			font-family: $button-font;
+			font-size:53px;
+			line-height:45px;
+			position: static;
+			
+		}
+		.month{
+			color:$body-text-color;
+			font-size:18px;
+			font-family:$header-font;
+			line-height: 18px;
+			margin-top: -10px;
+			position:absolute;
+			text-transform:uppercase;
+		}
+		.year {
+			color: #6b6b6b;
+		    font-family: $header-font;
+		    font-size: 16px;
+		    line-height:16px;
+		    font-weight: 700;
+		    position: static;
+		}
+	}
+.single.single-rotary-committees #content {
+	header .postdate {
+		text-transform: capitalize;
+		a {
+			font-weight:bold;
+		}
+	}
+
+}
+.single-rotary-committees, .single-rotary_projects {
+	.hascontent .newcomment {
+		margin:0;
+		position: absolute;
+		right:0;
+		top: -33px;		
+	}
+	.committeecommentdetail {
+		color:$subheader-font-color;
+		font-family: $body-font-family;
+		font-size:16px;
+		max-width:60%;
+		font-weight: 700;
+		text-transform: uppercase
+	}
+	.newcomment {
+		margin-left:20px;
+	}
+	#content .commentcommittetext h2 {
+		border:none;
+		margin-left:20px;
+		padding-bottom:0;
+	}
+}
+.single-rotary-committees {
+	.committeecommentdetail{
+		padding-top:5px;
+		color: #555;
+	    font-family: $body-font-family;
+	    font-size: 16px;
+	    font-weight: normal;
+	    max-width:none;
+	    padding-top:5px;
+	    text-transform: none;
+	}
+	.commentcommittetext:before {
+		color: $header-font-color;
+		content: "Announcement";
+		font-family: Open Sans Condensed;
+	    font-size: 25px;
+	    font-weight:700;
+	     left: 24px;
+	     position: absolute;
+	    text-shadow: 2px 2px #FFF;
+	    text-transform: uppercase;
+	    top: 15px;
+	    width: 250px;
+	    z-index: 100;
+	}
+}
+
+.single-rotary-committees .hascontent .newcomment, .single-rotary_projects .hascontent .newcomment {
+	float:right;
+	margin-left:0;
+}
+.single-rotary_projects .committee-comment-date {
+    margin-top: 10px;
+}
+	

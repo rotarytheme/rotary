@@ -18,3 +18,5 @@ sitemap.xml.gz
 .sass-cache
 rotary/.sass-cache
 /README.md
+/.buildpath
+/.project
