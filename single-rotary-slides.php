@@ -10,6 +10,8 @@
 
 <?php get_header(); ?>
 
+<h1 class="pagetitle"><span><?php the_title();  ?></span></h1>
+
 <div id="page">
 	<div id="content" class="">
 	<?php get_template_part( 'loop', 'page' ); ?>

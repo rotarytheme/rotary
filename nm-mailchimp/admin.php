@@ -107,29 +107,48 @@ class NM_MC_Front
 		global $current_user;
 		get_currentuserinfo();
 
-		$post_title = get_the_title( $_REQUEST['postid'] );
+		$campaigntype = $_REQUEST['campaigntype'];
 		
 		$type = 'regular';
 		$options = array();
 
 		$options['list_id'] =  $saved_options['list_id'];
-		$options['subject'] =   str_replace( '&#038;', '&' , str_replace( '&#8217;', '\'' , str_replace( '&#8220;', '"' , str_replace( '&#8221;', '"' , $post_title)))) ;
 		$options['from_email'] =  $current_user->user_email;
 		$options['from_name'] =  $current_user->user_firstname.' '.$current_user->user_lastname;
 		$options['generate_text'] = ($saved_options['generate_text'] == 'true' ? true : false);
-		$options['auto_tweet'] = ($saved_options['auto_tweet'] == 'true' ? true : false);
-		$options['auto_fb_post'] =  explode(',', $saved_options['auto_post']);
+		
+
+		$encoded = $_REQUEST['announcements'];
+		$hash = md5( $encoded . 'SecretStringHere' );
+		if( $_REQUEST['hash'] == $hash ) { // the data hasn't been messed with
+			$announcements = unserialize( base64_decode( $encoded ));
+		} else {echo ' submitted hash was: ' . $_REQUEST['hash'] . '. Recalculated hash was: ' . $hash;}
+		
+		if ($campaigntype == 'speaker') {
+			$post_title = get_the_title( $_REQUEST['postid'] );
+			$date = DateTime::createFromFormat('Ymd', get_field( 'speaker_date', $_REQUEST['postid'] ));
+
+			$options['subject'] =   sprintf( __( 'BBRC Program %s : ' ), $date->format('M dS') ) . ' - ' . 
+									str_replace( '&#8211;', ' - ', str_replace( '&#038;', '&' , str_replace( '&#8217;', '\'' , str_replace( '&#8220;', '"' , str_replace( '&#8221;', '"' , $post_title))))) ;
+			$options['auto_tweet'] = ($saved_options['auto_tweet'] == 'true' ? true : false);
+			$options['auto_fb_post'] =  explode(',', $saved_options['auto_post']);	
+		}
+		elseif ($campaigntype == 'announcements') {
+			$options['subject'] =   __( 'BBRC Club Announcements') ;
+			$options['auto_tweet'] = false;
+			$options['auto_fb_post'] =  '';
+		}
 
 		ob_start();
 
-		include 'generate_table.php';
+			include $campaigntype . '_table.php';
 
 		$post_html = ob_get_clean();
 
-		$html_inline_css = $nm_mailchimp -> mc -> helper -> inlineCss($post_html);
+		$html_inline_css = $nm_mailchimp -> mc -> helper -> inlineCss( $post_html );
 
-		$content = array(	'html'	=> stripcslashes($html_inline_css['html']),
-				 			'text'	=> stripcslashes($html_inline_css['html'])
+		$content = array(	'html'	=> stripcslashes( $html_inline_css['html'] ),
+				 			'text'	=> stripcslashes( $html_inline_css['html'] )
 		);
 
 		$resp = $nm_mailchimp -> mc -> campaigns -> create($type, $options, $content);

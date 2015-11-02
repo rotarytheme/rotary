@@ -9,7 +9,7 @@ function rotary_new_announcement() {
 	$post_id = $_REQUEST['post_id'];
 
 	$args = array(
-			'title_reply' => rotary_announcement_header( $post_id, $title ),
+			'title_reply' => rotary_announcement_header( $post_id, $title, 'edit' ),
 			'comment_notes_after'  => rotary_comment_notes_after(),
 			'logged_in_as'  => '',
 			'label_submit'  => __( 'Save Announcement' ),
@@ -40,7 +40,7 @@ function rotary_edit_announcement() {
 	$comment_post_ID = $announcement->comment_post_ID;
 
 	$args = array(
-			'title_reply' => rotary_announcement_header( $comment_post_ID, $title ),
+			'title_reply' => rotary_announcement_header( $comment_post_ID, $title, 'edit' ),
 			'comment_notes_after'  => rotary_comment_notes_after(),
 			'logged_in_as'  => '',
 			'label_submit'  => __( 'Save Announcement' ),
@@ -149,6 +149,11 @@ function additional_comment_fields_before( $fields ) {
 		$title = get_comment_meta( $comment_id, 'announcement_title', true );
 	endif;
 
+	echo '<fieldset>';
+	echo '<div class="announcementtitlecontainer">
+ 			<label for="title">' . __( 'Title' ) . '</label>
+ 			<input id="announcement_title_input" name="announcement_title" type="text" size="30"  tabindex="1" value="' . htmlentities( $title ) . '"/>
+		 </div>';
 	echo '<div class="announcercontainer">
  			<label for="announcer">' . __( 'Announced by' ) . '</label>
 			<select id="announcer" name="announcer">'. get_users_select( $announcer ).'</select>
@@ -157,10 +162,7 @@ function additional_comment_fields_before( $fields ) {
  			<label for="request_replies_input">' . __( 'Request Replies' ) . '</label>
 			<input id="request_replies_input" name="request_replies_input" type="checkbox"' . ( 'on' == $request_replies_checked ? 'checked' : '' ) . '/>
 		</div>';
-	echo '<div class="announcementtitlecontainer">
- 			<label for="title">' . __( 'Title' ) . '</label>
- 			<input id="announcement_title_input" name="announcement_title" type="text" size="30"  tabindex="1" value="' . $title . '"/>
-		 </div>';
+	echo '</fieldset>';
 }
 
 
@@ -190,24 +192,26 @@ function rotary_comment_notes_after ( ) {
 		endif;
 	endif;
 
-	$fields = 	'<div class="announcement-expiry-date">
+	$fields = 	'<fieldset class="announcement-expiry-date">
  					<label for="announcement_expiry_date_input">' . __( 'Announcement Expires on' ) . '</label>
  					<input id="announcement_expiry_date_input" type="text" size="10"  tabindex="3" value="' . $announcement_expiry_date . '"/>
  					<input id="announcement_expiry_date" name="announcement_expiry_date" type="hidden" />
-				</div>';
-	$fields .=  '<div class="call-to-action">
+				</fieldset>';
+	$fields .=  '<fieldset class="call-to-action">
 					<input id="call_to_action" name="call_to_action_input" type="checkbox" ' . ( $call_to_action_link ? 'checked' : '' ) . '/>
  					<label for="call_to_action">' . __( 'Additional Call to Action' ) . '</label>
 					<div id="call_to_action_links" ' . ( $call_to_action_link ? '' : 'style="display:none"') . ' >
 	 					<label for="call_to_action_text">' . __( 'Link to URL Text' ) . '</label>
-						<input id="call_to_action_text" name="call_to_action_text_input" type="text" value="' . $link_text . '"/>
-						<input id="call_to_action_link_1" type="radio" name="call_to_action_link" value="1" ' . ( 2 != $call_to_action_link  ? 'checked' : '' ) . '>
- 						<label for="call_to_action_link_1">' . __( 'This project/committee\'s page' ) . '</label>
-						<input id="call_to_action_link_2" type="radio" name="call_to_action_link" value="2" ' . ( 2 == $call_to_action_link ? 'checked' : '' ) . '>
- 						<label for="call_to_action_link_2">' . __( 'Other' ) . '</label>
-						<input id="other_link_text" name="other_link_text_input" type="text" value="' . $link_url . '" />
+						<input id="call_to_action_text" name="call_to_action_text_input" type="text" value="' . $link_text . '"/>					
+							<div class="call-to-action-radio-container">
+							<input id="call_to_action_link_1" type="radio" name="call_to_action_link" value="1" ' . ( 2 != $call_to_action_link  ? 'checked' : '' ) . '>
+	 						<label for="call_to_action_link_1">' . __( 'This project/committee\'s page' ) . '</label>
+							<br><input id="call_to_action_link_2" type="radio" name="call_to_action_link" value="2" ' . ( 2 == $call_to_action_link ? 'checked' : '' ) . '>
+	 						<label for="call_to_action_link_2">' . __( 'Other' ) . '</label>
+							<input id="other_link_text" name="other_link_text_input" type="text" value="' . $link_url . '" placeholder="http://" style="display:'. ( 2 == $call_to_action_link ? 'inline-block' : 'none' ) . '" />
+						</div>
 					</div>
-				</div>';
+				</fieldset>';
 	$fields .=  $redirect . $comment_id_input_field;
 		
 	return $fields;
@@ -245,6 +249,7 @@ function get_users_select( $announcer ) {
 *  Comment_Form.
 *  It appears to run on every page? 
 */
+
 // 
 add_filter( 'comment_form_field_comment', 'rotary_comment_toolbar' );
 add_action( 'wp_enqueue_scripts', 'rotary_comment_toolbar' );
@@ -256,16 +261,22 @@ function rotary_comment_toolbar() {
 		$announcement =  get_comment( $comment_id );
 		$content = $announcement->comment_content;
 	}
+	//this is a hack - these styles sometimes don't load :(
+	wp_register_style( 'editor_min', site_url('/wp-includes/css/editor.min.css' ));
+	wp_register_style( 'dashicons_min', site_url('/wp-includes/css/dashicons.min.css' ));
+	wp_enqueue_style( 'editor_min');
+	wp_enqueue_style( 'dashicons_min');
 	ob_start();
+	
 	wp_editor(
-	$content,
-	'comment',
-		array(
-			'textarea_rows' => 10,
-			'teeny' => true,	//hide some icons
-			'quicktags' => false,	//enable html toolbar
-			'media_buttons' => true
-		)
+		$content,
+		'comment',
+			array(
+				'textarea_rows' => 10,
+				'teeny' => true,	//hide some icons
+				'quicktags' => false,	//enable html toolbar
+				'media_buttons' => true
+			)
 	);
 	$toolbar = ob_get_contents();
 	ob_end_clean();
@@ -277,12 +288,12 @@ function rotary_comment_toolbar() {
 /***********************************
  * Announcement header
  */
-function rotary_announcement_header( $posted_in_id, $announcement_title = null ) {
+function rotary_announcement_header( $posted_in_id, $announcement_title = null, $context='web' ) {
 	global $ProjectType;
 
 	$posted_in = '<a href="' . get_the_permalink( $posted_in_id ) . '">' . get_the_title( $posted_in_id ) .'</a>';
 	$post_type = get_post_type( $posted_in_id );
-	$thumbnail = get_the_post_thumbnail ( $posted_in_id , array(100,100) );
+	$thumbnail = get_the_post_thumbnail ( $posted_in_id , array(160,110) );
 	
 	// where did this announcement come from - a project, or a committee??
 	// If a project, we need to fetch its committee information, if it is associated
@@ -296,28 +307,82 @@ function rotary_announcement_header( $posted_in_id, $announcement_title = null )
 			break;
 	}
 
-	ob_start()
-	?>
+	ob_start();
 	
-	<div class="announcement-header">
-		<?php if ( $thumbnail ) { 
-			$hasthumbnail = "has-thumbnail";?>
-			<div class="header-thumbnail-container"><?php echo $thumbnail; ?></div><?php 
-		}?>
-			<div class="header-text-container <?php echo  $hasthumbnail; ?>">
-				<?php if( $announcement_title ) :?>
-					<h3><?php echo $announcement_title; ?></h3>
-					<h4><?php echo $posted_in; ?></h4>
-				<?php else:?>
-					<h3><?php echo $posted_in; ?></h3>
-				<?php endif;?>
-				<?php if ( 'rotary_projects' == $post_type ) :?>
-					<h5 ><span class="project-type"><?php echo $ProjectType[$type]?></span>&nbsp;<span class="organizing-committee"><?php echo sprintf( __( 'Organized by %s' ), $committee_title); ?></span></h5>
-					<?php endif;?>
+	switch( $context ) {
+		case 'web':
+			?>
+			<div class="announcement-header">
+				<?php if ( $thumbnail ) { 
+					$hasthumbnail = "has-thumbnail";?>
+					<div class="header-thumbnail-container"><?php echo $thumbnail; ?></div><?php 
+				}?>
+					<div class="header-text-container <?php echo  $hasthumbnail; ?>">
+						<?php if( $announcement_title ) :?>
+							<h4 class="inline"><?php echo $posted_in; ?></h4>
+							<?php if ( 'rotary_projects' == $post_type ) :?>
+								<span class="project-type"><?php echo $ProjectType[$type] . ' '; ?></span>
+								<h5 class="organizing-committee"><?php echo sprintf( __( 'Organized by %s' ), $committee_title); ?></h5>
+							<?php endif;?>
+							<h3><?php echo $announcement_title; ?></h3>
+						<?php else:?>
+							<h3  class="inline"><?php echo $posted_in; ?></h3>
+							<?php if ( 'rotary_projects' == $post_type ) :?>
+								<span class="project-type"><?php echo $ProjectType[$type] . ' '; ?></span>
+								<h5 class="organizing-committee"><?php echo sprintf( __( 'Organized by %s' ), $committee_title); ?></h5>
+							<?php endif;?>
+						<?php endif;?>
+					</div>
+			</div>	
+		<?php 	
+			break;
+		case 'edit':
+			?>
+			<div class="announcement-header">
+					<div class="header-text-container <?php echo  $hasthumbnail; ?>">
+							<h4 class="inline"><?php echo $posted_in; ?></h4>
+							<?php if ( 'rotary_projects' == $post_type ) :?>
+								<span class="project-type"><?php echo $ProjectType[$type] . ' '; ?></span>
+								<h5 class="organizing-committee"><?php echo sprintf( __( 'Organized by %s' ), $committee_title); ?></h5>
+							<?php endif;?>
+					</div>
 			</div>
-	</div>	
-	
-	<?php 	
+			<div class="clearleft"></div>	
+		<?php 	
+			break;
+		case 'email':
+			?>
+			<table class="announcement-header-table">
+				<tr class="announcement-header">
+					<?php if ( $thumbnail ) :
+					$hasthumbnail = "has-thumbnail";?>
+					<td class="header-thumbnail-container"><?php echo $thumbnail; ?></td><?php 
+					endif;?>
+					<td class="header-text-container <?php echo $hasthumbnail; ?>">
+						<?php if( $announcement_title ) :?>
+							<h4 class="inline"><?php echo $posted_in; ?></h4>
+							<?php if ( 'rotary_projects' == $post_type ) :?>
+								<span class="project-type"><?php echo $ProjectType[$type] . ' '; ?></span>
+								<h5 class="organizing-committee"><?php echo sprintf( __( 'Organized by %s' ), $committee_title); ?></h5>
+							<?php endif;?>
+							<?php if ( $thumbnail ) :
+								?></td></tr><tr><td colspan="2" class="header-text-container"><h3><?php echo $announcement_title; ?></h3>
+								<?php else: ?>
+								<h3><?php echo $announcement_title; ?></h3>
+								<?php endif;?>
+						<?php else:?>
+							<h3  class="inline"><?php echo $posted_in; ?></h3>
+							<?php if ( 'rotary_projects' == $post_type ) :?>
+								<span class="project-type"><?php echo $ProjectType[$type] . ' '; ?></span>
+								<h5 class="organizing-committee"><?php echo sprintf( __( 'Organized by %s' ), $committee_title); ?></h5>
+							<?php endif;?>
+						<?php endif;?>
+					</td>
+				</tr>
+			</table>	
+			<?php 	
+		break;
+	}
 	$return = ob_get_contents();
 	ob_end_clean();
 	return $return;

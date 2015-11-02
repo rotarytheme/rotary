@@ -15,7 +15,7 @@
 ?>
 
 
-<table>
+<table id="container-table">
 <tr>
 <td>
 
@@ -25,7 +25,7 @@
  	$speaker_title = trim( get_field( 'speaker_title' ));
  	$speaker_company = trim( get_field( 'speaker_company' ));
  	
- 	$date = DateTime::createFromFormat('Ymd', get_field( 'speaker_date' ));
+ 	$date = DateTime::createFromFormat('Ymd', get_field( 'speaker_date' )); 
 
 	 if ( get_field('speaker_program_notes' )) :
 	 	$terms = wp_get_post_terms( get_the_id(), 'rotary_program_scribe' );
@@ -36,6 +36,10 @@
 	 	$terms = wp_get_post_terms( get_the_id(), 'rotary_program_introducer_cat' );
 	 	$introducer = $terms[0]->name;
  
+	 	
+	 $has_speaker_thumbnail = has_post_thumbnail() ;
+	 $speaker_thumbnail = get_the_post_thumbnail(null, 'medium');
+	 $speaker_bio = get_field( 'speaker_bio' );
  	
 ?>
 
@@ -74,29 +78,66 @@
 			</td>
 		</tr>
 		<tr >
-			<td id="blogcontent" colspan="2" class="greyborder-left greyborder-bottom">
-				<hr>
-				<p id="program-roles">
-				<?php if( !empty( $scribe )) {?><span id="scribe"><span class="speaker-term-label"><?php echo _e( 'Scribe', 'Rotary' ); ?>:</span> <?php echo $scribe; ?></span><?php }?>
-				<?php if( !empty( $editor )) {?><span id="editor"><span class="speaker-term-label"><?php echo _e( 'Editor', 'Rotary' ); ?>:</span> <?php echo $editor; ?></span><?php }?>
-				<?php if( !empty( $introducer )) {?><span id="introducer"><span class="speaker-term-label"><?php echo _e( 'Introduced by', 'Rotary' ); ?>:</span> <?php echo $introducer; ?></span><?php }?>
-				</p>
-				<?php
-					//program notes are filled in after a speakers visit. If the speaker has not yet been to the club, we show the upcoming content
-					$programNotes = trim( get_field( 'speaker_program_notes' ));
-					if ( empty( $programNotes) ) the_field( 'speaker_program_content' );
-						else echo $programNotes;
-				?>
+			<td  colspan="2" class="greyborder-left greyborder-bottom">
+				<table>
+					<tr>
+						<td id="blogcontent" >
+							<hr>
+							<p id="program-roles">
+							<?php if( !empty( $scribe )) {?><span id="scribe"><span class="speaker-term-label"><?php echo _e( 'Scribe', 'Rotary' ); ?>:</span> <?php echo $scribe; ?></span><?php }?>
+							<?php if( !empty( $editor )) {?><span id="editor"><span class="speaker-term-label"><?php echo _e( 'Editor', 'Rotary' ); ?>:</span> <?php echo $editor; ?></span><?php }?>
+							<?php if( !empty( $introducer )) {?><span id="introducer"><span class="speaker-term-label"><?php echo _e( 'Introduced by', 'Rotary' ); ?>:</span> <?php echo $introducer; ?></span><?php }?>
+							</p>
+							<?php
+								//program notes are filled in after a speakers visit. If the speaker has not yet been to the club, we show the upcoming content
+								$programNotes = trim( get_field( 'speaker_program_notes' ));
+								if ( empty( $programNotes) ) the_field( 'speaker_program_content' );
+									else echo $programNotes;
+							?>
+						</td>
+					</tr>
+					<?php if( $date < $today || 1 ==1 ) :?>
+					<tr>
+						<td>
+							<h2 class="blogcontent"><?php echo _e( 'Club Announcements', 'rotary' );?></h2>
+							<table>
+								<tr>
+									<td class="speaker-announcements-container">
+									 	<?php 
+									 	$context = 'email';
+										if ( is_array( $announcements )  ) : 
+											$count = count( $announcements );
+											if($count > 0 ) :
+												foreach( $announcements as $announcement ) : 
+													$extra_classes = ''; 
+													$announcementsDisplayed++;
+													if( $announcement ) :
+														include ( get_template_directory() . '/loop-single-announcement.php');
+													endif;
+												 endforeach; //end comment loop 
+											 endif;
+										 endif; //end is_array check
+										 
+										if ( 0 == $announcementsDisplayed && !$speakerdate ) :
+											?>	<p><?php echo __( 'There are no active announcements'); ?></p>
+										<?php  endif; ?>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<?php endif;?>
+				</table>
 			</td>
 			<td id="speakerinfo" rowspan="2" class="greyborder-right greyborder-bottom">
 				<ul>	
 					<li id="speaker-sidebar-thumbnail-container">
-						<?php if ( has_post_thumbnail() ) {	the_post_thumbnail('medium');} ?>
+						<?php if ( $has_speaker_thumbnail ) {	echo $speaker_thumbnail; } ?>
 					</li>
 					<li id="speaker-side-container">
 						<h3 class="speakerbio"><?php _e( 'About the Speaker', 'Rotary' ); ?></h3>
 						<span id="speaker-bio">
-							<?php echo the_field( 'speaker_bio' ); ?>
+							<?php echo $speaker_bio; ?>
 						</span>
 					</li>
 				</ul>

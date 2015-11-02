@@ -30,7 +30,7 @@ function rotary_get_announcements_shortcode_html( $atts ){
 			), $atts, 'announcements' ));
 	
 	
-	// Prepare the query arguments to fetch the appropriate comments depedning where this is being called from	
+	// Prepare the query arguments to fetch the appropriate comments depending where this is being called from	
 	$args = array(
 				'order' => 'DESC',
 				'orderby' => array( 'post_type', 'comment_date' ),
@@ -40,7 +40,9 @@ function rotary_get_announcements_shortcode_html( $atts ){
 	
 	if( $speakerdate ) :
 		//if we've passed through a speaker date, then make the lookback relative to this date, and not today
-		$lookbackdate = $lookforwarddate = $today = new DateTime( $speakerdate );
+		$lookbackdate = new DateTime( $speakerdate );
+		$lookforwarddate = new DateTime( $speakerdate );
+		$today = new DateTime( $speakerdate );
 		if( $lookforward >= 0) :
 			$lookforwarddate->add(new DateInterval( 'P' . $lookforward . 'D' ) ) ;
 		else:
@@ -72,7 +74,7 @@ function rotary_get_announcements_shortcode_html( $atts ){
 	
 	$announcements = get_comments( $args );
 	$announcementsDisplayed = 0;
-	// Wwe can't introduce a second comments form a page where there is already another comments form.
+	// We can't introduce a second comments form a page where there is already another comments form.
 	$allowedits = ( in_array( get_post_type() , array( 'rotary-committees', 'rotary_projects' )) && comments_open() ) ? false : true;
 	
 	ob_start();
@@ -83,6 +85,25 @@ function rotary_get_announcements_shortcode_html( $atts ){
 				<p><?php echo sprintf( __( 'Please %s to make an announcement' ), wp_loginout( site_url(), false ) ) ;?></p>
 			<?php
 		else : 
+		
+				/***************** START MAILCHIMP CAMPAIGN CUSTOMIZATION ****************/
+				if( is_user_logged_in() && current_user_can( 'create_mailchimp_campaigns' ) ):
+				$serialized = serialize( $announcements );
+				$encoded = base64_encode( $serialized );
+				
+				$hash = md5( $encoded . 'SecretStringHere' );
+				?>
+					<div id="announcements-mailchimpcampaign">
+						<a id="announcements-sendemailtest" class="rotarybutton-largewhite" href="javascript:void" ng-click="saveCampaign()" ><?php echo __( 'Send Test Email', 'Rotary'); ?></a>
+						<a id="announcements-sendemailblast" class="rotarybutton-largeblue" href="javascript:void" ng-click="sendCampaign(1)" ><?php echo __( 'Send Email Blast', 'Rotary'); ?></a>
+						<input type="hidden" id="announcements-array" value="<?php echo $encoded; ?>" />
+						<input type="hidden" id="announcements-hash" value="<?php echo $hash ?>" />
+						</div>
+						
+				<?php endif;
+				
+				/***************** END MAILCHIMP CAMPAIGN CUSTOMIZATION ****************/
+				
 				 rotary_project_and_committee_announcement_dropdown();
 				 ?><div id="new_announcement_div"></div><?php 
 		endif;

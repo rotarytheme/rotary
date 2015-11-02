@@ -9,8 +9,6 @@
 ?>
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-    <h1 class="pagetitle"><span><?php the_title(); ?></span></h1>
-    
 	<div id="page">
 	    <?php $width_class = ' class="fullwidth"'; ?>
 	    <?php if ( is_page_template( 'tmpl-posts.php' ) ) : ?>

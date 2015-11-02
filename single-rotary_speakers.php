@@ -7,7 +7,8 @@
  * @since Rotary 1.0
  */
 get_header(); ?>
-<h1 class="pagetitle"><span>Speaker Program</span></h1>
+<h1 class="pagetitle"><span><?php echo __( 'Speaker Program'); ?></span></h1>
+
 <div id="page">
 			<?php 
 // include( 'mailchimp-campaign/email-rotary_speakers.php'); testing the email template

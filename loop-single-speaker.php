@@ -44,9 +44,9 @@
 				<?php 
 				/***************** START MAILCHIMP CAMPAIGN CUSTOMIZATION ****************/
 				if( is_user_logged_in() && current_user_can( 'create_mailchimp_campaigns' ) ):?>
-					<div id="mailchimpcampaign">
-						<a id="sendemailtest" class="rotarybutton-largewhite" href="javascript:void" ng-click="saveCampaign()" ><?php echo __( 'Send Test Email', 'Rotary'); ?></a>
-						<a id="sendemailblast" class="rotarybutton-largeblue" href="javascript:void" ng-click="sendCampaign(1)" ><?php echo __( 'Send Email Blast', 'Rotary'); ?></a>
+					<div id="speaker-mailchimpcampaign">
+						<a id="speaker-sendemailtest" class="rotarybutton-largewhite" href="javascript:void" ng-click="saveCampaign()" ><?php echo __( 'Send Test Email', 'Rotary'); ?></a>
+						<a id="speaker-sendemailblast" class="rotarybutton-largeblue" href="javascript:void" ng-click="sendCampaign(1)" ><?php echo __( 'Send Email Blast', 'Rotary'); ?></a>
 					</div>
 				<?php endif;
 				/***************** END MAILCHIMP CAMPAIGN CUSTOMIZATION ****************/
@@ -82,7 +82,7 @@
 						else echo $programNotes;
 				?>
 					<div id="speakerannouncements">
-						<h2><?php echo _e( 'Announcements', 'rotary' );?></h2>
+						<h2><?php echo _e( 'Club Announcements', 'rotary' );?></h2>
 						<?php echo do_shortcode( '[ANNOUNCEMENTS lookback=4 speakerdate="' . $date->format('c') . '" context="speaker"]');?>
 					</div>
 				</div>

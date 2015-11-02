@@ -9,6 +9,7 @@
 	a {
 		text-decoration: none;
 		color: #17458F;
+		font-weight:700;
 	}
 	#branding h1 {
 	    background: url(http://bbrc.staging.wpengine.com/wp-content/themes/rotarytheme-integrated/rotary-sass/images/5016_Rotary_Logo.png) 5px 0 no-repeat;
@@ -28,14 +29,19 @@
 	#branding h1 a.clubname.namebefore {
 	    padding-top: 28px;
 	}
+	
+	table#container-table {
+		width:800px;
+		margin:0px auto;
+	}
+	
+
 
 	table {
 		font-family: Georgia, Times New Roman, Serif;
 		color: #58585A;
 		font-size: 16px;
 		line-height:25px;
-		width:800px;
-		margin:0px auto;
 		border-spacing: 0;
 	}
 	table td {
@@ -101,7 +107,8 @@
     	color: #58585A;
 	}
 	
-	#blogcontent h2 {
+	#blogcontent h2,
+	 h2.blogcontent {
 	    color: #17458f;
 	    font-family: Open Sans Condensed, Arial, Helvetica, sans-serif;
 	    font-weight: 700;
@@ -196,3 +203,149 @@
 		 background-size:cover;
 	}
 	
+/******************************************************
+*  ANNOUNCEMENTS
+******************************************************/
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1em;
+}
+
+table#branding {
+	width:800px;
+	margin:0px auto;
+}
+table.announcement-table {
+	margin-bottom:50px;
+	width: 100%;
+}
+
+td.announcements-container {
+    width: 400px;
+    padding:10px;
+}
+
+table#branding h2 {
+	color: #17458f;
+    text-transform: uppercase;
+    font-family: open sans condensed;
+    font-weight: 300;
+    font-size: 36px;
+    text-align: center;
+    border-bottom: 3px solid #00008B;
+}
+
+table .header-text-container h3 {
+    font-size: 28px;
+    margin-top: 8px;
+    text-transform: none;
+    color: #58585A;
+    font-weight: 700;
+    margin-bottom: 4px;
+    padding: 0;
+    font-family: 'Open Sans Condensed', Arial, Helvetica, sans-serif;
+}
+
+
+
+table .header-text-container h4 {
+    margin-top: 4px;
+    font-size: 22px;
+    font-family: "Open Sans Condensed",Arial,Helvetica,sans-serif;
+    font-weight: 700;
+    color: #58585A;
+    margin-bottom: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+
+table h5.organizing-committee {
+    font-size: 15px;
+    text-transform: capitalize;
+    margin: 3px 0;
+    font-family: "Open Sans Condensed",Arial,Helvetica,sans-serif;
+    font-weight: 300;
+    color: #58585A;
+    padding: 0;
+}
+
+td.header-thumbnail-container {
+    width: 175px;
+}
+
+.rotarybutton-smallwhite,
+.rotarybutton-smallblue,
+.rotarybutton-smallgold {
+    display: inline-block;
+    font-family: "Open sans condensed","Arial Narrow",sans-serif;
+    font-weight: 700;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: auto;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    font-size: 13px;
+    letter-spacing: .25px;
+    margin: 2px 10px;
+    padding: 4px 9px;
+}
+
+.rotarybutton-smallwhite {
+    background-color: #fff;
+    border: 1px solid #005daa;
+    color: #005daa;
+}
+.rotarybutton-smallblue {
+    background-color: #005daa;
+    border: 1px solid #005daa;
+    color: #fff;
+}
+.rotarybutton-smallgold {
+    background-color: #F7A81B;
+    border: 1px solid #F7A81B;
+    color: #005daa;
+}
+.announcement-body {
+    padding-bottom: 5px;
+    border-top: 1px solid #B8A3A0;
+    padding-top: 8px;
+}
+.announcement-footer {
+    border-top: 1px solid #B8A3A0;
+}
+.announcement-date {
+    font-size: 19px;
+    white-space: nowrap;
+    margin: 0;
+    color: #58585A;
+    padding: 0;
+    font-family: "Open Sans Condensed",Arial,Helvetica,sans-serif;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.announcement-expiry-date, .calltoactioncontainer  {
+	text-align: right;
+}
+.announcement-date-table {
+    border-top: 1px solid #808080;
+    width: 100%;
+}
+
+p.announced-by {
+	margin:0;
+    display: inline;
+}
+.inline {
+    display: inline;
+}
+.header-text-container span {
+    display: inline-block;
+    font-family: open sans condensed;
+    font-size: 16px;
+    margin-top: 3px;
+    text-transform: uppercase;
+}

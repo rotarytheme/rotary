@@ -160,7 +160,9 @@ jQuery(document).ready(function($) {
 				redirect = redirect.substring(0, endurl);
 			}
 			if ( 'null' != comment_id) {
-				$('.editannouncementbutton, #committeeselect').hide();
+				$('#ajax-loader').show();
+				$('.editannouncementbutton').css("visibility","hidden");
+				$('#committeeselect, #announcements-mailchimpcampaign').css("display", "none");
 				$.ajax ( {url: rotaryparticipants.ajaxURL
 			    	,data: { action: 'edit_announcement'
 			    			,comment_id: comment_id 
@@ -175,18 +177,30 @@ jQuery(document).ready(function($) {
 			    		tinymce.execCommand('mceRemoveEditor',true,"comment");
 			    		tinymce.execCommand('mceAddEditor',true,"comment");
 			    		tinymce.init({ selector: "comment" });
+			    		$('#ajax-loader').hide();
 			    		}
 					});
 				}
 		},
 		initAnnouncement: function(e) {
 			if ( $('#call_to_action').checked ) {	$( '#call_to_action_links' ).show(); }
-			$('#announcement_expiry_date_input').datepicker();
+			$('#announcement_expiry_date_input').datepicker({
+				    altField: "#announcement_expiry_date",
+				    altFormat: "yy-mm-dd"
+			});
 			$('#call_to_action').click (function () {
 				if (this.checked) {
 					$( '#call_to_action_links' ).show();
 				} else {
 					$( '#call_to_action_links' ).hide();
+				}
+			});
+			
+			$( 'input[name=call_to_action_link]:radio' ).change(function() {
+				if ($( '#call_to_action_link_2').prop("checked")) {
+					$( '#other_link_text' ).show();
+				} else {
+					$( '#other_link_text' ).hide();
 				}
 			});
 		},
@@ -199,7 +213,9 @@ jQuery(document).ready(function($) {
 				redirect = redirect.substring(0, endurl);
 			}
 			if (post_id.length > 0) {
-				$('.editannouncementbutton, #committeeselect').hide();
+				$('#ajax-loader').show();
+				$('.editannouncementbutton').css("visibility","hidden");
+				$('#committeeselect, #announcements-mailchimpcampaign').css("display", "none");
 				$.ajax ( {url: rotaryparticipants.ajaxURL
 			    	,data: { action: 'new_announcement'
 			    			,post_id: post_id 
@@ -213,6 +229,7 @@ jQuery(document).ready(function($) {
 			    		tinymce.execCommand('mceRemoveEditor',true,"comment");
 			    		tinymce.execCommand('mceAddEditor',true,"comment");
 			    	    tinyMCE.init({selector: "comment"});
+			    		$('#ajax-loader').hide();
 			    	   // try { quicktags( tinyMCEPreInit.qtInit['qt_comment_toolbar'] ); } catch(e){}
 			    		}
 				});
