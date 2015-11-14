@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Rotary theme functions and definitions
  *
@@ -186,6 +187,7 @@ function rotary_register_shortcodes(){
 function rotary_announcements_function( $atts ) {
 	global $shortcodes_path;
 	require_once ( $shortcodes_path . 'shortcode-announcements.php' );		// load the shortcode file
+	wp_enqueue_script( 'rotary' );
 	$shortcode = rotary_get_announcements_shortcode_html( $atts );
 	return $shortcode;
 }
@@ -934,7 +936,47 @@ function rotary_output_blogroll() {
 
 <?php }
 
+/**
+ * function: rotary_next_program_date
+ * 
+ * Returns the date of the next Rotary meeting, or last Rotary meeting if it was within the offse 'aftert.  
+ * Set the 'Week Starts On' in General Settings to be the day that your meeting is on.
+ * 
+ * Parameters
+ *$date:dateTime object that you want the next program date for DEFAULT = Today
+ *$after: integer giving the number of days after a meeting that is still considered 'that week' - so Sunday would still be considered last Friday's meeting DEFAULT = 3
+ */
+function rotary_next_program_date( $date=null, $after=3 ) {
+	$date = ($date ? $date : new DateTime() );
+	$day_number = get_option( 'start_of_week' );
+	
+	$dayNames = array(
+			'Sunday',
+			'Monday',
+			'Tuesday',
+			'Wednesday',
+			'Thursday',
+			'Friday',
+			'Saturday',
+	);
+	$program_day = $dayNames[$day_number];
+	
+	$grace_period = '-' . $after . ' days';
 
+	$date->modify( $grace_period )->modify("next $program_day");
+	
+	return $date;
+}
+
+/**
+ * function: update user display name immediately after the record has been updated
+ */
+add_action( 'profile_update', 'rotary_display_name_update', 10, 2 );
+function my_profile_update( $user_id, $old_user_data ) {
+	$user = get_userdata( $user_id );
+	$user->display_name = $user->first_name . ' ' . $user->last_name;
+	wp_update_user( array( 'user_id' => $user_id, 'display_name' => $user->display_name ) );
+}
 
 
 

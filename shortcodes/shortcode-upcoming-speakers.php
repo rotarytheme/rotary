@@ -55,14 +55,14 @@ function rotary_get_upcoming_speakers_shortcode_html( $atts ) {
 			 </article>
 		<?php endwhile; // End the loop. Whew. ?>
 		<?php //now add a new post button ?>
-		<?php  if(current_user_can('edit_page')){ ?>
+		<?php  if( current_user_can('create_speaker_programs') ) : ?>
 		      <article>
 		      <div class="home-upcoming-programs-speaker-date"></div>
 			      <div class="home-upcoming-program-details newspeaker">
 					<a class="post_new_link rotarybutton-largewhite" href="<?php echo admin_url(); ?>post-new.php?post_type=rotary_speakers">New Speaker</a>
 			      </div>
 			    </article>
-		<?php } ?>
+		<?php endif; ?>
 		<?php wp_reset_postdata(); ?>
 		</div><!--.home-upcoming-programs-->
 	

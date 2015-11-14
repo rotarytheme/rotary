@@ -31,7 +31,7 @@
     	</tr>
     	<tr>
     		<td>
-    			<h2>Club Announcements</h2>
+    			<h2><?php echo $heading; ?></h2>
     		</td>
     	</tr>
     </table>

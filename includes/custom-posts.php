@@ -29,6 +29,7 @@ function rotary_register_speaker_post_type() {
 			'menu_icon' => get_stylesheet_directory_uri() . '/includes/images/speaker-dashboard-icon.png', /* the icon for the custom post type menu */
 			'rewrite'	=> array( 'slug' => 'speaker', 'with_front' => false ), /* you can specify its url slug */
 			'has_archive' => 'speaker_archive', /* you can rename the slug here */
+			//'capability_type' => 'speaker_program',
 			'capability_type' => 'post',
 			'hierarchical' => false,
 			/* the next one is important, it tells what's enabled in the post editor */

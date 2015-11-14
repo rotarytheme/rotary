@@ -114,7 +114,7 @@ class NM_MC_Front
 
 		$options['list_id'] =  $saved_options['list_id'];
 		$options['from_email'] =  $current_user->user_email;
-		$options['from_name'] =  $current_user->user_firstname.' '.$current_user->user_lastname;
+		$options['from_name'] =  $current_user->user_firstname.' '.$current_user->user_lastname . ' [' . get_option( 'blogname') . ']';
 		$options['generate_text'] = ($saved_options['generate_text'] == 'true' ? true : false);
 		
 
@@ -127,21 +127,26 @@ class NM_MC_Front
 		if ($campaigntype == 'speaker') {
 			$post_title = get_the_title( $_REQUEST['postid'] );
 			$date = DateTime::createFromFormat('Ymd', get_field( 'speaker_date', $_REQUEST['postid'] ));
+			$speaker = get_field('speaker_first_name',  $_REQUEST['postid'] ).' '.get_field('speaker_last_name',  $_REQUEST['postid'] );
 
-			$options['subject'] =   sprintf( __( 'BBRC Program %s : ' ), $date->format('M dS') ) . ' - ' . 
-									str_replace( '&#8211;', ' - ', str_replace( '&#038;', '&' , str_replace( '&#8217;', '\'' , str_replace( '&#8220;', '"' , str_replace( '&#8221;', '"' , $post_title))))) ;
+			$options['subject'] =   sprintf( __( 'Program %s : ' ), $date->format('l M jS') ) 
+									. ' - "' .
+									str_replace( '&#8211;', ' - ', str_replace( '&#038;', '&' , str_replace( '&#8217;', '\'' , str_replace( '&#8220;', '' , str_replace( '&#8221;', '' , $post_title)))))
+									. '" by ' . $speaker . ' ' ;
 			$options['auto_tweet'] = ($saved_options['auto_tweet'] == 'true' ? true : false);
 			$options['auto_fb_post'] =  explode(',', $saved_options['auto_post']);	
 		}
 		elseif ($campaigntype == 'announcements') {
-			$options['subject'] =   __( 'BBRC Club Announcements') ;
+			$date = rotary_next_program_date(); // there is a default of 2 days grace before the next meeting is used as the week-of
+			$heading = sprintf( __( 'Club Announcements for %s' ), $date->format( 'l M jS' ) ); //Club Announcements for Friday Nov 6th
+			$options['subject'] =   $heading . ' - ' . get_option( 'blogname' );
 			$options['auto_tweet'] = false;
 			$options['auto_fb_post'] =  '';
 		}
 
 		ob_start();
 
-			include $campaigntype . '_table.php';
+			include $campaigntype . '_table.php'; //this does the work
 
 		$post_html = ob_get_clean();
 
@@ -183,5 +188,3 @@ class NM_MC_Front
 if ( is_plugin_active( 'nm-mailchimp-campaign/index.php' ) && class_exists('NM_MC_Front') ) {
 	$just_init = new NM_MC_Front;
 }
-
- ?>

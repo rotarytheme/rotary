@@ -88,8 +88,8 @@
 				</div>
 			</div><!--.speakerbody-->
 			<footer id="speakerfooter">
-				<?php edit_post_link( __( 'Edit', 'Rotary' ), '', '' ); ?>
-				<?php  if(current_user_can('edit_page')){ ?>
+				<?php edit_post_link( __( 'Edit', 'Rotary' ), '', '' );?>
+				<?php  if(current_user_can('create_speaker_programs') ){ ?>
 					<a class="post_new_link rotarybutton-largewhite" href="<?php echo admin_url(); ?>post-new.php?post_type=rotary_speakers">New Speaker</a>
 				<?php } ?>
 			</footer>

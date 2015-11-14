@@ -31,10 +31,12 @@
 	$call_to_action = get_comment_meta( $id, 'call_to_action', true );
 
 	$date = new DateTime( $announcement->comment_date );
+	
+	$user_can_edit = ( current_user_can( 'edit_others_announcements' ) || get_current_user_id() == $announcement->user_id );
+	$user_can_delete = ( current_user_can( 'delete_others_announcements' ) || get_current_user_id() == $announcement->user_id );
 
 	if ( $context ) $extra_classes[] =  $context . '-announcement';
-
-
+	if ( 'carousel' == $context && $announcementsDisplayed > 1 ) $extra_classes[] =  'hide';
 	?>
 			
 			<?php switch ( $context ) { 
@@ -89,14 +91,18 @@
 				<?php 
 					break; 
 			 case 'shortcode':
+			 case 'carousel':
 			 case 'speaker':  ?>
+				<article id="comment-<?php echo $id ?>" <?php comment_class( $extra_classes ); ?>>
 				<?php echo rotary_announcement_header( $posted_in_id, $announcement_title );?>
-				<article id="comment-<?php echo $id ?>" <?php comment_class( $extra_classes ); ?>">
 				<div class="announcement-buttons">
 					<p class="announced-by clearleft"><?php echo $announced_by; ?></p>
-					<?php if( $allowedits ) :?>
+					<?php if( $allowedits && $user_can_edit) :?>
 					 <div class="editannouncementbutton-container">
 					 	<a href="javascript:void(null)" data-comment-id="<?php echo $id; ?>" class="rotarybutton-smallwhite editannouncementbutton"><?php echo __( 'Edit Announcement' ); ?></a>
+					 	<?php if( $user_can_delete ) :?>
+					 		<a href="javascript:void(null)" data-comment-id="<?php echo $id; ?>" class="rotarybutton-smallred deleteannouncementbutton"><?php echo __( 'Delete' ); ?></a>
+					 	<?php endif;?>
 					 </div>
 					<?php  endif; ?>
 									<?php 

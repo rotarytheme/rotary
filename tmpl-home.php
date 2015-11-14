@@ -29,7 +29,7 @@ get_header(); ?>
 			get_sidebar('home'); 
 		} ?>
     <footer>
-		<?php edit_post_link( __( 'Edit', 'Rotary' ), '', '' ); ?>
+		<?php if( current_user_can( 'edit_home_page' )) { edit_post_link( __( 'Edit', 'Rotary' ), '', '' ); } ?>
 	</footer>
 		
 	</div>

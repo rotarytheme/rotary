@@ -7,7 +7,6 @@
 add_action( 'wp_ajax_new_announcement', 'rotary_new_announcement' );
 function rotary_new_announcement() {
 	$post_id = $_REQUEST['post_id'];
-
 	$args = array(
 			'title_reply' => rotary_announcement_header( $post_id, $title, 'edit' ),
 			'comment_notes_after'  => rotary_comment_notes_after(),
@@ -56,6 +55,26 @@ function rotary_edit_announcement() {
 	echo $return; die;
 }
 
+/*************************************************************************
+ *   AJAX function to DELETE announcement form
+************************************************************************/
+add_action( 'wp_ajax_delete_announcement', 'rotary_delete_announcement' );
+function rotary_delete_announcement() {
+	$comment_id = $_REQUEST['comment_id'];
+	
+	//check again if I can delete this comment
+	$user_can_delete = ( current_user_can( 'delete_others_announcements' ) || get_current_user_id() == $announcement->user_id );
+	if( !$user_can_delete ) :
+		$error = array( 'error' => 'You do not have permission to delete this announcment!' );
+		echo json_encode( $error ); die;
+	endif;
+
+	if (wp_delete_comment( $comment_id ) ) :
+		echo json_encode( array( 'success' => 'Comment ' . $_REQUEST['comment_id'] . ' deleted' )); die;
+	else:
+		echo json_encode( array( 'error' => 'Comment ' . $_REQUEST['comment_id'] . ' could not be deleted' )); die;
+	endif;
+}
 
 
 /*************************************************************************
@@ -74,8 +93,13 @@ function rotary_save_announcement_meta( $comment_id ) {
 	// Expiry date
 	$announcement_expiry_date = ( sanitize_text_field( $_POST['announcement_expiry_date'] ) );
 	if( !$announcement_expiry_date ) :
-		$expiry_date = new DateTime;
-		$expiry_date->add(new DateInterval( 'P7D' ) ) ;
+		$post_id = get_comment_meta( $comment_id, 'comment_post_ID', true );
+		if ( 'rotary_projects' == get_post_type( $post_id ) && !get_field( 'long_term_project', $post_id ) ) :
+			$expiry_date = strtotime( get_field( 'rotary_project_end_time', $post_id ));
+		else:
+			$expiry_date = new DateTime;
+			$expiry_date->add(new DateInterval( 'P7D' ) ) ;
+		endif;
 		$announcement_expiry_date = $expiry_date->format( 'Y-m-d' );
 	endif;
 	
@@ -89,9 +113,6 @@ function rotary_save_announcement_meta( $comment_id ) {
 	$user_ID = $_POST['announcer'] ;
 	$user = get_userdata( $user_ID );
 	if ( $user->exists() ) {
-		//no, this shouldn't really be here!
-		$user->display_name = $user->first_name . ' ' . $user->last_name;
-		wp_update_user( array( 'user_id' => $user_ID, 'display_name' => $user->display_name ) );
 		$comment_author       = wp_slash( $user->display_name );
 		$comment_author_email = wp_slash( $user->user_email );
 		$comment_author_url   = wp_slash( $user->user_url );
@@ -188,14 +209,15 @@ function rotary_comment_notes_after ( ) {
 		$announcement_expiry_date = get_comment_meta( $comment_id, 'announcement_expiry_date', true );
 		if( $announcement_expiry_date ) :
 			$expiry_date = new DateTime ( $announcement_expiry_date );
-			$announcement_expiry_date = $expiry_date->format( 'm/d/Y' );
+			$announcement_expiry_date_input = $expiry_date->format( 'm/d/Y' );
+			$announcement_expiry_date_alt = $expiry_date->format( 'Y-m-d' );
 		endif;
 	endif;
 
 	$fields = 	'<fieldset class="announcement-expiry-date">
  					<label for="announcement_expiry_date_input">' . __( 'Announcement Expires on' ) . '</label>
- 					<input id="announcement_expiry_date_input" type="text" size="10"  tabindex="3" value="' . $announcement_expiry_date . '"/>
- 					<input id="announcement_expiry_date" name="announcement_expiry_date" type="hidden" />
+ 					<input id="announcement_expiry_date_input" type="text" size="10"  tabindex="3" value="' . $announcement_expiry_date_input . '"/>
+ 					<input id="announcement_expiry_date" name="announcement_expiry_date" type="hidden"  value="' . $announcement_expiry_date_alt . '" />
 				</fieldset>';
 	$fields .=  '<fieldset class="call-to-action">
 					<input id="call_to_action" name="call_to_action_input" type="checkbox" ' . ( $call_to_action_link ? 'checked' : '' ) . '/>

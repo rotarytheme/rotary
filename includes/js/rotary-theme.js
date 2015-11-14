@@ -9,6 +9,7 @@ jQuery(document).ready(function($) {
 			$('.single-rotary_projects .meta .post-edit-link').removeClass('rotarybutton-largewhite');
 			this.setUpArchives();
 			this.setUpSlideShow();
+			this.setUpAnnouncements();
 			this.setUpEdits();
 			this.setUpDatePicker();
 			this.setUpDatatables();
@@ -32,6 +33,7 @@ jQuery(document).ready(function($) {
 			$('.logged-in .projecticons').on('click', '.imgoing', this.toggleParticpant);
 			// Announcement Fetures
 			$('.editannouncementbutton').on('click', this.editAnnouncement );
+			$('.deleteannouncementbutton').on('click', this.deleteAnnouncement );
 			$('.fancybox, .gallery-item a').fancybox({
 				padding: 3,
 				nextEffect: 'fade',
@@ -182,6 +184,31 @@ jQuery(document).ready(function($) {
 					});
 				}
 		},
+		deleteAnnouncement: function(e) { 
+			var comment_id = $(this).data('comment-id');
+			var redirect = window.location.href;
+			var endurl = redirect.indexOf('#');
+			if ( 0 < endurl ) {
+				redirect = redirect.substring(0, endurl);
+			}
+			if ( 'null' != comment_id) {
+				$('#ajax-loader').show();
+				$.ajax ( {url: rotaryparticipants.ajaxURL
+			    	,data: { action: 'delete_announcement'
+			    			,comment_id: comment_id 
+			    			,redirect_to: redirect
+			    			}
+				    ,dataType: 'json'
+			    	,success: function( data ) {
+			    		$('#ajax-loader').hide();
+			    		if( data.error ) { alert( data.error ); }
+			    		else {
+			    			$( '#comment-' + comment_id ).remove();
+			    		}
+			    		}
+					});
+				}
+		},
 		initAnnouncement: function(e) {
 			if ( $('#call_to_action').checked ) {	$( '#call_to_action_links' ).show(); }
 			$('#announcement_expiry_date_input').datepicker({
@@ -203,6 +230,7 @@ jQuery(document).ready(function($) {
 					$( '#other_link_text' ).hide();
 				}
 			});
+    		$('#announcement_title_input').focus();
 		},
 		newAnnouncement: function(e) {
 			e.preventDefault();   
@@ -369,6 +397,19 @@ jQuery(document).ready(function($) {
 		loadPrevNext: function(e) {
 			e.preventDefault();
 			$('#ui-tabs-1').load(this.href);
+		},
+		setUpAnnouncements: function() {
+			if ($('#announcements-carousel').length) {
+				$('#announcements-carousel').cycle({
+					slideExpr: '.carousel-announcement',
+					fx: 'scrollHorz',
+					height: '313px',
+					speed: '1000',
+					timeout: 10000,
+					delay: -2000,
+					pager: '#announcement-carousel-controls'
+				});
+			}
 		},
 		setUpArchives: function() {
 			//see if we are on the archive page and then open archive menu

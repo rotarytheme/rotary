@@ -21,11 +21,12 @@
 
 <?php if ( $query->have_posts() ) while ( $query->have_posts() ) : $query->the_post();
 	// setup_postdata($query->the_post());
-	$speaker = get_field('speaker_first_name').' '.get_field('speaker_last_name');
+	//$speaker is defined in nm_front_camp();
  	$speaker_title = trim( get_field( 'speaker_title' ));
  	$speaker_company = trim( get_field( 'speaker_company' ));
  	
- 	$date = DateTime::createFromFormat('Ymd', get_field( 'speaker_date' )); 
+ 	//efined in the calling function nm_front_camp();
+ 	//$date = DateTime::createFromFormat('Ymd', get_field( 'speaker_date' )); 
 
 	 if ( get_field('speaker_program_notes' )) :
 	 	$terms = wp_get_post_terms( get_the_id(), 'rotary_program_scribe' );
