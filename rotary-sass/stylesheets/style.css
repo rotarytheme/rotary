@@ -5940,6 +5940,10 @@ strong {
   height: 0;
 }
 
+div#announcements-carousel {
+  margin: 50px;
+}
+
 #content.projects .project-announcements {
   background: #fff;
   border: 3px solid #e6decd;
