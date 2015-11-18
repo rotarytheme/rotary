@@ -578,9 +578,6 @@ hr {
 	}
 	.comment {
 	   width:100%;
-	   div {
-		   float:none;
-	   }
 	}
 	.committeecomment {
 		padding-bottom: 5px;
@@ -1733,16 +1730,6 @@ label[for="comment"] {
 	
 }
 .comment {
-		
-	div {
-		float:left;
-		font-weight:bold;
-		font-family:$meta-font;
-		padding-bottom:10px;
-		p {
-			font-weight:normal;
-		}
-	}
 	.avatar {
 		clear:left;
 		float:left;
