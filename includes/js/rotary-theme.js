@@ -1,3 +1,4 @@
+
 jQuery(document).ready(function($) {
 	var rotaryTheme = {
 		init: function() {
@@ -8,6 +9,7 @@ jQuery(document).ready(function($) {
 			$('.single-rotary_projects .meta .post-edit-link').removeClass('rotarybutton-largewhite');
 			this.setUpArchives();
 			this.setUpSlideShow();
+			this.setUpAnnouncements();
 			this.setUpEdits();
 			this.setUpDatePicker();
 			this.setUpDatatables();
@@ -15,9 +17,12 @@ jQuery(document).ready(function($) {
 			this.checkOpen();
 			this.setupMaps();
 			this.layoutProjects();
-			$('#committeeselect, #committeewidget, #projectwidget').on('change', this.showCommittee);
+			
+			$('#committeewidget, #projectwidget').on('change', this.showCommittee);
+			$('#committeeselect').on('change', this.newAnnouncement);
 			$('#morecomments').on('click', this.showMoreComments);
 			$('#lesscomments').on('click', this.hideMoreComments);
+			$('#showregistrationform, #cancelregistrationform').on('click', this.toggleForm);
 			$('#newcomment, #newcommentproject').on('click', this.showCommentForm);
 			$('#speakertabs').on('click', '.prevnext a', this.loadPrevNext);
 			$('#wpas-reset input').on('click', this.resetForm);
@@ -26,6 +31,9 @@ jQuery(document).ready(function($) {
 			$('#speaker-archive-table tbody').on('click', 'tr', this.selectRow);
 			$('.projecticons').on('mouseenter mouseleave', '.icon', this.hoverIcons);
 			$('.logged-in .projecticons').on('click', '.imgoing', this.toggleParticpant);
+			// Announcement Fetures
+			$('.editannouncementbutton').on('click', this.editAnnouncement );
+			$('.deleteannouncementbutton').on('click', this.deleteAnnouncement );
 			$('.fancybox, .gallery-item a').fancybox({
 				padding: 3,
 				nextEffect: 'fade',
@@ -124,25 +132,140 @@ jQuery(document).ready(function($) {
 		showCommittee: function() {
 			var committee = $(this).val();
 			if (committee.length > 0) {
-				window.location.href = committee;
+				//window.location.href = committee;
+				window.open( committee, '_announcement' );
 			}
 		},
 		showMoreComments: function(e) {
 			e.preventDefault();
-			$('.committeecomment').show();
+			$('article.committee-announcement,article.project-announcement').show();
 			$(this).hide();
 			$('#lesscomments').show();
 		},
 		hideMoreComments: function(e) {
 			e.preventDefault();
-			$('.committeecomment:not(:first)').hide();
+			$('article.committee-announcement:not(:first),article.project-announcement:not(:first)').hide();
 			$(this).hide();
 			$('#morecomments').show();
 		},
 		showCommentForm: function(e) {
 			e.preventDefault();
 			$('#respond').toggle();
-			$("#comment").focus();
+			$("#announcement_title_input").focus();
+			window.location.href = '#respond';
+		},
+		editAnnouncement: function(e) {
+			var comment_id = $(this).data('comment-id');
+			var redirect = window.location.href;
+			var endurl = redirect.indexOf('#');
+			if ( 0 < endurl ) {
+				redirect = redirect.substring(0, endurl);
+			}
+			if ( 'null' != comment_id) {
+				$('#ajax-loader').show();
+				$('.editannouncementbutton').css("visibility","hidden");
+				$('#committeeselect, #announcements-mailchimpcampaign').css("display", "none");
+				$.ajax ( {url: rotaryparticipants.ajaxURL
+			    	,data: { action: 'edit_announcement'
+			    			,comment_id: comment_id 
+			    			,redirect_to: redirect
+			    			}
+				    ,dataType: 'html'
+			    	,success: function( html ) {
+			    		$('#comment-' + comment_id ).html( html );
+			    		$("#ajax-edit-announcement-form").attr("action", rotaryparticipants.templateURL + '/includes/ajax/save-announcement.php'); // hack the default submission action if this is editing
+			    		rotaryTheme.initAnnouncement();
+			    		rotaryTheme.setUpDatePicker();
+			    		tinymce.execCommand('mceRemoveEditor',true,"comment");
+			    		tinymce.execCommand('mceAddEditor',true,"comment");
+			    		tinymce.init({ selector: "comment" });
+			    		$('#ajax-loader').hide();
+			    		}
+					});
+				}
+		},
+		deleteAnnouncement: function(e) { 
+			var comment_id = $(this).data('comment-id');
+			var redirect = window.location.href;
+			var endurl = redirect.indexOf('#');
+			if ( 0 < endurl ) {
+				redirect = redirect.substring(0, endurl);
+			}
+			if ( 'null' != comment_id) {
+				$('#ajax-loader').show();
+				$.ajax ( {url: rotaryparticipants.ajaxURL
+			    	,data: { action: 'delete_announcement'
+			    			,comment_id: comment_id 
+			    			,redirect_to: redirect
+			    			}
+				    ,dataType: 'json'
+			    	,success: function( data ) {
+			    		$('#ajax-loader').hide();
+			    		if( data.error ) { alert( data.error ); }
+			    		else {
+			    			$( '#comment-' + comment_id ).remove();
+			    		}
+			    		}
+					});
+				}
+		},
+		initAnnouncement: function(e) {
+			if ( $('#call_to_action').checked ) {	$( '#call_to_action_links' ).show(); }
+			$('#announcement_expiry_date_input').datepicker({
+				    altField: "#announcement_expiry_date",
+				    altFormat: "yy-mm-dd"
+			});
+			$('#call_to_action').click (function () {
+				if (this.checked) {
+					$( '#call_to_action_links' ).show();
+				} else {
+					$( '#call_to_action_links' ).hide();
+				}
+			});
+			
+			$( 'input[name=call_to_action_link]:radio' ).change(function() {
+				if ($( '#call_to_action_link_2').prop("checked")) {
+					$( '#other_link_text' ).show();
+				} else {
+					$( '#other_link_text' ).hide();
+				}
+			});
+    		$('#announcement_title_input').focus();
+		},
+		newAnnouncement: function(e) {
+			e.preventDefault();   
+			var post_id = $(this).val();
+			var redirect = window.location.href;
+			var endurl = redirect.indexOf('#');
+			if ( 0 < endurl ) {
+				redirect = redirect.substring(0, endurl);
+			}
+			if (post_id.length > 0) {
+				$('#ajax-loader').show();
+				$('.editannouncementbutton').css("visibility","hidden");
+				$('#committeeselect, #announcements-mailchimpcampaign').css("display", "none");
+				$.ajax ( {url: rotaryparticipants.ajaxURL
+			    	,data: { action: 'new_announcement'
+			    			,post_id: post_id 
+			    			,redirect_to: redirect
+			    			}
+				    ,dataType: 'html'
+			    	,success: function( html ) {
+			    		$( '#new_announcement_div' ).html( html );
+			    		rotaryTheme.initAnnouncement();
+			    		rotaryTheme.setUpDatePicker();
+			    		tinymce.execCommand('mceRemoveEditor',true,"comment");
+			    		tinymce.execCommand('mceAddEditor',true,"comment");
+			    	    tinyMCE.init({selector: "comment"});
+			    		$('#ajax-loader').hide();
+			    	   // try { quicktags( tinyMCEPreInit.qtInit['qt_comment_toolbar'] ); } catch(e){}
+			    		}
+				});
+			}
+		},
+		toggleForm: function(e) {
+			e.preventDefault();
+			$('#gravityform, #showregistrationform, #cancelregistrationform, #rotaryform_wrapper').toggle();
 		},
 		toggleSearch: function(e) {
 			e.preventDefault();
@@ -275,6 +398,19 @@ jQuery(document).ready(function($) {
 			e.preventDefault();
 			$('#ui-tabs-1').load(this.href);
 		},
+		setUpAnnouncements: function() {
+			if ($('#announcements-carousel').length) {
+				$('#announcements-carousel').cycle({
+					slideExpr: '.carousel-announcement',
+					fx: 'scrollHorz',
+					height: '313px',
+					speed: '1000',
+					timeout: 10000,
+					delay: -2000,
+					pager: '#announcement-carousel-controls'
+				});
+			}
+		},
 		setUpArchives: function() {
 			//see if we are on the archive page and then open archive menu
 			$('.monthlist li a').removeClass('current');
@@ -310,6 +446,15 @@ jQuery(document).ready(function($) {
 					$('.page-template-tmpl-speaker-archive-php input[type=date]').datepicker();
 				}
 			}
+			$( '#announcement_expiry_date_input').datepicker({
+				minDate: "+1d",
+				maxDate: "+2m",
+				defaultDate: "+7d",
+				altField: "#announcement_expiry_date",
+				altFormat: "yy-mm-dd",
+				format: "m/d/yy",
+				autoSize: true
+			});
 		},
 		setUpEdits: function() {
 			//if the user is an admin, he/she can edit widgets so we will allow direct access from font-end

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Rotary theme functions and definitions
  *
@@ -7,6 +8,12 @@
  * @since Rotary 1.0
  */
 /*remove the admin bar*/
+
+add_action('wp_enqueue_scripts', 'my_enqueue_mce');
+function my_enqueue_mce() {
+	wp_enqueue_script( 'tiny_mce' );
+	if (function_exists('wp_tiny_mce')) wp_tiny_mce();
+}
 
 add_filter('show_admin_bar', '__return_false');
 add_action( 'wp_print_styles', 'rotary_deregister_styles', 100 );
@@ -63,7 +70,7 @@ function rotary_img_caption_shortcode( $a , $attr, $content = null) {
 }
 
 
-add_filter('wp_nav_menu_items','rotary_add_search_box', 10, 2);
+//add_filter('wp_nav_menu_items','rotary_add_search_box', 10, 2);
 function rotary_add_search_box($items) {
 
 	ob_start();
@@ -75,7 +82,7 @@ function rotary_add_search_box($items) {
 
 	return $items;
 }
-add_filter( 'wp_nav_menu_items', 'add_home_link', 10, 2 );
+//add_filter( 'wp_nav_menu_items', 'add_home_link', 10, 2 );
 function add_home_link($items, $args) {
 
 	if (is_front_page())
@@ -162,14 +169,48 @@ endif;
 // return $content;
 //}
 
-//shortcodes
+
+/************************************************************************************/
+/* shortcodes
+/************************************************************************************/
 add_action( 'init', 'rotary_register_shortcodes');
 function rotary_register_shortcodes(){
-	add_shortcode('rotary-reveille-header', 'rotary_reveille_header_function');
-	add_shortcode( 'UPCOMING_SPEAKERS', 'rotary_upcoming_programs_function' );
-	add_shortcode( 'FEATURED_ITEM', 'rotary_get_featured_post' );
-	add_shortcode( 'COMMITTEE_ANNOUNCEMENTS', 'rotary_get_committee_announcements' );
+	add_shortcode( 'rotary-reveille-header', 'rotary_reveille_header_function' );
+	add_shortcode( 'UPCOMING_SPEAKERS', 'rotary_upcoming_speakers_function' );
+	add_shortcode( 'FEATURED_ITEM', 'rotary_featured_function' );
+	add_shortcode( 'FEATURED', 'rotary_featured_function' );
+	add_shortcode( 'COMMITTEE_ANNOUNCEMENTS', 'rotary_announcements_function' );
+	add_shortcode( 'ANNOUNCEMENTS', 'rotary_announcements_function' );
 }
+
+/* ANNOUNCEMENTS */
+function rotary_announcements_function( $atts ) {
+	global $shortcodes_path;
+	require_once ( $shortcodes_path . 'shortcode-announcements.php' );		// load the shortcode file
+	wp_enqueue_script( 'rotary' );
+	$shortcode = rotary_get_announcements_shortcode_html( $atts );
+	return $shortcode;
+}
+
+/* UPCOMING_SPEAKERS */
+function rotary_upcoming_speakers_function( $atts ) {
+	global $shortcodes_path;
+	require_once ( $shortcodes_path . 'shortcode-upcoming-speakers.php' );	// load the shortcode file
+	$shortcode = rotary_get_upcoming_speakers_shortcode_html( $atts );
+	return $shortcode;
+}
+
+/* FEATURED */
+function rotary_featured_function( $atts ) {
+	global $shortcodes_path;
+	require_once ( $shortcodes_path . 'shortcode-featured.php' );	// load the shortcode file
+	$shortcode = rotary_get_featured_shortcode_html( $atts );
+	return $shortcode;
+}
+
+
+
+/************************************************************************************/
 function rotary_reveille_header_function($atts, $content = null) {
 	extract( shortcode_atts( array(
 				'id' => 'inthisissue',
@@ -282,178 +323,6 @@ function rotary_truncate_text($text, $length = 100, $ending = '...', $exact = fa
 	return $truncate;
 }
 
-/*gets the featured post*/
-
-function rotary_get_featured_post($atts){
-	extract( shortcode_atts( array(
-	'header' => 'Latest News',
-	'fetch'  => 'next'
-			), $atts ) );
-			if (post_type_exists( 'rotary_speakers' ) && 'next' == $fetch )  {
-				$args = array(
-						'posts_per_page' => 1,
-						'post_type' => 'rotary_speakers',
-						'order' => 'ASC',
-						'orderby' => 'meta_value',
-						'meta_key' => 'speaker_date',
-						'meta_query' => array(
-								array(
-										'key' => 'speaker_date',
-										'value' => date('Ymd'),
-										'type' => 'DATE',
-										'compare' => '>='
-								)
-						)
-				);
-			}
-			// Added by PAO to show the latest, completed Reveille
-			elseif (post_type_exists( 'rotary_speakers') && 'last' == $fetch ) {
-				$args = array(
-						'posts_per_page' => 1,
-						'post_type' => 'rotary_speakers',
-						'order' => 'DESC',
-						'orderby' => 'meta_value',
-						'meta_key' => 'speaker_date',
-						'meta_query' => array(
-								'relation' => 'AND',
-								array(
-										'key' => 'speaker_date',
-										'value' => date('Ymd'),
-										'type' => 'DATE',
-										'compare' => '<='
-								),
-								array(
-										'key' => 'speaker_program_notes',
-										'value' => '',
-										'type' => 'CHAR',
-										'compare' => '>'
-								)
-						)
-				);
-			}
-	else {
-		$args = array(
-			'posts_per_page' => 1,
-			'category_name' => 'featured',
-		);
-	}
-	ob_start();
-	$query = new WP_Query( $args );
-	global $more;
-	if ( $query->have_posts() ) : ?>
-		<div id="featured">
-        <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
-         <?php  $more = 0; ?>
-		<section class="featuredheader">
-        	<h3><?php echo $header ?></h3>
-        	<?php if (post_type_exists( 'rotary_speakers')) {
-		$speaker = get_field('speaker_first_name').' '.get_field('speaker_last_name'); ?>
-        		<p class="featuredspeakername"><span><?php echo $speaker; ?></span></p>
-        	<?php
-	}
-	else { ?>
-	        	<p>by <span><?php the_author_meta('user_firstname');?>&nbsp;<?php the_author_meta('user_lastname');?> </span></p>
-
-        	<?php } ?>
-        </section>
-        <h4><a href="<?php the_permalink()?>"><?php the_title(); ?></a></h4>
-        <?php
-	if (post_type_exists( 'rotary_speakers')) {
-		$content = ( 'next' == $fetch ) ? trim(get_field('speaker_program_content')) : trim(get_field('speaker_program_notes')) ;
-	}
-	else {
-		$content = apply_filters(get_the_content());
-	}
-	if (strlen($content) > 1024 ) {
-		$content = rotary_truncate_text($content, 1024, '', false, true) . '<a href="'.get_permalink().'"> ...continue reading</a>';
-	} ?>
-        <section class="featuredcontent">
-           <?php  if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-		the_post_thumbnail('medium'); ?>
-				<div class="hasthumb">
-					<?php echo $content; ?>
-				</div>
-			<?php }
-	else {?>
-            	<div class="nothumb">
-        			<?php echo $content; ?>
-            	</div>
-           <?php  } ?>
-        </section>
-		<?php endwhile; ?>
- 		</div>
- 		<div id="featuredbottom">
-		</div>
-    <?php endif;
-	// Reset Post Data
-	wp_reset_postdata();
-	return ob_get_clean();
-}
-
-function rotary_upcoming_programs_function($atts) {
-	extract( shortcode_atts( array(
-				'show' => '4',
-			), $atts ) );
-	$args = array(
-		'post_type' => 'rotary_speakers',
-		'posts_per_page'  => $show,
-		'order' => 'ASC',
-		'orderby' => 'meta_value',
-		'meta_key' => 'speaker_date',
-		'meta_query' => array(
-			array(
-				'key' => 'speaker_date',
-				'value' => date('Ymd'),
-				'type' => 'DATE',
-				'compare' => '>='
-			)
-		)
-	);
-	$the_query = new WP_Query( $args );
-	$postCount = 0;
-	$clearLeft = '';
-	ob_start(); ?>
-	<div class="home-upcoming-program-ribbon"><h2>Upcoming Speakers</h2></div>
-	<div id="home-upcoming-programs" class="home-upcoming-programs clearfix">
-
-	<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-		<?php $postCount++;
-	if ($postCount % 2 == 0) {
-		$clearLeft='';
-	}
-	else {
-		$clearLeft = 'clearleft';
-	}
-?>
-		 <article id="post-<?php the_ID(); ?>" <?php post_class($clearLeft); ?>>
-				<?php $date = DateTime::createFromFormat('Ymd', get_field('speaker_date')); ?>
-
-                <div class="home-upcoming-programs-speaker-date">
-                	<span class="dayweek"><?php echo $date->format('l'); ?></span>
-                	<span class="day"><?php echo $date->format('d'); ?></span>
-                	<span class="month"><?php echo $date->format('F'); ?></span>
-                	<?php edit_post_link( __( 'Edit', 'Rotary' ), '', '' ); ?>
-                </div>
-                <div class="home-upcoming-program-details">
-                <?php $speaker = get_field('speaker_first_name').' '.get_field('speaker_last_name'); ?>
-                	<h3 class="speakername"><?php echo $speaker?></h3>
-                	<p class="speaker-title"><?php the_field( 'speaker_title' ); ?>	</p>
-					<p class="speaker-company"><?php the_field('speaker_company'); ?></p>
-					<p class="speaker-program-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-                </div><!--.home-upcoming-program-details-->
-		 </article>
-	<?php endwhile; // End the loop. Whew. ?>
-	<?php //now add a new post button ?>
-	<?php  if(current_user_can('edit_page')){ ?>
-	      <?php $clearLeft = ($clearLeft == 'clearleft' ? '' : ' clearleft');  ?>
-	      <div class="newspeaker<?php echo $clearLeft; ?>">
-			<a class="post_new_link rotarybutton-largewhite" href="<?php echo admin_url(); ?>post-new.php?post_type=rotary_speakers">New Speaker</a>
-	      </div>
-	<?php } ?>
-	<?php wp_reset_postdata(); ?>
-	</div><!--.home-upcoming-programs-->
-<?php  return ob_get_clean();
-}
 function rotary_parse_shortcode_content( $content ) {
 
 	$content = do_shortcode( shortcode_unautop( $content ) );
@@ -588,7 +457,7 @@ if ( ! function_exists( 'rotary_posted_on' ) ) :
 			);
 		}
 		else {
-			printf( __( 'Posted on <br/>%2$s', 'rotary' ),
+			printf( __( 'Posted on<br/>%2$s', 'Rotary' ),
 				'meta-prep meta-prep-author',
 				sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time datetime="%3$s" pubdate>%4$s</time></a>',
 					get_permalink(),
@@ -942,7 +811,7 @@ function rotary_pre_get_cats($query) {
 //custom date archives
 add_filter( 'pre_get_posts', 'rotary_pre_get_archive_posts' );
 function rotary_pre_get_archive_posts($query) {
-	if ($query->is_main_query() && is_post_type_archive('rotary_speakers') && !is_admin()) {
+	if ($query->is_main_query() && is_post_type_archive( 'rotary_speakers' ) && !is_admin()) {
 		//print_r($query->query_vars);
 		//echo 'the year is '.$query->query_vars['year'];
 		//assume year if month is set
@@ -995,93 +864,122 @@ function rotary_archiveposts_where( $where, $query_obj ) {
 
 //output the standard blog roll 
 //also used for posts connected to committees by post to posts
-function rotary_output_blogroll($postCount, $clearLeft) {
- 		$postCount++; 
-		  if ($postCount % 2 == 0) {
-			  $clearLeft='';
-		  }
-		  else {
-			  $clearLeft='clearleft';
-		  }
-			  
+function rotary_output_blogroll() {
 		?>
+	<article id="post-<?php the_ID(); ?>">
+		<div class="sectioncontainer">
+			<div class="sectionheader blogroll" id="blog-<?php the_ID(); ?>" >
+				<div class="sectioncontent">
+					<header>
+					    <?php 
+				    	$title = get_the_title(); 
+			    		if (strlen($title) > 30 ) {
+							$title = substr($title, 0, 30) . '...';
+						} 
+						?>
+		                <h2>
+		                	<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'Rotary' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php echo $title; ?></a>
+		                </h2>
+		                <div class="postdate">
+		                	<span class="alignleft">Posted by <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ))?>"><?php echo get_the_author();?></a></span>
+		                    <span class="alignright"><?php Rotary_posted_on(); ?></span>	
+		                </div>    
+		            </header>
 
-     
-        <article id="post-<?php the_ID(); ?>" <?php post_class($clearLeft); ?>>
-         	<div class="sectioncontainer">
-            	<div class="sectionheader blogroll" id="blog-<?php the_ID(); ?>" >
-                	<div class="sectioncontent">
-			<header>
-			    <?php $title = get_the_title(); ?>
-			    <?php if (strlen($title) > 30 ) {
-					$title = substr($title, 0, 30) . '...';
-				} ?>
-                <h2><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'Rotary' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php echo $title; ?></a></h2>
-                               <div class="postdate">
-                	<span class="alignleft">Posted by <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ))?>"><?php echo get_the_author();?></a></span>
-                    <span class="alignright"><?php Rotary_posted_on(); ?></span>	
-                </div>    
-            </header>
- 
-   
-                <?php $thumb = has_post_thumbnail(); ?>
-                <?php if ( $thumb) { // check if the post has a Post Thumbnail assigned to it.
-				        $attr = array(
-							'class'	=> 'alignleft',
-							);?>
-
-  						<a href="<?php the_permalink(); ?> "><?php the_post_thumbnail('post-thumbnail', $attr);?></a>
-					<?php } ?>
-   
-                <?php if ( $thumb) { ?> 
-               		<section class="excerptcontainer"> 
-               <?php } ?> 
-             <?php if ( 'rotary_speakers' == get_post_type() ) { 
-	             //program notes are filled in after a speakers visit. If the speaker has not yet been to the club, we show the upcoming content
-					$programNotes = trim(get_field('speaker_program_notes'));
-					if ('' == $programNotes)
-					{
-						$programNotes = trim(get_field('speaker_program_content'));
-					}
-					$programNotes = preg_replace('/<img[^>]+./','', $programNotes);
-					$programNotes = strip_tags($programNotes);
-					if (strlen($programNotes) > 200 ) {
-						$programNotes = substr($programNotes, 0, 200) ;
-					} 
-					?>             
-					<p><?php echo $programNotes; ?> <a href="<?php the_permalink();?>">[…]</a></p>					 
-             <?php  } 
-             else {
-	             the_excerpt();
-             }
-             ?>
-
-              <?php if ( $thumb) { ?> 
-                </section>
-              <?php } ?>    
+			 		<?php $thumb = ( has_post_thumbnail() ) ? 'hasthumbnail' : '';?>
+					<section class="excerptcontainer <?php echo $thumb;?>">
+				        <?php if ( $thumb) : // check if the post has a Post Thumbnail assigned to it. 
+							$attr = array(
+											'class'	=> 'alignleft',
+										);?>
+								<a  class="blog-thumbnail" href="<?php the_permalink(); ?> "><?php the_post_thumbnail('post-thumbnail', $attr);?></a>
+						<?php endif; ?>
+	             		<?php if ( 'rotary_speakers' == get_post_type() ) { 
+			             	//program notes are filled in after a speakers visit. If the speaker has not yet been to the club, we show the upcoming content
+							$programNotes = trim(get_field('speaker_program_notes'));
+							if ( '' == $programNotes) {
+								$programNotes = trim(get_field( 'speaker_program_content' ));
+							}
+							$programNotes = preg_replace( '/<img[^>]+./','', $programNotes );
+							$programNotes = strip_tags( $programNotes );
+							if (strlen( $programNotes ) > 200 ) {
+								$programNotes = substr($programNotes, 0, 200) ;
+							} ?>             
+							<p><?php echo $programNotes; ?> <a href="<?php echo the_permalink();?>">[…]</a></p>	
+		             	<?php  } 
+			             else {
+				             the_excerpt();
+			             }?>
+					</section>		
               
-  
-            <footer class="meta">
-            <p>
-                <?php edit_post_link( __( 'Edit', 'Rotary' ), '', ' ' ); ?>
-                <?php comments_popup_link( __( 'Leave a comment', 'Rotary' ), __( '1 Comment', 'Rotary' ), __( '% Comments', 'Rotary' ), 'commentspopup' ); ?></p>
-                <?php if ( count( get_the_category() ) ) : ?>
-                        <p><?php printf( __( 'Posted in %2$s', 'Rotary' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?></p>
-                <?php endif; ?>
-                <?php
-                    $tags_list = get_the_tag_list( '', ', ' );
-                    if ( $tags_list ):
-                ?>
-                        <p><?php printf( __( 'Tagged %2$s', 'Rotary' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?></p>
-                <?php endif; ?>
-                
-                
-                 
-            </footer>
-               				</div><!--.sectioncontent-->
-                </div> <!--.sectionheader-->
-			</div><!--.sectioncontainer-->
-		</article>
-       <?php return $postCount; ?>
-	
+		            <footer class="meta">
+		            <p>
+		                <?php 
+		                // edit_post_link( __( 'Edit', 'Rotary' ), '', ' ' ); 
+		                comments_popup_link( __( 'Leave a comment', 'Rotary' ), __( '1 Comment', 'Rotary' ), __( '% Comments', 'Rotary' ), 'commentspopup' ); ?></p>
+		                <?php if ( count( get_the_category() ) ) : 
+		                ?>
+		                        <p><?php printf( __( 'Posted in %2$s', 'Rotary' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?></p>
+		                <?php 
+		                endif;
+		                    $tags_list = get_the_tag_list( '', ', ' );
+		                    if ( $tags_list ):
+		                ?>
+		                        <p><?php printf( __( 'Tagged %2$s', 'Rotary' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?></p>
+		                <?php endif; ?>
+		            </footer>
+            
+			</div><!--.sectioncontent-->
+		</div> <!--.sectionheader-->
+	</div><!--.sectioncontainer-->
+</article>
+
 <?php }
+
+/**
+ * function: rotary_next_program_date
+ * 
+ * Returns the date of the next Rotary meeting, or last Rotary meeting if it was within the offse 'aftert.  
+ * Set the 'Week Starts On' in General Settings to be the day that your meeting is on.
+ * 
+ * Parameters
+ *$date:dateTime object that you want the next program date for DEFAULT = Today
+ *$after: integer giving the number of days after a meeting that is still considered 'that week' - so Sunday would still be considered last Friday's meeting DEFAULT = 3
+ */
+function rotary_next_program_date( $date=null, $after=3 ) {
+	$date = ($date ? $date : new DateTime() );
+	$day_number = get_option( 'start_of_week' );
+	
+	$dayNames = array(
+			'Sunday',
+			'Monday',
+			'Tuesday',
+			'Wednesday',
+			'Thursday',
+			'Friday',
+			'Saturday',
+	);
+	$program_day = $dayNames[$day_number];
+	
+	$grace_period = '-' . $after . ' days';
+
+	$date->modify( $grace_period )->modify("next $program_day");
+	
+	return $date;
+}
+
+/**
+ * function: update user display name immediately after the record has been updated
+ */
+add_action( 'profile_update', 'rotary_display_name_update', 10, 2 );
+function my_profile_update( $user_id, $old_user_data ) {
+	$user = get_userdata( $user_id );
+	$user->display_name = $user->first_name . ' ' . $user->last_name;
+	wp_update_user( array( 'user_id' => $user_id, 'display_name' => $user->display_name ) );
+}
+
+
+
+
+
+

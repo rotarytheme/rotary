@@ -8,6 +8,6 @@
  */
 
 get_header(); ?>
+	<h1 class="pagetitle"><span><?php the_title();  ?></span></h1>
 	<?php get_template_part( 'loop', 'page' ); ?>
-
 <?php get_footer(); ?>

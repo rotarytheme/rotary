@@ -11,6 +11,8 @@
 define( 'ACF_LITE' , true );
 
 $includes_path = TEMPLATEPATH . '/includes/';
+$shortcodes_path = TEMPLATEPATH . '/shortcodes/';
+$ajax_path = TEMPLATEPATH . '/includes/ajax/';
 // Theme specific functionality
 
 //
@@ -24,7 +26,13 @@ require_once ($includes_path . 'theme-options.php'); 		// Options panel settings
 require_once ($includes_path . 'theme-functions.php'); 		// Custom theme functions
 
 
+
 require_once ($includes_path . 'committee-project-functions.php'); 		// Custom functions for committees and projects
+
+require_once ($ajax_path . 'ajax-announcements.php'); 		// Ajax functions for announcements
+
+require_once ($ajax_path . 'ajax-projects.php'); 		// Ajax functions for announcements
+
 
 
 require_once ($includes_path . 'theme-js.php');				// Load javascript in wp_head
@@ -39,13 +47,23 @@ require_once ($includes_path . 'custom-posts.php');			// custom posts
 
 require_once ($includes_path . 'rotarythemeupdater.php');	// theme updater
 
+require_once ('nm-mailchimp/admin.php');   // N-Media Mailchimp
+
 require_once('wp-advanced-search/wpas.php');  //advnced search form
 
+
+
 include_once('advanced-custom-fields/acf.php' );
+
 include_once('acf-repeater/acf-repeater.php');
+
 include_once($includes_path . 'speaker-fields.php');
+
 include_once($includes_path . 'project-fields.php');
+
 /*you can put custom code below this line*/
+
+
 
 /*---------------------------------------------------------------------------*/
 // Custom code which copies all settings from old row and adds to the new row
