@@ -12,7 +12,7 @@
 		font-weight:700;
 	}
 	#branding h1 {
-	    background: url(http://bbrc.staging.wpengine.com/wp-content/themes/rotarytheme-integrated/rotary-sass/images/5016_Rotary_Logo.png) 5px 0 no-repeat;
+	    background: url(http://bbrc.net/wp-content/themes/rotary-rebrand/rotary-sass/images/5016_Rotary_Logo.png) 5px 0 no-repeat;
 	    float: left;
 	    font-family: Arial Narrow,Arial,Helvetica,sans-serif;
 	    font-weight: 700;
@@ -74,7 +74,7 @@
 	    padding: 0;
 	}
 	table #speakertitle h2{
-	    background: url(http://bbrc.staging.wpengine.com/wp-content/themes/rotarytheme-integrated/rotary-sass/images/speaker-icon.png) 0 0 no-repeat;
+	    background: url(http://bbrc.net/wp-content/themes/rotary-rebrand/rotary-sass/images/speaker-icon.png) 0 0 no-repeat;
    		background-size: 25px;
 	    color: #58585A;
 	    font-family: Open Sans Condensed, Arial, Helvetica, sans-serif;
@@ -161,7 +161,7 @@
 	    width: 100%;
 	}
 	#blogcontent .wp-caption .wp-caption-bottom {
-	    background: url(http://bbrc.staging.wpengine.com/wp-content/themes/rotarytheme-integrated/rotary-sass/images/speaker-caption-bg.png) 100% 100% no-repeat,url(http://bbrc.staging.wpengine.com/wp-content/themes/rotarytheme-integrated/rotary-sass/images/caption-repeater.png) 0 100% repeat-x;
+	    background: url(http://bbrc.net/wp-content/themes/rotary-rebrand/rotary-sass/images/speaker-caption-bg.png) 100% 100% no-repeat,url(http://bbrc.net/wp-content/themes/rotary-rebrand/rotary-sass/images/caption-repeater.png) 0 100% repeat-x;
 	    height: 26px;
 	    padding-left: 9px;
 	    width: 100%;
@@ -173,7 +173,7 @@
 	    padding: 10px 10px 25px 10px;
 	}
 	table #speaker-side-container {
-    background-image: url(http://bbrc.staging.wpengine.com/wp-content/themes/rotarytheme-integrated/rotary-sass/images/featured-bottom-corner.png);
+    background-image: url(http://bbrc.net/wp-content/themes/rotary-rebrand/rotary-sass/images/featured-bottom-corner.png);
     background-size: 23px 22px;
     background-repeat:no-repeat;
     background-position: right bottom;
@@ -189,7 +189,7 @@
     	font-weight: 700;
 	}
 	h3.speakerbio {
-		background: url(http://bbrc.staging.wpengine.com/wp-content/themes/rotarytheme-integrated/rotary-sass/images/bio-icon-bg.png) 0 0 no-repeat;
+		background: url(http://bbrc.net/wp-content/themes/rotary-rebrand/rotary-sass/images/bio-icon-bg.png) 0 0 no-repeat;
 		background-size: 20px;
 		padding-left:25px;
 	    padding-top: 2px;
@@ -198,7 +198,7 @@
 	table #speakerinfo ul { list-style-type: none;}
 	
 	table .cutaway_image {
-		 background: url(http://bbrc.staging.wpengine.com/wp-content/themes/rotarytheme-integrated/rotary-sass/images/speaker-home-title-email-corner.png);
+		 background: url(http://bbrc.net/wp-content/themes/rotary-rebrand/rotary-sass/images/speaker-home-title-email-corner.png);
 		 background-repeat: no-repeat;
 		 background-size:cover;
 	}
