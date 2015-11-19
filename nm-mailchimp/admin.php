@@ -120,23 +120,24 @@ class NM_MC_Front
 
 		$encoded = $_REQUEST['announcements'];
 		$hash = md5( $encoded . 'SecretStringHere' );
-		if( $_REQUEST['hash'] == $hash ) { // the data hasn't been messed with
+		if( $_REQUEST['hash'] == $hash) { // the data hasn't been messed with
 			$announcements = unserialize( base64_decode( $encoded ));
-		} else {echo ' submitted hash was: ' . $_REQUEST['hash'] . '. Recalculated hash was: ' . $hash;}
+		} else {echo ' submitted hash was: ' . $_REQUEST['hash'] . '. Recalculated hash was: ' . $hash .'<br><br>Actual string was <br>' . $encoded;}
 		
 		if ($campaigntype == 'speaker') {
 			$post_title = get_the_title( $_REQUEST['postid'] );
+			$post_title = str_replace( '&#8217;', '\'' , str_replace( '&#8211;', ' - ', str_replace( '&#038;', '&' , str_replace( '&#8217;', '\'' , str_replace( '&#8220;', '' , str_replace( '&#8221;', '' , $post_title))))));
 			$date = DateTime::createFromFormat('Ymd', get_field( 'speaker_date', $_REQUEST['postid'] ));
 			$speaker = get_field('speaker_first_name',  $_REQUEST['postid'] ).' '.get_field('speaker_last_name',  $_REQUEST['postid'] );
 
-			$options['subject'] =   sprintf( __( 'Program %s : ' ), $date->format('l M jS') ) 
-									. ' - "' .
-									str_replace( '&#8211;', ' - ', str_replace( '&#038;', '&' , str_replace( '&#8217;', '\'' , str_replace( '&#8220;', '' , str_replace( '&#8221;', '' , $post_title)))))
-									. '" by ' . $speaker . ' ' ;
+			$options['subject'] =   substr( sprintf( __( 'Program %s : ' ), $date->format('l M jS') ) 
+									. ' - "' 
+									. substr( $post_title, 0, 50) . ( strlen( $post_title ) > 50 ? '...' : '')
+									. '" by ' . substr( $speaker, 0, 20), 0, 99) ;
 			$options['auto_tweet'] = ($saved_options['auto_tweet'] == 'true' ? true : false);
 			$options['auto_fb_post'] =  explode(',', $saved_options['auto_post']);	
 		}
-		elseif ($campaigntype == 'announcements') {
+		elseif ($campaigntype == 'announcements' ) {
 			$date = rotary_next_program_date(); // there is a default of 2 days grace before the next meeting is used as the week-of
 			$heading = sprintf( __( 'Club Announcements for %s' ), $date->format( 'l M jS' ) ); //Club Announcements for Friday Nov 6th
 			$options['subject'] =   $heading . ' - ' . get_option( 'blogname' );
