@@ -21,6 +21,8 @@
  * Include the TGM_Plugin_Activation class.
  */
 require_once get_template_directory() . '/required-plugins/class-tgm-plugin-activation.php';
+require_once ABSPATH . '/wp-admin/includes/plugin.php';
+
 
 add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
 /**
@@ -42,9 +44,9 @@ function my_theme_register_required_plugins() {
 	 * Array of plugin arrays. Required keys are name and slug.
 	 * If the source is NOT from the .org repo, then source is also required.
 	 */
+	deactivate_plugins( array ( 'rotarymembership/rotarymembership.php' ) );
 	
-	delete_plugins( array ( 'rotarymembership' ) );
-
+	
 	$plugins = array(
 
 		// This is an example of how to include a plugin bundled with a theme.
