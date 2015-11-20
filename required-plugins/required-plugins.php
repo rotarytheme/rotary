@@ -155,12 +155,14 @@ function my_theme_register_required_plugins() {
 				'required' 	=> false,
 				'force_activation' => false
 		),
+			/*
 		array(
 				'name' 		=> 'Download Manager',
 				'slug' 		=> 'download-manager',
 				'required' 	=> false,
 				'force_activation' => false
 		),
+		*/
 		array(
 				'name' 		=> 'Max Mega Menu',
 				'slug' 		=> 'megamenu',
