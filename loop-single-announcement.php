@@ -32,8 +32,8 @@
 
 	$date = new DateTime( $announcement->comment_date );
 	
-	$user_can_edit = ( current_user_can( 'edit_others_announcements' ) || get_current_user_id() == $announcement->user_id );
-	$user_can_delete = ( current_user_can( 'delete_others_announcements' ) || get_current_user_id() == $announcement->user_id );
+	$user_can_edit = ( current_user_can( 'edit_others_announcements' ) || get_current_user_id() == $announcement->user_id || current_user_can( 'manage_options' ));
+	$user_can_delete = ( current_user_can( 'delete_others_announcements' ) || get_current_user_id() == $announcement->user_id || current_user_can( 'manage_options' ));
 
 	if ( $context ) $extra_classes[] =  $context . '-announcement';
 	if ( 'carousel' == $context && $announcementsDisplayed > 1 ) $extra_classes[] =  'hide';

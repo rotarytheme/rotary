@@ -139,12 +139,12 @@ function my_theme_register_required_plugins() {
 				'required' 	=> false,
 				'force_activation' => false
 		),
-			array(
-					'name' 		=> 'Add Multiple Users for WordPress',
-					'slug' 		=> 'add-multiple-users',
-					'required' 	=> false,
-					'force_activation' => false
-			),
+		array(
+				'name' 		=> 'Add Multiple Users for WordPress',
+				'slug' 		=> 'add-multiple-users',
+				'required' 	=> false,
+				'force_activation' => false
+		),
 		array(
 				'name' 		=> 'AutoChimp',
 				'slug' 		=> 'autochimp',
@@ -152,10 +152,10 @@ function my_theme_register_required_plugins() {
 				'force_activation' 	=> false
 		),
 		array(
-				'name' 		=> 'User Role Editor',
-				'slug' 		=> 'user-role-editor',
-				'required' 	=> false,
-				'force_activation' => false
+				'name' 		=> 'Members',
+				'slug' 		=> 'members',
+				'required' 	=> true,
+				'force_activation' => true
 		),
 		array(
 				'name' 		=> 'TinyMCE Advanced',

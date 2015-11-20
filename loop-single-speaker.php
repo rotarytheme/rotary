@@ -43,7 +43,7 @@
 				
 				<?php 
 				/***************** START MAILCHIMP CAMPAIGN CUSTOMIZATION ****************/
-				if( is_user_logged_in() && current_user_can( 'create_mailchimp_campaigns' ) ):?>
+				if( is_user_logged_in() && ( current_user_can( 'create_mailchimp_campaigns' ) || current_user_can( 'manage_options' ))):?>
 					<div id="speaker-mailchimpcampaign">
 						<a id="speaker-sendemailtest" class="rotarybutton-largewhite" href="javascript:void" ng-click="saveCampaign()" ><?php echo __( 'Send Test Email', 'Rotary'); ?></a>
 						<a id="speaker-sendemailblast" class="rotarybutton-largeblue" href="javascript:void" ng-click="sendCampaign(1)" ><?php echo __( 'Send Email Blast', 'Rotary'); ?></a>
@@ -89,7 +89,7 @@
 			</div><!--.speakerbody-->
 			<footer id="speakerfooter">
 				<?php edit_post_link( __( 'Edit', 'Rotary' ), '', '' );?>
-				<?php  if(current_user_can('create_speaker_programs') ){ ?>
+				<?php  if(current_user_can('create_speaker_programs') || current_user_can( 'manage_options' )){ ?>
 					<a class="post_new_link rotarybutton-largewhite" href="<?php echo admin_url(); ?>post-new.php?post_type=rotary_speakers">New Speaker</a>
 				<?php } ?>
 			</footer>
