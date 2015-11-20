@@ -66,14 +66,14 @@ function my_theme_register_required_plugins() {
 	array(
 		'name' 				=> 'Gravity Forms',
 		'slug' 				=> 'gravityforms',
-		'source'    		=> get_template_directory() . '/required-plugins/plugins/gravityforms.zip', // The plugin source.
+		'source'    		=> 'gravityforms.zip', // The plugin source.
 		'version'			=> '1.9.14',
 		'required' 			=> true,
 		'force_activation' 	=> true	),
 	array(
 		'name' 				=> 'Gravity Forms PayPal',
 		'slug' 				=> 'gravityformspaypal',
-		'source'    		=> get_template_directory() . '/required-plugins/plugins/gravityformspaypal.zip', // The plugin source.
+		'source'    		=> 'gravityformspaypal.zip', // The plugin source.
 		'version'			=> '2.5.1',
 		'required' 			=> true,
 		'force_activation' 	=> true,		),
@@ -82,7 +82,7 @@ function my_theme_register_required_plugins() {
 		'name' 				=> 'Max Mega Menu Pro',
 		'slug' 				=> 'megamenu-pro',
 		'version'			=> '1.3.6',
-		'source'    		=> get_template_directory() . '/required-plugins/plugins/megamenu-pro.zip', // The plugin source.
+		'source'    		=> 'megamenu-pro.zip', // The plugin source.
 		'required' 			=> false,
 		'force_activation' 	=> false
 	),
@@ -90,7 +90,7 @@ function my_theme_register_required_plugins() {
 	array(
 			'name' 		=> 'MailChimp Campaign',
 			'slug' 		=> 'nm-mailchimp-campaign',
-			'source'    => get_template_directory() . '/required-plugins/plugins/nm-mailchimp-campaign.zip', // The plugin source.
+			'source'    => 'nm-mailchimp-campaign.zip', // The plugin source.
 			'required' 	=> true,
 	),
 
@@ -241,7 +241,7 @@ function my_theme_register_required_plugins() {
 	
 	$config = array(
 		'id'           => 'tgmpa',                 // Unique ID for hashing notices for multiple instances of TGMPA.
-		'default_path' => '',               // Default absolute path to bundled plugins.
+		'default_path' => get_template_directory() . '/required-plugins/plugins/',               // Default absolute path to bundled plugins.
 		'menu'         => 'tgmpa-install-plugins', // Menu slug.
 		'parent_slug'  => 'themes.php',            // Parent menu slug.
 		'capability'   => 'edit_theme_options',    // Capability needed to view plugin install page, should be a capability associated with the parent menu used.

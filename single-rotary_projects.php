@@ -38,9 +38,6 @@ get_header(); ?>
 	<?php get_sidebar( 'projects' ); ?>
 	
 	<div id="content" class="projects" role="main">
-	
-
-
 <?php 
     //show participants first
 
@@ -57,7 +54,7 @@ get_header(); ?>
 		
 		<?php comments_template( '/tmpl-committee-announcements.php' ); ?> 
 			
-		<div class="clear"></div
+		<div class="clear"></div>
 		
 		<?php get_template_part( 'loop', 'single-project' ); ?>
 		
