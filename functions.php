@@ -48,6 +48,8 @@ require_once ($required_path . 'required-plugins.php');		// required plugins
 
 require_once ($includes_path . 'custom-posts.php');			// custom posts
 
+require_once ($includes_path . 'custom-capabilities.php');		// custom capabilities
+
 require_once ($includes_path . 'rotarythemeupdater.php');	// theme updater
 
 require_once ('nm-mailchimp/admin.php');   // N-Media Mailchimp
