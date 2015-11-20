@@ -112,6 +112,8 @@ function my_theme_register_required_plugins() {
 			'required' 	=> true,
 			'force_activation' => true,
 			'force_deactivation' => true, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+			'is_callable'        => 'get_rotary_club_members', // If set, this callable will be be checked for availability to determine if a plugin is active.
+				
 		),
 
 		// This is an example of how to include a plugin from the WordPress Plugin Repository.
