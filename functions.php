@@ -11,6 +11,7 @@
 define( 'ACF_LITE' , true );
 
 $includes_path = TEMPLATEPATH . '/includes/';
+$required_path = TEMPLATEPATH . '/required-plugins/';
 $shortcodes_path = TEMPLATEPATH . '/shortcodes/';
 $ajax_path = TEMPLATEPATH . '/includes/ajax/';
 // Theme specific functionality
@@ -43,6 +44,8 @@ require_once ($includes_path . 'theme-widgets.php');		// Theme widgets
 
 require_once ($includes_path . 'admin-options.php');		// admin options
 
+require_once ($required_path . 'required-plugins.php');		// required plugins
+
 require_once ($includes_path . 'custom-posts.php');			// custom posts
 
 require_once ($includes_path . 'rotarythemeupdater.php');	// theme updater
@@ -57,9 +60,11 @@ include_once('advanced-custom-fields/acf.php' );
 
 include_once('acf-repeater/acf-repeater.php');
 
-include_once($includes_path . 'speaker-fields.php');
+include_once( $includes_path . 'speaker-fields.php');
 
-include_once($includes_path . 'project-fields.php');
+include_once( $includes_path . 'project-fields.php');
+
+//include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 /*you can put custom code below this line*/
 

@@ -186,6 +186,8 @@ class NM_MC_Front
 	}
 }
 
-if ( is_plugin_active( 'nm-mailchimp-campaign/index.php' ) && class_exists('NM_MC_Front') ) {
-	$just_init = new NM_MC_Front;
+if( function_exists ( 'is_plugin_active' )) {
+	if ( is_plugin_active( 'nm-mailchimp-campaign/index.php' ) && class_exists('NM_MC_Front') ) {
+		$just_init = new NM_MC_Front;
+	}
 }
