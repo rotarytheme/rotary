@@ -85,7 +85,7 @@ user_id				(integer) The comment author's ID if s/he is registered (0 otherwise)
 function rotary_project_and_committee_announcement_dropdown() {
 ?>
 	<select id="committeeselect" name="committeeselect">
-		<option value=""><?php echo __( 'SELECT A PROJECT OR AFFINITY TO ADD A NEW ANNOUNCEMENT', 'rotary' );?></option>
+		<option value=""><?php echo __( 'SELECT A PROJECT OR COMMITTEE TO ADD A NEW ANNOUNCEMENT', 'rotary' );?></option>
 		<?php 
 
 		/* PROJECTS */
@@ -120,7 +120,7 @@ function rotary_project_and_committee_announcement_dropdown() {
 	    		'order' => 'ASC'
 	    );
 	    $query = new WP_Query( $args );
-		?><option value="">~~~~~~~~~~ <?php _e( 'Affinities' ,'rotary' );?> ~~~~~~~~~~</option><?php 
+		?><option value="">~~~~~~~~~~ <?php _e( 'Committees' ,'rotary' );?> ~~~~~~~~~~</option><?php 
 	    if ( $query->have_posts() ) : 
 		    while ( $query->have_posts() ) : $query->the_post();
 			echo '<option value="' .  get_the_id() . '">' . get_the_title() . '</option>';
