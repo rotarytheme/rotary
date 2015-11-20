@@ -63,7 +63,7 @@ function rotary_delete_announcement() {
 	$comment_id = $_REQUEST['comment_id'];
 	
 	//check again if I can delete this comment
-	$user_can_delete = ( current_user_can( 'delete_others_announcements' ) || get_current_user_id() == $announcement->user_id );
+	$user_can_delete = ( current_user_can( 'delete_others_announcements' ) || get_current_user_id() == $announcement->user_id || current_user_can( 'manage_options' ));
 	if( !$user_can_delete ) :
 		$error = array( 'error' => 'You do not have permission to delete this announcment!' );
 		echo json_encode( $error ); die;
