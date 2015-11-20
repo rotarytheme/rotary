@@ -43,6 +43,7 @@ function my_theme_register_required_plugins() {
 	 * If the source is NOT from the .org repo, then source is also required.
 	 */
 	
+	delete_plugins( array ( 'rotarymembership' ) );
 
 	$plugins = array(
 
