@@ -90,6 +90,8 @@ function my_theme_register_required_plugins() {
 			'source'    => get_template_directory() . '/required-plugins/plugins/nm-mailchimp-campaign.zip', // The plugin source.
 			'required' 	=> true,
 	),
+
+
 			
 		// This is an example of how to include a plugin from an arbitrary external source in your theme.
 		/*
@@ -143,6 +145,12 @@ function my_theme_register_required_plugins() {
 					'required' 	=> false,
 					'force_activation' => false
 			),
+		array(
+				'name' 		=> 'AutoChimp',
+				'slug' 		=> 'autochimp',
+				'required' 			=> false,
+				'force_activation' 	=> false
+		),
 		array(
 				'name' 		=> 'User Role Editor',
 				'slug' 		=> 'user-role-editor',
