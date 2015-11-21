@@ -977,9 +977,3 @@ function my_profile_update( $user_id, $old_user_data ) {
 	$user->display_name = $user->first_name . ' ' . $user->last_name;
 	wp_update_user( array( 'user_id' => $user_id, 'display_name' => $user->display_name ) );
 }
-
-
-
-
-
-
