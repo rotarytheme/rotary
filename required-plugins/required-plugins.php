@@ -345,7 +345,7 @@ function import_mega_menu_style(){
 	include_once ( ABSPATH . '/wp-content/plugins/megamenu/classes/style-manager.class.php' );
 	include_once ( ABSPATH . '/wp-content/plugins/megamenu/classes/settings.class.php' );
 	
-	if( class_exists( '' )) :
+	if( class_exists( 'Mega_Menu_Settings' )) :
 		Class Mega_Menu_Settings_Installation extends Mega_Menu_Settings{
 		
 			public function install_theme() {
