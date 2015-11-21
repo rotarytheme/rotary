@@ -332,3 +332,53 @@ function my_theme_register_required_plugins() {
 
 	tgmpa( $plugins, $config );
 }
+
+
+/**
+ * import the megamenu settings
+ * @author paulosborn
+ *
+ */
+
+
+function import_mega_menu_style(){
+	require_once ( ABSPATH . '/wp-content/plugins/megamenu/classes/style-manager.class.php' );
+	require_once ( ABSPATH . '/wp-content/plugins/megamenu/classes/settings.class.php' );
+	Class Mega_Menu_Settings_Installation extends Mega_Menu_Settings{
+	
+		public function install_theme() {
+	
+			$this->init();
+	
+			$data = '{"title":"Rotary","container_background_from":"rgb(0, 36, 108)","container_background_to":"rgb(0, 36, 108)","container_padding_left":"10px","container_padding_right":"10px","container_padding_top":"8px","container_padding_bottom":"0px","container_border_radius_top_left":"0px","container_border_radius_top_right":"0px","container_border_radius_bottom_left":"0px","container_border_radius_bottom_right":"0px","arrow_up":"disabled","arrow_down":"disabled","arrow_left":"dash-f340","arrow_right":"dash-f344","font_size":"14px","font_color":"#666","font_family":"inherit","menu_item_align":"left","menu_item_background_from":"rgba(251, 251, 255, 0)","menu_item_background_to":"rgba(255, 255, 255, 0)","menu_item_background_hover_from":"rgb(50, 50, 61)","menu_item_background_hover_to":"rgb(50, 50, 61)","menu_item_spacing":"5px","menu_item_link_font":"Open Sans Condensed","menu_item_link_font_size":"17px","menu_item_link_height":"45px","menu_item_link_color":"rgb(255, 255, 255)","menu_item_link_weight":"bold","menu_item_link_text_transform":"capitalize","menu_item_link_text_decoration":"none","menu_item_link_color_hover":"rgb(255, 255, 255)","menu_item_link_weight_hover":"bold","menu_item_link_text_decoration_hover":"none","menu_item_link_padding_left":"10px","menu_item_link_padding_right":"10px","menu_item_link_padding_top":"0px","menu_item_link_padding_bottom":"0px","menu_item_link_border_radius_top_left":"0px","menu_item_link_border_radius_top_right":"0px","menu_item_link_border_radius_bottom_left":"0px","menu_item_link_border_radius_bottom_right":"0px","menu_item_border_color":"#fff","menu_item_border_left":"0px","menu_item_border_right":"0px","menu_item_border_top":"0px","menu_item_border_bottom":"0px","menu_item_border_color_hover":"#fff","menu_item_highlight_current":"on","menu_item_divider":"off","menu_item_divider_color":"rgba(255, 255, 255, 0.1)","menu_item_divider_glow_opacity":"0.1","panel_background_from":"rgb(0, 36, 108)","panel_background_to":"rgb(0, 36, 108)","panel_width":"100%","panel_border_color":"rgb(0, 36, 108)","panel_border_left":"0px","panel_border_right":"0px","panel_border_top":"0px","panel_border_bottom":"0px","panel_border_radius_top_left":"0px","panel_border_radius_top_right":"0px","panel_border_radius_bottom_left":"0px","panel_border_radius_bottom_right":"0px","panel_header_color":"rgb(242, 167, 0)","panel_header_text_transform":"uppercase","panel_header_font":"Open Sans Condensed","panel_header_font_size":"20px","panel_header_font_weight":"bold","panel_header_text_decoration":"none","panel_header_padding_top":"0px","panel_header_padding_right":"0px","panel_header_padding_bottom":"5px","panel_header_padding_left":"0px","panel_header_margin_top":"0px","panel_header_margin_right":"0px","panel_header_margin_bottom":"0px","panel_header_margin_left":"0px","panel_header_border_color":"rgba(85, 85, 85, 0)","panel_header_border_left":"0px","panel_header_border_right":"0px","panel_header_border_top":"0px","panel_header_border_bottom":"0px","panel_padding_left":"10px","panel_padding_right":"10px","panel_padding_top":"0","panel_padding_bottom":"10px","panel_widget_padding_left":"15px","panel_widget_padding_right":"15px","panel_widget_padding_top":"15px","panel_widget_padding_bottom":"15px","panel_font_size":"17px","panel_font_color":"rgb(255, 255, 255)","panel_font_family":"Open Sans Condensed","panel_second_level_font_color":"rgb(242, 167, 0)","panel_second_level_font_color_hover":"rgb(1, 180, 231)","panel_second_level_text_transform":"uppercase","panel_second_level_font":"Open Sans Condensed","panel_second_level_font_size":"20px","panel_second_level_font_weight":"bold","panel_second_level_font_weight_hover":"bold","panel_second_level_text_decoration":"none","panel_second_level_text_decoration_hover":"none","panel_second_level_background_hover_from":"rgba(0,0,0,0)","panel_second_level_background_hover_to":"rgba(0,0,0,0)","panel_second_level_padding_left":"0px","panel_second_level_padding_right":"0px","panel_second_level_padding_top":"0px","panel_second_level_padding_bottom":"0px","panel_second_level_margin_left":"0px","panel_second_level_margin_right":"0px","panel_second_level_margin_top":"0px","panel_second_level_margin_bottom":"0px","panel_second_level_border_color":"rgba(85, 85, 85, 0)","panel_second_level_border_left":"0px","panel_second_level_border_right":"0px","panel_second_level_border_top":"0px","panel_second_level_border_bottom":"0px","panel_third_level_font_color":"rgb(255, 255, 255)","panel_third_level_font_color_hover":"rgb(231, 231, 232)","panel_third_level_text_transform":"none","panel_third_level_font":"Open Sans Condensed","panel_third_level_font_size":"16px","panel_third_level_font_weight":"bold","panel_third_level_font_weight_hover":"bold","panel_third_level_text_decoration":"none","panel_third_level_text_decoration_hover":"none","panel_third_level_background_hover_from":"rgba(0, 0, 0, 0)","panel_third_level_background_hover_to":"rgba(0,0,0,0)","panel_third_level_padding_left":"0px","panel_third_level_padding_right":"0px","panel_third_level_padding_top":"0px","panel_third_level_padding_bottom":"0px","flyout_width":"150px","flyout_menu_background_from":"#f1f1f1","flyout_menu_background_to":"#f1f1f1","flyout_border_color":"#ffffff","flyout_border_left":"0px","flyout_border_right":"0px","flyout_border_top":"0px","flyout_border_bottom":"0px","flyout_border_radius_top_left":"0px","flyout_border_radius_top_right":"0px","flyout_border_radius_bottom_left":"0px","flyout_border_radius_bottom_right":"0px","flyout_menu_item_divider":"off","flyout_menu_item_divider_color":"rgba(222, 36, 36, 0.85)","flyout_padding_top":"0px","flyout_padding_right":"0px","flyout_padding_bottom":"0px","flyout_padding_left":"0px","flyout_link_padding_left":"10px","flyout_link_padding_right":"10px","flyout_link_padding_top":"0px","flyout_link_padding_bottom":"0px","flyout_link_weight":"normal","flyout_link_weight_hover":"normal","flyout_link_height":"35px","flyout_link_text_decoration":"none","flyout_link_text_decoration_hover":"none","flyout_background_from":"#f1f1f1","flyout_background_to":"#f1f1f1","flyout_background_hover_from":"#dddddd","flyout_background_hover_to":"#dddddd","flyout_link_size":"14px","flyout_link_color":"#666","flyout_link_color_hover":"#666","flyout_link_family":"inherit","flyout_link_text_transform":"none","responsive_breakpoint":"600px","responsive_text":"MENU","line_height":"1.7","z_index":"999","shadow":"off","shadow_horizontal":"0px","shadow_vertical":"0px","shadow_blur":"5px","shadow_spread":"0px","shadow_color":"rgba(0, 0, 0, 0.1)","transitions":"on","resets":"on","custom_css":""}';
+	
+			$import = json_decode( stripslashes( $data ), true );
+	
+			$saved_themes = get_site_option( "megamenu_themes" );
+	
+			//Check if this theme has already been imported - if so, replace it
+			foreach ( $this->themes as $id => $theme ) {
+				if( $import['title'] == $theme['title'] ) {
+					$theme_exists =  true;
+					$new_theme_id = $id;
+				}
+			}
+			if ( !$theme_exists ) {
+				$next_id = $this->get_next_theme_id();
+				$new_theme_id = "custom_theme_" . $next_id;
+			}
+	
+			$saved_themes[ $new_theme_id ] = $import; // so this will replace the current definition if the theme_id exists
+	
+			update_site_option( "megamenu_themes", $saved_themes );
+			
+			do_action("megamenu_after_theme_import");
+	
+		}
+	
+	}
+	
+	$menu = new Mega_Menu_Settings_Installation();
+	$menu->install_theme();
+}
+register_activation_hook( 'megamenu/megamenu.php', 'import_mega_menu_style' );
