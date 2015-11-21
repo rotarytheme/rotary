@@ -20,7 +20,7 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
     
 	<div class="committeecontent project">
 		<div class="committeeheadercontainer<?php echo $hascontent; ?>">
-			<h3 class="committeeheader"><?php _e( 'Project Descriptiondsfasd', 'Rotary' ); ?></h3>
+			<h3 class="committeeheader"><?php _e( 'Project Description', 'Rotary' ); ?></h3>
 			<?php if ( !$hascontent ) : ?>
 				<p class="addcontent"><?php echo _e( 'There is no description yet - add one!', 'Rotary') . (( !is_user_logged_in()) ? ' ' . wp_loginout( $_SERVER['REQUEST_URI'], true ) : '' ); ?></p>
 			<?php endif; ?>
