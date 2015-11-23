@@ -41,8 +41,6 @@ function rotary_delete_rotarymembership_folder( $dir, $deleteRootToo ) {
 	return;
 }
 
-rotary_display_name_update
-
 $dir = ABSPATH . '/wp-content/plugins/rotarymembership';
 $deleteRootToo = true;
 rotary_delete_rotarymembership_folder( $dir, $deleteRootToo );
