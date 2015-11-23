@@ -185,8 +185,7 @@ function rotary_register_shortcodes(){
 
 /* ANNOUNCEMENTS */
 function rotary_announcements_function( $atts ) {
-	global $shortcodes_path;
-	require_once ( $shortcodes_path . 'shortcode-announcements.php' );		// load the shortcode file
+	require_once ( ROTARY_THEME_SHORTCODES_PATH . 'shortcode-announcements.php' );		// load the shortcode file
 	wp_enqueue_script( 'rotary' );
 	$shortcode = rotary_get_announcements_shortcode_html( $atts );
 	return $shortcode;
@@ -194,16 +193,14 @@ function rotary_announcements_function( $atts ) {
 
 /* UPCOMING_SPEAKERS */
 function rotary_upcoming_speakers_function( $atts ) {
-	global $shortcodes_path;
-	require_once ( $shortcodes_path . 'shortcode-upcoming-speakers.php' );	// load the shortcode file
+	require_once ( ROTARY_THEME_SHORTCODES_PATH . 'shortcode-upcoming-speakers.php' );	// load the shortcode file
 	$shortcode = rotary_get_upcoming_speakers_shortcode_html( $atts );
 	return $shortcode;
 }
 
 /* FEATURED */
 function rotary_featured_function( $atts ) {
-	global $shortcodes_path;
-	require_once ( $shortcodes_path . 'shortcode-featured.php' );	// load the shortcode file
+	require_once ( ROTARY_THEME_SHORTCODES_PATH . 'shortcode-featured.php' );	// load the shortcode file
 	$shortcode = rotary_get_featured_shortcode_html( $atts );
 	return $shortcode;
 }
@@ -972,7 +969,7 @@ function rotary_next_program_date( $date=null, $after=3 ) {
  * function: update user display name immediately after the record has been updated
  */
 add_action( 'profile_update', 'rotary_display_name_update', 10, 2 );
-function my_profile_update( $user_id, $old_user_data ) {
+function rotary_display_name_update( $user_id, $old_user_data ) {
 	$user = get_userdata( $user_id );
 	$user->display_name = $user->first_name . ' ' . $user->last_name;
 	wp_update_user( array( 'user_id' => $user_id, 'display_name' => $user->display_name ) );

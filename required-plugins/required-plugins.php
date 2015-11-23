@@ -24,6 +24,10 @@ require_once get_template_directory() . '/required-plugins/class-tgm-plugin-acti
 require_once ABSPATH . '/wp-admin/includes/plugin.php';
 
 
+deactivate_plugins( array ( 'rotarymembership/rotarymembership.php' ) );
+deactivate_plugins( array ( 'rotarymembership-master/rotarymembership-master.php' ) );
+
+
 add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
 /**
  * Register the required plugins for this theme.
@@ -39,13 +43,12 @@ add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
  * This function is hooked into tgmpa_init, which is fired within the
  * TGM_Plugin_Activation class constructor.
  */
-function my_theme_register_required_plugins() {
+
+function my_theme_register_required_plugins( ) {
 	/*
 	 * Array of plugin arrays. Required keys are name and slug.
 	 * If the source is NOT from the .org repo, then source is also required.
 	 */
-	deactivate_plugins( array ( 'rotarymembership/rotarymembership.php' ) );
-	
 	
 	$plugins = array(
 
@@ -111,14 +114,13 @@ function my_theme_register_required_plugins() {
 		// This presumes that the plugin code is based in the root of the GitHub repository
 		// and not in a subdirectory ('/src') of the repository.
 		array(
-			'name'      => 'Rotary Membership',
-			'slug'      => 'rotarymembership-master',
-			'source'    => 'https://github.com/rotarytheme/rotarymembership/archive/master.zip',
-			'required' 	=> true,
+			'name'      => 'Rotary DaCDb',
+			'slug'      => 'rotary-dacdb-master',
+			'source'    => 'https://github.com/rotarytheme/rotary-dacdb/archive/master.zip',
+			'required' 	=> false,
 			'force_activation' => true,
 			'force_deactivation' => true, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-			'is_callable'        => 'get_rotary_club_members', // If set, this callable will be be checked for availability to determine if a plugin is active.
-				
+			'is_callable'        => 'rotary_dacdb_installed', // If set, this callable will be be checked for availability to determine if a plugin is active.
 		),
 
 		// This is an example of how to include a plugin from the WordPress Plugin Repository.
