@@ -1,0 +1,13 @@
+#ui-datepicker-div {
+	background:#ccc;
+	padding:5px;
+}
+.ui-datepicker-prev {
+	float:left;
+}
+.ui-datepicker-next {
+	float:right;
+}
+.ui-datepicker-title {
+	clear:both;
+}

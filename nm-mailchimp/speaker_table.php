@@ -14,6 +14,9 @@
 
 ?>
 
+<!--  As per http://blog.mailchimp.com/turn-any-web-page-into-html-email-part-2/ ? -->
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/nm-mailchimp/email.css" />
+<?php include( 'dynamic_styles.php' );?>
 
 <table id="container-table">
 <tr>
@@ -43,9 +46,6 @@
 	 $speaker_bio = get_field( 'speaker_bio' );
  	
 ?>
-
-<!--  As per http://blog.mailchimp.com/turn-any-web-page-into-html-email-part-2/ ? -->
-<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/nm-mailchimp/email.css" />
 
     <table id="branding">
     	<tr>

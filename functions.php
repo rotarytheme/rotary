@@ -10,61 +10,138 @@
 // Set path to theme specific functions
 define( 'ACF_LITE' , true );
 
-$includes_path = TEMPLATEPATH . '/includes/';
-$required_path = TEMPLATEPATH . '/required-plugins/';
-$shortcodes_path = TEMPLATEPATH . '/shortcodes/';
-$ajax_path = TEMPLATEPATH . '/includes/ajax/';
-// Theme specific functionality
+define( 'ROTARY_THEME_INCLUDES_PATH', TEMPLATEPATH . '/includes/');
+define( 'ROTARY_THEME_CLASSES_PATH', TEMPLATEPATH . '/classes/');
+define( 'ROTARY_THEME_AJAX_PATH', TEMPLATEPATH . '/includes/ajax/');
+define( 'ROTARY_THEME_SHORTCODES_PATH', TEMPLATEPATH . '/shortcodes/');
 
-//
+
+define( 'ROTARY_THEME_JAVASCRIPT_URL', get_template_directory_uri() .  '/includes/js/');
+define( 'ROTARY_THEME_CSS_URL', get_template_directory_uri() . '/css/');
+
+//delete the rotary membership folder if it exists
+function rotary_delete_rotarymembership_folder( $dir, $deleteRootToo ) {
+	if( !$dh = @opendir( $dir )){
+		return;
+	}
+	while (false !== ($obj = readdir($dh)))	{
+		if($obj == '.' || $obj == '..')	{
+			continue;
+		}
+		if (!@unlink($dir . '/' . $obj)) {
+			rotary_delete_rotarymembership_folder($dir.'/'.$obj, true);
+		}
+	}
+
+	closedir($dh);
+
+	if ($deleteRootToo)	{
+		@rmdir($dir);
+	}
+	return;
+}
+
+$dir = ABSPATH . '/wp-content/plugins/rotarymembership';
+$deleteRootToo = true;
+rotary_delete_rotarymembership_folder( $dir, $deleteRootToo );
+$dir = ABSPATH . '/wp-content/plugins/rotarymembership-master';
+rotary_delete_rotarymembership_folder( $dir, $deleteRootToo );
+
+
+
+/*
+ * EMBEDDED PLUGINS AND EXTENSIONS
+*/
+require_once ( 'wp-advanced-search/wpas.php' );  //advnced search form
+
+include_once ( 'advanced-custom-fields/acf.php' );
+
+require_once ( 'nm-mailchimp/admin.php' );   // N-Media Mailchimp
+
+include_once ( 'acf-repeater/acf-repeater.php' );
+
+require_once ( 'required-plugins/required-plugins.php' );		// required plugins
+
+
+require_once ( ROTARY_THEME_INCLUDES_PATH . 'theme-js.php');				// Load javascript in wp_head
+
+require_once ( ROTARY_THEME_INCLUDES_PATH . 'sidebar-init.php');			// Initialize widgetized areas
+
+require_once ( ROTARY_THEME_INCLUDES_PATH . 'theme-widgets.php');		// Theme widgets
+
+require_once ( ROTARY_THEME_INCLUDES_PATH . 'admin-options.php');		// admin options
+
+
+require_once ( ROTARY_THEME_INCLUDES_PATH . 'custom-capabilities.php');		// custom capabilities
+
+require_once ( ROTARY_THEME_INCLUDES_PATH . 'rotarythemeupdater.php');	// theme updater
+
+
+/*
+ * MEMBERS
+ */
+require_once( ROTARY_THEME_CLASSES_PATH . 'rotaryprofiles.php');
+
+require_once( ROTARY_THEME_CLASSES_PATH . 'rotarymemberdata.php');
+
+
+// ADMIN
 function special_js($hook) {
     wp_enqueue_script( 'special_js',  get_template_directory_uri(). '/includes/js/special_js.js' );
 }
 add_action( 'admin_enqueue_scripts', 'special_js' );
 
-require_once ($includes_path . 'theme-options.php'); 		// Options panel settings and custom settings
+require_once (ROTARY_THEME_INCLUDES_PATH . 'theme-options.php'); 		// Options panel settings and custom settings
 
-require_once ($includes_path . 'theme-functions.php'); 		// Custom theme functions
+require_once (ROTARY_THEME_INCLUDES_PATH . 'theme-functions.php'); 		// Custom theme functions
 
+/*
+ *  CUSTOM POST TYPES
+ */
 
+require_once( ROTARY_THEME_CLASSES_PATH . 'custom-post-types.php');
 
-require_once ($includes_path . 'committee-project-functions.php'); 		// Custom functions for committees and projects
+require_once (ROTARY_THEME_INCLUDES_PATH . 'committee-project-functions.php'); 		// Custom functions for committees and projects
 
-require_once ($ajax_path . 'ajax-announcements.php'); 		// Ajax functions for announcements
+include_once( ROTARY_THEME_INCLUDES_PATH . 'speaker-fields.php'); 
 
-require_once ($ajax_path . 'ajax-projects.php'); 		// Ajax functions for announcements
+include_once( ROTARY_THEME_INCLUDES_PATH . 'committee-fields.php');
 
+include_once( ROTARY_THEME_INCLUDES_PATH . 'project-fields.php');
 
-
-require_once ($includes_path . 'theme-js.php');				// Load javascript in wp_head
-
-require_once ($includes_path . 'sidebar-init.php');			// Initialize widgetized areas
-
-require_once ($includes_path . 'theme-widgets.php');		// Theme widgets
-
-require_once ($includes_path . 'admin-options.php');		// admin options
-
-require_once ($required_path . 'required-plugins.php');		// required plugins
-
-require_once ($includes_path . 'custom-posts.php');			// custom posts
-
-require_once ($includes_path . 'custom-capabilities.php');		// custom capabilities
-
-require_once ($includes_path . 'rotarythemeupdater.php');	// theme updater
-
-require_once ('nm-mailchimp/admin.php');   // N-Media Mailchimp
-
-require_once('wp-advanced-search/wpas.php');  //advnced search form
+require_once ( ROTARY_THEME_AJAX_PATH . 'ajax-projects.php'); 		// Ajax functions for projects
 
 
 
-include_once('advanced-custom-fields/acf.php' );
 
-include_once('acf-repeater/acf-repeater.php');
 
-include_once( $includes_path . 'speaker-fields.php');
+/*
+ * ANNOUNCEMENTS
+ */
+require_once ( ROTARY_THEME_AJAX_PATH . 'ajax-announcements.php'); 		// Ajax functions for announcements
 
-include_once( $includes_path . 'project-fields.php');
+
+
+
+
+/*
+ * SHORTCODES
+ *
+ */
+
+
+/*
+ * EMBEDDED PLUGINS AND EXTENSIONS
+ */
+require_once ( 'wp-advanced-search/wpas.php' );  //advnced search form
+
+include_once ( 'advanced-custom-fields/acf.php' );
+
+require_once ( 'nm-mailchimp/admin.php' );   // N-Media Mailchimp
+
+include_once ( 'acf-repeater/acf-repeater.php' );
+
+require_once ( 'required-plugins/required-plugins.php' );		// required plugins
 
 //include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
