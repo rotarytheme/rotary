@@ -14,6 +14,7 @@ define( 'ROTARY_THEME_INCLUDES_PATH', TEMPLATEPATH . '/includes/');
 define( 'ROTARY_THEME_CLASSES_PATH', TEMPLATEPATH . '/classes/');
 define( 'ROTARY_THEME_AJAX_PATH', TEMPLATEPATH . '/includes/ajax/');
 define( 'ROTARY_THEME_SHORTCODES_PATH', TEMPLATEPATH . '/shortcodes/');
+define( 'ROTARY_THEME_CSS_PATH', TEMPLATEPATH . '/css/');
 
 
 define( 'ROTARY_THEME_JAVASCRIPT_URL', get_template_directory_uri() .  '/includes/js/');

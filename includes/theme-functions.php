@@ -181,6 +181,15 @@ function rotary_register_shortcodes(){
 	add_shortcode( 'FEATURED', 'rotary_featured_function' );
 	add_shortcode( 'COMMITTEE_ANNOUNCEMENTS', 'rotary_announcements_function' );
 	add_shortcode( 'ANNOUNCEMENTS', 'rotary_announcements_function' );
+	add_shortcode( 'BOARDMEMBERS', 'rotary_boardmembers_function' );
+}
+
+/* BOARDMEMBERS */
+function rotary_boardmembers_function(  $atts  ) {
+	require_once ( ROTARY_THEME_SHORTCODES_PATH . 'shortcode-boardmembers.php' );		// load the shortcode file
+	wp_enqueue_style( 'boardmembers_style',  ROTARY_THEME_CSS_URL . 'shortcode-boardmembers.css');
+	$shortcode = rotary_boardmembers_html( $atts );
+	return $shortcode;
 }
 
 /* ANNOUNCEMENTS */
