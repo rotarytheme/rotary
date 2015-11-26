@@ -4,7 +4,7 @@ Github Theme URI: https://github.com/rotarytheme/rotary
 Description: If you are upgrading, you may need to uninstall your current version, and download this package from http://bbrcwebsite.com/download-2/.   An HTML 5 theme designed for Rotary Clubs.  Everything a fully functioning Rotary Club needs.  Organize your members into committees.  Create projects, social events, and fundraisers.  Publish announcements and updates to your members.  Integrates with MailChimp and Facebook.
 Author: Merrill M. Mayer (development) and  Carolina Torres (design)
 Tags: rotary, html5
-Version: 4.17
+Version: 4.18
 */
 
 /*NOTE this stylesheet is empty because we are overriding the stylesheet css in our functions.php file. This is because we are using COMPASS.app to compile SCSS into CSS. The resulting stylesheet is in:/rotary-sass/stylesheets/style.css */
