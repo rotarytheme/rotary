@@ -6,6 +6,7 @@
  * @subpackage Rotary
  * @since Rotary 1.0
  */
+
  add_action('customize_register', 'rotary_theme_customize');
 function rotary_theme_customize($wp_customize) {
     class Rotary_Textarea_Control extends WP_Customize_Control {
@@ -97,20 +98,6 @@ $wp_customize->add_control( 'rotary_home_sidebar', array(
 		'label'   => 'Show Home Page Sidebar',
 		'section' => 'rotary_main_settings',
 		'type'    => 'checkbox',
-) );
-/*Settings and Controls for background color*/	
-$wp_customize->add_setting( 'rotary_background_color', array(
-		'default'        => 'gray',
-		'capability'     => 'edit_theme_options',
-) );
-$wp_customize->add_control( 'rotary_background_color', array(
-		'label'   => 'Background Color',
-		'section' => 'rotary_main_settings',
-		'type'    => 'select',
-    	'choices'    => array(
-        'gray' => 'Gray',
-        'white' => 'White',
-        ),
 ) );
 
 /*Settings and Controls for Social Media*/	
