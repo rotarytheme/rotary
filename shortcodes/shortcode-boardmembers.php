@@ -35,7 +35,7 @@ function rotary_boardmembers_html( $atts ) {
 						<div class="bbrc-position"><?php echo $roles;?></div>
 						<div class="bbrc-office">
 							<p class="bbrc-office-label"><?php echo __( 'Office' );?>:</p>
-							<p class="bbrc-office-phone"><?php echo $usermeta['busphone'];?></p>
+							<p class="bbrc-office-phone"><?php echo $usermeta['busphone'][0];?></p>
 						</div>
 					</div>
 				<div style="clear:both"></div>
