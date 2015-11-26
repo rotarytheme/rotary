@@ -83,7 +83,7 @@
 <script src="<?php echo get_bloginfo('template_directory').'/includes/js/lte-ie7.js'; ?>" type="text/javascript"></script >
 <![endif]-->
 </head>
-<?php  $bodyClass = get_theme_mod( 'rotary_background_color', 'gray' );  ?> 
+<?php  $bodyClass = 'white';  ?> 
 <body <?php body_class($bodyClass); ?>>
  <div id="wrapper">
     <section id="signin">

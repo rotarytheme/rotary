@@ -20,7 +20,7 @@ require( substr(  __DIR__, 0, strpos(  __DIR__, '/wp-content' )) .'/wp-load.php'
 
 nocache_headers();
 
-$comment_ID = isset( $_POST['comment_ID'] ) ? (int) $_POST['comment_ID'] : 0;
+$comment_ID = isset( $_REQUEST['comment_ID'] ) ? (int) $_REQUEST['comment_ID'] : 0;
 $announcement = get_comment( $comment_ID );
 
 if ( empty( $announcement ) ) {
@@ -97,7 +97,7 @@ if ( ! comments_open( $comment_post_ID ) ) {
 // This action deals with saving all the custom fields that we are passing through.  It calls rotary_save_announcement_meta() in committee-projects-functions.php
 do_action( 'comment_edit', $comment_ID );
 
-$comment_content = ( isset($_POST['comment']) ) ? trim($_POST['comment']) : null;
+$comment_content = ( isset($_REQUEST['comment']) ) ? trim($_REQUEST['comment']) : null;
 
 if ( '' == $comment_content ) {
 	wp_die( __( '<strong>ERROR</strong>: please type a comment.' ), 200 );
@@ -105,16 +105,18 @@ if ( '' == $comment_content ) {
 
 $commentarr = compact( 'comment_ID', 'comment_content' );
 wp_update_comment( $commentarr );
+
+$approve = wp_set_comment_status( $comment_id, 'approve' );
 $comment = get_comment( $comment_id );
 
-$location = empty( $_POST['redirect_to'] ) ? get_comment_link( $comment_id ) : $_POST['redirect_to'] . '#comment-' . $comment_ID;
+$location = empty( $_REQUEST['redirect_to'] ) ? get_comment_link( $comment_id ) : $_REQUEST['redirect_to'] . '#comment-' . $comment_ID;
 
 /**
  * Filter the location URI to send the commenter after posting.
  *
  * @since 2.0.5
  *
- * @param string $location The 'redirect_to' URI sent via $_POST.
+ * @param string $location The 'redirect_to' URI sent via $_REQUEST.
  * @param object $comment  Comment object.
  */
 $location = apply_filters( 'comment_post_redirect', $location, $comment );

@@ -87,16 +87,17 @@ add_action( 'comment_edit', 'rotary_save_announcement_meta', 10, 1 ); // Trigger
 function rotary_save_announcement_meta( $comment_id ) {
 
 	// title
-	$announcement_title = sanitize_text_field( $_POST['announcement_title'] );
+	$announcement_title = sanitize_text_field( $_REQUEST['announcement_title'] );
 	update_comment_meta( $comment_id, 'announcement_title', $announcement_title );
 
 	// Expiry date
-	$announcement_expiry_date = ( sanitize_text_field( $_POST['announcement_expiry_date'] ) );
+	$announcement_expiry_date = ( sanitize_text_field( $_REQUEST['announcement_expiry_date'] ) );
 	if( !$announcement_expiry_date ) :
 		$post_id = get_comment_meta( $comment_id, 'comment_post_ID', true );
-		if ( 'rotary_projects' == get_post_type( $post_id ) && !get_field( 'long_term_project', $post_id ) ) :
-			$expiry_date = strtotime( get_field( 'rotary_project_end_time', $post_id ));
-		else:
+		if ( 'rotary_projects' == get_post_type( $post_id ) && get_field( 'long_term_project', $post_id ) ) :
+			$expiry_date = date_create_from_format ( 'Ymd', get_field( 'rotary_project_end_date', $post_id ));
+		endif;
+		if ( !is_object( $expiry_date )) :
 			$expiry_date = new DateTime;
 			$expiry_date->add(new DateInterval( 'P7D' ) ) ;
 		endif;
@@ -106,11 +107,11 @@ function rotary_save_announcement_meta( $comment_id ) {
 	update_comment_meta( $comment_id, 'announcement_expiry_date', $announcement_expiry_date );
 
 	//Request replies
-	$request_replies_input = $_POST['request_replies_input'];
+	$request_replies_input = $_REQUEST['request_replies_input'];
 	update_comment_meta( $comment_id, 'request_replies', $request_replies_input );
 
 	//Announcer
-	$user_ID = $_POST['announcer'] ;
+	$user_ID = $_REQUEST['announcer'] ;
 	$user = get_userdata( $user_ID );
 	if ( $user->exists() ) {
 		$comment_author       = wp_slash( $user->display_name );
@@ -127,16 +128,16 @@ function rotary_save_announcement_meta( $comment_id ) {
 	wp_update_comment( $commentarr );
 
 	// Call to action URL
-	if( $_POST['call_to_action_input'] ) :
-		$link_text = sanitize_text_field( $_POST['call_to_action_text_input'] );
-		if( 1 == $_POST['call_to_action_link'] ) : //link to this post
+	if( $_REQUEST['call_to_action_input'] ) :
+		$link_text = sanitize_text_field( $_REQUEST['call_to_action_text_input'] );
+		if( 1 == $_REQUEST['call_to_action_link'] ) : //link to this post
 			$link_text = ( $link_text ) ? $link_text : __( 'Go To Post' );
 			$announcement = get_comment( $comment_id );
 			$link_url = get_permalink( $announcement->comment_post_ID );
 			update_comment_meta( $comment_id, 'link_url', '' ); //delete any URL there is
 		else:
 			$link_text = ( $link_text ) ? $link_text : __( 'Go To Website' );
-			$link_url = esc_url( $_POST['other_link_text_input'] );
+			$link_url = esc_url( $_REQUEST['other_link_text_input'] );
 			update_comment_meta( $comment_id, 'link_url', $link_url );
 			$call_to_action_link = 2;
 		endif;
@@ -145,7 +146,7 @@ function rotary_save_announcement_meta( $comment_id ) {
 			update_comment_meta( $comment_id, 'call_to_action', $call_to_action );
 		endif;
 		update_comment_meta( $comment_id, 'link_text', $link_text );
-		update_comment_meta( $comment_id, 'call_to_action_link', $_POST['call_to_action_link'] );
+		update_comment_meta( $comment_id, 'call_to_action_link', $_REQUEST['call_to_action_link'] );
 	else:
 		delete_comment_meta( $comment_id, 'call_to_action' );
 		delete_comment_meta( $comment_id, 'link_text' );
@@ -162,8 +163,8 @@ function rotary_save_announcement_meta( $comment_id ) {
 ************************************************************************/
 add_action( 'comment_form_logged_in_after', 'additional_comment_fields_before' );
 function additional_comment_fields_before( $fields ) {
-	if( $_POST['comment_id']) : // we are editing a comment
-		$comment_id = (int) $_POST['comment_id'];
+	if( $_REQUEST['comment_id'] ) : // we are editing a comment
+		$comment_id = (int) $_REQUEST['comment_id'];
 		$announcement = get_comment( $comment_id );
 		$announcer = $announcement->user_id;
 		$request_replies_checked = get_comment_meta( $comment_id, 'request_replies', true );
@@ -194,13 +195,13 @@ function additional_comment_fields_before( $fields ) {
 ************************************************************************/
 function rotary_comment_notes_after ( ) {
 	// if this from an AJAX call, I set the redirect_to field so that when the form is saved, it gets redirected back to the calling page
-	if( $_POST['redirect_to'] ) :
-		$redirect = '<input type="hidden" name="redirect_to" value="' . trim(esc_url( $_POST['redirect_to'] )) . '" />';
+	if( $_REQUEST['redirect_to'] ) :
+		$redirect = '<input type="hidden" name="redirect_to" value="' . trim(esc_url( $_REQUEST['redirect_to'] )) . '" />';
 	endif;
 	
 	// Fetch the current values  if we are editing a comment
-	if( $_POST['comment_id'] ) :
-		$comment_id = (int) $_POST['comment_id'];
+	if( $_REQUEST['comment_id'] ) :
+		$comment_id = (int) $_REQUEST['comment_id'];
 		$comment_id_input_field = '<input type="hidden" name="comment_ID" value="' . $comment_id . '" />';
 		$link_text = get_comment_meta( $comment_id, 'link_text', true );
 		$call_to_action_link = get_comment_meta( $comment_id, 'call_to_action_link', true );
@@ -263,7 +264,6 @@ function get_users_select( $announcer ) {
 	return $options;
 }
 
-
 /********************************************
 *  Copied from the plugin MDC Comments
 *  adds tinyMCE to the comment field both on a page/post, and on AJAX
@@ -278,8 +278,8 @@ add_action( 'wp_enqueue_scripts', 'rotary_comment_toolbar' );
 function rotary_comment_toolbar() {
 	global $post;
 
-	if( $_POST['comment_id'] ) {
-		$comment_id = (int) $_POST['comment_id'];
+	if( $_REQUEST['comment_id'] ) {
+		$comment_id = (int) $_REQUEST['comment_id'];
 		$announcement =  get_comment( $comment_id );
 		$content = $announcement->comment_content;
 	}
