@@ -61,6 +61,8 @@ require_once ( 'nm-mailchimp/admin.php' );   // N-Media Mailchimp
 
 include_once ( 'acf-repeater/acf-repeater.php' );
 
+include_once ( 'import-users-from-csv/import-users-from-csv.php' );
+
 require_once ( 'required-plugins/required-plugins.php' );		// required plugins
 
 

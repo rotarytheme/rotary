@@ -9,11 +9,35 @@
  */
 /*remove the admin bar*/
 
+
+//if DacDB is not being used, then allow the direct import of users
+$options = get_option('rotary_dacdb');
+if ('yes' != $options['rotary_use_dacdb']) {
+	IS_IU_Import_Users::init();
+	add_action( 'is_iu_pre_user_import', 'rotary_pre_user_import', 10, 2 );
+	function rotary_pre_user_import( $userdata, $usermeta ) {
+		$usermeta['email'] = $userdata['user_email'];
+		$userdata['role'] = 'member';
+		$usermeta['memberyesno'] = '1';
+		$membersince = date_format( create_date( $usermeta['membersince'] ), 'm/d/Y' );
+		$usermeta['membersince'] = ( $membersince ) ? $membersince : '01/01/2015';
+		$userdata['display_name'] =  $userdata['first_name'] . ' ' . $userdata['last_name'];
+	}
+	add_action( 'is_iu_post_users_import', 'rotary_post_users_import', 10, 2 );
+	function rotary_post_users_import($user_ids, $errors ){
+		
+	}
+}
+
+
+
+
 add_action('wp_enqueue_scripts', 'my_enqueue_mce');
 function my_enqueue_mce() {
 	wp_enqueue_script( 'tiny_mce' );
 	if (function_exists('wp_tiny_mce')) wp_tiny_mce();
 }
+
 
 add_filter('show_admin_bar', '__return_false');
 add_action( 'wp_print_styles', 'rotary_deregister_styles', 100 );
