@@ -128,8 +128,8 @@ function my_theme_register_required_plugins( ) {
 			'name' 		=> 'Contact Form 7',
 			'slug' 		=> 'contact-form-7',
 			'required' 	=> true,
-			'force_activation' => true
-			'is_callable' => 'wpcf7_plugin_path';
+			'force_activation' => true,
+			'is_callable' => 'wpcf7_plugin_path'
 			),
 			
 		array(
