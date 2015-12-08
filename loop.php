@@ -36,5 +36,3 @@ else:
 		comments_template( '', true ); 
 	endwhile; // End the loop. Whew.
 endif;
-
-get_post_type
