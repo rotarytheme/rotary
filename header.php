@@ -120,7 +120,7 @@
 	  
 				<div class="membership-address-container">
 			        <section id="membership">
-			        <h2>Become a member</h2>
+			        <h2><?php echo __( 'Become a member' ); ?></h2>
 			        <?php  $pageID = get_theme_mod( 'rotary_more_info_button', '' );  ?>
 					<?php if ($pageID) {?>
 			          <a class="rotarybutton-largegold" href="<?php echo get_permalink($pageID);?>">Get More Info</a>
@@ -128,7 +128,7 @@
 			
 			        </section>
 			        <section id="meetingaddress">
-			        <h2>MEETING SITE ADDRESS</h2>
+			        <h2><?php echo __( 'MEETING SITE ADDRESS' ); ?></h2>
 			        <?php  $meetingaddress = get_theme_mod( 'rotary_meeting_location', '' );  
 					   if ($meetingaddress) {
 						   echo '<p>'.nl2br($meetingaddress).'</p>';

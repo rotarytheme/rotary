@@ -8,6 +8,7 @@
  */
 
 global $ProjectType;
+
 get_header(); ?>
 <?php //get the project ID to use in the connected committee loop where the ID reflect the committee and not the project ?>
 <?php $projectID = get_the_ID(); ?>
@@ -24,10 +25,13 @@ get_header(); ?>
 		) ); 
 		if ( $connected->have_posts() ) : 
 			   while ( $connected->have_posts() ) : $connected->the_post();
-			   $type = get_field( 'project_type'  );
-			   if( !$type ) : update_field( 'project_type', (( 1 >= get_field( 'project_type'  ) )) ? GRANT : SOCIALEVENT ); endif; // for conversion: set type based on LongTerm flag
+			   $type = get_field( 'project_type', $projectID );
+			   if( !$type ) : 
+			   		update_field( 'project_type', (( 1 >= get_field( 'long_term_project'  ) ) ? GRANT : SOCIALEVENT ), $projectID ); 
+			   		$type = get_field( 'project_type', $projectID  );
+			   	endif; // for conversion: set type based on LongTerm flag
 			  ?>
-				<h2><?php echo $ProjectType[$type] ;?>: <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+				<h2><?php echo $ProjectType[$type] ; ?>: <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 			<?php endwhile; ?>
 		<?php else : ?>
 			<h2><?php echo $ProjectType[$type]; ?></h2>

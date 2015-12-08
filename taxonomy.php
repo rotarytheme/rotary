@@ -10,9 +10,9 @@
 get_header(); ?>
 
 				<?php if ( 'rotary_projects' ==  get_post_type() ) : ?>
-					<h1 class="pagetitle"><span>Projects</span></h1>				
+					<h1 class="pagetitle"><span><?php echo __( 'Projects' ); ?></span></h1>				
 				<?php else: ?>
-					<h1 class="pagetitle"><span>Speaker Program</span></h1>
+					<h1 class="pagetitle"><span><?php echo __( 'Speaker Program' ); ?></span></h1>
 				<?php endif; ?>
                 <h2 class="pagesubtitle"><?php
                 	if ( is_tax('tax-rotary_speaker_tag') ){

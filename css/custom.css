@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+
+#featured h1 {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+#page {
+    clear: both;
+}
