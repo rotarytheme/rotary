@@ -12,7 +12,7 @@
 
 //if DacDB is not being used, then allow the direct import of users
 $options = get_option('rotary_dacdb');
-if ('yes' != $options['rotary_use_dacdb']) {
+if ('yes' != $options['rotary_use_dacdb'] || !class_exists( 'RotaryDaCDb' )) {
 	IS_IU_Import_Users::init();
 	add_action( 'is_iu_pre_user_import', 'rotary_pre_user_import', 10, 2 );
 	function rotary_pre_user_import( $userdata, $usermeta ) {
@@ -29,8 +29,23 @@ if ('yes' != $options['rotary_use_dacdb']) {
 	}
 }
 
-
-
+/**
+ * Comments must be enabled for projects and committees - make it so!
+ * 
+ * @param unknown $post_id
+ * @param unknown $post
+ * @param unknown $update
+ */
+function force_open_comments( $post_id, $post, $update ) {
+	if( 'rotary-committees' == $post->post_type || 'rotary_projects'  == $post->post_type || 1==1 ) :
+	remove_action( 'save_post',  'force_open_comments', 10, 3 );
+	// update the post, which calls save_post again
+	wp_update_post( array( 'ID' => $post_id, 'comment_status' => 'open' ));
+	// re-hook this function
+	add_action( 'save_post', 'force_open_comments', 10, 3 );
+	endif;
+}
+add_action( 'save_post',  'force_open_comments', 10, 3 );
 
 add_action('wp_enqueue_scripts', 'my_enqueue_mce');
 function my_enqueue_mce() {
@@ -1007,3 +1022,5 @@ function rotary_display_name_update( $user_id, $old_user_data ) {
 	$user->display_name = $user->first_name . ' ' . $user->last_name;
 	wp_update_user( array( 'user_id' => $user_id, 'display_name' => $user->display_name ) );
 }
+
+enqueue_style

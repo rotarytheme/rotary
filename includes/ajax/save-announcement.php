@@ -106,10 +106,10 @@ if ( '' == $comment_content ) {
 $commentarr = compact( 'comment_ID', 'comment_content' );
 wp_update_comment( $commentarr );
 
-$approve = wp_set_comment_status( $comment_id, 'approve' );
-$comment = get_comment( $comment_id );
+$approve = wp_set_comment_status( $comment_ID, 'approve' );
+$comment = get_comment( $comment_ID );
 
-$location = empty( $_REQUEST['redirect_to'] ) ? get_comment_link( $comment_id ) : $_REQUEST['redirect_to'] . '#comment-' . $comment_ID;
+$location = empty( $_REQUEST['redirect_to'] ) ? get_comment_link( $comment_ID ) : $_REQUEST['redirect_to'] . '#comment-' . $comment_ID;
 
 /**
  * Filter the location URI to send the commenter after posting.

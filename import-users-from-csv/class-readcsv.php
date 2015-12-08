@@ -84,7 +84,7 @@ class ReadCSV {
 					return $row;
 				}
 				// Fall through to accumulate quoted chars in switch() {...}
-			} elseif ($char === FALSE || $char == "\n") {
+			} elseif ($char === FALSE || $char == "\n" || 13 == ord($char)) {
 				// End of record.
 				// (TODO: error case if $state==self::field_start here - trailing comma)
 				$row[] = $field;

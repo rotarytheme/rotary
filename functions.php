@@ -15,10 +15,11 @@ define( 'ROTARY_THEME_CLASSES_PATH', TEMPLATEPATH . '/classes/');
 define( 'ROTARY_THEME_AJAX_PATH', TEMPLATEPATH . '/includes/ajax/');
 define( 'ROTARY_THEME_SHORTCODES_PATH', TEMPLATEPATH . '/shortcodes/');
 define( 'ROTARY_THEME_CSS_PATH', TEMPLATEPATH . '/css/');
-
+define( 'ROTARY_THEME_CSV_PATH', TEMPLATEPATH . '/import-users-from-csv/');
 
 define( 'ROTARY_THEME_JAVASCRIPT_URL', get_template_directory_uri() .  '/includes/js/');
 define( 'ROTARY_THEME_CSS_URL', get_template_directory_uri() . '/css/');
+define( 'ROTARY_THEME_CSV_URL', get_template_directory_uri() . '/import-users-from-csv/');
 
 //delete the rotary membership folder if it exists
 function rotary_delete_rotarymembership_folder( $dir, $deleteRootToo ) {

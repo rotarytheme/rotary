@@ -3,8 +3,7 @@
  * @package Import_Users_from_CSV
  */
 /*
-Plugin Name: Import Users from CSV
-Plugin URI: http://wordpress.org/extend/plugins/import-users-from-csv/
+http://wordpress.org/extend/plugins/import-users-from-csv/
 Description: Import Users data and metadata from a csv file.
 Version: 1.0.0
 Author: Ulrich Sossou
@@ -74,6 +73,7 @@ class IS_IU_Import_Users {
 		if ( isset( $_POST['_wpnonce-is-iu-import-users-users-page_import'] ) ) {
 			check_admin_referer( 'is-iu-import-users-users-page_import', '_wpnonce-is-iu-import-users-users-page_import' );
 
+			
 			if ( isset( $_FILES['users_csv']['tmp_name'] ) ) {
 				// Setup settings variables
 				$filename              = $_FILES['users_csv']['tmp_name'];
@@ -160,7 +160,7 @@ class IS_IU_Import_Users {
 			<tr valign="top">
 				<th scope="row"><label for="field_codes"><?php __( 'CSV Column Headers'); ?></label></th>
 				<td>
-					<span class="description" id="field_codes">user_login,user_email,user_pass,first_name,last_name,clubrole,classification,membersince,cellphone,busphone,homephone,birthday,partnername,anniversarydate,streetaddress1,streetaddress2,city,state,county,zip,country,company,jobtitle,busweb</span>
+					<span class="description" id="field_codes">USE THESE HEADERS IN YOUR CSV: user_login, user_email, user_pass, first_name, last_name, clubrole, classification, membersince, cellphone, busphone, homephone, birthday, partnername, anniversarydate, streetaddress1 ,streetaddress2, city, state, county, zip, country, company, jobtitle, busweb</span>
 				</td>
 			</tr>
 		
@@ -168,7 +168,7 @@ class IS_IU_Import_Users {
 				<th scope="row"><label for="users_csv"><?php _e( 'CSV file' , 'import-users-from-csv'); ?></label></th>
 				<td>
 					<input type="file" id="users_csv" name="users_csv" value="" class="all-options" /><br />
-					<span class="description"><?php echo sprintf( __( 'Download <a href="%s">the template for the CSV file</a>.' , 'import-users-from-csv'), plugin_dir_url(__FILE__).'examples/import.csv'); ?></span>
+					<span class="description"><?php echo sprintf( __( 'Download <a href="%s">the template for the CSV file</a>.' , 'import-users-from-csv'), ROTARY_THEME_CSV_URL.'examples/import.csv'); ?></span>
 				</td>
 			</tr>
 			<tr valign="top">
@@ -235,7 +235,7 @@ class IS_IU_Import_Users {
 			'role'
 		);
 
-		include( plugin_dir_path( __FILE__ ) . 'class-readcsv.php' );
+		include( ROTARY_THEME_CSV_PATH . 'class-readcsv.php' );
 
 		// Loop through the file lines
 		$file_handle = fopen( $filename, 'r' );
@@ -244,11 +244,10 @@ class IS_IU_Import_Users {
 		$first = true;
 		$rkey = 0;
 		while ( ( $line = $csv_reader->get_row() ) !== NULL ) {
-
 			// If the first line is empty, abort
 			// If another line is empty, just skip it
 			if ( empty( $line ) ) {
-				if ( $first )
+				if ( $first ) 
 					break;
 				else
 					continue;
@@ -260,7 +259,7 @@ class IS_IU_Import_Users {
 				$first = false;
 				continue;
 			}
-
+			
 			// Separate user data from meta
 			$userdata = $usermeta = array();
 			foreach ( $line as $ckey => $column ) {
@@ -276,7 +275,7 @@ class IS_IU_Import_Users {
 
 			// A plugin may need to filter the data and meta
 			$userdata = apply_filters( 'is_iu_import_userdata', $userdata, $usermeta );
-
+			
 			// If no user data, bailout!
 			if ( empty( $userdata ) )
 				continue;
@@ -305,7 +304,7 @@ class IS_IU_Import_Users {
 
 			// If creating a new user and no password was set, let auto-generate one!
 			if ( ! $update && empty( $userdata['user_pass'] ) )
-				$userdata['user_pass'] = wp_generate_password( 12, false );
+				$userdata['user_pass'] = wp_generate_password( 8, false );
 
 			if ( $update )
 				$user_id = wp_update_user( $userdata );
