@@ -345,7 +345,11 @@ class Rotary_Committee_Links extends WP_Widget {
 	 */
 	public function __construct() {
 		// widget actual processes
-		parent::WP_Widget('rotaryCommitteeLinks', $name = 'Rotary Committees');
+		$name = 'Rotary Committee Updates';
+		$options = array(
+			'description' => 'Filters posts according to the selected committee.  Designed to be used on the Posts & Updates Sidebar'
+		);
+		parent::WP_Widget( 'rotaryCommitteeLinks', $name, $options);
 	}
 
 	/**
@@ -426,14 +430,18 @@ function rotary_register_committee_links() {
 }
 add_action('widgets_init', 'rotary_register_committee_links');	
 
-/*Project Widget*/
+/*Project Updates Widget*/
 class Rotary_Project_Links extends WP_Widget {
 	/**
 	 * Sets up the widgets name etc
 	 */
 	public function __construct() {
 		// widget actual processes
-		parent::WP_Widget('rotaryProjectLinks', $name = 'Rotary Projects');
+		$name = 'Rotary Project Updates';
+		$options = array(
+			'description' => 'Filters posts according to the selected project.  Designed to be used on the Posts & Updates Sidebar'
+		);
+		parent::WP_Widget('rotaryProjectLinks', $name, $options );
 	}
 
 	/**
@@ -486,7 +494,7 @@ class Rotary_Project_Links extends WP_Widget {
 			$title = $instance[ 'title' ];
 		}
 		else {
-			$title = __( 'Projects', 'text_domain' );
+			$title = __( 'Project Updates', 'text_domain' );
 		}
 		?>
 		<p>
@@ -525,10 +533,204 @@ add_action('widgets_init', 'rotary_register_project_links');
 /*---------------------------------------------------------------------------------*/
 
 function rotary_deregister_widgets(){
-
     unregister_widget('WP_Widget_Links');  
 	unregister_widget('WP_Widget_Archives');        
+}
+add_action('widgets_init', 'rotary_deregister_widgets');  
+
+
+
+
+/*Project Widget*/
+class Rotary_Projects extends WP_Widget {
+	/**
+	 * Sets up the widgets name etc
+	 */
+	public function __construct() {
+		// widget actual processes
+		$name = 'Rotary Projects';
+		$options = array(
+			'description' => 'Allows users to select a project from a dropdown'
+		);
+		parent::WP_Widget('rotaryProjects', $name, $options );
+	}
+
+	/**
+	 * Outputs the content of the widget
+	 *
+	 * @param array $args
+	 * @param array $instance
+	 */
+	public function widget( $args, $instance ) {
+		// outputs the content of the widget
+		extract($args, EXTR_SKIP);
+		$title = apply_filters( 'widget_title', $instance['title'] );
+
+		if ( isset( $args['before_widget'] ) ) {
+			echo $args['before_widget'];
+		}
+		if ( ! empty( $title ) )
+			echo $args['before_title'] . $title . $args['after_title'];
+		$queryargs = array(
+				'post_type' => 'rotary_projects',
+				'posts_per_page' => -1,
+				'order' => 'DESC',
+				'orderby' => 'meta_value',
+				'meta_key' => 'rotary_project_date',
+		);
+		$query = new WP_Query( $queryargs );
+		if ( $query->have_posts() ) : ?>
+			<select id="projectwidget" name="projectwidget">
+			<option value=""><?php echo _e( 'Select Project', 'Rotary'); ?></option>
+			<?php while ( $query->have_posts() ) : $query->the_post(); ?>			
+				<option value="<?php echo get_permalink(); ?>?projectid=<?php the_id(); ?>" <?php echo ( get_the_id() == $_REQUEST['projectid'] ) ? 'selected="selected"' : ''; ?>><?php the_title(); ?></option>  				
+			<?php endwhile; ?>
+			</select>	
+			<?php // Reset Post Data
+				wp_reset_postdata(); ?>
+		   	
+		<?php endif;
+		if ( isset( $args['after_widget'] ) ) {
+			echo $args['after_widget'];
+		}	
+	}
+	/**
+	 * Outputs the options form on admin
+	 *
+	 * @param array $instance The widget options
+	 */
+	public function form( $instance ) {
+		// outputs the options form on admin
+		if ( isset( $instance[ 'title' ] ) ) {
+			$title = $instance[ 'title' ];
+		}
+		else {
+			$title = __( 'Projects' );
+		}
+		?>
+		<p>
+		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+		</p>
+		
+		<?php 
+	}
+
+	/**
+	 * Processing widget options on save
+	 *
+	 * @param array $new_instance The new options
+	 * @param array $old_instance The previous options
+	 */
+	public function update( $new_instance, $old_instance ) {
+		// processes widget options to be saved
+		$instance = array();
+		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+		return $instance;
+	}
+
 
 }
+// Run code and init
+function rotary_register_projects() {
+	register_widget('Rotary_Projects');
+}
+add_action('widgets_init', 'rotary_register_projects');
 
-add_action('widgets_init', 'rotary_deregister_widgets');  
+
+
+
+
+
+
+class Rotary_Committees extends WP_Widget {
+	/**
+	 * Sets up the widgets name etc
+	 */
+	public function __construct() {
+		// widget actual processes
+		$name = 'Rotary Committees';
+		$options = array(
+			'description' => 'Allows users to select a committee from a dropdown'
+		);
+		parent::WP_Widget('rotaryCommittees', $name, $options );
+	}
+
+	/**
+	 * Outputs the content of the widget
+	 *
+	 * @param array $args
+	 * @param array $instance
+	 */
+	public function widget( $args, $instance ) {
+		// outputs the content of the widget
+		extract($args, EXTR_SKIP);
+		$title = apply_filters( 'widget_title', $instance['title'] );
+
+		if ( isset( $args['before_widget'] ) ) {
+			echo $args['before_widget'];
+		}
+		if ( ! empty( $title ) )
+			echo $args['before_title'] . $title . $args['after_title'];
+		$queryargs = array(
+				'posts_per_page' => -1,
+				'post_type' => 'rotary-committees',
+				'order' => 'ASC'
+		);
+		$query = new WP_Query( $queryargs );
+		if ( $query->have_posts() ) : ?>
+			<select id="committeewidget" name="committeewidget">
+			<option value=""><?php echo _e( 'Select Committee', 'Rotary'); ?></option>
+			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+					<option value="<?php echo get_permalink(); ?>?committeeid=<?php the_id(); ?>"  <?php echo ( get_the_id() == $_REQUEST['committeeid'] ) ? 'selected="selected"' : ''; ?>><?php the_title(); ?></option>  				
+			<?php endwhile; ?>
+			</select>
+			<?php // Reset Post Data
+				wp_reset_postdata(); ?>
+		<?php endif;
+		if ( isset( $args['after_widget'] ) ) {
+			echo $args['after_widget'];
+		}	
+	}
+
+	/**
+	 * Outputs the options form on admin
+	 *
+	 * @param array $instance The widget options
+	 */
+	public function form( $instance ) {
+		// outputs the options form on admin
+		if ( isset( $instance[ 'title' ] ) ) {
+			$title = $instance[ 'title' ];
+		}
+		else {
+			$title = __( 'Committees' );
+		}
+		?>
+		<p>
+		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+		</p>
+		<?php 
+	}
+
+	/**
+	 * Processing widget options on save
+	 *
+	 * @param array $new_instance The new options
+	 * @param array $old_instance The previous options
+	 */
+	public function update( $new_instance, $old_instance ) {
+		// processes widget options to be saved
+		$instance = array();
+		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+
+		return $instance;
+	}
+}		
+// Run code and init
+function rotary_register_committees() {
+	register_widget('Rotary_Committees');
+}
+add_action('widgets_init', 'rotary_register_committees');	
+
