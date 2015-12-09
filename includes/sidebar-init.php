@@ -13,9 +13,9 @@
 function rotary_widgets_init() {
 	// Area 1, located at the top of the sidebar on the home page. Contains Rotary text widgets and Rotary Blogroll
 	register_sidebar( array(
-		'name' => __( 'Home Widget Area', 'rotary' ),
+		'name' => __( 'Homepage Sidebar', 'rotary' ),
 		'id' => 'home-widget-area',
-		'description' => __( 'The primary widget area for the home page', 'rotary' ),
+		'description' => __( 'The  right sidebar on the home page', 'rotary' ),
 		'before_widget' => '<li id="%1$s" class="widget %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3>',
@@ -24,9 +24,9 @@ function rotary_widgets_init() {
 
 	// Area 2, located at the top of the sidebar for all pages (including blog) other than the home page. Contains custom archive widget (plugin) and tags
 	register_sidebar( array(
-		'name' => __( 'Posts Widget Area', 'rotary' ),
+		'name' => __( 'Posts & Updates Sidebar', 'rotary' ),
 		'id' => 'secondary-widget-area',
-		'description' => __( 'The secondary widget area', 'rotary' ),
+		'description' => __( 'The right sidebar on posts and project/committee updates', 'rotary' ),
 		'before_widget' => '<li id="%1$s" class="widget %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3>',
@@ -35,9 +35,9 @@ function rotary_widgets_init() {
 
 	// Area 3, located in the footer. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'Footer Navigation Widget Area', 'rotary' ),
+		'name' => __( 'Left Footer Widget Area', 'rotary' ),
 		'id' => 'first-footer-widget-area',
-		'description' => __( 'The footer navigation widget area', 'rotary' ),
+		'description' => __( 'Narrow widget area', 'rotary' ),
 		'before_widget' => '<li>',
 		'after_widget' => '</li>',
 		'before_title' => '<h3>',
@@ -46,9 +46,9 @@ function rotary_widgets_init() {
 
 	// Area 4, located in the footer. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'About Footer Widget Area', 'rotary' ),
+		'name' => __( 'Center Footer Widget Area', 'rotary' ),
 		'id' => 'second-footer-widget-area',
-		'description' => __( 'The second footer widget area', 'rotary' ),
+		'description' => __( 'Wide widget area', 'rotary' ),
 		'before_widget' => '<li>',
 		'after_widget' => '</li>',
 		'before_title' => '<h3>',
@@ -58,14 +58,26 @@ function rotary_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Right Footer Widget Area', 'rotary' ),
 		'id' => 'third-footer-widget-area',
-		'description' => __( 'The third footer widget area', 'rotary' ),
+		'description' => __( 'Narrow widget area', 'rotary' ),
 		'before_widget' => '<li>',
 		'after_widget' => '</li>',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>',
 	) );
 
+	// Area 6, located on the calendar page. Empty by default.
+	register_sidebar( array(
+	'name' => __( 'Calendar Sidebar', 'rotary' ),
+	'id' => 'calendar-sidebar',
+	'description' => __( 'Appears on the calendar page', 'rotary' ),
+	'before_widget' => '<li>',
+	'after_widget' => '</li>',
+	'before_title' => '<h3>',
+	'after_title' => '</h3>',
+	) );
+
 	// Area 6, located on the projects archive. Empty by default.
+	/*
 	register_sidebar( array(
 	'name' => __( 'Projects Widget Area', 'rotary' ),
 	'id' => 'projects-widget-area',
@@ -75,6 +87,7 @@ function rotary_widgets_init() {
 	'before_title' => '<h3>',
 	'after_title' => '</h3>',
 	) );
+	*/
 
 }
 /** Register sidebars by running rotary_widgets_init() on the widgets_init hook. */
