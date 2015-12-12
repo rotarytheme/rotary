@@ -7,3 +7,14 @@
 #page {
     clear: both;
 }
+
+li.ecp1_list_item {
+    font-size: 18px;
+    font-weight: 300;
+    font-family: open sans condensed, arial narrow, sans-serif;
+    margin: 0 0 10px 5px;
+}
+
+li.ecp1_list_item a {
+    font-weight: 300;
+}
