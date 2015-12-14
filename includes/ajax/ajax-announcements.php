@@ -315,7 +315,8 @@ function rotary_announcement_header( $posted_in_id, $announcement_title = null, 
 
 	$posted_in = '<a href="' . get_the_permalink( $posted_in_id ) . '">' . get_the_title( $posted_in_id ) .'</a>';
 	$post_type = get_post_type( $posted_in_id );
-	$thumbnail = get_the_post_thumbnail ( $posted_in_id , array(160,110) );
+	$thumbnailsize = ( 'slideshow' == $context  ) ? array( 320,220 ) :  array(160,110) ;
+	$thumbnail = get_the_post_thumbnail ( $posted_in_id ,$thumbnailsize  );
 	
 	// where did this announcement come from - a project, or a committee??
 	// If a project, we need to fetch its committee information, if it is associated

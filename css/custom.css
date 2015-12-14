@@ -18,3 +18,122 @@ li.ecp1_list_item {
 li.ecp1_list_item a {
     font-weight: 300;
 }
+
+#rotaryemaildialog .wpcf7-form-control-wrap {
+    top: -40px;
+    position: relative;
+}
+
+
+/* CAROUSEL ANNOUNCEMENTS */
+
+.slideshow-announcements {
+    font-size: 32px;
+}
+
+#content .slideshow-announcements .header-text-container h3 {
+    font-size: 50px;
+    margin-top: 15px;
+}
+#content .slideshow-announcements .header-text-container h4 {
+    font-size: 34px;
+    margin-top: 12px;
+}
+
+.slideshow #branding h1 .clubname, 
+.slideshow #branding h1 .clubtype, 
+.slideshow #branding h1 a.clubname, 
+.slideshow #branding h1 a.clubtype {
+    color: #FFF;
+    font-weight: 700;
+}
+
+.slideshow header {
+    height: 175px;
+    background-color: #17468f;
+}
+
+.slideshow #branding {
+	padding:20px 20px;
+}
+.slideshow #branding h1 {
+    background: url( ./images/RotaryMBS_REV-Gold-RGB.png ) 5px 0 no-repeat;
+    background-size:293px;
+}
+
+.slideshow .announcements-container {
+    width: 90%;
+}
+.slideshow #content {
+	margin-left:50px;
+}
+.slideshow-announcement {
+    height: 600px;
+    width: 100%;
+}
+.slideshow .slideinfo {
+	background: rgba(231, 231, 232, 0.95); /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(right,rgba(231, 231, 232, 1),rgba(231, 231, 232, 0.85)); /*Safari 5.1-6*/
+	background: -o-linear-gradient(left,rgba(231, 231, 232, 1),rgba(231, 231, 232, 0.85)); /*Opera 11.1-12*/
+	background: -moz-linear-gradient(left,rgba(231, 231, 232, 1),rgba(231, 231, 232, 0.85)); /*Fx 3.6-15*/
+	background: linear-gradient(to left, rgba(231, 231, 232, 1), rgba(231, 231, 232, 0.85)); /*Standard*/
+  
+	position: absolute;
+    right: 0;
+    padding: 10px 30px;
+    font-family: open sans condensed;
+    width: 20%;
+    height: 580px;
+    text-align: right;
+}
+.slideshow .slideinfo h1{
+    font-size: 45px;
+}
+.slideshow .slideinfo p{
+    font-size: 20px;
+    font-family:open sans condensed, arial narrow, sans-serif;
+
+}
+.slideshow .slideimage {
+    position: absolute;
+    left: 0;
+    background-size: cover!important;
+    height: 600px;
+    width: 100%;
+}
+/* Announcements */
+.slideshow .anniversarycontent h1 {
+	font-size:55px!important;
+	border-bottom: #B8A3A0 solid 1px;
+	padding-bottom: 20px!important;
+}
+.slideshow .anniversarycontent .anniversary_day {
+    display: inline-block;
+	text-align: right;
+	width:100px;
+	font-weight:bold;
+	padding-right:20px;
+	font-size: 40px;
+	font-family: Open Sans Condensed, Arial Narrow, Sans-Serif;
+    padding-bottom: 25px;
+    padding-top: 10px;
+    vertical-align: top;
+}
+.slideshow .anniversarycontent .membername {
+    display: inline-block;
+	color: black;
+	font-weight:bold;
+	width: 75%;
+    border-bottom: 1px solid #000;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+

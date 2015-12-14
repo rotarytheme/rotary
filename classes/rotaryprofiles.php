@@ -3,15 +3,32 @@
 Rotary User Profiles*/
 class RotaryProfiles {
 	 private $rotaryMemberData;
+	 public $member_profile = array();
+	 public $members = array();
+	 
 	function __construct() {
 		add_action( 'show_user_profile', array( $this, 'show_membership_profile_fields'));
 		add_action( 'edit_user_profile', array( $this, 'show_membership_profile_fields'));
 		add_action( 'personal_options_update', array( $this, 'update_membership_profile_fields'));
 		add_action( 'edit_user_profile_update', array( $this, 'update_membership_profile_fields'));
 		add_filter( 'get_avatar', array( $this, 'get_rotary_member_avatar'), 10, 5);
-		
 	}	 
 
+	
+	/*
+	 * get all members
+	 */
+	function get_members() {
+		$args = array(
+				'meta_key'     => 'memberyesno',
+				'meta_value'   => '1',
+				'meta_compare' => '=',
+				'orderby'      => 'last_name',
+				'order'        => 'ASC',
+		);
+		$this->members = get_users( $args );
+		return $this->members;
+	}
 
 	/*
 	this function will display the profile picture intead of the avatar
@@ -245,7 +262,7 @@ class RotaryProfiles {
 	/*
 	function to update the custom user profile fields. Verifies user capabilites prior to update.
 	*/
-	function update_membership_profile_fields($user_id) {
+	function update_membership_profile_fields( $user_id ) {
 			if ( !current_user_can( 'edit_user', $user_id ) ) {
 				return FALSE;
 			}
@@ -281,7 +298,6 @@ class RotaryProfiles {
 			}
 		
 	}
-	
 	
 	// ajax function to return data in form for the participation table (projects)
 	function get_form_entries_json( $gf_form_id, $post_id ) {
@@ -406,10 +422,7 @@ class RotaryProfiles {
 		endif;
 		}
 	return $columnvalue;
-}
-	
-	
-
+	}
 	
 	function get_users_json( $nameorder ) {
 		$output = array(
@@ -494,7 +507,7 @@ class RotaryProfiles {
 			}
 		return $output;
 	}
-	function get_users_details_json($memberID) {
+	function get_users_details_json( $memberID ) {
 		$output = array();
 		$user = get_user_by('id', $memberID);
 		if (!$user) {
@@ -512,6 +525,7 @@ class RotaryProfiles {
 			$memberAddress .= '<br/>'. $usermeta['city'][0] . ' ' . $usermeta['state'][0]. ' ' . $usermeta['zip'][0];
 		}
 		
+		$output['ID'] = $memberID;
 		$output['memberName'] = $memberName;
 		$output['memberAddress'] = $memberAddress;
 		$output['classification'] = ($usermeta['classification'])  ? $usermeta['classification'] : '&nbsp;';
@@ -527,22 +541,30 @@ class RotaryProfiles {
 		else {
 			$output['email'] = '<a href="mailto:' .antispambot($email, 1) .'">'.$email.'</a>';
 		}
-		$output['partnername'] = ($usermeta['partnername']) ? $usermeta['partnername'] : '&nbsp;';
+
+		$output['anniversarydate_datetime'] = ( $usermeta['anniversarydate'][0] ) ? strtotime( $usermeta['anniversarydate'][0] ): null;
+		$output['membersince_datetime'] 	= ( $usermeta['membersince'][0] ) ? strtotime( $usermeta['membersince'][0] ) : null ;
+		$output['birthday_datetime'] 		= ( $usermeta['birthday'][0] ) ? strtotime($usermeta['birthday'][0]) : null ;
+		
+		$output['partnername'] = ($usermeta['partnername'][0]) ? $usermeta['partnername'][0] : '&nbsp;';
 		$output['anniversarydate'] = ($usermeta['anniversarydate'][0]) ? date('F d', strtotime($usermeta['anniversarydate'][0])): '&nbsp;';
 		$output['membersince'] = ($usermeta['membersince']) ? $usermeta['membersince'] : '&nbsp;';
 		$output['profilepicture'] = $usermeta['profilepicture'];
 		$output['birthday'] = ($usermeta['birthday'][0]) ? date('F d', strtotime($usermeta['birthday'][0])) : '&nbsp;';
 		$output['busweb'] = ($usermeta['busweb']) ? $usermeta['busweb'] : '&nbsp;';
 		$output['membersince'] = ($usermeta['membersince'][0]) ?  date('F d Y', strtotime($usermeta['membersince'][0])) : '&nbsp;';
+
+		
 		$options = get_option('rotary_dacdb');
 		if ('yes' == $options['rotary_use_dacdb']) {
 			$output['clubname'] = $usermeta['clubname'];
 		}
 		else {
-			
 			$output['clubname'] = $options['rotary_dacdb_club_name'];
 		}
-		return $output;
+		
+		$this->member_profile = $output;
+		return $this->member_profile;
 	}
 	   
 		

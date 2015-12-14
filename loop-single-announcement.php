@@ -36,7 +36,7 @@
 	$user_can_delete = ( current_user_can( 'delete_others_announcements' ) || get_current_user_id() == $announcement->user_id || current_user_can( 'manage_options' ));
 
 	if ( $context ) $extra_classes[] =  $context . '-announcement';
-	if ( 'carousel' == $context && $announcementsDisplayed > 1 ) $extra_classes[] =  'hide';
+	if ( ('carousel' == $context  && $announcementsDisplayed > 1 ) || 'slideshow' == $context )  $extra_classes[] =  'hide';
 	?>
 			
 			<?php switch ( $context ) { 
@@ -136,6 +136,20 @@
 			</article>
 			<?php 
 				break; 
+				case 'slideshow':  ?>
+					<article id="comment-<?php echo $id ?>" <?php comment_class( $extra_classes ); ?>>
+						<?php echo rotary_announcement_header( $posted_in_id, $announcement_title, $context='slideshow' );?>
+						<div class="announcement-buttons">
+							<p class="announced-by clearleft"><?php echo $announced_by; ?></p>
+						</div>
+						<div class="announcement-body">
+							<?php echo $announcement_text; ?>	
+						</div>
+						<div class="announcement-footer">				
+						</div>
+					</article>
+				<?php 
+				break; 
 			case 'project': 
 			case 'committee':
 			default: ?>
@@ -168,4 +182,4 @@
 					</div>
 				</div>	
 			</article>	
-			<?php }?>
+			<?php }

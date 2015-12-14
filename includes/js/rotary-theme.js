@@ -10,6 +10,7 @@ jQuery(document).ready(function($) {
 			this.setUpArchives();
 			this.setUpSlideShow();
 			this.setUpAnnouncements();
+			this.setUpAnnouncementsSlideshow();
 			this.setUpEdits();
 			this.setUpDatePicker();
 			this.setUpDatatables();
@@ -408,6 +409,19 @@ jQuery(document).ready(function($) {
 					timeout: 10000,
 					delay: -2000,
 					pager: '#announcement-carousel-controls'
+				});
+			}
+		},
+		setUpAnnouncementsSlideshow: function() {
+			if ($('#announcements-slideshow').length) {
+				$('#announcements-slideshow').cycle({
+					slideExpr: '.slideshow-announcement',
+					fx: 'fade',
+					height: '600px',
+					speed: '1000',
+					timeout: 4000,
+					delay: -500,
+					//pager: '#announcement-slideshow-controls'
 				});
 			}
 		},
