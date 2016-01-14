@@ -13,7 +13,7 @@
 if (  $wp_query->max_num_pages > 1 ) :
 ?>
     <nav class="prevnext">
-        <div class="nav-previous">from loop<?php next_posts_link( __( '&lt; Older posts', 'Rotary' ) ); ?></div>
+        <div class="nav-previous"><?php next_posts_link( __( '&lt; Older posts', 'Rotary' ) ); ?></div>
         <div class="nav-next"><?php previous_posts_link( __( 'Newer posts &gt;', 'Rotary' ) ); ?></div>
     </nav>
 <?php 
