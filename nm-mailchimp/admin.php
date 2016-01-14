@@ -121,7 +121,7 @@ class NM_MC_Front
 		$encoded = $_REQUEST['announcements'];
 		$hash = md5( $encoded . 'SecretStringHere' );
 		if( $_REQUEST['hash'] == $hash) { // the data hasn't been messed with
-			$announcements = unserialize( base64_decode( $encoded ));
+				$announcements = unserialize( base64_decode( $encoded ));
 		} else {echo ' submitted hash was: ' . $_REQUEST['hash'] . '. Recalculated hash was: ' . $hash .'<br><br>Actual string was <br>' . $encoded;}
 		
 		if ($campaigntype == 'speaker') {

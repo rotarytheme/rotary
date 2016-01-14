@@ -89,8 +89,9 @@
     	<div id="branding">
 	      <?php  $clubname = get_theme_mod( 'rotary_club_name', '' );  ?>
 	      <?php  $rotaryClubBefore = get_theme_mod( 'rotary_club_first', false); ?>
-	            <h1>
-	            <?php rotary_club_header($clubname, $rotaryClubBefore);?>
+	      <?php  $logotype = 'official-logo'; ?>
+	            <h1 class="<?php echo $logotype; ?>">
+	            <?php rotary_club_header($clubname, $rotaryClubBefore, $logotype );?>
 	            </h1>
     	</div>
     </header>

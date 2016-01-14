@@ -359,6 +359,33 @@ function rotary_announcement_header( $posted_in_id, $announcement_title = null, 
 			</div>	
 		<?php 	
 			break;
+		case 'slideshow':
+			?>
+					<div class="announcement-header">
+						<?php if ( $thumbnail ) { 
+							$hasthumbnail = "has-thumbnail";?>
+							<div class="header-thumbnail-container"><?php echo $thumbnail; ?></div><?php 
+						}?>
+							<div class="header-text-container <?php echo  $hasthumbnail; ?>">
+								<?php if( $announcement_title ) :?>
+									<h4 class="inline"><?php echo $posted_in; ?></h4>
+									<?php if ( 'rotary_projects' == $post_type ) :?>
+										<span class="project-type"><?php echo $ProjectType[$type] . ' '; ?></span>
+										<h5 class="organizing-committee"><?php echo sprintf( __( 'Organized by %s' ), $committee_title); ?></h5>
+									<?php endif;?>
+									<h3><?php echo $announcement_title; ?></h3>
+								<?php else:?>
+									<h3  class="inline"><?php echo $posted_in; ?></h3>
+									<?php if ( 'rotary_projects' == $post_type ) :?>
+										<span class="project-type"><?php echo $ProjectType[$type] . ' '; ?></span>
+										<h5 class="organizing-committee"><?php echo sprintf( __( 'Organized by %s' ), $committee_title); ?></h5>
+									<?php endif;?>
+								<?php endif;?>
+							</div>
+					</div>	
+				<?php 	
+					break;
+					
 		case 'edit':
 			?>
 			<div class="announcement-header">

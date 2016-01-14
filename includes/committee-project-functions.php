@@ -345,7 +345,7 @@ function  rotary_show_project_dates() {
 				<span class="fulldate"><?php echo (( $show_day) ? $endDate->format('jS F Y') : $endDate->format('F Y')); ?></span>
 			<?php else : ?>
 				<span><?php echo __( '(ongoing)' ); ?></span>
-			<?endif; ?>
+			<?php endif; ?>
 	<?php 
 	else :
 		$longTermClass = '';

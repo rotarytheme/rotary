@@ -205,6 +205,11 @@ function _ecp1_event_gravity2ecp1( $tz=null ) {
 	$gfields = $ecp1_event_fields['_meta']['_gravity_fields'];
 	foreach( $gfields as $gfield )
 		$$gfield = get_post_meta( _ecp1_event_meta_id(), $gfield, true );
+	
+	//Added PAO 6 Jan 15 to default the start dates and date formats
+	$gravity_start_date_format = $gravity_start_date_format ? $gravity_start_date_format : 'm/d/Y';
+	$gravity_end_date_format = $gravity_end_date_format ? $gravity_end_date_format : 'm/d/Y';
+	$gravity_end_date = $gravity_end_date ? $gravity_end_date : $gravity_start_date;
 
 	// If calendar tz is loaded (no calendar) and no tz parameter and no gravity
 	// calendar then we have to assume TZ=UTC so check for it now

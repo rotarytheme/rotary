@@ -9,7 +9,6 @@
 ?> 
 <?php
 
-
 	// Get all the data and metadata for the comment, ready to display.
 	$id = $announcement->comment_ID;
 	$posted_in_id = $announcement->comment_post_ID;
@@ -34,9 +33,12 @@
 	
 	$user_can_edit = ( current_user_can( 'edit_others_announcements' ) || get_current_user_id() == $announcement->user_id || current_user_can( 'manage_options' ));
 	$user_can_delete = ( current_user_can( 'delete_others_announcements' ) || get_current_user_id() == $announcement->user_id || current_user_can( 'manage_options' ));
-
+	
+	
 	if ( $context ) $extra_classes[] =  $context . '-announcement';
 	if ( ('carousel' == $context  && $announcementsDisplayed > 1 ) || 'slideshow' == $context )  $extra_classes[] =  'hide';
+	if ( 'slideshow' == $context )  $extra_classes[] =  'slidemargins';
+	
 	?>
 			
 			<?php switch ( $context ) { 
@@ -93,11 +95,11 @@
 			 case 'shortcode':
 			 case 'carousel':
 			 case 'speaker':  ?>
-				<article id="comment-<?php echo $id ?>" <?php comment_class( $extra_classes ); ?>>
+				<article id="comment-<?php echo $id ?>" <?php comment_class( $extra_classes, $id ); ?>>
 				<?php echo rotary_announcement_header( $posted_in_id, $announcement_title );?>
 				<div class="announcement-buttons">
 					<p class="announced-by clearleft"><?php echo $announced_by; ?></p>
-					<?php if( $allowedits && $user_can_edit) :?>
+					<?php if( $this->allowedits && $user_can_edit) :?>
 					 <div class="editannouncementbutton-container">
 					 	<a href="javascript:void(null)" data-comment-id="<?php echo $id; ?>" class="rotarybutton-smallwhite editannouncementbutton"><?php echo __( 'Edit Announcement' ); ?></a>
 					 	<?php if( $user_can_delete ) :?>
@@ -137,7 +139,7 @@
 			<?php 
 				break; 
 				case 'slideshow':  ?>
-					<article id="comment-<?php echo $id ?>" <?php comment_class( $extra_classes ); ?>>
+					<article id="comment-<?php echo $id ?>" <?php comment_class( $extra_classes, $id ); ?>>
 						<?php echo rotary_announcement_header( $posted_in_id, $announcement_title, $context='slideshow' );?>
 						<div class="announcement-buttons">
 							<p class="announced-by clearleft"><?php echo $announced_by; ?></p>
@@ -153,7 +155,7 @@
 			case 'project': 
 			case 'committee':
 			default: ?>
-				<article id="comment-<?php echo $id ?>" <?php comment_class( $extra_classes ); ?>">
+				<article id="comment-<?php echo $id ?>" <?php comment_class( $extra_classes, $id ); ?>">
 				<div class="announcement-date">
 					<span class="day"><?php echo $date->format( 'd') ; ?></span>
 					<span class="month"><?php  echo $date->format( 'M' ); ?></span>

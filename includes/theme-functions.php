@@ -19,8 +19,14 @@ if ('yes' != $options['rotary_use_dacdb'] || !class_exists( 'RotaryDaCDb' )) {
 		$usermeta['email'] = $userdata['user_email'];
 		$userdata['role'] = 'member';
 		$usermeta['memberyesno'] = '1';
-		$membersince = date_format( create_date( $usermeta['membersince'] ), 'm/d/Y' );
-		$usermeta['membersince'] = ( $membersince ) ? $membersince : '01/01/2015';
+		try {
+			//$membersince = date_create_from_format( strtotime($usermeta['membersince'] ), 'U');
+		}
+		catch (Exception $e) {
+ 		 	echo 'Message: ' .$e->getMessage(); die;
+		}
+		//$membersince = date_format( date_create_from_format( strtotime($usermeta['membersince'] ), 'U'), 'm/d/Y' );
+	//	$usermeta['membersince'] = ( $membersince ) ?  date_format( $membersince, 'm/d/Y' ) : '01/01/2015';
 		$userdata['display_name'] =  $userdata['first_name'] . ' ' . $userdata['last_name'];
 	}
 	add_action( 'is_iu_post_users_import', 'rotary_post_users_import', 10, 2 );
@@ -71,19 +77,38 @@ function rotary_edit_post_link($output) {
 	return $output;
 }
 //show the rotary club header
-function rotary_club_header($clubname, $rotaryClubBefore=false) {
-	if ( $rotaryClubBefore ) { ?>
-	    <?php if ($clubname) { ?>
-				 <span class="clubtype clubbefore">Rotary Club Of</span>
-				 <span class="clubname"><?php echo $clubname;?></span>
-		<?php }
+function rotary_club_header($clubname, $rotaryClubBefore=false, $logotype='web-logo') {
+	switch( $logotype ) {
+		case 'web-logo':
+			if ( $rotaryClubBefore ) { ?>
+			    <?php if ($clubname) { ?>
+						 <span class="clubtype clubbefore"><?php echo __( 'Rotary Club Of') ;?></span>
+						 <span class="clubname"><?php echo $clubname;?></span>
+				<?php }
+			}
+			else {
+				if ($clubname) { ?>
+						<span class="clubname namebefore"><?php echo $clubname;?></span>
+		        <?php }  ?>
+					   <span class="clubtype"><?php echo __( 'Rotary Club') ;?></span>
+		     <?php   }
+		    break;
+		case 'official-logo':
+			if ( $rotaryClubBefore ) { ?>
+						    <?php if ($clubname) { ?>
+									 <span class="clubtype clubbefore">&nbsp;</span>
+									 <span class="clubname"><?php echo __( 'Club Of') . $clubname;?></span>
+							<?php }
+						}
+						else {
+							if ($clubname) { ?>
+									<span class="clubname namebefore"><?php echo $clubname;?></span>
+					        <?php }  ?>
+								   <span class="clubtype"><?php echo __( 'Club') ;?></span>
+					     <?php   }
+					    break;
+			break;
 	}
-	else {
-		if ($clubname) { ?>
-				<span class="clubname namebefore"><?php echo $clubname;?></span>
-        <?php }  ?>
-			   <span class="clubtype">Rotary Club</span>
-     <?php   }
 
 }
 //Add the filter to override the standard shortcode

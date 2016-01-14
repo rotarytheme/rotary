@@ -419,7 +419,7 @@ jQuery(document).ready(function($) {
 					fx: 'fade',
 					height: '600px',
 					speed: '1000',
-					timeout: 4000,
+					timeout: 5500,
 					delay: -500,
 					//pager: '#announcement-slideshow-controls'
 				});

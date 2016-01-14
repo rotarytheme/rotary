@@ -19,12 +19,12 @@
  */ 
 
 class RotaryAnnouncements {
-	private $announcement_ob 		= array();
+	public static $announcement_ob 	= array();
 	private $slideshow_ob 			= array();
 	private $anniversary_ob 		= array();
 	private $args 					= array();
 	private $slidesDisplayed 		= 0 ;
-	private $announcementsDisplayed = 0;
+	public static $announcementsDisplayed = 0;
 	private $anniversariesDisplayed = 0;
 	private $today;
 	private $speakerdate;
@@ -32,6 +32,7 @@ class RotaryAnnouncements {
 	private $lookforward;
 	private $context;
 	private $ProjectType;
+	private $allowedits;
 	
 	public $atts;
 	public $shortcode_html;
@@ -63,7 +64,8 @@ class RotaryAnnouncements {
 		$this->get_shortcode_html();
 	}
 
-	function get_shortcode_html(){
+	function get_shortcode_html() {
+	
 		
 		// Prepare the query arguments to fetch the appropriate comments depending where this is being called from	
 		$this->args['order'] = 'DESC';
@@ -71,12 +73,15 @@ class RotaryAnnouncements {
 		$this->args['post_type'] = array ('rotary-committees', 'rotary_projects');
 		$this->args['status'] = 'approve';
 		
+
+
+		
 		// if this is coming from a speaker program, then find the date range around the speaker date to retrieve the announcements
 		//other while the dates will be relative to today
 		if( $this->speakerdate ) :
 			//if we've passed through a speaker date, then make the lookback relative to this date, and not today
 			$this->lookbackdate = new DateTime( $this->speakerdate );
-			$lookforwarddate = new DateTime( $this->speakerdate );
+			$this->lookforwarddate = new DateTime( $this->speakerdate );
 			$this->today = new DateTime( $this->speakerdate );
 			if( $this->lookforward >= 0) :
 				$this->lookforwarddate->add(new DateInterval( 'P' . $this->lookforward . 'D' ) ) ;
@@ -90,7 +95,7 @@ class RotaryAnnouncements {
 										'column' => 'comment_date', 
 										array( 
 											//'after' => date_format( $lookbackdate, 'c' ),
-											'before' => date_format( $lookforwarddate, 'c' )
+											'before' => date_format( $this->lookforwarddate, 'c' )
 										),
 									'inclusive' => true	
 									)
@@ -100,16 +105,24 @@ class RotaryAnnouncements {
 			$this->today = new DateTime;
 		endif; //  end $speakerdate
 		
+		
+
+		
 		// We can't introduce a second comments form a page where there is already another comments form, so don't allow edits on a committee or project page
 		// where comments are open.  Also, don't allow edits on the carousel for simplicity
-		$allowedits = ( (in_array( get_post_type(), array( 'rotary-committees', 'rotary_projects' )) && comments_open() ) 
+		$this->allowedits = ( (in_array( get_post_type(), array( 'rotary-committees', 'rotary_projects' )) && comments_open() ) 
 						|| 'slideshow' == $this->context )
 				? false : true;
+		
+		//set $announcement_ob - retrieve all of the announcements in an array of HTML (one for each announcment)
+		$this->get_announcements();
+		
+
 			
 		ob_start();
 				?>
 				<div class="<?php echo $this->context;?>-announcements">
-				<?php if( $allowedits ) :?>
+				<?php if( $this->allowedits ) :?>
 					<?php if ( !is_user_logged_in() ) : ?>
 							<p><?php echo sprintf( __( 'Please %s to make an announcement' ), wp_loginout( site_url(), false ) ) ;?></p>
 						<?php
@@ -117,17 +130,18 @@ class RotaryAnnouncements {
 					
 							/***************** START MAILCHIMP CAMPAIGN CUSTOMIZATION ****************/
 							if( is_user_logged_in() && current_user_can( 'create_mailchimp_campaigns' ) ):
-							$serialized = serialize( $announcements );
-							$encoded = base64_encode( $serialized );
-							
-							$hash = md5( $encoded . 'SecretStringHere' );
-							?>
-								<div id="announcements-mailchimpcampaign">
-									<a id="announcements-sendemailtest" class="rotarybutton-largewhite" href="javascript:void" ng-click="saveCampaign()" ><?php echo __( 'Send Test Email', 'Rotary'); ?></a>
-									<a id="announcements-sendemailblast" class="rotarybutton-largeblue" href="javascript:void" ng-click="sendCampaign(1)" ><?php echo __( 'Send Email Blast', 'Rotary'); ?></a>
-									<input type="hidden" id="announcements-array" value="<?php echo $encoded; ?>" />
-									<input type="hidden" id="announcements-hash" value="<?php echo $hash ?>" />
-								</div>
+
+								$serialized = serialize( get_comments( $this->args ));
+								$encoded = base64_encode( $serialized );
+								
+								$hash = md5( $encoded . 'SecretStringHere' );
+								?>
+									<div id="announcements-mailchimpcampaign">
+										<a id="announcements-sendemailtest" class="rotarybutton-largewhite" href="javascript:void" ng-click="saveCampaign()" ><?php echo __( 'Send Test Email', 'Rotary'); ?></a>
+										<a id="announcements-sendemailblast" class="rotarybutton-largeblue" href="javascript:void" ng-click="sendCampaign(1)" ><?php echo __( 'Send Email Blast', 'Rotary'); ?></a>
+										<input type="hidden" id="announcements-array" value="<?php echo $encoded; ?>" />
+										<input type="hidden" id="announcements-hash" value="<?php echo $hash ?>" />
+									</div>
 									
 							<?php endif; // end curent_user_can
 							
@@ -142,8 +156,6 @@ class RotaryAnnouncements {
 					 	
 			$header = ob_get_clean();
 			
-			//set $announcement_ob - retrieve all of the announcements in an array of HTML (one for each announcment)
-			$this->get_announcements();
 						
 			//set $slideshow_ob - retrieve all of the slides in an array of HTML (one for each slide)
 			if( 'slideshow' == $this->context ) :
@@ -156,13 +168,13 @@ class RotaryAnnouncements {
 			$slides_counter = $announcement_counter = $anniversary_counter = 0;
 			for( $i = 0 ; $i < max( array( $this->announcementsDisplayed, $this->slidesDisplayed, $this->anniversariesDisplayed )); $i++ ) {
 
-				$slides .= ( $i <= $this->anniversariesDisplayed && $this->anniversary_ob) ? $this->anniversary_ob[$i] : '';
+				$slides .= ( $i <= $this->anniversariesDisplayed && $this->anniversary_ob) ? $this->anniversary_ob[$i] : ''; // only display once per loop
 	
 				$slides .= $this->slideshow_ob ?  $this->slideshow_ob[$slides_counter] : '';
-				$slides_counter = ( $i > $this->slidesDisplayed ) ? 0 : $slides_counter + 1;
+				$slides_counter = ( $i >= $this->slidesDisplayed ) ? 0 : $slides_counter + 1;
 				
 				$slides .= $this->announcement_ob ? $this->announcement_ob[$announcement_counter] : '';
-				$announcement_counter = ( $i > $this->announcementsDisplayed ) ? 0 : $announcement_counter + 1;
+				$announcement_counter = ( $i >= $this->announcementsDisplayed ) ? 0 : $announcement_counter + 1;
 				
 			}
 			
@@ -291,7 +303,7 @@ class RotaryAnnouncements {
 	function get_anniversary_html( $anniversaries, $type, $month, $names, $partners )  {
 		ob_start();
 		?>
-	 	<div class="slideshow-announcement hide">
+	 	<div class="slideshow-announcement slidemargins hide">
 	 		<div class="anniversarycontent" >
 	 			<h1><? echo sprintf( __( '%s for %s' ), $type, $month) ; ?></h1>
 	 			<?php 

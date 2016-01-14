@@ -312,9 +312,10 @@ class RotaryProfiles {
 			$i++;
 		endwhile;
 		
-		$search_criteria = array();
+		$search_criteria = array( 'status' => 'active');
 		$sorting         = array( 'key' => $gf_fields[1], 'direction' => 'ASC' );
-		$gf_entries      = GFAPI::get_entries( $gf_form_id, $search_criteria, $sorting );
+		$paging 		 = array( 'offset' => 0, 'page_size' => 200 );
+		$gf_entries      = GFAPI::get_entries( $gf_form_id, $search_criteria, $sorting, $paging );
 		$output = array(
 				'sColumns' => implode ( ',', $gf_headers ),
 				'sEcho' => isset( $_GET['sEcho'] ) ? intval($_GET['sEcho']) : null,
