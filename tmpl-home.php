@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-if (get_theme_mod( 'rotary_slideshow', true )) {
+<?php  if (get_theme_mod( 'rotary_slideshow', true )) {
 	rotary_get_slideshow(); 
 } ?>
 	<div id="page">
