@@ -13,8 +13,6 @@ class RotaryProfiles {
 		add_action( 'edit_user_profile_update', array( $this, 'update_membership_profile_fields'));
 		add_filter( 'get_avatar', array( $this, 'get_rotary_member_avatar'), 10, 5);
 	}	 
-
-	
 	/*
 	 * get all members
 	 */
@@ -484,20 +482,26 @@ class RotaryProfiles {
 			$emailname = $usermeta['email'][0];
 			$email = count($usermeta['email']) > 0 ? '<a href="mailto:' . antispambot($emailname, 1) .'">Email</a>': '';
 			$groupemail = count($usermeta['email']) > 0 ? '<input class="emailselect" type="checkbox"/><span class="emailaddress">'. antispambot($emailname, 1) .'</span>': '';
-			$phone = 	(( $usermeta['cellphone'][0] ) ? $usermeta['cellphone'][0] . '&nbsp;[' . _x( 'h', 'Home/Cellphone Abbreviation', 'rotary' ) .']' : '' ) . 
-						(( $usermeta['cellphone'][0] && $usermeta['busphone'][0] ) ? 	'<br>' : '' ) . 
-						(( $usermeta['busphone'][0] ) ? $usermeta['busphone'][0] . '&nbsp;[' . _x( 'w', 'Workphone Abbreviation', 'rotary' ) .']' : '' ) . 
-						((( $usermeta['cellphone'][0] || $usermeta['busphone'][0] )  && $usermeta['email'][0] ) ? 	'<br>' : '' ) . 
-						(( $usermeta['email'] ) ? '<a class="email" href="mailto:' . antispambot( $emailname, 1 ) .'">' . _x( 'Send Email', 'Email Address Abbreviation', 'rotary' ) .'</a>': '' ) ;
+			
+			$cell_home_array = array();
+			if( $usermeta['cellphone'][0] ) $cell_home_array[] = $usermeta['cellphone'][0] . '&nbsp;(' . _x( 'c', 'Home/Cellphone Abbreviation', 'rotary' ) .')';
+			if( $usermeta['homephone'][0] ) $cell_home_array[] = $usermeta['homephone'][0] . '&nbsp;(' . _x( 'h', 'Home/Cellphone Abbreviation', 'rotary' ) .')';
+
+			$contact_info_array = $cell_home_array;
+		//	if( $usermeta['busphone'][0]  ) $contact_info_array[] = $usermeta['busphone'][0] . '&nbsp;(' . _x( 'w', 'Home/Cellphone Abbreviation', 'rotary' ) .')';
+			if( $usermeta['email'][0]  ) $contact_info_array[] = '<a class="email" href="mailto:' . antispambot( $emailname, 1 ) .'">' . _x( 'Send Email', 'Email Address Abbreviation', 'rotary' ) .'</a>';			
+			
+			$cell_home = implode( '<br>', $cell_home_array);
+			$contact_info = implode( '<br>', $contact_info_array);
 			
 			$row =array(
 						$groupemail, 
 						$memberName, 
 						$usermeta['classification'], 
 						$usermeta['partnername'], 
-						$usermeta['cellphone'], 
+						$cell_home, 
 						$usermeta['busphone'], 
-						$phone,
+						$contact_info,
 						$email, 
 						$user->ID
 				);

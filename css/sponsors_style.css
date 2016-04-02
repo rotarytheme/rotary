@@ -1,0 +1,139 @@
+/*************************************
+STYLESHEET FOR RACE SPONSORS PLUGIN
+*************************************/
+.sponsor_level {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.sponsor_level:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.sponsor_level_title {
+  margin-bottom: 30px;
+  display: block;
+}
+.sponsor_level_title h4 {
+  line-height: 1.4;
+  border-bottom: 1px solid #eaeaea;
+}
+.sponsor {
+  float: left;
+  box-sizing: border-box;
+}
+.sponsor_logo {
+  display: inline-block;
+  float: left;
+  width: 100%;
+}
+.sponsor_logo img {
+  max-width: 100%;
+}
+.sponsor_content {
+  box-sizing: border-box;
+  width: 58%;
+  padding-left: 4%;
+  display: inline-block;
+  text-align: left;
+  display: none;
+}
+.sponsor_title {
+  margin-top: 0;
+}
+.sponsor.full_text,
+.sponsor.full,
+.sponsor.full_text_bottom {
+  margin-bottom: 50px;
+  display: block;
+  float: none;
+  clear: both;
+}
+.sponsor.full_text:last-child,
+.sponsor.full:last-child,
+.sponsor.full_text_bottom:last-child {
+  margin-bottom: 0;
+}
+.sponsor.full .sponsor_logo,
+.sponsor.full_text_bottom .sponsor_logo {
+  float: none;
+}
+.sponsor.full_text .sponsor_logo {
+  width: 42%;
+}
+.sponsor.full_text:after,
+.sponsor.full_text:after,
+.sponsor.full:after,
+.sponsor.full:after,
+.sponsor.full_text_bottom:after,
+.sponsor.full_text_bottom:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.sponsor.full_text .sponsor_content {
+  display: inline-block;
+}
+.sponsor.full_text_bottom .sponsor_content {
+  display: block;
+  width: auto;
+  margin-top: 25px;
+}
+.sponsor.double {
+  width: 50%;
+  padding: 5%;
+}
+.sponsor.double:nth-of-type(2n + 3) {
+  clear: both;
+}
+.sponsor.triple {
+  width: 33.33333%;
+  padding: 4%;
+}
+.sponsor.triple:nth-of-type(3n + 4) {
+  clear: both;
+}
+.sponsor.quad {
+  width: 25%;
+  padding: 3%;
+}
+.sponsor.quad:nth-of-type(4n + 5) {
+  clear: both;
+}
+@media (max-width: 480px) {
+  .sponsor.full_text .sponsor_content {
+    display: block;
+    padding: 0;
+    width: auto;
+    margin-top: 20px;
+  }
+  .sponsor.full_text .sponsor_logo {
+    width: 100%;
+    display: block;
+    float: none;
+  }
+  .sponsor.double {
+    width: 100%;
+    text-align: center;
+  }
+  .sponsor.triple {
+    width: 50%;
+    padding: 5%;
+  }
+  .sponsor.triple:nth-of-type(3n + 4) {
+    clear: none;
+  }
+  .sponsor.triple:nth-of-type(2n + 3) {
+    clear: both;
+  }
+  .sponsor.quad {
+    width: 50%;
+    padding: 5%;
+  }
+  .sponsor.quad:nth-of-type(4n + 5) {
+    clear: none;
+  }
+  .sponsor.quad:nth-of-type(2n + 3) {
+    clear: both;
+  }
+}

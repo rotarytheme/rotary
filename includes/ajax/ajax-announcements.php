@@ -1,6 +1,5 @@
 <?php
 
-
 /*************************************************************************
  *   AJAX function to load a new announcement form when the committee changes.
 ************************************************************************/
@@ -174,15 +173,15 @@ function additional_comment_fields_before( $fields ) {
 	echo '<fieldset>';
 	echo '<div class="announcementtitlecontainer">
  			<label for="title">' . __( 'Title' ) . '</label>
- 			<input id="announcement_title_input" name="announcement_title" type="text" size="30"  tabindex="1" value="' . htmlentities( $title ) . '"/>
+ 			<input id="announcement_title_input" name="announcement_title" type="text" size="60"  tabindex="1" value="' . htmlentities( $title ) . '"/>
 		 </div>';
 	echo '<div class="announcercontainer">
  			<label for="announcer">' . __( 'Announced by' ) . '</label>
 			<select id="announcer" name="announcer">'. get_users_select( $announcer ).'</select>
 		</div>';
 	echo '<div class="requestrepliescontainer">
- 			<label for="request_replies_input">' . __( 'Request Replies' ) . '</label>
 			<input id="request_replies_input" name="request_replies_input" type="checkbox"' . ( 'on' == $request_replies_checked ? 'checked' : '' ) . '/>
+ 			<label for="request_replies_input">' . __( 'Request Replies (Adds a BLUE button to email the announcer)' ) . '</label>
 		</div>';
 	echo '</fieldset>';
 }
@@ -222,15 +221,15 @@ function rotary_comment_notes_after ( ) {
 				</fieldset>';
 	$fields .=  '<fieldset class="call-to-action">
 					<input id="call_to_action" name="call_to_action_input" type="checkbox" ' . ( $call_to_action_link ? 'checked' : '' ) . '/>
- 					<label for="call_to_action">' . __( 'Additional Call to Action' ) . '</label>
+ 					<label for="call_to_action">' . __( 'Additional Call to Action (adds a YELLOW button to go to another page/website)' ) . '</label>
 					<div id="call_to_action_links" ' . ( $call_to_action_link ? '' : 'style="display:none"') . ' >
-	 					<label for="call_to_action_text">' . __( 'Link to URL Text' ) . '</label>
+	 					<label for="call_to_action_text">' . __( 'Button Text' ) . '</label>
 						<input id="call_to_action_text" name="call_to_action_text_input" type="text" value="' . $link_text . '"/>					
 							<div class="call-to-action-radio-container">
 							<input id="call_to_action_link_1" type="radio" name="call_to_action_link" value="1" ' . ( 2 != $call_to_action_link  ? 'checked' : '' ) . '>
-	 						<label for="call_to_action_link_1">' . __( 'This project/committee\'s page' ) . '</label>
+	 						<label for="call_to_action_link_1">' . __( 'Button links to this project/committee\'s page' ) . '</label>
 							<br><input id="call_to_action_link_2" type="radio" name="call_to_action_link" value="2" ' . ( 2 == $call_to_action_link ? 'checked' : '' ) . '>
-	 						<label for="call_to_action_link_2">' . __( 'Other' ) . '</label>
+	 						<label for="call_to_action_link_2">' . __( 'Button links to another Website/URL...' ) . '</label>
 							<input id="other_link_text" name="other_link_text_input" type="text" value="' . $link_url . '" placeholder="http://" style="display:'. ( 2 == $call_to_action_link ? 'inline-block' : 'none' ) . '" />
 						</div>
 					</div>

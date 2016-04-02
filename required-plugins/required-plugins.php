@@ -96,6 +96,13 @@ function my_theme_register_required_plugins( ) {
 			'source'    => 'nm-mailchimp-campaign.zip', // The plugin source.
 			'required' 	=> true,
 	),
+	array(
+			'name' 		=> 'Every Calendar',
+			'slug' 		=> 'every-calendar-1',    
+			'source'    => 'every-calendar-1.zip', // The plugin source.
+			'required' 	=> true,
+			'force_activation' 	=> true,
+	),
 
 
 			

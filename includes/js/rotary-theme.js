@@ -32,7 +32,7 @@ jQuery(document).ready(function($) {
 			$('#speaker-archive-table tbody').on('click', 'tr', this.selectRow);
 			$('.projecticons').on('mouseenter mouseleave', '.icon', this.hoverIcons);
 			$('.logged-in .projecticons').on('click', '.imgoing', this.toggleParticpant);
-			// Announcement Fetures
+			// Announcement Features
 			$('.editannouncementbutton').on('click', this.editAnnouncement );
 			$('.deleteannouncementbutton').on('click', this.deleteAnnouncement );
 			$('.fancybox, .gallery-item a').fancybox({

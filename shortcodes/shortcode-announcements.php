@@ -267,6 +267,9 @@ class RotaryAnnouncements {
 		$rotaryProfiles = new RotaryProfiles;
 		$members = $rotaryProfiles->get_members();
 		
+		$names = array(); //an array of member's names, indexed by member id
+		$birthdays = array(); // an array of days of the months
+		
 		$month = $this->today->format( 'F' );
 
 		if( $members ) :
@@ -286,32 +289,68 @@ class RotaryAnnouncements {
 					$names[ $member_id ] = $profile['memberName'];
 					$partners[ $member_id ] = $profile['partnername'];
 				endif;
+				
+			//	$membership[ $member_id ] = $day;
+			//	$names[ $member_id ] = $profile['memberName'];
+			//	$years[ $member_id ] = 5;
+				
+			//	var_dump($profile['membersince_datetime']  );
+				// load the member_since into an associative array indexed by user ID
+				if( $profile['membersince_datetime'] && date( 'F', $profile['membersince_datetime'] ) == $month  ) :
+					$names[ $member_id ] = $profile['memberName'];
+					$now = new DateTime();
+					$now_year = $now->format( 'Y' );
+					$join_year = date( 'Y', $profile['membersince_datetime'] );
+					$years[ $member_id ] = intval($now_year) - intval($join_year);
+				endif;
+				
 			endforeach;
 				
 			asort( $birthdays );
 			asort( $anniversaries );
+			asort( $years );
+			$years = array_reverse( $years , true);
 			
 			//output the birthdays
 			if( $birthdays )
 				$this->get_anniversary_html( $birthdays, 'Birthdays', $month, $names, null );
+			//output the wedding anniveraries
 			if( $anniversaries )
 				$this->get_anniversary_html( $anniversaries, 'Anniversaries', $month, $names, $partners );
+			//output the club anniversaries
+			if( $years )
+				$this->get_anniversary_html( $years, 'Membership', $month, $names, null );
 
 		endif; // members
 	}
 	
-	function get_anniversary_html( $anniversaries, $type, $month, $names, $partners )  {
+	function get_anniversary_html( $anniversaries, $type, $month, $names, $additional_info )  {
+
+		switch( $type ) {
+			case 'Anniversaries' :
+				$title = __('Wedding Anniversaries');
+				break;
+			case 'Membership':
+				$title = __('Club Anniversaries');
+				break;
+			default:
+				$title = __('Birthdays');
+		}
+		$count = 0;
+		$col = 1;
 		ob_start();
 		?>
 	 	<div class="slideshow-announcement slidemargins hide">
-	 		<div class="anniversarycontent" >
-	 			<h1><? echo sprintf( __( '%s for %s' ), $type, $month) ; ?></h1>
+	 		<div class="anniversarycontent anniversary-<?php echo $type;?>" >
+	 			<h1><? echo sprintf( __( '%s for %s' ), $title, $month) ; ?></h1>
+	 			<div class="anniversary_inner_container">
 	 			<?php 
 				foreach( $anniversaries as $user_id => $day ) :
+	 				$count++;
 					$name = $names[ $user_id ];
 					switch( $type ) {
 						case 'Anniversaries' :
-							$partner = $partners[ $user_id ];
+							$partner = $additional_info[ $user_id ];
 							$membername = ( $partner ) ? sprintf( __( '%s and %s'), $partner, $name) : $name;
 							break;
 						default:
@@ -319,19 +358,31 @@ class RotaryAnnouncements {
  					}
 					
 					if( $previous_day != $day ) :
-						if( $previous_day ) {?> </div></div> <?php }; // close previous membername div and the container?>
-				<div class="anniversary_day-container">
-					<div class="anniversary_day"><?php echo $day ; ?></div>
-					<div class="membername">
-			<?php endif;?>
-						<p><?php echo $membername; ?></p>
+						if( $previous_day ) {?> </div></div> <?php ; // close previous membername div and the day container, otherwise this is the first time through, so nothing to close?>
+						<?php 
+							//make a new anniversary_inner_container every 9 records
+							if ($count >= 8 * $col  ) {
+								$col++;
+								?></div><div class="anniversary_inner_container"><?php }
+						} ?>
+						<div class="anniversary_day-container">
+						<?php if( 'Membership' == $type ) {?>
+							<div class="anniversary_years anniversary_day"><?php echo sprintf( __('%s Years'), $day ) ; ?></div>
+						<?php } else {?>
+							<div class="anniversary_day"><?php echo $day ; ?></div>
+						<?php }?>
+						<div class="membername">
+			<?php endif; //if this day is the same as previous day, then all we do is print out the membername?>
+					<p><?php echo $membername; ?></p>
 			<?php 
 			$previous_day = $day;
+			
 			endforeach;?>
-					</div>
-				</div>
-			</div>
-		</div>
+						</div><!-- membername -->
+					</div><!-- anniversary_day-container -->
+				</div><!-- anniversary_inner_container -->
+			</div><!-- anniversarycontent -->
+		</div><!-- slideshow-announcement -->
 		<?php 
 		$this->anniversary_ob[$this->anniversariesDisplayed] = ob_get_clean();
 		$this->anniversariesDisplayed++;

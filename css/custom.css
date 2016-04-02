@@ -231,6 +231,53 @@ li.ecp1_list_item a {
 }
 
 /* Anniversaries */
+.anniversarycontent {
+	position:relative;
+}
+
+.anniversary_inner_container {
+	float:left;
+}
+.anniversary-Birthdays:before {
+	content: "";
+    background-image: url(./images/happy_birthday.png);
+    background-repeat:no-repeat;
+    background-size: contain;
+	height: 398px;
+    width: 365px;
+    position: absolute;
+    top: -248px;
+    right: -20px;
+}
+.anniversary-Anniversaries:before {
+    content: "";
+    background-image: url(./images/wedding_anniversary.png);
+    height: 503px;
+    width: 367px;
+    background-size: contain;
+    position: absolute;
+    top: -137px;
+    right: -100px;
+    background-repeat: no-repeat;
+}
+.anniversary_years {
+	color:#d91b5c;
+	white-space:nowrap;
+	margin-right:20px;
+	margin-left:30px;
+}
+.anniversary-Membership:before {
+    content: "";
+    background-image: url(./images/rotary_logo.png);
+    height: 450px;
+    width: 450px;
+    background-size: contain;
+    position: absolute;
+    top: -300px;
+    right: -100px;
+    background-repeat:no-repeat;
+}
+
 .slideshow .anniversarycontent h1 {
 	font-size:75px!important;
 	border-bottom: #B8A3A0 solid 1px;
@@ -257,17 +304,89 @@ li.ecp1_list_item a {
     display: inline-block;
 	color: black;
 	font-weight:bold;
-	width: 85%;
+	width: 35%;
+	white-space:nowrap;
     border-bottom: 1px solid #000;
     margin-bottom: 10px;
 }
 
 
+/***********************************
+ DATEPICKER
+ ***********************************/
+ 
+#ui-datepicker-div {
+  background-color: #EFEFEF;
+  border: 1px solid #999999;
+  font-family: open sans condensed;
+    font-size: 15px;
+    padding: 6px 16px;
+}
+#ui-datepicker-div td {
+  padding-right: 5px;
+  text-align: right;
+    width: 23px;
+    height: 22px;
+    padding:2px;
+	border: 1px solid #EFEFEF;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+#ui-datepicker-div td:hover {
+	background-color: #005daa;
+    width: 22px;
+    height: 20px;
+    color:white;
+}
+#ui-datepicker-div td a:hover {
+    color:white;
+}
+#ui-datepicker-div th {
+	text-align:right;
+    font-size: 18px;
+}
+#ui-datepicker-div .ui-datepicker-prev {
+  float: left;
+}
+#ui-datepicker-div .ui-datepicker-next {
+  float: right;
+}
+.ui-datepicker-title {
+    clear: both;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #4E4C4C;
+    height: 30px;
+}
+/*********************
+ANNOUNCEMENTS
+*************************/
+#new-announcement-form div#wp-comment-wrap {
+    margin-top: 20px;
+}
 
-
-
-
-
-
+.shortcode-announcements select#announcer {
+	height:30px;
+	margin:7px 0px;
+}
+.shortcode-announcements .announcementtitlecontainer {
+    font-size: 22px;
+    text-transform: uppercase;
+    font-family: open sans condensed;
+    font-weight: bold;
+}
+.shortcode-announcements div#respond {
+    border: 1px solid #BAACAC;
+    padding: 0 15px 15px;
+    background: #FEFCFC;
+}
+.shortcode-announcements .announcementtitlecontainer {
+    font-size: 22px;
+    text-transform: uppercase;
+    font-family: open sans condensed;
+    font-weight: bold;
+}
 
 

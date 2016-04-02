@@ -160,6 +160,7 @@ jQuery(document).ready(function($) {
 			$(document).on('click', '#rotarymembers td.username, #rotaryprojects td.username', this.showDetails);
 			$(document).on('click', '#rotaryprojects td.delete', this.deleteMember);
 			$('#sendmailbutton').on('click', this.sendEmail);
+			$('#selectallcheckbox').on('click', this.selectAll);
 			$('.rotaryselections input[name=nameorder]').on('click', this.reloadMembers);
 			$('.rotaryselections #committees').on('change', this.reloadMembers);
 			$('.rotaryselections #newparticipants').on('change', this.addProjectMembers);
@@ -167,11 +168,17 @@ jQuery(document).ready(function($) {
 		reloadMembers: function(e) {
 			rotaryTable.fnReloadAjax();
 		},
+		selectAll: function() {
+			if( $('#selectallcheckbox').prop('checked') )
+				$('.emailselect').prop('checked', true);
+			else 
+				$('.emailselect').prop('checked', false);
+		},
 		sendEmail: function() {
 			var $emailaddress = $('.emailselect:checked').next('.emailaddress');
 			var mailto = 'mailto:';
 			$( $emailaddress ).each(function( index ) {
-				mailto += $( this ).text() + ',';
+				mailto += $( this ).text() + ';';
 			});
 			
 			if ('mailto:' !== $.trim(mailto)) {

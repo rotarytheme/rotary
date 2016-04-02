@@ -1,4 +1,4 @@
-<?php
+ <?php
 /**
  * Rotary functions and definitions
  *
@@ -14,6 +14,7 @@ define( 'ROTARY_THEME_INCLUDES_PATH', TEMPLATEPATH . '/includes/');
 define( 'ROTARY_THEME_CLASSES_PATH', TEMPLATEPATH . '/classes/');
 define( 'ROTARY_THEME_AJAX_PATH', TEMPLATEPATH . '/includes/ajax/');
 define( 'ROTARY_THEME_SHORTCODES_PATH', TEMPLATEPATH . '/shortcodes/');
+define( 'ROTARY_THEME_LANGUAGES_PATH', TEMPLATEPATH . '/languages/');
 define( 'ROTARY_THEME_CSS_PATH', TEMPLATEPATH . '/css/');
 define( 'ROTARY_THEME_CSV_PATH', TEMPLATEPATH . '/import-users-from-csv/');
 
@@ -66,7 +67,6 @@ include_once ( 'import-users-from-csv/import-users-from-csv.php' );
 
 require_once ( 'required-plugins/required-plugins.php' );		// required plugins
 
-
 require_once ( ROTARY_THEME_INCLUDES_PATH . 'theme-js.php');				// Load javascript in wp_head
 
 require_once ( ROTARY_THEME_INCLUDES_PATH . 'sidebar-init.php');			// Initialize widgetized areas
@@ -75,11 +75,21 @@ require_once ( ROTARY_THEME_INCLUDES_PATH . 'theme-widgets.php');		// Theme widg
 
 require_once ( ROTARY_THEME_INCLUDES_PATH . 'admin-options.php');		// admin options
 
-
 require_once ( ROTARY_THEME_INCLUDES_PATH . 'custom-capabilities.php');		// custom capabilities
 
 require_once ( ROTARY_THEME_INCLUDES_PATH . 'rotarythemeupdater.php');	// theme updater
 
+require_once ( ROTARY_THEME_INCLUDES_PATH . 'sponsors.php');	// sponsors - custom plugin hacked for the theme
+
+require_once ( ROTARY_THEME_INCLUDES_PATH . 'simple-page-ordering.php');	// simple page odering plugin hacked for the theme
+
+require_once ( ROTARY_THEME_INCLUDES_PATH . 'gravitylist.php');	// to enable scripts on CST's for the gravitylist plugin
+
+
+/*
+ *  CALENDAR 
+ */
+require_once ( ROTARY_THEME_INCLUDES_PATH . 'functions-calendar.php'); // calendar functions file in included
 
 /*
  * MEMBERS
@@ -117,14 +127,10 @@ require_once ( ROTARY_THEME_AJAX_PATH . 'ajax-projects.php'); 		// Ajax function
 
 
 
-
-
 /*
  * ANNOUNCEMENTS
  */
 require_once ( ROTARY_THEME_AJAX_PATH . 'ajax-announcements.php'); 		// Ajax functions for announcements
-
-
 
 
 

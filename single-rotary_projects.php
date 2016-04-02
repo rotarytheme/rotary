@@ -11,7 +11,14 @@ global $ProjectType;
 
 get_header(); ?>
 <?php //get the project ID to use in the connected committee loop where the ID reflect the committee and not the project ?>
-<?php $projectID = get_the_ID(); ?>
+<?php $projectID = get_the_ID(); 
+$type = get_field( 'project_type', $projectID );
+if( !$type ) :
+	update_field( 'project_type', (( 1 >= get_field( 'long_term_project'  ) ) ? GRANT : SOCIALEVENT ), $projectID );
+	$type = get_field( 'project_type', $projectID  );
+endif; // for conversion: set type based on LongTerm flag
+
+?>
 <h1 class="pagetitle"><span><?php the_title();  ?></span></h1>
 
 <div id="page">
@@ -24,17 +31,13 @@ get_header(); ?>
 			'nopaging'        => false,
 		) ); 
 		if ( $connected->have_posts() ) : 
-			   while ( $connected->have_posts() ) : $connected->the_post();
-			   $type = get_field( 'project_type', $projectID );
-			   if( !$type ) : 
-			   		update_field( 'project_type', (( 1 >= get_field( 'long_term_project'  ) ) ? GRANT : SOCIALEVENT ), $projectID ); 
-			   		$type = get_field( 'project_type', $projectID  );
-			   	endif; // for conversion: set type based on LongTerm flag
-			  ?>
-				<h2><?php echo $ProjectType[$type] ; ?>: <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-			<?php endwhile; ?>
-		<?php else : ?>
-			<h2><?php echo $ProjectType[$type]; ?></h2>
+			   	while ( $connected->have_posts() ) : $connected->the_post();  
+					?><h2><?php echo $ProjectType[$type] ; ?>: <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2><?php 
+				endwhile;
+			wp_reset_postdata();
+			else : 
+				wp_reset_postdata();
+				?><h2><?php echo $ProjectType[$type]; ?>: <?php the_title(); ?></h2>
 	<?php endif; ?>
 	</div>
 		

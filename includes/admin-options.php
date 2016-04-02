@@ -7,6 +7,129 @@
  * @since Rotary 1.0
  */
  
+
+//TODO: Finish modifying this for the calendar
+class RotaryAdminOptions {
+	private $rotaryAuth;
+
+	function __construct() {
+		register_activation_hook( __FILE__, array($this,'activate') );
+		//register_deactivation_hook( __FILE__, array($this,'deactivate') );
+		add_action( 'admin_init', array( $this, 'addOptions' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts_and_styles'));
+	}
+	/**
+	 register if calendar should be used in the general settings
+	*/
+	function addOptions() {
+		//register a new setting for calendar along with a validate callback
+		register_setting('general', 'rotary_calendar', array($this, 'validate_settings'));
+		//add a section for calendar to the general page
+		add_settings_section('rotary_settings_section', __( 'Calendar Settings' ), array($this, 'rotary_settings_page'), 'general' );
+		//add fields for calendar to the section just added to the general page
+		add_settings_field('rotary_use_calendar', 'Use calendar for membership?', array($this, 'rotary_form_field'), 'general', 'rotary_settings_section', array('fieldName' => 'rotary_use_calendar'));
+		add_settings_field('rotary_instructions', '', array($this, 'rotary_form_field'), 'general', 'rotary_settings_section', array('fieldName' => 'rotary_instructions'));
+
+		add_settings_field('rotary_calendar_district', '<span class="calendar">Rotary District Number</span>', array($this, 'rotary_form_field'), 'general', 'rotary_settings_section', array('fieldName' => 'rotary_calendar_district'));
+		add_settings_field('rotary_calendar_club', '<span class="calendar">Rotary/Rotaract Club Number</span>', array($this, 'rotary_form_field'), 'general', 'rotary_settings_section', array('fieldName' => 'rotary_calendar_club'));
+		add_settings_field('rotary_calendar_club_name', '<span class="nocalendar">Rotary/Rotaract Club Name</span>', array($this, 'rotary_form_field'), 'general', 'rotary_settings_section', array('fieldName' => 'rotary_calendar_club_name'));
+		//add filter to add a setup link for the plugin on the plugin page
+		add_filter('plugin_action_links_'. ROTARY_MEMBERSHIP_PLUGIN_FILE, array($this, 'rotary_base_plugin_link'), 10, 4);
+	}
+
+	/**
+	 UI for calendar settings
+	*/
+	 
+	function rotary_settings_page() {
+		echo '<p>Rotary Membership</p>';
+	}
+	function rotary_form_field($args) {
+		$currFieldName = $args['fieldName'];
+		$options = get_option('rotary_calendar');
+		switch ($currFieldName) {
+			case 'rotary_use_calendar':
+				$yeschecked = '';
+				$nochecked = '';
+				if ('yes' == $options['rotary_use_calendar']) {
+					$yeschecked = 'checked="checked"';
+					$noschecked = '';
+				}
+				else {
+					$noschecked = 'checked="checked"';
+					$yeschecked = '';
+				}
+				$usecalendar = '<p id="rotary_use_calendar">Yes <input type="radio" name="rotary_calendar[rotary_use_calendar]" value="yes" '.$yeschecked.' />' .
+						' No <input type="radio" name="rotary_calendar[rotary_use_calendar]" value="no"  '.$noschecked.' /></p>' ;
+				echo $usecalendar;
+				break;
+			case 'rotary_calendar_district':
+				$calendarDistrict = '<input type="number" class="calendar" name="rotary_calendar[rotary_calendar_district]" id="rotary_calendar_district" value="'.esc_attr( $options['rotary_calendar_district'] ) .'" class="regular-text"/>';
+				echo $calendarDistrict;
+				break;
+			case 'rotary_calendar_club':
+				$calendarClub = '<input type="number" class="calendar" name="rotary_calendar[rotary_calendar_club]" id="rotary_calendar_club" value="'.esc_attr( $options['rotary_calendar_club'] ) .'" class="regular-text"/>';
+				echo $calendarClub;
+				break;
+			case 'rotary_calendar_club_name':
+				$calendarClubName = '<input type="text" class="nocalendar" name="rotary_calendar[rotary_calendar_club_name]" id="rotary_calendar_club_name" value="'.esc_attr( $options['rotary_calendar_club_name'] ) .'" class="regular-text"/>';
+				echo $calendarClubName;
+				break;
+			case 'rotary_instructions':
+				echo '<p id="rotary_instructions" class="calendar">Changes will take effect after you log out and then log back in with your <strong>calendar</strong> username and password</p>';
+				break;
+		}
+	}
+	function enqueue_scripts_and_styles() {
+		wp_enqueue_script( 'rotarymembership', plugins_url('/js/rotarymembership.js', __FILE__) );
+		wp_enqueue_media();
+		wp_enqueue_script( 'jquery-ui-datepicker');
+		wp_enqueue_script( 'jquery-ui-dialog');
+		wp_register_style('rotary-style', plugins_url('/css/rotarymembership.css', __FILE__),false, 0.1);
+		wp_enqueue_style( 'rotary-style' );
+
+
+	}
+	function validate_settings($input) {
+		// var_dump($input);
+		//exit;
+		if (!current_user_can('install_plugins')) {
+			add_settings_error('rotary_calendar', '100','You cannot install this plugin','error');
+			return false;
+		}
+		else {
+			$clean = array();
+			if ('yes' == $input['rotary_use_calendar']) {
+				$clean[0] = absint(strip_tags($input['rotary_calendar_district']));
+				$clean[1] = absint(strip_tags($input['rotary_calendar_club']));
+				if ($clean[0] && $clean[1] ) {
+					return $input;
+				}
+				else {
+					add_settings_error('rotary_calendar', '100','Please enter a valid district and club number','error');
+					return false;
+				}
+			}
+			else {
+				$clean[2] = strip_tags($input['rotary_calendar_club_name']);
+				if ($clean[2]) {
+					return $input;
+				}
+				else {
+					add_settings_error('rotary_calendar', '100','Please enter a valid club name','error');
+					return false;
+				}
+			}
+		}
+
+	}
+}
+
+
+
+
+
+
  //Required plugins moved to required-plugins/required-plugins.php
  
  //since we require contact form 7 above, lets create a custom template
@@ -184,7 +307,7 @@ function rotary_post_updated_messages_filter($messages) {
 	
 	return $messages;
 }
-add_action ('after_setup_theme', 'rotary_add_custom_user_roles');
+//add_action ('after_setup_theme', 'rotary_add_custom_user_roles');
 function rotary_add_custom_user_roles() {
 	$userRole = get_role( 'Contributor' ); 
 	add_role( 'Scribe', 'Scribe', $userRole['capabilities'] );

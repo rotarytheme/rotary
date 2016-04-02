@@ -102,7 +102,7 @@
 						<table id="' . $divID . '" style="width:97%;" cellspacing="0" cellpadding="0" border="0" class="display"' . $dataID . ' >	
 							<thead>
 								<tr>	
-									<th class="selectorcol"></th>
+									<th class="selectorcol"><input type="checkbox" id="selectallcheckbox" /></th>
 					        		<th class="fullnamecol">'. _x( 'Name', 'Directory table label', 'rotary') . '</th>		         
 					        		<th class="classificationcol' . $hideClass . '">'. _x( 'Classification', 'Directory table label', 'rotary') . '</th>		         
 					        		<th class="partnercol ' . $hideClass . '">'. _x( 'Partner', 'Directory table label', 'rotary') . '</th>                         
