@@ -13,9 +13,7 @@ get_header(); ?>
 	rotary_get_slideshow(); 
 } ?>
 	<div id="page">
-		<div id="content" role="main"
-		class="<?php  if ( get_theme_mod( 'rotary_home_sidebar', true )){ echo 'hassidebar-wide';} else{ echo 'fullwidth';} ?>"
-		>
+		<div id="content" role="main" class="<?php  if ( get_theme_mod( 'rotary_home_sidebar', true )){ echo 'hassidebar-wide';} else{ echo 'fullwidth';} ?>">
 		
 		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 		   <section class="homecontent">
@@ -33,5 +31,4 @@ get_header(); ?>
 	</footer>
 		
 	</div>
-<?php 
-get_footer();
+<?php get_footer();

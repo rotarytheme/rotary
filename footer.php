@@ -15,8 +15,8 @@ $clubname = rotary_club_name();
 		<?php get_sidebar( 'footer' );?>
 		
 		<section id="colophon">
-			<p class="alignleft"><?php  _e( 'Web Design', 'Rotary' ); ?>: <a href="http://www.carolinatorres.com/" target="_blank">Carolina Torres</a> <?php _e( 'Web Development', 'Rotary' ); ?>: <a href="http://www.koolkatwebdesigns.com/" target="_blank">Merrill M. Mayer</a></p>
-			<p class="alignright">&copy; <?php echo date('Y'); ?> <a href="<?php  echo site_url();?>" target="_blank"><?php  echo $clubname;  ?></a>.&nbsp;&nbsp;<?php _e( 'All rights reserved', 'Rotary' ); ?>.</p>		
+			<p class="alignleft"><?php  _e( 'Web Design', 'rotary' ); ?>: <a href="http://www.carolinatorres.com/" target="_blank">Carolina Torres</a> <?php _e( 'Web Development', 'rotary' ); ?>: <a href="http://www.koolkatwebdesigns.com/" target="_blank">Merrill M. Mayer</a></p>
+			<p class="alignright">&copy; <?php echo date('Y'); ?> <a href="<?php  echo site_url();?>" target="_blank"><?php  echo $clubname;  ?></a>.<?php _e( 'All rights reserved', 'rotary' ); ?>.</p>		
 		</section>		
 	</footer>
 
