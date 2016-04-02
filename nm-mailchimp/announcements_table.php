@@ -42,6 +42,7 @@
 			 	<?php 
 			 	$context = 'email';
 				if ( is_array( $announcements )  ) : 
+					$announcements = json_decode(json_encode($announcements), FALSE);
 					$count = count( $announcements );
 					if($count > 0 ) :
 						foreach( $announcements as $announcement ) : 

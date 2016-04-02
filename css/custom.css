@@ -7,3 +7,386 @@
 #page {
     clear: both;
 }
+#content .blogroll footer.meta {
+    margin-bottom: 0;
+	padding: 5px;
+}
+.sectioncontainer {
+    position: relative;
+}
+
+
+
+
+li.ecp1_list_item {
+    font-size: 18px;
+    font-weight: 300;
+    font-family: open sans condensed, arial narrow, sans-serif;
+    margin: 0 0 10px 5px;
+}
+
+li.ecp1_list_item a {
+    font-weight: 300;
+}
+
+#rotaryemaildialog .wpcf7-form-control-wrap {
+    top: -40px;
+    position: relative;
+}
+
+
+#content .home-upcoming-program-ribbon {
+    background: url(../rotary-sass/images/upcoming-ribbon.png) 50% 0 no-repeat;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+}
+@media only screen and (min-width: 960px) {
+	#content .home-upcoming-program-ribbon h2 {
+	    font-size: 34px;
+	    padding-top: 10px;
+	}
+}
+@media only screen and (min-width: 420px) {
+	#content .home-upcoming-program-ribbon h2 {
+	    font-size: 27px;
+	    padding-top: 5px;
+	}
+}
+#content .home-upcoming-program-ribbon h2 {
+    font-size: 22px;
+    padding-top: 5px;
+    color: #FFF;
+    text-transform: uppercase;
+}
+/* the border */
+#content .rfbp-container {
+    border: 5px solid #17458f;
+    padding: 25px 10px;
+    margin-top:55px;
+}
+@media only screen and (min-width: 420px) {
+	#content .rfbp-container {
+	    border: 8px solid #17458f;
+	    padding: 25px 10px;
+	}
+}
+@media only screen and (min-width: 960px) {
+	#content .rfbp-container {
+	    border: 8px solid #17458f;
+	    padding: 35px 20px;
+	}
+}
+
+#content .rfbp-container:before {
+    background: url(../rotary-sass/images/upcoming-ribbon.png) 50% 0 no-repeat;
+    background-size: contain;
+    display:block;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    content: "Facebook Posts";
+    height: 61px;
+    top: -80px;
+    margin-bottom:-80px;
+    width: 384px;
+	font-family: "Open Sans Condensed",Arial,Helvetica,sans-serif;
+	font-size: 22px;
+    color: #FFF;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 5px 0 0;
+    line-height: 1.1em;
+}
+@media only screen and (min-width: 420px) {
+	#content .rfbp-container:before {
+	    font-size: 27px;
+	    padding-top: 5px;
+	}
+}
+@media only screen and (min-width: 767px) {
+	#content .rfbp-container:before {
+	    font-size: 34px;
+	}
+}
+
+/*******************************************************
+** CAROUSEL ANNOUNCEMENTS 
+*******************************************************/
+
+/* Page Settings */
+@media only screen and (min-width: 1136px) {
+	.slideshow #wrapper {
+	    max-width: 1280px;
+	    height:800px;
+	}
+}
+
+.slideshow-announcements {
+    font-size: 36px;
+    font-family: Opens Sans Condensed, Arial Narrow, Sans-Serif;
+}
+.slideshow #content{
+	width:1280px;
+	margin:0;
+}
+
+/* Header Settings */
+.slideshow header {
+    height: 200px;
+    background-color: #17468f;
+}
+.slideshow #branding {
+	padding:20px 20px;
+}
+#branding h1.official-logo .clubname, 
+#branding h1.official-logo .clubtype, 
+#branding h1.official-logo a.clubname, 
+#branding h1.official-logo a.clubtype {
+    color: #FFF;
+    font-weight: 300;
+}
+#branding h1.official-logo {
+    background: url( ./images/RotaryMBS_REV-Gold-RGB.png ) 100px 20px no-repeat;
+    background-size:293px;
+    width:400px;
+    height: 135px;
+}
+#branding h1.official-logo span.clubname.namebefore,
+#branding h1.official-logo span.clubtype {
+    font-weight: 300;
+    font-size: 40px;
+    font-family: open sans condensed;
+    margin-left: 0px;
+    text-align: right;
+    width: 270px;
+}
+#branding h1.official-logo span.clubbefore,
+#branding h1.official-logo span.namebefore {
+    padding-top: 10px;
+    margin-bottom:70px;
+}
+
+
+
+
+/* Content Settings */
+.slideshow #content .slidemargins{
+	margin:50px;
+	overflow:show;
+	max-width:1180px;
+}
+.slideshow #content{
+	margin:0;
+}
+
+#content .slideshow-announcements .header-text-container h3 {
+    font-size: 50px;
+    margin-top: 15px;
+}
+#content .slideshow-announcements .header-text-container h4 {
+    font-size: 34px;
+    margin-top: 12px;
+}
+.slideshow .announcements-container {
+    width: 100%;
+}
+.slideshow-announcement {
+    height: 600px;
+   /* width: 100%; */
+    width: 1280px!important;
+}
+
+/* Slideinfo Sidebar */
+.slideshow .slideinfo {
+	background: rgba(231, 231, 232, 0.95); /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(right,rgba(231, 231, 232, 1),rgba(231, 231, 232, 0.85)); /*Safari 5.1-6*/
+	background: -o-linear-gradient(left,rgba(231, 231, 232, 1),rgba(231, 231, 232, 0.85)); /*Opera 11.1-12*/
+	background: -moz-linear-gradient(left,rgba(231, 231, 232, 1),rgba(231, 231, 232, 0.85)); /*Fx 3.6-15*/
+	background: linear-gradient(to left, rgba(231, 231, 232, 1), rgba(231, 231, 232, 0.85)); /*Standard*/
+  
+	position: absolute;
+    right: 0;
+    padding: 10px 30px;
+    font-family: open sans condensed;
+    width: 30%;
+    height: 580px;
+    text-align: right;
+    overflow:hidden;
+}
+.slideshow .slideinfo h1{
+    font-size: 75px!important;
+}
+.slideshow .slideinfo p{
+    font-size: 45px;
+    font-family:open sans condensed, arial narrow, sans-serif;
+
+}
+.slideshow .slideimage {
+    position: absolute;
+    left: 0;
+    background-size: cover!important;
+    height: 600px;
+    width: 100%;
+}
+
+/* Anniversaries */
+.anniversarycontent {
+	position:relative;
+}
+
+.anniversary_inner_container {
+	float:left;
+}
+.anniversary-Birthdays:before {
+	content: "";
+    background-image: url(./images/happy_birthday.png);
+    background-repeat:no-repeat;
+    background-size: contain;
+	height: 398px;
+    width: 365px;
+    position: absolute;
+    top: -248px;
+    right: -20px;
+}
+.anniversary-Anniversaries:before {
+    content: "";
+    background-image: url(./images/wedding_anniversary.png);
+    height: 503px;
+    width: 367px;
+    background-size: contain;
+    position: absolute;
+    top: -137px;
+    right: -100px;
+    background-repeat: no-repeat;
+}
+.anniversary_years {
+	color:#d91b5c;
+	white-space:nowrap;
+	margin-right:20px;
+	margin-left:30px;
+}
+.anniversary-Membership:before {
+    content: "";
+    background-image: url(./images/rotary_logo.png);
+    height: 450px;
+    width: 450px;
+    background-size: contain;
+    position: absolute;
+    top: -300px;
+    right: -100px;
+    background-repeat:no-repeat;
+}
+
+.slideshow .anniversarycontent h1 {
+	font-size:75px!important;
+	border-bottom: #B8A3A0 solid 1px;
+	padding-bottom: 20px!important;
+	margin-top:0!important;
+}
+
+.slideshow #content .anniversarycontent p {
+    line-height: 1em;
+}
+.slideshow .anniversarycontent .anniversary_day {
+    display: inline-block;
+	text-align: right;
+	width:100px;
+	font-weight:bold;
+	padding-right:20px;
+	font-size: 40px;
+	font-family: Open Sans Condensed, Arial Narrow, Sans-Serif;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    vertical-align: top;
+}
+.slideshow .anniversarycontent .membername {
+    display: inline-block;
+	color: black;
+	font-weight:bold;
+	width: 35%;
+	white-space:nowrap;
+    border-bottom: 1px solid #000;
+    margin-bottom: 10px;
+}
+
+
+/***********************************
+ DATEPICKER
+ ***********************************/
+ 
+#ui-datepicker-div {
+  background-color: #EFEFEF;
+  border: 1px solid #999999;
+  font-family: open sans condensed;
+    font-size: 15px;
+    padding: 6px 16px;
+}
+#ui-datepicker-div td {
+  padding-right: 5px;
+  text-align: right;
+    width: 23px;
+    height: 22px;
+    padding:2px;
+	border: 1px solid #EFEFEF;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+#ui-datepicker-div td:hover {
+	background-color: #005daa;
+    width: 22px;
+    height: 20px;
+    color:white;
+}
+#ui-datepicker-div td a:hover {
+    color:white;
+}
+#ui-datepicker-div th {
+	text-align:right;
+    font-size: 18px;
+}
+#ui-datepicker-div .ui-datepicker-prev {
+  float: left;
+}
+#ui-datepicker-div .ui-datepicker-next {
+  float: right;
+}
+.ui-datepicker-title {
+    clear: both;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #4E4C4C;
+    height: 30px;
+}
+/*********************
+ANNOUNCEMENTS
+*************************/
+#new-announcement-form div#wp-comment-wrap {
+    margin-top: 20px;
+}
+
+.shortcode-announcements select#announcer {
+	height:30px;
+	margin:7px 0px;
+}
+.shortcode-announcements .announcementtitlecontainer {
+    font-size: 22px;
+    text-transform: uppercase;
+    font-family: open sans condensed;
+    font-weight: bold;
+}
+.shortcode-announcements div#respond {
+    border: 1px solid #BAACAC;
+    padding: 0 15px 15px;
+    background: #FEFCFC;
+}
+.shortcode-announcements .announcementtitlecontainer {
+    font-size: 22px;
+    text-transform: uppercase;
+    font-family: open sans condensed;
+    font-weight: bold;
+}
+
+

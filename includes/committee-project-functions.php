@@ -328,8 +328,10 @@ function show_project_blogroll ($query, $showthumb = 'no', $committeeTitle = '')
  */
 function  rotary_show_project_dates() {
 	//get the project start and end dates 
+
 	$startDate 	= DateTime::createFromFormat('Ymd', get_field( 'rotary_project_date' ) );
 	$endDate 	= DateTime::createFromFormat('Ymd', get_field( 'rotary_project_end_date' ) );
+	
 	if ( get_field( 'long_term_project' ) ) : 
 		$longTermClass = ' longterm'; 
 			if ( $startDate && $endDate ) :
@@ -345,7 +347,7 @@ function  rotary_show_project_dates() {
 				<span class="fulldate"><?php echo (( $show_day) ? $endDate->format('jS F Y') : $endDate->format('F Y')); ?></span>
 			<?php else : ?>
 				<span><?php echo __( '(ongoing)' ); ?></span>
-			<?endif; ?>
+			<?php endif; ?>
 	<?php 
 	else :
 		$longTermClass = '';

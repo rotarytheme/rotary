@@ -1,6 +1,6 @@
 <?php
 /**
- * The Header for our theme.
+ * The Header for the slideshow.
  *
  * Displays all of the <head> section
  *
@@ -10,7 +10,6 @@
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <!--[if IE]>
@@ -50,7 +49,6 @@
 <![endif]-->
 
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-
  
 <?php
     /* We add some JavaScript to pages with the comment form
@@ -84,60 +82,16 @@
 <script src="<?php echo get_bloginfo('template_directory').'/includes/js/lte-ie7.js'; ?>" type="text/javascript"></script >
 <![endif]-->
 </head>
-<?php  $bodyClass = 'white';  ?> 
+<?php  $bodyClass = 'white slideshow';  ?> 
 <body <?php body_class($bodyClass); ?>>
  <div id="wrapper">
-    <section id="signin">
-     <?php if (is_user_logged_in()) { 
-	   $currentuser = wp_get_current_user();
-	   echo '<p class="loggedin"><span>You are currently logged in as '.$currentuser->display_name .'</span>'. wp_loginout($_SERVER['REQUEST_URI'], false ) .'</p>';
-	 } 
-    else {
-     $args = array(
-		'label_log_in' => __( 'log In' ),
-		'label_username' => __( 'username:' ),
-        'label_password' => __( 'password:' ),
-        'remember' => false); 
-    	wp_login_form($args); 
-    }   ?> 
-    </section>
     <header role="banner">
     	<div id="branding">
-	   	<?php if(current_user_can('manage_options')){ ?>
-	      	<a class="headeredit" href="<?php echo admin_url(); ?>customize.php">Edit Header</a>
-	  	<?php  } ?>
 	      <?php  $clubname = get_theme_mod( 'rotary_club_name', '' );  ?>
 	      <?php  $rotaryClubBefore = get_theme_mod( 'rotary_club_first', false); ?>
-	            <h1>
-	            <?php
-				if ( !is_front_page() ) { ?>
-	            	<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-	            <?php }  ?>
-	            <?php rotary_club_header($clubname, $rotaryClubBefore);?>
-	             <?php if ( !is_front_page() ) { ?>
-					</a>
-	              <?php }  ?>  
+	      <?php  $logotype = 'official-logo'; ?>
+	            <h1 class="<?php echo $logotype; ?>">
+	            <?php rotary_club_header($clubname, $rotaryClubBefore, $logotype );?>
 	            </h1>
-	  
-				<div class="membership-address-container">
-			        <section id="membership">
-			        <h2><?php echo __( 'Become a member' ); ?></h2>
-			        <?php  $pageID = get_theme_mod( 'rotary_more_info_button', '' );  ?>
-					<?php if ($pageID) {?>
-			          <a class="rotarybutton-largegold" href="<?php echo get_permalink($pageID);?>">Get More Info</a>
-			        <?php }?>
-			
-			        </section>
-			        <section id="meetingaddress">
-			        <h2><?php echo __( 'MEETING SITE ADDRESS' ); ?></h2>
-			        <?php  $meetingaddress = get_theme_mod( 'rotary_meeting_location', '' );  
-					   if ($meetingaddress) {
-						   echo '<p>'.nl2br($meetingaddress).'</p>';
-					   }
-					?>
-			        </section>
-			    </div>
     	</div>
-        <?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to the 'Rotary_menu' function which can be found in functions.php.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
-        <?php wp_nav_menu( array( 'container_id'=> 'mainmenu', 'container' => 'nav', 'fallback_cb' => 'Rotary_menu', 'theme_location' => 'primary' ) ); ?>
     </header>

@@ -46,7 +46,7 @@ class IS_IU_Import_Users {
 	 *
 	 * @since 0.1
 	 **/
-	public function init() {
+	public static function init() {
 		add_action( 'admin_menu', array( __CLASS__, 'add_admin_pages' ) );
 		add_action( 'init', array( __CLASS__, 'process_csv' ) );
 
@@ -86,19 +86,24 @@ class IS_IU_Import_Users {
 					'new_user_notification' => $new_user_notification,
 					'users_update' => $users_update
 				) );
+				
 
 				// No users imported?
-				if ( ! $results['user_ids'] )
-					wp_redirect( add_query_arg( 'import', 'fail', wp_get_referer() ) );
-
+				if ( ! $results['user_ids'] ) $import_arg =  'fail';
 				// Some users imported?
-				elseif ( $results['errors'] )
-					wp_redirect( add_query_arg( 'import', 'errors', wp_get_referer() ) );
-
+				elseif ( $results['errors'] ) $import_arg =  'errors';
 				// All users imported? :D
-				else
-					wp_redirect( add_query_arg( 'import', 'success', wp_get_referer() ) );
+				else $import_arg ='success';
+				
+				$query_args = array(
+								'import' => $import_arg,
+								'inserts' => $results['inserts'],
+								'updates' => $results['updates'],
+								'skipped' => $results['skipped'],
+								'fails' => $results['fails'],
+							);
 
+				wp_redirect( add_query_arg( $query_args, wp_get_referer() ) );
 				exit;
 			}
 
@@ -141,13 +146,13 @@ class IS_IU_Import_Users {
 				echo '<div class="error"><p><strong>' . __( 'Cannot extract data from uploaded file or no file was uploaded.' , 'import-users-from-csv') . '</strong></p></div>';
 				break;
 			case 'fail':
-				echo '<div class="error"><p><strong>' . sprintf( __( 'No user was successfully imported%s.' , 'import-users-from-csv'), $error_log_msg ) . '</strong></p></div>';
+				echo '<div class="error"><p><strong>' . sprintf( __( '%s user(s) skipped and %s records failed to be imported%s.' , 'import-users-from-csv'), $_GET['skipped'],  $_GET['fails'], $error_log_msg ) . '</strong></p></div>';
 				break;
 			case 'errors':
-				echo '<div class="error"><p><strong>' . sprintf( __( 'Some users were successfully imported but some were not%s.' , 'import-users-from-csv'), $error_log_msg ) . '</strong></p></div>';
+				echo '<div class="error"><p><strong>' . sprintf( __( '%s user(s) successfully imported, %s user(s) updated, %s user(s) skipped, and %s failed%s.' , 'import-users-from-csv'), $_GET['inserts'], $_GET['updates'], $_GET['skipped'], $_GET['fails'], $error_log_msg ) . '</strong></p></div>';
 				break;
 			case 'success':
-				echo '<div class="updated"><p><strong>' . __( 'Users import was successful.' , 'import-users-from-csv') . '</strong></p></div>';
+				echo '<div class="updated"><p><strong>' . sprintf( __( '%s user(s) successfully imported, %s user(s) updated, %s user(s) skipped' , 'import-users-from-csv'), $_GET['inserts'], $_GET['updates'], $_GET['skipped'] ) . '</strong></p></div>';
 				break;
 			default:
 				break;
@@ -226,14 +231,25 @@ class IS_IU_Import_Users {
 
 		// User data fields list used to differentiate with user meta
 		$userdata_fields       = array(
-			'ID', 'user_login', 'user_pass',
-			'user_email', 'user_url', 'user_nicename',
-			'display_name', 'user_registered', 'first_name',
-			'last_name', 'nickname', 'description',
-			'rich_editing', 'comment_shortcuts', 'admin_color',
-			'use_ssl', 'show_admin_bar_front', 'show_admin_bar_admin',
-			'role'
-		);
+									'ID',
+									'user_login',
+									'user_pass',
+									'user_email', 
+									'user_url',
+									'user_nicename',
+									'display_name', 
+									'user_registered', 
+									'first_name',
+									'last_name', 
+									'nickname', 'description',
+									'rich_editing', 
+									'comment_shortcuts', 
+									'admin_color',
+									'use_ssl',
+									'show_admin_bar_front', 
+									'show_admin_bar_admin',	
+									'role'
+								);
 
 		include( ROTARY_THEME_CSV_PATH . 'class-readcsv.php' );
 
@@ -246,7 +262,7 @@ class IS_IU_Import_Users {
 		while ( ( $line = $csv_reader->get_row() ) !== NULL ) {
 			// If the first line is empty, abort
 			// If another line is empty, just skip it
-			if ( empty( $line ) ) {
+			if ( empty( $line ) || !isset( $line) || $line == NULL ) {
 				if ( $first ) 
 					break;
 				else
@@ -257,6 +273,7 @@ class IS_IU_Import_Users {
 			if ( $first ) {
 				$headers = $line;
 				$first = false;
+				$inserts = $updates = $skipped = $fails = 0;
 				continue;
 			}
 			
@@ -267,18 +284,20 @@ class IS_IU_Import_Users {
 				$column = trim( $column );
 
 				if ( in_array( $column_name, $userdata_fields ) ) {
+					if( $column )
 					$userdata[$column_name] = $column;
 				} else {
+if( $column )
 					$usermeta[$column_name] = $column;
 				}
 			}
 
+			// If no user data, bailout!
+			if ( empty( $userdata ) || !isset( $userdata ) || !count($userdata ) )
+				continue;
+			
 			// A plugin may need to filter the data and meta
 			$userdata = apply_filters( 'is_iu_import_userdata', $userdata, $usermeta );
-			
-			// If no user data, bailout!
-			if ( empty( $userdata ) )
-				continue;
 
 			// Something to be done before importing one user?
 			do_action( 'is_iu_pre_user_import', $userdata, $usermeta );
@@ -288,12 +307,20 @@ class IS_IU_Import_Users {
 			if ( isset( $userdata['ID'] ) )
 				$user = get_user_by( 'ID', $userdata['ID'] );
 
-			if ( ! $user && $users_update ) {
+			if ( ! $user ) {
 				if ( isset( $userdata['user_login'] ) )
 					$user = get_user_by( 'login', $userdata['user_login'] );
 
 				if ( ! $user && isset( $userdata['user_email'] ) )
 					$user = get_user_by( 'email', $userdata['user_email'] );
+			}
+			
+			//if option to update existing users not set, exit the loop
+			if ( $user && !$users_update ) {
+				$msg = sprintf( __('User @s already exists. Update skipped'), $user );
+				//$errors[$rkey] = trigger_error( $msg  );
+				$skipped++;
+				continue;
 			}
 
 			$update = false;
@@ -306,10 +333,13 @@ class IS_IU_Import_Users {
 			if ( ! $update && empty( $userdata['user_pass'] ) )
 				$userdata['user_pass'] = wp_generate_password( 8, false );
 
-			if ( $update )
+			if ( $update ) {
 				$user_id = wp_update_user( $userdata );
-			else
+				if ( $user_id && !is_wp_error( $user_id )) $updates++;
+			} else {
 				$user_id = wp_insert_user( $userdata );
+				if ( $user_id && !is_wp_error( $user_id )) $inserts++;
+			}
 
 			// Is there an error o_O?
 			if ( is_wp_error( $user_id ) ) {
@@ -349,8 +379,13 @@ class IS_IU_Import_Users {
 		self::log_errors( $errors );
 
 		return array(
-			'user_ids' => $user_ids,
-			'errors'   => $errors
+			'user_ids' 	=> $user_ids,
+			'errors'   	=> $errors,
+			'inserts'	=> $inserts,
+			'updates'	=> $updates,
+			'skipped' 	=> $skipped,
+			'fails'		=> count( $errors ),
+//'fails'		=> var_dump($line),
 		);
 	}
 

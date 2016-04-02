@@ -10,6 +10,7 @@ jQuery(document).ready(function($) {
 			this.setUpArchives();
 			this.setUpSlideShow();
 			this.setUpAnnouncements();
+			this.setUpAnnouncementsSlideshow();
 			this.setUpEdits();
 			this.setUpDatePicker();
 			this.setUpDatatables();
@@ -31,7 +32,7 @@ jQuery(document).ready(function($) {
 			$('#speaker-archive-table tbody').on('click', 'tr', this.selectRow);
 			$('.projecticons').on('mouseenter mouseleave', '.icon', this.hoverIcons);
 			$('.logged-in .projecticons').on('click', '.imgoing', this.toggleParticpant);
-			// Announcement Fetures
+			// Announcement Features
 			$('.editannouncementbutton').on('click', this.editAnnouncement );
 			$('.deleteannouncementbutton').on('click', this.deleteAnnouncement );
 			$('.fancybox, .gallery-item a').fancybox({
@@ -408,6 +409,19 @@ jQuery(document).ready(function($) {
 					timeout: 10000,
 					delay: -2000,
 					pager: '#announcement-carousel-controls'
+				});
+			}
+		},
+		setUpAnnouncementsSlideshow: function() {
+			if ($('#announcements-slideshow').length) {
+				$('#announcements-slideshow').cycle({
+					slideExpr: '.slideshow-announcement',
+					fx: 'fade',
+					height: '600px',
+					speed: '1000',
+					timeout: 5500,
+					delay: -500,
+					//pager: '#announcement-slideshow-controls'
 				});
 			}
 		},

@@ -19,8 +19,14 @@ if ('yes' != $options['rotary_use_dacdb'] || !class_exists( 'RotaryDaCDb' )) {
 		$usermeta['email'] = $userdata['user_email'];
 		$userdata['role'] = 'member';
 		$usermeta['memberyesno'] = '1';
-		$membersince = date_format( create_date( $usermeta['membersince'] ), 'm/d/Y' );
-		$usermeta['membersince'] = ( $membersince ) ? $membersince : '01/01/2015';
+		try {
+			//$membersince = date_create_from_format( strtotime($usermeta['membersince'] ), 'U');
+		}
+		catch (Exception $e) {
+ 		 	echo 'Message: ' .$e->getMessage(); die;
+		}
+		//$membersince = date_format( date_create_from_format( strtotime($usermeta['membersince'] ), 'U'), 'm/d/Y' );
+	//	$usermeta['membersince'] = ( $membersince ) ?  date_format( $membersince, 'm/d/Y' ) : '01/01/2015';
 		$userdata['display_name'] =  $userdata['first_name'] . ' ' . $userdata['last_name'];
 	}
 	add_action( 'is_iu_post_users_import', 'rotary_post_users_import', 10, 2 );
@@ -71,21 +77,57 @@ function rotary_edit_post_link($output) {
 	return $output;
 }
 //show the rotary club header
-function rotary_club_header($clubname, $rotaryClubBefore=false) {
-	if ($rotaryClubBefore) { ?>
-	    <?php if ($clubname) { ?>
-				 <span class="clubtype clubbefore">Rotary Club Of</span>
-				 <span class="clubname"><?php echo $clubname;?></span>
-		<?php }
+function rotary_club_header($clubname, $rotaryClubBefore=false, $logotype='web-logo') {
+	switch( $logotype ) {
+		case 'web-logo':
+			if ( $rotaryClubBefore ) { ?>
+			    <?php if ($clubname) { ?>
+						 <span class="clubtype clubbefore"><?php echo __( 'Rotary Club Of') ;?></span>
+						 <span class="clubname"><?php echo $clubname;?></span>
+				<?php }
+			}
+			else {
+				if ($clubname) { ?>
+						<span class="clubname namebefore"><?php echo $clubname;?></span>
+		        <?php }  ?>
+					   <span class="clubtype"><?php echo __( 'Rotary Club') ;?></span>
+		     <?php   }
+		    break;
+		case 'official-logo':
+			if ( $rotaryClubBefore ) { ?>
+						    <?php if ($clubname) { ?>
+									 <span class="clubtype clubbefore">&nbsp;</span>
+									 <span class="clubname"><?php echo __( 'Club Of') . $clubname;?></span>
+							<?php }
+						}
+						else {
+							if ($clubname) { ?>
+									<span class="clubname namebefore"><?php echo $clubname;?></span>
+					        <?php }  ?>
+								   <span class="clubtype"><?php echo __( 'Club') ;?></span>
+					     <?php   }
+					    break;
+			break;
 	}
-	else {
-		if ($clubname) { ?>
-				<span class="clubname namebefore"><?php echo $clubname;?></span>
-        <?php }  ?>
-			   <span class="clubtype">Rotary Club</span>
-     <?php   }
 
 }
+//club name
+function rotary_club_name() {
+	$set_clubname = get_theme_mod( 'rotary_club_name', '' );
+	$rotaryClubBefore = get_theme_mod( 'rotary_club_first', false);
+	if ($rotaryClubBefore) {
+		if ($set_clubname) {
+			$clubname = sprintf( __( 'Rotary Club of %s' ), $set_clubname );
+		}
+	} else {
+		if ($set_clubname) {
+			$clubname = sprintf( __( '%s Rotary Club' ), $set_clubname );
+		}
+	}
+	return $clubname;
+}
+
+
 //Add the filter to override the standard shortcode
 add_filter( 'img_caption_shortcode', 'rotary_img_caption_shortcode', 10, 3 );
 function rotary_img_caption_shortcode( $a , $attr, $content = null) {
@@ -215,12 +257,22 @@ endif;
 add_action( 'init', 'rotary_register_shortcodes');
 function rotary_register_shortcodes(){
 	add_shortcode( 'rotary-reveille-header', 'rotary_reveille_header_function' );
+	
+	//backward compatibility only
 	add_shortcode( 'UPCOMING_SPEAKERS', 'rotary_upcoming_speakers_function' );
 	add_shortcode( 'FEATURED_ITEM', 'rotary_featured_function' );
 	add_shortcode( 'FEATURED', 'rotary_featured_function' );
 	add_shortcode( 'COMMITTEE_ANNOUNCEMENTS', 'rotary_announcements_function' );
 	add_shortcode( 'ANNOUNCEMENTS', 'rotary_announcements_function' );
 	add_shortcode( 'BOARDMEMBERS', 'rotary_boardmembers_function' );
+	
+	add_shortcode( 'upcoming_speakers', 'rotary_upcoming_speakers_function' );
+	add_shortcode( 'featured_item', 'rotary_featured_function' );
+	add_shortcode( 'featured', 'rotary_featured_function' );
+	add_shortcode( 'committee_announcements', 'rotary_announcements_function' );
+	add_shortcode( 'announcements', 'rotary_announcements_function' );
+	add_shortcode( 'boardmembers', 'rotary_boardmembers_function' );
+	
 }
 
 /* BOARDMEMBERS */
@@ -234,9 +286,8 @@ function rotary_boardmembers_function(  $atts  ) {
 /* ANNOUNCEMENTS */
 function rotary_announcements_function( $atts ) {
 	require_once ( ROTARY_THEME_SHORTCODES_PATH . 'shortcode-announcements.php' );		// load the shortcode file
-	wp_enqueue_script( 'rotary' );
-	$shortcode = rotary_get_announcements_shortcode_html( $atts );
-	return $shortcode;
+	$rotary_announcements = new RotaryAnnouncements( array ('atts' => $atts) );
+	return $rotary_announcements->shortcode_html;
 }
 
 /* UPCOMING_SPEAKERS */
@@ -580,7 +631,7 @@ function rotary_slides_register() {
 }
 
 /*gets the slide show*/
-function rotary_get_slideshow(){
+function rotary_get_slideshow( $context = null ){
 	$args = array(
 		'order' => 'ASC',
 		'post_type' => 'rotary-slides',
@@ -588,49 +639,67 @@ function rotary_get_slideshow(){
 	$query = new WP_Query( $args );
 	$count = 0;
 
-	if ( $query->have_posts() ) : ?>
-	<div id="slideshowcontainer">
-		<div id="slideshowleft">
-        	<div id="slideshowright">
-            	<div id="slideshow">
- <?php  while ( $query->have_posts() ) : $query->the_post();
-		if (has_post_thumbnail()) {
-			echo '<div class="slide';
-			if ($count > 0) {
-				echo ' hide';
-			}
-			echo'">';
-			$count++;
-			echo '<div class="slideinfo">';
-			the_title('<h2>', '</h2>');
-			echo '<p>'.get_the_excerpt().'</p>';
-			$slidelink = get_post_meta(get_the_ID(), 'slidelink', true);
-			if ($slidelink) {
-				echo '<p><a href="'.$slidelink.'">Keep Reading...</a></p>';
-			}
-			else {
-				echo '<p><a href="'.get_permalink().'">Keep Reading...</a></p>';
-			}
+	if ( $query->have_posts() ) : 
+	
+	if( 'slideshow' != $context ) : ?>
+		<div id="slideshowcontainer">
+			<div id="slideshowleft">
+	        	<div id="slideshowright">
+	            	<div id="slideshow">
+	 <?php  
+	 endif; // end $context switch
+	 while ( $query->have_posts() ) : $query->the_post();
+			if (has_post_thumbnail()) :
+				if( 'slideshow' == $context ) :
+					?>
+					<div class="slideshow-announcement hide">
+					<?php $count++;?>
+						<div class="slideinfo">
+							 <?php the_title(); ?>
+							 <p><?php  echo get_the_excerpt(); ?></p>
+						</div>					
+						<?php the_post_thumbnail( 'slideshow-size' ); ?>
+					</div>
+					<?php 
+				else:
+					echo '<div class="slide';
+					if ($count > 0) {
+						echo ' hide';
+					}
+					echo'">';
+					$count++;
+					echo '<div class="slideinfo">';
+					the_title('<h2>', '</h2>');
+					echo '<p>'.get_the_excerpt().'</p>';
+					$slidelink = get_post_meta(get_the_ID(), 'slidelink', true);
+					if ($slidelink) {
+						echo '<p><a href="'.$slidelink.'">Keep Reading...</a></p>';
+					}
+					else {
+						echo '<p><a href="'.get_permalink().'">Keep Reading...</a></p>';
+					}
+		
+					edit_post_link( __( 'Edit', 'Rotary' ), '<p>', '</p>' );
+					echo '</div>'; //end slideinfo
+		
+					if ($slidelink) {
+						echo '<a href="'.$slidelink.'">';
+					}
+					else {
+						echo '<a href="'.get_permalink().'">';
+					}
+					the_post_thumbnail('slideshow-size');
+		
+					echo '</a></div>';  //end the slide
+				endif; // end context
+			endif; // end thumbnail
 
-			edit_post_link( __( 'Edit', 'Rotary' ), '<p>', '</p>' );
-			echo '</div>'; //end slideinfo
-
-			if ($slidelink) {
-				echo '<a href="'.$slidelink.'">';
-			}
-			else {
-				echo '<a href="'.get_permalink().'">';
-			}
-			the_post_thumbnail('slideshow-size');
-
-			echo '</a></div>';  //end the slide
-		}
-
-	endwhile; ?>
+	endwhile; 
+	if( 'slideshow' != $context ) :?>
 				</div>	<!--end slideshow-->
             </div>	<!--end slideshowright-->
 		</div>	<!--end slideshowleft-->
-
+	
      	<div id="controls">
      		<a class ="pause" id="playpause" href="#"><span class="play">> Play</span><span class="pause"> > Pause</span></a>
      	<section id="navsection">
@@ -647,7 +716,9 @@ function rotary_get_slideshow(){
 
    </div>	<!--end slideshowcontainer-->
 
-<?php endif;
+<?php 
+endif; // end $context switch
+endif; // end has posts
 	// Reset Post Data
 	wp_reset_postdata();
 
