@@ -154,7 +154,7 @@ class RotaryAdminOptions {
 		        		</p>
 		        		<p>
 		        		<label for="rotaryemailmessage">Message</label>
-		        		[textarea textarea-507 50x10 id:rotaryemailmessage class:rotaryemailmessage]
+		        		[textarea your-message 50x10 id:rotaryemailmessage class:rotaryemailmessage]
 		        		</p>
 		        		<p>
 		        		[submit id:rotaryemailsubmit class:rotaryemailsubmit "send"]
