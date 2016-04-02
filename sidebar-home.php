@@ -18,7 +18,7 @@
 	 * some default sidebar stuff just in case.
 	 */
 	if(current_user_can('manage_options')){ ?>
-      <a class="widgetedit" href="<?php echo admin_url(); ?>widgets.php"><?php echo _e( 'Edit Widgets', 'Rotary'); ?></a>
+      <a class="widgetedit" href="<?php echo admin_url(); ?>widgets.php"><?php _e( 'Edit Widgets', 'Rotary'); ?></a>
   <?php  } 
 	if ( ! dynamic_sidebar( 'home-widget-area' ) ) : ?>
 	
