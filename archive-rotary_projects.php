@@ -10,7 +10,7 @@
  
 <?php get_header(); ?>
 
-	<h1 class="pagetitle"><?php echo _e( 'All Projects', ' Rotary'); ?></h1>
+	<h1 class="pagetitle"><?php _e( 'All Projects', ' Rotary'); ?></h1>
 	<div id="page" class="nomargin">
 		<div id="content" class="fullwidth" role="main"> 
 			<?php 

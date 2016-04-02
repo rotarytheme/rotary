@@ -376,7 +376,7 @@ class Rotary_Committee_Links extends WP_Widget {
 		$query = new WP_Query( $queryargs );
 		if ( $query->have_posts() ) : ?>
 			<select id="committeewidget" name="committeewidget">
-			<option value=""><?php echo _e( 'Select Committee', 'Rotary'); ?></option>
+			<option value=""><?php _e( 'Select Committee', 'Rotary'); ?></option>
 			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 					<option value="<?php echo get_site_url(); ?>/posts/?committeeid=<?php the_id(); ?>"  <?php echo ( get_the_id() == $_REQUEST['committeeid'] ) ? 'selected="selected"' : ''; ?>><?php the_title(); ?></option>  				
 			<?php endwhile; ?>
@@ -470,7 +470,7 @@ class Rotary_Project_Links extends WP_Widget {
 		$query = new WP_Query( $queryargs );
 		if ( $query->have_posts() ) : ?>
 			<select id="projectwidget" name="projectwidget">
-			<option value=""><?php echo _e( 'Select Project', 'Rotary'); ?></option>
+			<option value=""><?php _e( 'Select Project', 'Rotary'); ?></option>
 			<?php while ( $query->have_posts() ) : $query->the_post(); ?>			
 				<option value="<?php echo get_site_url(); ?>/posts/?projectid=<?php the_id(); ?>" <?php echo ( get_the_id() == $_REQUEST['projectid'] ) ? 'selected="selected"' : ''; ?>><?php the_title(); ?></option>  				
 			<?php endwhile; ?>
@@ -581,7 +581,7 @@ class Rotary_Projects extends WP_Widget {
 		$query = new WP_Query( $queryargs );
 		if ( $query->have_posts() ) : ?>
 			<select id="projectwidget" name="projectwidget">
-			<option value=""><?php echo _e( 'Select Project', 'Rotary'); ?></option>
+			<option value=""><?php _e( 'Select Project', 'Rotary'); ?></option>
 			<?php while ( $query->have_posts() ) : $query->the_post(); ?>			
 				<option value="<?php echo get_permalink(); ?>?projectid=<?php the_id(); ?>" <?php echo ( get_the_id() == $_REQUEST['projectid'] ) ? 'selected="selected"' : ''; ?>><?php the_title(); ?></option>  				
 			<?php endwhile; ?>
@@ -680,7 +680,7 @@ class Rotary_Committees extends WP_Widget {
 		$query = new WP_Query( $queryargs );
 		if ( $query->have_posts() ) : ?>
 			<select id="committeewidget" name="committeewidget">
-			<option value=""><?php echo _e( 'Select Committee', 'Rotary'); ?></option>
+			<option value=""><?php _e( 'Select Committee', 'Rotary'); ?></option>
 			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 					<option value="<?php echo get_permalink(); ?>?committeeid=<?php the_id(); ?>"  <?php echo ( get_the_id() == $_REQUEST['committeeid'] ) ? 'selected="selected"' : ''; ?>><?php the_title(); ?></option>  				
 			<?php endwhile; ?>

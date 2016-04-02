@@ -55,15 +55,15 @@
     <ul class="secondary">
 	<?php if( $facebook || $twitter|| $linkedin ) : ?>
 	    <li>
-	    <h3><?php echo _e( 'Follow Us', 'rotary' ); ?></h3>
+	    <h3><?php  _e( 'Follow Us', 'rotary' ); ?></h3>
 	            <?php  if( $facebook ) { ?>
-						<li><a href="<?php echo $facebook; ?>" class="social facebook" target="_blank"><?php echo _e( 'Like us on Facebook' ,'rotary');?></a></li>
+						<li><a href="<?php echo $facebook; ?>" class="social facebook" target="_blank"><?php _e( 'Like us on Facebook' ,'rotary');?></a></li>
 				<?php	} ?>
 	    		<?php  if( $twitter ) { ?>
-						<li><a href="<?php echo $twitter; ?>" class="social twitter" target="_blank"><?php echo _e( 'Follow us on Twitter' ,'rotary');?></a></li>
+						<li><a href="<?php echo $twitter; ?>" class="social twitter" target="_blank"><?php _e( 'Follow us on Twitter' ,'rotary');?></a></li>
 				<?php	} ?>
 	            <?php  if( $linkedin ) { ?>
-						<li><a href="<?php echo $linkedin; ?>" class="social linkedin" target="_blank"><?php echo _e( 'Connect on LinkedIn' ,'rotary');?></a></li>
+						<li><a href="<?php echo $linkedin; ?>" class="social linkedin" target="_blank"><?php _e( 'Connect on LinkedIn' ,'rotary');?></a></li>
 				<?php	} ?>
 	    </li>
 	<?php endif;?>

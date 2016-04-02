@@ -66,9 +66,9 @@
 				<div id="blogheader">
                    		<?php the_title('<h1>', '</h1>'); ?>
                        	<p id="program-roles">
-						<?php if( !empty( $scribe )) {?><span id="scribe"><span class="speaker-term-label"><?php echo _e( 'Scribe', 'Rotary' ); ?>:</span> <?php echo $scribe; ?></span><?php }?>
-						<?php if( !empty( $editor )) {?><span id="editor"><span class="speaker-term-label"><?php echo _e( 'Editor', 'Rotary' ); ?>:</span> <?php echo $editor; ?></span><?php }?>
-						<?php if( !empty( $introducer )) {?><span id="introducer"><span class="speaker-term-label"><?php echo _e( 'Introduced by', 'Rotary' ); ?>:</span> <?php echo $introducer; ?></span><?php }?>
+						<?php if( !empty( $scribe )) {?><span id="scribe"><span class="speaker-term-label"><?php  _e( 'Scribe', 'Rotary' ); ?>:</span> <?php echo $scribe; ?></span><?php }?>
+						<?php if( !empty( $editor )) {?><span id="editor"><span class="speaker-term-label"><?php  _e( 'Editor', 'Rotary' ); ?>:</span> <?php echo $editor; ?></span><?php }?>
+						<?php if( !empty( $introducer )) {?><span id="introducer"><span class="speaker-term-label"><?php  _e( 'Introduced by', 'Rotary' ); ?>:</span> <?php echo $introducer; ?></span><?php }?>
 						</p>
 				</div>
 				<div id="speakerinfo" <?php if( empty( $scribe ) && empty( $editor ) && empty( $introducer )) echo 'class="noroles"'; ?>>
@@ -82,7 +82,7 @@
 						else echo $programNotes;
 				?>
 					<div id="speakerannouncements">
-						<h2><?php echo _e( 'Club Announcements', 'rotary' );?></h2>
+						<h2><?php _e( 'Club Announcements', 'rotary' );?></h2>
 						<?php echo do_shortcode( '[ANNOUNCEMENTS lookback=4 speakerdate="' . $date->format('c') . '" context="speaker"]');?>
 					</div>
 				</div>

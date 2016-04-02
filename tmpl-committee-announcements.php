@@ -73,11 +73,11 @@
 						
 						
 						if ( $firstAnnouncement && get_comments_number() > 1 ) : ?>
-							<p class="morecommentcontainer"><a href="#" class="morecomments" id="morecomments"><?php echo  _e( 'Show More', 'Rotary') . '&nbsp;[+' . intval(intval(get_comments_number()) - 1.0) . ']'; ?></a></p>	
+							<p class="morecommentcontainer"><a href="#" class="morecomments" id="morecomments"><?php echo sprintf( __( 'Show More [+%s]', 'Rotary'), intval(intval(get_comments_number()) - 1.0) ); ?></a></p>	
 						<?php  
 						endif; 
 						if ( $announcement === end( $announcements ) && !$firstAnnouncement ) : ?>
-							<p class="morecommentcontainer"><a href="#" class="lesscomments hide" id="lesscomments"><?php echo _e( 'Show Less', 'Rotary'); ?></a></p>
+							<p class="morecommentcontainer"><a href="#" class="lesscomments hide" id="lesscomments"><?php _e( 'Show Less', 'Rotary'); ?></a></p>
 						 <?php endif;
 					endforeach;
 				endif;
@@ -94,7 +94,7 @@
 			<p><?php _e( 'No Announcements at the Moment', 'Rotary' ); ?></p>
 			<?php if ( is_user_logged_in() ) : ?>
 				<p><?php _e( 'Would you like to make one', 'Rotary' ); ?>?</p>
-				<a id="newcomment" class="newcomment <?php echo $button_class; ?>" href="#respond"><?php _e( 'New Announcement', 'rotary' );?></a>
+				<a id="newcomment" class="newcomment <?php echo $button_class; ?>" href="#respond"><?php _e( 'New Announcement', 'Rotary' );?></a>
 			<?php else : ?>
 				<p><?php _e( sprintf( 'Would you like to %s ?', 'Rotary' ),  wp_loginout($_SERVER['REQUEST_URI'], true ) ); ?></p>
 			<?php endif; ?>
