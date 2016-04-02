@@ -50,7 +50,7 @@ class Simple_Page_Ordering {
 	 * Loads the plugin textdomain
 	 */
 	public static function load_textdomain() {
-		load_plugin_textdomain( 'simple-page-ordering', false, ROTARY_THEME_LANGUAGES_PATH ); 
+		load_plugin_textdomain( 'simple-page-ordering', false, ROTARY_THEME_LANGUAGES_PATH . 'simple-page-ordering' ); 
 	}
 
 	/**

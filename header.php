@@ -90,7 +90,7 @@
     <section id="signin">
      <?php if (is_user_logged_in()) { 
 	   $currentuser = wp_get_current_user();
-	   echo '<p class="loggedin"><span>You are currently logged in as '.$currentuser->display_name .'</span>'. wp_loginout($_SERVER['REQUEST_URI'], false ) .'</p>';
+	   echo '<p class="loggedin"><span>'.sprintf( __('You are currently logged in as %'),$currentuser->display_name) .'</span>'. wp_loginout($_SERVER['REQUEST_URI'], false ) .'</p>';
 	 } 
     else {
      $args = array(
@@ -104,7 +104,7 @@
     <header role="banner">
     	<div id="branding">
 	   	<?php if(current_user_can('manage_options')){ ?>
-	      	<a class="headeredit" href="<?php echo admin_url(); ?>customize.php">Edit Header</a>
+	      	<a class="headeredit" href="<?php echo admin_url(); ?>customize.php"><?php echo _e('Edit Header', 'Rotary');?></a>
 	  	<?php  } ?>
 	      <?php  $clubname = get_theme_mod( 'rotary_club_name', '' );  ?>
 	      <?php  $rotaryClubBefore = get_theme_mod( 'rotary_club_first', false); ?>
@@ -121,15 +121,15 @@
 	  
 				<div class="membership-address-container">
 			        <section id="membership">
-			        <h2><?php echo __( 'Become a member' ); ?></h2>
+			        <h2><?php _e( 'Become a member', 'Rotary' ); ?></h2>
 			        <?php  $pageID = get_theme_mod( 'rotary_more_info_button', '' );  ?>
 					<?php if ($pageID) {?>
-			          <a class="rotarybutton-largegold" href="<?php echo get_permalink($pageID);?>">Get More Info</a>
+			          <a class="rotarybutton-largegold" href="<?php echo get_permalink($pageID);?>"><?php _e('Get More Info', 'Rotary'); ?></a>
 			        <?php }?>
 			
 			        </section>
 			        <section id="meetingaddress">
-			        <h2><?php echo __( 'MEETING SITE ADDRESS' ); ?></h2>
+			        <h2><?php  _e( 'MEETING SITE ADDRESS', 'Rotary' ); ?></h2>
 			        <?php  $meetingaddress = get_theme_mod( 'rotary_meeting_location', '' );  
 					   if ($meetingaddress) {
 						   echo '<p>'.nl2br($meetingaddress).'</p>';

@@ -7,6 +7,7 @@
  
 add_action('save_post', 'save_calendar_fields', 99);
 function save_calendar_fields($post_id){
+	
      
     global $post, $ecp1_event_fields;
     
@@ -20,11 +21,12 @@ function save_calendar_fields($post_id){
     $calendar_tz = new DateTimeZone( ecp1_get_calendar_timezone() ); // UTC if error
     //rotary_pa($_POST); exit;
     
-    
+
     
     //=============== the start date ==============
     
     if($post->post_type === 'rotary_projects'){
+
         $start_date = get_post_meta($post_id, 'rotary_project_date', true);
         $start_date_ts = strtotime( $start_date );
         $start_date_format = date("Y-m-d", $start_date_ts);
@@ -51,6 +53,7 @@ function save_calendar_fields($post_id){
             $end_date = $start_date;
         }
         $end_date_ts = strtotime( $end_date );
+        
     }elseif('rotary_speakers' == $post->post_type){
         
         $project_start_date = DateTime::createFromFormat('Ymd', get_field( 'speaker_date' ));
@@ -103,9 +106,12 @@ function save_calendar_fields($post_id){
 		$end_date_ts = $ds->getTimestamp(); // UTC (i.e. without offset)
     
     
-    
     //calendar used for this
-    $calendar_id = 845;
+	$calendars_array = _ecp1_current_user_calendars();
+	foreach( $calendars_array as $calendar ): 
+		$calendar_id = $calendar->ID;
+		break;
+	endforeach; 
     
     $event_grouped_fields = array(
                                 'ecp1_summary'      => $post -> post_title,

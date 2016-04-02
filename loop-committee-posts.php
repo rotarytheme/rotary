@@ -27,7 +27,7 @@ if ( isset( $_REQUEST['committeeid'] ) ) :
 			rotary_output_blogroll();
 		endwhile;
 	else : 
-		?><p  id="nopostsfound"><?php echo _e( 'No updates', 'Rotary'); ?>.</p><?php 
+		?><p  id="nopostsfound"><?php _e( 'No updates', 'Rotary'); ?>.</p><?php 
 	endif;
 	 // Reset Post Data
 	wp_reset_postdata();

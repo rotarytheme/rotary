@@ -166,7 +166,7 @@
 				</div>
 				<div class="announcement-content">
 					<div class="announcement-header">
-						<h3><?php echo ( $announcement_title ) ? $announcement_title : _e( 'New Announcement!', 'Rotary' ); ?></h3>
+						<h3><?php echo ( $announcement_title ) ? $announcement_title : __( 'New Announcement!', 'Rotary' ); ?></h3>
 						<p class="announced-by"><?php 
 						if ( $request_replies ) :
 							$userdata = get_userdata( $announcement->user_id );

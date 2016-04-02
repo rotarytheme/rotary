@@ -85,9 +85,9 @@
 						<td id="blogcontent" >
 							<hr>
 							<p id="program-roles">
-							<?php if( !empty( $scribe )) {?><span id="scribe"><span class="speaker-term-label"><?php echo _e( 'Scribe', 'Rotary' ); ?>:</span> <?php echo $scribe; ?></span><?php }?>
-							<?php if( !empty( $editor )) {?><span id="editor"><span class="speaker-term-label"><?php echo _e( 'Editor', 'Rotary' ); ?>:</span> <?php echo $editor; ?></span><?php }?>
-							<?php if( !empty( $introducer )) {?><span id="introducer"><span class="speaker-term-label"><?php echo _e( 'Introduced by', 'Rotary' ); ?>:</span> <?php echo $introducer; ?></span><?php }?>
+							<?php if( !empty( $scribe )) {?><span id="scribe"><span class="speaker-term-label"><?php  _e( 'Scribe', 'Rotary' ); ?>:</span> <?php echo $scribe; ?></span><?php }?>
+							<?php if( !empty( $editor )) {?><span id="editor"><span class="speaker-term-label"><?php  _e( 'Editor', 'Rotary' ); ?>:</span> <?php echo $editor; ?></span><?php }?>
+							<?php if( !empty( $introducer )) {?><span id="introducer"><span class="speaker-term-label"><?php  _e( 'Introduced by', 'Rotary' ); ?>:</span> <?php echo $introducer; ?></span><?php }?>
 							</p>
 							<?php
 								//program notes are filled in after a speakers visit. If the speaker has not yet been to the club, we show the upcoming content
@@ -100,7 +100,7 @@
 					<?php if( $date < $today || 1 ==1 ) :?>
 					<tr>
 						<td>
-							<h2 class="blogcontent"><?php echo _e( 'Club Announcements', 'rotary' );?></h2>
+							<h2 class="blogcontent"><?php  _e( 'Club Announcements', 'rotary' );?></h2>
 							<table>
 								<tr>
 									<td class="speaker-announcements-container">
