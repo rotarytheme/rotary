@@ -111,6 +111,23 @@ function rotary_club_header($clubname, $rotaryClubBefore=false, $logotype='web-l
 	}
 
 }
+//club name
+function rotary_club_name() {
+	$set_clubname = get_theme_mod( 'rotary_club_name', '' );
+	$rotaryClubBefore = get_theme_mod( 'rotary_club_first', false);
+	if ($rotaryClubBefore) {
+		if ($set_clubname) {
+			$clubname = sprintf( __( 'Rotary Club of %s' ), $set_clubname );
+		}
+	} else {
+		if ($set_clubname) {
+			$clubname = sprintf( __( '%s Rotary Club' ), $set_clubname );
+		}
+	}
+	return $clubname;
+}
+
+
 //Add the filter to override the standard shortcode
 add_filter( 'img_caption_shortcode', 'rotary_img_caption_shortcode', 10, 3 );
 function rotary_img_caption_shortcode( $a , $attr, $content = null) {
@@ -240,12 +257,22 @@ endif;
 add_action( 'init', 'rotary_register_shortcodes');
 function rotary_register_shortcodes(){
 	add_shortcode( 'rotary-reveille-header', 'rotary_reveille_header_function' );
+	
+	//backward compatibility only
 	add_shortcode( 'UPCOMING_SPEAKERS', 'rotary_upcoming_speakers_function' );
 	add_shortcode( 'FEATURED_ITEM', 'rotary_featured_function' );
 	add_shortcode( 'FEATURED', 'rotary_featured_function' );
 	add_shortcode( 'COMMITTEE_ANNOUNCEMENTS', 'rotary_announcements_function' );
 	add_shortcode( 'ANNOUNCEMENTS', 'rotary_announcements_function' );
 	add_shortcode( 'BOARDMEMBERS', 'rotary_boardmembers_function' );
+	
+	add_shortcode( 'upcoming_speakers', 'rotary_upcoming_speakers_function' );
+	add_shortcode( 'featured_item', 'rotary_featured_function' );
+	add_shortcode( 'featured', 'rotary_featured_function' );
+	add_shortcode( 'committee_announcements', 'rotary_announcements_function' );
+	add_shortcode( 'announcements', 'rotary_announcements_function' );
+	add_shortcode( 'boardmembers', 'rotary_boardmembers_function' );
+	
 }
 
 /* BOARDMEMBERS */
