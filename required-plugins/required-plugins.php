@@ -96,7 +96,6 @@ function my_theme_register_required_plugins( ) {
 			'source'    => 'nm-mailchimp-campaign.zip', // The plugin source.
 			'required' 	=> true,
 	),
-			/*
 	array(
 			'name' 		=> 'Every Calendar',
 			'slug' 		=> 'every-calendar-1',    
@@ -104,8 +103,6 @@ function my_theme_register_required_plugins( ) {
 			'required' 	=> true,
 			'force_activation' 	=> true,
 	),
-	*/
-
 			
 		// This is an example of how to include a plugin from an arbitrary external source in your theme.
 		/*

@@ -1,4 +1,4 @@
- <?php
+<?php
 /**
  * Rotary functions and definitions
  *
@@ -6,7 +6,7 @@
  * @subpackage Rotary
  * @since Rotary 1.0
  */
- 
+<label for="rotaryemailmessage">Message</label>
 //load_theme_textdomain('Rotary');
  
 // Set path to theme specific functions
