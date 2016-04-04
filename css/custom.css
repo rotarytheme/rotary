@@ -18,6 +18,22 @@
 
 
 
+/***************************
+ HEADER
+******************************/
+#branding img {
+    width: 250px;
+    margin-bottom: 20px;
+}
+@media screen and (min-width: 420px) {
+	#branding img { width: 330px;}
+}
+@media screen and (min-width: 767px) {
+	#branding img { width: 400px;}
+}
+
+
+/*******************/
 li.ecp1_list_item {
     font-size: 18px;
     font-weight: 300;

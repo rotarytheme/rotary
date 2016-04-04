@@ -1,6 +1,15 @@
 <?php
 if(function_exists("register_field_group"))
 {
+
+
+	$location =  get_option( 'club_location' );
+	if( !empty( $location ) ) {
+		$latitude = $location['lat'];
+		$longitude = $location['lng'];
+		$address =  $location['address'];
+	}
+	
 	register_field_group(array (
 		'id' => 'acf_speaker-program',
 		'title' => 'Speaker Program',
@@ -15,6 +24,39 @@ if(function_exists("register_field_group"))
 				'date_format' => 'yymmdd',
 				'display_format' => 'M dd, yy',
 				'first_day' => 1,
+			),
+			array (
+					'key' => 'field_5701add709566',
+					'label' => 'Program Location',
+					'instructions' => $address,
+					'name' => 'rotary_different_location',
+					'type' => 'checkbox',
+					'choices' => array (
+						'1' => __( 'This meeting is in a different location than normal.', 'Rotary' ),
+					),
+					'default_value' => '',
+					'layout' => 'vertical',
+			),
+			array (
+				'key' => 'field_rotary_program_location',
+				'name' => 'rotary_program_location',
+				'type' => 'google_map',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5701add709566',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'instructions' => 'Enter the address of the location for this week\'s meeting',
+				'center_lat' => $latitude,
+				'center_lng' => $longitude,
+				'zoom' => '16',
+				'height' => 220
 			),
 			array (
 				'key' => 'field_5310e7ca9c86c',

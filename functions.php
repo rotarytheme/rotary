@@ -8,7 +8,7 @@
  */
  
 // Set path to theme specific functions
-define( 'ACF_LITE' , true );
+ define( 'ACF_LITE' , true );
 
 define( 'ROTARY_THEME_INCLUDES_PATH', TEMPLATEPATH . '/includes/');
 define( 'ROTARY_THEME_CLASSES_PATH', TEMPLATEPATH . '/classes/');
@@ -95,7 +95,7 @@ require_once ( ROTARY_THEME_INCLUDES_PATH . 'gravitylist.php');	// to enable scr
 /*
  *  CALENDAR 
  */
-// require_once ( ROTARY_THEME_INCLUDES_PATH . 'functions-calendar.php'); // calendar functions file in included
+require_once ( ROTARY_THEME_INCLUDES_PATH . 'functions-calendar.php'); // calendar functions file in included
 
 /*
  * MEMBERS

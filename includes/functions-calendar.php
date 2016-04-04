@@ -6,8 +6,7 @@
  * **/
  
 add_action('save_post', 'save_calendar_fields', 99);
-function save_calendar_fields($post_id){
-	
+function save_calendar_fields( $post_id ){
      
     global $post, $ecp1_event_fields;
     
@@ -21,117 +20,77 @@ function save_calendar_fields($post_id){
     $calendar_tz = new DateTimeZone( ecp1_get_calendar_timezone() ); // UTC if error
     //rotary_pa($_POST); exit;
     
-
-    
     //=============== the start date ==============
     
     if($post->post_type === 'rotary_projects'){
-
-        $start_date = get_post_meta($post_id, 'rotary_project_date', true);
-        $start_date_ts = strtotime( $start_date );
-        $start_date_format = date("Y-m-d", $start_date_ts);
-        $ds = date_create( $start_date_format, $calendar_tz );
-    		if ( FALSE === $ds ) // used procedural so don't have to catch exception
-    			return $post->ID;
-    			
-    	$the_start_time = get_post_meta($post_id, 'rotary_project_start_time', true);
-        $the_end_time   = get_post_meta($post_id, 'rotary_project_end_time', true);
+		//test for 
+        $start_date = get_post_meta( $post_id, 'rotary_project_date', true);
+        if ( get_field( 'long_term_project', $post_id ) ) :
+	        $full_day =  'Y';
+	        $the_start_time = '0:00 am';
+	        $the_end_time   = '11:59 pm';
+	        $end_date   = get_post_meta($post_id, 'rotary_project_end_date', true);
+        else:
+	        $full_day =  'N';
+	        $the_start_time = get_post_meta($post_id, 'rotary_project_start_time', true);
+	        $the_end_time   = get_post_meta($post_id, 'rotary_project_end_time', true);
+	        $end_date   = $start_date;
+        endif; 
         
-        //$start_time = DateTime::createFromFormat('d/m/Y H:i A', $start_date.' '.$the_start_time);
-        if($the_start_time != ''){
-            $start_time = new DateTime($start_date.' '.$the_start_time);
-            $start_time_H = $start_time->format('H');
-            $start_time_Mnt = $start_time->format('i');
-        	$ds->setTime( $start_time_H, $start_time_Mnt, 1 ); // set to just after midnight if time not given
-        }else{
-            $ds->setTime( 10, 0, 1 ); // set to just after midnight if time not given
+        $location = get_field( 'rotary_project_location', $post_id );
+        
+    }elseif( 'rotary_speakers' == $post->post_type){
+        
+        $start_date = get_field( 'speaker_date', $post_id );
+        $full_day = 'N';
+    	$the_start_time = get_theme_mod( 'rotary_doors_open', '7:00 am' );
+        $the_end_time   = get_theme_mod( 'rotary_program_ends', '8:30 am' );
+        $end_date = $start_date;
+         
+        if( get_field( 'rotary_different_location', $post_id )) { // there is an override for this meeting
+        	$location = get_field( 'rotary_program_location', $post_id );
+        } else {
+       		$location =  get_option( 'club_location' ); // use the location of the club
         }
-        
-        $end_date   = get_post_meta($post_id, 'rotary_project_end_date', true);
-    
-        if( $end_date == NULL ){  // if end date is define then use it othrewise use start date as end.
-            $end_date = $start_date;
-        }
-        $end_date_ts = strtotime( $end_date );
-        
-    }elseif('rotary_speakers' == $post->post_type){
-        
-        $project_start_date = DateTime::createFromFormat('Ymd', get_field( 'speaker_date' ));
-        //var_dump(strtotime(get_field( 'speaker_date' ))); exit;    
-        if( !$project_start_date)
-            return $post->ID;
-            
-            
-        $start_date_ts = strtotime($project_start_date->format('Y-m-d'));
-        $start_date_format = date("Y-m-d", $start_date_ts);
-        $ds = date_create( $start_date_format, $calendar_tz );
-    		if ( FALSE === $ds ) // used procedural so don't have to catch exception
-    			return $post->ID;
-    			
-    	$the_start_time = "7:00 am";
-        $the_end_time   = "8:30 am";
-        
-        //$start_time = DateTime::createFromFormat('d/m/Y H:i A', $start_date.' '.$the_start_time);
-        if($the_start_time != ''){
-            $start_time = new DateTime($start_date.' '.$the_start_time);
-            $start_time_H = $start_time->format('H');
-            $start_time_Mnt = $start_time->format('i');
-            //var_dump($start_time_Mnt); exit;
-        	$ds->setTime( $start_time_H, $start_time_Mnt, 1 ); // set to just after midnight if time not given
-        }
-    
-        $end_date_ts = $start_date_ts;
     }
-		
-	if ( ECP1_PHP5 < 3 ) // support 5.2.0
-		$start_date_ts = $ds->format( 'U' );
-	else
-		$start_date_ts = $ds->getTimestamp(); // UTC (i.e. without offset)
-			
+    
+    $start_date_ts = rotary_create_timestamp_in_calendar_tz( $start_date, $the_start_time, $calendar_tz );
+    $end_date_ts = rotary_create_timestamp_in_calendar_tz( $end_date, $the_end_time, $calendar_tz );
+    
+    if( !$start_date_ts || !$end_date_ts) return $post_id; //something has has gone wrong
 
-    //=============== the start date ==============
+    if( !empty( $location ) ) {
+    	$latitude = $location['lat'];
+    	$longitude = $location['lng'];
+    	$address = $location['address'];
+    }
     
-    
-    
-    $end_date_format = date("Y-m-d", $end_date_ts);
-
-    $ds = date_create( $end_date_format, $calendar_tz );
-		if ( FALSE === $ds ) // used procedural so don't have to catch exception
-			return $post->ID;
-		 $ds->setTime( 0, 0, 1 ); // set to just after midnight if time not given
-		
-	if ( ECP1_PHP5 < 3 ) // support 5.2.0
-		$end_date_ts = $ds->format( 'U' );
-	else
-		$end_date_ts = $ds->getTimestamp(); // UTC (i.e. without offset)
-    
-    
-    //calendar used for this
+    //assume the first calendar is being used for this
 	$calendars_array = _ecp1_current_user_calendars();
 	foreach( $calendars_array as $calendar ): 
 		$calendar_id = $calendar->ID;
 		break;
 	endforeach; 
-    
+	
     $event_grouped_fields = array(
                                 'ecp1_summary'      => $post -> post_title,
                                 'ecp1_description'  => $post -> post_content,
-                                'ecp1_full_day'     => "N",
-                                'ecp1_location'     => 'Lahore',
-                                'ecp1_coord_lat'    => 31.55460609999999,
-                                'ecp1_coord_lng'    => 74.35715809999999,
+                                'ecp1_full_day'     => $full_day,
+                                'ecp1_location'     => $address,
+                                'ecp1_coord_lat'    => $latitude,
+                                'ecp1_coord_lng'    => $longitude,
                                 'ecp1_map_zoom'     => 12,
                                 'ecp1_showmarker'   => 'Y',
-                                'ecp1_showmap'      => 'N',
-                                'ecp1_repeat_pattern' => 'MONTHLY',
+                                'ecp1_showmap'      => 'Y',
+                          //      'ecp1_repeat_pattern' => 'MONTHLY',
                                 /*'ecp1_repeat_pattern_parameters' => array
                                                                 (
                                                                 'every' => 2
                                                                 ),
                                 
                                 'ecp1_repeat_termination' => 'UNTIL',*/
-                                'ecp1_repeat_terminate_at' => 1455408000,
-                                'ecp1_repeat_last_changed' => 1452005784,
+                        //        'ecp1_repeat_terminate_at' => 1455408000,
+                        //        'ecp1_repeat_last_changed' => 1452005784,
                                 );
 
     /*get_post_meta($post_id, 'rotary_project_start_time', true)
@@ -143,7 +102,7 @@ function save_calendar_fields($post_id){
                                 'ecp1_event_start'      => $start_date_ts,
                                 'ecp1_event_end'        => $end_date_ts,
                                 'ecp1_event_calendar'   => $calendar_id,
-                                'ecp1_event_is_featured'    => 'N',
+                                'ecp1_event_is_featured'=> 'N',
                                 'ecp1_event_repeats'    => 'N',
                                 );
                                 
@@ -155,6 +114,24 @@ function save_calendar_fields($post_id){
 
     //rotary_pa($event_grouped_fields); exit;
  }
+ 
+ function rotary_create_timestamp_in_calendar_tz( $date_str, $time_str, $calendar_tz ) {
+ 	//create a date in the time zone of the calendar
+ 	$date_ts = strtotime( $date_str );
+ 	$date_format = date("Y-m-d", $date_ts);
+ 	$datetime_tz = date_create( $date_format, $calendar_tz );
+ 	if ( FALSE === $ds ) // used procedural so don't have to catch exception
+ 		return false;
+ 	//set the time in the right time zone by parsing hours and minutes from the string input
+ 	$time = new DateTime( $date_format . ' ' . $time_str);
+ 	$datetime_tz->setTime( $time->format('H'), $time->format('i') , 0 ); 
+ 	
+ 	if ( ECP1_PHP5 < 3 ) // support 5.2.0
+ 		$date_ts = $datetime_tz->format( 'U' );
+ 	else
+ 		$date_ts = $datetime_tz->getTimestamp(); // UTC (i.e. without offset)
+ return $date_ts;
+}
  
  
  function rotary_pa($arr){
