@@ -1101,7 +1101,7 @@ function rotary_display_name_update( $user_id, $old_user_data ) {
 	wp_update_user( array( 'user_id' => $user_id, 'display_name' => $user->display_name ) );
 }
 
-add_action ( 'customize_save_after', 'rotary_save_club_location' );
+add_action ( 'customize_save_after', 'rotary_save_club_location', 10 );
 function rotary_save_club_location() {
 	$address = get_theme_mod( 'rotary_meeting_location', '');
 	$location = rotary_geocode( $address );

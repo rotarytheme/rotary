@@ -13,6 +13,7 @@ function rotary_theme_customize($wp_customize) {
 		public $type = 'textarea';
 
 		public function render_content() {
+
 			
 		?>
 		<label>
@@ -25,6 +26,9 @@ function rotary_theme_customize($wp_customize) {
 /**************************************************************************
  * LOGO SETTINGS
 */	
+
+$isclub = get_theme_mod( 'rotary_club_district', '1' );
+
 	$wp_customize->add_section( 'rotary_logo_settings', array(
 			'title'          => __( 'Name and Logo', 'Rotary' ),
 			'priority'       => 34,
@@ -41,6 +45,9 @@ function rotary_theme_customize($wp_customize) {
 			'section' => 'rotary_logo_settings',
 			'type'    => 'text',
 	) );
+
+if ( $isclub ) {
+		
 	$wp_customize->add_setting( 'rotary_club_first', array(
 			'default'        => false,
 			'capability'     => 'edit_theme_options',
@@ -50,18 +57,19 @@ function rotary_theme_customize($wp_customize) {
 			'section' => 'rotary_logo_settings',
 			'type'    => 'checkbox',
 	) );
-	
+}
 $wp_customize->add_setting( 'rotary_club_district', array(
 		'default'        => '1',
 		'capability'     => 'edit_theme_options',
-	) );
+) );
 $wp_customize->add_control( 'rotary_club_district', array(
-		'label'   => __( 'Is This a Rotary Club or District&quot;', 'Rotary' ),
+		'label'   => __( 'Is This a Rotary Club or District&#63;', 'Rotary' ),
 		'section' => 'rotary_logo_settings',
 		'type'    => 'radio',
+		'description' => __( 'You will need to refresh the page after changing this option', 'Rotary' ),
 		'choices' => array (
 					1 => 'Club',
-					2 => 'District'
+					0 => 'District'
 		)
 	) );
 
@@ -81,125 +89,134 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'rota
 
 /**************************************************************************
  * MEETING INFORMATION
+ * This is turned off for Districts
  */
-$wp_customize->add_section( 'rotary_main_settings', array(
-		'title'          => __( 'Meeting Information', 'Rotary' ),
-		'priority'       => 35,
-) );	
-	
-	
-/*Settings and Controls for the meeting location*/	
-	$wp_customize->add_setting( 'rotary_meeting_location', array(
-		'default'        => '',
-		'capability'     => 'edit_theme_options',
-	) );
-	$wp_customize->add_control( new Rotary_Textarea_Control( $wp_customize, 'rotary_meeting_location', array(
-	'label'   => __( 'Meeting Location', 'Rotary' ),
-	'section' => 'rotary_main_settings',
-	'settings'   => 'rotary_meeting_location',
-	) ) );
-	$wp_customize->add_setting( 'rotary_country', array(
-			'default'        => 'United States',
-			'capability'     => 'edit_theme_options',
-	) );
-	$wp_customize->add_control( 'rotary_country', array(
-		'label'   => __( 'Country', 'Rotary' ),
-		'section' => 'rotary_main_settings',
-		'type'    => 'text',
-	) );
-	$wp_customize->add_setting( 'rotary_telephone', array(
-			'default'        => '',
-			'capability'     => 'edit_theme_options',
-	) );
-	$wp_customize->add_control( 'rotary_telephone', array(
-		'label'   => __( 'Telephone', 'Rotary' ),
-		'section' => 'rotary_main_settings',
-		'type'    => 'text',
-	) );
-/* Meeting times */
 
-	$wp_customize->add_setting( 'rotary_meeting_day', array(
-			'default'        => '1',
-			'capability'     => 'edit_theme_options',
-	) );
-	$wp_customize->add_control( 'rotary_meeting_day', array(
-			'label'   => __( 'Meeting Day', 'Rotary' ),
+if ( $isclub ) {
+		
+		$wp_customize->add_section( 'rotary_main_settings', array(
+				'title'          => __( 'Meeting Information', 'Rotary' ),
+				'priority'       => 35,
+		) );	
+			
+			
+		/*Settings and Controls for the meeting location*/	
+			$wp_customize->add_setting( 'rotary_meeting_location', array(
+				'default'        => '',
+				'capability'     => 'edit_theme_options',
+			) );
+			$wp_customize->add_control( new Rotary_Textarea_Control( $wp_customize, 'rotary_meeting_location', array(
+			'label'   => __( 'Meeting Location', 'Rotary' ),
 			'section' => 'rotary_main_settings',
-			'type'    => 'select',
-			'choices' => array(
-					1 =>  'Monday',
-					2 =>  'Tuesday',
-					3 =>  'Wednesday',
-					4 =>  'Thursday',
-					5 =>  'Friday',
-					6 =>  'Saturday',
-					7 =>  'Sunday',
-	) ) );
-	$time_array = array(
-			'6:00 am' =>  '6:00 am',
-			'6:30 am' =>  '6:30 am',
-			'7:00 am' =>  '7:00 am',
-			'7:30 am' =>  '7:30 am',
-			'8:00 am' =>  '8:00 am',
-			'8:30 am' =>  '8:30 am',
-			'9:00 am' =>  '9:00 am',
-			'9:30 am' =>  '9:30 am',
-			'10:00 am' =>  '10:00 am',
-			'10:30 am' =>  '10:30 am',
-			'11:00 am' =>  '11:00 am',
-			'11:30 am' =>  '11:30 am',
-			'12:00 pm' =>  '12:00 pm',
-			'12:30 pm' =>  '12:30 pm',
-			'1:00 pm' =>  '1:00 pm',
-			'1:30 pm' =>  '1:30 pm',
-			'2:00 pm' =>  '2:00 pm',
-			'2:30 pm' =>  '2:30 pm',
-			'3:00 pm' =>  '3:00 pm',
-			'3:30 pm' =>  '3:30 pm',
-			'4:00 pm' =>  '4:00 pm',
-			'4:30 pm' =>  '4:30 pm',
-			'5:00 pm' =>  '5:00 pm',
-			'5:30 pm' =>  '5:30 pm',
-			'6:00 pm' =>  '6:00 pm',
-			'6:30 pm' =>  '6:30 pm',
-			'7:00 pm' =>  '7:00 pm',
-			'7:30 pm' =>  '7:30 pm',
-			'8:00 pm' =>  '8:00 pm',
-			'8:30 pm' =>  '8:30 pm',
-			'9:00 pm' =>  '9:00 pm',
-			'9:30 pm' =>  '9:30 pm',
-	);
-	
-	$wp_customize->add_setting( 'rotary_doors_open', array(
-			'default'        => '7:00 am',
-			'capability'     => 'edit_theme_options',
-	) );
-	$wp_customize->add_control( 'rotary_doors_open', array(
-			'label'   => __( 'Doors Open', 'Rotary' ),
-			'section' => 'rotary_main_settings',
-			'type'    => 'select',
-			'choices' => $time_array,
-	) );
-	$wp_customize->add_setting( 'rotary_program_starts', array(
-			'default'        => '7:30 am',
-			'capability'     => 'edit_theme_options',
-	) );
-	$wp_customize->add_control( 'rotary_program_starts', array(
-			'label'   => __( 'Program Starts', 'Rotary' ),
-			'section' => 'rotary_main_settings',
-			'type'    => 'select',
-			'choices' => $time_array,
-	) );
-	$wp_customize->add_setting( 'rotary_program_ends', array(
-			'default'        => '8:30 am',
-			'capability'     => 'edit_theme_options',
-	) );
-	$wp_customize->add_control( 'rotary_program_ends', array(
-			'label'   => __( 'Program Ends', 'Rotary' ),
-			'section' => 'rotary_main_settings',
-			'type'    => 'select',
-			'choices' => $time_array,
-	) );
+			'settings'   => 'rotary_meeting_location',
+			) ) );
+			$wp_customize->add_setting( 'rotary_country', array(
+					'default'        => 'United States',
+					'capability'     => 'edit_theme_options',
+			) );
+			$wp_customize->add_control( 'rotary_country', array(
+				'label'   => __( 'Country', 'Rotary' ),
+				'section' => 'rotary_main_settings',
+				'type'    => 'text',
+			) );
+			$wp_customize->add_setting( 'rotary_telephone', array(
+					'default'        => '',
+					'capability'     => 'edit_theme_options',
+			) );
+			$wp_customize->add_control( 'rotary_telephone', array(
+				'label'   => __( 'Telephone', 'Rotary' ),
+				'section' => 'rotary_main_settings',
+				'type'    => 'text',
+			) );
+		/* Meeting times */
+		
+			$wp_customize->add_setting( 'rotary_meeting_day', array(
+					'default'        => '--select day--',
+					'capability'     => 'edit_theme_options',
+			) );
+			$wp_customize->add_control( 'rotary_meeting_day', array(
+					'label'   => __( 'Meeting Day', 'Rotary' ),
+					'section' => 'rotary_main_settings',
+					'type'    => 'select',
+					'choices' => array(
+							'--select day--' => __( '--select day--', 'Rotary' ),
+							'Monday' =>  __( 'Monday', 'Rotary' ),
+							'Tuesday' =>  __( 'Tuesday', 'Rotary' ),
+							'Wednesday' =>  __( 'Wednesday', 'Rotary' ),
+							'Thursday' =>  __( 'Thursday', 'Rotary' ),
+							'Friday' =>  __( 'Friday', 'Rotary' ),
+							'Saturday' =>  __( 'Saturday', 'Rotary' ),
+							'Sunday' =>  __( 'Sunday', 'Rotary' ),
+			) ) );
+			$time_array = array(
+					'--select time--' => __( '--select time--', 'Rotary' ),
+					'6:00 am' =>  __( '6:00 am', 'Rotary' ),
+					'6:30 am' =>  __( '6:30 am', 'Rotary' ),
+					'7:00 am' =>  __( '7:00 am', 'Rotary' ),
+					'7:30 am' =>  __( '7:30 am', 'Rotary' ),
+					'8:00 am' =>  __( '8:00 am', 'Rotary' ),
+					'8:30 am' =>  __( '8:30 am', 'Rotary' ),
+					'9:00 am' =>  __( '9:00 am', 'Rotary' ),
+					'9:30 am' =>  __( '9:30 am', 'Rotary' ),
+					'10:00 am' =>  __( '10:00 am', 'Rotary' ),
+					'10:30 am' =>  __( '10:30 am', 'Rotary' ),
+					'11:00 am' =>  __( '11:00 am', 'Rotary' ),
+					'11:30 am' =>  __( '11:30 am', 'Rotary' ),
+					'12:00 pm' =>  __( '12:00 pm', 'Rotary' ),
+					'12:30 pm' =>  __( '12:30 pm', 'Rotary' ),
+					'1:00 pm' =>  __( '1:00 pm', 'Rotary' ),
+					'1:30 pm' =>  __( '1:30 pm', 'Rotary' ),
+					'2:00 pm' =>  __( '2:00 pm', 'Rotary' ),
+					'2:30 pm' =>  __( '2:30 pm', 'Rotary' ),
+					'3:00 pm' =>  __( '3:00 pm', 'Rotary' ),
+					'3:30 pm' =>  __( '3:30 pm', 'Rotary' ),
+					'4:00 pm' =>  __( '4:00 pm', 'Rotary' ),
+					'4:30 pm' =>  __( '4:30 pm', 'Rotary' ),
+					'5:00 pm' =>  __( '5:00 pm', 'Rotary' ),
+					'5:30 pm' =>  __( '5:30 pm', 'Rotary' ),
+					'6:00 pm' =>  __( '6:00 pm', 'Rotary' ),
+					'6:30 pm' =>  __( '6:30 pm', 'Rotary' ),
+					'7:00 pm' =>  __( '7:00 pm', 'Rotary' ),
+					'7:30 pm' =>  __( '7:30 pm', 'Rotary' ),
+					'8:00 pm' =>  __( '8:00 pm', 'Rotary' ),
+					'8:30 pm' =>  __( '8:30 pm', 'Rotary' ),
+					'9:00 pm' =>  __( '9:00 pm', 'Rotary' ),
+					'9:30 pm' =>  __( '9:30 pm', 'Rotary' ),
+			);
+			
+			$wp_customize->add_setting( 'rotary_doors_open', array(
+					'default'        => '--select time--',
+					'capability'     => 'edit_theme_options',
+			) );
+			$wp_customize->add_control( 'rotary_doors_open', array(
+					'label'   => __( 'Doors Open', 'Rotary' ),
+					'section' => 'rotary_main_settings',
+					'type'    => 'select',
+					'choices' => $time_array,
+			) );
+			$wp_customize->add_setting( 'rotary_program_starts', array(
+					'default'        => '--select time--',
+					'capability'     => 'edit_theme_options',
+			) );
+			$wp_customize->add_control( 'rotary_program_starts', array(
+					'label'   => __( 'Program Starts', 'Rotary' ),
+					'section' => 'rotary_main_settings',
+					'type'    => 'select',
+					'choices' => $time_array,
+			) );
+			$wp_customize->add_setting( 'rotary_program_ends', array(
+					'default'        => '--select time--',
+					'capability'     => 'edit_theme_options',
+			) );
+			$wp_customize->add_control( 'rotary_program_ends', array(
+					'label'   => __( 'Program Ends', 'Rotary' ),
+					'section' => 'rotary_main_settings',
+					'type'    => 'select',
+					'choices' => $time_array,
+			) );
+} // end of $isclub switch
+
+
 /*Settings and Controls for the Get More Info button*/	
 	$wp_customize->add_setting( 'rotary_more_info_button', array(
 			'default'        => '',
