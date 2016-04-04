@@ -153,7 +153,8 @@ jQuery(document).ready(function($) {
 			e.preventDefault();
 			$('#respond').toggle();
 			$("#announcement_title_input").focus();
-			window.location.href = '#respond';
+			//window.location.href = '#respond';
+    		rotaryTheme.initAnnouncement();
 		},
 		editAnnouncement: function(e) {
 			var comment_id = $(this).data('comment-id');

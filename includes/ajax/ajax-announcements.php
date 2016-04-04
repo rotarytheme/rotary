@@ -172,8 +172,7 @@ function additional_comment_fields_before( $fields ) {
 
 	echo '<fieldset>';
 	echo '<div class="announcementtitlecontainer">
- 			<label for="title">' . __( 'Title' ) . '</label>
- 			<input id="announcement_title_input" name="announcement_title" type="text" size="60"  tabindex="1" value="' . htmlentities( $title ) . '"/>
+ 			<input id="announcement_title_input" name="announcement_title" type="text" size="60" placeholder="'. __( 'Announcement Title', 'Rotary' ) . '" tabindex="1" value="' . htmlentities( $title ) . '"/>
 		 </div>';
 	echo '<div class="announcercontainer">
  			<label for="announcer">' . __( 'Announced by' ) . '</label>
