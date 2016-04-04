@@ -10,6 +10,7 @@
 /*remove the admin bar*/
 
 
+
 //if DacDB is not being used, then allow the direct import of users
 $options = get_option('rotary_dacdb');
 if ('yes' != $options['rotary_use_dacdb'] || !class_exists( 'RotaryDaCDb' )) {
@@ -77,12 +78,12 @@ function rotary_edit_post_link($output) {
 	return $output;
 }
 //show the rotary club header
-function rotary_club_header($clubname, $rotaryClubBefore=false, $logotype='web-logo') {
+function rotary_club_header($clubname, $rotaryClubBefore=false, $logotype='web-logo' ) {
 	switch( $logotype ) {
 		case 'web-logo':
 			if ( $rotaryClubBefore ) { ?>
 			    <?php if ($clubname) { ?>
-						 <span class="clubtype clubbefore"><?php echo __( 'Rotary Club Of') ;?></span>
+						 <span class="clubtype clubbefore"><?php echo __( 'Rotary Club Of', 'Rotary' ); ;?></span>
 						 <span class="clubname"><?php echo $clubname;?></span>
 				<?php }
 			}
@@ -90,39 +91,45 @@ function rotary_club_header($clubname, $rotaryClubBefore=false, $logotype='web-l
 				if ($clubname) { ?>
 						<span class="clubname namebefore"><?php echo $clubname;?></span>
 		        <?php }  ?>
-					   <span class="clubtype"><?php echo __( 'Rotary Club') ;?></span>
+					   <span class="clubtype"><?php echo __( 'Rotary Club', 'Rotary' ) ;?></span>
 		     <?php   }
 		    break;
 		case 'official-logo':
 			if ( $rotaryClubBefore ) { ?>
-						    <?php if ($clubname) { ?>
-									 <span class="clubtype clubbefore">&nbsp;</span>
-									 <span class="clubname"><?php echo __( 'Club Of') . $clubname;?></span>
-							<?php }
-						}
-						else {
-							if ($clubname) { ?>
-									<span class="clubname namebefore"><?php echo $clubname;?></span>
-					        <?php }  ?>
-								   <span class="clubtype"><?php echo __( 'Club') ;?></span>
-					     <?php   }
-					    break;
+			    <?php if ($clubname) { ?>
+						 <span class="clubtype clubbefore">&nbsp;</span>
+						 <span class="clubname"><?php echo __( 'Rotary Club Of', 'Rotary' ) . ' ' . $clubname ;?></span>
+				<?php }
+			}
+			else {
+				if ($clubname) { ?>
+						<span class="clubname namebefore"><?php echo $clubname;?></span>
+		        <?php }  ?>
+					   <span class="clubtype"><?php echo 1 == $rotaryClubDistrict ? __('Club', 'Rotary') : '' ;?></span>
+		     <?php   }
 			break;
 	}
-
 }
 //club name
 function rotary_club_name() {
 	$set_clubname = get_theme_mod( 'rotary_club_name', '' );
 	$rotaryClubBefore = get_theme_mod( 'rotary_club_first', false);
-	if ($rotaryClubBefore) {
-		if ($set_clubname) {
-			$clubname = sprintf( __( 'Rotary Club of %s' ), $set_clubname );
-		}
-	} else {
-		if ($set_clubname) {
-			$clubname = sprintf( __( '%s Rotary Club' ), $set_clubname );
-		}
+	$rotaryClubDistrict = get_theme_mod( 'rotary_club_district', 1 );
+	switch ($rotaryClubDistrict) {
+		case 1: //club
+			if ($rotaryClubBefore) {
+				if ($set_clubname) {
+					$clubname = sprintf( __( 'Rotary Club of %s' ), $set_clubname );
+				}
+			} else {
+				if ($set_clubname) {
+					$clubname = sprintf( __( '%s Rotary Club' ), $set_clubname );
+				}
+			}
+			break;
+		case 2: //district
+			$clubname = $set_clubname;
+			break;
 	}
 	return $clubname;
 }
@@ -1092,4 +1099,54 @@ function rotary_display_name_update( $user_id, $old_user_data ) {
 	$user = get_userdata( $user_id );
 	$user->display_name = $user->first_name . ' ' . $user->last_name;
 	wp_update_user( array( 'user_id' => $user_id, 'display_name' => $user->display_name ) );
+}
+
+add_action ( 'customize_save_after', 'rotary_save_club_location' );
+function rotary_save_club_location() {
+	$address = get_theme_mod( 'rotary_meeting_location', '');
+	$location = rotary_geocode( $address );
+	update_option( 'club_location', $location );
+}
+ 
+// function to geocode address, it will return false if unable to geocode address
+function rotary_geocode( $address ){
+
+	// url encode the address
+	$address = urlencode($address);
+	 
+	// google map geocode api url
+	$url = "http://maps.google.com/maps/api/geocode/json?address={$address}";
+
+	// get the json response
+	$resp_json = file_get_contents($url);
+	 
+	// decode the json
+	$resp = json_decode($resp_json, true);
+
+	// response status will be 'OK', if able to geocode given address
+	if($resp['status']=='OK'){
+
+		// get the important data
+		$lat = $resp['results'][0]['geometry']['location']['lat'];
+		$lng = $resp['results'][0]['geometry']['location']['lng'];
+		$address = $resp['results'][0]['formatted_address'];
+		 
+		// verify if data is complete
+		if( $lat && $lng && $address ){
+			// put the data in the array
+			$location = array(
+			'lat' => $lat,
+			'lng' => $lng,
+			'address' => $address
+			);
+			 
+			return $location;
+			 
+		}else{
+			return false;
+		}
+		 
+	}else{
+		return false;
+	}
 }
