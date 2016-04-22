@@ -13,8 +13,6 @@ define('WORKPROJECT', 2);
 define('GRANT', 3);
 define('FUNDRAISER', 4);
 define('CAMPAIGN', 5);
-define('SPEAKERPROGRAM', 6);
-define('RECURRINGPROGRAM', 7);
 
 $ProjectType[MEETING] 		= __( 'Meeting' );
 $ProjectType[SOCIALEVENT] 	= __( 'Social Event' );
@@ -22,15 +20,6 @@ $ProjectType[WORKPROJECT] 	= __( 'Community / Work Project' );
 $ProjectType[GRANT]			= __( 'Grant / International Project' );
 $ProjectType[FUNDRAISER] 	= __( 'Fundraiser Event' );
 $ProjectType[CAMPAIGN] 		= __( 'Fundraiser Campaign' );
-
-$CalendarColor[MEETING] 			= '#ff7600';
-$CalendarColor[SOCIALEVENT] 		= '#d91b5c';
-$CalendarColor[WORKPROJECT] 		= '#f7a81b';
-$CalendarColor[GRANT]				= '#d9c89e';
-$CalendarColor[FUNDRAISER] 			= '#872175';
-$CalendarColor[CAMPAIGN] 			= '#c6bcd0';
-$CalendarColor[SPEAKERPROGRAM] 		= '#01b4e7';
-$CalendarColor[RECURRINGPROGRAM] 	= '#c9dee9';
 
 // ---------------- Registration Types ---------------- //
 define('REGISTER', 0);
