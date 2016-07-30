@@ -205,8 +205,10 @@ if(function_exists("register_field_group"))
 function sponsorsShortcode( $atts ) {
 	// Check for option to display titles or not
     $a = shortcode_atts( array(
-        'show_titles' => false
+        'show_titles' => true
     ), $atts, sponsorsShortcode );
+   
+    
 	
 	$show_titles = filter_var( $a['show_titles'], FILTER_VALIDATE_BOOLEAN );
 
@@ -279,15 +281,20 @@ function sponsorsShortcode( $atts ) {
 	/*
 	* PRINT SPONSORS
 	*/
-	
-	foreach($sponsor_array as $k_level => $v_level_sponsors) :
-		echo '<div class="sponsor_level">';
+
+	ob_start();
+	?>
+	<div class="sponsors-container">
+	<?php 
+	foreach($sponsor_array as $k_level => $v_level_sponsors) : ?>
+		<div class="sponsor_level">
+		<?php 
 		// Display titles (User controlled in shortcode)
-		if ($show_titles) {
-			echo '<span class="sponsor_level_title">';
-			echo '<h4>' . $k_level . '</h4>';
-			echo '</span>';
-		}
+		if ($show_titles) { ?>
+			<span class="sponsor_level_title">
+			<h4><?php echo $k_level; ?></h4>
+			</span>
+		<?php }
 		// Get Layout from ACF
 		$layout_class = '';
 		if (function_exists('get_field')) {
@@ -296,35 +303,36 @@ function sponsorsShortcode( $atts ) {
 		}
 		
 		// Sponsor Block
-		foreach ($v_level_sponsors as $key => $val) {
-			echo '<div class="sponsor ' . $layout_class . '">';
-			// Sponsor Image
-			echo '<div class="sponsor_logo">';
-			if ($val['sponsor_url'] !== '') {
-				echo '<a href="' . $val['sponsor_url'] . '" target="_blank"><img src="' . $val['sponsor_image'] . '" alt="' . $val['sponsor_name'] . '" /></a>';
-			} else {
-				echo '<img src="' . $val['sponsor_image'] . '" alt="' . $val['sponsor_name'] . '" />';
-			}
-			echo '</div>'; // Close sponsor image
+		foreach ($v_level_sponsors as $key => $val) {?>
+			<div class="sponsor <?php echo $layout_class; ?>">
+			<!-- Sponsor Image -->
+			<div class="sponsor_logo">
+			<?php 
+			if ($val['sponsor_url'] !== '') {?>
+				<a href="<?php echo $val['sponsor_url']; ?>" target="_blank"><img src="<?php echo $val['sponsor_image']; ?>" alt="<?php echo $val['sponsor_name']; ?>" /></a>
+			<?php } else {?>
+				<img src="<?php echo $val['sponsor_image']; ?>" alt="<?php echo $val['sponsor_name']; ?>" />
+			<?php } ?>
+			</div> <!-- Close sponsor image -->
+			<?php 
 			// Sponsor Content
 			if ($val['sponsor_content'] !== '') {
-				echo '<div class="sponsor_content">';
-				echo '<h3 class="sponsor_title">' . $val['sponsor_name'] . '</h3>';
-				$c = apply_filters('the_content', $val['sponsor_content']);
-				echo $c . '</div>';
-			}
-			echo '</div>'; // Close sponsor
-		} // End inner loop
-		
-		echo '</div>'; // Close sponsor level block
+				$c = apply_filters('the_content', $val['sponsor_content']);?>
+				<div class="sponsor_content">
+					<h3 class="sponsor_title"><?php echo $val['sponsor_name'];?></h3>
+					<?php echo  $c;?>
+				</div>
+			<?php } ?>
+			</div><!-- Close sponsor -->
+		<?php } // End inner loop	?>
+		</div> <!-- Close sponsor level block -->
+		<?php 
 	endforeach;
+	?></div><?php 
+	
+	$output = ob_get_clean();
+	
+	return $output;
 	
 }
 add_shortcode( 'sponsors', 'sponsorsShortcode' );
-
-
-
-
-
-
-?>

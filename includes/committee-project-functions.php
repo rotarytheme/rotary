@@ -290,15 +290,15 @@ function rotary_show_project_icons() {
  * @param mixed $committeeTitle
  * @return void
  */
-function show_project_blogroll ($query, $showthumb = 'no', $committeeTitle = '') {
+function show_project_blogroll ( $query, $showthumb = 'no', $committeeTitle = null ) {
 	global $ProjectType;
 	
-	$hasCommitteeTitle = ( '' == trim( $committeeTitle) ? false : true);
+	$hasCommitteeTitle = ( $committeeTitle ) ? true : false;
 	
  	while ( $query->have_posts() ) : $query->the_post();	
-		  if (! $hasCommitteeTitle) :
-		  	$committeeTitle = rotary_get_committee_title_from_project( get_the_id() );
-		  endif;
+ 		if ( !$hasCommitteeTitle ) {
+		  $committeeTitle = rotary_get_committee_title_from_project( get_the_id() );
+ 		}
 		  $type = get_field( 'project_type' );
 		?>
 		<div class="connectedprojectscontainer clearfix">	
@@ -393,14 +393,14 @@ function  rotary_show_project_dates() {
 function rotary_get_committee_title_from_project( $project_id, $extra_classes  =null ) {
 	//get the committee 
 	$committee_title = ''; 
-	$connected = new WP_Query( array(
+	$projects = new WP_Query( array(
 		'connected_type'  => 'projects_to_committees',
 		'connected_items' => $project_id,
 		'posts_per_page' => 1, 
 		'nopaging'        => false,
 	) ); 
-	 if ( $connected->have_posts() ) :
-		while ( $connected->have_posts() ) : $connected->the_post();
+	 if ( $projects->have_posts() ) :
+		while ( $projects->have_posts() ) : $projects->the_post();
 			$committee_title = '<a href="' . get_the_permalink() . '" class="organizing-committee-title' . $extra_classes . '">' . get_the_title() . '</a>';
 		endwhile;
 	endif;
@@ -446,5 +446,111 @@ function rotary_loginout_selector( $login_text ) {
 //commented out as we are not currently using it
 //add_filter('loginout', 'rotary_loginout_selector');
 
+
+
+/**
+ * function: rotary_list_of_committees_with_project_archives
+ */
+function rotary_list_of_committees_with_project_archives() {
+	//get a list of all committees that have projects
+	
+	$args = array(
+		'post_type'				=> 'rotary-committees',
+		'posts_per_page' 		=> -1,
+		'post_status' 			=> 'publish',
+	);
+	
+	$committees = new WP_Query( $args );
+
+	if ( $committees->have_posts() ) :
+	?>
+		<ul class="committees-with-projects-list">
+		<?php 
+		while ( $committees->have_posts() ) : $committees->the_post();
+			$committeeid = get_the_ID();
+			$text = get_the_title();
+			$link = get_post_type_archive_link( 'rotary_projects' ).'?committeeid=' . $committeeid;
+		//echo  get_the_ID();
+			$args = array(
+					'connected_type' 	=> 'projects_to_committees',
+					'connected_items' 	=> $committeeid,
+					'connected_direction' 	=> 'to',
+					'post_type' 		=> 'rotary_projects',
+					'posts_per_page' 		=> -1,
+			);
+			$projects = new WP_Query( $args );
+			
+			if ( $projects->have_posts() ) : $projects->the_post();	
+			if ( get_the_ID() ) {	
+				?>
+					<li><a href="<?php echo $link;?>"><?php echo $text;?>&nbsp;(<?php echo $projects->found_posts?>)</a></li>
+				<?php 
+				}
+			endif;
+			wp_reset_postdata();
+		endwhile;
+			
+		?>
+		</ul>
+		<?php 
+	endif;
+	wp_reset_postdata();
+}
+
+
+/**
+ * function: rotary_list_of_project_types_with_project_archives
+ */
+function rotary_list_of_project_types_with_project_archives( $default=null) {
+	global $ProjectType;
+	/*
+	$ProjectType[MEETING] 		= __( 'Meeting' );
+	$ProjectType[SOCIALEVENT] 	= __( 'Social Event' );
+	$ProjectType[WORKPROJECT] 	= __( 'Community / Work Project' );
+	$ProjectType[GRANT]			= __( 'Grant / International Project' );
+	$ProjectType[FUNDRAISER] 	= __( 'Fundraiser Event' );
+	$ProjectType[CAMPAIGN] 		= __( 'Fundraiser Campaign' );
+	 */
+
+//var_dump($ProjectType);die;
+?>
+	
+		<select class="project_types-with-projects-list hyperlink">
+		<?php 
+	
+	foreach( $ProjectType as $key => $value ) :
+		$committeeid = get_the_ID();
+		$link = get_post_type_archive_link( 'rotary_projects'  ).'?projecttype=' . $key;
+		$selected = ( $key == $default ) ? 'selected=selected' : '';
+		$args = array(
+				'post_type'			=> 'rotary_projects',
+				'posts_per_page' 	=> -1,
+				'post_status' 		=> 'publish',
+				'meta_key' 			=> 'project_type',
+				'meta_value' 		=> $key
+		);
+	
+		$projects = new WP_Query( $args );
+		if ( $projects->have_posts() ) : $projects->the_post();
+		?>
+				<option value="<?php echo $link;?>" <?php echo $selected;?>><?php echo $value;?>&nbsp;(<?php echo sprintf( __( '%s projects', 'Rotary'), $projects->found_posts ); ?>)</option>
+			<?php 
+    		endif;
+		wp_reset_postdata();
+		
+	endforeach;
+	?></select><?php 
+}
+
+
+/*
+ * Adds committeeid to query vars so you can use get_query_vars() and not have to do a $_REQUEST
+ */
+function add_query_vars_filter( $vars ){
+	$vars[] = "committeeid";
+	$vars[] = "projecttype";
+	return $vars;
+}
+add_filter( 'query_vars', 'add_query_vars_filter' );
 
 

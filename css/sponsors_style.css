@@ -1,6 +1,11 @@
 /*************************************
-STYLESHEET FOR RACE SPONSORS PLUGIN
+STYLESHEET FOR  SPONSORS PLUGIN
 *************************************/
+.sponsors-container {
+    border: 4px #FCAB1D solid;
+    padding: 10px;
+    border-radius: 10px;
+}
 .sponsor_level {
   text-align: center;
   margin-bottom: 50px;
@@ -16,7 +21,7 @@ STYLESHEET FOR RACE SPONSORS PLUGIN
 }
 .sponsor_level_title h4 {
   line-height: 1.4;
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid #FCAB1D;
 }
 .sponsor {
   float: left;
@@ -81,21 +86,21 @@ STYLESHEET FOR RACE SPONSORS PLUGIN
 }
 .sponsor.double {
   width: 50%;
-  padding: 5%;
+  padding: 1%;
 }
 .sponsor.double:nth-of-type(2n + 3) {
   clear: both;
 }
 .sponsor.triple {
   width: 33.33333%;
-  padding: 4%;
+  padding: 1%;
 }
 .sponsor.triple:nth-of-type(3n + 4) {
   clear: both;
 }
 .sponsor.quad {
   width: 25%;
-  padding: 3%;
+  padding: 1%;
 }
 .sponsor.quad:nth-of-type(4n + 5) {
   clear: both;
@@ -118,7 +123,7 @@ STYLESHEET FOR RACE SPONSORS PLUGIN
   }
   .sponsor.triple {
     width: 50%;
-    padding: 5%;
+    padding: 1%;
   }
   .sponsor.triple:nth-of-type(3n + 4) {
     clear: none;
@@ -128,7 +133,7 @@ STYLESHEET FOR RACE SPONSORS PLUGIN
   }
   .sponsor.quad {
     width: 50%;
-    padding: 5%;
+    padding: 1%;
   }
   .sponsor.quad:nth-of-type(4n + 5) {
     clear: none;

@@ -216,22 +216,23 @@ li.ecp1_list_item a {
 /* Slideinfo Sidebar */
 .slideshow .slideinfo {
 	background: rgba(231, 231, 232, 0.95); /* For browsers that do not support gradients */
-	background: -webkit-linear-gradient(right,rgba(231, 231, 232, 1),rgba(231, 231, 232, 0.85)); /*Safari 5.1-6*/
-	background: -o-linear-gradient(left,rgba(231, 231, 232, 1),rgba(231, 231, 232, 0.85)); /*Opera 11.1-12*/
-	background: -moz-linear-gradient(left,rgba(231, 231, 232, 1),rgba(231, 231, 232, 0.85)); /*Fx 3.6-15*/
-	background: linear-gradient(to left, rgba(231, 231, 232, 1), rgba(231, 231, 232, 0.85)); /*Standard*/
-  
-	position: absolute;
-    right: 0;
-    padding: 10px 30px;
+	background: -webkit-linear-gradient(right,rgba(231, 231, 232, 1),rgba(231, 231, 232, 0.65)); /*Safari 5.1-6*/
+	background: -o-linear-gradient(left,rgba(231, 231, 232, 1),rgba(231, 231, 232, 0.65)); /*Opera 11.1-12*/
+	background: -moz-linear-gradient(left,rgba(231, 231, 232, 1),rgba(231, 231, 232, 0.65)); /*Fx 3.6-15*/
+    background: linear-gradient(to left, #e7e7e8, rgba(231, 231, 232, 0.65));
+    position: absolute;
+    left: 0;
+    top: 600px;
+    padding: 0px 30px;
     font-family: open sans condensed;
-    width: 30%;
-    height: 580px;
-    text-align: right;
+    width: 100%;
+    height: 100px;
+    text-align: left;
     overflow:hidden;
 }
 .slideshow .slideinfo h1{
-    font-size: 75px!important;
+    font-size: 65px!important;
+    margin-top: 12px!important;
 }
 .slideshow .slideinfo p{
     font-size: 45px;

@@ -24,7 +24,7 @@ function rotary_get_upcoming_speakers_shortcode_html( $atts ) {
 	$clearLeft = '';
 	ob_start(); ?>
 	<div class="upcoming-program-shortcode">
-		<div class="home-upcoming-program-ribbon"><h2>Upcoming Speakers</h2></div>
+		<div class="home-upcoming-program-ribbon"><h2><?php _e( 'Upcoming Speakers', 'rotary'); ?></h2></div>
 		<div id="home-upcoming-programs" class="home-upcoming-programs clearfix">
 	
 		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>

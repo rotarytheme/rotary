@@ -138,7 +138,7 @@ class RotaryAnnouncements {
 								?>
 									<div id="announcements-mailchimpcampaign">
 										<a id="announcements-sendemailtest" class="rotarybutton-largewhite" href="javascript:void" ng-click="saveCampaign()" ><?php echo __( 'Send Test Email', 'Rotary'); ?></a>
-										<a id="announcements-sendemailblast" class="rotarybutton-largeblue" href="javascript:void" ng-click="sendCampaign(1)" ><?php echo __( 'Send Email Blast', 'Rotary'); ?></a>
+										<a id="announcements-sendemailblast" class="rotarybutton-largeblue" href="javascript:void(0)" ng-click="sendCampaign(1)" ><?php echo __( 'Send Email Blast', 'Rotary'); ?></a>
 										<input type="hidden" id="announcements-array" value="<?php echo $encoded; ?>" />
 										<input type="hidden" id="announcements-hash" value="<?php echo $hash ?>" />
 									</div>
@@ -243,7 +243,7 @@ class RotaryAnnouncements {
 							<div class="slideimage" style="background: url( <?php echo $img_url;?>) 0 0 no-repeat;"></div>
 							<div class="slideinfo"  >
 								 <?php the_title( '<h1>','</h1>'); ?>
-								 <p><?php echo get_the_excerpt(); ?></p>
+								 <p><?php // echo get_the_excerpt(); ?></p>
 							</div>					
 						</div>
 						<?php 

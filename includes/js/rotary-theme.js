@@ -35,6 +35,7 @@ jQuery(document).ready(function($) {
 			// Announcement Features
 			$('.editannouncementbutton').on('click', this.editAnnouncement );
 			$('.deleteannouncementbutton').on('click', this.deleteAnnouncement );
+			$('select.hyperlink').on('change', this.selectDropdown );
 			$('.fancybox, .gallery-item a').fancybox({
 				padding: 3,
 				nextEffect: 'fade',
@@ -42,6 +43,10 @@ jQuery(document).ready(function($) {
 				nextSpeed: 500,
 				prevSpeed: 500
 			});
+		},
+		
+		selectDropdown: function() {
+			window.location.href = (this.options[this.selectedIndex].value);
 		},
 		layoutProjects: function() {
 			$('#projectblogrollcontainer').masonry({

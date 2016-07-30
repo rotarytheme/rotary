@@ -45,6 +45,7 @@ jQuery(document).ready(function($) {
 		};
 		$.post(nmOptions.ajaxurl, data, function(resp) {
 			$('#ajax-loader').hide();
+			alert(resp);
 		});
 	});
 	$('#announcements-mailchimpcampaign').on('click', '#announcements-sendemailblast', function(event) {

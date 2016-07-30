@@ -83,7 +83,7 @@ function rotary_club_header($clubname, $rotaryClubBefore=false, $logotype='web-l
 		case 'web-logo':
 			if ( $rotaryClubBefore ) { ?>
 			    <?php if ($clubname) { ?>
-						 <span class="clubtype clubbefore"><?php echo __( 'Rotary Club Of', 'Rotary' ); ;?></span>
+						 <span class="clubtype clubbefore"><?php _e( 'Rotary Club Of', 'rotary' );?></span>
 						 <span class="clubname"><?php echo $clubname;?></span>
 				<?php }
 			}
@@ -91,21 +91,21 @@ function rotary_club_header($clubname, $rotaryClubBefore=false, $logotype='web-l
 				if ($clubname) { ?>
 						<span class="clubname namebefore"><?php echo $clubname;?></span>
 		        <?php }  ?>
-					   <span class="clubtype"><?php echo __( 'Rotary Club', 'Rotary' ) ;?></span>
+					   <span class="clubtype"><?php echo _e( 'Rotary Club', 'rotary' ) ;?></span>
 		     <?php   }
 		    break;
 		case 'official-logo':
 			if ( $rotaryClubBefore ) { ?>
 			    <?php if ($clubname) { ?>
 						 <span class="clubtype clubbefore">&nbsp;</span>
-						 <span class="clubname"><?php echo __( 'Rotary Club Of', 'Rotary' ) . ' ' . $clubname ;?></span>
+						 <span class="clubname"><?php _e( 'Rotary Club Of', 'rotary' ) . ' ' . $clubname ;?></span>
 				<?php }
 			}
 			else {
 				if ($clubname) { ?>
 						<span class="clubname namebefore"><?php echo $clubname;?></span>
 		        <?php }  ?>
-					   <span class="clubtype"><?php echo 1 == $rotaryClubDistrict ? __('Club', 'Rotary') : '' ;?></span>
+					   <span class="clubtype"><?php echo 1 == $rotaryClubDistrict ? __('Club', 'rotary') : '' ;?></span>
 		     <?php   }
 			break;
 	}
@@ -119,11 +119,11 @@ function rotary_club_name() {
 		case 1: //club
 			if ($rotaryClubBefore) {
 				if ($set_clubname) {
-					$clubname = sprintf( __( 'Rotary Club of %s' ), $set_clubname );
+					$clubname = sprintf( __( 'Rotary Club of %s', 'rotary' ), $set_clubname );
 				}
 			} else {
 				if ($set_clubname) {
-					$clubname = sprintf( __( '%s Rotary Club' ), $set_clubname );
+					$clubname = sprintf( __( '%s Rotary Club', 'rotary' ), $set_clubname );
 				}
 			}
 			break;
@@ -450,6 +450,7 @@ add_filter( 'use_default_gallery_style', '__return_false' );
 function rotary_remove_gallery_css( $css ) {
 	return preg_replace( "#<style type='text/css'>(.*?)</style>#s", '', $css );
 }
+
 // Backwards compatibility with WordPress 3.0.
 if ( version_compare( $GLOBALS['wp_version'], '3.1', '<' ) )
 	add_filter( 'gallery_style', 'rotary_remove_gallery_css' );
@@ -518,11 +519,11 @@ function rotary_comment_fields($fields) {
 	$req = get_option( 'require_name_email' );
 	$aria_req = ( $req ? " aria-required='true'" : '' );
 	$fields =  array(
-		'author' => '<p><label for="author">' . __( 'Name' ) . '</label> ' . ( $req ? '*' : '' ) .
+		'author' => '<p><label for="author">' . __( 'Name', 'rotary' ) . '</label> ' . ( $req ? '*' : '' ) .
 		'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>',
-		'email'  => '<p><label for="email">' . __( 'Email' ) . '</label> ' . ( $req ? '*' : '' ) .
+		'email'  => '<p><label for="email">' . __( 'Email', 'rotary' ) . '</label> ' . ( $req ? '*' : '' ) .
 		'<input id="email" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>',
-		'url'    => '<p><label for="url">' . __( 'Website' ) . '</label>' .
+		'url'    => '<p><label for="url">' . __( 'Website', 'rotary' ) . '</label>' .
 		'<input id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>',
 	);
 	return $fields;
@@ -614,9 +615,9 @@ function rotary_slides_register() {
 	);
 
 	$args = array(
-		'label' => __('Slides'),
+		'label' => __('Slides', 'rotary'),
 		'labels' => $labels,
-		'singular_label' => __('Slides Item'),
+		'singular_label' => __('Slides Item', 'rotary'),
 		'query_var' => true,
 		'public' => true,
 		'show_ui' => true,
@@ -775,7 +776,7 @@ function rotary_get_blog_title() {
 //custom meta box for slides
 add_action( 'add_meta_boxes', 'rotary_add_slide_link_metabox');
 function rotary_add_slide_link_metabox() {
-	add_meta_box( 'slidelink', __( 'Slide Link' ),  'rotary_show_slide_link_metabox', 'rotary-slides', 'normal', 'high' );
+	add_meta_box( 'slidelink', __( 'Slide Link', 'rotary' ),  'rotary_show_slide_link_metabox', 'rotary-slides', 'normal', 'high' );
 }
 add_action( 'save_post', 'rotary_save_slide_link_metabox', 10, 2);
 function rotary_save_slide_link_metabox($post_id, $post) {

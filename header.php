@@ -32,7 +32,7 @@
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', 'twentyten' ), max( $paged, $page ) );
+		echo ' | ' . sprintf( __( 'Page %s', 'rotary' ), max( $paged, $page ) );
  
     ?></title>
   <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/rotary-sass/images/favicon.ico" />    
@@ -90,13 +90,13 @@
     <section id="signin">
      <?php if (is_user_logged_in()) { 
 	   $currentuser = wp_get_current_user();
-	   echo '<p class="loggedin"><span>'.sprintf( __('You are currently logged in as %s'), $currentuser->display_name ) .'</span>'. wp_loginout($_SERVER['REQUEST_URI'], false ) .'</p>';
+	   echo '<p class="loggedin"><span>'.sprintf( __('You are currently logged in as %s', 'rotary'), $currentuser->display_name ) .'</span>'. wp_loginout($_SERVER['REQUEST_URI'], false ) .'</p>';
 	 } 
     else {
      $args = array(
-		'label_log_in' => __( 'log In' ),
-		'label_username' => __( 'username:' ),
-        'label_password' => __( 'password:' ),
+		'label_log_in' => __( 'log In', 'rotary' ),
+		'label_username' => __( 'username:', 'rotary' ),
+        'label_password' => __( 'password:', 'rotary' ),
         'remember' => false); 
     	wp_login_form($args); 
     }   ?> 
@@ -104,7 +104,7 @@
     <header role="banner">
     	<div id="branding">
 	   	<?php if(current_user_can('manage_options')){ ?>
-	      	<a class="headeredit" href="<?php echo admin_url(); ?>customize.php"><?php echo _e('Edit Header', 'Rotary');?></a>
+	      	<a class="headeredit" href="<?php echo admin_url(); ?>customize.php"><?php echo _e('Edit Header', 'rotary');?></a>
 	  	<?php  }
 	      $rotaryLogo = get_theme_mod( 'rotary_club_logo', 0 ); 
 	      if ( !$rotaryLogo ) {
@@ -133,7 +133,7 @@
 				<?php $isclub = get_theme_mod( 'rotary_club_district', '1' ); ?>
 				<div class="membership-address-container">
 			        <section id="membership">
-			        <h2><?php echo ( $isclub ) ? __( 'Become a member', 'Rotary' ) : __( 'Join Rotary', 'Rotary' ); ?></h2>
+			        <h2><?php echo ( $isclub ) ? __( 'Become a member', 'Rotary' ) : __( 'Join Rotary', 'rotary' ); ?></h2>
 			        <?php  $pageID = get_theme_mod( 'rotary_more_info_button', '' );  ?>
 					<?php if ($pageID) {?>
 			          <a class="rotarybutton-largegold" href="<?php echo get_permalink($pageID);?>"><?php _e('Get More Info', 'Rotary'); ?></a>
