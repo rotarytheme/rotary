@@ -197,6 +197,7 @@ class NM_MC_Front
 }
 
 
+
 if ( class_exists('NM_MC_Front') ) {
 	$just_init = new NM_MC_Front;
 }
