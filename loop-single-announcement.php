@@ -80,10 +80,10 @@
 								<table  class="announcement-date-table">
 									<tr>
 										<td class="announcement-date">
-											<span class="day"><?php echo $date->format( 'd M Y') ; ?></span>
+											<span class="day"><?php echo strftime( '%e %b %G', $date ); //$date->format( 'd M Y') ; ?></span>
 										</td>
 										<td class="announcement-expiry-date  announcement-date">
-											<span class="day"><?php echo sprintf( __( 'Expires %s' ), $announcement_expiry_date->format( 'd M Y')); ?></span>
+											<span class="day"><?php echo sprintf( __( 'Expires %s' ), strftime( '%e %b %G', $announcement_expiry_date->getTimestamp() ));//$announcement_expiry_date->format( 'd M Y')); ?></span>
 										</td>
 									</tr>
 								</table>
@@ -128,10 +128,10 @@
 				<div class="announcement-footer">
 					<?php if( 'shortcode' == $context ) : ?>
 						<div class="announcement-date">
-							<span class="day"><?php echo $date->format( 'd M Y') ; ?></span>
+							<span class="day"><?php echo strftime( '%e %b %G', $date->getTimestamp() ) ; //$date->format( 'd M Y') ; ?></span>
 						</div>
 						<div class="announcement-expiry-date announcement-date">
-							<span class="day"><?php echo sprintf( __( 'Expires %s' ), $announcement_expiry_date->format( 'd M Y')); ?></span>
+							<span class="day"><?php echo sprintf( __( 'Expires %s' ), strftime( '%e %b %G', $announcement_expiry_date->getTimestamp() )); //$announcement_expiry_date->format( 'd M Y')); ?></span>
 						</div>
 					<?php endif;?>					
 				</div>
@@ -157,12 +157,12 @@
 			default: ?>
 				<article id="comment-<?php echo $id ?>" <?php comment_class( $extra_classes, $id ); ?>">
 				<div class="announcement-date">
-					<span class="day"><?php echo $date->format( 'd') ; ?></span>
-					<span class="month"><?php  echo $date->format( 'M' ); ?></span>
-					<span class="year"><?php echo $date->format( 'Y' ); ?></span>
+					<span class="day"><?php echo strftime( '%e', $date->getTimestamp() ); //$date->format( 'd') ; ?></span>
+					<span class="month"><?php  echo strftime( '%B', $date->getTimestamp() ); //$date->format( 'M' ); ?></span>
+					<span class="year"><?php echo strftime( '%G', $date->getTimestamp() ); //$date->format( 'Y' ); ?></span>
 				</div>
 				<div class="announcement-expiry-date">
-					<span class="day"><?php echo $announcement_expiry_date->format( 'd M Y') ; ?></span>
+					<span class="day"><?php echo strftime( '%e %b %G', $announcement_expiry_date->getTimestamp() ); //$announcement_expiry_date->format( 'd M Y') ; ?></span>
 				</div>
 				<div class="announcement-content">
 					<div class="announcement-header">

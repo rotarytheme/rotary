@@ -32,7 +32,7 @@
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
-		echo ' | ' . sprintf( __( 'Page %s', 'twentyten' ), max( $paged, $page ) );
+		echo ' | ' . sprintf( __( 'Page %s', 'rotary' ), max( $paged, $page ) );
  
     ?></title>
   <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/rotary-sass/images/favicon.ico" />    
@@ -90,13 +90,13 @@
     <section id="signin">
      <?php if (is_user_logged_in()) { 
 	   $currentuser = wp_get_current_user();
-	   echo '<p class="loggedin"><span>'.sprintf( __('You are currently logged in as %s'), $currentuser->display_name ) .'</span>'. wp_loginout($_SERVER['REQUEST_URI'], false ) .'</p>';
+	   echo '<p class="loggedin"><span>'.sprintf( __('You are currently logged in as %s', 'rotary'), $currentuser->display_name ) .'</span>'. wp_loginout($_SERVER['REQUEST_URI'], false ) .'</p>';
 	 } 
     else {
      $args = array(
-		'label_log_in' => __( 'log In' ),
-		'label_username' => __( 'username:' ),
-        'label_password' => __( 'password:' ),
+		'label_log_in' => __( 'log In', 'rotary' ),
+		'label_username' => __( 'username:', 'rotary' ),
+        'label_password' => __( 'password:', 'rotary' ),
         'remember' => false); 
     	wp_login_form($args); 
     }   ?> 
@@ -104,24 +104,36 @@
     <header role="banner">
     	<div id="branding">
 	   	<?php if(current_user_can('manage_options')){ ?>
-	      	<a class="headeredit" href="<?php echo admin_url(); ?>customize.php"><?php echo _e('Edit Header', 'Rotary');?></a>
-	  	<?php  } ?>
-	      <?php  $clubname = get_theme_mod( 'rotary_club_name', '' );  ?>
-	      <?php  $rotaryClubBefore = get_theme_mod( 'rotary_club_first', false); ?>
+	      	<a class="headeredit" href="<?php echo admin_url(); ?>customize.php"><?php echo _e('Edit Header', 'rotary');?></a>
+	  	<?php  }
+	      $rotaryLogo = get_theme_mod( 'rotary_club_logo', 0 ); 
+	      if ( !$rotaryLogo ) {
+		      $clubname = get_theme_mod( 'rotary_club_name', '' ); 
+		      $rotaryClubBefore = get_theme_mod( 'rotary_club_first', false);
+				?>
 	            <h1>
 	            <?php
 				if ( !is_front_page() ) { ?>
 	            	<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 	            <?php }  ?>
-	            <?php rotary_club_header($clubname, $rotaryClubBefore);?>
+	            <?php rotary_club_header($clubname, $rotaryClubBefore );?>
 	             <?php if ( !is_front_page() ) { ?>
 					</a>
 	              <?php }  ?>  
 	            </h1>
-	  
+	      <?php 
+	      } else { ?>
+            <?php
+			if ( !is_front_page() ) { ?>
+            	<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+			<?php }  ?>
+			<img src="<?php echo $rotaryLogo; ?>"></a> <?php 
+
+		}?>
+				<?php $isclub = get_theme_mod( 'rotary_club_district', '1' ); ?>
 				<div class="membership-address-container">
 			        <section id="membership">
-			        <h2><?php _e( 'Become a member', 'Rotary' ); ?></h2>
+			        <h2><?php echo ( $isclub ) ? __( 'Become a member', 'Rotary' ) : __( 'Join Rotary', 'rotary' ); ?></h2>
 			        <?php  $pageID = get_theme_mod( 'rotary_more_info_button', '' );  ?>
 					<?php if ($pageID) {?>
 			          <a class="rotarybutton-largegold" href="<?php echo get_permalink($pageID);?>"><?php _e('Get More Info', 'Rotary'); ?></a>
@@ -129,12 +141,35 @@
 			
 			        </section>
 			        <section id="meetingaddress">
-			        <h2><?php  _e( 'MEETING SITE ADDRESS', 'Rotary' ); ?></h2>
-			        <?php  $meetingaddress = get_theme_mod( 'rotary_meeting_location', '' );  
+			        <h2><?php echo ( $isclub ) ? __( 'MEETING SITE ADDRESS', 'Rotary' ) : __( 'MAILING ADDRESS', 'Rotary' ); ?></h2>
+			        <?php  
+			        	$meetingaddress = get_theme_mod( 'rotary_meeting_location', '' );
+						$location =  get_option( 'club_location' );
+					   $telephone = get_theme_mod( 'rotary_telephone', '');
+					   $dayofweek = get_theme_mod( 'rotary_meeting_day', '');
+					   $doors_open = get_theme_mod( 'rotary_doors_open', '');
+					   $program_starts = get_theme_mod( 'rotary_program_starts', '');
+					   $program_ends = get_theme_mod( 'rotary_program_ends', '');
 					   if ($meetingaddress) {
-						   echo '<p>'.nl2br($meetingaddress).'</p>';
-					   }
-					?>
+							if($location) { ?>
+								<p><?php if( $isclub ) { // don't put the map on a mailing address ?>
+									<a target="_blank" href="https://www.google.com/maps/place/<?php echo $location['address'];?>/@<?php echo $location['lat'];?>,<?php echo $location['lng'];?>,19z">
+								<?php }?>
+								<?php echo nl2br($meetingaddress);?></a></p>
+							<?php } else { ?>
+								<p><?php echo nl2br($meetingaddress);?></p>
+						   <?php }
+						}
+					   if( $telephone ) {  ?>
+					  		<p id="telephone"><?php echo sprintf( __( 'Tel: %s', 'Rotary'), $telephone )?></p>
+					  <?php }  ?>
+					  <?php if( $dayofweek ) {  ?>
+					  		<p id="meetingday"><?php echo sprintf( __( 'We meet every %s', 'Rotary'), $dayofweek )?></p>
+					  <?php }  ?>
+					  <?php if ( $isclub ) {?>
+						  <p id="doors_open"><?php echo sprintf( __( 'Doors open: %s', 'Rotary' ), $doors_open ); ?></p>
+						  <p id="progrom_start_end"><?php echo sprintf( __( 'Program: %s to %s', 'Rotary'), $program_starts, $program_ends ); ?></p>
+					  <?php }?>
 			        </section>
 			    </div>
     	</div>

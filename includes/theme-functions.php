@@ -9,6 +9,8 @@
  */
 /*remove the admin bar*/
 
+strftime($format)
+
 
 //if DacDB is not being used, then allow the direct import of users
 $options = get_option('rotary_dacdb');
@@ -77,12 +79,12 @@ function rotary_edit_post_link($output) {
 	return $output;
 }
 //show the rotary club header
-function rotary_club_header($clubname, $rotaryClubBefore=false, $logotype='web-logo') {
+function rotary_club_header($clubname, $rotaryClubBefore=false, $logotype='web-logo' ) {
 	switch( $logotype ) {
 		case 'web-logo':
 			if ( $rotaryClubBefore ) { ?>
 			    <?php if ($clubname) { ?>
-						 <span class="clubtype clubbefore"><?php echo __( 'Rotary Club Of') ;?></span>
+						 <span class="clubtype clubbefore"><?php _e( 'Rotary Club Of', 'rotary' );?></span>
 						 <span class="clubname"><?php echo $clubname;?></span>
 				<?php }
 			}
@@ -90,39 +92,45 @@ function rotary_club_header($clubname, $rotaryClubBefore=false, $logotype='web-l
 				if ($clubname) { ?>
 						<span class="clubname namebefore"><?php echo $clubname;?></span>
 		        <?php }  ?>
-					   <span class="clubtype"><?php echo __( 'Rotary Club') ;?></span>
+					   <span class="clubtype"><?php echo _e( 'Rotary Club', 'rotary' ) ;?></span>
 		     <?php   }
 		    break;
 		case 'official-logo':
 			if ( $rotaryClubBefore ) { ?>
-						    <?php if ($clubname) { ?>
-									 <span class="clubtype clubbefore">&nbsp;</span>
-									 <span class="clubname"><?php echo __( 'Club Of') . $clubname;?></span>
-							<?php }
-						}
-						else {
-							if ($clubname) { ?>
-									<span class="clubname namebefore"><?php echo $clubname;?></span>
-					        <?php }  ?>
-								   <span class="clubtype"><?php echo __( 'Club') ;?></span>
-					     <?php   }
-					    break;
+			    <?php if ($clubname) { ?>
+						 <span class="clubtype clubbefore">&nbsp;</span>
+						 <span class="clubname"><?php _e( 'Rotary Club Of', 'rotary' ) . ' ' . $clubname ;?></span>
+				<?php }
+			}
+			else {
+				if ($clubname) { ?>
+						<span class="clubname namebefore"><?php echo $clubname;?></span>
+		        <?php }  ?>
+					   <span class="clubtype"><?php echo 1 == $rotaryClubDistrict ? __('Club', 'rotary') : '' ;?></span>
+		     <?php   }
 			break;
 	}
-
 }
 //club name
 function rotary_club_name() {
 	$set_clubname = get_theme_mod( 'rotary_club_name', '' );
 	$rotaryClubBefore = get_theme_mod( 'rotary_club_first', false);
-	if ($rotaryClubBefore) {
-		if ($set_clubname) {
-			$clubname = sprintf( __( 'Rotary Club of %s' ), $set_clubname );
-		}
-	} else {
-		if ($set_clubname) {
-			$clubname = sprintf( __( '%s Rotary Club' ), $set_clubname );
-		}
+	$rotaryClubDistrict = get_theme_mod( 'rotary_club_district', 1 );
+	switch ($rotaryClubDistrict) {
+		case 1: //club
+			if ($rotaryClubBefore) {
+				if ($set_clubname) {
+					$clubname = sprintf( __( 'Rotary Club of %s', 'rotary' ), $set_clubname );
+				}
+			} else {
+				if ($set_clubname) {
+					$clubname = sprintf( __( '%s Rotary Club', 'rotary' ), $set_clubname );
+				}
+			}
+			break;
+		case 2: //district
+			$clubname = $set_clubname;
+			break;
 	}
 	return $clubname;
 }
@@ -443,6 +451,7 @@ add_filter( 'use_default_gallery_style', '__return_false' );
 function rotary_remove_gallery_css( $css ) {
 	return preg_replace( "#<style type='text/css'>(.*?)</style>#s", '', $css );
 }
+
 // Backwards compatibility with WordPress 3.0.
 if ( version_compare( $GLOBALS['wp_version'], '3.1', '<' ) )
 	add_filter( 'gallery_style', 'rotary_remove_gallery_css' );
@@ -511,11 +520,11 @@ function rotary_comment_fields($fields) {
 	$req = get_option( 'require_name_email' );
 	$aria_req = ( $req ? " aria-required='true'" : '' );
 	$fields =  array(
-		'author' => '<p><label for="author">' . __( 'Name' ) . '</label> ' . ( $req ? '*' : '' ) .
+		'author' => '<p><label for="author">' . __( 'Name', 'rotary' ) . '</label> ' . ( $req ? '*' : '' ) .
 		'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>',
-		'email'  => '<p><label for="email">' . __( 'Email' ) . '</label> ' . ( $req ? '*' : '' ) .
+		'email'  => '<p><label for="email">' . __( 'Email', 'rotary' ) . '</label> ' . ( $req ? '*' : '' ) .
 		'<input id="email" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>',
-		'url'    => '<p><label for="url">' . __( 'Website' ) . '</label>' .
+		'url'    => '<p><label for="url">' . __( 'Website', 'rotary' ) . '</label>' .
 		'<input id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>',
 	);
 	return $fields;
@@ -548,7 +557,8 @@ if ( ! function_exists( 'rotary_posted_on' ) ) :
 					get_permalink(),
 					esc_attr( get_the_time() ),
 					$date->format('Y-m-d'),
-					$date->format('M j, Y')
+					//$date->format('M j, Y')
+					strftime( '%B %e, %G', $date->getTimestamp() )
 				)
 			);
 		}
@@ -558,8 +568,10 @@ if ( ! function_exists( 'rotary_posted_on' ) ) :
 				sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time datetime="%3$s" pubdate>%4$s</time></a>',
 					get_permalink(),
 					esc_attr( get_the_time() ),
-					get_the_date('Y-m-d'),
-					get_the_date('M j, Y')
+					//get_the_date('Y-m-d'),
+					strftime( '%F', get_the_date('U') )
+					//get_the_date('M j, Y')
+					strftime( '%B %e, %G', get_the_date('U') )
 				)
 			);
 		}
@@ -607,9 +619,9 @@ function rotary_slides_register() {
 	);
 
 	$args = array(
-		'label' => __('Slides'),
+		'label' => __('Slides', 'rotary'),
 		'labels' => $labels,
-		'singular_label' => __('Slides Item'),
+		'singular_label' => __('Slides Item', 'rotary'),
 		'query_var' => true,
 		'public' => true,
 		'show_ui' => true,
@@ -768,7 +780,7 @@ function rotary_get_blog_title() {
 //custom meta box for slides
 add_action( 'add_meta_boxes', 'rotary_add_slide_link_metabox');
 function rotary_add_slide_link_metabox() {
-	add_meta_box( 'slidelink', __( 'Slide Link' ),  'rotary_show_slide_link_metabox', 'rotary-slides', 'normal', 'high' );
+	add_meta_box( 'slidelink', __( 'Slide Link', 'rotary' ),  'rotary_show_slide_link_metabox', 'rotary-slides', 'normal', 'high' );
 }
 add_action( 'save_post', 'rotary_save_slide_link_metabox', 10, 2);
 function rotary_save_slide_link_metabox($post_id, $post) {
@@ -814,7 +826,7 @@ function rotary_output_archive_table($term='') { ?>
 	<tr>
 				<?php $date = DateTime::createFromFormat('Ymd', get_field('speaker_date')); ?>
 				<td><a href="<?php the_permalink();?>">speaker link</a></td>
-				<td><?php echo $date->format('M d, Y'); ?></td>
+				<td><?php echo strftime( '%B %e, %G', $date->getTimestamp() );//$date->format('M d, Y'); ?></td>
 				<?php $speakertitle = get_the_title();
 	if (strlen($speakertitle) > 50 ) {
 		$speakertitle = substr($speakertitle, 0, 50) . '...';
@@ -1092,4 +1104,54 @@ function rotary_display_name_update( $user_id, $old_user_data ) {
 	$user = get_userdata( $user_id );
 	$user->display_name = $user->first_name . ' ' . $user->last_name;
 	wp_update_user( array( 'user_id' => $user_id, 'display_name' => $user->display_name ) );
+}
+
+add_action ( 'customize_save_after', 'rotary_save_club_location', 10 );
+function rotary_save_club_location() {
+	$address = get_theme_mod( 'rotary_meeting_location', '');
+	$location = rotary_geocode( $address );
+	update_option( 'club_location', $location );
+}
+ 
+// function to geocode address, it will return false if unable to geocode address
+function rotary_geocode( $address ){
+
+	// url encode the address
+	$address = urlencode($address);
+	 
+	// google map geocode api url
+	$url = "http://maps.google.com/maps/api/geocode/json?address={$address}";
+
+	// get the json response
+	$resp_json = file_get_contents($url);
+	 
+	// decode the json
+	$resp = json_decode($resp_json, true);
+
+	// response status will be 'OK', if able to geocode given address
+	if($resp['status']=='OK'){
+
+		// get the important data
+		$lat = $resp['results'][0]['geometry']['location']['lat'];
+		$lng = $resp['results'][0]['geometry']['location']['lng'];
+		$address = $resp['results'][0]['formatted_address'];
+		 
+		// verify if data is complete
+		if( $lat && $lng && $address ){
+			// put the data in the array
+			$location = array(
+			'lat' => $lat,
+			'lng' => $lng,
+			'address' => $address
+			);
+			 
+			return $location;
+			 
+		}else{
+			return false;
+		}
+		 
+	}else{
+		return false;
+	}
 }

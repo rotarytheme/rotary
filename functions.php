@@ -6,11 +6,9 @@
  * @subpackage Rotary
  * @since Rotary 1.0
  */
-<label for="rotaryemailmessage">Message</label>
-//load_theme_textdomain('Rotary');
  
 // Set path to theme specific functions
-define( 'ACF_LITE' , true );
+ define( 'ACF_LITE' , true );
 
 define( 'ROTARY_THEME_INCLUDES_PATH', TEMPLATEPATH . '/includes/');
 define( 'ROTARY_THEME_CLASSES_PATH', TEMPLATEPATH . '/classes/');
@@ -29,6 +27,7 @@ function my_theme_setup(){
 	load_theme_textdomain('Rotary', TEMPLATEPATH . '/languages');
 }
 
+get_locale();
 
 //delete the rotary membership folder if it exists
 function rotary_delete_rotarymembership_folder( $dir, $deleteRootToo ) {
@@ -97,7 +96,7 @@ require_once ( ROTARY_THEME_INCLUDES_PATH . 'gravitylist.php');	// to enable scr
 /*
  *  CALENDAR 
  */
-// require_once ( ROTARY_THEME_INCLUDES_PATH . 'functions-calendar.php'); // calendar functions file in included
+require_once ( ROTARY_THEME_INCLUDES_PATH . 'functions-calendar.php'); // calendar functions file in included
 
 /*
  * MEMBERS

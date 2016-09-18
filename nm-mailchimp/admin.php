@@ -2,6 +2,7 @@
 /**
 * N-Media Mailchimp Front Class
 */
+
 class NM_MC_Front
 {
 	
@@ -117,12 +118,14 @@ class NM_MC_Front
 		$options['from_name'] =  $current_user->user_firstname.' '.$current_user->user_lastname . ' [' . get_option( 'blogname') . ']';
 		$options['generate_text'] = ($saved_options['generate_text'] == 'true' ? true : false);
 		
-
+		
 		$encoded = $_REQUEST['announcements'];
 		$hash = md5( $encoded . 'SecretStringHere' );
 		if( $_REQUEST['hash'] == $hash) { // the data hasn't been messed with
 				$announcements = unserialize( base64_decode( $encoded ));
 		} else {echo ' submitted hash was: ' . $_REQUEST['hash'] . '. Recalculated hash was: ' . $hash .'<br><br>Actual string was <br>' . $encoded;}
+		
+
 		
 		if ($campaigntype == 'speaker') {
 			$post_title = get_the_title( $_REQUEST['postid'] );
@@ -130,7 +133,7 @@ class NM_MC_Front
 			$date = DateTime::createFromFormat('Ymd', get_field( 'speaker_date', $_REQUEST['postid'] ));
 			$speaker = get_field('speaker_first_name',  $_REQUEST['postid'] ).' '.get_field('speaker_last_name',  $_REQUEST['postid'] );
 
-			$options['subject'] =   substr( sprintf( __( 'Program %s : ' ), $date->format('l M jS') ) 
+			$options['subject'] =   substr( sprintf( __( 'Program %s : ' ), strftime( '%A %b %e', $date->getTimestamp() ))  //$date->format('l M jS') ) 
 									. ' - "' 
 									. substr( $post_title, 0, 50) . ( strlen( $post_title ) > 50 ? '...' : '')
 									. '" by ' . substr( $speaker, 0, 20), 0, 99) ;
@@ -139,7 +142,7 @@ class NM_MC_Front
 		}
 		elseif ($campaigntype == 'announcements' ) {
 			$date = rotary_next_program_date(); // there is a default of 2 days grace before the next meeting is used as the week-of
-			$heading = sprintf( __( 'Club Announcements for %s' ), $date->format( 'l M jS' ) ); //Club Announcements for Friday Nov 6th
+			$heading = sprintf( __( 'Club Announcements for %s' ), strftime( '%A %b %e', $date->getTimestamp() ) ); //$date->format( 'l M jS' ) ); //Club Announcements for Friday Nov 6th
 			$options['subject'] =   $heading . ' - ' . get_option( 'blogname' );
 			$options['auto_tweet'] = false;
 			$options['auto_fb_post'] =  '';
@@ -157,7 +160,14 @@ class NM_MC_Front
 				 			'text'	=> stripcslashes( $html_inline_css['html'] )
 		);
 
-		$resp = $nm_mailchimp -> mc -> campaigns -> create($type, $options, $content);
+		
+		try {
+			$resp = $nm_mailchimp -> mc -> campaigns -> create($type, $options, $content);
+		} catch (Exception $e) {
+			$resp = array('status' => 'error', 'message' => $e->getMessage());
+			var_dump($e->getMessage());
+		}
+		
 
 		if (isset($resp['id'])) {
 			if ($_REQUEST['sendtype'] == 'test') {
@@ -186,8 +196,14 @@ class NM_MC_Front
 	}
 }
 
-if( function_exists ( 'is_plugin_active' )) {
+
+if ( class_exists('NM_MC_Front') ) {
+	$just_init = new NM_MC_Front;
+}
+/*
+if( function_exists ( 'is_plugin_active' ) ) {
 	if ( is_plugin_active( 'nm-mailchimp-campaign/index.php' ) && class_exists('NM_MC_Front') ) {
 		$just_init = new NM_MC_Front;
 	}
 }
+*/

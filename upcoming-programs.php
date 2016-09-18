@@ -76,7 +76,7 @@ $clearLeft='';
                 
                 <?php $speaker = get_field('speaker_first_name').' '.get_field('speaker_last_name'); ?>
                 <h2 class="speakername"><?php echo $speaker?></h2>
-                <h3><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'Rotary' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><span class="speakerday"><?php echo $date->format('l'); ?></span> <?php echo $date->format('M d, Y'); ?></a></h3>
+                <h3><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'Rotary' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><span class="speakerday"><?php echo strftime( '%A', $date->getTimestamp() ); //$date->format('l'); ?></span> <?php echo strftime( '%B %e, %G', $date->getTimestamp() ); //$date->format('M d, Y'); ?></a></h3>
             </header>
  
    

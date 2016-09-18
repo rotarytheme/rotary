@@ -66,14 +66,16 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
  //now get projects 
  	
  	$connected = new WP_Query( array(
-		'connected_type'  => 'projects_to_committees',
-		'connected_items' => get_queried_object_id(),
-		'posts_per_page' => 2, 
-		'order' => 'DESC',
-		'orderby' => 'meta_value',
-        'meta_key' => 'rotary_project_date',
-		'nopaging'        => false,
+		'connected_type'  	=> 'projects_to_committees',
+		'connected_items' 	=> get_queried_object_id(),
+		'post_type'			=> 'rotary_projects',
+		'posts_per_page' 	=> 2,
+		'order' 			=> 'DESC',
+		'orderby' 			=> 'meta_value',
+        'meta_key' 			=> 'rotary_project_date',
+		'nopaging'        	=> false,
 	) ); 
+
 	$hascontent = ''; 
 	$link1 =  admin_url() . 'post-new.php?post_type=rotary_projects&committee=' . get_the_id();
 	$link2 = get_post_type_archive_link( 'rotary_projects' ).'?committeeid='.get_the_id();
