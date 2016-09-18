@@ -9,6 +9,7 @@
  */
 /*remove the admin bar*/
 
+strftime($format)
 
 
 //if DacDB is not being used, then allow the direct import of users
@@ -556,7 +557,8 @@ if ( ! function_exists( 'rotary_posted_on' ) ) :
 					get_permalink(),
 					esc_attr( get_the_time() ),
 					$date->format('Y-m-d'),
-					$date->format('M j, Y')
+					//$date->format('M j, Y')
+					strftime( '%B %e, %G', $date->getTimestamp() )
 				)
 			);
 		}
@@ -566,8 +568,10 @@ if ( ! function_exists( 'rotary_posted_on' ) ) :
 				sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time datetime="%3$s" pubdate>%4$s</time></a>',
 					get_permalink(),
 					esc_attr( get_the_time() ),
-					get_the_date('Y-m-d'),
-					get_the_date('M j, Y')
+					//get_the_date('Y-m-d'),
+					strftime( '%F', get_the_date('U') )
+					//get_the_date('M j, Y')
+					strftime( '%B %e, %G', get_the_date('U') )
 				)
 			);
 		}
@@ -822,7 +826,7 @@ function rotary_output_archive_table($term='') { ?>
 	<tr>
 				<?php $date = DateTime::createFromFormat('Ymd', get_field('speaker_date')); ?>
 				<td><a href="<?php the_permalink();?>">speaker link</a></td>
-				<td><?php echo $date->format('M d, Y'); ?></td>
+				<td><?php echo strftime( '%B %e, %G', $date->getTimestamp() );//$date->format('M d, Y'); ?></td>
 				<?php $speakertitle = get_the_title();
 	if (strlen($speakertitle) > 50 ) {
 		$speakertitle = substr($speakertitle, 0, 50) . '...';

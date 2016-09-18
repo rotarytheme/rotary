@@ -133,7 +133,7 @@ class NM_MC_Front
 			$date = DateTime::createFromFormat('Ymd', get_field( 'speaker_date', $_REQUEST['postid'] ));
 			$speaker = get_field('speaker_first_name',  $_REQUEST['postid'] ).' '.get_field('speaker_last_name',  $_REQUEST['postid'] );
 
-			$options['subject'] =   substr( sprintf( __( 'Program %s : ' ), $date->format('l M jS') ) 
+			$options['subject'] =   substr( sprintf( __( 'Program %s : ' ), strftime( '%A %b %e', $date->getTimestamp() ))  //$date->format('l M jS') ) 
 									. ' - "' 
 									. substr( $post_title, 0, 50) . ( strlen( $post_title ) > 50 ? '...' : '')
 									. '" by ' . substr( $speaker, 0, 20), 0, 99) ;
@@ -142,7 +142,7 @@ class NM_MC_Front
 		}
 		elseif ($campaigntype == 'announcements' ) {
 			$date = rotary_next_program_date(); // there is a default of 2 days grace before the next meeting is used as the week-of
-			$heading = sprintf( __( 'Club Announcements for %s' ), $date->format( 'l M jS' ) ); //Club Announcements for Friday Nov 6th
+			$heading = sprintf( __( 'Club Announcements for %s' ), strftime( '%A %b %e', $date->getTimestamp() ) ); //$date->format( 'l M jS' ) ); //Club Announcements for Friday Nov 6th
 			$options['subject'] =   $heading . ' - ' . get_option( 'blogname' );
 			$options['auto_tweet'] = false;
 			$options['auto_fb_post'] =  '';

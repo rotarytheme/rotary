@@ -325,7 +325,7 @@ function show_project_blogroll ( $query, $showthumb = 'no', $committeeTitle = nu
 				endif; 
 				the_excerpt();
 			?>
-				<p><a href="<?php the_permalink(); ?>">><?echo __( 'Keep Reading'); ?> </a></p>
+				<p><a href="<?php the_permalink(); ?>">><?php _e( 'Keep Reading', 'Rotary'); ?> </a></p>
 				</div>		
 		</div>
 	<?php endwhile;
@@ -339,43 +339,54 @@ function show_project_blogroll ( $query, $showthumb = 'no', $committeeTitle = nu
  */
 function  rotary_show_project_dates() {
 	//get the project start and end dates 
+	
+//setlocale(LC_ALL, 'nl_NL');
 
-	$startDate 	= DateTime::createFromFormat('Ymd', get_field( 'rotary_project_date' ) );
-	$endDate 	= DateTime::createFromFormat('Ymd', get_field( 'rotary_project_end_date' ) );
+$startDate 	= DateTime::createFromFormat('Ymd', get_field( 'rotary_project_date' ) );
+$endDate 	= DateTime::createFromFormat('Ymd', get_field( 'rotary_project_end_date' ) );
 	
 	if ( get_field( 'long_term_project' ) ) : 
 		$longTermClass = ' longterm'; 
+			if( $startDate ) $startStamp = $startDate->getTimestamp();
+			if( $endDate ) $endStamp = $endDate->getTimestamp();
 			if ( $startDate && $endDate ) :
 				$interval = $startDate->diff( $endDate, true);
 				$show_day = ( 2 > $interval->format( '%m') );
 			else:
 				$show_day = false;
 			endif;
+			
+			//$startDate->format('jS F Y')
+			//strftime( '%e %B %Y', $startDate->getTimestamp() )
+			// English: strftime( $startDate->format('jS F Y') : $startDate->format('F Y'));
 	?>
-			<span class="fulldate"><?php echo (( $show_day) ? $startDate->format('jS F Y') : $startDate->format('F Y')); ?></span>
+			<span class="fulldate"><?php echo (( $show_day) ? strftime( '%e %B %Y', $startStamp ) : strftime( '%B %Y', $startStamp )); ?></span>
 			<?php if ( '' != trim( get_field( 'rotary_project_end_date' ) ) ) : ?>
 				<br /><span><?php _e( 'To', 'Rotary' ); ?></span><br />
-				<span class="fulldate"><?php echo (( $show_day) ? $endDate->format('jS F Y') : $endDate->format('F Y')); ?></span>
+				<span class="fulldate"><?php echo (( $show_day) ? strftime( '%e %B %Y', $endStamp ) : strftime( '%e %B %Y', $endStamp ) ); ?></span>
 			<?php else : ?>
-				<span><?php echo __( '(ongoing)' ); ?></span>
+				<span><?php _e( '(ongoing)', 'Rotary'); ?></span>
 			<?php endif; ?>
 	<?php 
 	else :
 		$longTermClass = '';
 		$startTime 	= new DateTime( $startDate->format( 'Y-m-d' ) . ' ' . get_field( 'rotary_project_start_time' ) );
 		$endTime 	= new DateTime( $startDate->format( 'Y-m-d' ) . ' ' . get_field( 'rotary_project_end_time' ) );
+
 		if ( $startTime && $endTime  ) :
+			$startStamp = $startTime->getTimestamp();
+			$endStamp = $endTime->getTimestamp();
 			$interval = $startTime->diff($endTime, true);
 			$show_time = ( 2 > $interval->format( '%d') );
 		else:
 			$show_time = false;
 		endif;
 	?>
-			<span class="dayweek"><?php echo $startDate->format('l'); ?></span><br>
-			<span class="fulldate"><?php echo $startDate->format('jS F Y'); ?></span>
+			<span class="dayweek"><?php echo strftime( '%A', $startStamp ) ; //$startDate->format('l') ?></span><br>
+			<span class="fulldate"><?php echo strftime( '%e %B %Y', $startStamp );// $startDate->format('jS F Y'); ?></span>
 			<?php if( $show_time) { ?>
 				<br />
-				<span class="time"><?php echo sprintf( __( '%s To %s', 'Rotary' ), $startTime->format('g:i a'), $endTime->format('g:i a') );?></span>
+				<span class="time"><?php echo sprintf( __( '%s To %s', 'Rotary' ), strftime( '%l:%M %p', $startStamp ) , strftime( '%l:%M %p', $endStamp )) ; //$startTime->format('g:i a'), $endTime->format('g:i a') );?></span>
 			<?php }?> 
 	<?php 
 	endif;

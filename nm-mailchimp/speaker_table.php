@@ -71,7 +71,7 @@
 				</p>
 			</td>
 			<td class="cutaway_image secondcol">&nbsp;</td>
-			<td id="speakerdate" class="greyborder-right greyborder-top thirdcol"><span id="weekday"><?php echo $date->format('l');?></span> <?php echo $date->format('M dS, Y');?></span></td>
+			<td id="speakerdate" class="greyborder-right greyborder-top thirdcol"><span id="weekday"><?php echo strftime( '%A', $date->getTimestamp() ) ; //$date->format('l');?></span> <?php echo $date->format('M dS, Y');?></span></td>
 		</tr>
 		<tr >
 			<td id="blogheader" colspan="3" class="greyborder-left greyborder-right">

@@ -37,7 +37,7 @@
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<div id="speakerheader">
-				<span id="speakerdate"><span id="weekday"><?php echo $date->format('l');?></span> <?php echo $date->format('M dS, Y');?></span>
+				<span id="speakerdate"><span id="weekday"><?php echo strftime( '%A', $date->getTimestamp() ); //$date->format('l');?></span> <?php echo strftime( '%b %e, %G', $date->getTimestamp() );//$date->format('M dS, Y');?></span>
 				
 				
 				

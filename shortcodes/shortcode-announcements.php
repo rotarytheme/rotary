@@ -73,8 +73,6 @@ class RotaryAnnouncements {
 		$this->args['post_type'] = array ('rotary-committees', 'rotary_projects');
 		$this->args['status'] = 'approve';
 		
-
-
 		
 		// if this is coming from a speaker program, then find the date range around the speaker date to retrieve the announcements
 		//other while the dates will be relative to today
@@ -105,8 +103,6 @@ class RotaryAnnouncements {
 			$this->today = new DateTime;
 		endif; //  end $speakerdate
 		
-		
-
 		
 		// We can't introduce a second comments form a page where there is already another comments form, so don't allow edits on a committee or project page
 		// where comments are open.  Also, don't allow edits on the carousel for simplicity
@@ -165,6 +161,7 @@ class RotaryAnnouncements {
 			
 			
 			// output the elements in the order that we want to display them
+			//if this is just an announcment, slides and aniiversaries will be empty.
 			$slides_counter = $announcement_counter = $anniversary_counter = 0;
 			for( $i = 0 ; $i < max( array( $this->announcementsDisplayed, $this->slidesDisplayed, $this->anniversariesDisplayed )); $i++ ) {
 
@@ -189,6 +186,9 @@ class RotaryAnnouncements {
 	 * @return string
 	 */
 	function get_announcements() {
+
+		$this->announcementsDisplayed = 0;
+
 		// Exclude all announcements that have expired
 		$this->args['meta_query'] = array(
 				array(
@@ -200,16 +200,19 @@ class RotaryAnnouncements {
 		
 		$announcements = get_comments( $this->args );
 		$context = $this->context;
+		
+		//var_dump( $announcements );
 	
 		if ( is_array( $announcements )  ) :
 				if( count( $announcements ) ) :
 					foreach( $announcements as $announcement ) :
 					if( $announcement ) :
+						$countann ++;
 						$extra_classes = '';
-						$this->announcementsDisplayed++;
 						ob_start();
 							include ( get_template_directory() . '/loop-single-announcement.php');
 						$this->announcement_ob[$this->announcementsDisplayed] = ob_get_clean();
+						$this->announcementsDisplayed++;
 					endif;
 				endforeach; //end foreach announcement loop
 				endif; //end count 
@@ -218,6 +221,7 @@ class RotaryAnnouncements {
 			if ( 0 == $this->announcementsDisplayed && !$this->speakerdate ) :
 				$this->announcement_ob[0] = '<p>' . __( 'There are no active announcements') . '</p>';
 			endif;
+	
 	}
 	
 	/**
@@ -225,6 +229,9 @@ class RotaryAnnouncements {
 	 * @return string
 	 */
 	function get_slides() {
+
+		$this->slidesDisplayed = 0;
+
 		//Prepare slideshow
 		$args = array(
 				'order' => 'ASC',
@@ -234,7 +241,6 @@ class RotaryAnnouncements {
 		
 		if ( $query->have_posts() ) :
 			while ( $query->have_posts() ) : $query->the_post();
-				$this->slidesDisplayed++;
 				ob_start();
 					if ( has_post_thumbnail() ) :
 						$img_data = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full');
@@ -256,6 +262,7 @@ class RotaryAnnouncements {
 					<?php 
 					endif;//has thumbnail
 				$this->slideshow_ob[$this->slidesDisplayed] = ob_get_clean();
+				$this->slidesDisplayed++;
 			endwhile; // the_post
 		endif;// have posts
 		wp_reset_postdata();
@@ -271,6 +278,7 @@ class RotaryAnnouncements {
 		$birthdays = array(); // an array of days of the months
 		
 		$month = $this->today->format( 'F' );
+		$month = strftime( '%B', $this->today->getTimestamp() );
 
 		if( $members ) :
 			foreach( $members as $member ) :
@@ -299,7 +307,9 @@ class RotaryAnnouncements {
 				if( $profile['membersince_datetime'] && date( 'F', $profile['membersince_datetime'] ) == $month  ) :
 					$names[ $member_id ] = $profile['memberName'];
 					$now = new DateTime();
-					$now_year = $now->format( 'Y' );
+					//$now_year = $now->format( 'Y' );
+					$now_year = strftime( '%G', $now->getTimestamp() );
+					
 					$join_year = date( 'Y', $profile['membersince_datetime'] );
 					$years[ $member_id ] = intval($now_year) - intval($join_year);
 				endif;

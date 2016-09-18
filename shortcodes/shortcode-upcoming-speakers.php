@@ -40,9 +40,9 @@ function rotary_get_upcoming_speakers_shortcode_html( $atts ) {
 					<?php $date = DateTime::createFromFormat('Ymd', get_field('speaker_date')); ?>
 	
 	                <div class="home-upcoming-programs-speaker-date">
-	                	<span class="dayweek"><?php echo $date->format('l'); ?></span>
-	                	<span class="day"><?php echo $date->format('d'); ?></span>
-	                	<span class="month"><?php echo $date->format('F'); ?></span>
+	                	<span class="dayweek"><?php echo strftime( '%A', $date->getTimestamp() );//$date->format('l'); ?></span>
+	                	<span class="day"><?php echo strftime( '%e', $date->getTimestamp() );//$date->format('d'); ?></span>
+	                	<span class="month"><?php echo strftime( '%B', $date->getTimestamp() );//$date->format('F'); ?></span>
 	                	<?php edit_post_link( __( 'Edit', 'Rotary' ), '', '' ); ?>
 	                </div>
 	                <div class="home-upcoming-program-details">

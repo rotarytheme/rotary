@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Rotary Rebrand - A Theme for Rotary Clubs\n"
 "POT-Creation-Date: 2016-04-08 09:48-0700\n"
-"PO-Revision-Date: 2016-06-21 18:59-0700\n"
+"PO-Revision-Date: 2016-08-05 10:04-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -262,7 +262,7 @@ msgstr "fait glisser et relâche pour réorganiser"
 
 #: acf-repeater/views/options.php:321
 msgid "+ Add Sub Field"
-msgstr "+ Ajouter un sous champ"
+msgstr "+ Ajouter un Sous Champ"
 
 #: acf-repeater/views/options.php:328
 msgid "Minimum Rows"
@@ -282,7 +282,7 @@ msgstr "rangée"
 
 #: acf-repeater/views/options.php:375
 msgid "Button Label"
-msgstr "Label du bouton "
+msgstr "Label du Bouton "
 
 #: address-geocoder/address-geocoder.php:159
 msgid "Address Geocoder"
@@ -305,11 +305,11 @@ msgstr "Champs personnalisés avancés"
 #: advanced-custom-fields/acf.php:487 classes/custom-post-types.php:74
 #: classes/custom-post-types.php:294
 msgid "Add New"
-msgstr "ajouter nouveau"
+msgstr "Ajouter Nouveau"
 
 #: advanced-custom-fields/acf.php:488
 msgid "Add New Field Group"
-msgstr "ajouter une nouvelle équipe"
+msgstr "Ajouter une Nouvelle Equipe"
 
 #: advanced-custom-fields/acf.php:489
 msgid "Edit Field Group"
@@ -1119,7 +1119,7 @@ msgstr "Nom"
 
 #: advanced-custom-fields/core/controllers/field_groups.php:420
 msgid "Activation Code"
-msgstr "Code d'activation"
+msgstr "Code d'Activation"
 
 #: advanced-custom-fields/core/controllers/field_groups.php:452
 msgid "Flexible Content"
@@ -1438,7 +1438,7 @@ msgstr "aucun fichier sélectionné "
 
 #: advanced-custom-fields/core/fields/file.php:123
 msgid "Add File"
-msgstr "ajouter un fichier"
+msgstr "Ajouter un Fichier"
 
 #: advanced-custom-fields/core/fields/file.php:153
 #: advanced-custom-fields/core/fields/image.php:125
@@ -1542,7 +1542,7 @@ msgstr "Aucune image séléctionné"
 
 #: advanced-custom-fields/core/fields/image.php:97
 msgid "Add Image"
-msgstr "ajouter une image"
+msgstr "Ajouter une Image"
 
 #: advanced-custom-fields/core/fields/image.php:126
 #: advanced-custom-fields/core/fields/relationship.php:563
@@ -1929,7 +1929,7 @@ msgstr ""
 
 #: advanced-custom-fields/core/views/meta_box_fields.php:317
 msgid "+ Add Field"
-msgstr "+ Ajouter un champ"
+msgstr "+ Ajouter un Champ"
 
 #: advanced-custom-fields/core/views/meta_box_location.php:48
 msgid "Rules"
@@ -2118,12 +2118,12 @@ msgstr "Tout les projets"
 
 #: author.php:20
 msgid "Author Archive"
-msgstr "Auteur de l'archive"
+msgstr "Auteur de l'Archive"
 
 #: author.php:31
 #, php-format
 msgid "About %s"
-msgstr "à propos de %s"
+msgstr "A propos de %s"
 
 #: category.php:16
 msgid "Category Archive"
@@ -2208,7 +2208,7 @@ msgstr "mise à jour de la catégorie de programme"
 
 #: classes/custom-post-types.php:121
 msgid "Add New Program Category"
-msgstr "ajouter une nouvelle catégorie de programme"
+msgstr "Ajouter une Nouvelle Catégorie de Programme"
 
 #: classes/custom-post-types.php:135 classes/custom-post-types.php:136
 msgid "Program Introducer"
@@ -2240,7 +2240,7 @@ msgstr "mettre l'introducteur de programme à jour"
 
 #: classes/custom-post-types.php:143
 msgid "Add New Program Introducer"
-msgstr "ajouter un nouvel introducteur de programme"
+msgstr "Ajouter un Nouvel Introducteur de Programme"
 
 #: classes/custom-post-types.php:144
 msgid "New Program Introducer"
@@ -2312,7 +2312,7 @@ msgstr "mettre le programme d'éditeur à jour"
 
 #: classes/custom-post-types.php:187
 msgid "Add New Program Editors"
-msgstr "ajouter un nouvel éditeur de programme"
+msgstr "Ajouter un Nouvel Editeur de Programme"
 
 #: classes/custom-post-types.php:188
 msgid "New Program Editor"
@@ -2483,7 +2483,7 @@ msgstr "Nouveau nom de tag du projet"
 
 #: classes/custom-post-types.php:368
 msgid "Add Committee"
-msgstr "Ajouter un comité"
+msgstr "Ajouter un Comité"
 
 #: classes/custom-post-types.php:369
 msgid "Edit Committee"
@@ -2526,7 +2526,7 @@ msgstr "Vous devez être connecté pour voir les informations des membres"
 #: classes/custom-post-types.php:545
 msgctxt "Member directory dropdown for committees"
 msgid "Filter by committee"
-msgstr "Filtre par le comité"
+msgstr "Filtre par le Comité"
 
 #: classes/custom-post-types.php:546
 msgctxt "Member directory dropdown for committees"
@@ -2541,12 +2541,12 @@ msgstr "Ajouter un(e) participant(e)"
 #: classes/rotaryprofiles.php:487
 msgctxt "Home/Cellphone Abbreviation"
 msgid "c"
-msgstr "phone"
+msgstr "m"
 
 #: classes/rotaryprofiles.php:488
 msgctxt "Home/Cellphone Abbreviation"
 msgid "h"
-msgstr "h"
+msgstr "c"
 
 #: classes/rotaryprofiles.php:492
 msgctxt "Email Address Abbreviation"
@@ -2792,7 +2792,7 @@ msgstr "[Ligne %1$s] %2$s"
 
 #: includes/admin-options.php:28
 msgid "Calendar Settings"
-msgstr "Paramètres du calendrier"
+msgstr "Paramètres du Calendrier"
 
 #: includes/ajax/ajax-announcements.php:13
 #: includes/ajax/ajax-announcements.php:44 tmpl-committee-announcements.php:111
@@ -2837,7 +2837,7 @@ msgstr ""
 
 #: includes/ajax/ajax-announcements.php:225
 msgid "Button Text"
-msgstr "Texte du bouton"
+msgstr "Texte du Bouton"
 
 #: includes/ajax/ajax-announcements.php:229
 msgid "Button links to this project/committee's page"
@@ -2864,7 +2864,7 @@ msgstr "Désolé, les commentaires sont fermés pour cette entrée"
 
 #: includes/ajax/save-announcement.php:103
 msgid "<strong>ERROR</strong>: please type a comment."
-msgstr "<strong>Erreur</strong>: Veuillez taper un commentaire."
+msgstr "<strong>ERREUR</strong>: Veuillez taper un commentaire."
 
 #: includes/assets.php:71
 msgid "Invalid URL Provided."
@@ -2984,7 +2984,7 @@ msgstr "Devenez porte-parole"
 
 #: includes/committee-project-functions.php:65
 msgid "Buy Now"
-msgstr "Acheter maintenant"
+msgstr "Acheter Maintenant"
 
 #: includes/committee-project-functions.php:66
 msgid "Donate to this Cause"
@@ -3050,7 +3050,7 @@ msgstr "Retirer"
 #: includes/rotarymembership-layout.php:15
 #: includes/rotarymembership-layout.php:55
 msgid "Bulk Actions"
-msgstr "Action de masse"
+msgstr "Action de Masse"
 
 #: includes/rotarymembership-layout.php:16
 #: includes/rotarymembership-layout.php:56
@@ -3075,7 +3075,7 @@ msgstr "Répertoire des membres"
 #: includes/rotarymembership-layout.php:60
 msgctxt "Name display order"
 msgid "First Last"
-msgstr "premier dernier"
+msgstr "Premier Dernier"
 
 #: includes/rotarymembership-layout.php:61
 msgctxt "Name display order"
@@ -3100,17 +3100,17 @@ msgstr "Partenaire"
 #: includes/rotarymembership-layout.php:109
 msgctxt "Directory table label"
 msgid "Cell/Home Phone"
-msgstr "Téléphone portable"
+msgstr "Téléphone Portable"
 
 #: includes/rotarymembership-layout.php:110
 msgctxt "Directory table label"
 msgid "Business Phone"
-msgstr "Téléphone professionnel"
+msgstr "Téléphone Professionnel"
 
 #: includes/rotarymembership-layout.php:111
 msgctxt "Directory table label"
 msgid "Contact Info"
-msgstr "Information de contact"
+msgstr "Information de Contact"
 
 #: includes/rotarymembership-layout.php:112
 msgctxt "Directory table label"
@@ -3155,7 +3155,7 @@ msgstr "Zone Widget pour le pied de page à droite"
 
 #: includes/sidebar-init.php:70
 msgid "Calendar Sidebar"
-msgstr "Encadré de la page d’accueil"
+msgstr "Encadré de la Page d’Accueil"
 
 #: includes/sidebar-init.php:72
 msgid "Appears on the calendar page"
@@ -3212,7 +3212,7 @@ msgstr "Partenaire"
 #: includes/sponsors.php:34
 msgctxt "sponsor"
 msgid "Add New"
-msgstr "ajouter un nouveau sponsor"
+msgstr "Ajouter un Nouveau Sponsor"
 
 #: includes/sponsors.php:35
 msgid "Add New Sponsor"
@@ -3253,12 +3253,12 @@ msgstr "aucun sponsors trouvé dans la corbeille"
 #: includes/sponsors.php:62
 msgctxt "taxonomy general name"
 msgid "Sponsorship Levels"
-msgstr "Niveaux de parrainage"
+msgstr "Niveaux de Parrainage"
 
 #: includes/sponsors.php:63
 msgctxt "taxonomy singular name"
 msgid "Sponsorship Level"
-msgstr "Niveau de parrainage"
+msgstr "Niveau de Parrainage"
 
 #: includes/sponsors.php:64
 msgid "Search Sponsorship Levels"
@@ -3338,7 +3338,7 @@ msgstr "%1$s à %2$s"
 
 #: includes/theme-functions.php:480 includes/theme-functions.php:496
 msgid "(Edit)"
-msgstr "(éditer)"
+msgstr "Editer"
 
 #: includes/theme-functions.php:496
 msgid "Pingback:"
@@ -3396,7 +3396,7 @@ msgstr "Glisser l'objet"
 #: includes/theme-functions.php:632
 msgctxt "post type general name"
 msgid "Slides Category"
-msgstr "Catégorie de page"
+msgstr "Catégorie de Page"
 
 #: includes/theme-functions.php:633
 msgctxt "all items"
@@ -3499,7 +3499,7 @@ msgstr "Jour de la réunion"
 
 #: includes/theme-options.php:142
 msgid "--select day--"
-msgstr "--Sélectionnez le jour--"
+msgstr "—sélectionnez le jour--"
 
 #: includes/theme-options.php:143
 msgid "Monday"
@@ -3531,7 +3531,7 @@ msgstr "Dimanche"
 
 #: includes/theme-options.php:152
 msgid "--select time--"
-msgstr "--Sélectionnez l'heure--"
+msgstr "—sélectionnez l'heure--"
 
 #: includes/theme-options.php:153
 msgid "6:00 am"
@@ -3948,7 +3948,7 @@ msgstr "Il n'y a aucune annonce !"
 
 #: nm-mailchimp/speaker_table.php:139 sidebar-speaker.php:16
 msgid "About the Speaker"
-msgstr "à propos du speaker"
+msgstr "A propos du speaker"
 
 #: required-plugins/class-tgm-plugin-activation.php:333
 msgid "Install Required Plugins"
@@ -4205,7 +4205,7 @@ msgstr "installé mais non activé"
 
 #: required-plugins/class-tgm-plugin-activation.php:2215
 msgid "Active"
-msgstr "actif"
+msgstr "Actif"
 
 #: required-plugins/class-tgm-plugin-activation.php:2221
 msgid "Required Update not Available"
@@ -4483,7 +4483,7 @@ msgstr "%s Année"
 
 #: shortcodes/shortcode-boardmembers.php:21
 msgid " Board Members"
-msgstr "Membres du conseil"
+msgstr "Membres du Conseil"
 
 #: shortcodes/shortcode-boardmembers.php:37
 msgid "Office"

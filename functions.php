@@ -27,6 +27,7 @@ function my_theme_setup(){
 	load_theme_textdomain('Rotary', TEMPLATEPATH . '/languages');
 }
 
+get_locale();
 
 //delete the rotary membership folder if it exists
 function rotary_delete_rotarymembership_folder( $dir, $deleteRootToo ) {
