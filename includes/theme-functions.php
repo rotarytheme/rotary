@@ -6,11 +6,7 @@
  * @package WordPress
  * @subpackage Rotary
  * @since Rotary 1.0
- */
-/*remove the admin bar*/
-
-strftime($format)
-
+ */ 
 
 //if DacDB is not being used, then allow the direct import of users
 $options = get_option('rotary_dacdb');
@@ -549,6 +545,7 @@ if ( ! function_exists( 'rotary_posted_on' ) ) :
 	 * @since rotary 1.0
 	 */
 	function rotary_posted_on() {
+
 		if ('rotary_speakers' == get_post_type() ) {
 			$date = DateTime::createFromFormat('Ymd', get_field('speaker_date'));
 			printf( __( 'Speaker on <br/>%2$s', 'rotary' ),
@@ -568,8 +565,8 @@ if ( ! function_exists( 'rotary_posted_on' ) ) :
 				sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time datetime="%3$s" pubdate>%4$s</time></a>',
 					get_permalink(),
 					esc_attr( get_the_time() ),
-					//get_the_date('Y-m-d'),
-					strftime( '%F', get_the_date('U') )
+				//get_the_date('Y-m-d'),
+					strftime( '%F', get_the_date('U') ),
 					//get_the_date('M j, Y')
 					strftime( '%B %e, %G', get_the_date('U') )
 				)
@@ -585,6 +582,7 @@ if ( ! function_exists( 'rotary_posted_in' ) ) :
 	 * @since rotary 1.0
 	 */
 	function rotary_posted_in() {
+exit;
 		// Retrieves tag list of current post, separated by commas.
 		echo '<div class="postedin">';
 		$tag_list = get_the_tag_list( '', ', ' );
@@ -606,9 +604,9 @@ if ( ! function_exists( 'rotary_posted_in' ) ) :
 		echo '</div>';
 	}
 endif;
+
 //custom post types for slideshows
 add_action('init', 'rotary_slides_register');
-
 function rotary_slides_register() {
 	$labels = array(
 		'add_new_item' => 'Add Slides Item',
@@ -728,30 +726,30 @@ function rotary_get_slideshow( $context = null ){
 
    </div>	<!--end slideshowcontainer-->
 
-<?php 
-endif; // end $context switch
-endif; // end has posts
-	// Reset Post Data
+	<?php 
+	endif; // end $context switch
+	endif; // end has posts
+		// Reset Post Data
 	wp_reset_postdata();
 
-
-}//custom images sizes for slideshow
-if ( function_exists( 'add_image_size' ) ) {
-	add_image_size( 'slideshow-size', 486, 313, true ); //(cropped)
-
-}
-
-add_filter('image_size_names_choose', 'rotary_image_sizes');
-function rotary_image_sizes($sizes) {
-	$new_sizes = array();
-
-	$added_sizes = get_intermediate_image_sizes();
-
-	// $added_sizes is an indexed array, therefore need to convert it
-	// to associative array, using $value for $key and $value
-	foreach( $added_sizes as $key => $value) {
-		$new_sizes[$value] = $value;
+	
+	}//custom images sizes for slideshow
+	if ( function_exists( 'add_image_size' ) ) {
+		add_image_size( 'slideshow-size', 486, 313, true ); //(cropped)
+	
 	}
+	
+	add_filter('image_size_names_choose', 'rotary_image_sizes');
+	function rotary_image_sizes($sizes) {
+		$new_sizes = array();
+	
+		$added_sizes = get_intermediate_image_sizes();
+	
+		// $added_sizes is an indexed array, therefore need to convert it
+		// to associative array, using $value for $key and $value
+		foreach( $added_sizes as $key => $value) {
+			$new_sizes[$value] = $value;
+		}
 
 	// This preserves the labels in $sizes, and merges the two arrays
 	$new_sizes = array_merge( $new_sizes, $sizes );
