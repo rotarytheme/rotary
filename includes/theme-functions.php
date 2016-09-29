@@ -582,7 +582,6 @@ if ( ! function_exists( 'rotary_posted_in' ) ) :
 	 * @since rotary 1.0
 	 */
 	function rotary_posted_in() {
-exit;
 		// Retrieves tag list of current post, separated by commas.
 		echo '<div class="postedin">';
 		$tag_list = get_the_tag_list( '', ', ' );

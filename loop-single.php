@@ -28,7 +28,7 @@
                         </div>
                         <?php Rotary_posted_in(); ?>
                         <hr/>
-                        <?php comments_template( '', true ); ?>
+                        <?php // comments_template( '', true ); ?>
                     </div><!--.sectioncontent-->
                 </div> <!--.sectionheader-->
 			</div><!--.sectioncontainer-->

@@ -14,7 +14,6 @@ get_header(); ?>
 
 <div id="page">
 	<div id="content" role="main" class="hassidebar">
-	<?php echo get_post_type_archive_link( get_post_type() ); ?>
 		<?php get_template_part( 'loop', 'single' ); ?>
     </div>
     
