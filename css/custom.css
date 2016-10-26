@@ -24,6 +24,7 @@
 #branding img {
     width: 250px;
     margin-bottom: 20px;
+    float: left;
 }
 @media screen and (min-width: 420px) {
 	#branding img { width: 330px;}
