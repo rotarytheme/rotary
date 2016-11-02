@@ -625,7 +625,7 @@ function rotary_slides_register() {
 		'capability_type' => 'post',
 		'hierarchical' => false,
 		'rewrite' => array("slug" => "slides"),
-		'supports' => array('title','editor', 'thumbnail', 'excerpt')
+		'supports' => array('title','editor', 'thumbnail', 'excerpt', 'page-attributes')
 	);
 
 	register_post_type( 'rotary-slides' , $args );
@@ -643,6 +643,7 @@ function rotary_slides_register() {
 function rotary_get_slideshow( $context = null ){
 	$args = array(
 		'order' => 'ASC',
+		'orderby' => 'menu_order',
 		'post_type' => 'rotary-slides',
 	);
 	$query = new WP_Query( $args );

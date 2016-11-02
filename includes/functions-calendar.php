@@ -63,6 +63,8 @@ function save_calendar_fields( $post_id ){
 
     }
     
+  //  echo 'Calendar TimeZone is' . $calendar_tz; 
+ //   echo 'got here';
     $start_date_ts = rotary_create_timestamp_in_calendar_tz( $start_date, $the_start_time, $calendar_tz );
     $end_date_ts = rotary_create_timestamp_in_calendar_tz( $end_date, $the_end_time, $calendar_tz );
     
