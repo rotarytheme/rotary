@@ -24,6 +24,9 @@
 #branding img {
     width: 250px;
     margin-bottom: 20px;
+    float: left;
+}
+    
 }
 @media screen and (min-width: 420px) {
 	#branding img { width: 330px;}
@@ -426,3 +429,4 @@ div#new-announcement-form h3#reply-title {
     font-weight: normal;
     font-size: 36px;
 }
+
