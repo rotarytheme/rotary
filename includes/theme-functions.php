@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Rotary theme functions and definitions
  *
@@ -131,7 +130,6 @@ function rotary_club_name() {
 	return $clubname;
 }
 
-
 //Add the filter to override the standard shortcode
 add_filter( 'img_caption_shortcode', 'rotary_img_caption_shortcode', 10, 3 );
 function rotary_img_caption_shortcode( $a , $attr, $content = null) {
@@ -254,7 +252,6 @@ endif;
 // return $content;
 //}
 
-
 /************************************************************************************/
 /* shortcodes
 /************************************************************************************/
@@ -276,6 +273,7 @@ function rotary_register_shortcodes(){
 	add_shortcode( 'committee_announcements', 'rotary_announcements_function' );
 	add_shortcode( 'announcements', 'rotary_announcements_function' );
 	add_shortcode( 'boardmembers', 'rotary_boardmembers_function' );
+	add_shortcode( 'blogroll', 'rotary_blogroll_function' );
 	
 }
 
@@ -308,6 +306,13 @@ function rotary_featured_function( $atts ) {
 	return $shortcode;
 }
 
+/* BLOGROLL */
+function rotary_blogroll_function( $atts ) {
+	require_once ( ROTARY_THEME_SHORTCODES_PATH . 'shortcode-blogroll.php' );		// load the shortcode file
+	wp_enqueue_style( 'blogroll-shortcode', ROTARY_THEME_CSS_URL . 'blogroll-shortcode.css');
+	$rotary_blogroll = new RotaryBlogRoll( array ('atts' => $atts) );
+	return $rotary_blogroll->shortcode_html;
+}
 
 
 /************************************************************************************/
@@ -559,16 +564,24 @@ if ( ! function_exists( 'rotary_posted_on' ) ) :
 				)
 			);
 		}
-		else {
-			printf( __( 'Posted on<br/>%2$s', 'Rotary' ),
+		elseif ( is_single() ) {
+			printf( __( 'Date Posted<br/>&nbsp;%2$s', 'Rotary' ),
 				'meta-prep meta-prep-author',
 				sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time datetime="%3$s" pubdate>%4$s</time></a>',
 					get_permalink(),
 					esc_attr( get_the_time() ),
-				//get_the_date('Y-m-d'),
 					strftime( '%F', get_the_date('U') ),
-					//get_the_date('M j, Y')
-					strftime( '%B %e, %G', get_the_date('U') )
+					strftime( '%b %e, %G', get_the_date('U') )
+				)
+			);
+		} else {
+			printf( __( '%2$s', 'Rotary' ),
+				'meta-prep meta-prep-author',
+				sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time datetime="%3$s" pubdate>%4$s</time></a>',
+					get_permalink(),
+					esc_attr( get_the_time() ),
+					strftime( '%F', get_the_date('U') ),
+					strftime( '%b %e, %G', get_the_date('U') )
 				)
 			);
 		}
@@ -999,16 +1012,16 @@ function rotary_output_blogroll() {
 					<header>
 					    <?php 
 				    	$title = get_the_title(); 
-			    		if (strlen($title) > 30 ) {
-							$title = substr($title, 0, 30) . '...';
+			    		if (strlen($title) > 26 ) {
+							$title = substr($title, 0, 26) . '...';
 						} 
 						?>
 		                <h2>
 		                	<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'Rotary' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php echo $title; ?></a>
 		                </h2>
 		                <div class="postdate">
-		                	<span class="alignleft">Posted by <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ))?>"><?php echo get_the_author();?></a></span>
-		                    <span class="alignright"><?php Rotary_posted_on(); ?></span>	
+		                	<span class="alignleft"><?php _e('By ', 'Rotary' )?> <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ))?>"><?php echo get_the_author();?></a></span>
+		                    <span class="alignright"><?php rotary_posted_on(); ?></span>	
 		                </div>    
 		            </header>
 
@@ -1041,8 +1054,8 @@ function rotary_output_blogroll() {
 		            <footer class="meta">
 		            <p>
 		                <?php 
-		                // edit_post_link( __( 'Edit', 'Rotary' ), '', ' ' ); 
-		                comments_popup_link( __( 'Leave a comment', 'Rotary' ), __( '1 Comment', 'Rotary' ), __( '% Comments', 'Rotary' ), 'commentspopup' ); ?></p>
+		                 if( is_single() ) { edit_post_link( __( 'Edit', 'Rotary' ), '', ' ' ); } 
+		                // comments_popup_link( __( 'Leave a comment', 'Rotary' ), __( '1 Comment', 'Rotary' ), __( '% Comments', 'Rotary' ), 'commentspopup' ); ?></p>
 		                <?php if ( count( get_the_category() ) ) : 
 		                ?>
 		                        <p><?php printf( __( 'Posted in %2$s', 'Rotary' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?></p>
@@ -1051,7 +1064,7 @@ function rotary_output_blogroll() {
 		                    $tags_list = get_the_tag_list( '', ', ' );
 		                    if ( $tags_list ):
 		                ?>
-		                        <p><?php printf( __( 'Tagged %2$s', 'Rotary' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?></p>
+		                        <p><?php if( is_single() ) { printf( __( 'Tagged %2$s', 'Rotary' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list );} ?></p>
 		                <?php endif; ?>
 		            </footer>
             

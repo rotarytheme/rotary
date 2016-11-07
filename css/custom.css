@@ -15,7 +15,24 @@
     position: relative;
 }
 
-
+@font-face {
+	font-family: 'Open Sans Condensed';
+	src:url('../fonts/OpenSans-CondLight.woff') format('woff'),
+	url('../fonts/OpenSans-CondLight.svg') format('svg'),
+	url('../fonts/OpenSans-CondLighteot'),
+	url('../fonts/OpenSans-CondLight.eot?#iefix') format('embedded-opentype');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Open Sans Condensed';
+	src:url('../fonts/OpenSans-CondBold.woff') format('woff'),
+	url('../fonts/OpenSans-CondBold.svg') format('svg'),
+	url('../fonts/OpenSans-CondBold.eot'),
+	url('../fonts/OpenSans-CondBold.eot?#iefix') format('embedded-opentype');
+	font-weight: 700;
+	font-style: normal;
+}
 
 
 /***************************
