@@ -140,11 +140,11 @@ require_once ( ROTARY_THEME_AJAX_PATH . 'ajax-projects.php'); 		// Ajax function
 require_once ( ROTARY_THEME_AJAX_PATH . 'ajax-announcements.php'); 		// Ajax functions for announcements
 
 
-
 /*
  * SHORTCODES
  *
  */
+
 
 
 /*

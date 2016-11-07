@@ -10,7 +10,7 @@
 get_header(); ?>
 
 <h1 class="pagetitle"><?php echo rotary_get_blog_title();?></h1>
-<div id="page">
+<div id="page" class="blog">
 	
 	<?php 
 	if ( have_posts() ) : the_post();?>		

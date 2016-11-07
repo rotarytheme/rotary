@@ -33,6 +33,8 @@ class RotaryCustomPostTypes {
 		//shortcodes
 		add_shortcode( 'MEMBER_DIRECTORY', array($this, 'get_rotary_club_members') );
 		add_shortcode( 'DIRECTORY', array($this, 'get_rotary_club_members') );
+		add_shortcode( 'member_directory', array($this, 'get_rotary_club_members') );
+		add_shortcode( 'directory', array($this, 'get_rotary_club_members') );
 	}
 	//the same will be done for committees
 	function activate() {

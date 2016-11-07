@@ -6,19 +6,22 @@
  * @subpackage Rotary
  * @since Rotary 1.0
  */
-
 get_header(); ?>
+
+
 
 <?php  if (get_theme_mod( 'rotary_slideshow', true )) {
 	rotary_get_slideshow(); 
 } ?>
-	<div id="page">
-		<div id="content" role="main" class="<?php  if ( get_theme_mod( 'rotary_home_sidebar', true )){ echo 'hassidebar-wide';} else{ echo 'fullwidth';} ?>">
+	<div id="page"
+			<?php  if( has_shortcode( $post->post_content, 'blogroll')) { echo 'class="blog"';} ?>">
+		<div id="content" role="main" class="
+			<?php  if ( get_theme_mod( 'rotary_home_sidebar', true )){ echo 'hassidebar-wide';} else{ echo 'fullwidth';} ?>">
 		
 		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 		   <section class="homecontent">
 		      <div class="inner">
-			   	<?php the_content();?>
+			   	<?php the_content(); 	?>
 		       </div>
 		    </section>
 		<?php endwhile; ?>

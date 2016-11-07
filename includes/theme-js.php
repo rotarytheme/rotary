@@ -6,10 +6,6 @@ function rotary_add_javascript( ) {
 	//style not script but it is the correct spot
 	
 	global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
-    $protocol = is_ssl() ? 'https' : 'http';
-	$query_args = array(
-		'family' => 'Open+Sans+Condensed:300,700,300italic');
-	wp_enqueue_style( 'rotary-opensanscondensed-font', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ), array(), null 	);	
 
 	wp_enqueue_style( 'rotary-styles', get_bloginfo('template_directory').'/rotary-sass/stylesheets/style.min.css');
 	
@@ -29,7 +25,19 @@ function rotary_add_javascript( ) {
 	
 	wp_enqueue_script( 'fancybox', get_bloginfo('template_directory').'/includes/js/jquery.fancybox.pack.js', array( 'jquery' ) );
 	
-	wp_enqueue_script('googlemaps', 'http://maps.googleapis.com/maps/api/js?sensor=false', false, '3');
+
+	if ( 'China' != get_theme_mod( 'rotary_country', '') ) {
+		$mapsapi = 'http://maps.googleapis.com/maps/api/js?sensor=false';
+	    $protocol = is_ssl() ? 'https' : 'http';
+		$query_args = array(
+			'family' => 'Open+Sans+Condensed:300,700,300italic'
+		);
+		wp_enqueue_style( 'rotary-opensanscondensed-font', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ), array(), null 	);
+	} else {
+		$mapsapi = 'http://maps.google.cn/maps/api/js?sensor=false';
+	}
+	
+	wp_enqueue_script('googlemaps', $mapsapi, false, '3');
 	
 	wp_enqueue_script( 'hoverIntent' );
 

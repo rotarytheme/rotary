@@ -67,9 +67,13 @@ class Address_Geocoder
 
 			$address_geocoder_options = get_option('address_geocoder_options');
 			$apikey = $address_geocoder_options['apikey'];
-
+			
 			if ( $apikey && $apikey != '' ):
-				$mapsapi = '//maps.googleapis.com/maps/api/js?key=' . $apikey. '&sensor=false';
+				if ( 'China' != get_theme_mod( 'rotary_country', '') ) {
+					$mapsapi = '//maps.googleapis.com/maps/api/js?key=' . $apikey. '&sensor=false';} 
+				else {
+					$mapsapi = '//maps.google.cn/maps/api/js?key=' . $apikey. '&sensor=false';
+				}
 				wp_register_script( 'googlemaps', $mapsapi );
 				wp_register_script( 'marty_geocode_js', plugins_url( '/address-geocoder.js', __FILE__ ) );
 
