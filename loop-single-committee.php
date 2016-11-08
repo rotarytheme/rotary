@@ -1,6 +1,6 @@
 <?php
 /**
- * The loop that displays a single post.
+ * The loop that displays a single Committee.
  *
  * @package WordPress
  * @subpackage Rotary
@@ -39,8 +39,8 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
 	$connected = new WP_Query( array(
 		'connected_type'  => 'committees_to_posts',
 		'connected_items' => $post,
-		'posts_per_page' => 2, 
-		'nopaging'        => true,
+		'posts_per_page' => 2,
+		'nopaging'        => false,
 	) ); 
 	
 	$hascontent = ''; 
@@ -48,7 +48,7 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
 			$link2 = get_site_url() . '/posts/?committeeid='.get_the_id();
 			if ( $connected->have_posts() ) :
 				$hascontent = ' hascontent';
-				rotary_show_committee_header_container($hascontent, 'Update', $link1, $link2);
+				rotary_show_committee_header_container( $hascontent, 'Update', $link1, $link2 );
 			?>	
 				<div class="updates-container clearfix">
 			<?php 
@@ -69,7 +69,7 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
 		'connected_type'  	=> 'projects_to_committees',
 		'connected_items' 	=> get_queried_object_id(),
 		'post_type'			=> 'rotary_projects',
-		'posts_per_page' 	=> 2,
+		'posts_per_page' 	=> 6,
 		'order' 			=> 'DESC',
 		'orderby' 			=> 'meta_value',
         'meta_key' 			=> 'rotary_project_date',
@@ -83,9 +83,13 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
 		$hascontent = ' hascontent';
 		rotary_show_committee_header_container($hascontent, 'project', $link1, $link2);
 		?>
-		<div class="connectedprojects clearleft clearfix">				
-			<?php show_project_blogroll( $connected, 'no', $committeeTitle ); ?>
-		</div>
+		
+		
+		<div class="connectedprojects clearleft clearfix">	
+			<div id="projectblogrollcontainer" class="projectblogrollcontainer clearfix" style="clear:both">			
+				<?php show_project_blogroll( $connected, 'no', $committeeTitle ); ?>
+			</div>
+	</div>
 		
 		<?php else: 
 			rotary_show_committee_header_container($hascontent, 'project', $link1, $link2); 

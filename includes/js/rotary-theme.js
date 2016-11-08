@@ -2,6 +2,7 @@
 jQuery(document).ready(function($) {
 	var rotaryTheme = {
 		init: function() {
+			
 			//add extra class so we know if there are child items
 			$('ul.sub-menu').parent().addClass('dropdown');
 			//add class to upcoming programs edit so we can target it
@@ -32,10 +33,11 @@ jQuery(document).ready(function($) {
 			$('#speaker-archive-table tbody').on('click', 'tr', this.selectRow);
 			$('.projecticons').on('mouseenter mouseleave', '.icon', this.hoverIcons);
 			$('.logged-in .projecticons').on('click', '.imgoing', this.toggleParticpant);
-			// Announcement Features
+			// Announcement Feature
 			$('.editannouncementbutton').on('click', this.editAnnouncement );
 			$('.deleteannouncementbutton').on('click', this.deleteAnnouncement );
 			$('select.hyperlink').on('change', this.selectDropdown );
+			$( '#accordion-section-static_front_page').on( 'click', this.showpageonfront );
 			$('.fancybox, .gallery-item a').fancybox({
 				padding: 3,
 				nextEffect: 'fade',
@@ -59,6 +61,7 @@ jQuery(document).ready(function($) {
 				rotaryTheme.renderMap($(this));
 			});
 		},
+
 		renderMap: function($el) {
 			var $markers = $el.find('.marker');
 			var mapZoom = 16;

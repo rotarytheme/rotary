@@ -113,6 +113,8 @@ function special_js($hook) {
 add_action( 'admin_enqueue_scripts', 'special_js' );
 
 require_once (ROTARY_THEME_INCLUDES_PATH . 'theme-options.php'); 		// Options panel settings and custom settings
+/* Set the Home Page depending on whether logged in or not */
+//rotary_set_home_page();
 
 require_once (ROTARY_THEME_INCLUDES_PATH . 'theme-functions.php'); 		// Custom theme functions
 

@@ -20,9 +20,10 @@
 	if(current_user_can('manage_options')){ ?>
       <a class="widgetedit" href="<?php echo admin_url(); ?>widgets.php"><?php _e( 'Edit Widgets', 'Rotary'); ?></a>
   <?php  } 
-	if ( ! dynamic_sidebar( 'home-widget-area' )) : ?>
+  
+	if ( ! dynamic_sidebar( 'members-widget-area' )) : ?>
 			<li>
-				<h3><?php _e( 'Homepage Sidebar', 'Rotary' ); ?></h3>
+				<h3><?php _e( 'Members Sidebar', 'Rotary' ); ?></h3>
 				<ul>
 					<li>
 						<?php if(current_user_can('manage_options')){ ?>
@@ -35,7 +36,4 @@
 			</li>
 		<?php endif; // end primary widget area ?>
 		</ul>
-
-
-	
 	</aside>

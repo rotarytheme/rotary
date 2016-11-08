@@ -45,7 +45,20 @@
 			      <a class="widgetedit" href="<?php echo admin_url(); ?>widgets.php"><?php _e( 'Edit Widgets', 'Rotary'); ?></a>
 			  <?php  }
 			if ( is_active_sidebar( 'calendar-sidebar' ) ) : 
-				dynamic_sidebar( 'calendar-sidebar' ); 
+				if ( ! dynamic_sidebar( 'calendar-sidebar' )) : ?>
+					<li>
+						<h3><?php _e( 'Calendar Sidebar', 'Rotary' ); ?></h3>
+						<ul>
+							<li>
+								<?php if(current_user_can('manage_options')){ ?>
+									<a  href="<?php echo admin_url(); ?>widgets.php"><?php _e( 'Edit Widgets', 'Rotary'); ?></a>
+								<?php } else { ?>
+									<p><?php _e( 'Add widgets here'); ?></p>
+								<?php }?>
+							</li>
+						</ul>
+					</li>
+				<?php endif; // end primary widget area 
 			endif;
 			?>
 		</ul>

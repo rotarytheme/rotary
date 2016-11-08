@@ -10,8 +10,8 @@
  
 <?php   if ( isset( $_REQUEST['projectid'] ) ) : ?>		
 	<?php	//secondary loop to get connected posts
-		$postCount = 0;
-		$clearLeft='';
+		//$postCount = 0;
+		//$clearLeft='';
 		$connected = new WP_Query( array(
 			'connected_type'  => 'projects_to_posts',
 			'connected_items' => $_REQUEST['projectid'],
@@ -21,7 +21,8 @@
 			 <?php   $committeePost = get_post( $_REQUEST['committeeid'] ); ?>
 				
 				<?php  while ( $connected->have_posts() ) : $connected->the_post();?>
-					<?php $postCount = rotary_output_blogroll($postCount, $clearLeft); ?>
+					<?php //$postCount = rotary_output_blogroll( $postCount, $clearLeft); ?>
+					<?php rotary_output_blogroll( ); ?>
 				<?php endwhile;?>
 			<?php else : ?>
 				<p id="nopostsfound"><?php _e( 'No updates', 'Rotary'); ?></p>
