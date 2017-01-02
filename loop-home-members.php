@@ -9,22 +9,26 @@
 ?>
 
 <?php 
+
+global $member_page;
 if ( get_theme_mod( 'rotary_member_slideshow', true ) ) {
 	rotary_get_slideshow();
 }
+
 ?>
 	<div id="page"
-			<?php  if( has_shortcode( $post->post_content, 'blogroll')) { echo 'class="blog"';} ?>>
+			<?php  if( has_shortcode( $member_page->post_content, 'blogroll')) { echo 'class="blog"';} ?>>
 		<div id="content" role="main" class="
 			<?php  if ( get_theme_mod( 'rotary_member_sidebar', true ) ){ echo 'hassidebar-wide';} else{ echo 'fullwidth';} ?>">
 		
-		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+		<?php //if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 		   <section class="homecontent">
 		      <div class="inner">
-			   	<?php the_content(); 	?>
+			   	<?php 
+					echo apply_filters( 'the_content', $member_page->post_content ); ?>
 		       </div>
 		    </section>
-		<?php endwhile; ?>
+		<?php // endwhile; ?>
 		</div>
 		<?php if (  get_theme_mod( 'rotary_member_sidebar', true ) ) { 
 			get_sidebar('members'); 

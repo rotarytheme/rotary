@@ -146,6 +146,24 @@ li.ecp1_list_item a {
 	}
 }
 
+
+/*******************************************************
+** AUTHOR ARCHIVE
+*******************************************************/
+
+.blog .authordesc .author-avatar{
+	float:left;
+	margin-right:20px;
+	padding-top:10px;
+	max-width:20%;
+}
+.blog .authordesc .author-description  {
+	float:left;
+	margin-right:20px;
+	padding-top:10px;
+	width:80%;
+}
+
 /*******************************************************
 ** CAROUSEL ANNOUNCEMENTS 
 *******************************************************/

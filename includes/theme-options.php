@@ -19,7 +19,7 @@ function rotary_set_home_page() {
 	}
 	if( $home ) update_option( 'page_on_front', $home);
 }
-add_action('init', 'rotary_set_home_page');
+//add_action('init', 'rotary_set_home_page');
 
 
 add_action('customize_register', 'rotary_theme_customize');
@@ -332,9 +332,10 @@ Class RotaryThemeOptions {
 			
 			$wp_customize->remove_control( 'show_on_front');
 			
-			$wp_customize->remove_control( 'page_on_front');
+			//$wp_customize->remove_control( 'page_on_front');
 			
 			// VISITORS
+			/*
 			$wp_customize->add_setting( 'rotary_visitor_page_on_front', array(
 					'type'       => 'option',
 					'capability' => 'manage_options',
@@ -346,6 +347,7 @@ Class RotaryThemeOptions {
 					'section'    => 'static_front_page',
 					'type'       => 'dropdown-pages',
 			) );
+			*/
 			
 			/*Settings and Controls for Slideshow*/
 			$wp_customize->add_setting( 'rotary_slideshow', array(
