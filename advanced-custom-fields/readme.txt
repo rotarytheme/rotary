@@ -2,7 +2,8 @@
 Contributors: elliotcondon
 Tags: custom, field, custom field, advanced, simple fields, magic fields, more fields, repeater, matrix, post, type, text, textarea, file, image, edit, admin
 Requires at least: 3.5.0
-Tested up to: 4.2
+Tested up to: 4.7.0
+Stable tag: 4.4.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -10,7 +11,7 @@ Customise WordPress with powerful, professional and intuitive fields
 
 == Description ==
 
-Advanced Custom Fields is the perfect solution for any wordpress website which needs more flexible data like other Content Management Systems. 
+Advanced Custom Fields is the perfect solution for any WordPress website which needs more flexible data like other Content Management Systems. 
 
 * Visually create your Fields
 * Select from multiple input types (text, textarea, wysiwyg, image, file, page link, post object, relationship, select, checkbox, radio buttons, date picker, true / false, repeater, flexible content, gallery and more to come!)
@@ -42,10 +43,18 @@ Advanced Custom Fields is the perfect solution for any wordpress website which n
 * Color Picker (WP color swatch picker)
 * Tab (Group fields into tabs)
 * Message (Render custom messages into the fields)
-* Repeater (ability to create repeatable blocks of fields!)
-* Flexible Content (ability to create flexible blocks of fields!)
-* Gallery (Add, edit and order multiple images in 1 simple field)
 * [Custom](http://www.advancedcustomfields.com/resources/tutorials/creating-a-new-field-type/) (Create your own field type!)
+
+= ACF PRO =
+The Advanced Custom Fields plugin is also available in a professional version which includes more fields, more functionality, and more flexibility!
+At the core of ACF PRO is a brand new version of ACF (version 5) which includes searchable drop downs, smarter and faster DB calls, improved UI and much much more!
+
+* Repeater - Create a set of sub fields which can be repeated again and again whilst editing content!
+* Gallery - Simple and intuitive interface for managing a collection of images.
+* Flexible Content - Define groups of sub fields and add, edit, and re-order them to create highly customised content!
+* Options pages - Add extra admin pages to edit ACF fields!
+
+http://www.advancedcustomfields.com/pro/
 
 = Tested on =
 * Mac Firefox 	:)
@@ -66,6 +75,7 @@ http://www.advancedcustomfields.com/
 * [Field Types](http://www.advancedcustomfields.com/resources/#field-types)
 * [Functions](http://www.advancedcustomfields.com/resources/#functions)
 * [Actions](http://www.advancedcustomfields.com/resources/#actions)
+* [Features](http://www.advancedcustomfields.com/resources/#features)
 * [Filters](http://www.advancedcustomfields.com/resources/#filters)
 * [How to guides](http://www.advancedcustomfields.com/resources/#how-to)
 * [Tutorials](http://www.advancedcustomfields.com/resources/#tutorials)
@@ -105,6 +115,48 @@ http://support.advancedcustomfields.com/
 
 
 == Changelog ==
+
+= 4.4.11 =
+* Core: Improved logic to better delete term meta during 'delete_term' action
+* Core: Fixed bug causing potential conflict between user and post object cache names
+* Language: Updated Italian translation - thanks to Ste Yeu
+
+= 4.4.10 =
+* WYSIWYG field: Fixed JS error preventing tinymce from initializing
+
+= 4.4.9 =
+* Image field: Added nicer 'Edit image' view
+* File field: Added nicer 'Edit file' view
+
+= 4.4.8 =
+* Google Map: Added new 'acf/fields/google_map/api' filter
+
+= 4.4.7 =
+* Relationship field: Fixed bug preventing values from being selected in WP 4.5
+* Google Map field: Fixed bug preventing map to load within repeater field
+* Core: Fixed PHP error when loading ACF values on 'The Events Calendar' (plugin) page
+* Language: Updated Portuguese translation - thanks to Pedro Mendonca
+
+= 4.4.6 =
+* Google Map field: Improved compatibility with 3rd party plugins including Google JS API
+* API: Improved `get_` functions to load value from the current queried object (post, user, term)
+* Core: Added support for new WP 4.5 term edit page
+* Language: Updated Portuguese translation - thanks to Pedro Mendonca
+* Language: Added Welsh translation - thanks to Carl Morris
+* Language: Added Indonesian translation - thanks to Rio Bermano
+
+= 4.4.5 =
+* Core: Fixed metabox title appearing on seamless field groups
+* Language: Updated Portuguese translation
+* Language: Updated Polish translation
+
+= 4.4.4 =
+* Field group: Fixed disabled update button after saving with empty title
+* Core: Minor fixes and improvements
+* Language: Updated Portuguese translation
+* Language: Updated French translation
+* Language: Updated Polish translation
+* Language: Added Finnish translation
 
 = 4.4.3 = 
 * WYSIWYG field: Added compatibility for WP 4.3 filters
@@ -737,7 +789,7 @@ http://support.advancedcustomfields.com/
 * Added new French translation. Thanks to Martin Vauchel @littlbr http://littleboyrunning.com
 * Fixed duplicate WYSIWYG in chrome bug
 * New Location rules: add fields to a user / taxonomy / attachment
-* Bug Fix: Color picker now shows color on page load. Thanks to Kev http://www.popcreative.co.uk
+* Bug Fix: Color picker now shows color on page load. Thanks to Kevin Ruscoe http://github.com/kevdotbadger"
 * CSS tweaks File clearfix, new style for selects with optgroups
 * Simplified get_value to return default value if value == ""
 * API now allows for "option" and "options" for the $post_id value in API functions

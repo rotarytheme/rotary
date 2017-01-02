@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Rotary Rebrand - A Theme for Rotary Clubs\n"
-"POT-Creation-Date: 2016-04-08 09:43-0700\n"
+"POT-Creation-Date: 2016-12-20 08:45-0800\n"
 "PO-Revision-Date: 2016-04-02 09:02-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -107,12 +107,12 @@ msgstr ""
 #: acf-repeater/views/options.php:82
 #: advanced-custom-fields/core/fields/image.php:91
 #: advanced-custom-fields/core/views/meta_box_fields.php:108
-#: classes/custom-post-types.php:76 classes/custom-post-types.php:296
-#: includes/theme-functions.php:689 loop-attachment.php:54
-#: loop-attachment.php:98 loop-page.php:26 loop-search.php:50
-#: loop-single-committee.php:26 loop-single-project.php:27
-#: loop-single-speaker.php:91 loop-single.php:37
-#: shortcodes/shortcode-upcoming-speakers.php:46 tmpl-home.php:30
+#: classes/custom-post-types.php:78 classes/custom-post-types.php:298
+#: includes/theme-functions.php:710 loop-attachment.php:54
+#: loop-attachment.php:98 loop-home-members.php:37 loop-home.php:33
+#: loop-page.php:26 loop-search.php:50 loop-single-committee.php:26
+#: loop-single-project.php:27 loop-single-speaker.php:91 loop-single.php:37
+#: shortcodes/shortcode-upcoming-speakers.php:46 tmpl-home.php:33
 #: upcoming-programs.php:106
 msgid "Edit"
 msgstr ""
@@ -166,7 +166,7 @@ msgid "Required?"
 msgstr ""
 
 #: acf-repeater/views/options.php:174 acf-repeater/views/options.php:219
-#: advanced-custom-fields/core/controllers/field_group.php:461
+#: advanced-custom-fields/core/controllers/field_group.php:463
 #: advanced-custom-fields/core/fields/page_link.php:137
 #: advanced-custom-fields/core/fields/page_link.php:158
 #: advanced-custom-fields/core/fields/post_object.php:339
@@ -175,14 +175,14 @@ msgstr ""
 #: advanced-custom-fields/core/fields/select.php:242
 #: advanced-custom-fields/core/fields/taxonomy.php:498
 #: advanced-custom-fields/core/fields/user.php:331
-#: advanced-custom-fields/core/fields/wysiwyg.php:343
+#: advanced-custom-fields/core/fields/wysiwyg.php:344
 #: advanced-custom-fields/core/views/meta_box_fields.php:194
 #: advanced-custom-fields/core/views/meta_box_fields.php:217
 msgid "Yes"
 msgstr ""
 
 #: acf-repeater/views/options.php:175 acf-repeater/views/options.php:220
-#: advanced-custom-fields/core/controllers/field_group.php:460
+#: advanced-custom-fields/core/controllers/field_group.php:462
 #: advanced-custom-fields/core/fields/page_link.php:138
 #: advanced-custom-fields/core/fields/page_link.php:159
 #: advanced-custom-fields/core/fields/post_object.php:340
@@ -191,7 +191,7 @@ msgstr ""
 #: advanced-custom-fields/core/fields/select.php:243
 #: advanced-custom-fields/core/fields/taxonomy.php:499
 #: advanced-custom-fields/core/fields/user.php:332
-#: advanced-custom-fields/core/fields/wysiwyg.php:344
+#: advanced-custom-fields/core/fields/wysiwyg.php:345
 #: advanced-custom-fields/core/views/meta_box_fields.php:195
 #: advanced-custom-fields/core/views/meta_box_fields.php:218
 msgid "No"
@@ -280,111 +280,111 @@ msgstr ""
 msgid "Button Label"
 msgstr ""
 
-#: address-geocoder/address-geocoder.php:159
+#: address-geocoder/address-geocoder.php:163
 msgid "Address Geocoder"
 msgstr ""
 
-#: address-geocoder/address-geocoder.php:185
+#: address-geocoder/address-geocoder.php:189
 msgid "Save Options"
 msgstr ""
 
-#: advanced-custom-fields/acf.php:485
+#: advanced-custom-fields/acf.php:509
 msgid "Field&nbsp;Groups"
 msgstr ""
 
-#: advanced-custom-fields/acf.php:486
+#: advanced-custom-fields/acf.php:510
 #: advanced-custom-fields/core/controllers/field_groups.php:213
 msgid "Advanced Custom Fields"
 msgstr ""
 
-#: advanced-custom-fields/acf.php:487 classes/custom-post-types.php:74
-#: classes/custom-post-types.php:294
+#: advanced-custom-fields/acf.php:511 classes/custom-post-types.php:76
+#: classes/custom-post-types.php:296
 msgid "Add New"
 msgstr ""
 
-#: advanced-custom-fields/acf.php:488
+#: advanced-custom-fields/acf.php:512
 msgid "Add New Field Group"
 msgstr ""
 
-#: advanced-custom-fields/acf.php:489
+#: advanced-custom-fields/acf.php:513
 msgid "Edit Field Group"
 msgstr ""
 
-#: advanced-custom-fields/acf.php:490
+#: advanced-custom-fields/acf.php:514
 msgid "New Field Group"
 msgstr ""
 
-#: advanced-custom-fields/acf.php:491
+#: advanced-custom-fields/acf.php:515
 msgid "View Field Group"
 msgstr ""
 
-#: advanced-custom-fields/acf.php:492
+#: advanced-custom-fields/acf.php:516
 msgid "Search Field Groups"
 msgstr ""
 
-#: advanced-custom-fields/acf.php:493
+#: advanced-custom-fields/acf.php:517
 msgid "No Field Groups found"
 msgstr ""
 
-#: advanced-custom-fields/acf.php:494
+#: advanced-custom-fields/acf.php:518
 msgid "No Field Groups found in Trash"
 msgstr ""
 
-#: advanced-custom-fields/acf.php:579
+#: advanced-custom-fields/acf.php:603
 #: advanced-custom-fields/core/views/meta_box_options.php:99
 msgid "Custom Fields"
 msgstr ""
 
-#: advanced-custom-fields/acf.php:597 advanced-custom-fields/acf.php:600
+#: advanced-custom-fields/acf.php:621 advanced-custom-fields/acf.php:624
 msgid "Field group updated."
 msgstr ""
 
-#: advanced-custom-fields/acf.php:598
+#: advanced-custom-fields/acf.php:622
 msgid "Custom field updated."
 msgstr ""
 
-#: advanced-custom-fields/acf.php:599
+#: advanced-custom-fields/acf.php:623
 msgid "Custom field deleted."
 msgstr ""
 
-#: advanced-custom-fields/acf.php:602
+#: advanced-custom-fields/acf.php:626
 #, php-format
 msgid "Field group restored to revision from %s"
 msgstr ""
 
-#: advanced-custom-fields/acf.php:603
+#: advanced-custom-fields/acf.php:627
 msgid "Field group published."
 msgstr ""
 
-#: advanced-custom-fields/acf.php:604
+#: advanced-custom-fields/acf.php:628
 msgid "Field group saved."
 msgstr ""
 
-#: advanced-custom-fields/acf.php:605
+#: advanced-custom-fields/acf.php:629
 msgid "Field group submitted."
 msgstr ""
 
-#: advanced-custom-fields/acf.php:606
+#: advanced-custom-fields/acf.php:630
 msgid "Field group scheduled for."
 msgstr ""
 
-#: advanced-custom-fields/acf.php:607
+#: advanced-custom-fields/acf.php:631
 msgid "Field group draft updated."
 msgstr ""
 
-#: advanced-custom-fields/acf.php:742
+#: advanced-custom-fields/acf.php:766
 msgid "Thumbnail"
 msgstr ""
 
-#: advanced-custom-fields/acf.php:743
+#: advanced-custom-fields/acf.php:767
 msgid "Medium"
 msgstr ""
 
-#: advanced-custom-fields/acf.php:744
+#: advanced-custom-fields/acf.php:768
 msgid "Large"
 msgstr ""
 
-#: advanced-custom-fields/acf.php:745
+#: advanced-custom-fields/acf.php:769
 msgid "Full"
 msgstr ""
 
@@ -463,7 +463,7 @@ msgid "jQuery date & time picker"
 msgstr ""
 
 #: advanced-custom-fields/core/controllers/addons.php:175
-msgid "Location Field"
+msgid "Google Map Extended"
 msgstr ""
 
 #: advanced-custom-fields/core/controllers/addons.php:176
@@ -657,135 +657,135 @@ msgstr ""
 msgid "No field groups were selected"
 msgstr ""
 
-#: advanced-custom-fields/core/controllers/field_group.php:358
+#: advanced-custom-fields/core/controllers/field_group.php:359
 msgid "Move to trash. Are you sure?"
 msgstr ""
 
-#: advanced-custom-fields/core/controllers/field_group.php:359
+#: advanced-custom-fields/core/controllers/field_group.php:360
 msgid "checked"
 msgstr ""
 
-#: advanced-custom-fields/core/controllers/field_group.php:360
+#: advanced-custom-fields/core/controllers/field_group.php:361
 msgid "No toggle fields available"
 msgstr ""
 
-#: advanced-custom-fields/core/controllers/field_group.php:361
+#: advanced-custom-fields/core/controllers/field_group.php:362
 msgid "Field group title is required"
 msgstr ""
 
-#: advanced-custom-fields/core/controllers/field_group.php:362
+#: advanced-custom-fields/core/controllers/field_group.php:363
 msgid "copy"
 msgstr ""
 
-#: advanced-custom-fields/core/controllers/field_group.php:363
+#: advanced-custom-fields/core/controllers/field_group.php:364
 #: advanced-custom-fields/core/views/meta_box_location.php:62
 #: advanced-custom-fields/core/views/meta_box_location.php:159
 msgid "or"
 msgstr ""
 
-#: advanced-custom-fields/core/controllers/field_group.php:364
-#: advanced-custom-fields/core/controllers/field_group.php:395
-#: advanced-custom-fields/core/controllers/field_group.php:457
+#: advanced-custom-fields/core/controllers/field_group.php:365
+#: advanced-custom-fields/core/controllers/field_group.php:397
+#: advanced-custom-fields/core/controllers/field_group.php:459
 #: advanced-custom-fields/core/controllers/field_groups.php:148
 msgid "Fields"
 msgstr ""
 
-#: advanced-custom-fields/core/controllers/field_group.php:365
+#: advanced-custom-fields/core/controllers/field_group.php:366
 msgid "Parent fields"
 msgstr ""
 
-#: advanced-custom-fields/core/controllers/field_group.php:366
+#: advanced-custom-fields/core/controllers/field_group.php:367
 msgid "Sibling fields"
 msgstr ""
 
-#: advanced-custom-fields/core/controllers/field_group.php:367
+#: advanced-custom-fields/core/controllers/field_group.php:368
 msgid "Hide / Show All"
 msgstr ""
 
-#: advanced-custom-fields/core/controllers/field_group.php:396
+#: advanced-custom-fields/core/controllers/field_group.php:398
 msgid "Location"
 msgstr ""
 
-#: advanced-custom-fields/core/controllers/field_group.php:397
+#: advanced-custom-fields/core/controllers/field_group.php:399
 msgid "Options"
 msgstr ""
 
-#: advanced-custom-fields/core/controllers/field_group.php:459
+#: advanced-custom-fields/core/controllers/field_group.php:461
 msgid "Show Field Key:"
 msgstr ""
 
-#: advanced-custom-fields/core/controllers/field_group.php:633
+#: advanced-custom-fields/core/controllers/field_group.php:635
 msgid "Front Page"
 msgstr ""
 
-#: advanced-custom-fields/core/controllers/field_group.php:634
+#: advanced-custom-fields/core/controllers/field_group.php:636
 msgid "Posts Page"
 msgstr ""
 
-#: advanced-custom-fields/core/controllers/field_group.php:635
+#: advanced-custom-fields/core/controllers/field_group.php:637
 msgid "Top Level Page (parent of 0)"
 msgstr ""
 
-#: advanced-custom-fields/core/controllers/field_group.php:636
+#: advanced-custom-fields/core/controllers/field_group.php:638
 msgid "Parent Page (has children)"
 msgstr ""
 
-#: advanced-custom-fields/core/controllers/field_group.php:637
+#: advanced-custom-fields/core/controllers/field_group.php:639
 msgid "Child Page (has parent)"
 msgstr ""
 
-#: advanced-custom-fields/core/controllers/field_group.php:645
+#: advanced-custom-fields/core/controllers/field_group.php:647
 msgid "Default Template"
 msgstr ""
 
-#: advanced-custom-fields/core/controllers/field_group.php:727
+#: advanced-custom-fields/core/controllers/field_group.php:729
 msgid "Published"
 msgstr ""
 
-#: advanced-custom-fields/core/controllers/field_group.php:728
+#: advanced-custom-fields/core/controllers/field_group.php:730
 msgid "Pending Review"
 msgstr ""
 
-#: advanced-custom-fields/core/controllers/field_group.php:729
+#: advanced-custom-fields/core/controllers/field_group.php:731
 msgid "Draft"
 msgstr ""
 
-#: advanced-custom-fields/core/controllers/field_group.php:730
+#: advanced-custom-fields/core/controllers/field_group.php:732
 msgid "Future"
 msgstr ""
 
-#: advanced-custom-fields/core/controllers/field_group.php:731
+#: advanced-custom-fields/core/controllers/field_group.php:733
 msgid "Private"
 msgstr ""
 
-#: advanced-custom-fields/core/controllers/field_group.php:732
+#: advanced-custom-fields/core/controllers/field_group.php:734
 msgid "Revision"
 msgstr ""
 
-#: advanced-custom-fields/core/controllers/field_group.php:733
+#: advanced-custom-fields/core/controllers/field_group.php:735
 msgid "Trash"
 msgstr ""
 
-#: advanced-custom-fields/core/controllers/field_group.php:746
+#: advanced-custom-fields/core/controllers/field_group.php:748
 msgid "Super Admin"
 msgstr ""
 
-#: advanced-custom-fields/core/controllers/field_group.php:761
-#: advanced-custom-fields/core/controllers/field_group.php:782
-#: advanced-custom-fields/core/controllers/field_group.php:789
+#: advanced-custom-fields/core/controllers/field_group.php:763
+#: advanced-custom-fields/core/controllers/field_group.php:784
+#: advanced-custom-fields/core/controllers/field_group.php:791
 #: advanced-custom-fields/core/fields/file.php:186
 #: advanced-custom-fields/core/fields/image.php:177
 #: advanced-custom-fields/core/fields/page_link.php:109
 #: advanced-custom-fields/core/fields/post_object.php:286
 #: advanced-custom-fields/core/fields/post_object.php:310
-#: advanced-custom-fields/core/fields/relationship.php:588
-#: advanced-custom-fields/core/fields/relationship.php:612
+#: advanced-custom-fields/core/fields/relationship.php:582
+#: advanced-custom-fields/core/fields/relationship.php:606
 #: advanced-custom-fields/core/fields/user.php:276
 msgid "All"
 msgstr ""
 
 #: advanced-custom-fields/core/controllers/field_groups.php:147
-#: classes/custom-post-types.php:225
+#: classes/custom-post-types.php:227
 msgid "Title"
 msgstr ""
 
@@ -820,7 +820,7 @@ msgid "Actions"
 msgstr ""
 
 #: advanced-custom-fields/core/controllers/field_groups.php:224
-#: advanced-custom-fields/core/fields/relationship.php:631
+#: advanced-custom-fields/core/fields/relationship.php:625
 msgid "Filters"
 msgstr ""
 
@@ -974,7 +974,7 @@ msgstr ""
 #: advanced-custom-fields/core/controllers/field_groups.php:361
 #, php-format
 msgid ""
-"Due to the sizable changes surounding Add-ons, field types and action/"
+"Due to the sizable changes surrounding Add-ons, field types and action/"
 "filters, your website may not operate correctly. It is important that you "
 "read the full %sMigrating from v3 to v4%s guide to view the full list of "
 "changes."
@@ -1040,7 +1040,7 @@ msgstr ""
 
 #: advanced-custom-fields/core/controllers/field_groups.php:419
 #: advanced-custom-fields/core/fields/file.php:109
-#: includes/theme-functions.php:521
+#: includes/theme-functions.php:529
 msgid "Name"
 msgstr ""
 
@@ -1169,7 +1169,7 @@ msgstr ""
 #: advanced-custom-fields/core/fields/text.php:116
 #: advanced-custom-fields/core/fields/textarea.php:103
 #: advanced-custom-fields/core/fields/true_false.php:94
-#: advanced-custom-fields/core/fields/wysiwyg.php:286
+#: advanced-custom-fields/core/fields/wysiwyg.php:287
 msgid "Default Value"
 msgstr ""
 
@@ -1220,7 +1220,7 @@ msgstr ""
 
 #: advanced-custom-fields/core/fields/date_picker/date_picker.php:127
 msgid ""
-"This format will determin the value saved to the database and returned via "
+"This format will determine the value saved to the database and returned via "
 "the API"
 msgstr ""
 
@@ -1256,7 +1256,7 @@ msgid "Dummy"
 msgstr ""
 
 #: advanced-custom-fields/core/fields/email.php:19
-#: includes/theme-functions.php:523 loop-single-speaker.php:62
+#: includes/theme-functions.php:531 loop-single-speaker.php:62
 msgid "Email"
 msgstr ""
 
@@ -1264,7 +1264,7 @@ msgstr ""
 #: advanced-custom-fields/core/fields/number.php:117
 #: advanced-custom-fields/core/fields/text.php:117
 #: advanced-custom-fields/core/fields/textarea.php:104
-#: advanced-custom-fields/core/fields/wysiwyg.php:287
+#: advanced-custom-fields/core/fields/wysiwyg.php:288
 msgid "Appears when creating a new post"
 msgstr ""
 
@@ -1336,7 +1336,7 @@ msgstr ""
 
 #: advanced-custom-fields/core/fields/file.php:29
 #: advanced-custom-fields/core/fields/image.php:30
-msgid "uploaded to this post"
+msgid "Uploaded to this post"
 msgstr ""
 
 #: advanced-custom-fields/core/fields/file.php:113
@@ -1456,7 +1456,7 @@ msgid "Add Image"
 msgstr ""
 
 #: advanced-custom-fields/core/fields/image.php:126
-#: advanced-custom-fields/core/fields/relationship.php:563
+#: advanced-custom-fields/core/fields/relationship.php:557
 msgid "Specify the returned value on front end"
 msgstr ""
 
@@ -1528,8 +1528,8 @@ msgstr ""
 
 #: advanced-custom-fields/core/fields/page_link.php:103
 #: advanced-custom-fields/core/fields/post_object.php:280
-#: advanced-custom-fields/core/fields/relationship.php:582
-#: advanced-custom-fields/core/fields/relationship.php:661
+#: advanced-custom-fields/core/fields/relationship.php:576
+#: advanced-custom-fields/core/fields/relationship.php:655
 #: advanced-custom-fields/core/views/meta_box_location.php:75
 msgid "Post Type"
 msgstr ""
@@ -1557,12 +1557,12 @@ msgid "Post Object"
 msgstr ""
 
 #: advanced-custom-fields/core/fields/post_object.php:194
-#: advanced-custom-fields/core/fields/relationship.php:170
+#: advanced-custom-fields/core/fields/relationship.php:164
 msgid "(no title)"
 msgstr ""
 
 #: advanced-custom-fields/core/fields/post_object.php:304
-#: advanced-custom-fields/core/fields/relationship.php:606
+#: advanced-custom-fields/core/fields/relationship.php:600
 msgid "Filter from Taxonomy"
 msgstr ""
 
@@ -1603,53 +1603,53 @@ msgstr ""
 msgid "Maximum values reached ( {max} values )"
 msgstr ""
 
-#: advanced-custom-fields/core/fields/relationship.php:457
+#: advanced-custom-fields/core/fields/relationship.php:451
 msgid "Search..."
 msgstr ""
 
-#: advanced-custom-fields/core/fields/relationship.php:468
+#: advanced-custom-fields/core/fields/relationship.php:462
 msgid "Filter by post type"
 msgstr ""
 
-#: advanced-custom-fields/core/fields/relationship.php:562
+#: advanced-custom-fields/core/fields/relationship.php:556
 msgid "Return Format"
 msgstr ""
 
-#: advanced-custom-fields/core/fields/relationship.php:573
+#: advanced-custom-fields/core/fields/relationship.php:567
 msgid "Post Objects"
 msgstr ""
 
-#: advanced-custom-fields/core/fields/relationship.php:574
+#: advanced-custom-fields/core/fields/relationship.php:568
 msgid "Post IDs"
 msgstr ""
 
-#: advanced-custom-fields/core/fields/relationship.php:640 searchform.php:11
+#: advanced-custom-fields/core/fields/relationship.php:634 searchform.php:11
 #: searchform.php:12 searchform.php:13 searchform.php:14
 msgid "Search"
 msgstr ""
 
-#: advanced-custom-fields/core/fields/relationship.php:641
+#: advanced-custom-fields/core/fields/relationship.php:635
 msgid "Post Type Select"
 msgstr ""
 
-#: advanced-custom-fields/core/fields/relationship.php:649
+#: advanced-custom-fields/core/fields/relationship.php:643
 msgid "Elements"
 msgstr ""
 
-#: advanced-custom-fields/core/fields/relationship.php:650
+#: advanced-custom-fields/core/fields/relationship.php:644
 msgid "Selected elements will be displayed in each result"
 msgstr ""
 
-#: advanced-custom-fields/core/fields/relationship.php:659
+#: advanced-custom-fields/core/fields/relationship.php:653
 #: advanced-custom-fields/core/views/meta_box_options.php:106
 msgid "Featured Image"
 msgstr ""
 
-#: advanced-custom-fields/core/fields/relationship.php:660
+#: advanced-custom-fields/core/fields/relationship.php:654
 msgid "Post Title"
 msgstr ""
 
-#: advanced-custom-fields/core/fields/relationship.php:672
+#: advanced-custom-fields/core/fields/relationship.php:666
 msgid "Maximum posts"
 msgstr ""
 
@@ -1738,7 +1738,7 @@ msgstr ""
 
 #: advanced-custom-fields/core/fields/text.php:177
 #: advanced-custom-fields/core/fields/textarea.php:165
-msgid "Effects value on front end"
+msgid "Affects value on front end"
 msgstr ""
 
 #: advanced-custom-fields/core/fields/text.php:186
@@ -1798,11 +1798,11 @@ msgstr ""
 msgid "Wysiwyg Editor"
 msgstr ""
 
-#: advanced-custom-fields/core/fields/wysiwyg.php:301
+#: advanced-custom-fields/core/fields/wysiwyg.php:302
 msgid "Toolbar"
 msgstr ""
 
-#: advanced-custom-fields/core/fields/wysiwyg.php:333
+#: advanced-custom-fields/core/fields/wysiwyg.php:334
 msgid "Show Media Upload Buttons?"
 msgstr ""
 
@@ -2004,15 +2004,32 @@ msgstr ""
 msgid "Send Trackbacks"
 msgstr ""
 
-#: archive-rotary_projects.php:13 classes/custom-post-types.php:293
+#: archive-rotary_projects.php:16 classes/custom-post-types.php:295
 msgid "All Projects"
+msgstr ""
+
+#: archive-rotary_projects.php:27
+#, php-format
+msgid "Type: %s"
+msgstr ""
+
+#: archive-rotary_projects.php:39
+msgid "Select a project type"
+msgstr ""
+
+#: archive-rotary_projects.php:69
+msgid "Newer"
+msgstr ""
+
+#: archive-rotary_projects.php:70
+msgid "Older"
 msgstr ""
 
 #: author.php:20
 msgid "Author Archive"
 msgstr ""
 
-#: author.php:31
+#: author.php:30
 #, php-format
 msgid "About %s"
 msgstr ""
@@ -2021,411 +2038,411 @@ msgstr ""
 msgid "Category Archive"
 msgstr ""
 
-#: classes/custom-post-types.php:71
+#: classes/custom-post-types.php:73
 msgid "Programs"
 msgstr ""
 
-#: classes/custom-post-types.php:72
+#: classes/custom-post-types.php:74
 msgid "Program"
 msgstr ""
 
-#: classes/custom-post-types.php:73
+#: classes/custom-post-types.php:75
 msgid "All Programs"
 msgstr ""
 
-#: classes/custom-post-types.php:75
+#: classes/custom-post-types.php:77
 msgid "Add New Speaker"
 msgstr ""
 
-#: classes/custom-post-types.php:77
+#: classes/custom-post-types.php:79
 msgid "Edit Program"
 msgstr ""
 
-#: classes/custom-post-types.php:78 classes/custom-post-types.php:122
+#: classes/custom-post-types.php:80 classes/custom-post-types.php:124
 #: sidebar-calendar.php:30
 msgid "New Program"
 msgstr ""
 
-#: classes/custom-post-types.php:79
+#: classes/custom-post-types.php:81
 msgid "View Program"
 msgstr ""
 
-#: classes/custom-post-types.php:80
+#: classes/custom-post-types.php:82
 msgid "Search Programs"
 msgstr ""
 
-#: classes/custom-post-types.php:81 classes/custom-post-types.php:301
+#: classes/custom-post-types.php:83 classes/custom-post-types.php:303
 msgid "Nothing found."
 msgstr ""
 
-#: classes/custom-post-types.php:82 classes/custom-post-types.php:302
+#: classes/custom-post-types.php:84 classes/custom-post-types.php:304
 msgid "Nothing found in Trash"
 msgstr ""
 
-#: classes/custom-post-types.php:85 classes/custom-post-types.php:305
+#: classes/custom-post-types.php:87 classes/custom-post-types.php:307
 msgid "This is where the "
 msgstr ""
 
-#: classes/custom-post-types.php:113
+#: classes/custom-post-types.php:115
 msgid "Program Categories"
 msgstr ""
 
-#: classes/custom-post-types.php:114
+#: classes/custom-post-types.php:116
 msgid "Program Category"
 msgstr ""
 
-#: classes/custom-post-types.php:115
+#: classes/custom-post-types.php:117
 msgid "Search Program Categories"
 msgstr ""
 
-#: classes/custom-post-types.php:116
+#: classes/custom-post-types.php:118
 msgid "All Program Categories"
 msgstr ""
 
-#: classes/custom-post-types.php:117
+#: classes/custom-post-types.php:119
 msgid "Parent Program Category"
 msgstr ""
 
-#: classes/custom-post-types.php:118
+#: classes/custom-post-types.php:120
 msgid "Parent Program Category:"
 msgstr ""
 
-#: classes/custom-post-types.php:119
+#: classes/custom-post-types.php:121
 msgid "Edit Program Category"
 msgstr ""
 
-#: classes/custom-post-types.php:120
+#: classes/custom-post-types.php:122
 msgid "Update Program Category"
 msgstr ""
 
-#: classes/custom-post-types.php:121
+#: classes/custom-post-types.php:123
 msgid "Add New Program Category"
 msgstr ""
 
-#: classes/custom-post-types.php:135 classes/custom-post-types.php:136
+#: classes/custom-post-types.php:137 classes/custom-post-types.php:138
 msgid "Program Introducer"
 msgstr ""
 
-#: classes/custom-post-types.php:137
+#: classes/custom-post-types.php:139
 msgid "Search Program Introducers"
 msgstr ""
 
-#: classes/custom-post-types.php:138
+#: classes/custom-post-types.php:140
 msgid "All Program Introducer"
 msgstr ""
 
-#: classes/custom-post-types.php:139
+#: classes/custom-post-types.php:141
 msgid "Parent Program Introducers"
 msgstr ""
 
-#: classes/custom-post-types.php:140
+#: classes/custom-post-types.php:142
 msgid "Parent Program Introducers:"
 msgstr ""
 
-#: classes/custom-post-types.php:141
+#: classes/custom-post-types.php:143
 msgid "Edit Program Introducers"
 msgstr ""
 
-#: classes/custom-post-types.php:142
+#: classes/custom-post-types.php:144
 msgid "Update Program Introducer"
 msgstr ""
 
-#: classes/custom-post-types.php:143
+#: classes/custom-post-types.php:145
 msgid "Add New Program Introducer"
 msgstr ""
 
-#: classes/custom-post-types.php:144
+#: classes/custom-post-types.php:146
 msgid "New Program Introducer"
 msgstr ""
 
-#: classes/custom-post-types.php:157 classes/custom-post-types.php:158
+#: classes/custom-post-types.php:159 classes/custom-post-types.php:160
 msgid "Program Scribe"
 msgstr ""
 
-#: classes/custom-post-types.php:159
+#: classes/custom-post-types.php:161
 msgid "Search Program Scribes"
 msgstr ""
 
-#: classes/custom-post-types.php:160
+#: classes/custom-post-types.php:162
 msgid "All Program Scribes"
 msgstr ""
 
-#: classes/custom-post-types.php:161
+#: classes/custom-post-types.php:163
 msgid "Parent Program Scribes"
 msgstr ""
 
-#: classes/custom-post-types.php:162
+#: classes/custom-post-types.php:164
 msgid "Parent Program Scribes:"
 msgstr ""
 
-#: classes/custom-post-types.php:163
+#: classes/custom-post-types.php:165
 msgid "Edit Program Scribes"
 msgstr ""
 
-#: classes/custom-post-types.php:164
+#: classes/custom-post-types.php:166
 msgid "Update Program Scribe"
 msgstr ""
 
-#: classes/custom-post-types.php:165
+#: classes/custom-post-types.php:167
 msgid "Add New Program Scribes"
 msgstr ""
 
-#: classes/custom-post-types.php:166
+#: classes/custom-post-types.php:168
 msgid "New Program Scribe"
 msgstr ""
 
-#: classes/custom-post-types.php:179 classes/custom-post-types.php:180
+#: classes/custom-post-types.php:181 classes/custom-post-types.php:182
 msgid "Program Editor"
 msgstr ""
 
-#: classes/custom-post-types.php:181
+#: classes/custom-post-types.php:183
 msgid "Search Program Editors"
 msgstr ""
 
-#: classes/custom-post-types.php:182
+#: classes/custom-post-types.php:184
 msgid "All Program Editors"
 msgstr ""
 
-#: classes/custom-post-types.php:183
+#: classes/custom-post-types.php:185
 msgid "Parent Program Editors"
 msgstr ""
 
-#: classes/custom-post-types.php:184
+#: classes/custom-post-types.php:186
 msgid "Parent Program Editors:"
 msgstr ""
 
-#: classes/custom-post-types.php:185
+#: classes/custom-post-types.php:187
 msgid "Edit Program Editors"
 msgstr ""
 
-#: classes/custom-post-types.php:186
+#: classes/custom-post-types.php:188
 msgid "Update Program Editor"
 msgstr ""
 
-#: classes/custom-post-types.php:187
+#: classes/custom-post-types.php:189
 msgid "Add New Program Editors"
 msgstr ""
 
-#: classes/custom-post-types.php:188
+#: classes/custom-post-types.php:190
 msgid "New Program Editor"
 msgstr ""
 
-#: classes/custom-post-types.php:202
+#: classes/custom-post-types.php:204
 msgid "Program Tags"
 msgstr ""
 
-#: classes/custom-post-types.php:203
+#: classes/custom-post-types.php:205
 msgid "Program Tag"
 msgstr ""
 
-#: classes/custom-post-types.php:204
+#: classes/custom-post-types.php:206
 msgid "Search Program Tags"
 msgstr ""
 
-#: classes/custom-post-types.php:205
+#: classes/custom-post-types.php:207
 msgid "All Program Tags"
 msgstr ""
 
-#: classes/custom-post-types.php:206
+#: classes/custom-post-types.php:208
 msgid "Parent Program Tag"
 msgstr ""
 
-#: classes/custom-post-types.php:207
+#: classes/custom-post-types.php:209
 msgid "Parent Program Tag:"
 msgstr ""
 
-#: classes/custom-post-types.php:208
+#: classes/custom-post-types.php:210
 msgid "Edit Program Tag"
 msgstr ""
 
-#: classes/custom-post-types.php:209
+#: classes/custom-post-types.php:211
 msgid "Update Program Tag"
 msgstr ""
 
-#: classes/custom-post-types.php:210
+#: classes/custom-post-types.php:212
 msgid "Add New Program Tag"
 msgstr ""
 
-#: classes/custom-post-types.php:211
+#: classes/custom-post-types.php:213
 msgid "New Program Tag Name"
 msgstr ""
 
-#: classes/custom-post-types.php:224
+#: classes/custom-post-types.php:226
 msgid "Speaker Date"
 msgstr ""
 
-#: classes/custom-post-types.php:226
+#: classes/custom-post-types.php:228
 msgid "Speaker First Name"
 msgstr ""
 
-#: classes/custom-post-types.php:227
+#: classes/custom-post-types.php:229
 msgid "Speaker Last Name"
 msgstr ""
 
-#: classes/custom-post-types.php:228
+#: classes/custom-post-types.php:230
 msgid "Organization"
 msgstr ""
 
-#: classes/custom-post-types.php:291
+#: classes/custom-post-types.php:293
 #: includes/committee-project-functions.php:117 includes/theme-widgets.php:608
 #: taxonomy.php:13
 msgid "Projects"
 msgstr ""
 
-#: classes/custom-post-types.php:292
+#: classes/custom-post-types.php:294
 msgid "Project"
 msgstr ""
 
-#: classes/custom-post-types.php:295
+#: classes/custom-post-types.php:297
 msgid "Add New Project"
 msgstr ""
 
-#: classes/custom-post-types.php:297
+#: classes/custom-post-types.php:299
 msgid "Edit Project"
 msgstr ""
 
-#: classes/custom-post-types.php:298 classes/custom-post-types.php:335
+#: classes/custom-post-types.php:300 classes/custom-post-types.php:337
 #: sidebar-project-archives.php:21
 msgid "New Project"
 msgstr ""
 
-#: classes/custom-post-types.php:299
+#: classes/custom-post-types.php:301
 msgid "View Project"
 msgstr ""
 
-#: classes/custom-post-types.php:300
+#: classes/custom-post-types.php:302
 msgid "Search Projects"
 msgstr ""
 
-#: classes/custom-post-types.php:326
+#: classes/custom-post-types.php:328
 msgid "Project Categories"
 msgstr ""
 
-#: classes/custom-post-types.php:327
+#: classes/custom-post-types.php:329
 msgid "Project Category"
 msgstr ""
 
-#: classes/custom-post-types.php:328
+#: classes/custom-post-types.php:330
 msgid "Search Project Categories"
 msgstr ""
 
-#: classes/custom-post-types.php:329
+#: classes/custom-post-types.php:331
 msgid "All Project Categories"
 msgstr ""
 
-#: classes/custom-post-types.php:330
+#: classes/custom-post-types.php:332
 msgid "Parent Project Category"
 msgstr ""
 
-#: classes/custom-post-types.php:331
+#: classes/custom-post-types.php:333
 msgid "Parent Project Category:"
 msgstr ""
 
-#: classes/custom-post-types.php:332
+#: classes/custom-post-types.php:334
 msgid "Edit Project Category"
 msgstr ""
 
-#: classes/custom-post-types.php:333
+#: classes/custom-post-types.php:335
 msgid "Update Project Category"
 msgstr ""
 
-#: classes/custom-post-types.php:334
+#: classes/custom-post-types.php:336
 msgid "Add New Project Category"
 msgstr ""
 
-#: classes/custom-post-types.php:347
+#: classes/custom-post-types.php:349
 msgid "Project Tags"
 msgstr ""
 
-#: classes/custom-post-types.php:348
+#: classes/custom-post-types.php:350
 msgid "Project Tag"
 msgstr ""
 
-#: classes/custom-post-types.php:349
+#: classes/custom-post-types.php:351
 msgid "Search Project Tags"
 msgstr ""
 
-#: classes/custom-post-types.php:350
+#: classes/custom-post-types.php:352
 msgid "All Projects Tags"
 msgstr ""
 
-#: classes/custom-post-types.php:351
+#: classes/custom-post-types.php:353
 msgid "Parent Project Tag"
 msgstr ""
 
-#: classes/custom-post-types.php:352
+#: classes/custom-post-types.php:354
 msgid "Parent Project Tag:"
 msgstr ""
 
-#: classes/custom-post-types.php:353
+#: classes/custom-post-types.php:355
 msgid "Edit Project Tag"
 msgstr ""
 
-#: classes/custom-post-types.php:354
+#: classes/custom-post-types.php:356
 msgid "Update Project Tag"
 msgstr ""
 
-#: classes/custom-post-types.php:355
+#: classes/custom-post-types.php:357
 msgid "Add New Project Tag"
 msgstr ""
 
-#: classes/custom-post-types.php:356
+#: classes/custom-post-types.php:358
 msgid "New Project Tag Name"
 msgstr ""
 
-#: classes/custom-post-types.php:368
+#: classes/custom-post-types.php:370
 msgid "Add Committee"
 msgstr ""
 
-#: classes/custom-post-types.php:369
+#: classes/custom-post-types.php:371
 msgid "Edit Committee"
 msgstr ""
 
-#: classes/custom-post-types.php:370
+#: classes/custom-post-types.php:372
 msgid "New Committees"
 msgstr ""
 
-#: classes/custom-post-types.php:371
+#: classes/custom-post-types.php:373
 msgid "View Committee"
 msgstr ""
 
-#: classes/custom-post-types.php:372
+#: classes/custom-post-types.php:374
 msgid "Search Committees"
 msgstr ""
 
-#: classes/custom-post-types.php:373
+#: classes/custom-post-types.php:375
 msgid "No Committees Found"
 msgstr ""
 
-#: classes/custom-post-types.php:377
+#: classes/custom-post-types.php:379
 #: includes/committee-project-functions.php:134 includes/theme-widgets.php:403
 #: includes/theme-widgets.php:707
 msgid "Committees"
 msgstr ""
 
-#: classes/custom-post-types.php:379
+#: classes/custom-post-types.php:381
 msgid "Committee"
 msgstr ""
 
-#: classes/custom-post-types.php:440
+#: classes/custom-post-types.php:442
 msgid "You must be logged in to see project participants"
 msgstr ""
 
-#: classes/custom-post-types.php:441
+#: classes/custom-post-types.php:443
 msgid "You must be logged in to see member information"
 msgstr ""
 
-#: classes/custom-post-types.php:545
+#: classes/custom-post-types.php:547
 msgctxt "Member directory dropdown for committees"
 msgid "Filter by committee"
 msgstr ""
 
-#: classes/custom-post-types.php:546
+#: classes/custom-post-types.php:548
 msgctxt "Member directory dropdown for committees"
 msgid "All"
 msgstr ""
 
-#: classes/custom-post-types.php:560
+#: classes/custom-post-types.php:562
 msgctxt "Project participant dropdown"
 msgid "Add a participant"
 msgstr ""
@@ -2762,6 +2779,21 @@ msgstr ""
 msgid "Update Theme"
 msgstr ""
 
+#: includes/class-wp-widget-search.php:26
+msgid "A search form for your site."
+msgstr ""
+
+#: includes/class-wp-widget-search.php:27
+msgctxt "Search widget"
+msgid "Search"
+msgstr ""
+
+#: includes/class-wp-widget-search.php:67 includes/theme-widgets.php:321
+#: includes/theme-widgets.php:407 includes/theme-widgets.php:501
+#: includes/theme-widgets.php:612 includes/theme-widgets.php:711
+msgid "Title:"
+msgstr ""
+
 #: includes/committee-project-functions.php:19
 msgid "Meeting"
 msgstr ""
@@ -2886,21 +2918,26 @@ msgstr ""
 msgid "I'm going"
 msgstr ""
 
-#: includes/committee-project-functions.php:328
+#: includes/committee-project-functions.php:330
 msgid "Keep Reading"
 msgstr ""
 
-#: includes/committee-project-functions.php:357
+#: includes/committee-project-functions.php:367
 msgid "To"
 msgstr ""
 
-#: includes/committee-project-functions.php:360
+#: includes/committee-project-functions.php:370
 msgid "(ongoing)"
 msgstr ""
 
-#: includes/committee-project-functions.php:378
+#: includes/committee-project-functions.php:391
 #, php-format
 msgid "%s To %s"
+msgstr ""
+
+#: includes/committee-project-functions.php:549
+#, php-format
+msgid "%s projects"
 msgstr ""
 
 #: includes/project-fields.php:67
@@ -2995,7 +3032,7 @@ msgctxt "Directory table label"
 msgid "Email"
 msgstr ""
 
-#: includes/sidebar-init.php:16
+#: includes/sidebar-init.php:16 sidebar-home.php:25
 msgid "Homepage Sidebar"
 msgstr ""
 
@@ -3003,39 +3040,47 @@ msgstr ""
 msgid "The  right sidebar on the home page"
 msgstr ""
 
-#: includes/sidebar-init.php:27
-msgid "Posts & Updates Sidebar"
+#: includes/sidebar-init.php:27 sidebar-members.php:26
+msgid "Members Sidebar"
 msgstr ""
 
 #: includes/sidebar-init.php:29
-msgid "The right sidebar on posts and project/committee updates"
+msgid "The  right sidebar on the member's home page"
 msgstr ""
 
 #: includes/sidebar-init.php:38
-msgid "Left Footer Widget Area"
+msgid "Posts & Updates Sidebar"
 msgstr ""
 
-#: includes/sidebar-init.php:40 includes/sidebar-init.php:61
-msgid "Narrow widget area"
+#: includes/sidebar-init.php:40
+msgid "The right sidebar on posts and project/committee updates"
 msgstr ""
 
 #: includes/sidebar-init.php:49
+msgid "Left Footer Widget Area"
+msgstr ""
+
+#: includes/sidebar-init.php:51 includes/sidebar-init.php:72
+msgid "Narrow widget area"
+msgstr ""
+
+#: includes/sidebar-init.php:60
 msgid "Center Footer Widget Area"
 msgstr ""
 
-#: includes/sidebar-init.php:51
+#: includes/sidebar-init.php:62
 msgid "Wide widget area"
 msgstr ""
 
-#: includes/sidebar-init.php:59
+#: includes/sidebar-init.php:70
 msgid "Right Footer Widget Area"
 msgstr ""
 
-#: includes/sidebar-init.php:70
+#: includes/sidebar-init.php:81 sidebar-calendar.php:50
 msgid "Calendar Sidebar"
 msgstr ""
 
-#: includes/sidebar-init.php:72
+#: includes/sidebar-init.php:83
 msgid "Appears on the calendar page"
 msgstr ""
 
@@ -3168,24 +3213,24 @@ msgstr ""
 msgid "Sponsorship Levels"
 msgstr ""
 
-#: includes/theme-functions.php:86 includes/theme-functions.php:101
+#: includes/theme-functions.php:87 includes/theme-functions.php:102
 msgid "Rotary Club Of"
 msgstr ""
 
-#: includes/theme-functions.php:94
+#: includes/theme-functions.php:95
 msgid "Rotary Club"
 msgstr ""
 
-#: includes/theme-functions.php:108
+#: includes/theme-functions.php:109
 msgid "Club"
 msgstr ""
 
-#: includes/theme-functions.php:122
+#: includes/theme-functions.php:123
 #, php-format
 msgid "Rotary Club of %s"
 msgstr ""
 
-#: includes/theme-functions.php:126
+#: includes/theme-functions.php:127
 #, php-format
 msgid "%s Rotary Club"
 msgstr ""
@@ -3194,383 +3239,400 @@ msgstr ""
 msgid "Primary Navigation"
 msgstr ""
 
-#: includes/theme-functions.php:471
+#: includes/theme-functions.php:479
 #, php-format
 msgid "%s says:"
 msgstr ""
 
-#: includes/theme-functions.php:473
+#: includes/theme-functions.php:481
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: includes/theme-functions.php:480
+#: includes/theme-functions.php:488
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: includes/theme-functions.php:480 includes/theme-functions.php:496
+#: includes/theme-functions.php:488 includes/theme-functions.php:504
 msgid "(Edit)"
 msgstr ""
 
-#: includes/theme-functions.php:496
+#: includes/theme-functions.php:504
 msgid "Pingback:"
 msgstr ""
 
-#: includes/theme-functions.php:525
+#: includes/theme-functions.php:533
 msgid "Website"
 msgstr ""
 
-#: includes/theme-functions.php:552
+#: includes/theme-functions.php:561
 #, php-format
 msgid "Speaker on <br/>%2$s"
 msgstr ""
 
-#: includes/theme-functions.php:563
+#: includes/theme-functions.php:573
 #, php-format
-msgid "Posted on<br/>%2$s"
+msgid "Date Posted<br/>&nbsp;%2$s"
 msgstr ""
 
-#: includes/theme-functions.php:587
+#: includes/theme-functions.php:583
+#, php-format
+msgid "%2$s"
+msgstr ""
+
+#: includes/theme-functions.php:607
 #, php-format
 msgid ""
 "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
 "title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
 
-#: includes/theme-functions.php:589
+#: includes/theme-functions.php:609
 #, php-format
 msgid ""
 "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title="
 "\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
 
-#: includes/theme-functions.php:591
+#: includes/theme-functions.php:611
 #, php-format
 msgid ""
 "Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark"
 "\">permalink</a>."
 msgstr ""
 
-#: includes/theme-functions.php:617
+#: includes/theme-functions.php:637
 msgid "Slides"
 msgstr ""
 
-#: includes/theme-functions.php:619
+#: includes/theme-functions.php:639
 msgid "Slides Item"
 msgstr ""
 
-#: includes/theme-functions.php:632
+#: includes/theme-functions.php:652
 msgctxt "post type general name"
 msgid "Slides Category"
 msgstr ""
 
-#: includes/theme-functions.php:633
+#: includes/theme-functions.php:653
 msgctxt "all items"
 msgid "All Slides"
 msgstr ""
 
-#: includes/theme-functions.php:634
+#: includes/theme-functions.php:654
 msgctxt "adding a new item"
 msgid "Add Slides Category"
 msgstr ""
 
-#: includes/theme-functions.php:635
+#: includes/theme-functions.php:655
 msgctxt "adding a new item"
 msgid "New Slides Category Name"
 msgstr ""
 
-#: includes/theme-functions.php:778
+#: includes/theme-functions.php:799
 msgid "Slide Link"
 msgstr ""
 
-#: includes/theme-functions.php:1004 loop-search.php:33
+#: includes/theme-functions.php:1025 loop-search.php:33
 #: upcoming-programs.php:79
 #, php-format
 msgid "Permalink to %s"
 msgstr ""
 
-#: includes/theme-functions.php:1042 loop-search.php:49
-msgid "Leave a comment"
+#: includes/theme-functions.php:1028
+msgid "By "
 msgstr ""
 
-#: includes/theme-functions.php:1042 loop-search.php:49
-msgid "1 Comment"
-msgstr ""
-
-#: includes/theme-functions.php:1042 loop-search.php:49
-msgid "% Comments"
-msgstr ""
-
-#: includes/theme-functions.php:1045 loop-search.php:41
+#: includes/theme-functions.php:1066 loop-search.php:41
 #, php-format
 msgid "Posted in %2$s"
 msgstr ""
 
-#: includes/theme-functions.php:1051 loop-search.php:47
+#: includes/theme-functions.php:1072 loop-search.php:47
 #, php-format
 msgid "Tagged %2$s"
 msgstr ""
 
-#: includes/theme-options.php:33
+#: includes/theme-options.php:57
 msgid "Name and Logo"
 msgstr ""
 
-#: includes/theme-options.php:44
+#: includes/theme-options.php:68
 msgid "Club/District Name"
 msgstr ""
 
-#: includes/theme-options.php:56
+#: includes/theme-options.php:80
 msgid "Show Rotary Club Before Club Name"
 msgstr ""
 
-#: includes/theme-options.php:66
+#: includes/theme-options.php:90
 msgid "Is This a Rotary Club or District&#63;"
 msgstr ""
 
-#: includes/theme-options.php:69
+#: includes/theme-options.php:93
 msgid "You will need to refresh the page after changing this option"
 msgstr ""
 
-#: includes/theme-options.php:83
+#: includes/theme-options.php:107
 msgid "Optional Logo file to use"
 msgstr ""
 
-#: includes/theme-options.php:86
+#: includes/theme-options.php:110
 msgid ""
 "If this is not provided, a responsive text version will be used (required "
 "for Districts)"
 msgstr ""
 
-#: includes/theme-options.php:98
+#: includes/theme-options.php:122
 msgid "Meeting Information"
 msgstr ""
 
-#: includes/theme-options.php:109
+#: includes/theme-options.php:133
 msgid "Meeting Location"
 msgstr ""
 
-#: includes/theme-options.php:118
+#: includes/theme-options.php:142
 msgid "Country"
 msgstr ""
 
-#: includes/theme-options.php:127
+#: includes/theme-options.php:151
 msgid "Telephone"
 msgstr ""
 
-#: includes/theme-options.php:138
+#: includes/theme-options.php:162
 msgid "Meeting Day"
 msgstr ""
 
-#: includes/theme-options.php:142
+#: includes/theme-options.php:166
 msgid "--select day--"
 msgstr ""
 
-#: includes/theme-options.php:143
+#: includes/theme-options.php:167
 msgid "Monday"
 msgstr ""
 
-#: includes/theme-options.php:144
+#: includes/theme-options.php:168
 msgid "Tuesday"
 msgstr ""
 
-#: includes/theme-options.php:145
+#: includes/theme-options.php:169
 msgid "Wednesday"
 msgstr ""
 
-#: includes/theme-options.php:146
+#: includes/theme-options.php:170
 msgid "Thursday"
 msgstr ""
 
-#: includes/theme-options.php:147
+#: includes/theme-options.php:171
 msgid "Friday"
 msgstr ""
 
-#: includes/theme-options.php:148
+#: includes/theme-options.php:172
 msgid "Saturday"
 msgstr ""
 
-#: includes/theme-options.php:149
+#: includes/theme-options.php:173
 msgid "Sunday"
 msgstr ""
 
-#: includes/theme-options.php:152
+#: includes/theme-options.php:176
 msgid "--select time--"
 msgstr ""
 
-#: includes/theme-options.php:153
+#: includes/theme-options.php:177
 msgid "6:00 am"
 msgstr ""
 
-#: includes/theme-options.php:154
+#: includes/theme-options.php:178
 msgid "6:30 am"
 msgstr ""
 
-#: includes/theme-options.php:155
+#: includes/theme-options.php:179
 msgid "7:00 am"
 msgstr ""
 
-#: includes/theme-options.php:156
+#: includes/theme-options.php:180
 msgid "7:30 am"
 msgstr ""
 
-#: includes/theme-options.php:157
+#: includes/theme-options.php:181
 msgid "8:00 am"
 msgstr ""
 
-#: includes/theme-options.php:158
+#: includes/theme-options.php:182
 msgid "8:30 am"
 msgstr ""
 
-#: includes/theme-options.php:159
+#: includes/theme-options.php:183
 msgid "9:00 am"
 msgstr ""
 
-#: includes/theme-options.php:160
+#: includes/theme-options.php:184
 msgid "9:30 am"
 msgstr ""
 
-#: includes/theme-options.php:161
+#: includes/theme-options.php:185
 msgid "10:00 am"
 msgstr ""
 
-#: includes/theme-options.php:162
+#: includes/theme-options.php:186
 msgid "10:30 am"
 msgstr ""
 
-#: includes/theme-options.php:163
+#: includes/theme-options.php:187
 msgid "11:00 am"
 msgstr ""
 
-#: includes/theme-options.php:164
+#: includes/theme-options.php:188
 msgid "11:30 am"
 msgstr ""
 
-#: includes/theme-options.php:165
+#: includes/theme-options.php:189
 msgid "12:00 pm"
 msgstr ""
 
-#: includes/theme-options.php:166
+#: includes/theme-options.php:190
 msgid "12:30 pm"
 msgstr ""
 
-#: includes/theme-options.php:167
+#: includes/theme-options.php:191
 msgid "1:00 pm"
 msgstr ""
 
-#: includes/theme-options.php:168
+#: includes/theme-options.php:192
 msgid "1:30 pm"
 msgstr ""
 
-#: includes/theme-options.php:169
+#: includes/theme-options.php:193
 msgid "2:00 pm"
 msgstr ""
 
-#: includes/theme-options.php:170
+#: includes/theme-options.php:194
 msgid "2:30 pm"
 msgstr ""
 
-#: includes/theme-options.php:171
+#: includes/theme-options.php:195
 msgid "3:00 pm"
 msgstr ""
 
-#: includes/theme-options.php:172
+#: includes/theme-options.php:196
 msgid "3:30 pm"
 msgstr ""
 
-#: includes/theme-options.php:173
+#: includes/theme-options.php:197
 msgid "4:00 pm"
 msgstr ""
 
-#: includes/theme-options.php:174
+#: includes/theme-options.php:198
 msgid "4:30 pm"
 msgstr ""
 
-#: includes/theme-options.php:175
+#: includes/theme-options.php:199
 msgid "5:00 pm"
 msgstr ""
 
-#: includes/theme-options.php:176
+#: includes/theme-options.php:200
 msgid "5:30 pm"
 msgstr ""
 
-#: includes/theme-options.php:177
+#: includes/theme-options.php:201
 msgid "6:00 pm"
 msgstr ""
 
-#: includes/theme-options.php:178
+#: includes/theme-options.php:202
 msgid "6:30 pm"
 msgstr ""
 
-#: includes/theme-options.php:179
+#: includes/theme-options.php:203
 msgid "7:00 pm"
 msgstr ""
 
-#: includes/theme-options.php:180
+#: includes/theme-options.php:204
 msgid "7:30 pm"
 msgstr ""
 
-#: includes/theme-options.php:181
+#: includes/theme-options.php:205
 msgid "8:00 pm"
 msgstr ""
 
-#: includes/theme-options.php:182
+#: includes/theme-options.php:206
 msgid "8:30 pm"
 msgstr ""
 
-#: includes/theme-options.php:183
+#: includes/theme-options.php:207
 msgid "9:00 pm"
 msgstr ""
 
-#: includes/theme-options.php:184
+#: includes/theme-options.php:208
 msgid "9:30 pm"
 msgstr ""
 
-#: includes/theme-options.php:192
+#: includes/theme-options.php:216
 msgid "Doors Open"
 msgstr ""
 
-#: includes/theme-options.php:202
+#: includes/theme-options.php:226
 msgid "Program Starts"
 msgstr ""
 
-#: includes/theme-options.php:212
+#: includes/theme-options.php:236
 msgid "Program Ends"
 msgstr ""
 
-#: includes/theme-options.php:226
+#: includes/theme-options.php:250
 msgid "Select page for the Get More Info button"
 msgstr ""
 
-#: includes/theme-options.php:236
-msgid "Show Slideshow"
-msgstr ""
-
-#: includes/theme-options.php:246
-msgid "Show Home Page Sidebar"
-msgstr ""
-
-#: includes/theme-options.php:253
+#: includes/theme-options.php:258
 msgid "Social Media"
 msgstr ""
 
-#: includes/theme-options.php:262
+#: includes/theme-options.php:267
 msgid "Twitter"
 msgstr ""
 
-#: includes/theme-options.php:273
+#: includes/theme-options.php:278
 msgid "Facebook"
 msgstr ""
 
-#: includes/theme-options.php:283
+#: includes/theme-options.php:288
 msgid "Linkedin"
 msgstr ""
 
-#: includes/theme-options.php:290
+#: includes/theme-options.php:295
 msgid "Styles"
 msgstr ""
 
-#: includes/theme-options.php:300
+#: includes/theme-options.php:305
 msgid "Custom CSS"
+msgstr ""
+
+#: includes/theme-options.php:327
+msgid "Static Front Page"
+msgstr ""
+
+#: includes/theme-options.php:330
+msgid "This theme can only be used with a static home page."
+msgstr ""
+
+#: includes/theme-options.php:358 includes/theme-options.php:391
+msgid "Show Slideshow"
+msgstr ""
+
+#: includes/theme-options.php:368
+msgid "Show Hompage Sidebar"
+msgstr ""
+
+#: includes/theme-options.php:381
+msgid "Front page for members"
+msgstr ""
+
+#: includes/theme-options.php:401
+msgid "Show Member Sidebar"
+msgstr ""
+
+#: includes/theme-options.php:413
+msgid "Posts page"
 msgstr ""
 
 #: includes/theme-widgets.php:73
@@ -3603,12 +3665,6 @@ msgstr ""
 
 #: includes/theme-widgets.php:251
 msgid "All Months"
-msgstr ""
-
-#: includes/theme-widgets.php:321 includes/theme-widgets.php:407
-#: includes/theme-widgets.php:501 includes/theme-widgets.php:612
-#: includes/theme-widgets.php:711
-msgid "Title:"
 msgstr ""
 
 #: includes/theme-widgets.php:329
@@ -3697,7 +3753,7 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: loop-committee-posts.php:30 loop-project-posts.php:27
+#: loop-committee-posts.php:30 loop-project-posts.php:28
 msgid "No updates"
 msgstr ""
 
@@ -3722,6 +3778,18 @@ msgstr ""
 
 #: loop-search.php:25 loop.php:17
 msgid "Newer posts &gt;"
+msgstr ""
+
+#: loop-search.php:49
+msgid "Leave a comment"
+msgstr ""
+
+#: loop-search.php:49
+msgid "1 Comment"
+msgstr ""
+
+#: loop-search.php:49
+msgid "% Comments"
 msgstr ""
 
 #: loop-single-announcement.php:63 loop-single-announcement.php:115
@@ -3765,11 +3833,11 @@ msgctxt "Next post link"
 msgid "&gt;"
 msgstr ""
 
-#: loop-single-speaker.php:48 shortcodes/shortcode-announcements.php:140
+#: loop-single-speaker.php:48 shortcodes/shortcode-announcements.php:136
 msgid "Send Test Email"
 msgstr ""
 
-#: loop-single-speaker.php:49 shortcodes/shortcode-announcements.php:141
+#: loop-single-speaker.php:49 shortcodes/shortcode-announcements.php:137
 msgid "Send Email Blast"
 msgstr ""
 
@@ -3793,18 +3861,18 @@ msgstr ""
 msgid "Apologies, but no results were found for the requested archive."
 msgstr ""
 
-#: nm-mailchimp/admin.php:133
+#: nm-mailchimp/admin.php:136
 #, php-format
 msgid "Program %s : "
 msgstr ""
 
-#: nm-mailchimp/admin.php:142
+#: nm-mailchimp/admin.php:145
 #, php-format
 msgid "Club Announcements for %s"
 msgstr ""
 
 #: nm-mailchimp/announcements_table.php:60 nm-mailchimp/speaker_table.php:123
-#: shortcodes/shortcode-announcements.php:219
+#: shortcodes/shortcode-announcements.php:222
 msgid "There are no active announcements"
 msgstr ""
 
@@ -4279,34 +4347,34 @@ msgid ""
 "different keywords."
 msgstr ""
 
-#: shortcodes/shortcode-announcements.php:127
+#: shortcodes/shortcode-announcements.php:123
 #, php-format
 msgid "Please %s to make an announcement"
 msgstr ""
 
-#: shortcodes/shortcode-announcements.php:331
+#: shortcodes/shortcode-announcements.php:341
 msgid "Wedding Anniversaries"
 msgstr ""
 
-#: shortcodes/shortcode-announcements.php:334
+#: shortcodes/shortcode-announcements.php:344
 msgid "Club Anniversaries"
 msgstr ""
 
-#: shortcodes/shortcode-announcements.php:337
+#: shortcodes/shortcode-announcements.php:347
 msgid "Birthdays"
 msgstr ""
 
-#: shortcodes/shortcode-announcements.php:345
+#: shortcodes/shortcode-announcements.php:355
 #, php-format
 msgid "%s for %s"
 msgstr ""
 
-#: shortcodes/shortcode-announcements.php:354
+#: shortcodes/shortcode-announcements.php:364
 #, php-format
 msgid "%s and %s"
 msgstr ""
 
-#: shortcodes/shortcode-announcements.php:370
+#: shortcodes/shortcode-announcements.php:380
 #, php-format
 msgid "%s Years"
 msgstr ""
@@ -4323,6 +4391,10 @@ msgstr ""
 msgid "Sorry - No Board Members have been identified."
 msgstr ""
 
+#: shortcodes/shortcode-upcoming-speakers.php:27
+msgid "Upcoming Speakers"
+msgstr ""
+
 #: sidebar-calendar.php:35
 msgid "New Event/Project"
 msgstr ""
@@ -4331,9 +4403,31 @@ msgstr ""
 msgid "New Meeting"
 msgstr ""
 
-#: sidebar-calendar.php:45 sidebar-home.php:21 sidebar-project-archives.php:28
-#: sidebar.php:32
+#: sidebar-calendar.php:45 sidebar-calendar.php:54 sidebar-home.php:21
+#: sidebar-home.php:29 sidebar-members.php:21 sidebar-members.php:30
+#: sidebar-project-archives.php:28 sidebar.php:32 sidebar.php:41
 msgid "Edit Widgets"
+msgstr ""
+
+#: sidebar-calendar.php:56 sidebar-home.php:31 sidebar-members.php:32
+#: sidebar.php:43
+msgid "Add widgets here"
+msgstr ""
+
+#: sidebar-committee.php:23
+msgid "Chair"
+msgstr ""
+
+#: sidebar-committee.php:34
+msgid "Co-Chair"
+msgstr ""
+
+#: sidebar-committee.php:48
+msgid "Mission"
+msgstr ""
+
+#: sidebar-committee.php:61
+msgid "Committee Members"
 msgstr ""
 
 #: sidebar-footer.php:58
@@ -4352,10 +4446,6 @@ msgstr ""
 msgid "Connect on LinkedIn"
 msgstr ""
 
-#: sidebar-home.php:27
-msgid "Archives"
-msgstr ""
-
 #: sidebar-projects.php:75 sidebar-speaker.php:38
 msgid "Photographs"
 msgstr ""
@@ -4372,16 +4462,20 @@ msgstr ""
 msgid "New Post"
 msgstr ""
 
+#: sidebar.php:37
+msgid "Posts Sidebar"
+msgstr ""
+
 #: single-rotary_speakers.php:10 taxonomy.php:15
 msgid "Speaker Program"
 msgstr ""
 
-#: tag.php:13 taxonomy.php:19
+#: tag.php:13 taxonomy.php:21
 #, php-format
 msgid "Tag Archives: %s"
 msgstr ""
 
-#: taxonomy.php:22
+#: taxonomy.php:24
 #, php-format
 msgid "Category Archives: %s"
 msgstr ""

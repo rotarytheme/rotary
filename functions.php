@@ -93,6 +93,8 @@ require_once ( ROTARY_THEME_INCLUDES_PATH . 'simple-page-ordering.php');	// simp
 require_once ( ROTARY_THEME_INCLUDES_PATH . 'gravitylist.php');	// to enable scripts on CST's for the gravitylist plugin
 
 
+#content.hassidebar-wide
+
 /*
  *  CALENDAR 
  */

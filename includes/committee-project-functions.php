@@ -289,7 +289,9 @@ function show_project_blogroll ( $query, $showthumb = 'no', $committeeTitle = nu
 		  $committeeTitle = rotary_get_committee_title_from_project( get_the_id() );
  		}
 		  $type = get_field( 'project_type' );
+	
 		?>
+		
 		<div class="connectedprojectscontainer clearfix">	
 			<div class="projectheader">
 			   <h3><?php echo  $ProjectType[$type]; ?>
@@ -352,7 +354,7 @@ $endDate 	= DateTime::createFromFormat('Ymd', get_field( 'rotary_project_end_dat
 			<span class="fulldate"><?php echo (( $show_day) ? strftime( '%e %B %Y', $startStamp ) : strftime( '%B %Y', $startStamp )); ?></span>
 			<?php if ( '' != trim( get_field( 'rotary_project_end_date' ) ) ) : ?>
 				<br /><span><?php _e( 'To', 'Rotary' ); ?></span><br />
-				<span class="fulldate"><?php echo (( $show_day) ? strftime( '%e %B %Y', $endStamp ) : strftime( '%e %B %Y', $endStamp ) ); ?></span>
+				<span class="fulldate"><?php echo (( $show_day) ? strftime( '%e %B %Y', $endStamp ) : strftime( '%B %Y', $endStamp ) ); ?></span>
 			<?php else : ?>
 				<span><?php _e( '(ongoing)', 'Rotary'); ?></span>
 			<?php endif; ?>

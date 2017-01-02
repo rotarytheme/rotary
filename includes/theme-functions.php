@@ -7,6 +7,11 @@
  * @since Rotary 1.0
  */ 
 
+
+
+
+
+
 //if DacDB is not being used, then allow the direct import of users
 $options = get_option('rotary_dacdb');
 if ('yes' != $options['rotary_use_dacdb'] || !class_exists( 'RotaryDaCDb' )) {
@@ -546,10 +551,10 @@ add_action( 'widgets_init', 'rotary_remove_recent_comments_style' );
 if ( ! function_exists( 'rotary_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post—date/time and author.
-	 *
+	 * @parameters: $blogroll indicates if this is a small format, or long (full post) - we can't use is_single() becuase we are coming from a subquery
 	 * @since rotary 1.0
 	 */
-	function rotary_posted_on() {
+	function rotary_posted_on( $blogroll = false ) {
 
 		if ('rotary_speakers' == get_post_type() ) {
 			$date = DateTime::createFromFormat('Ymd', get_field('speaker_date'));
@@ -564,7 +569,7 @@ if ( ! function_exists( 'rotary_posted_on' ) ) :
 				)
 			);
 		}
-		elseif ( is_single() ) {
+		elseif ( is_single() && !$blogroll ) {
 			printf( __( 'Date Posted<br/>&nbsp;%2$s', 'Rotary' ),
 				'meta-prep meta-prep-author',
 				sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time datetime="%3$s" pubdate>%4$s</time></a>',
@@ -1014,15 +1019,15 @@ function rotary_output_blogroll() {
 				    	$title = get_the_title(); 
 			    		if (strlen($title) > 26 ) {
 							$title = substr($title, 0, 26) . '...';
-						} 
+						}
 						?>
 		                <h2>
 		                	<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'Rotary' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php echo $title; ?></a>
 		                </h2>
 		                <div class="postdate">
 		                	<span class="alignleft"><?php _e('By ', 'Rotary' )?> <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ))?>"><?php echo get_the_author();?></a></span>
-		                    <span class="alignright"><?php rotary_posted_on(); ?></span>	
-		                </div>    
+		                    <span class="alignright"><?php rotary_posted_on( true ); ?></span>
+		                </div>
 		            </header>
 
 			 		<?php $thumb = ( has_post_thumbnail() ) ? 'hasthumbnail' : '';?>
@@ -1043,9 +1048,9 @@ function rotary_output_blogroll() {
 							$programNotes = strip_tags( $programNotes );
 							if (strlen( $programNotes ) > 200 ) {
 								$programNotes = substr($programNotes, 0, 200) ;
-							} ?>             
-							<p><?php echo $programNotes; ?> <a href="<?php echo the_permalink();?>">[…]</a></p>	
-		             	<?php  } 
+							} ?>
+							<p><?php echo $programNotes; ?> <a href="<?php echo the_permalink();?>">[…]</a></p>
+		             	<?php  }
 			             else {
 				             the_excerpt();
 			             }?>
@@ -1054,7 +1059,7 @@ function rotary_output_blogroll() {
 		            <footer class="meta">
 		            <p>
 		                <?php 
-		                 if( is_single() ) { edit_post_link( __( 'Edit', 'Rotary' ), '', ' ' ); } 
+		                // if( is_single() ) { edit_post_link( __( 'Edit', 'Rotary' ), '', ' ' ); } 
 		                // comments_popup_link( __( 'Leave a comment', 'Rotary' ), __( '1 Comment', 'Rotary' ), __( '% Comments', 'Rotary' ), 'commentspopup' ); ?></p>
 		                <?php if ( count( get_the_category() ) ) : 
 		                ?>

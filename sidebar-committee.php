@@ -20,7 +20,7 @@
 				<?php } ?>
 
 				<?php if(get_field('committee_chair_email')) { ?>
-					<h3>Chair</h3>
+					<h3><?php _e( 'Chair' , 'Rotary'); ?></h3>
 					<ul>
 					<?php
 	$user = get_user_by( 'email', get_field('committee_chair_email') );
@@ -31,7 +31,7 @@
 					</ul>
 			 <?php } ?>
 			 	<?php if(get_field('committee_cochair_email_1')) { ?>
-					<h3>Co Chair</h3>
+					<h3><?php _e( 'Co-Chair' , 'Rotary'); ?></h3>
 					<ul>
 					<?php
 	$user = get_user_by( 'email', get_field('committee_cochair_email_1') );
@@ -45,7 +45,7 @@
 					</ul>
 			 <?php } ?>
 			 <?php if(get_field('committeemission')) { ?>
-					<h3>Mission</h3>
+					<h3><?php _e( 'Mission' , 'Rotary'); ?></h3>
 					<ul>
 					<li><?php the_field('committeemission'); ?></li>
 					</ul>
@@ -58,7 +58,7 @@ $users = get_users( array(
 		'connected_items' => get_the_id(),
 		'connected_direction' => 'from',
 	)); ?>
-<h3>Committee Members</h3>
+<h3><?php _e( 'Committee Members' , 'Rotary'); ?></h3>
 <?php
 foreach ($users as $user) :
 	$usermeta = get_user_meta($user->ID);

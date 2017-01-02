@@ -20,18 +20,19 @@
 	if(current_user_can('manage_options')){ ?>
       <a class="widgetedit" href="<?php echo admin_url(); ?>widgets.php"><?php _e( 'Edit Widgets', 'Rotary'); ?></a>
   <?php  } 
-	if ( ! dynamic_sidebar( 'home-widget-area' ) ) : ?>
-	
-
+	if ( ! dynamic_sidebar( 'home-widget-area' )) : ?>
 			<li>
-				<h3><?php _e( 'Archives', 'Rotary' ); ?></h3>
+				<h3><?php _e( 'Homepage Sidebar', 'Rotary' ); ?></h3>
 				<ul>
-					<?php wp_get_archives( 'type=monthly' ); ?>
+					<li>
+						<?php if(current_user_can('manage_options')){ ?>
+							<a  href="<?php echo admin_url(); ?>widgets.php"><?php _e( 'Edit Widgets', 'Rotary'); ?></a>
+						<?php } else { ?>
+							<p><?php _e( 'Add widgets here'); ?></p>
+						<?php }?>
+					</li>
 				</ul>
 			</li>
-
-			
-
 		<?php endif; // end primary widget area ?>
 		</ul>
 

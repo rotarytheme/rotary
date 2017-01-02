@@ -13,13 +13,24 @@
 function rotary_widgets_init() {
 	// Area 1, located at the top of the sidebar on the home page. Contains Rotary text widgets and Rotary Blogroll
 	register_sidebar( array(
-		'name' => __( 'Homepage Sidebar', 'rotary' ),
+		'name' => __( 'Homepage Sidebar', 'Rotary' ),
 		'id' => 'home-widget-area',
 		'description' => __( 'The  right sidebar on the home page', 'rotary' ),
 		'before_widget' => '<li id="%1$s" class="widget %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3>',
 		'after_title' => '</h3>',
+	) );
+	
+	// Area 1a, located at the top of the sidebar on the members page.
+	register_sidebar( array(
+	'name' => __( 'Members Sidebar', 'Rotary' ),
+	'id' => 'members-widget-area',
+	'description' => __( 'The  right sidebar on the member\'s home page', 'rotary' ),
+	'before_widget' => '<li id="%1$s" class="widget %2$s">',
+	'after_widget' => '</li>',
+	'before_title' => '<h3>',
+	'after_title' => '</h3>',
 	) );
 
 	// Area 2, located at the top of the sidebar for all pages (including blog) other than the home page. Contains custom archive widget (plugin) and tags

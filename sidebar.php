@@ -32,7 +32,21 @@
 			      <a class="widgetedit" href="<?php echo admin_url(); ?>widgets.php"><?php _e( 'Edit Widgets', 'Rotary'); ?></a>
 			  <?php  }
 			if ( is_active_sidebar( 'secondary-widget-area' ) ) : 
-				dynamic_sidebar( 'secondary-widget-area' ); 
+				if ( ! dynamic_sidebar( 'secondary-widget-area' ) ) : ?>
+					<li>
+						<h3><?php _e( 'Posts Sidebar', 'Rotary' ); ?></h3>
+						<ul>
+							<li>
+								<?php if(current_user_can('manage_options')){ ?>
+									<a  href="<?php echo admin_url(); ?>widgets.php"><?php _e( 'Edit Widgets', 'Rotary'); ?></a>
+								<?php } else { ?>
+									<p><?php _e( 'Add widgets here'); ?></p>
+								<?php }?>
+							</li>
+						</ul>
+					</li>
+				<?php endif; // end primary widget area 
+				; 
 			endif;
 			?>
 		</ul>
