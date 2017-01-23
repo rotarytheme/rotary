@@ -59,7 +59,7 @@ $CalendarColor[FUNDRAISER] 			= VIOLET;
 $CalendarColor[CAMPAIGN] 			= LAVENDER;
 $CalendarColor[SPEAKERPROGRAM] 		= ROYALBLUE;
 $CalendarColor[RECURRINGPROGRAM] 	= SMOKE;
-$CalendarColor[OFFSITE] 			= POWDERBLUE;
+$CalendarColor[OFFSITE] 			= SKYBLUE;
 
 // ---------------- Registration Types ---------------- //
 define('REGISTER', 0);
