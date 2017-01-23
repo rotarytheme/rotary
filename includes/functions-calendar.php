@@ -61,15 +61,15 @@ function save_calendar_fields( $post_id ){
          
         if( get_field( 'rotary_different_location', $post_id )) { // there is an override for this meeting
         	$location = get_field( 'rotary_program_location', $post_id );
+        	$color = $CalendarColor[ OFFSITE ];
         } else {
        		$location =  get_option( 'club_location' ); // use the location of the club
+       		$color = $CalendarColor[ SPEAKERPROGRAM ];
         }
 
         $content = trim(get_field( 'speaker_program_notes', $post_id ));
         if ( empty( $content) ) $content = get_field('speaker_program_content', $post_id);
     
-
-        $color = $CalendarColor[ SPEAKERPROGRAM ];
         $textcolor = "#FFFFFF";
 
     }

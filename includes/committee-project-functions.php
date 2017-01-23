@@ -15,6 +15,7 @@ define('FUNDRAISER', 4);
 define('CAMPAIGN', 5);
 define('SPEAKERPROGRAM', 6);
 define('RECURRINGPROGRAM', 7);
+define('OFFSITE', 8);
 
 
 define('DARKBLUE'	, '#00246c');
@@ -57,7 +58,8 @@ $CalendarColor[GRANT]				= TURQUOISE;
 $CalendarColor[FUNDRAISER] 			= VIOLET;
 $CalendarColor[CAMPAIGN] 			= LAVENDER;
 $CalendarColor[SPEAKERPROGRAM] 		= ROYALBLUE;
-$CalendarColor[RECURRINGPROGRAM] 	= POWDERBLUE;
+$CalendarColor[RECURRINGPROGRAM] 	= SMOKE;
+$CalendarColor[OFFSITE] 			= POWDERBLUE;
 
 // ---------------- Registration Types ---------------- //
 define('REGISTER', 0);
