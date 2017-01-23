@@ -372,7 +372,7 @@ function rotary_get_first_calendar() {
  add_action( 'init', 'update_all_calendar_post_types' );
  function update_all_calendar_post_types() {
  	global $post;
-	if( get_option( 'update_all_calendar_post_types' )) return;
+	if( '2' == get_option( 'update_all_calendar_post_types' )) return;
  	
 	 	$args = array(
 	 		'post_type' => array( 'rotary_projects', 'rotary_speakers' ),
