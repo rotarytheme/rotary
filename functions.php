@@ -29,9 +29,6 @@ function my_theme_setup(){
 
 update_option( 'google_api_key' , 'AIzaSyAek8gghAI_1e1QYiPkd6iD7xhqluWC-mU' );
 
-if ( '2' != get_option( 'update_all_calendar_post_types' ) )
-	update_option( 'update_all_calendar_post_types', false );
-
 get_locale();
 
 //delete the rotary membership folder if it exists
