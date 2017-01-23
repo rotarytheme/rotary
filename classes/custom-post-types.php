@@ -461,6 +461,7 @@ class RotaryCustomPostTypes {
 		 wp_register_script('rotarydatatables', ROTARY_THEME_JAVASCRIPT_URL . 'rotary.datatables.js',  array( 'jquery' ) );
 		 wp_register_style( 'rotary-datatables', ROTARY_THEME_CSS_URL . 'rotarydatatables.css', false, 0.1);
 		 wp_register_style( 'rotary-custom', ROTARY_THEME_CSS_URL . 'custom.css');
+		 wp_register_style( 'rotary-fullcalendar', ROTARY_THEME_CSS_URL . 'fullcalendar.css');
 	 }
 	 
 
@@ -468,6 +469,7 @@ class RotaryCustomPostTypes {
 	 //the scripts included here are need for the shortcodes
 	 function enqueue_scripts_for_shortcodes() {
 		wp_enqueue_style('rotary-custom');
+		wp_enqueue_style('rotary-fullcalendar');
 		wp_enqueue_style('rotary-datatables');
 		wp_enqueue_script(array('datatables','datatablesreload', 'rotarydatatables', 'jquery-ui-dialog'));
 		wp_localize_script( 'rotarydatatables', 'rotarydatatables', array('ajaxURL' => admin_url('admin-ajax.php'),'tableNonce' => wp_create_nonce( 'rotary-table-nonce' )) );

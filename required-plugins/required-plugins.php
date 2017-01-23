@@ -98,11 +98,13 @@ function my_theme_register_required_plugins( ) {
 	),
 	array(
 			'name' 		=> 'Every Calendar',
-			'slug' 		=> 'every-calendar-1',    
+			'slug' 		=> 'every-calendar-1',  
+			'version'			=> '2.1.2',  
 			'source'    => 'every-calendar-1.zip', // The plugin source.
 			'required' 	=> true,
 			'force_activation' 	=> true,
 	),
+	 
 			
 		// This is an example of how to include a plugin from an arbitrary external source in your theme.
 		/*
@@ -229,7 +231,7 @@ function my_theme_register_required_plugins( ) {
 	 */
 
 	// Change this to your theme text domain, used for internationalising strings
-	$theme_text_domain = 'rotary';
+	$theme_text_domain = 'Rotary';
 	
 	/**
 	 * Array of configuration settings. Amend each line as needed.

@@ -50,8 +50,26 @@ function rotary_get_upcoming_speakers_shortcode_html( $atts ) {
 	                	<h3 class="speakername"><?php echo $speaker?></h3>
 	                	<p class="speaker-title"><?php the_field( 'speaker_title' ); ?>	</p>
 						<p class="speaker-company"><?php the_field('speaker_company'); ?></p>
+						
+<?php $location = get_field('field_rotary_program_location'); ?>
+<?php if( !empty($location) ) : ?>
+	<div class="speaker-location">
+				<ul class="speaker-address">
+					<li class="speaker-addresstext">
+						<div class="location">
+							<h3 class="meetingsite"><?php _e( 'Offsite Meeting', 'Rotary'); ?></h3>
+							<a href="http://maps.google.com/maps?daddr=<?php echo $location['address'] ?>" target="_blank">
+							<?php //$address = preg_replace('/,/', '<br />', $location["address"], 1);  ?>
+							<?php echo $location["address"]; unset($location);?>
+						</div>
+					</li>
+				</ul>
+		</div>
+	<?php endif; ?>
+						
 						<p class="speaker-program-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 	                </div><!--.home-upcoming-program-details-->
+
 			 </article>
 		<?php endwhile; // End the loop. Whew. ?>
 		<?php //now add a new post button ?>

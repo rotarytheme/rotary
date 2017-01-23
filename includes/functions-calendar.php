@@ -38,6 +38,8 @@ function save_calendar_fields( $post_id ){
 	        $end_date = $start_date;
         endif;  
         
+        $content = apply_filters( 'the_content', $post->post_content );
+        
         $location = get_field( 'rotary_project_location', $post_id );
         
         $color = $CalendarColor[$project_type];
@@ -58,6 +60,10 @@ function save_calendar_fields( $post_id ){
        		$location =  get_option( 'club_location' ); // use the location of the club
         }
 
+        $content = trim(get_field( 'speaker_program_notes', $post_id ));
+        if ( empty( $content) ) $content = get_field('speaker_program_content', $post_id);
+   
+        
         $textcolor = $CalendarColor[SPEAKERPROGRAM];
         $color = "FFFFFF";
 
@@ -80,8 +86,9 @@ function save_calendar_fields( $post_id ){
 	$calendar_id = rotary_get_first_calendar();
 	
     $event_grouped_fields = array(
-                                'ecp1_summary'      => $post -> post_title,
-                                'ecp1_description'  => $post -> post_content,
+                                'ecp1_summary'      => strip_tags( rotary_truncate_text( $content, 250, '', false, true )),
+    							'ecp1_url'			=> get_permalink( $post->ID ),
+                                'ecp1_description'  => '',
                                 'ecp1_full_day'     => $full_day,
                                 'ecp1_location'     => $address,
                                 'ecp1_coord_lat'    => $latitude,
@@ -375,7 +382,6 @@ function rotary_get_first_calendar() {
 	 		save_calendar_fields( $post->ID );
 	 	endforeach;
 	 	
- 		update_option( 'update_all_calendar_post_types', true );
+ 		update_option( 'update_all_calendar_post_types', '2' );
  }
-
  

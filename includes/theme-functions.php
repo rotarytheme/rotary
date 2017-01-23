@@ -8,10 +8,6 @@
  */ 
 
 
-
-
-
-
 //if DacDB is not being used, then allow the direct import of users
 $options = get_option('rotary_dacdb');
 if ('yes' != $options['rotary_use_dacdb'] || !class_exists( 'RotaryDaCDb' )) {
@@ -84,7 +80,7 @@ function rotary_club_header($clubname, $rotaryClubBefore=false, $logotype='web-l
 		case 'web-logo':
 			if ( $rotaryClubBefore ) { ?>
 			    <?php if ($clubname) { ?>
-						 <span class="clubtype clubbefore"><?php _e( 'Rotary Club Of', 'rotary' );?></span>
+						 <span class="clubtype clubbefore"><?php _e( 'Rotary Club Of', 'Rotary' );?></span>
 						 <span class="clubname"><?php echo $clubname;?></span>
 				<?php }
 			}
@@ -92,21 +88,21 @@ function rotary_club_header($clubname, $rotaryClubBefore=false, $logotype='web-l
 				if ($clubname) { ?>
 						<span class="clubname namebefore"><?php echo $clubname;?></span>
 		        <?php }  ?>
-					   <span class="clubtype"><?php echo _e( 'Rotary Club', 'rotary' ) ;?></span>
+					   <span class="clubtype"><?php echo _e( 'Rotary Club', 'Rotary' ) ;?></span>
 		     <?php   }
 		    break;
 		case 'official-logo':
 			if ( $rotaryClubBefore ) { ?>
 			    <?php if ($clubname) { ?>
 						 <span class="clubtype clubbefore">&nbsp;</span>
-						 <span class="clubname"><?php _e( 'Rotary Club Of', 'rotary' ) . ' ' . $clubname ;?></span>
+						 <span class="clubname"><?php _e( 'Rotary Club Of', 'Rotary' ) . ' ' . $clubname ;?></span>
 				<?php }
 			}
 			else {
 				if ($clubname) { ?>
 						<span class="clubname namebefore"><?php echo $clubname;?></span>
 		        <?php }  ?>
-					   <span class="clubtype"><?php echo 1 == $rotaryClubDistrict ? __('Club', 'rotary') : '' ;?></span>
+					   <span class="clubtype"><?php echo 1 == $rotaryClubDistrict ? __('Club', 'Rotary') : '' ;?></span>
 		     <?php   }
 			break;
 	}
@@ -120,11 +116,11 @@ function rotary_club_name() {
 		case 1: //club
 			if ($rotaryClubBefore) {
 				if ($set_clubname) {
-					$clubname = sprintf( __( 'Rotary Club of %s', 'rotary' ), $set_clubname );
+					$clubname = sprintf( __( 'Rotary Club of %s', 'Rotary' ), $set_clubname );
 				}
 			} else {
 				if ($set_clubname) {
-					$clubname = sprintf( __( '%s Rotary Club', 'rotary' ), $set_clubname );
+					$clubname = sprintf( __( '%s Rotary Club', 'Rotary' ), $set_clubname );
 				}
 			}
 			break;
@@ -749,7 +745,6 @@ function rotary_get_slideshow( $context = null ){
 	endif; // end has posts
 		// Reset Post Data
 	wp_reset_postdata();
-
 	
 	}//custom images sizes for slideshow
 	if ( function_exists( 'add_image_size' ) ) {

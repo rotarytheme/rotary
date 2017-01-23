@@ -12,7 +12,32 @@
 			<li id="speaker-sidebar-thumbnail-container">
 				<?php if ( has_post_thumbnail() ) {	the_post_thumbnail('medium');} ?>
 			</li>
+			
+			
 			<li id="speaker-side-container">
+	<?php $location = get_field('field_rotary_program_location'); ?>
+	<?php if( !empty($location) ) : ?>
+				<ul id="project-address">
+					<li id="project-addresstext">
+						<div  class="location">
+							<h3 class="meetingsite"><?php _e( 'Offsite Meeting', Rotary); ?></h3>
+							<?php $address = preg_replace('/,/', '<br />', $location["address"], 1);  ?>
+							<?php echo $address; ?>
+							<p class="instructions"><a href="http://maps.google.com/maps?daddr=<?php echo $location['address'] ?>" target="_blank">Larger Map</a></p>
+						</div>
+					</li>
+				</ul>
+				<ul id="project-map">
+					<li>
+						<div class="acf-map">
+							<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>" data-address="<?php echo $location['address']; ?>">
+							</div>
+						</div>
+					</li>
+				</ul>
+	<?php endif; ?>
+	
+	
 				<h3 class="speakerbio"><?php _e( 'About the Speaker', 'Rotary' ); ?></h3>
 				<ul>
 					<li id="speaker-bio">
