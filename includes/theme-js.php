@@ -27,17 +27,20 @@ function rotary_add_javascript( ) {
 	
 
 	if ( 'China' != get_theme_mod( 'rotary_country', '') ) {
-		$mapsapi = 'http://maps.googleapis.com/maps/api/js?sensor=false';
+		$apikey =  get_option( 'google_api_key');
+		$mapsapi = 'http://maps.googleapis.com/maps/api/js?key=' . $apikey;
 	    $protocol = is_ssl() ? 'https' : 'http';
 		$query_args = array(
 			'family' => 'Open+Sans+Condensed:300,700,300italic'
 		);
 		wp_enqueue_style( 'rotary-opensanscondensed-font', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ), array(), null 	);
 	} else {
-		$mapsapi = 'http://maps.google.cn/maps/api/js?sensor=false';
+		$mapsapi = 'http://maps.google.cn/maps/api/js?key=' . $apikey;
 	}
 	
-	wp_enqueue_script('googlemaps', $mapsapi, false, '3');
+	wp_register_script('googlemaps', $mapsapi, false, '3');
+	
+	wp_enqueue_script('googlemaps');
 	
 	wp_enqueue_script( 'hoverIntent' );
 

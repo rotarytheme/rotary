@@ -10,6 +10,9 @@ add_action( 'save_post_rotary_projects', 'save_calendar_fields', 99);
 function save_calendar_fields( $post_id ){
     global $post, $ecp1_event_fields, $CalendarColor;
     
+ //   echo $post->post_type; die;
+ 
+    
     if ( ! isset( $post ) )
     	//$post =  get_post( $post_id );
 		return; // don't update if not a post
@@ -23,34 +26,38 @@ function save_calendar_fields( $post_id ){
     
     //=============== the start date ==============
     
-    if( 'rotary_projects' === $post->post_type ){
+    
+    if( 'rotary_projects' == $post->post_type ){
         $start_date = get_post_meta( $post_id, 'rotary_project_date', true);
+        $project_type = get_field(  'field_project_type' );
         if ( get_field( 'long_term_project', $post_id ) ) :
 	        $full_day =  'Y';
 	        $the_start_time = '12:00 am';
 	        $the_end_time   = '11:59 pm';
 	        $end_date = get_post_meta($post_id, 'rotary_project_end_date', true);
-	        $end_date = $end_date ? $end_date : $start_date;
+	        $end_date = $end_date ? $end_date : get_post_meta( $post_id, 'rotary_project_date', true);
         else:
 	        $full_day =  'N';
 	        $the_start_time = get_post_meta($post_id, 'rotary_project_start_time', true);
 	        $the_end_time   = get_post_meta($post_id, 'rotary_project_end_time', true);
-	        $end_date = $start_date;
-        endif;  
-        
+	        $end_date = get_post_meta( $post_id, 'rotary_project_date', true);
+        endif; 
+
+        $content = apply_filters( 'the_content', $post->post_content );
+       
         $location = get_field( 'rotary_project_location', $post_id );
-        
+         
         $color = $CalendarColor[$project_type];
-        $color = "FFFFFF";
+        $textcolor = "#FFFFFF";
         
         
-    } elseif ( 'rotary_speakers' === $post->post_type){
-        
+    } elseif ( 'rotary_speakers' == $post->post_type){	
         $start_date = get_field( 'speaker_date', $post_id );
         $full_day = 'N';
     	$the_start_time = get_theme_mod( 'rotary_doors_open', '7:00 am' );
         $the_end_time   = get_theme_mod( 'rotary_program_ends', '8:30 am' );
-        $end_date = $start_date;
+        $end_date =  get_field( 'speaker_date', $post_id );
+       
          
         if( get_field( 'rotary_different_location', $post_id )) { // there is an override for this meeting
         	$location = get_field( 'rotary_program_location', $post_id );
@@ -58,8 +65,12 @@ function save_calendar_fields( $post_id ){
        		$location =  get_option( 'club_location' ); // use the location of the club
         }
 
-        $textcolor = $CalendarColor[SPEAKERPROGRAM];
-        $color = "FFFFFF";
+        $content = trim(get_field( 'speaker_program_notes', $post_id ));
+        if ( empty( $content) ) $content = get_field('speaker_program_content', $post_id);
+    
+
+        $color = $CalendarColor[ SPEAKERPROGRAM ];
+        $textcolor = "#FFFFFF";
 
     }
     
@@ -69,8 +80,7 @@ function save_calendar_fields( $post_id ){
     $end_date_ts = rotary_create_timestamp_in_calendar_tz( $end_date, $the_end_time, $calendar_tz );
     
     if( !$start_date_ts || !$end_date_ts) return $post_id; //something has has gone wrong
-
-
+    
     if( !empty( $location ) ) {
     	$latitude = $location['lat'];
     	$longitude = $location['lng'];
@@ -80,8 +90,9 @@ function save_calendar_fields( $post_id ){
 	$calendar_id = rotary_get_first_calendar();
 	
     $event_grouped_fields = array(
-                                'ecp1_summary'      => $post -> post_title,
-                                'ecp1_description'  => $post -> post_content,
+                                'ecp1_summary'      => strip_tags( rotary_truncate_text( $content, 250, '', false, true )),
+    							'ecp1_url'			=> get_permalink( $post->ID ),
+                                'ecp1_description'  => '',
                                 'ecp1_full_day'     => $full_day,
                                 'ecp1_location'     => $address,
                                 'ecp1_coord_lat'    => $latitude,
@@ -167,7 +178,6 @@ function rotary_get_first_calendar() {
      print_r($arr);
      echo '</pre>';
  }
- 
  
  /****************************/
 
@@ -362,7 +372,6 @@ function rotary_get_first_calendar() {
  add_action( 'init', 'update_all_calendar_post_types' );
  function update_all_calendar_post_types() {
  	global $post;
- 	
 	if( get_option( 'update_all_calendar_post_types' )) return;
  	
 	 	$args = array(
@@ -375,7 +384,7 @@ function rotary_get_first_calendar() {
 	 		save_calendar_fields( $post->ID );
 	 	endforeach;
 	 	
- 		update_option( 'update_all_calendar_post_types', true );
+ 		update_option( 'update_all_calendar_post_types', '2' );
  }
 
  

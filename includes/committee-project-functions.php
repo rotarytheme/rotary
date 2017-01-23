@@ -16,21 +16,48 @@ define('CAMPAIGN', 5);
 define('SPEAKERPROGRAM', 6);
 define('RECURRINGPROGRAM', 7);
 
-$ProjectType[MEETING] 		= __( 'Meeting' );
-$ProjectType[SOCIALEVENT] 	= __( 'Social Event' );
-$ProjectType[WORKPROJECT] 	= __( 'Community / Work Project' );
-$ProjectType[GRANT]			= __( 'Grant / International Project' );
-$ProjectType[FUNDRAISER] 	= __( 'Fundraiser Event' );
-$ProjectType[CAMPAIGN] 		= __( 'Fundraiser Campaign' );
 
-$CalendarColor[MEETING] 			= '#ff7600';
-$CalendarColor[SOCIALEVENT] 		= '#d91b5c';
-$CalendarColor[WORKPROJECT] 		= '#f7a81b';
-$CalendarColor[GRANT]				= '#d9c89e';
-$CalendarColor[FUNDRAISER] 			= '#872175';
-$CalendarColor[CAMPAIGN] 			= '#c6bcd0';
-$CalendarColor[SPEAKERPROGRAM] 		= '#01b4e7';
-$CalendarColor[RECURRINGPROGRAM] 	= '#c9dee9';
+define('DARKBLUE'	, '#00246c');
+define('AZURE'		, '#005daa');
+define('SKYBLUE'	, '#01b4e7');
+define('ROYALBLUE'	, '#17458f');
+define('GOLD'		, '#f7a81b');
+define('CRANBERRY'	, '#d91b5c');
+define('TURQUOISE'	, '#009999');
+define('VIOLET'		, '#872175');
+define('ORANGE'		, '#ff7600');
+define('SLATE'		, '#687d90');
+define('MIST'		, '#9ea6b4');
+define('LAVENDER'	, '#c6bcd0');
+define('POWDERBLUE'	, '#c9dee9');
+define('MOSS'		, '#a7aca2');
+define('TAUPE'		, '##d9c89e');
+define('CHARCOAL'	, '#58585a');
+define('PEWTER'		, '#919295');
+define('SMOKE'		, '#bcbdc0');
+define('SILVER'		, '#e7e7e8');
+define('STORM'		, '#675d58');
+define('ASH'		, '#958d85');
+define('PLATINUM'	, '#c5c1bb');
+define('CLOUD'		, '#e6e5d8');
+define('CLOUD'		, '#e6e5d8');
+define('WHITE'		, '#ffffff');
+
+$ProjectType[MEETING] 		= __( 'Meeting', 'Rotary' );
+$ProjectType[SOCIALEVENT] 	= __( 'Social Event', 'Rotary' );
+$ProjectType[WORKPROJECT] 	= __( 'Community / Work Project', 'Rotary' );
+$ProjectType[GRANT]			= __( 'Grant / International Project', 'Rotary' );
+$ProjectType[FUNDRAISER] 	= __( 'Fundraiser Event', 'Rotary' );
+$ProjectType[CAMPAIGN] 		= __( 'Fundraiser Campaign', 'Rotary' );
+
+$CalendarColor[MEETING] 			= ORANGE;
+$CalendarColor[SOCIALEVENT] 		= CRANBERRY;
+$CalendarColor[WORKPROJECT] 		= GOLD;
+$CalendarColor[GRANT]				= TURQUOISE;
+$CalendarColor[FUNDRAISER] 			= VIOLET;
+$CalendarColor[CAMPAIGN] 			= LAVENDER;
+$CalendarColor[SPEAKERPROGRAM] 		= ROYALBLUE;
+$CalendarColor[RECURRINGPROGRAM] 	= POWDERBLUE;
 
 // ---------------- Registration Types ---------------- //
 define('REGISTER', 0);
@@ -41,29 +68,29 @@ define('ADVOCATE', 4);
 define('PURCHASE', 5);
 define('DONATE', 6);
 
-$RegistrationVerb[REGISTER] = __( 'Register' );
-$RegistrationVerb[SIGNUP] 	= __( 'Signup' );
-$RegistrationVerb[VOLUNTEER] = __( 'Volunteer' );
-$RegistrationVerb[SUPPORT]	= __( 'Support' );
-$RegistrationVerb[ADVOCATE] = __( 'Advocate' );
-$RegistrationVerb[PURCHASE] = __( 'Purchase' );
-$RegistrationVerb[DONATE] 	= __( 'Donate' );
+$RegistrationVerb[REGISTER] = __( 'Register', 'Rotary' );
+$RegistrationVerb[SIGNUP] 	= __( 'Signup', 'Rotary' );
+$RegistrationVerb[VOLUNTEER] = __( 'Volunteer', 'Rotary' );
+$RegistrationVerb[SUPPORT]	= __( 'Support', 'Rotary' );
+$RegistrationVerb[ADVOCATE] = __( 'Advocate', 'Rotary' );
+$RegistrationVerb[PURCHASE] = __( 'Purchase', 'Rotary' );
+$RegistrationVerb[DONATE] 	= __( 'Donate', 'Rotary' );
 
-$RegistrationNoun[REGISTER] = __( 'Registrations' );
-$RegistrationNoun[SIGNUP] 	= __( 'Signups' );
-$RegistrationNoun[VOLUNTEER] = __( 'Volunteers' );
-$RegistrationNoun[SUPPORT]	= __( 'Supporter' );
-$RegistrationNoun[ADVOCATE] = __( 'Advocates' );
-$RegistrationNoun[PURCHASE] = __( 'Buyers' );
-$RegistrationNoun[DONATE] 	= __( 'Donors' );
+$RegistrationNoun[REGISTER] = __( 'Registrations', 'Rotary' );
+$RegistrationNoun[SIGNUP] 	= __( 'Signups', 'Rotary' );
+$RegistrationNoun[VOLUNTEER] = __( 'Volunteers', 'Rotary' );
+$RegistrationNoun[SUPPORT]	= __( 'Supporter', 'Rotary' );
+$RegistrationNoun[ADVOCATE] = __( 'Advocates', 'Rotary' );
+$RegistrationNoun[PURCHASE] = __( 'Buyers', 'Rotary' );
+$RegistrationNoun[DONATE] 	= __( 'Donors', 'Rotary' );
 
-$RegistrationCTA[REGISTER] = __( 'Register Now' );
-$RegistrationCTA[SIGNUP] 	= __( 'Sign Up Now' );
-$RegistrationCTA[VOLUNTEER] = __( 'Volunteer Now' );
-$RegistrationCTA[SUPPORT]	= __( 'Become a Supporter' );
-$RegistrationCTA[ADVOCATE] = __( 'Become an Advocate' );
-$RegistrationCTA[PURCHASE] = __( 'Buy Now' );
-$RegistrationCTA[DONATE] 	= __( 'Donate to this Cause' );
+$RegistrationCTA[REGISTER] = __( 'Register Now', 'Rotary' );
+$RegistrationCTA[SIGNUP] 	= __( 'Sign Up Now', 'Rotary' );
+$RegistrationCTA[VOLUNTEER] = __( 'Volunteer Now', 'Rotary' );
+$RegistrationCTA[SUPPORT]	= __( 'Become a Supporter', 'Rotary' );
+$RegistrationCTA[ADVOCATE] = __( 'Become an Advocate', 'Rotary' );
+$RegistrationCTA[PURCHASE] = __( 'Buy Now', 'Rotary' );
+$RegistrationCTA[DONATE] 	= __( 'Donate to this Cause', 'Rotary' );
 
 
 
@@ -96,7 +123,7 @@ user_id				(integer) The comment author's ID if s/he is registered (0 otherwise)
 function rotary_project_and_committee_announcement_dropdown() {
 ?>
 	<select id="committeeselect" name="committeeselect">
-		<option value=""><?php echo __( 'SELECT A PROJECT OR COMMITTEE TO ADD A NEW ANNOUNCEMENT', 'rotary' );?></option>
+		<option value=""><?php echo __( 'SELECT A PROJECT OR COMMITTEE TO ADD A NEW ANNOUNCEMENT', 'Rotary' );?></option>
 		<?php 
 
 		/* PROJECTS */
@@ -114,7 +141,7 @@ function rotary_project_and_committee_announcement_dropdown() {
 		);
 		$query = new WP_Query( $args );
 		if ( $query->have_posts() ) :
-		?><option value="">~~~~~~~~~~ <?php _e( 'Projects' ,'rotary' );?> ~~~~~~~~~~</option><?php
+		?><option value="">~~~~~~~~~~ <?php _e( 'Projects' ,'Rotary' );?> ~~~~~~~~~~</option><?php
 		    while ( $query->have_posts() ) : $query->the_post();
 				echo '<option value="' . get_the_id() . '">' . get_the_title() . '</option>';
 			endwhile;
@@ -131,7 +158,7 @@ function rotary_project_and_committee_announcement_dropdown() {
 	    		'order' => 'ASC'
 	    );
 	    $query = new WP_Query( $args );
-		?><option value="">~~~~~~~~~~ <?php _e( 'Committees' ,'rotary' );?> ~~~~~~~~~~</option><?php 
+		?><option value="">~~~~~~~~~~ <?php _e( 'Committees' ,'Rotary' );?> ~~~~~~~~~~</option><?php 
 	    if ( $query->have_posts() ) : 
 		    while ( $query->have_posts() ) : $query->the_post();
 			echo '<option value="' .  get_the_id() . '">' . get_the_title() . '</option>';

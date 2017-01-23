@@ -31,10 +31,10 @@ if ( get_theme_mod( 'rotary_member_slideshow', true ) ) {
 		<?php // endwhile; ?>
 		</div>
 		<?php if (  get_theme_mod( 'rotary_member_sidebar', true ) ) { 
-			get_sidebar('members'); 
+			get_sidebar( 'members' ); 
 		} ?>
     <footer>
-		<?php if( current_user_can( 'edit_home_page' ) || current_user_can( 'manage_options' ) ) { edit_post_link( __( 'Edit', 'Rotary' ), '', '' ); } ?>
+		<?php if( current_user_can( 'edit_home_page' ) || current_user_can( 'manage_options' ) ) { edit_post_link( __( 'Edit', 'Rotary' ), '', '', $member_page->ID ); } ?>
 	</footer>
 		
 	</div>
