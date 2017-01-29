@@ -19,7 +19,7 @@ class RotaryAdminOptions {
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts_and_styles'));
 	}
 	/**
-	 register if calendar should be used in the general settings
+	 register if calendar should be used in the general settings // I think I must have done a 'replace' DaCDb with Calendar at some point :-(
 	*/
 	function addOptions() {
 		//register a new setting for calendar along with a validate callback

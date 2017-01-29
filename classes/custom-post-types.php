@@ -30,11 +30,12 @@ class RotaryCustomPostTypes {
 		add_action( 'wp_ajax_nopriv_rotarymemberdetails', array($this, 'rotary_get_member_details' ));
 		add_action( 'wp_ajax_rotarymemberdetails', array($this, 'rotary_get_member_details' ));	
 		//
-		//shortcodes
-		add_shortcode( 'MEMBER_DIRECTORY', array($this, 'get_rotary_club_members') );
+		// Member Directory 
+
 		add_shortcode( 'DIRECTORY', array($this, 'get_rotary_club_members') );
 		add_shortcode( 'member_directory', array($this, 'get_rotary_club_members') );
-		add_shortcode( 'directory', array($this, 'get_rotary_club_members') );
+	add_shortcode( 'MEMBER_DIRECTORY', array($this, 'get_rotary_club_members') );
+	add_shortcode( 'directory', array($this, 'get_rotary_club_members') );
 	}
 	//the same will be done for committees
 	function activate() {
