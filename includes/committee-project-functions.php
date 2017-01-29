@@ -17,7 +17,10 @@ define('SPEAKERPROGRAM', 6);
 define('RECURRINGPROGRAM', 7);
 define('OFFSITE', 8);
 define('OTHER', 9);
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/remotes/origin/Paul-Osborn
 
 
 define('DARKBLUE'	, '#00246c');
@@ -34,7 +37,7 @@ define('MIST'		, '#9ea6b4');
 define('LAVENDER'	, '#c6bcd0');
 define('POWDERBLUE'	, '#c9dee9');
 define('MOSS'		, '#a7aca2');
-define('TAUPE'		, '##d9c89e');
+define('TAUPE'		, '#d9c89e');
 define('CHARCOAL'	, '#58585a');
 define('PEWTER'		, '#919295');
 define('SMOKE'		, '#bcbdc0');
@@ -42,7 +45,6 @@ define('SILVER'		, '#e7e7e8');
 define('STORM'		, '#675d58');
 define('ASH'		, '#958d85');
 define('PLATINUM'	, '#c5c1bb');
-define('CLOUD'		, '#e6e5d8');
 define('CLOUD'		, '#e6e5d8');
 define('WHITE'		, '#ffffff');
 
@@ -52,6 +54,7 @@ $ProjectType[WORKPROJECT] 	= __( 'Community / Work Project', 'Rotary' );
 $ProjectType[GRANT]			= __( 'Grant / International Project', 'Rotary' );
 $ProjectType[FUNDRAISER] 	= __( 'Fundraiser Event', 'Rotary' );
 $ProjectType[CAMPAIGN] 		= __( 'Fundraiser Campaign', 'Rotary' );
+$ProjectType[OTHER] 		= __( 'Other Event', 'Rotary' );
 
 $CalendarColor[MEETING] 			= ORANGE;
 $CalendarColor[SOCIALEVENT] 		= CRANBERRY;
