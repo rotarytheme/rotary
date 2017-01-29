@@ -1,6 +1,6 @@
 <?php
 /**
- * The Template for displaying all single posts.
+ * Template Name: Calendar Sidebar
  *
  * @package WordPress
  * @subpackage Rotary

@@ -41,7 +41,7 @@ if ('yes' != $options['rotary_use_dacdb'] || !class_exists( 'RotaryDaCDb' )) {
  * @param unknown $update
  */
 function force_open_comments( $post_id, $post, $update ) {
-	if( 'rotary-committees' == $post->post_type || 'rotary_projects'  == $post->post_type || 1==1 ) :
+	if( 'rotary-committees' == $post->post_type || 'rotary_projects'  == $post->post_type ) :
 	remove_action( 'save_post',  'force_open_comments', 10, 3 );
 	// update the post, which calls save_post again
 	wp_update_post( array( 'ID' => $post_id, 'comment_status' => 'open' ));
@@ -267,14 +267,16 @@ function rotary_register_shortcodes(){
 	add_shortcode( 'COMMITTEE_ANNOUNCEMENTS', 'rotary_announcements_function' );
 	add_shortcode( 'ANNOUNCEMENTS', 'rotary_announcements_function' );
 	add_shortcode( 'BOARDMEMBERS', 'rotary_boardmembers_function' );
-	
-	add_shortcode( 'upcoming_speakers', 'rotary_upcoming_speakers_function' );
-	add_shortcode( 'featured_item', 'rotary_featured_function' );
-	add_shortcode( 'featured', 'rotary_featured_function' );
 	add_shortcode( 'committee_announcements', 'rotary_announcements_function' );
+	add_shortcode( 'featured_item', 'rotary_featured_function' );
+	add_shortcode( 'upcoming_speakers', 'rotary_upcoming_speakers_function' );
+	
+	add_shortcode( 'speakers', 'rotary_upcoming_speakers_function' );
+	add_shortcode( 'featured', 'rotary_featured_function' );
 	add_shortcode( 'announcements', 'rotary_announcements_function' );
 	add_shortcode( 'boardmembers', 'rotary_boardmembers_function' );
 	add_shortcode( 'blogroll', 'rotary_blogroll_function' );
+	//also 'directory' - in custom-post-types.php line 33
 	
 }
 

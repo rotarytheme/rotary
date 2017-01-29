@@ -5,17 +5,144 @@
  */
 
 /***************************
+** EVERY CALENDAR EVENT LIST
+***************************/
+#content #ecp1-calendar-list ol,
+#content #ecp1-calendar-list ul,
+#content #ecp1-calendar-list li{
+	list-style-type: none;
+	margin:0;
+    padding: 0;
+}
+#ecp1-calendar-list li.ecp1-event {
+    max-width: 800px;
+    border-top: #005daa 2px solid;
+    clear: both;
+    padding-top: 15px!important;
+}
+#ecp1-calendar-list .center-column,
+#ecp1-calendar-list .right-column,
+#ecp1-calendar-list .left-column {
+	float:left;
+    margin: 10px 10px 5px 0;
+}
+#ecp1-calendar-list .left-column {
+    width: 80px;
+}
+#ecp1-calendar-list .center-column {
+	max-width:700px;
+    margin-bottom: 15px;
+}
+#ecp1-calendar-list .center-column.hasimage{
+	width:555px;
+}
+#ecp1-calendar-list .right-column{
+	max-width:135px;
+}
+#cp1-calendar-list li.event-date-container, 
+#ecp1-calendar-list li.event-title-container  {
+}
+#content #ecp1-calendar-list .event-date {
+	font-family: open sans condensed, arial narrow, sans-serif;
+    font-weight: 700;
+    float: left;
+    text-align: center;
+    width: 60px;
+    padding: 15px 10px;
+   /* border: 1px solid #01b4e7; */
+   /* background: #f7a81b; */
+    margin-top: 3px;
+    color: #fff;
+}
+#ecp1-calendar-list .event-day {
+    font-size: 36px;
+    font-weight: 700;
+}
+#ecp1-calendar-list .event-month {
+    font-size: 22px;
+    display: block;
+    text-transform: uppercase;
+    margin-top: -5px;
+}
+
+#content #ecp1-calendar-list .event-image {
+	margin-right:10px;
+    width: 100px;
+    float: left;
+}
+#content #ecp1-calendar-list .location-container,
+#ecp1-calendar-list li.event-title {
+    float: left;
+    width:100%;
+}
+#content #ecp1-calendar-list h2 {
+    margin: 0;
+    font-size: 26px;
+    text-transform: uppercase;
+}
+#ecp1-calendar-list .time {   
+	font-family: open sans condensed, arial narrow, sans-serif;
+    font-weight: 700;
+    font-size: 20.5px;
+    text-transform: uppercase;
+    display:block;
+    float:left;
+    width:200px;
+}
+#content #ecp1-calendar-list .event-type {
+	text-align:center;
+	font-family: open sans condensed, arial narrow, sans-serif;
+	font-weight: 700;
+	font-size:15px;
+	text-transform:uppercase;
+	line-height:1em;
+}
+#content #ecp1-calendar-list .location-container {
+	font-family: open sans condensed, arial narrow, sans-serif;
+	text-align:left;
+    padding: 3px 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #005daa;
+    background-color: #f9f9f9;
+}
+#content #ecp1-calendar-list .hasimage .location-container {
+	max-width: 530px;
+}
+#content #ecp1-calendar-list h3.location-label {
+	font-weight: 700;
+	font-size:15px;
+	width:75px;
+	text-transform:uppercase;
+	color: #17458f;
+	margin:0;
+	display:inline-block;
+	float:left;
+}
+#content #ecp1-calendar-list .location-text {
+	float:left;
+}
+
+#ecp1-calendar-list li.event-summary {
+    margin: 0 0 10px 5px;
+    clear: both;
+}
+
+/***************************
 ** EVERY CALENDAR WIDGET
 ***************************/
 
-#home-sidebar>ul>li span.time,
+#footer>ul>li .ecp1_list span.time,
+#home-sidebar>ul>li .ecp1_list span.time,
+#home-sidebar>ul>li .span.time,
 #secondary>ul>li span.time {
     font-weight: 700;
     font-size: 14px;
     text-transform: uppercase;
 }
+#footer>ul>li .ecp1_list span.time,
 #secondary>ul>li span.time {
-    margin-right:4px;;
+    margin-right:4px;
 }
 #home-sidebar>ul>li span.time {
     display:block;
@@ -29,6 +156,7 @@ li.ecp1_list_item {
 li.ecp1_list_item a {
     font-weight: 300;
 }
+#footer>ul>li div.ecp1_list_date, 
 #secondary>ul>li div.ecp1_list_date, 
 #secondary>ul>li ul.ecp1_list_item ,
 #home-sidebar>ul>li div.ecp1_list_date, 
@@ -36,6 +164,16 @@ li.ecp1_list_item a {
     margin: 8px 0 3px;
 }
 
+
+#footer div.ecp1_list_date {
+    border: 1px solid #808080;
+    background: #e5e5e5;
+    padding: 0px 8px;
+ }
+
+#footer div.ecp1_list_day {
+    font-size: 17px;
+}
 .ecp1_list_date {
     font-weight: 700;
     float: left;
@@ -56,14 +194,22 @@ li.ecp1_list_item a {
     text-transform: uppercase;
     margin-top: -5px;
 }
+#footer>ul>li div.ecp1_list_title ,
 #secondary>ul>li div.ecp1_list_title ,
 #home-sidebar>ul>li div.ecp1_list_title {
     float: left;
     margin-left: 5px;
     margin-top: 0px;
-    border-top: 2px solid #01b4e7;
     padding-top: 5px;
 }
+#secondary>ul>li div.ecp1_list_title ,
+#home-sidebar>ul>li div.ecp1_list_title {
+    border-top: 2px solid #01b4e7;
+}
+#footer>ul>li div.ecp1_list_title {
+    border-top: 1px solid #808080;
+}
+#footer>ul>li div.ecp1_list_title ,
 #secondary>ul>li div.ecp1_list_title  {
     font-size: 17px;
     width:140px;

@@ -13,9 +13,10 @@ define('WORKPROJECT', 2);
 define('GRANT', 3);
 define('FUNDRAISER', 4);
 define('CAMPAIGN', 5);
-define('OFFSITE', 8);
 define('SPEAKERPROGRAM', 6);
 define('RECURRINGPROGRAM', 7);
+define('OFFSITE', 8);
+define('OTHER', 9);
 
 
 
@@ -61,6 +62,7 @@ $CalendarColor[CAMPAIGN] 			= LAVENDER;
 $CalendarColor[SPEAKERPROGRAM] 		= ROYALBLUE;
 $CalendarColor[RECURRINGPROGRAM] 	= SMOKE;
 $CalendarColor[OFFSITE] 			= SKYBLUE;
+$CalendarColor[OTHER] 				= TAUPE;
 
 // ---------------- Registration Types ---------------- //
 define('REGISTER', 0);

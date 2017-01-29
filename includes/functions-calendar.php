@@ -9,24 +9,23 @@ add_action( 'save_post_rotary_speakers', 'save_calendar_fields', 99);
 add_action( 'save_post_rotary_projects', 'save_calendar_fields', 99);
 function save_calendar_fields( $post_id ){
     global $post, $ecp1_event_fields, $CalendarColor;
+
     
- //   echo $post->post_type; die;
- 
-    
-    if ( ! isset( $post ) )
-    	//$post =  get_post( $post_id );
-		return; // don't update if not a post
+    if ( $post_id ) 
+    	$post =  get_post( $post_id );
+	//	return; // don't update if not a post
 	if ( 'revision' == $post->post_type )
 		return; // don't update on revisions
 	if ( 'rotary_projects' != $post->post_type && 'rotary_speakers' != $post->post_type)
      	return; // don't update non-events
 	
     $calendar_tz = new DateTimeZone( ecp1_get_calendar_timezone() ); // UTC if error
-    //rotary_pa($_POST); exit;
     
+
+
     //=============== the start date ==============
     
-    
+    $end_label = '';
     if( 'rotary_projects' == $post->post_type ){
         $start_date = get_post_meta( $post_id, 'rotary_project_date', true);
         $project_type = get_field(  'field_project_type' );
@@ -35,12 +34,14 @@ function save_calendar_fields( $post_id ){
 	        $the_start_time = '12:00 am';
 	        $the_end_time   = '11:59 pm';
 	        $end_date = get_post_meta($post_id, 'rotary_project_end_date', true);
-	        $end_date = $end_date ? $end_date : get_post_meta( $post_id, 'rotary_project_date', true);
+	        $end_date = $end_date ? $end_date : get_post_meta( $post_id, 'rotary_project_date', true);     
+
         else:
 	        $full_day =  'N';
 	        $the_start_time = get_post_meta($post_id, 'rotary_project_start_time', true);
 	        $the_end_time   = get_post_meta($post_id, 'rotary_project_end_time', true);
 	        $end_date = get_post_meta( $post_id, 'rotary_project_date', true);
+	        
         endif; 
 
         $content = apply_filters( 'the_content', $post->post_content );
@@ -71,11 +72,10 @@ function save_calendar_fields( $post_id ){
         if ( empty( $content) ) $content = get_field('speaker_program_content', $post_id);
     
         $textcolor = "#FFFFFF";
-
     }
     
   //  echo 'Calendar TimeZone is' . $calendar_tz; 
- //   echo 'got here';
+
     $start_date_ts = rotary_create_timestamp_in_calendar_tz( $start_date, $the_start_time, $calendar_tz );
     $end_date_ts = rotary_create_timestamp_in_calendar_tz( $end_date, $the_end_time, $calendar_tz );
     
@@ -87,7 +87,7 @@ function save_calendar_fields( $post_id ){
     	$address = $location['address'];
     }
 	
-	$calendar_id = rotary_get_first_calendar();
+	$calendar_id = get_option ( 'Every_Calendar_ID');
 	
     $event_grouped_fields = array(
                                 'ecp1_summary'      => strip_tags( rotary_truncate_text( $content, 250, '', false, true )),
@@ -113,11 +113,7 @@ function save_calendar_fields( $post_id ){
                         //        'ecp1_repeat_terminate_at' => 1455408000,
                         //        'ecp1_repeat_last_changed' => 1452005784,
                                 );
-
-    /*get_post_meta($post_id, 'rotary_project_start_time', true)
-    get_post_meta($post_id, 'rotary_project_end_time', true),*/
     
-    //var_dump($event_grouped_fields); exit;
     
     $stand_alone_fields = array(
                                 'ecp1_event_start'      => $start_date_ts,
@@ -131,14 +127,10 @@ function save_calendar_fields( $post_id ){
     // Save the post meta information
     delete_post_meta( $post->ID, 'ecp1_event' );
 	$r = add_post_meta( $post->ID, 'ecp1_event', $event_grouped_fields );
-	//var_dump($post->ID, $stand_alone_fields); exit;
 	foreach( $stand_alone_fields as $key=>$value ) {
 		delete_post_meta( $post->ID, $key );  
 		add_post_meta( $post->ID, $key, $value );  
 	}  
-	
-    //rotary_pa($event_grouped_fields); exit;
-
  }
  
  function rotary_create_timestamp_in_calendar_tz( $date_str, $time_str, $calendar_tz ) {
@@ -161,16 +153,10 @@ function save_calendar_fields( $post_id ){
  return $date_ts;
 }
  
-
 function rotary_get_first_calendar() {
-	//assume the first calendar is being used for this
-	$calendars_array = get_posts( array( 'post_type'=>'ecp1_calendar', 'post_status'=>'publish', 'suppress_filters'=>false, 'numberposts'=>-1, 'nopaging'=>true, 'order_by'=>'ID' ) );
-	foreach( $calendars_array as $calendar ):
-		$calendar_id = $calendar->ID;
-		break;
-	endforeach;
-
-	return $calendar_id;
+	return $id =  get_option( 'Every_Calendar_ID' );
+	echo $id;
+	return $id;
 }
  
  function rotary_pa($arr){
@@ -182,7 +168,7 @@ function rotary_get_first_calendar() {
  /****************************/
 
  // Save the data when the meta box is submitted
- add_action( 'customize_save_after', 'rotary_ecp1_event_save' );
+ //add_action( 'customize_save_after', 'rotary_ecp1_event_save' );
  function rotary_ecp1_event_save() {
  	global $ecp1_event_fields;
  	
@@ -366,24 +352,28 @@ function rotary_get_first_calendar() {
  }
  */
  
+ 
 /*
  * Only run this once
  */
- add_action( 'init', 'update_all_calendar_post_types' );
- function update_all_calendar_post_types() {
- 	global $post;
-	if( '2' == get_option( 'update_all_calendar_post_types' )) return;
+ add_action( 'ecp1_set_default_calendar', 'update_all_calendar_post_types' );
+ function update_all_calendar_post_types( $force = false) {
+ 	//If you want to have the posts resaved when the theme update is installed, incrememnt the check number here (and in the update_option below)
+	if( !function_exists( 'ecp1_get_calendar_timezone' ) || '1' == get_option( 'update_all_calendar_post_types' )) return;
  	
 	 	$args = array(
 	 		'post_type' => array( 'rotary_projects', 'rotary_speakers' ),
 	 		'post_status' => 'publish',
 	 		'posts_per_page'   => -1,
+	 		'order_by' => 'post_type'
 	 	);
 	 	$posts = get_posts( $args );
+	 	
 	 	foreach ($posts as $post ) : setup_postdata( $post ) ;
 	 		save_calendar_fields( $post->ID );
 	 	endforeach;
 	 	
- 		update_option( 'update_all_calendar_post_types', '2' );
+ 		update_option( 'update_all_calendar_post_types', '1' );
  }
+
  

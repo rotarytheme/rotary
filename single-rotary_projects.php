@@ -49,9 +49,9 @@ endif; // for conversion: set type based on LongTerm flag
     //show participants first
 
 	if ( 1 == get_field( 'participants_table_flag' ) ) :
-    	echo do_shortcode( '[MEMBER_DIRECTORY type="projects" id="' . get_the_id() . '"]' );
+    	echo do_shortcode( '[directory type="projects" id="' . get_the_id() . '"]' );
 	elseif ( 2 == get_field( 'participants_table_flag' ) &&  have_rows( 'field_column_display_repeater' )) :
-    	echo do_shortcode( '[MEMBER_DIRECTORY type="form" id="' . get_the_id() . '"]' );
+    	echo do_shortcode( '[directory type="form" id="' . get_the_id() . '"]' );
 	endif;
     ?>
     

@@ -10,6 +10,8 @@
 ?>
 <style>
 
+calendar
+
 .calendar-sidebar-button {
 	width:150px;
 	margin-bottom:10px;

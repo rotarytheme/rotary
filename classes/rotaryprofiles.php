@@ -54,9 +54,10 @@ class RotaryProfiles {
 			return '<img class="avatar" src="'.$profilepic.'" height="'.$size. '" width="'.$size.'"/>';
 		}
 		else { 
-			 return $avatar;
+			 return '';//$avatar;
 		}
 	}
+
 	/*
 	this function shows the added custom profile fields whenever a user profile is viewed or edited.
 	*/
@@ -575,4 +576,3 @@ class RotaryProfiles {
 		
 
 }//end class
-?>
