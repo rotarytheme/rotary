@@ -8,16 +8,6 @@
  * sidebar used on the calendar
  */
 ?>
-<style>
-
-calendar
-
-.calendar-sidebar-button {
-	width:150px;
-	margin-bottom:10px;
-}
-
-</style>
 
 	<aside id="secondary" role="complementary">
 		<ul>
