@@ -352,7 +352,6 @@ function rotary_get_first_calendar() {
  }
  */
  
- 
 /*
  * Only run this once
  */
