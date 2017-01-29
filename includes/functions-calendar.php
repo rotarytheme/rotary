@@ -350,7 +350,7 @@ function rotary_get_first_calendar() {
  }
  */
  
- 
+ .calendar-sidebar-button
 /*
  * Only run this once
  */
