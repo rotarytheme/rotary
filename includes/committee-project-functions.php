@@ -17,10 +17,6 @@ define('SPEAKERPROGRAM', 6);
 define('RECURRINGPROGRAM', 7);
 define('OFFSITE', 8);
 define('OTHER', 9);
-<<<<<<< HEAD
-
-=======
->>>>>>> refs/remotes/origin/Paul-Osborn
 
 
 define('DARKBLUE'	, '#00246c');
