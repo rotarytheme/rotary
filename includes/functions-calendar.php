@@ -350,7 +350,6 @@ function rotary_get_first_calendar() {
  }
  */
  
- .calendar-sidebar-button
 /*
  * Only run this once
  */
@@ -374,4 +373,3 @@ function rotary_get_first_calendar() {
  		update_option( 'update_all_calendar_post_types', '1' );
  }
 
- 

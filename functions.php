@@ -31,6 +31,7 @@ update_option( 'google_api_key' , 'AIzaSyAek8gghAI_1e1QYiPkd6iD7xhqluWC-mU' );
 
 get_locale();
 
+/*
 //delete the rotary membership folder if it exists
 function rotary_delete_rotarymembership_folder( $dir, $deleteRootToo ) {
 	if( !$dh = @opendir( $dir )){
@@ -64,7 +65,7 @@ rotary_delete_rotarymembership_folder( $dir, $deleteRootToo );
 $dir = ABSPATH . '/wp-content/plugins/rotarymembership-master';
 rotary_delete_rotarymembership_folder( $dir, $deleteRootToo );
 
-
+*/
 /*
  * EMBEDDED PLUGINS AND EXTENSIONS
 */
