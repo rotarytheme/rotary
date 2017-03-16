@@ -5,6 +5,7 @@ STYLESHEET FOR  SPONSORS PLUGIN
     border: 4px #FCAB1D solid;
     padding: 10px;
     border-radius: 10px;
+    clear: both;
 }
 .sponsor_level {
   text-align: center;

@@ -143,6 +143,24 @@ if(function_exists("register_field_group"))
 		'title' => 'Sponsorship Level Settings',
 		'fields' => array (
 			array (
+					'key' => 'field_sponsor_list_id',
+					'label' => 'Sponsor List ID',
+					'name' => 'sponsor_list_id',
+					'type' => 'select',
+					'instructions' => __( 'The list ID allows you to filter the sponsors for particular events etc.', 'Rotary' ),
+					'choices' => array (
+							'1' => __( 'Sponsor List: 1', 'Rotary' ),
+							'2' => __( 'Sponsor List: 2', 'Rotary' ),
+							'3' => __( 'Sponsor List: 3', 'Rotary' ),
+							'4' => __( 'Sponsor List: 4', 'Rotary' ),
+							'5' => __( 'Sponsor List: 5', 'Rotary' ),
+							'6' => __( 'Sponsor List: 6', 'Rotary' ),
+					),
+					'default_value' => '1',
+					'allow_null' => 0,
+					'multiple' => 0,
+			),
+			array (
 				'key' => 'field_56b24ff1278a9',
 				'label' => 'Sponsorship Level Order',
 				'name' => 'sponsorship_level_order',
@@ -153,21 +171,21 @@ if(function_exists("register_field_group"))
 				'append' => '',
 				'min' => 1,
 				'max' => '',
-				'step' => '',
+				'step' => 1,
 			),
 			array (
 				'key' => 'field_56b3a7874e463',
 				'label' => 'Sponsor Style',
 				'name' => 'sponsor_style',
 				'type' => 'select',
-				'instructions' => 'Select the layout for this sponsorship level.',
+				'instructions' => __( 'Select the layout for this sponsorship level.', 'Rotary' ),
 				'choices' => array (
-					'full' => 'Full-width sponsor (no text)',
-					'full_text' => 'Full-width sponsor (with accompanying text side-by-side)',
-					'full_text_bottom' => 'Full-width sponsor (with accompanying text below)',
-					'double' => 'Two sponsors per row',
-					'triple' => 'Three sponsors per row',
-					'quad' => 'Four sponsors per row',
+					'full' => __( 'Full-width sponsor (no text)', 'Rotary' ),
+					'full_text' => __( 'Full-width sponsor (with accompanying text side-by-side)', 'Rotary' ),
+					'full_text_bottom' => __( 'Full-width sponsor (with accompanying text below)', 'Rotary' ),
+					'double' => __( 'Two sponsors per row', 'Rotary' ),
+					'triple' => __( 'Three sponsors per row', 'Rotary' ),
+					'quad' => __( 'Four sponsors per row', 'Rotary' ),
 				),
 				'default_value' => '',
 				'allow_null' => 0,
@@ -205,12 +223,14 @@ if(function_exists("register_field_group"))
 function sponsorsShortcode( $atts ) {
 	// Check for option to display titles or not
     $a = shortcode_atts( array(
-        'show_titles' => true
+        'show_titles' => true,
+		'id' => 1
     ), $atts, sponsorsShortcode );
    
     
 	
 	$show_titles = filter_var( $a['show_titles'], FILTER_VALIDATE_BOOLEAN );
+	$sponsor_list_id = filter_var( $a['id'], FILTER_VALIDATE_INT );
 
 	// Get the levels from the taxonomy term we created
 	$levels = get_terms( 'sponsorship_levels' );
@@ -218,16 +238,17 @@ function sponsorsShortcode( $atts ) {
 	$sponsor_order_array = array();
 	// Add the sponsorship levels to the array
 	foreach( $levels as $level ) : 
-		// Set order according to ACF order
 		if (function_exists('get_field')) {
-			if (get_field('sponsorship_level_order', $level)) {
-				$order = get_field('sponsorship_level_order', $level);
-				$sponsor_order_array[$order] = $level->name;
-			} else { // Otherwise just put them in created order I guess
-				$sponsor_order_array[] = $level->name;
+			//filter by the level
+			if ( $sponsor_list_id == get_field('sponsor_list_id', $level)) {
+			// Set order according to ACF order
+				if (get_field('sponsorship_level_order', $level)) {
+					$order = get_field('sponsorship_level_order', $level);
+					$sponsor_order_array[$order] = $level->name;
+				} else { // Otherwise just put them in created order I guess
+					$sponsor_order_array[] = $level->name;
+				}
 			}
-		} else { // Otherwise just put them in created order I guess
-			$sponsor_order_array[] = $level->name;
 		}
 	endforeach;
 	// Sort the levels numerically
@@ -245,8 +266,13 @@ function sponsorsShortcode( $atts ) {
 		'post_type' => 'sponsors',
 		'posts_per_page' => '-1',
 		'orderby' => 'menu_order',
-		'order' => 'ASC',
+		'order' => 'ASC'
 	);
+	
+	$terms = get_terms( array( 'taxonomy' => 'sponsorship_levels' ));
+	$term_meta = get_term_meta( '241' );
+	//var_dump ( $terms, $term_meta );
+	
 	
 	$sponsors_loop = new WP_Query($sponsors_args);
 	// Make sure ACF is active
@@ -263,10 +289,12 @@ function sponsorsShortcode( $atts ) {
 				}
 			}
 			// Get SPONSORSHIP LEVEL
-			$term = wp_get_post_terms(get_the_ID(), 'sponsorship_levels');
+			unset ($list_id );
+			$term = wp_get_post_terms( get_the_ID(), 'sponsorship_levels' );
 			$level = $term[0]->name;
+			$list_id = get_field('sponsor_list_id', $term[0] );
 			// Make sure it's been given a sponsorship level and add to array
-			if ($level !== NULL) {
+			if ($level !== NULL && ( $sponsor_list_id == $list_id || !$list_id )) {
 				$sponsor_array[$level][] = array(
 					'sponsor_name' => get_the_title(),
 					'sponsor_url' => $meta_sponsor_link,

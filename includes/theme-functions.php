@@ -10,7 +10,11 @@
 
 //if DacDB is not being used, then allow the direct import of users
 $options = get_option('rotary_dacdb');
-if ('yes' != $options['rotary_use_dacdb'] || !class_exists( 'RotaryDaCDb' )) {
+if ( !is_array( $options )) {
+	$options = array( 'rotary_use_dacdb' => false );
+	update_option('rotary_dacdb', $options );
+}
+if ( 'yes' != $options['rotary_use_dacdb'] || !class_exists( 'RotaryDaCDb' )) {
 	IS_IU_Import_Users::init();
 	add_action( 'is_iu_pre_user_import', 'rotary_pre_user_import', 10, 2 );
 	function rotary_pre_user_import( $userdata, $usermeta ) {
@@ -32,6 +36,128 @@ if ('yes' != $options['rotary_use_dacdb'] || !class_exists( 'RotaryDaCDb' )) {
 		
 	}
 }
+
+/**
+ * 
+ * 
+ * @param unknown $themes
+ * @return multitype:string
+ */
+
+function megamenu_add_theme_rotary_white_1488739833($themes) {
+	$themes["rotary_white_1488739833"] = array(
+			'title' => 'Rotary White',
+			'container_background_from' => 'rgb(30, 60, 100)',
+			'container_background_to' => 'rgb(30, 60, 100)',
+			'container_padding_left' => '10px',
+			'container_padding_right' => '10px',
+			'container_padding_top' => '8px',
+			'arrow_up' => 'disabled',
+			'arrow_down' => 'disabled',
+			'arrow_left' => 'dash-f340',
+			'arrow_right' => 'dash-f344',
+			'menu_item_background_from' => 'rgba(251, 251, 255, 0)',
+			'menu_item_background_to' => 'rgba(255, 255, 255, 0)',
+			'menu_item_background_hover_from' => 'rgb(30, 60, 100)',
+			'menu_item_background_hover_to' => 'rgb(30, 60, 100)',
+			'menu_item_spacing' => '5px',
+			'menu_item_link_font' => 'Open Sans',
+			'menu_item_link_font_size' => '15px',
+			'menu_item_link_height' => '45px',
+			'menu_item_link_color' => 'rgb(255, 255, 255)',
+			'menu_item_link_weight' => 'bold',
+			'menu_item_link_text_transform' => 'capitalize',
+			'menu_item_link_color_hover' => 'rgb(255, 255, 255)',
+			'menu_item_link_weight_hover' => 'bold',
+			'menu_item_highlight_current' => 'on',
+			'panel_background_from' => 'rgb(255, 255, 255)',
+			'panel_background_to' => 'rgb(255, 255, 255)',
+			'panel_border_color' => 'rgb(244, 244, 244)',
+			'panel_border_bottom' => '0.5px',
+			'panel_header_color' => 'rgb(57, 66, 74)',
+			'panel_header_font_size' => '20px',
+			'panel_header_border_color' => 'rgba(85, 85, 85, 0)',
+			'panel_padding_left' => '10px',
+			'panel_padding_right' => '10px',
+			'panel_padding_top' => '0',
+			'panel_padding_bottom' => '10px',
+			'panel_font_size' => '17px',
+			'panel_font_color' => 'rgb(255, 255, 255)',
+			'panel_font_family' => 'inherit',
+			'panel_second_level_font_color' => 'rgb(57, 66, 74)',
+			'panel_second_level_font_color_hover' => 'rgb(1, 180, 231)',
+			'panel_second_level_text_transform' => 'capitalize',
+			'panel_second_level_font' => 'Open Sans',
+			'panel_second_level_font_size' => '16px',
+			'panel_second_level_font_weight' => 'bold',
+			'panel_second_level_font_weight_hover' => 'bold',
+			'panel_second_level_text_decoration' => 'none',
+			'panel_second_level_text_decoration_hover' => 'none',
+			'panel_second_level_border_color' => 'rgba(221, 221, 221, 0)',
+			'panel_third_level_font_color' => 'rgb(94, 113, 125)',
+			'panel_third_level_font_color_hover' => 'rgb(43, 166, 203)',
+			'panel_third_level_text_transform' => 'capitalize',
+			'panel_third_level_font' => 'Open Sans',
+			'panel_third_level_font_size' => '14px',
+			'panel_third_level_background_hover_from' => 'rgba(0, 0, 0, 0)',
+			'flyout_width' => '235px',
+			'flyout_menu_background_from' => 'rgb(255, 255, 255)',
+			'flyout_menu_background_to' => 'rgb(255, 255, 255)',
+			'flyout_menu_item_divider_color' => 'rgb(94, 113, 125)',
+			'flyout_link_padding_right' => '5px',
+			'flyout_link_weight_hover' => 'bold',
+			'flyout_background_from' => 'rgba(241, 241, 241, 0)',
+			'flyout_background_to' => 'rgba(241, 241, 241, 0)',
+			'flyout_background_hover_from' => 'rgba(221, 221, 221, 0)',
+			'flyout_background_hover_to' => 'rgba(221, 221, 221, 0)',
+			'flyout_link_size' => '15px',
+			'flyout_link_color' => 'rgb(94, 113, 125)',
+			'flyout_link_color_hover' => 'rgb(1, 180, 231)',
+			'flyout_link_family' => 'Open Sans',
+			'flyout_link_text_transform' => 'capitalize',
+			'shadow_vertical' => '5px',
+			'shadow_spread' => '1px',
+			'shadow_color' => 'rgba(0, 0, 0, 0.39)',
+			'resets' => 'on',
+			'toggle_background_from' => 'rgb(255, 255, 255)',
+			'toggle_background_to' => 'rgb(255, 255, 255)',
+			'toggle_font_color' => 'rgb(255, 255, 255)',
+			'mobile_background_from' => 'rgb(0, 36, 108)',
+			'mobile_background_to' => 'rgb(0, 36, 108)',
+			'custom_css' => '#{$wrap} {clear: both;}
+
+.mega-menu-item:not(.mega-has-icon) a.mega-menu-link:before {
+    border-left: 15px solid rgba(0, 0, 0, 0);
+    border-right: 15px solid rgba(0, 0, 0, 0);
+    border-bottom: 10px solid #fff;
+    bottom: -10px;
+    content: \"\";
+    display: block!important;
+    height: 0;
+    left: 50%;
+    margin-left: 0;
+    position: absolute!important;
+    width: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    vertical-align:bottom!important;
+    -webkit-transition: bottom .9s ease .2s;
+    transition: bottom .3s ease .2s;
+}
+li.mega-toggle-on.mega-menu-item:not(.mega-has-icon) a.mega-menu-link:before {
+    bottom: 0;
+}
+
+
+li.mega-toggle-on.mega-menu-item:not(.mega-has-icon) a.mega-menu-link:before {
+    bottom: 0;
+}
+
+',
+	);
+	return $themes;
+}
+add_filter("megamenu_themes", "megamenu_add_theme_rotary_white_1488739833");
 
 /**
  * Comments must be enabled for projects and committees - make it so!
