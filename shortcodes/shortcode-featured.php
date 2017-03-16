@@ -5,7 +5,8 @@
 function rotary_get_featured_shortcode_html( $atts ){
 	extract( shortcode_atts( array(
 	'header' => 'Latest News',
-	'fetch'  => 'next'
+	'fetch'  => 'next',
+	'length' => 1024
 			), $atts ) );
 			if (post_type_exists( 'rotary_speakers' ) && 'next' == $fetch )  {
 				$args = array(
@@ -82,8 +83,8 @@ function rotary_get_featured_shortcode_html( $atts ){
 	else {
 		$content = apply_filters(get_the_content());
 	}
-	if (strlen( $content ) > 1024 ) {
-		$content = rotary_truncate_text( $content, 1024, '', false, true ) . '<a href="'.get_permalink().'"> ...continue reading</a>';
+	if (strlen( $content ) > $length ) {
+		$content = rotary_truncate_text( $content, $length, '', false, true ) . '<a href="'.get_permalink().'"> ...continue reading</a>';
 	} ?>
         <section class="featuredcontent">
            <?php  if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
