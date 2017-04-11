@@ -21,6 +21,7 @@ define( 'ROTARY_THEME_CSV_PATH', TEMPLATEPATH . '/import-users-from-csv/');
 define( 'ROTARY_THEME_JAVASCRIPT_URL', get_template_directory_uri() .  '/includes/js/');
 define( 'ROTARY_THEME_CSS_URL', get_template_directory_uri() . '/css/');
 define( 'ROTARY_THEME_CSV_URL', get_template_directory_uri() . '/import-users-from-csv/');
+define( 'ROTARY_THEME_IMAGES_URL', get_template_directory_uri() . '/includes/images/');
 
 add_action('after_setup_theme', 'my_theme_setup');
 function my_theme_setup(){

@@ -11,7 +11,6 @@ function rotary_boardmembers_html( $atts ) {
 		
 		$clubname = get_theme_mod( 'rotary_club_name', '' );
 		$rotaryClubBefore = get_theme_mod( 'rotary_club_first', false);
-		
 	
 		ob_start();
 		?>
@@ -23,9 +22,10 @@ function rotary_boardmembers_html( $atts ) {
 			if( !empty( $boardmembers->results ) ) :
 				foreach( $boardmembers->results as $boardmember ) :
 					$usermeta = get_user_meta( $boardmember->ID );
-
-			if (isset( $usermeta['profilepicture'] )) 
-				$profilepic = $usermeta['profilepicture'][0];
+			
+					unset( $profilepic );
+					if (isset( $usermeta['profilepicture'] )) 
+						$profilepic = $usermeta['profilepicture'][0];
 			
 					$roles = ( is_array( $usermeta['clubrole']) ? implode( $usermeta['clubrole'], '<br>') : '');
 					if( $roles && 'Member' != $roles):

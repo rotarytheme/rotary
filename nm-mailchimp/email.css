@@ -219,53 +219,65 @@ td.announcements-container {
 
 table#branding h2 {
 	color: #17458f;
-    text-transform: uppercase;
     font-family: open sans condensed;
-    font-weight: 300;
-    font-size: 36px;
+    font-weight: 700;
+    font-size: 32px;
     text-align: center;
     border-bottom: 3px solid #00008B;
 }
 
-table .header-text-container h3 {
-    font-size: 28px;
-    margin-top: 8px;
-    text-transform: none;
-    color: #58585A;
-    font-weight: 700;
-    margin-bottom: 4px;
+
+table .header-text-container h1 {
+    font-size: 34px;
+    font-weight: 100;
+    margin-top: 24px;
+    margin-bottom: 16px;
+    color: #17458f;
     padding: 0;
     font-family: 'Open Sans Condensed', Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
 }
 
-
-
-table .header-text-container h4 {
+table .header-text-container h5 {
     margin-top: 4px;
-    font-size: 22px;
-    font-family: "Open Sans Condensed",Arial,Helvetica,sans-serif;
+    font-size: 17px;
+    font-family: "Georgia, Times, "Times New Roman", serif;
     font-weight: 700;
-    color: #58585A;
     margin-bottom: 0;
     padding: 0;
     text-transform: uppercase;
 }
-
-
-table h5.organizing-committee {
-    font-size: 15px;
-    text-transform: capitalize;
-    margin: 3px 0;
-    font-family: "Open Sans Condensed",Arial,Helvetica,sans-serif;
-    font-weight: 300;
-    color: #58585A;
-    padding: 0;
+table .header-text-container h5 a {
+	text-decoration:none;
 }
 
+.announcement-buttons,
+.calltoactioncontainer {
+    border-top: 3px solid #e5e5e5;
+    border-bottom: 3px solid #e5e5e5;
+    padding-top:12px;
+    padding-bottom:12px;
+}
+.header-text-container span,
+p.announced-by {
+    font-family: "Open Sans Condensed",Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    margin-top: 3px;
+    color: #58585A;
+    font-weight:700;
+}
+
+
+table span.project-type {
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 3px;
+}
+table span.organizing-committee {
+}
 td.header-thumbnail-container {
     width: 175px;
 }
-
 .rotarybutton-smallwhite,
 .rotarybutton-smallblue,
 .rotarybutton-smallgold {
@@ -302,19 +314,15 @@ td.header-thumbnail-container {
     color: #005daa;
 }
 .announcement-body {
-    padding-bottom: 5px;
-    border-top: 1px solid #B8A3A0;
+    padding-bottom: 20px;
     padding-top: 8px;
 }
-.announcement-footer {
-    border-top: 1px solid #B8A3A0;
-}
 .announcement-date {
-    font-size: 19px;
+    font-size: 17px;
     white-space: nowrap;
     margin: 0;
     color: #58585A;
-    padding: 0;
+    padding: 10px;
     font-family: "Open Sans Condensed",Arial,Helvetica,sans-serif;
     text-transform: uppercase;
     font-weight: 300;
@@ -324,8 +332,13 @@ td.header-thumbnail-container {
 	text-align: right;
 }
 .announcement-date-table {
-    border-top: 1px solid #808080;
+    border-top: 2px solid #e5e5e5;
+    border-bottom: 2px solid #e5e5e5;
     width: 100%;
+}
+
+td.speaker-announcements-container .announcement-date-row td {
+	height: 100px;
 }
 
 p.announced-by {
@@ -334,11 +347,4 @@ p.announced-by {
 }
 .inline {
     display: inline;
-}
-.header-text-container span {
-    display: inline-block;
-    font-family: open sans condensed;
-    font-size: 16px;
-    margin-top: 3px;
-    text-transform: uppercase;
 }

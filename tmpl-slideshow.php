@@ -11,7 +11,7 @@ get_header( 'slideshow' ); ?>
 
 	<div id="page">
 		<div id="content" role="main" class="fullwidth slideshow">
-			<?php echo do_shortcode( '[ANNOUNCEMENTS context="slideshow"]' ); ?>
+			<?php echo do_shortcode( '[announcements context="slideshow"]' ); ?>
 		</div>
 	</div>
 	

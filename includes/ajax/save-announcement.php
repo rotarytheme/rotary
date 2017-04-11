@@ -94,7 +94,7 @@ if ( ! comments_open( $comment_post_ID ) ) {
 }
 
 
-// This action deals with saving all the custom fields that we are passing through.  It calls rotary_save_announcement_meta() in committee-projects-functions.php
+// This action deals with saving all the custom fields that we are passing through.  It calls rotary_save_announcement_meta() in ajax-announcements.php
 do_action( 'comment_edit', $comment_ID );
 
 $comment_content = ( isset($_REQUEST['comment']) ) ? trim($_REQUEST['comment']) : null;

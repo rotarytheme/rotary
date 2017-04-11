@@ -31,6 +31,7 @@ class RotaryAnnouncements {
 	private $lookback;
 	private $lookforward;
 	private $context;
+	private $show;
 	private $ProjectType;
 	private $allowedits;
 	
@@ -61,7 +62,7 @@ class RotaryAnnouncements {
 
 	   $this->program_date = rotary_next_program_date();
 	   
-		$this->get_shortcode_html();
+	  $this->get_shortcode_html();
 	}
 
 	function get_shortcode_html() {
@@ -133,8 +134,10 @@ class RotaryAnnouncements {
 								$hash = md5( $encoded . 'SecretStringHere' );
 								?>
 									<div id="announcements-mailchimpcampaign">
-										<a id="announcements-sendemailtest" class="rotarybutton-largewhite" href="javascript:void" ng-click="saveCampaign()" ><?php echo __( 'Send Test Email', 'Rotary'); ?></a>
-										<a id="announcements-sendemailblast" class="rotarybutton-largeblue" href="javascript:void(0)" ng-click="sendCampaign(1)" ><?php echo __( 'Send Email Blast', 'Rotary'); ?></a>
+									<?php if ( 'shortcode' == $this->context ) { ?>
+										<a id="announcements-sendemailtest" class="rotarybutton-smallwhite" href="javascript:void" ng-click="saveCampaign()" ><?php echo __( 'Send Test Email', 'Rotary'); ?></a>
+										<a id="announcements-sendemailblast" class="rotarybutton-smallblue" href="javascript:void(0)" ng-click="sendCampaign(1)" ><?php echo __( 'Send Email Blast', 'Rotary'); ?></a>
+									<?php }?>
 										<input type="hidden" id="announcements-array" value="<?php echo $encoded; ?>" />
 										<input type="hidden" id="announcements-hash" value="<?php echo $hash ?>" />
 									</div>
@@ -189,13 +192,32 @@ class RotaryAnnouncements {
 
 		$this->announcementsDisplayed = 0;
 
-		// Exclude all announcements that have expired
+		// Exclude all announcements that have expired and announcement not permissioned for this user's logged-in status(member/nonnember)
+		
+		$show = ( is_user_logged_in() ) ? 1 : 2;
 		$this->args['meta_query'] = array(
+				'relation' => 'AND',
 				array(
 						'key' => 'announcement_expiry_date',
 						'value' => $this->today->format( 'Y-m-d'),
 						'compare' => '>='
-				)
+				),array(
+					'relation' => 'OR',
+					array(
+							'key' => 'permissions',
+							'value' => $show,
+							'compare' => '='
+					),
+					array(
+							'key' => 'permissions',
+							'value' => 0, //Both
+							'compare' => '='
+					),
+					array(
+							'key' => 'permissions',
+							'compare' => 'NOT EXISTS' // not set
+					)
+			)
 		);
 		
 		$announcements = get_comments( $this->args );
@@ -218,7 +240,7 @@ class RotaryAnnouncements {
 				endif; //end count 
 			endif; //end is_array check
 				
-			if ( 0 == $this->announcementsDisplayed && !$this->speakerdate ) :
+			if ( 0 == $this->announcementsDisplayed && !$this->speakerdate && 'slideshow' != $context ) :
 				$this->announcement_ob[0] = '<p>' . __( 'There are no active announcements') . '</p>';
 			endif;
 	
