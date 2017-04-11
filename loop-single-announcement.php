@@ -54,9 +54,9 @@
 						<tr class="announcement-buttons">
 							<td>
 								<table class="announcement-buttons-table">
-									<tr>
-										<td>
-											<p class="announced-by clearleft"><?php echo $announced_by; ?></p>
+									<tr class="annoucement-buttons-row">
+										<td class="announcement-buttons" <?php echo $call_to_action ? '' : ' colspan="2"' ;?>">
+											<p class="announced-by clearleft"><?php echo sprintf( __('By %s', 'Rotary'), $announced_by); ?></p>
 											<?php if ( $request_replies ) :
 												$userdata = get_userdata( $announcement->user_id );
 											?>
@@ -77,8 +77,9 @@
 						</tr>
 						<tr class="announcement-date-row">
 							<td>
-								<table  class="announcement-date-table">
-									<tr>
+							<?php if (!$hide_expiry ) {?>
+								<table class="announcement-date-table">
+									<tr  class="announcement-date-row">
 										<td class="announcement-date">
 											<span class="day"><?php echo strftime( '%e %b %G', $date ); //$date->format( 'd M Y') ; ?></span>
 										</td>
@@ -87,6 +88,7 @@
 										</td>
 									</tr>
 								</table>
+								<?php } else { ?>&nbsp;<?php  } ?>
 							</td>
 						</tr>
 					</table>
@@ -98,7 +100,13 @@
 				<article id="comment-<?php echo $id ?>" <?php comment_class( $extra_classes, $id ); ?>>
 				<?php echo rotary_announcement_header( $posted_in_id, $announcement_title );?>
 				<div class="announcement-buttons">
-					<p class="announced-by clearleft"><?php echo $announced_by; ?></p>
+					<h6 class="announced-by"><?php echo sprintf( __( 'By %s', 'Rotary' ), $announced_by ); ?></h6>
+					<?php if ( $request_replies ) :
+						$userdata = get_userdata( $announcement->user_id );	?>
+						<div class="request-replies-container">
+							<a class="rotarybutton-smallblue" href="mailto:<?php echo $userdata->user_email;?>?subject=Re: <?php echo htmlentities( $announcement_title );?>" ><?php echo sprintf( __ ('Reply to %s'), htmlentities( $announced_by )); ?></a>
+						</div>
+					<?php endif; ?>
 					<?php if( $this->allowedits && $user_can_edit) :?>
 					 <div class="editannouncementbutton-container">
 					 	<a href="javascript:void(null)" data-comment-id="<?php echo $id; ?>" class="rotarybutton-smallwhite editannouncementbutton"><?php echo __( 'Edit Announcement' ); ?></a>
@@ -107,14 +115,6 @@
 					 	<?php endif;?>
 					 </div>
 					<?php  endif; ?>
-									<?php 
-					if ( $request_replies ) :
-						$userdata = get_userdata( $announcement->user_id );
-					?>
-						<div class="request-replies-container">
-							<a class="rotarybutton-smallblue" href="mailto:<?php echo $userdata->user_email;?>?subject=Re: <?php echo htmlentities( $announcement_title );?>" ><?php echo sprintf( __ ('Reply to %s'), htmlentities( $announced_by )); ?></a>
-						</div>
-					<?php endif; ?>
 					<?php if( $call_to_action ) : ?>
 						<div class="call-to-action-container"><?php echo $call_to_action; ?></div>
 					<?php endif;?>
@@ -125,16 +125,16 @@
 					<?php echo $announcement_text; ?>	
 				</div>
 				
+			<?php if( 'shortcode' == $context ) : ?>
 				<div class="announcement-footer">
-					<?php if( 'shortcode' == $context ) : ?>
 						<div class="announcement-date">
 							<span class="day"><?php echo strftime( '%e %b %G', $date->getTimestamp() ) ; //$date->format( 'd M Y') ; ?></span>
 						</div>
 						<div class="announcement-expiry-date announcement-date">
 							<span class="day"><?php echo sprintf( __( 'Expires %s' ), strftime( '%e %b %G', $announcement_expiry_date->getTimestamp() )); //$announcement_expiry_date->format( 'd M Y')); ?></span>
-						</div>
-					<?php endif;?>					
+						</div>		
 				</div>
+			<?php endif;?>			
 			</article>
 			<?php 
 				break; 

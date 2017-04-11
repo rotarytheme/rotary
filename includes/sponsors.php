@@ -1,11 +1,19 @@
 <?php
 /**
- * Name:  Sponsors
+ * Plugin Name: Race Sponsors
+ * Plugin URI: 
+ * Description: This plugin adds functionality for adding sponsors and then displaying them via shortcode. Requires the Advanced Custom Fields plugin to operate fully.
+ * Version: 1.2.0
  * Author: Luke Holschbach
  * Author URI: http://jukes.us
  * License:
  */
  
+
+if ( function_exists( 'add_image_size' ) ) {
+	add_image_size( 'sponsor', 720, 480, false ); //(cropped)
+
+}
  
 /*******************************************************
 **************** LOAD CSS ******************************
@@ -97,6 +105,15 @@ if(function_exists("register_field_group"))
 		'title' => 'Sponsors',
 		'fields' => array (
 			array (
+					'key' => 'field_58c71a7039499',
+					'label' => 'Rotarian',
+					'name' => 'sponsor_rotarian',
+					'type' => 'true_false',
+					'instructions' => 'Check this box if the sponsor is a Rotary member. (Logo and URL fields will be disregarded)',
+					'message' => '',
+					'default_value' => 0,
+			),
+			array (
 				'key' => 'field_56900e27024cb',
 				'label' => 'Sponsor Logo',
 				'name' => 'sponsor_logo',
@@ -104,6 +121,17 @@ if(function_exists("register_field_group"))
 				'save_format' => 'object',
 				'preview_size' => 'thumbnail',
 				'library' => 'all',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_58c71a7039499',
+							'operator' => '!=',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
 			),
 			array (
 				'key' => 'field_56900e2f024cc',
@@ -117,6 +145,17 @@ if(function_exists("register_field_group"))
 				'append' => '',
 				'formatting' => 'html',
 				'maxlength' => '',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_58c71a7039499',
+							'operator' => '!=',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
 			),
 		),
 		'location' => array (
@@ -226,8 +265,6 @@ function sponsorsShortcode( $atts ) {
         'show_titles' => true,
 		'id' => 1
     ), $atts, sponsorsShortcode );
-   
-    
 	
 	$show_titles = filter_var( $a['show_titles'], FILTER_VALIDATE_BOOLEAN );
 	$sponsor_list_id = filter_var( $a['id'], FILTER_VALIDATE_INT );
@@ -281,6 +318,7 @@ function sponsorsShortcode( $atts ) {
 			// Get ACF Values
 			$meta_sponsor_link = get_field('sponsor_url');
 			$sponsor_image = get_field('sponsor_logo');
+			$sponsor_rotarian = get_field('sponsor_rotarian');
 			// Make sure user added link does not end up local
 			if ($meta_sponsor_link != NULL) {
 				preg_match('/^http/', $meta_sponsor_link, $link_matches);
@@ -294,11 +332,13 @@ function sponsorsShortcode( $atts ) {
 			$level = $term[0]->name;
 			$list_id = get_field('sponsor_list_id', $term[0] );
 			// Make sure it's been given a sponsorship level and add to array
+			
 			if ($level !== NULL && ( $sponsor_list_id == $list_id || !$list_id )) {
 				$sponsor_array[$level][] = array(
 					'sponsor_name' => get_the_title(),
 					'sponsor_url' => $meta_sponsor_link,
-					'sponsor_image' => $sponsor_image['sizes']['medium'],
+					'sponsor_image' => $sponsor_image['sizes']['sponsor'],
+					'sponsor_rotarian' => $sponsor_rotarian,
 					'sponsor_content' => get_the_content()
 				);
 			}
@@ -333,29 +373,50 @@ function sponsorsShortcode( $atts ) {
 		// Sponsor Block
 		foreach ($v_level_sponsors as $key => $val) {?>
 			<div class="sponsor <?php echo $layout_class; ?>">
-			<!-- Sponsor Image -->
-			<div class="sponsor_logo">
 			<?php 
-			if ($val['sponsor_url'] !== '') {?>
-				<a href="<?php echo $val['sponsor_url']; ?>" target="_blank"><img src="<?php echo $val['sponsor_image']; ?>" alt="<?php echo $val['sponsor_name']; ?>" /></a>
-			<?php } else {?>
-				<img src="<?php echo $val['sponsor_image']; ?>" alt="<?php echo $val['sponsor_name']; ?>" />
-			<?php } ?>
-			</div> <!-- Close sponsor image -->
+			// Check for Rotarian
+			if ($val['sponsor_rotarian'] == '1') { ?>
+				<div class="sponsor_rotarian"><div class="sponsor_inner">
+				<div class="sponsor_rotary_wheel"><img src="<?php echo ROTARY_THEME_IMAGES_URL; ?>rotary_wheel.png" alt="Rotarian" /></div>
+				<span class="sponsor_name_text"><?php echo $val['sponsor_name'] ; ?></span>
+				</div></div>
 			<?php 
-			// Sponsor Content
-			if ($val['sponsor_content'] !== '') {
-				$c = apply_filters('the_content', $val['sponsor_content']);?>
-				<div class="sponsor_content">
-					<h3 class="sponsor_title"><?php echo $val['sponsor_name'];?></h3>
-					<?php echo  $c;?>
-				</div>
-			<?php } ?>
-			</div><!-- Close sponsor -->
-		<?php } // End inner loop	?>
-		</div> <!-- Close sponsor level block -->
-		<?php 
+			} else {
+				// Sponsor Image
+				echo '<div class="sponsor_logo">';
+				// Check for valid image
+				if ($val['sponsor_image']) {
+					if ($val['sponsor_url'] !== '') {
+						echo '<a href="' . $val['sponsor_url'] . '" target="_blank"><img src="' . $val['sponsor_image'] . '" alt="' . $val['sponsor_name'] . '" /></a>';
+					} else {
+						echo '<img src="' . $val['sponsor_image'] . '" alt="' . $val['sponsor_name'] . '" />';
+					}
+					echo '</div>'; // Close sponsor image
+				} else {
+					// NO IMAGE
+					echo '<div class="sponsor_inner sponsor_nologo">';
+					if ($val['sponsor_url'] !== '') {
+						echo '<a href="' . $val['sponsor_url'] . '" target="_blank"><span class="sponsor_name_text">' . $val['sponsor_name'] . '</span></a>';
+					} else {
+						echo '<span class="sponsor_name_text">' . $val['sponsor_name'] . '</span>';
+					}
+					echo '</div>'; // Close sponsor inner
+					echo '</div>'; // Close sponsor image
+				}
+				// Sponsor Content
+				if ($val['sponsor_content'] !== '') {
+					echo '<div class="sponsor_content">';
+					echo '<h3 class="sponsor_title">' . $val['sponsor_name'] . '</h3>';
+					$c = apply_filters('the_content', $val['sponsor_content']);
+					echo $c . '</div>';
+				}
+			}
+			echo '</div>'; // Close sponsor
+		} // End inner loop
+		
+		echo '</div>'; // Close sponsor level block
 	endforeach;
+	
 	?></div><?php 
 	
 	$output = ob_get_clean();

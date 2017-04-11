@@ -97,7 +97,6 @@
 							?>
 						</td>
 					</tr>
-					<?php if( $date < $today || 1 ==1 ) :?>
 					<tr>
 						<td>
 							<h2 class="blogcontent"><?php  _e( 'Club Announcements', 'rotary' );?></h2>
@@ -106,6 +105,7 @@
 									<td class="speaker-announcements-container">
 									 	<?php 
 									 	$context = 'email';
+									 	$hide_expiry = true;
 										if ( is_array( $announcements )  ) : 
 											$count = count( $announcements );
 											if($count > 0 ) :
@@ -120,14 +120,13 @@
 										 endif; //end is_array check
 										 
 										if ( 0 == $announcementsDisplayed && !$speakerdate ) :
-											?>	<p><?php echo __( 'There are no active announcements'); ?></p>
+											?>	<p><?php echo  sprintf( __( 'There are no active announcements, Speakerdate = %s', 'Rotary'),$speakerdate); ?></p>
 										<?php  endif; ?>
 									</td>
 								</tr>
 							</table>
 						</td>
 					</tr>
-					<?php endif;?>
 				</table>
 			</td>
 			<td id="speakerinfo" rowspan="2" class="greyborder-right greyborder-bottom">
