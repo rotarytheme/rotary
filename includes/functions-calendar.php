@@ -21,8 +21,6 @@ function save_calendar_fields( $post_id ){
 	
     $calendar_tz = new DateTimeZone( ecp1_get_calendar_timezone() ); // UTC if error
     
-
-
     //=============== the start date ==============
     
     $end_label = '';
@@ -351,6 +349,7 @@ function rotary_get_first_calendar() {
  	}
  }
  */
+ 
  
 /*
  * Only run this once
