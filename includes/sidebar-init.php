@@ -99,7 +99,18 @@ function rotary_widgets_init() {
 	'after_title' => '</h3>',
 	) );
 	*/
-
+	
+	// Register a new sidebar for downloads
+		register_sidebar( array(
+				'name'          => __( 'Downloads', 'wpdmpro' ),
+				'id'            => 'sidebar-downloads',
+				'description'   => 'Sidebar for Package Downloads (if WP Download Manager Pro)',
+				'class'         => 'download-sidebar',
+				'before_widget' => '<li>',
+				'after_widget' => '</li>',
+				'before_title' => '<h3>',
+				'after_title' => '</h3>',
+		));
 }
 /** Register sidebars by running rotary_widgets_init() on the widgets_init hook. */
 add_action( 'widgets_init', 'rotary_widgets_init' );

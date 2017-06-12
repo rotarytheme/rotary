@@ -1,10 +1,25 @@
+
+
+/*
+.sectioncontainer {
+    position: relative;
+}
+.sponsorsBorder {
+    border: 15px solid #FCAB1C;
+    border-radius: 31px;
+    margin-top: 20px;
+}
+#content .sponsorsBorder h2 {
+    border-bottom: solid 2px #FCAB1C!important;
+}
+*/
+
 /*************************************
 STYLESHEET FOR  SPONSORS PLUGIN
 *************************************/
 .sponsors-container {
     border: 4px #FCAB1D solid;
     padding: 10px;
-    border-radius: 10px;
     clear: both;
 }
 .sponsor_level {
@@ -16,18 +31,37 @@ STYLESHEET FOR  SPONSORS PLUGIN
   display: table;
   clear: both;
 }
+
+/**** TITLES ****/
 .sponsor_level_title {
   margin-bottom: 30px;
   display: block;
 }
-.sponsor_level_title h4 {
-  line-height: 1.4;
-  border-bottom: 1px solid #FCAB1D;
+#content .sponsor_level_title h4 {
+    line-height: 1.4;
+    color: #fff;
+    font-size: 25px;
+    background-color: #faa41a;
+    border-radius: 22px;
 }
+@media only screen and (min-width: 960px) {
+	#content .sponsor_level_title h4 {
+	    font-size: 30px;
+	}
+}
+@media only screen and (min-width: 1136px) {
+	#content .sponsor_level_title h4 {
+	    font-size: 36px;
+	}
+}
+
+
+/*********/
 .sponsor {
   float: left;
   box-sizing: border-box;
 }
+
 .sponsor_logo {
   display: inline-block;
   float: left;
@@ -35,6 +69,13 @@ STYLESHEET FOR  SPONSORS PLUGIN
 }
 .sponsor_logo img {
   max-width: 100%;
+}
+span.sponsor_name_text {
+    font-family: open sans,arial,non-serif;
+}
+.sponsor_rotary_wheel img {
+    max-width: 30%;
+    height: auto;
 }
 .sponsor_content {
   box-sizing: border-box;

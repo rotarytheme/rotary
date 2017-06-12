@@ -70,7 +70,7 @@ endif; ?>
 			<p><?php _e( 'Would you like to add one', 'Rotary' ); ?>?</p>
 			<a id="newcomment" class="newcomment <?php echo $button_class; ?>" href="#respond">New Announcement</a>
 		<?php else : ?>
-			<p><?php _e( 'Would you like to ', 'Rotary' ); ?> <?php  wp_loginout($_SERVER['REQUEST_URI'], true ); ?>?</p>
+				<p><?php echo sprintf( __( 'Would you like to %s ?', 'Rotary' ),  wp_loginout($_SERVER['REQUEST_URI'], true ) ); ?></p>
 		<?php endif; ?>
 		</div>
 	</div>

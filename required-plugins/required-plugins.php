@@ -99,7 +99,7 @@ function my_theme_register_required_plugins( ) {
 	array(
 			'name' 		=> 'Every Calendar',
 			'slug' 		=> 'every-calendar-1',  
-			'version'			=> '2.1.4',  
+			'version'	=> '2.1.4',  
 			'source'    => 'every-calendar-1.zip', // The plugin source.
 			'required' 	=> true,
 			'force_activation' 	=> true,
@@ -197,12 +197,6 @@ function my_theme_register_required_plugins( ) {
 				'slug' 		=> 'recent-facebook-posts',
 				'required' 	=> false,
 				'force_activation' => false
-		),
-		array(
-				'name' 		=> 'Really Simple Captcha',
-				'slug' 		=> 'really-simple-captcha',
-				'required' 	=> true,
-				'force_activation' => true
 		),
 		// This is an example of the use of 'is_callable' functionality. A user could - for instance -
 		// have WPSEO installed *or* WPSEO Premium. The slug would in that last case be different, i.e.

@@ -131,23 +131,42 @@ function rotary_project_and_committee_announcement_dropdown() {
 		<?php 
 
 		/* PROJECTS */
+		// find date time now
+		$date_now = date('Y-m-d H:i:s');
+		$lookback = new DateInterval('P1M');
+		$lookback->invert = 1;
+		$cutoff_date = date_add( new DateTime(),  $lookback);
+		
 		$args = array(
-				'posts_per_page' => -1,
-				'post_type' =>'rotary_projects',
-				'orderby' => 'post_date',
-				'status' => 'publish',
-				'order' => 'DESC',
-				'date_query' => array(
-						array(
-								'after' => '2015-06-01' //FIXME: put a proper cut-off date based on project end dates
-						)
-				)
+				'posts_per_page' 	=> -1,
+				'post_type' 		=> 'rotary_projects',
+				'orderby'			=> 'meta_value',
+				'meta_key'			=> 'rotary_project_date',
+				'meta_type'			=> 'DATETIME',
+				'order' 			=> 'ASC',
+
+				'meta_query' 		=> array(
+					'relation' 			=> 'OR',
+					array(
+						'key'			=> 'rotary_project_end_date',
+						'compare'		=> '>=',
+						'value'			=> date_format( $cutoff_date,'Y-m-d H:i:s') ,
+						'type'			=> 'DATETIME'
+					),
+					array(
+				        'key'			=> 'rotary_project_date',
+				        'compare'		=> '>=',
+				        'value'			=> date_format( $cutoff_date,'Y-m-d H:i:s') ,
+				        'type'			=> 'DATETIME'
+				    )
+				),
 		);
 		$query = new WP_Query( $args );
 		if ( $query->have_posts() ) :
 		?><option value="">~~~~~~~~~~ <?php _e( 'Projects' ,'Rotary' );?> ~~~~~~~~~~</option><?php
 		    while ( $query->have_posts() ) : $query->the_post();
-				echo '<option value="' . get_the_id() . '">' . get_the_title() . '</option>';
+		    	$startDate 	= DateTime::createFromFormat('Ymd', get_field( 'rotary_project_date' ) );
+				echo '<option value="' . get_the_id() . '">' . $startDate->format( 'd M Y - ' ) . get_the_title() . '</option>';
 			endwhile;
 		endif;
 		wp_reset_postdata();

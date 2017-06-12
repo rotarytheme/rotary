@@ -433,18 +433,17 @@ class RotaryCustomPostTypes {
 	  shortcodes to display rotary club members
 	*************************************************/
 	function get_rotary_club_members( $atts ) { 
+
+		global  $RegistrationNoun, $RegistrationCTA;
 		extract( shortcode_atts( array(
 			'type' => '', 
 			'id' => ''
 		), $atts ) );
 		
-	 	if (!is_user_logged_in() ) :
-	 		$not_loggedin_msg = (( 'rotary_projects' == get_post_type() )) 
-	 										? _e ( 'You must be logged in to see project participants', 'Rotary' ) 
-	 										: _e ( 'You must be logged in to see member information', 'Rotary' );
+	 	if (!is_user_logged_in() && 'rotary_projects' != get_post_type() ) :
 			$memberTable = '
 					<div class="rotarymembernotloggedin">
-						<p>' . $not_loggedin_msg. '</p>
+						<p>' . __( 'You must be logged in to see member information', 'Rotary' ) . '</p>
 						<p>' . wp_loginout( get_permalink(), false ) . '</p>
 					</div>';
 			

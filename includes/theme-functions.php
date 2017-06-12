@@ -1294,3 +1294,5 @@ function rotary_geocode( $address ){
 		return false;
 	}
 }
+
+

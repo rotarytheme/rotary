@@ -29,6 +29,12 @@ function my_theme_setup(){
 }
 
 update_option( 'google_api_key' , 'AIzaSyAek8gghAI_1e1QYiPkd6iD7xhqluWC-mU' );
+function my_acf_google_map_api( $api ){
+	$api['key'] = 'AIzaSyAek8gghAI_1e1QYiPkd6iD7xhqluWC-mU';
+	return $api;
+}
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
 
 get_locale();
 

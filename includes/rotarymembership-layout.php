@@ -66,7 +66,6 @@
 				</div>';
 		endif;
 	
-		
 		/********Now produce the table ***/
 		
 		if( 'form' == $projects ) :
@@ -77,20 +76,25 @@
 					<div class="rotarymembershipheader">
 						<h2>' . $title . '</h2>
 						<div class="rotaryselections">' . $select . '</div>
-						<div id="gravityform" style="display: none;">' . do_shortcode( '[gravityform id="' . $gf_form_id . '" title="false" description="false"]' ) . '</div>
-						<table id="' . $divID . '" cellspacing="0" cellpadding="0" border="0" class="display"' . $dataID . '>
-							<thead>
-								<tr>';
-				$i=1;
-			foreach ( $gf_fields as $gf_field ) {
-				$memberTable .= '<th class="formcolumnheader col' . $i . '" id ="col' . $i . '" width="' . trim( $gf_field['width'] ) . '%">' . $gf_field['header'] . '</th>';
-				$i++;
-			} 
-			$memberTable .= '
-							</thead>
-							<tbody></tbody>
-			        	</table>
-					</div><!-- end rotarymembershipheader -->
+						<div id="gravityform" style="display: none;">' . do_shortcode( '[gravityform id="' . $gf_form_id . '" title="false" description="false" ajax=true]' ) . '</div>';
+
+			if (is_user_logged_in() ) :
+				$memberTable .= 	'<table id="' . $divID . '" cellspacing="0" cellpadding="0" border="0" class="display"' . $dataID . '>
+								<thead>
+									<tr>';
+	
+			
+					$i=1;
+				foreach ( $gf_fields as $gf_field ) {
+					$memberTable .= '<th class="formcolumnheader col' . $i . '" id ="col' . $i . '" width="' . trim( $gf_field['width'] ) . '%">' . $gf_field['header'] . '</th>';
+					$i++;
+				} 
+				$memberTable .= '
+								</thead>
+								<tbody></tbody>
+				        	</table>';
+			endif;
+			$memberTable .=		'</div><!-- end rotarymembershipheader -->
        			</div><!-- end rotarymembershipcontainer -->
 			';
 		elseif ( 'form' != $projects) :

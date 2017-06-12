@@ -96,7 +96,7 @@
 				<p><?php _e( 'Would you like to make one', 'Rotary' ); ?>?</p>
 				<a id="newcomment" class="newcomment <?php echo $button_class; ?>" href="#respond"><?php _e( 'New Announcement', 'Rotary' );?></a>
 			<?php else : ?>
-				<p><?php _e( sprintf( 'Would you like to %s ?', 'Rotary' ),  wp_loginout($_SERVER['REQUEST_URI'], true ) ); ?></p>
+				<p><?php echo sprintf( __( 'Would you like to %s ?', 'Rotary' ),  wp_loginout($_SERVER['REQUEST_URI'], true ) ); ?></p>
 			<?php endif; ?>
 		</div>
 		<?php endif; // end ! comments_open() ?>
