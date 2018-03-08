@@ -1,3 +1,9 @@
+
+
+Exception Error!
+
+http://www.directory-online.com/xWeb/DaCdb.cfc?wsdl
+
 jQuery(document).ready(function($) {
 	var rotaryDataTables = {
 		init: function() {
@@ -177,12 +183,17 @@ jQuery(document).ready(function($) {
 		sendEmail: function() {
 			var $emailaddress = $('.emailselect:checked').next('.emailaddress');
 			var mailto = 'mailto:';
+			var delimiter = ( 'email-colon' == $('#rotarybulk-select').val() ) ? ';' : ',';
 			$( $emailaddress ).each(function( index ) {
-				mailto += $( this ).text() + ';';
+				mailto += $( this ).text() + delimiter;
 			});
 			
 			if ('mailto:' !== $.trim(mailto)) {
-				window.open(mailto);
+				EMailWindow = window.open( mailto );
+				EMailWindow.close;
+			}
+			else {
+				alert( 'You must select one or more members for bulk actions!' );
 			}
 		},
 		deleteMember: function(e) {

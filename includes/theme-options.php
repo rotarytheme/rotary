@@ -129,11 +129,13 @@ Class RotaryThemeOptions {
 						'default'        => '',
 						'capability'     => 'edit_theme_options',
 					) );
-					$wp_customize->add_control( new Rotary_Textarea_Control( $wp_customize, 'rotary_meeting_location', array(
-					'label'   => __( 'Meeting Location', 'Rotary' ),
-					'section' => 'rotary_main_settings',
-					'settings'   => 'rotary_meeting_location',
-					) ) );
+					$wp_customize->add_control( 'rotary_meeting_location', array(
+						'description'    => __( 'If recognized as an address by Google, this will display as a link to a Google Map', 'Rotary' ),
+						'label'   => __( 'Meeting Location', 'Rotary' ),
+						'section' => 'rotary_main_settings',
+						'type'    => 'textarea',
+					) );
+
 					$wp_customize->add_setting( 'rotary_country', array(
 							'default'        => 'United States',
 							'capability'     => 'edit_theme_options',
@@ -142,6 +144,7 @@ Class RotaryThemeOptions {
 						'label'   => __( 'Country', 'Rotary' ),
 						'section' => 'rotary_main_settings',
 						'type'    => 'text',
+						'description'    => __( 'Set to "China" to use google.cn API', 'Rotary' ),
 					) );
 					$wp_customize->add_setting( 'rotary_telephone', array(
 							'default'        => '',
@@ -153,6 +156,24 @@ Class RotaryThemeOptions {
 						'type'    => 'text',
 					) );
 				/* Meeting times */
+					
+					$wp_customize->add_setting( 'rotary_meeting_frequency', array(
+							'default'        => 'every',
+							'capability'     => 'edit_theme_options',
+					) );
+					$wp_customize->add_control( 'rotary_meeting_frequency', array(
+							'label'   => __( 'Meeting Frequency', 'Rotary' ),
+							'section' => 'rotary_main_settings',
+							'type'    => 'select',
+							'choices' => array(
+									'every' =>  __( 'every', 'Rotary' ),
+									'every other' =>  __( 'every other', 'Rotary' ),
+									'the first' =>  __( 'the first', 'Rotary' ),
+									'the second' =>  __( 'the second', 'Rotary' ),
+									'the third' =>  __( 'the third', 'Rotary' ),
+									'the fourth' =>  __( 'the fourth', 'Rotary' ),
+									'the occasional' =>  __( 'the occasional', 'Rotary' ),
+							) ) );
 				
 					$wp_customize->add_setting( 'rotary_meeting_day', array(
 							'default'        => '--select day--',
@@ -240,19 +261,7 @@ Class RotaryThemeOptions {
 					) );
 		} // end of $isclub switch
 		
-		
-		/*Settings and Controls for the Get More Info button*/	
-			$wp_customize->add_setting( 'rotary_more_info_button', array(
-					'default'        => '',
-					'capability'     => 'edit_theme_options',
-				) );
-				$wp_customize->add_control( 'rotary_more_info_button', array(
-					'label'   => __( 'Select page for the Get More Info button' , 'Rotary' ),
-					'section' => 'rotary_main_settings',
-					'type'    => 'dropdown-pages',
-			) );
-
-		
+			
 		/*Settings and Controls for Social Media*/	
 			$wp_customize->add_section( 'rotary_social_media_settings', array(
 				'title'          => __( 'Social Media', 'Rotary' ),
@@ -324,7 +333,7 @@ Class RotaryThemeOptions {
 			// $wp_customize->remove_section( 'static_front_page' );
 			
 			$wp_customize->add_section( 'static_front_page', array(
-					'title'          => __( 'Static Front Page' ),
+					'title'          => __( 'Home Page Options' ),
 					//	'theme_supports' => 'static-front-page',
 					'priority'       => 120,
 					'description'    => __( 'This theme can only be used with a static home page.' ),
@@ -414,5 +423,17 @@ Class RotaryThemeOptions {
 					'section'    => 'static_front_page',
 					'type'       => 'dropdown-pages',
 			) );
+
+			/*Settings and Controls for the Get More Info button*/
+			$wp_customize->add_setting( 'rotary_more_info_button', array(
+					'default'        => '',
+					'capability'     => 'edit_theme_options',
+			) );
+			$wp_customize->add_control( 'rotary_more_info_button', array(
+					'label'   => __( 'Select page for the Get More Info button' , 'Rotary' ),
+					'section' => 'static_front_page',
+					'type'    => 'dropdown-pages',
+			) );
+
 		}
 	}

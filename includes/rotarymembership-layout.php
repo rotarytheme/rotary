@@ -13,7 +13,10 @@
 			$select = '
 				<div class="usercontainer"><select id="newparticipants">'.$rotarymembership->get_users_for_membertable_select().'</select></div>
 				<div class="sendemail">' . __( 'Bulk Actions', 'Rotary' ) . '&nbsp;
-					<select> <option value="email">' . _x( 'Email', 'Bulk action', 'rotary' ) . '</option></select> 
+					<select> 
+						<option value="email-colon">' . _x( 'Outlook Email', 'Bulk action', 'rotary' ) . '</option>
+						<option value="email-comma">' . _x( 'Mac Mail', 'Bulk action', 'rotary' ) . '</option>
+					</select> 
 					<input id="sendmailbutton" class="rotarybutton-smallwhite" type="button" value="' . _x( 'Go', 'Bulk actions', 'rotary' ) . '"/>
 				</div>';
 		
@@ -53,7 +56,10 @@
 			$select = '
 				<div id="rotarymembershipoptions">
 					<div class="sendemail">' . __( 'Bulk Actions' , 'Rotary' ) . '&nbsp;
-						<select><option value="email">' . _x( 'Email', 'Bulk action', 'Rotary' ) . '</option></select> 
+						<select id="rotarybulk-select">
+							<option value="email-colon">' . _x( 'Outlook Email', 'Bulk action', 'rotary' ) . '</option>
+							<option value="email-comma">' . _x( 'Mac Mail', 'Bulk action', 'rotary' ) . '</option>
+						</select> 
 						<input id="sendmailbutton" class="rotarybutton-smallwhite" type="button" value="' . _x( 'Go', 'Bulk actions', 'rotary' ) . '"/>
 					</div>
 					<div id="namedisplayorder">

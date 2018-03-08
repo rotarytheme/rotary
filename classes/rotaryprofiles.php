@@ -13,6 +13,8 @@ class RotaryProfiles {
 		add_action( 'edit_user_profile_update', array( $this, 'update_membership_profile_fields'));
 		add_filter( 'get_avatar', array( $this, 'get_rotary_member_avatar'), 10, 5);
 	}	 
+	
+	
 	/*
 	 * get all members
 	 */

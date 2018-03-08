@@ -8,12 +8,7 @@
  * Author URI: http://jukes.us
  * License:
  */
- 
 
-if ( function_exists( 'add_image_size' ) ) {
-	add_image_size( 'sponsor', 720, 480, false ); //(cropped)
-
-}
  
 /*******************************************************
 **************** LOAD CSS ******************************
@@ -328,19 +323,22 @@ function sponsorsShortcode( $atts ) {
 			}
 			// Get SPONSORSHIP LEVEL
 			unset ($list_id );
-			$term = wp_get_post_terms( get_the_ID(), 'sponsorship_levels' );
-			$level = $term[0]->name;
-			$list_id = get_field('sponsor_list_id', $term[0] );
-			// Make sure it's been given a sponsorship level and add to array
+			$terms = wp_get_post_terms( get_the_ID(), 'sponsorship_levels' );
 			
-			if ($level !== NULL && ( $sponsor_list_id == $list_id || !$list_id )) {
-				$sponsor_array[$level][] = array(
-					'sponsor_name' => get_the_title(),
-					'sponsor_url' => $meta_sponsor_link,
-					'sponsor_image' => $sponsor_image['sizes']['sponsor'],
-					'sponsor_rotarian' => $sponsor_rotarian,
-					'sponsor_content' => get_the_content()
-				);
+			foreach ( $terms as $key => $term ) {
+				$level = $term->name;
+				$list_id = get_field('sponsor_list_id', $term );
+				// Make sure it's been given a sponsorship level and add to array
+				
+				if ($level !== NULL && ( $sponsor_list_id == $list_id || !$list_id )) {
+					$sponsor_array[$level][] = array(
+						'sponsor_name' => get_the_title(),
+						'sponsor_url' => $meta_sponsor_link,
+						'sponsor_image' => $sponsor_image['sizes']['sponsor'],
+						'sponsor_rotarian' => $sponsor_rotarian,
+						'sponsor_content' => get_the_content()
+					);
+				}
 			}
 		endwhile;
 	endif;
@@ -354,8 +352,17 @@ function sponsorsShortcode( $atts ) {
 	?>
 	<div class="sponsors-container">
 	<?php 
-	foreach($sponsor_array as $k_level => $v_level_sponsors) : ?>
-		<div class="sponsor_level">
+	foreach($sponsor_array as $k_level => $v_level_sponsors) : 
+
+		// Get Layout from ACF
+		$layout_class = '';
+		if (function_exists('get_field')) {
+			$category = get_term_by('name', $k_level, 'sponsorship_levels');
+			$layout_class = get_field('sponsor_style', $category);
+		}
+		?>
+		<div class="sponsor_level <?php echo $category->slug; ?>">
+		
 		<?php 
 		// Display titles (User controlled in shortcode)
 		if ($show_titles) { ?>
@@ -363,12 +370,6 @@ function sponsorsShortcode( $atts ) {
 			<h4><?php echo $k_level; ?></h4>
 			</span>
 		<?php }
-		// Get Layout from ACF
-		$layout_class = '';
-		if (function_exists('get_field')) {
-			$category = get_term_by('name', $k_level, 'sponsorship_levels');
-			$layout_class = get_field('sponsor_style', $category);
-		}
 		
 		// Sponsor Block
 		foreach ($v_level_sponsors as $key => $val) {?>

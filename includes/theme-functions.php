@@ -279,7 +279,6 @@ function rotary_img_caption_shortcode( $a , $attr, $content = null) {
 		. do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . '</p></div><div class="wp-caption-bottom"></div></div>';
 }
 
-
 //add_filter('wp_nav_menu_items','rotary_add_search_box', 10, 2);
 function rotary_add_search_box($items) {
 
@@ -402,6 +401,8 @@ function rotary_register_shortcodes(){
 	add_shortcode( 'announcements', 'rotary_announcements_function' );
 	add_shortcode( 'boardmembers', 'rotary_boardmembers_function' );
 	add_shortcode( 'blogroll', 'rotary_blogroll_function' );
+	
+	add_shortcode( 'button', 'rotary_button_function' );
 	//also 'directory' - in custom-post-types.php line 33
 	
 }
@@ -459,6 +460,23 @@ function rotary_reveille_header_function($atts, $content = null) {
     	</div>
     </div>
 <?php }
+
+function rotary_button_function( $atts) {
+	extract( shortcode_atts( array(
+		'color' => 'blue',
+		'size' => 'large',
+		'link' => '',
+		'text' => __( 'Go To Link', 'Rotary' )
+	), $atts ) );
+	
+	$color =  'gold' == $color? $color : 'blue';
+	$size =  'small' == $size ? $size : 'large';
+
+	if (filter_var(	$link, FILTER_VALIDATE_URL) ) 
+		$content = '<a href="' .  $link . '" class="rotarybutton-' . $size . $color . '" >'. $text . '</a>';
+	else $content = 'Invalid link &quot;' . $link . '&quot;.  For example, use: http://example.com or mailto://test#example.com';
+	return $content;
+}
 /*
 @param string $text String to truncate.
 @param integer $length Length of returned string, including ellipsis.
@@ -874,14 +892,49 @@ function rotary_get_slideshow( $context = null ){
 		// Reset Post Data
 	wp_reset_postdata();
 	
-	}//custom images sizes for slideshow
-	if ( function_exists( 'add_image_size' ) ) {
-		add_image_size( 'slideshow-size', 486, 313, true ); //(cropped)
-	
 	}
 	
+	add_action( 'after_setup_theme', 'rotary_image_sizes_setup' );
+	function rotary_image_sizes_setup() {
+		if ( function_exists( 'add_image_size' ) ) {
+			add_image_size( 'slideshow-size', 486, 313, true ); //(cropped) //custom images sizes for slideshow
+			add_image_size( 'sidebar-thumb', 210,210, true ); // displayed at 105, square
+			add_image_size( 'sponsor', 720, 480, false ); // not cropped
+			// add_image_size( 'third-page', 250, 99999, false ); // not cropped
+			add_image_size( 'speaker-feature', 251, 99999, false ); // not cropped
+			// add_image_size( 'half-page', 350, 99999, false ); // not cropped
+			add_image_size( 'post-small', 99999, 250, false ); // not cropped
+			add_image_size( 'post-medium', 99999, 400, false ); // not cropped
+			add_image_size( 'post-large', 99999, 400, false ); // not cropped
+			add_image_size( 'image-widget', 260, 99999, false ); // not cropped
+			add_image_size( 'announcement-small', 250, 99999, false ); // not cropped
+			add_image_size( 'announcement-medium', 300, 99999, false ); // not cropped
+			add_image_size( 'announcement-big', 400, 99999, false ); // not cropped
+		}
+	}
+	
+	add_filter( 'image_size_names_choose', 'rotary_image_sizes' );
+	function rotary_image_sizes( $sizes ) {
+		return array_merge( $sizes, array(
+			// 'slideshow-size'//custom images sizes for slideshow
+			// 'sidebar-thumb'// displayed at 105, square
+			// 'sponsor' // not cropped
+			// 'third-page' =>  __( 'One Third Width' ),
+			// 'speaker-feature', 251, 99999, false ); // not cropped
+			// 'half-page' =>  __( 'One Half Width ' ),
+			'post-small'=>  __( 'Small (Posts)' ),
+			'post-medium'=>  __( 'Medium (Posts)' ),
+			'post-large'=>  __( 'Full Width (Posts)' ),
+			'image-widget'=>  __( 'Use for Sidebar Widget' ),
+			'announcement-small'=>  __( 'Small (Announcements)' ),
+			'announcement-medium'=>  __( 'Medium (Announcements)' ),
+			'announcement-big'=>  __( 'Large (Announcements)' )
+		) );
+	}
+	
+	/* Old code - should be redundant - replaced by code on line 913 to be more selective about the 
 	add_filter('image_size_names_choose', 'rotary_image_sizes');
-	function rotary_image_sizes($sizes) {
+	function rotary_image_sizes( $sizes) {
 		$new_sizes = array();
 	
 		$added_sizes = get_intermediate_image_sizes();
@@ -896,6 +949,7 @@ function rotary_get_slideshow( $context = null ){
 	$new_sizes = array_merge( $new_sizes, $sizes );
 	return $new_sizes;
 }
+*/
 
 function rotary_excerpt_length( $length ) {
 	return 40;

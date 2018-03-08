@@ -67,7 +67,7 @@
 								<?php while(has_sub_field('speaker_program_images')): ?>
 								<?php $image = wp_get_attachment_image_src( get_sub_field('speaker_program_image'), 'full' ); ?>
 								<a class="fancybox" rel="gallery1" href="<?php echo  $image[0]?>" title="">
-									<?php $image = wp_get_attachment_image_src( get_sub_field('speaker_program_image'), 'thumbnail' ); ?>
+									<?php $image = wp_get_attachment_image_src( get_sub_field('speaker_program_image'), 'sidebar-thumb' ); ?>
 									<img class="alignleft" src="<?php echo  $image[0]?>" alt="" title=""/></a>
 								<?php endwhile; ?>
 								</li>

@@ -16,7 +16,7 @@
 }
 #ecp1-calendar-list li.ecp1-event {
     max-width: 800px;
-    border-top: #005daa 2px solid;
+    border-top: #e6e6e6 1px solid;
     clear: both;
     padding-top: 15px!important;
 }
@@ -83,7 +83,7 @@
 #ecp1-calendar-list .time {   
 	font-family: open sans condensed, arial narrow, sans-serif;
     font-weight: 700;
-    font-size: 20.5px;
+    font-size: 19px;
     text-transform: uppercase;
     display:block;
     float:left;
@@ -100,11 +100,11 @@
 #content #ecp1-calendar-list .location-container {
 	font-family: open sans condensed, arial narrow, sans-serif;
 	text-align:left;
-    padding: 3px 10px;
+  /*  padding: 3px 10px; */
     margin-top: 5px;
     margin-bottom: 5px;
-    border: 1px solid #005daa;
-    background-color: #f9f9f9;
+ /*   border: 1px solid #005daa; */
+ /*   background-color: #f9f9f9; */
 }
 #content #ecp1-calendar-list .hasimage .location-container {
 	max-width: 530px;
@@ -112,19 +112,20 @@
 #content #ecp1-calendar-list h3.location-label {
 	font-weight: 700;
 	font-size:15px;
-	width:75px;
+	width:60px;
 	text-transform:uppercase;
 	color: #17458f;
 	margin:0;
 	display:inline-block;
 	float:left;
+    padding-top: 3px;
 }
 #content #ecp1-calendar-list .location-text {
 	float:left;
 }
 
-#ecp1-calendar-list li.event-summary {
-    margin: 0 0 10px 5px;
+#content #ecp1-calendar-list li.event-summary {
+    padding: 20px 0;
     clear: both;
 }
 
