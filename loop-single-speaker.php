@@ -24,7 +24,8 @@
  
  	$speaker_title = trim( get_field( 'speaker_title' ));
  	$speaker_company = trim( get_field( 'speaker_company' ));
- 	if ( is_user_logged_in() )  $speaker_email = trim( get_field( 'speaker_email' ));
+ 	$signup_sheet = get_post_meta( get_the_id(), 'signup_sheet_id', true );
+ 	if ( is_user_logged_in() ) $speaker_email = trim( get_field( 'speaker_email' ));
 ?>
 
 		<nav class="prevnext">
@@ -88,6 +89,14 @@
 					if ( empty( $programNotes) ) the_field('speaker_program_content');
 						else echo $programNotes;
 				?>
+				<?php 	
+					if ( is_user_logged_in() ) {?>
+						<div id="speaker-signups">
+				             <?php echo do_shortcode('[sign_up_sheet list_title="Meeting Roles" id="' . $signup_sheet .'"]' )?>
+						</div>
+					<?php }
+				?>
+				
 					<div id="speakerannouncements">
 						<h2><?php _e( 'Club Announcements', 'rotary' );?></h2>
 						<?php echo do_shortcode( '[announcements lookback=4 speakerdate="' . $date->format('c') . '" context="speaker"]');?>

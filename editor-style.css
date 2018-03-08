@@ -159,7 +159,7 @@ h6 {
   	font-family: 'Open Sans Condensed', 'Open Sans', Helvetica, sans-serif;
   	line-height: 1.1em;
   	margin-top:10px;
-	display:inline-block;
+/*	display:inline-block; */
 }
 h1, .SectionHeader {
   clear: both;

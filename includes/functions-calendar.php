@@ -9,10 +9,10 @@ add_action( 'save_post_rotary_speakers', 'save_calendar_fields', 99);
 add_action( 'save_post_rotary_projects', 'save_calendar_fields', 99);
 function save_calendar_fields( $post_id ){
     global $post, $ecp1_event_fields, $CalendarColor;
-
+   
     
     if ( $post_id ) 
-    	$post =  get_post( $post_id );
+   		$post =  get_post( $post_id );
 	//	return; // don't update if not a post
 	if ( 'revision' == $post->post_type )
 		return; // don't update on revisions
@@ -31,15 +31,15 @@ function save_calendar_fields( $post_id ){
 	        $full_day =  'Y';
 	        $the_start_time = '12:00 am';
 	        $the_end_time   = '11:59 pm';
-	        $end_date = get_post_meta($post_id, 'rotary_project_end_date', true);
+	        $end_date = get_post_meta( $post_id, 'rotary_project_end_date', true);
 	        $end_date = $end_date ? $end_date : get_post_meta( $post_id, 'rotary_project_date', true);     
 
         else:
+
 	        $full_day =  'N';
 	        $the_start_time = get_post_meta($post_id, 'rotary_project_start_time', true);
 	        $the_end_time   = get_post_meta($post_id, 'rotary_project_end_time', true);
 	        $end_date = get_post_meta( $post_id, 'rotary_project_date', true);
-	        
         endif; 
 
         $content = apply_filters( 'the_content', $post->post_content );
@@ -123,11 +123,11 @@ function save_calendar_fields( $post_id ){
     		);
                                 
     // Save the post meta information
-    delete_post_meta( $post->ID, 'ecp1_event' );
-	$r = add_post_meta( $post->ID, 'ecp1_event', $event_grouped_fields );
+    delete_post_meta( $post_id, 'ecp1_event' );
+	$r = add_post_meta( $post_id, 'ecp1_event', $event_grouped_fields );
 	foreach( $stand_alone_fields as $key=>$value ) {
-		delete_post_meta( $post->ID, $key );  
-		add_post_meta( $post->ID, $key, $value );  
+		delete_post_meta( $post_id, $key );  
+		add_post_meta( $post_id, $key, $value );  
 	}  
  }
  

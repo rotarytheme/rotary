@@ -146,6 +146,7 @@
 			        	$meetingaddress = get_theme_mod( 'rotary_meeting_location', '' );
 						$location =  get_option( 'club_location' );
 					   $telephone = get_theme_mod( 'rotary_telephone', '');
+					   $frequency = get_theme_mod( 'rotary_meeting_frequency', 'every');
 					   $dayofweek = get_theme_mod( 'rotary_meeting_day', '');
 					   $doors_open = get_theme_mod( 'rotary_doors_open', '');
 					   $program_starts = get_theme_mod( 'rotary_program_starts', '');
@@ -164,7 +165,7 @@
 					  		<p id="telephone"><?php echo sprintf( __( 'Tel: %s', 'Rotary'), $telephone )?></p>
 					  <?php }  ?>
 					  <?php if( $dayofweek ) {  ?>
-					  		<p id="meetingday"><?php echo sprintf( __( 'We meet every %s', 'Rotary'), $dayofweek )?></p>
+					  		<p id="meetingday"><?php echo sprintf( __( 'We meet %s %s', 'Rotary'), $frequency, $dayofweek )?></p>
 					  <?php }  ?>
 					  <?php if ( $isclub ) {?>
 						  <p id="doors_open"><?php echo sprintf( __( 'Doors open: %s', 'Rotary' ), $doors_open ); ?></p>

@@ -10,7 +10,7 @@ class RotaryCustomPostTypes {
 
 		add_action( 'init', array($this, 'register_speaker_post_type'));
 		add_filter( 'manage_rotary_speakers_posts_columns' , array($this, 'rotary_speakers_cpt_columns'));
-		add_action( 'manage_rotary_speakers_posts_custom_column' , array($this, 'rotary_custom_speaker_column_data', 10, 2 ));
+		add_action( 'manage_rotary_speakers_posts_custom_column' , array($this, 'rotary_custom_speaker_column_data'), 10, 2 );
 		add_filter( 'manage_edit-rotary_speakers_sortable_columns', array($this, 'rotary_column_register_sortable'));
 		add_filter( 'request', array($this, 'rotary_speaker_column_orderby' ));
 		add_action( 'init', array($this, 'register_commitee_post_type'));
@@ -219,35 +219,35 @@ class RotaryCustomPostTypes {
 		);
 	
 	}
-	function rotary_speakers_cpt_columns($columns) {
-		unset($columns['date']);
-		unset($columns['author']);
-		unset($columns['title']);
+	function rotary_speakers_cpt_columns( $columns ) {
+		unset( $columns['date'] );
+		unset( $columns['author'] );
+		unset( $columns['title'] );
 		$new_columns = array(
-				'speaker_date' => __('Speaker Date', 'rotary'),
-				'title' => __('Title', 'rotary'),
-				'speaker_first_name' => __('Speaker First Name', 'rotary'),
-				'speaker_last_name' => __('Speaker Last Name', 'rotary'),
-				'speaker_company' =>  __('Organization', 'rotary'),
+				'speaker_date' => __('Program Date', 'Rotary'),
+				'title' => __('Title', 'Rotary'),
+				'speaker_name' => __('Speaker', 'Rotary'),
+				'speaker_title' => __('Position/Job Title', 'Rotary'),
+				'speaker_company' =>  __('Organization', 'Rotary'),
 		);
-		$columns = array_merge($columns, $new_columns);
+		$columns = array_merge( $columns, $new_columns );
 		 
 		return $columns;
 	}
-	function rotary_custom_speaker_column_data($column, $post_id) {
+	function rotary_custom_speaker_column_data( $column, $post_id ) {
 		switch ( $column ) {
 			case 'speaker_date' :
 				$speakerDate = get_post_meta( $post_id , 'speaker_date' , true );
 				echo date('l M dS, Y', strtotime($speakerDate));
 				break;
-			case 'speaker_first_name':
-				echo get_post_meta( $post_id , 'speaker_first_name' , true );
-				break;
-			case 'speaker_last_name':
-				echo get_post_meta( $post_id , 'speaker_last_name' , true );
+			case 'speaker_name':
+				echo sprintf ( '%s %s', get_post_meta( $post_id , 'speaker_first_name' , true ), get_post_meta( $post_id , 'speaker_last_name' , true ) );
 				break;
 			case 'speaker_company':
 				echo get_post_meta( $post_id , 'speaker_company' , true );
+				break;
+			case 'speaker_title':
+				echo get_post_meta( $post_id , 'speaker_title' , true );
 				break;
 	
 		}

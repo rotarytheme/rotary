@@ -27,6 +27,7 @@ function rotary_add_javascript( ) {
 	
 
 	if ( 'China' != get_theme_mod( 'rotary_country', '') ) {
+    	$protocol = is_ssl() ? 'https' : 'http';
 		$query_args = array(
 			'family' => 'Open+Sans+Condensed:300,700,300italic'
 		);
