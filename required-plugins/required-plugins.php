@@ -99,7 +99,7 @@ function my_theme_register_required_plugins( ) {
 	array(
 			'name' 		=> 'Every Calendar',
 			'slug' 		=> 'every-calendar-1',  
-			'version'	=> '2.1.4',  
+			'version'	=> '2.1.5',  
 			'source'    => 'every-calendar-1.zip', // The plugin source.
 			'required' 	=> true,
 			'force_activation' 	=> true,
