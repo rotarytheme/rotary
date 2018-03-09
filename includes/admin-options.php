@@ -7,9 +7,6 @@
  * @since Rotary 1.0
  */
 
-Club Role
- 
-
 //TODO: Finish modifying this for the calendar
 class RotaryAdminOptions {
 	private $rotaryAuth;

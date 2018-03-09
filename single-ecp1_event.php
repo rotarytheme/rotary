@@ -4,7 +4,7 @@ get_header();
 
 <div id="et-main-area">
 	<div id="main-content">
-		<div class="entry-content"
+		<div class="entry-content">
 			<div class="et_pb_section  et_pb_section_0 et_section_specialty">
 				<div class="et_pb_row et_pb_row_3-4_1-4">
 					<div class="et_pb_column et_pb_column_3_4 et_pb_column_0 et_pb_specialty_column">

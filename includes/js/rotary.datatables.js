@@ -1,9 +1,3 @@
-
-
-Exception Error!
-
-http://www.directory-online.com/xWeb/DaCdb.cfc?wsdl
-
 jQuery(document).ready(function($) {
 	var rotaryDataTables = {
 		init: function() {
