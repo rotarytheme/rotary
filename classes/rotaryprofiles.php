@@ -1,6 +1,8 @@
 <?php
-/*
-Rotary User Profiles*/
+/**
+ * 
+* Rotary User Profiles
+*/
 class RotaryProfiles {
 	 private $rotaryMemberData;
 	 public $member_profile = array();
@@ -574,7 +576,5 @@ class RotaryProfiles {
 		$this->member_profile = $output;
 		return $this->member_profile;
 	}
-	   
-		
-
+	  
 }//end class

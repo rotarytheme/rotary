@@ -23,7 +23,6 @@ $args = array(
 			 ) 
            );  
 $the_query = new WP_Query( $args );
-Rotary Options
 
 // The Loop
 	 /* If there are no posts to display, such as an empty archive page */ 
