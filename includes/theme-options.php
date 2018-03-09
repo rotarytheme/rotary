@@ -168,11 +168,11 @@ Class RotaryThemeOptions {
 							'choices' => array(
 									'every' =>  __( 'every', 'Rotary' ),
 									'every other' =>  __( 'every other', 'Rotary' ),
-									'the first' =>  __( 'the first', 'Rotary' ),
-									'the second' =>  __( 'the second', 'Rotary' ),
-									'the third' =>  __( 'the third', 'Rotary' ),
-									'the fourth' =>  __( 'the fourth', 'Rotary' ),
-									'the occasional' =>  __( 'the occasional', 'Rotary' ),
+									'every first' =>  __( 'every first', 'Rotary' ),
+									'every second' =>  __( 'every second', 'Rotary' ),
+									'every third' =>  __( 'every third', 'Rotary' ),
+									'every fourth' =>  __( 'every fourth', 'Rotary' ),
+									'the occasional' =>  __( 'every occasional', 'Rotary' ),
 							) ) );
 				
 					$wp_customize->add_setting( 'rotary_meeting_day', array(
