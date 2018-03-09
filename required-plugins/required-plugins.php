@@ -76,7 +76,7 @@ function my_theme_register_required_plugins( ) {
 	array(
 		'name' 				=> 'Gravity Forms PayPal',
 		'slug' 				=> 'gravityformspaypal',
-		'source'    		=> 'gravityformspaypal.zip', // The plugin source.
+		'source'    		    => 'gravityformspaypal.zip', // The plugin source.
 		'version'			=> '2.5.1',
 		'required' 			=> true,
 		'force_activation' 	=> true,		),
@@ -85,7 +85,7 @@ function my_theme_register_required_plugins( ) {
 		'name' 				=> 'Max Mega Menu Pro',
 		'slug' 				=> 'megamenu-pro',
 		'version'			=> '1.3.6',
-		'source'    		=> 'megamenu-pro.zip', // The plugin source.
+		'source'    		    => 'megamenu-pro.zip', // The plugin source.
 		'required' 			=> false,
 		'force_activation' 	=> false
 	),
