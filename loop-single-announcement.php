@@ -158,11 +158,8 @@
 				<article id="comment-<?php echo $id ?>" <?php comment_class( $extra_classes, $id ); ?>">
 				<div class="announcement-date">
 					<span class="day"><?php echo strftime( '%e', $date->getTimestamp() ); //$date->format( 'd') ; ?></span>
-					<span class="month"><?php  echo strftime( '%B', $date->getTimestamp() ); //$date->format( 'M' ); ?></span>
+					<span class="month"><?php  echo strftime( '%b', $date->getTimestamp() ); //$date->format( 'M' ); ?></span>
 					<span class="year"><?php echo strftime( '%G', $date->getTimestamp() ); //$date->format( 'Y' ); ?></span>
-				</div>
-				<div class="announcement-expiry-date">
-					<span class="day"><?php echo strftime( '%e %b %G', $announcement_expiry_date->getTimestamp() ); //$announcement_expiry_date->format( 'd M Y') ; ?></span>
 				</div>
 				<div class="announcement-content">
 					<div class="announcement-header">
@@ -182,6 +179,9 @@
 					<div class="announcement-body">
 						<?php echo $announcement_text; ?>			
 					</div>
+				</div>
+				<div class="announcement-expiry-date">
+					<span class="day"><?php // echo sprintf( __( 'Expiry date: %s', 'Rotary' ),  strftime( '%e %b %G', $announcement_expiry_date->getTimestamp() )); //$announcement_expiry_date->format( 'd M Y') ; ?></span>
 				</div>	
 			</article>	
 			<?php }

@@ -201,7 +201,8 @@ class RotaryAnnouncements {
 						'key' => 'announcement_expiry_date',
 						'value' => $this->today->format( 'Y-m-d'),
 						'compare' => '>='
-				),array(
+				),
+		         array(
 					'relation' => 'OR',
 					array(
 							'key' => 'permissions',
