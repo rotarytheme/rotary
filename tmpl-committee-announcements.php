@@ -44,64 +44,139 @@
 }?>	
 <?php $commentid = $context .'-announcement-form'; ?>
 
+<?php 
+    		$show = ( is_user_logged_in() ) ? 1 : 2;
+    		$today = new DateTime();
+    		$count = 0.0;
+?>
 <div class="<?php echo $context?> <?php echo $hasThumbnail; ?>">	
 
 <?php if ( have_comments() ) : ?>
-		<div class="<?php echo $context?>-announcements hascontent">
-		<?php if ( is_user_logged_in() ) : ?>
-			<a id="newcomment" class="newcomment <?php echo $button_class; ?>" href="#respond">New Announcement</a>
-		<?php else : ?>
-			<?php  wp_loginout($_SERVER['REQUEST_URI'], true ); ?>
-		<?php endif; ?>
-			<?php
-				$args = array(
-					'order' => 'DESC',
-					'post_type' =>  $postType,
-					'status' => 'approve',
-					'type' => 'comment',
-					'post_id' => get_the_id(),
-					'number' => 10
-				); 
-				$announcements = get_comments( $args );
-				if (is_array( $comments )) : 
-					foreach( $announcements as $announcement ) : 
-						$firstAnnouncement = ( $announcement === reset( $announcements )) ? true : false;  
-				  		$extra_classes = array( 'clearleft', (( !$firstAnnouncement ) ? 'hide' : '' )); 
-						$count++;
-						// Display the announcement body.  We need to have set $announcement, $context, and $extra_classes before calling this
-							include ( get_template_directory() . '/loop-single-announcement.php'); 
-						
-						
-						if ( $firstAnnouncement && get_comments_number() > 1 ) : ?>
-							<p class="morecommentcontainer"><a href="#" class="morecomments" id="morecomments"><?php echo sprintf( __( 'Show More [+%s]', 'Rotary'), intval(intval(get_comments_number()) - 1.0) ); ?></a></p>	
-						<?php  
-						endif; 
-						if ( $announcement === end( $announcements ) && !$firstAnnouncement ) : ?>
-							<p class="morecommentcontainer"><a href="#" class="lesscomments hide" id="lesscomments"><?php _e( 'Show Less', 'Rotary'); ?></a></p>
-						 <?php endif;
-					endforeach;
-				endif;
-			?>
-		</div>
-	<?php else : // or, if we don't have comments:
-	
-		if ( ! comments_open() ) :
-	?>
-		<p><?php _e( 'Announcements are closed.', 'Rotary' ); ?></p>
-		<?php else : ?>
+	<div class="<?php echo $context?>-announcements hascontent">
+    		<?php if ( is_user_logged_in() ) : ?>
+    			<a id="newcomment" class="newcomment <?php echo $button_class; ?>" href="#respond">New Announcement</a>
+    		<?php else : ?>
+    			<?php  wp_loginout($_SERVER['REQUEST_URI'], true ); ?>
+    		<?php endif; ?>
+    		<?php
+    			
+    		// UNEXPIRED COMMENTS
+    		$args = array(
+    	        'order' => 'DESC',
+    	        'post_type' =>  $postType,
+    	        'status' => 'approve',
+    	        'type' => 'comment',
+    	        'post_id' => get_the_id(),
+    	        'number' => 10,
+    	        'meta_query' => array(
+    		        'relation' => 'AND',
+    				    array(
+    				        'key' => 'announcement_expiry_date',
+    				        'value' => $today->format( 'Y-m-d'),
+    				        'compare' => '>='
+    				    ),
+    				    array(
+    				        'relation' => 'OR',
+    				        array(
+    				            'key' => 'permissions',
+    				            'value' => $show,
+    				            'compare' => '='
+    				        ),
+    				        array(
+    				            'key' => 'permissions',
+    				            'value' => 0, //Both
+    				            'compare' => '='
+    				        ),
+    				        array(
+    				            'key' => 'permissions',
+    				            'compare' => 'NOT EXISTS' // not set
+    				        )
+    				    )
+    		    )
+    		);
+    				
+    		$announcements = get_comments( $args );
+    		if (is_array( $announcements )) : 
+    			foreach( $announcements as $announcement ) : 
+    				$extra_classes = array( 'clearleft'); 
+    				$count++;
+    				// Display the announcement body.  We need to have set $announcement, $context, and $extra_classes before calling this
+    					include ( get_template_directory() . '/loop-single-announcement.php'); 
+    			endforeach;
+        	 else : // or, if we don't have comments:
+        		if ( ! comments_open() ) :
+        	?>
+        		<p><?php _e( 'Announcements are closed.', 'Rotary' ); ?></p>
+        		<?php else : ?>
+        		
+        		<div class="<?php echo $context; ?>-announcements nocontent">
+        			<p><?php _e( 'No Announcements at the Moment', 'Rotary' ); ?></p>
+        			<?php if ( is_user_logged_in() ) : ?>
+        				<p><?php _e( 'Would you like to make one', 'Rotary' ); ?>?</p>
+        				<a id="newcomment" class="newcomment <?php echo $button_class; ?>" href="#respond"><?php _e( 'New Announcement', 'Rotary' );?></a>
+        			<?php else : ?>
+        				<p><?php echo sprintf( __( 'Would you like to %s ?', 'Rotary' ),  wp_loginout($_SERVER['REQUEST_URI'], true ) ); ?></p>
+        			<?php endif; ?>
+        		</div>
+        		<?php endif; // end ! comments_open()  	
+        	endif; // end if array( announcements)
 		
-		<div class="<?php echo $context; ?>-announcements nocontent">
-			<p><?php _e( 'No Announcements at the Moment', 'Rotary' ); ?></p>
-			<?php if ( is_user_logged_in() ) : ?>
-				<p><?php _e( 'Would you like to make one', 'Rotary' ); ?>?</p>
-				<a id="newcomment" class="newcomment <?php echo $button_class; ?>" href="#respond"><?php _e( 'New Announcement', 'Rotary' );?></a>
-			<?php else : ?>
-				<p><?php echo sprintf( __( 'Would you like to %s ?', 'Rotary' ),  wp_loginout($_SERVER['REQUEST_URI'], true ) ); ?></p>
-			<?php endif; ?>
-		</div>
-		<?php endif; // end ! comments_open() ?>
-	<?php endif; // end have_comments() ?>
-<?php // no comment navigation ?>
+		
+        	// EXPIRED COMMENTS *****************
+        	$args = array(
+            	'order' => 'DESC',
+            	'post_type' =>  $postType,
+            	'status' => 'approve',
+            	'type' => 'comment',
+            	'post_id' => get_the_id(),
+            	'number' => 10,
+            	'meta_query' => array(
+        		'relation' => 'AND',
+        		array(
+            		'key' => 'announcement_expiry_date',
+            		'value' => $today->format( 'Y-m-d'),
+            		'compare' => '<'
+             ),
+             array(
+                 'relation' => 'OR',
+                 array(
+                     'key' => 'permissions',
+                     'value' => $show,
+                     'compare' => '='
+            		 ),
+        		    array(
+            		    'key' => 'permissions',
+            		    'value' => 0, //Both
+            		    'compare' => '='
+            	    ),
+            	    array(
+                	    'key' => 'permissions',
+                	    'compare' => 'NOT EXISTS' // not set
+            	    )
+            	  )
+           )
+        	);
+		$announcements = get_comments( $args );
+		
+		if (is_array( $announcements )) :
+		$extra_classes = array( 'clearleft', 'hide'); 
+		    $count = 0;
+			?>
+				<p class="morecommentcontainer"><a href="#" class="morecomments" id="morecomments"><?php echo sprintf( __( 'Show More [+%s]', 'Rotary'), intval(intval(get_comments_number()) - $count) ); ?></a></p>
+			<?php 
+			foreach( $announcements as $announcement ) :
+				// Display the announcement body.  We need to have set $announcement, $context, and $extra_classes before calling this
+				include ( get_template_directory() . '/loop-single-announcement.php');
+			endforeach;
+			?>
+        		<p class="morecommentcontainer"><a href="#" class="lesscomments hide" id="lesscomments"><?php _e( 'Show Less', 'Rotary'); ?></a></p>
+			<?php 
+		endif; // end have (expired) announcements
+		?>
+	</div> <?php 
+	
+endif; // end have_comments() 
+?>
 </div>
 
 <?php $args = array(

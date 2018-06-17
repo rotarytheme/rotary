@@ -120,6 +120,7 @@ function my_theme_register_required_plugins( ) {
 		// This is an example of how to include a plugin from a GitHub repository in your theme.
 		// This presumes that the plugin code is based in the root of the GitHub repository
 		// and not in a subdirectory ('/src') of the repository.
+		/*
 		array(
 			'name'      => 'Rotary DaCDb',
 			'slug'      => 'rotary-dacdb-master',
@@ -129,7 +130,7 @@ function my_theme_register_required_plugins( ) {
 			'force_deactivation' => true, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 			'is_callable'        => 'rotary_dacdb_installed', // If set, this callable will be be checked for availability to determine if a plugin is active.
 		),
-
+    */
 		// This is an example of how to include a plugin from the WordPress Plugin Repository.
 		array(
 			'name' 		=> 'Contact Form 7',

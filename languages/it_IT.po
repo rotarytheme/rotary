@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Rotary Rebrand - A Theme for Rotary Clubs\n"
-"POT-Creation-Date: 2017-07-01 17:52+0200\n"
-"PO-Revision-Date: 2017-07-02 11:31+0200\n"
+"POT-Creation-Date: 2017-07-02 07:39-0700\n"
+"PO-Revision-Date: 2018-06-16 17:17+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.2\n"
+"X-Generator: Poedit 2.0.8\n"
 "X-Poedit-Basepath: sorgenti/rotarytheme-rotary-b483079\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -110,10 +110,11 @@ msgstr "Modifica questo campo"
 #: advanced-custom-fields/core/fields/image.php:91
 #: advanced-custom-fields/core/views/meta_box_fields.php:108
 #: classes/custom-post-types.php:79 classes/custom-post-types.php:299
-#: includes/theme-functions.php:708 loop-attachment.php:54
+#: includes/theme-functions.php:852 loop-attachment.php:54
 #: loop-attachment.php:98 loop-home-members.php:37 loop-home.php:33
 #: loop-page.php:26 loop-search.php:50 loop-single-committee.php:26
-#: loop-single-project.php:27 loop-single-speaker.php:91 loop-single.php:37
+#: loop-single-project.php:27 loop-single-speaker.php:39
+#: loop-single-speaker.php:98 loop-single.php:37
 #: shortcodes/shortcode-upcoming-speakers.php:46 tmpl-home.php:33
 #: upcoming-programs.php:106
 msgid "Edit"
@@ -144,7 +145,7 @@ msgstr "Cancella il capo"
 
 #: acf-repeater/views/options.php:85
 #: advanced-custom-fields/core/views/meta_box_fields.php:110
-#: loop-single-announcement.php:106
+#: loop-single-announcement.php:114
 msgid "Delete"
 msgstr "Cancella"
 
@@ -320,11 +321,11 @@ msgstr "Cerca Gruppo Campi"
 
 #: advanced-custom-fields/acf.php:517
 msgid "No Field Groups found"
-msgstr ""
+msgstr "Nessun campo nei gruppi è stato trovato"
 
 #: advanced-custom-fields/acf.php:518
 msgid "No Field Groups found in Trash"
-msgstr ""
+msgstr "Nessun campo nei gruppi è stato trovato nel cestino"
 
 #: advanced-custom-fields/acf.php:603
 #: advanced-custom-fields/core/views/meta_box_options.php:99
@@ -472,7 +473,7 @@ msgstr ""
 
 #: advanced-custom-fields/core/controllers/addons.php:183
 msgid "Assign one or more contact form 7 forms to a post"
-msgstr ""
+msgstr "Assegna uno o più moduli di contatto 7 moduli a un post"
 
 #: advanced-custom-fields/core/controllers/addons.php:193
 msgid "Advanced Custom Fields Add-Ons"
@@ -573,7 +574,7 @@ msgstr ""
 
 #: advanced-custom-fields/core/controllers/export.php:262
 msgid "That's it! Happy WordPressing"
-msgstr ""
+msgstr "Questo è tutto! Buon WordPressing"
 
 #: advanced-custom-fields/core/controllers/export.php:268
 msgid "ACF will create the PHP code to include in your theme."
@@ -644,6 +645,9 @@ msgid ""
 "to enable lite mode. Add the following code to your functions.php file "
 "<b>before</b> the include_once code:"
 msgstr ""
+"Il plugin Advanced campi personalizzati possa essere incluso in un tema. A "
+"tale scopo, spostare il plugin ACF all’interno del vostro tema e aggiungere "
+"il seguente codice al file functions. php:"
 
 #: advanced-custom-fields/core/controllers/export.php:331
 msgid "Back to export"
@@ -651,7 +655,7 @@ msgstr ""
 
 #: advanced-custom-fields/core/controllers/export.php:400
 msgid "No field groups were selected"
-msgstr ""
+msgstr "Nessun gruppo di campo è stato selezionato"
 
 #: advanced-custom-fields/core/controllers/field_group.php:359
 msgid "Move to trash. Are you sure?"
@@ -724,11 +728,11 @@ msgstr ""
 
 #: advanced-custom-fields/core/controllers/field_group.php:638
 msgid "Parent Page (has children)"
-msgstr ""
+msgstr "Pagina Genitore (ha figli)"
 
 #: advanced-custom-fields/core/controllers/field_group.php:639
 msgid "Child Page (has parent)"
-msgstr ""
+msgstr "Pagina Figlia (ha genitore)"
 
 #: advanced-custom-fields/core/controllers/field_group.php:647
 msgid "Default Template"
@@ -740,11 +744,11 @@ msgstr "Pubblicato"
 
 #: advanced-custom-fields/core/controllers/field_group.php:730
 msgid "Pending Review"
-msgstr ""
+msgstr "Recensione in attesa"
 
 #: advanced-custom-fields/core/controllers/field_group.php:731
 msgid "Draft"
-msgstr ""
+msgstr "Bozza"
 
 #: advanced-custom-fields/core/controllers/field_group.php:732
 msgid "Future"
@@ -756,7 +760,7 @@ msgstr ""
 
 #: advanced-custom-fields/core/controllers/field_group.php:734
 msgid "Revision"
-msgstr ""
+msgstr "Revisione"
 
 #: advanced-custom-fields/core/controllers/field_group.php:735
 msgid "Trash"
@@ -822,7 +826,7 @@ msgstr "Filtro"
 
 #: advanced-custom-fields/core/controllers/field_groups.php:225
 msgid "'How to' guides"
-msgstr "Guida \"Come Fare\""
+msgstr "'Come Fare' - Guida"
 
 #: advanced-custom-fields/core/controllers/field_groups.php:226
 msgid "Tutorials"
@@ -838,7 +842,7 @@ msgstr ""
 
 #: advanced-custom-fields/core/controllers/field_groups.php:244
 msgid "Thank you for updating to the latest version!"
-msgstr ""
+msgstr "Grazie per l’aggiornamento all’ultima versione!"
 
 #: advanced-custom-fields/core/controllers/field_groups.php:244
 #, php-format
@@ -848,7 +852,7 @@ msgstr ""
 
 #: advanced-custom-fields/core/controllers/field_groups.php:251
 msgid "What’s New"
-msgstr ""
+msgstr "Novità"
 
 #: advanced-custom-fields/core/controllers/field_groups.php:254
 msgid "Download Add-ons"
@@ -978,7 +982,7 @@ msgstr ""
 
 #: advanced-custom-fields/core/controllers/field_groups.php:364
 msgid "Really Important!"
-msgstr ""
+msgstr "Veramente Importante!"
 
 #: advanced-custom-fields/core/controllers/field_groups.php:364
 #, php-format
@@ -999,7 +1003,7 @@ msgstr ""
 
 #: advanced-custom-fields/core/controllers/field_groups.php:371
 msgid "Without you all, this release would not have been possible!"
-msgstr ""
+msgstr "Senza di voi tutto, questa versione non sarebbe stata possibile!"
 
 #: advanced-custom-fields/core/controllers/field_groups.php:375
 msgid "Changelog for"
@@ -1028,7 +1032,7 @@ msgstr ""
 
 #: advanced-custom-fields/core/controllers/field_groups.php:404
 msgid "Available Add-ons"
-msgstr ""
+msgstr "Visualizza Add-Ons disponibili"
 
 #: advanced-custom-fields/core/controllers/field_groups.php:406
 msgid "The following Add-ons have been detected as activated on this website."
@@ -1036,7 +1040,7 @@ msgstr ""
 
 #: advanced-custom-fields/core/controllers/field_groups.php:419
 #: advanced-custom-fields/core/fields/file.php:109
-#: includes/theme-functions.php:527
+#: includes/theme-functions.php:671
 msgid "Name"
 msgstr "Nome"
 
@@ -1081,7 +1085,7 @@ msgstr ""
 
 #: advanced-custom-fields/core/controllers/field_groups.php:484
 msgid "Awesome. Let's get to work"
-msgstr ""
+msgstr "Mettiamoci al lavoro"
 
 #: advanced-custom-fields/core/controllers/input.php:63
 msgid "Expand Details"
@@ -1089,7 +1093,7 @@ msgstr ""
 
 #: advanced-custom-fields/core/controllers/input.php:64
 msgid "Collapse Details"
-msgstr ""
+msgstr "Minimizza i dettagli"
 
 #: advanced-custom-fields/core/controllers/input.php:67
 msgid "Validation Failed. One or more fields below are required."
@@ -1126,13 +1130,13 @@ msgstr ""
 #: advanced-custom-fields/core/fields/select.php:19
 #: advanced-custom-fields/core/fields/true_false.php:20
 msgid "Choice"
-msgstr ""
+msgstr "Scelta"
 
 #: advanced-custom-fields/core/fields/checkbox.php:146
 #: advanced-custom-fields/core/fields/radio.php:147
 #: advanced-custom-fields/core/fields/select.php:177
 msgid "Choices"
-msgstr ""
+msgstr "Scelte"
 
 #: advanced-custom-fields/core/fields/checkbox.php:147
 #: advanced-custom-fields/core/fields/select.php:178
@@ -1222,7 +1226,7 @@ msgstr ""
 
 #: advanced-custom-fields/core/fields/date_picker/date_picker.php:128
 msgid "\"yymmdd\" is the most versatile save format. Read more about"
-msgstr ""
+msgstr "\"aammgg\" è il formato di salvataggio più versatile. Scopri di più"
 
 #: advanced-custom-fields/core/fields/date_picker/date_picker.php:128
 #: advanced-custom-fields/core/fields/date_picker/date_picker.php:144
@@ -1242,6 +1246,8 @@ msgid ""
 "\"dd/mm/yy\" or \"mm/dd/yy\" are the most used display formats. Read more "
 "about"
 msgstr ""
+"\"gg/mm/aa\" or \"mm/gg/aa\" sono i formati di visualizzazione più usati. "
+"Leggi di più"
 
 #: advanced-custom-fields/core/fields/date_picker/date_picker.php:158
 msgid "Week Starts On"
@@ -1252,7 +1258,7 @@ msgid "Dummy"
 msgstr ""
 
 #: advanced-custom-fields/core/fields/email.php:19
-#: includes/theme-functions.php:529 loop-single-speaker.php:62
+#: includes/theme-functions.php:673 loop-single-speaker.php:69
 msgid "Email"
 msgstr ""
 
@@ -1292,21 +1298,21 @@ msgstr ""
 #: advanced-custom-fields/core/fields/password.php:121
 #: advanced-custom-fields/core/fields/text.php:147
 msgid "Appears before the input"
-msgstr ""
+msgstr "Compare prima del contenuto"
 
 #: advanced-custom-fields/core/fields/email.php:153
 #: advanced-custom-fields/core/fields/number.php:163
 #: advanced-custom-fields/core/fields/password.php:135
 #: advanced-custom-fields/core/fields/text.php:161
 msgid "Append"
-msgstr ""
+msgstr "Aggiungere"
 
 #: advanced-custom-fields/core/fields/email.php:154
 #: advanced-custom-fields/core/fields/number.php:164
 #: advanced-custom-fields/core/fields/password.php:136
 #: advanced-custom-fields/core/fields/text.php:162
 msgid "Appears after the input"
-msgstr ""
+msgstr "Compare dopo il contenuto"
 
 #: advanced-custom-fields/core/fields/file.php:19
 msgid "File"
@@ -1328,7 +1334,7 @@ msgstr ""
 
 #: advanced-custom-fields/core/fields/file.php:28
 msgid "Update File"
-msgstr ""
+msgstr "Aggiorna file"
 
 #: advanced-custom-fields/core/fields/file.php:29
 #: advanced-custom-fields/core/fields/image.php:30
@@ -1345,7 +1351,7 @@ msgstr ""
 
 #: advanced-custom-fields/core/fields/file.php:123
 msgid "Add File"
-msgstr ""
+msgstr "Aggiungi File"
 
 #: advanced-custom-fields/core/fields/file.php:153
 #: advanced-custom-fields/core/fields/image.php:125
@@ -1389,7 +1395,7 @@ msgstr ""
 
 #: advanced-custom-fields/core/fields/google-map.php:120
 msgid "Clear location"
-msgstr ""
+msgstr "Cancella località"
 
 #: advanced-custom-fields/core/fields/google-map.php:125
 msgid "Find current location"
@@ -1512,7 +1518,7 @@ msgstr ""
 
 #: advanced-custom-fields/core/fields/page_link.php:18
 msgid "Page Link"
-msgstr ""
+msgstr "Link Pagina"
 
 #: advanced-custom-fields/core/fields/page_link.php:19
 #: advanced-custom-fields/core/fields/post_object.php:19
@@ -1569,7 +1575,7 @@ msgstr ""
 #: advanced-custom-fields/core/fields/radio.php:105
 #: advanced-custom-fields/core/views/meta_box_location.php:91
 msgid "Other"
-msgstr ""
+msgstr "Altro"
 
 #: advanced-custom-fields/core/fields/radio.php:148
 msgid "Enter your choices one per line"
@@ -1621,7 +1627,6 @@ msgstr ""
 
 #: advanced-custom-fields/core/fields/relationship.php:634 searchform.php:11
 #: searchform.php:12 searchform.php:13 searchform.php:14
-#: tmpl-speaker-archive.php:78
 msgid "Search"
 msgstr "Cerca"
 
@@ -1871,19 +1876,19 @@ msgstr ""
 #: advanced-custom-fields/core/views/meta_box_location.php:85
 #: advanced-custom-fields/core/views/meta_box_location.php:86
 msgid "Page"
-msgstr ""
+msgstr "Pagina"
 
 #: advanced-custom-fields/core/views/meta_box_location.php:87
 msgid "Page Type"
-msgstr ""
+msgstr "Tipologia di pagina"
 
 #: advanced-custom-fields/core/views/meta_box_location.php:88
 msgid "Page Parent"
-msgstr ""
+msgstr "Pagina genitore"
 
 #: advanced-custom-fields/core/views/meta_box_location.php:89
 msgid "Page Template"
-msgstr ""
+msgstr "Template Pagina"
 
 #: advanced-custom-fields/core/views/meta_box_location.php:92
 msgid "Attachment"
@@ -1973,7 +1978,7 @@ msgstr "Commenti"
 
 #: advanced-custom-fields/core/views/meta_box_options.php:102
 msgid "Revisions"
-msgstr ""
+msgstr "Revisioni"
 
 #: advanced-custom-fields/core/views/meta_box_options.php:103
 msgid "Slug"
@@ -2029,7 +2034,7 @@ msgstr "Archivio Autori"
 #: author.php:30
 #, php-format
 msgid "About %s"
-msgstr ""
+msgstr "Circa %s"
 
 #: category.php:16
 msgid "Category Archive"
@@ -2265,23 +2270,29 @@ msgid "New Program Tag Name"
 msgstr "Nuovo Nome Tag Conferenza"
 
 #: classes/custom-post-types.php:227
-msgid "Speaker Date"
-msgstr "Data Relazione"
+#, fuzzy
+#| msgid "Program Title"
+msgid "Program Date"
+msgstr "Titolo Conferenza"
 
 #: classes/custom-post-types.php:229
-msgid "Speaker First Name"
-msgstr "Nome del Relatore"
+#, fuzzy
+#| msgid "Speaker Date"
+msgid "Speaker"
+msgstr "Data Relazione"
 
 #: classes/custom-post-types.php:230
-msgid "Speaker Last Name"
-msgstr "Cognome del Relatore"
+#, fuzzy
+#| msgid "Post Title"
+msgid "Position/Job Title"
+msgstr "Titolo Post"
 
-#: classes/custom-post-types.php:231 tmpl-speaker-archive.php:30
+#: classes/custom-post-types.php:231
 msgid "Organization"
 msgstr "Organizzazione"
 
 #: classes/custom-post-types.php:294
-#: includes/committee-project-functions.php:148 includes/theme-widgets.php:608
+#: includes/committee-project-functions.php:166 includes/theme-widgets.php:608
 #: taxonomy.php:13
 msgid "Projects"
 msgstr "Services"
@@ -2412,7 +2423,7 @@ msgid "No Committees Found"
 msgstr "Nessuna Commissione Trovata"
 
 #: classes/custom-post-types.php:380
-#: includes/committee-project-functions.php:165 includes/theme-widgets.php:403
+#: includes/committee-project-functions.php:184 includes/theme-widgets.php:403
 #: includes/theme-widgets.php:707
 msgid "Committees"
 msgstr "Commissioni"
@@ -2421,25 +2432,21 @@ msgstr "Commissioni"
 msgid "Committee"
 msgstr "Commissione"
 
-#: classes/custom-post-types.php:443
-msgid "You must be logged in to see project participants"
-msgstr ""
-
-#: classes/custom-post-types.php:444
+#: classes/custom-post-types.php:446
 msgid "You must be logged in to see member information"
 msgstr "Devi essere un Socio per vedere questa informazione"
 
-#: classes/custom-post-types.php:550
+#: classes/custom-post-types.php:549
 msgctxt "Member directory dropdown for committees"
 msgid "Filter by committee"
 msgstr "Selezione per Commissione"
 
-#: classes/custom-post-types.php:551
+#: classes/custom-post-types.php:550
 msgctxt "Member directory dropdown for committees"
 msgid "All"
 msgstr "Tutti"
 
-#: classes/custom-post-types.php:565
+#: classes/custom-post-types.php:564
 msgctxt "Project participant dropdown"
 msgid "Add a participant"
 msgstr "Aggiungi Partecipante"
@@ -2452,7 +2459,7 @@ msgstr "cell"
 #: classes/rotaryprofiles.php:489
 msgctxt "Home/Cellphone Abbreviation"
 msgid "h"
-msgstr ""
+msgstr "c"
 
 #: classes/rotaryprofiles.php:493
 msgctxt "Email Address Abbreviation"
@@ -2478,7 +2485,7 @@ msgstr ""
 
 #: comments.php:37 comments.php:48
 msgid "Newer Comments &rarr;"
-msgstr "Nuovi Commenti"
+msgstr "Nuovi Commenti &rarr;"
 
 #: comments.php:56
 msgid "Comments are closed."
@@ -2486,7 +2493,7 @@ msgstr "Commenti sono chiusi."
 
 #: committee-comments.php:58 tmpl-committee-announcements.php:90
 msgid "Announcements are closed."
-msgstr ""
+msgstr "Gli annunci sono chiusi."
 
 #: committee-comments.php:68 tmpl-committee-announcements.php:94
 msgid "No Announcements at the Moment"
@@ -2496,9 +2503,10 @@ msgstr "Nessun Annuncio al Momento"
 msgid "Would you like to add one"
 msgstr "Vuoi aggiungerne uno"
 
-#: committee-comments.php:73
-msgid "Would you like to "
-msgstr ""
+#: committee-comments.php:73 tmpl-committee-announcements.php:99
+#, php-format
+msgid "Would you like to %s ?"
+msgstr "Si desidera %s ?"
 
 #: footer.php:18
 msgid "Web Design"
@@ -2584,7 +2592,7 @@ msgstr ""
 
 #: import-users-from-csv/import-users-from-csv.php:122
 msgid "You do not have sufficient permissions to access this page."
-msgstr ""
+msgstr "Non hai i permessi necessari per accedere a questa pagina."
 
 #: import-users-from-csv/import-users-from-csv.php:126
 msgid "Import users from a CSV file"
@@ -2600,7 +2608,7 @@ msgstr ""
 #: import-users-from-csv/import-users-from-csv.php:139
 #, php-format
 msgid ", please <a href=\"%s\">check the error log</a>"
-msgstr ""
+msgstr ", per favore  <a href=\"%s\">controlla il file error log</a>"
 
 #: import-users-from-csv/import-users-from-csv.php:143
 msgid "Error during file upload."
@@ -2613,7 +2621,7 @@ msgstr ""
 #: import-users-from-csv/import-users-from-csv.php:149
 #, php-format
 msgid "%s user(s) skipped and %s records failed to be imported%s."
-msgstr ""
+msgstr "%s utente(i) saltati e %s records non sono stati importati%s."
 
 #: import-users-from-csv/import-users-from-csv.php:152
 #, php-format
@@ -2621,12 +2629,16 @@ msgid ""
 "%s user(s) successfully imported, %s user(s) updated, %s user(s) skipped, "
 "and %s failed%s."
 msgstr ""
+"%s utente(i) importati con successo, %s utente(i) aggiornati, %s utente(i) "
+"saltati, e %s falliti%s."
 
 #: import-users-from-csv/import-users-from-csv.php:155
 #, php-format
 msgid ""
 "%s user(s) successfully imported, %s user(s) updated, %s user(s) skipped"
 msgstr ""
+"%s utente(i) importati con successo, %s utente(i) aggiornati, %s utente(i) "
+"saltati"
 
 #: import-users-from-csv/import-users-from-csv.php:166
 msgid "CSV Column Headers"
@@ -2674,7 +2686,7 @@ msgstr ""
 
 #: import-users-from-csv/import-users-from-csv.php:320
 msgid "User @s already exists. Update skipped"
-msgstr ""
+msgstr "Utente @s esiste già. Aggiornamento saltato"
 
 #: import-users-from-csv/import-users-from-csv.php:402
 #, php-format
@@ -2699,31 +2711,47 @@ msgstr "Salva Annuncio"
 msgid "Sorry, you must be logged in to post a comment."
 msgstr ""
 
-#: includes/ajax/ajax-announcements.php:133
+#: includes/ajax/ajax-announcements.php:137
 msgid "Go To Post"
 msgstr "Vail al Post"
 
-#: includes/ajax/ajax-announcements.php:138
+#: includes/ajax/ajax-announcements.php:142
 msgid "Go To Website"
 msgstr ""
 
-#: includes/ajax/ajax-announcements.php:175
+#: includes/ajax/ajax-announcements.php:180
 msgid "Announcement Title"
 msgstr "Titolo Annuncio"
 
-#: includes/ajax/ajax-announcements.php:178
-msgid "Announced by"
-msgstr ""
-
 #: includes/ajax/ajax-announcements.php:183
+msgid "Announced by"
+msgstr "Annunciato da"
+
+#: includes/ajax/ajax-announcements.php:188
 msgid "Request Replies (Adds a BLUE button to email the announcer)"
 msgstr ""
 
-#: includes/ajax/ajax-announcements.php:217
+#: includes/ajax/ajax-announcements.php:191
+msgid "Visibility:&nbsp;&nbsp;"
+msgstr ""
+
+#: includes/ajax/ajax-announcements.php:192
+msgid "Both"
+msgstr ""
+
+#: includes/ajax/ajax-announcements.php:193
+msgid "Members Only"
+msgstr ""
+
+#: includes/ajax/ajax-announcements.php:194
+msgid "Non-Members Only"
+msgstr ""
+
+#: includes/ajax/ajax-announcements.php:228
 msgid "Announcement Expires on"
 msgstr "Annuncio scade il"
 
-#: includes/ajax/ajax-announcements.php:223
+#: includes/ajax/ajax-announcements.php:234
 msgid ""
 "Additional Call to Action (adds a YELLOW button to go to another page/"
 "website)"
@@ -2731,25 +2759,23 @@ msgstr ""
 "Aggiunge Call to Action (aggiunge un Bottone Giallo per andare in altra "
 "pagina o sito web)"
 
-#: includes/ajax/ajax-announcements.php:225
+#: includes/ajax/ajax-announcements.php:236
 msgid "Button Text"
 msgstr ""
 
-#: includes/ajax/ajax-announcements.php:229
+#: includes/ajax/ajax-announcements.php:240
 msgid "Button links to this project/committee's page"
 msgstr ""
 
-#: includes/ajax/ajax-announcements.php:231
+#: includes/ajax/ajax-announcements.php:242
 msgid "Button links to another Website/URL..."
 msgstr ""
 
-#: includes/ajax/ajax-announcements.php:346
-#: includes/ajax/ajax-announcements.php:353
-#: includes/ajax/ajax-announcements.php:372
-#: includes/ajax/ajax-announcements.php:379
-#: includes/ajax/ajax-announcements.php:394
-#: includes/ajax/ajax-announcements.php:414
-#: includes/ajax/ajax-announcements.php:425
+#: includes/ajax/ajax-announcements.php:357
+#: includes/ajax/ajax-announcements.php:375
+#: includes/ajax/ajax-announcements.php:382
+#: includes/ajax/ajax-announcements.php:397
+#: includes/ajax/ajax-announcements.php:413
 #, php-format
 msgid "Organized by %s"
 msgstr "Organizzato da %s"
@@ -2773,10 +2799,27 @@ msgstr ""
 #: includes/assets.php:256
 msgid "You do not have sufficient permissions to update themes for this site."
 msgstr ""
+"Non si dispone di autorizzazioni sufficienti per aggiornare i temi per "
+"questo sito."
 
 #: includes/assets.php:263
 msgid "Update Theme"
-msgstr ""
+msgstr "Aggiorna Theme"
+
+#: includes/class-wp-widget-search.php:26
+msgid "A search form for your site."
+msgstr "Un modulo di ricerca per il tuo sito."
+
+#: includes/class-wp-widget-search.php:27
+msgctxt "Search widget"
+msgid "Search"
+msgstr "Cerca"
+
+#: includes/class-wp-widget-search.php:67 includes/theme-widgets.php:321
+#: includes/theme-widgets.php:407 includes/theme-widgets.php:501
+#: includes/theme-widgets.php:612 includes/theme-widgets.php:711
+msgid "Title:"
+msgstr "Titolo:"
 
 #: includes/committee-project-functions.php:47
 msgid "Meeting"
@@ -2784,7 +2827,7 @@ msgstr "Conviviale"
 
 #: includes/committee-project-functions.php:48
 msgid "Social Event"
-msgstr ""
+msgstr "Evento sociale"
 
 #: includes/committee-project-functions.php:49
 msgid "Community / Work Project"
@@ -2792,15 +2835,15 @@ msgstr "Service del Club"
 
 #: includes/committee-project-functions.php:50
 msgid "Grant / International Project"
-msgstr ""
+msgstr "Sovvenzione / Progetto internazionale"
 
 #: includes/committee-project-functions.php:51
 msgid "Fundraiser Event"
-msgstr ""
+msgstr "Evento di raccolta fondi"
 
 #: includes/committee-project-functions.php:52
 msgid "Fundraiser Campaign"
-msgstr ""
+msgstr "Campagna di raccolta fondi"
 
 #: includes/committee-project-functions.php:53
 msgid "Other Event"
@@ -2812,67 +2855,67 @@ msgstr ""
 
 #: includes/committee-project-functions.php:76
 msgid "Signup"
-msgstr ""
+msgstr "Adesione"
 
 #: includes/committee-project-functions.php:77
 msgid "Volunteer"
-msgstr ""
+msgstr "Volontario"
 
 #: includes/committee-project-functions.php:78
 msgid "Support"
-msgstr ""
+msgstr "Supporta"
 
 #: includes/committee-project-functions.php:79
 msgid "Advocate"
-msgstr ""
+msgstr "Sostenitore"
 
 #: includes/committee-project-functions.php:80
 msgid "Purchase"
-msgstr ""
+msgstr "Acquista"
 
 #: includes/committee-project-functions.php:81
 msgid "Donate"
-msgstr ""
+msgstr "Dona"
 
 #: includes/committee-project-functions.php:83
 msgid "Registrations"
-msgstr ""
+msgstr "Iscrizioni"
 
 #: includes/committee-project-functions.php:84
 msgid "Signups"
-msgstr ""
+msgstr "Adesioni"
 
 #: includes/committee-project-functions.php:85
 msgid "Volunteers"
-msgstr ""
+msgstr "Volontari"
 
 #: includes/committee-project-functions.php:86
 msgid "Supporter"
-msgstr ""
+msgstr "Sostenitori"
 
 #: includes/committee-project-functions.php:87
 msgid "Advocates"
-msgstr ""
+msgstr "Sostenitori"
 
 #: includes/committee-project-functions.php:88
 msgid "Buyers"
-msgstr ""
+msgstr "Compratori"
 
 #: includes/committee-project-functions.php:89
 msgid "Donors"
-msgstr ""
+msgstr "Donatori"
 
 #: includes/committee-project-functions.php:91
 msgid "Register Now"
-msgstr ""
+msgstr "Registrati ora"
 
 #: includes/committee-project-functions.php:92
 msgid "Sign Up Now"
-msgstr ""
+msgstr "Iscriviti Adesso"
 
 #: includes/committee-project-functions.php:93
 msgid "Volunteer Now"
-msgstr ""
+msgstr "Proponiti come Volontario"
 
 #: includes/committee-project-functions.php:94
 msgid "Become a Supporter"
@@ -2880,59 +2923,61 @@ msgstr "Diventa un Supporter"
 
 #: includes/committee-project-functions.php:95
 msgid "Become an Advocate"
-msgstr ""
+msgstr "Diventa un sostenitore"
 
 #: includes/committee-project-functions.php:96
 msgid "Buy Now"
-msgstr ""
+msgstr "Acquista ora"
 
 #: includes/committee-project-functions.php:97
 msgid "Donate to this Cause"
-msgstr ""
+msgstr "Fai una donazione a questa causa"
 
 #: includes/committee-project-functions.php:130
 msgid "SELECT A PROJECT OR COMMITTEE TO ADD A NEW ANNOUNCEMENT"
 msgstr ""
 "SELEZIONA UN SERVICE O UNA COMMISSIONE PER AGGIUNGERE UN NUOVO ANNUNCIO"
 
-#: includes/committee-project-functions.php:290
+#: includes/committee-project-functions.php:309
 msgid "I'm going <br />Click to<br />change RSVP"
-msgstr ""
+msgstr "Sto partecipando <br />Click per<br />cambiare RSVP"
 
-#: includes/committee-project-functions.php:293
+#: includes/committee-project-functions.php:312
 msgid "I'm not going<br />Click to<br />change RSVP"
-msgstr ""
+msgstr "Non sto partecipando <br />Click per<br />cambiare RSVP"
 
-#: includes/committee-project-functions.php:298
+#: includes/committee-project-functions.php:317
 msgid "I'm going"
-msgstr ""
+msgstr "Sto partecipando"
 
-#: includes/committee-project-functions.php:361
+#: includes/committee-project-functions.php:380
 msgid "Keep Reading"
 msgstr "Leggi di più"
 
-#: includes/committee-project-functions.php:398
+#: includes/committee-project-functions.php:417
 msgid "To"
 msgstr ""
 
-#: includes/committee-project-functions.php:401
+#: includes/committee-project-functions.php:420
 msgid "(ongoing)"
-msgstr ""
+msgstr "(In itinere)"
 
-#: includes/committee-project-functions.php:422
+#: includes/committee-project-functions.php:441
 #, php-format
 msgid "%s To %s"
-msgstr ""
+msgstr "%s a %s"
 
-#: includes/committee-project-functions.php:580
+#: includes/committee-project-functions.php:599
 #, php-format
 msgid "%s projects"
-msgstr ""
+msgstr "%s progetti"
 
 #: includes/project-fields.php:67
 msgid ""
 "Enter the project date. If left blank, it will default to the current date."
 msgstr ""
+"Inserisci la data del progetto- Se lasciato bianco, sarà usata la dato "
+"corrente."
 
 #: includes/project-fields.php:140
 msgid "Member Sign-Up Table"
@@ -2949,81 +2994,87 @@ msgstr "Partecipanti"
 #: includes/rotarymembership-layout.php:12
 msgctxt "Remove from project participation"
 msgid "Delete"
-msgstr ""
+msgstr "Cancella"
 
 #: includes/rotarymembership-layout.php:15
-#: includes/rotarymembership-layout.php:55
+#: includes/rotarymembership-layout.php:58
 msgid "Bulk Actions"
-msgstr ""
-
-#: includes/rotarymembership-layout.php:16
-#: includes/rotarymembership-layout.php:56
-msgctxt "Bulk action"
-msgid "Email"
-msgstr ""
+msgstr "Azioni di gruppo"
 
 #: includes/rotarymembership-layout.php:17
-#: includes/rotarymembership-layout.php:57
+#: includes/rotarymembership-layout.php:60
+msgctxt "Bulk action"
+msgid "Outlook Email"
+msgstr ""
+
+#: includes/rotarymembership-layout.php:18
+#: includes/rotarymembership-layout.php:61
+msgctxt "Bulk action"
+msgid "Mac Mail"
+msgstr ""
+
+#: includes/rotarymembership-layout.php:20
+#: includes/rotarymembership-layout.php:63
 msgctxt "Bulk actions"
 msgid "Go"
 msgstr "Vai"
 
-#: includes/rotarymembership-layout.php:44
+#: includes/rotarymembership-layout.php:47
 msgid "Cancel"
 msgstr ""
 
-#: includes/rotarymembership-layout.php:51
+#: includes/rotarymembership-layout.php:54
 msgid "Membership Directory"
 msgstr "Elenco Soci"
 
-#: includes/rotarymembership-layout.php:60
+#: includes/rotarymembership-layout.php:66
 msgctxt "Name display order"
 msgid "First Last"
-msgstr "Cognome, Nome"
+msgstr "Visualizza come: Nome Cognome"
 
-#: includes/rotarymembership-layout.php:61
+#: includes/rotarymembership-layout.php:67
 msgctxt "Name display order"
 msgid "Last, First"
-msgstr "Nome, Cognome"
+msgstr "Visualizza come: Cognome, Nome"
 
-#: includes/rotarymembership-layout.php:106
+#: includes/rotarymembership-layout.php:116
 msgctxt "Directory table label"
 msgid "Name"
-msgstr "Cognome e Nome"
+msgstr "Cognome e Nome (&#8661)"
 
-#: includes/rotarymembership-layout.php:107
+#: includes/rotarymembership-layout.php:117
 msgctxt "Directory table label"
 msgid "Classification"
-msgstr ""
+msgstr "Titolo (&#8661)"
 
-#: includes/rotarymembership-layout.php:108
+#: includes/rotarymembership-layout.php:118
 msgctxt "Directory table label"
 msgid "Partner"
 msgstr "Moglie/Marito"
 
-#: includes/rotarymembership-layout.php:109
+#: includes/rotarymembership-layout.php:119
 msgctxt "Directory table label"
 msgid "Cell/Home Phone"
 msgstr "Cellulare/Telefono Casa"
 
-#: includes/rotarymembership-layout.php:110
+#: includes/rotarymembership-layout.php:120
 msgctxt "Directory table label"
 msgid "Business Phone"
 msgstr "Telefono Lavoro"
 
-#: includes/rotarymembership-layout.php:111
+#: includes/rotarymembership-layout.php:121
 msgctxt "Directory table label"
 msgid "Contact Info"
 msgstr "Informazioni"
 
-#: includes/rotarymembership-layout.php:112
+#: includes/rotarymembership-layout.php:122
 msgctxt "Directory table label"
 msgid "Email"
 msgstr ""
 
 #: includes/sidebar-init.php:16 sidebar-home.php:25
 msgid "Homepage Sidebar"
-msgstr ""
+msgstr "Homepage Barra Laterale"
 
 #: includes/sidebar-init.php:18
 msgid "The  right sidebar on the home page"
@@ -3067,10 +3118,14 @@ msgstr ""
 
 #: includes/sidebar-init.php:81 sidebar-calendar.php:42
 msgid "Calendar Sidebar"
-msgstr ""
+msgstr "Sidebar Calendario"
 
 #: includes/sidebar-init.php:83
 msgid "Appears on the calendar page"
+msgstr "Compare sulla pagina del calendario"
+
+#: includes/sidebar-init.php:105
+msgid "Downloads"
 msgstr ""
 
 #: includes/simple-page-ordering.php:99
@@ -3079,6 +3134,9 @@ msgid ""
 "\" it anywhere (outside of the links and form controls) and moving it to its "
 "new position."
 msgstr ""
+"Per riposizionare un elemento, è sufficiente trascinarlo e rilasciarlo "
+"\"cliccando e tenendo premuto\" ovunque (tranne i link e i controlli dei "
+"moduli) e spostarlo nella nuova posizione."
 
 #: includes/simple-page-ordering.php:289
 msgid "Sort by Order"
@@ -3095,252 +3153,314 @@ msgstr ""
 msgid "This meeting is in a different location than normal."
 msgstr "Questa conviviale è in un luogo diverso dal normale."
 
-#: includes/sponsors.php:30
+#: includes/sponsors.php:38
 msgctxt "post type general name"
 msgid "Sponsors"
-msgstr ""
+msgstr "Sponsors"
 
-#: includes/sponsors.php:31
+#: includes/sponsors.php:39
 msgctxt "post type singular name"
 msgid "Sponsor"
-msgstr ""
+msgstr "Sponsor"
 
-#: includes/sponsors.php:32
+#: includes/sponsors.php:40
 msgctxt "admin menu"
 msgid "Sponsors"
-msgstr ""
+msgstr "Sponsors"
 
-#: includes/sponsors.php:33
+#: includes/sponsors.php:41
 msgctxt "add new on admin bar"
 msgid "Sponsor"
-msgstr ""
+msgstr "Sponsor"
 
-#: includes/sponsors.php:34
+#: includes/sponsors.php:42
 msgctxt "sponsor"
 msgid "Add New"
-msgstr ""
+msgstr "Aggiungi Nuovo"
 
-#: includes/sponsors.php:35
+#: includes/sponsors.php:43
 msgid "Add New Sponsor"
-msgstr ""
+msgstr "Aggiungi Nuovo Sponsor"
 
-#: includes/sponsors.php:36
+#: includes/sponsors.php:44
 msgid "New Sponsor"
-msgstr ""
+msgstr "Nuovo Sponsor"
 
-#: includes/sponsors.php:37
+#: includes/sponsors.php:45
 msgid "Edit Sponsor"
 msgstr "Modifica Sponsor"
 
-#: includes/sponsors.php:38
+#: includes/sponsors.php:46
 msgid "View Sponsor"
-msgstr ""
+msgstr "Vedi Sponsor"
 
-#: includes/sponsors.php:39
+#: includes/sponsors.php:47
 msgid "All Sponsors"
 msgstr "Tutti gli Sponsor"
 
-#: includes/sponsors.php:40
+#: includes/sponsors.php:48
 msgid "Search Sponsors"
 msgstr "Cerca Sponsor"
 
-#: includes/sponsors.php:41
+#: includes/sponsors.php:49
 msgid "Parent Sponsors:"
-msgstr ""
+msgstr "Sponsors Genitore:"
 
-#: includes/sponsors.php:42
+#: includes/sponsors.php:50
 msgid "No Sponsors found."
-msgstr ""
+msgstr "Nessun sponsor trovato."
 
-#: includes/sponsors.php:43
+#: includes/sponsors.php:51
 msgid "No Sponsors found in Trash."
-msgstr ""
+msgstr "Nessun sponsor trovato nel Cestino."
 
-#: includes/sponsors.php:62
+#: includes/sponsors.php:70
 msgctxt "taxonomy general name"
 msgid "Sponsorship Levels"
-msgstr ""
+msgstr "Livelli Sponsorizzazione"
 
-#: includes/sponsors.php:63
+#: includes/sponsors.php:71
 msgctxt "taxonomy singular name"
 msgid "Sponsorship Level"
-msgstr ""
+msgstr "Livello Sponsorizzazione"
 
-#: includes/sponsors.php:64
+#: includes/sponsors.php:72
 msgid "Search Sponsorship Levels"
 msgstr "Cerca Livello Sponsorizzazione"
 
-#: includes/sponsors.php:65
+#: includes/sponsors.php:73
 msgid "All Sponsorship Levels"
-msgstr ""
+msgstr "Tutti i Livelli di Sponsorizzazione"
 
-#: includes/sponsors.php:66
+#: includes/sponsors.php:74
 msgid "Parent Sponsorship Level"
-msgstr ""
+msgstr "Livello Sponsorizzazione Genitore"
 
-#: includes/sponsors.php:67
+#: includes/sponsors.php:75
 msgid "Parent Sponsorship Level:"
-msgstr ""
+msgstr "Livello Sponsorizzazione Genitore:"
 
-#: includes/sponsors.php:68
+#: includes/sponsors.php:76
 msgid "Edit Sponsorship Level"
-msgstr ""
+msgstr "Modifica Livello Sponsorizzazione"
 
-#: includes/sponsors.php:69
+#: includes/sponsors.php:77
 msgid "Update Sponsorship Level"
-msgstr ""
+msgstr "Aggiorna Livello Sponsorizzazione"
 
-#: includes/sponsors.php:70
+#: includes/sponsors.php:78
 msgid "Add New Sponsorship Level"
-msgstr ""
+msgstr "Aggiungi Nuovo Livello Sponsorizzazione"
 
-#: includes/sponsors.php:71
+#: includes/sponsors.php:79
 msgid "New Sponsorship Level Name"
-msgstr ""
+msgstr "Nuovo Nome Livello Sponsorizzazione"
 
-#: includes/sponsors.php:72
+#: includes/sponsors.php:80
 msgid "Sponsorship Levels"
-msgstr ""
+msgstr "Livelli Sponsorizzazione"
 
-#: includes/theme-functions.php:83 includes/theme-functions.php:98
+#: includes/sponsors.php:189
+msgid ""
+"The list ID allows you to filter the sponsors for particular events etc."
+msgstr ""
+"La lista ID permette di filtrare gli sponsor per eventi particolari etc."
+
+#: includes/sponsors.php:191
+msgid "Sponsor List: 1"
+msgstr "Lista Sponsors: 1"
+
+#: includes/sponsors.php:192
+msgid "Sponsor List: 2"
+msgstr "List Sponsor: 2"
+
+#: includes/sponsors.php:193
+msgid "Sponsor List: 3"
+msgstr "Lista Sponsor: 3"
+
+#: includes/sponsors.php:194
+msgid "Sponsor List: 4"
+msgstr "Lista Sponsor: 4"
+
+#: includes/sponsors.php:195
+msgid "Sponsor List: 5"
+msgstr "Lista Sponsor: 5"
+
+#: includes/sponsors.php:196
+msgid "Sponsor List: 6"
+msgstr "Lista Sponsor: 6"
+
+#: includes/sponsors.php:220
+msgid "Select the layout for this sponsorship level."
+msgstr "Cerca Livello Sponsorizzazione."
+
+#: includes/sponsors.php:222
+msgid "Full-width sponsor (no text)"
+msgstr "Sponsor a tutta larghezza (nessun testo)"
+
+#: includes/sponsors.php:223
+msgid "Full-width sponsor (with accompanying text side-by-side)"
+msgstr "Sponsor a tutta larghezza (con un testo a fianco)"
+
+#: includes/sponsors.php:224
+msgid "Full-width sponsor (with accompanying text below)"
+msgstr "Sponsor a tutta larghezza (con testo sotto)"
+
+#: includes/sponsors.php:225
+msgid "Two sponsors per row"
+msgstr "Due sponsor per riga"
+
+#: includes/sponsors.php:226
+msgid "Three sponsors per row"
+msgstr "Tre sponsor per riga"
+
+#: includes/sponsors.php:227
+msgid "Four sponsors per row"
+msgstr "Quattro sponsor per riga"
+
+#: includes/theme-functions.php:209 includes/theme-functions.php:224
 msgid "Rotary Club Of"
 msgstr "Club Rotary di"
 
-#: includes/theme-functions.php:91
+#: includes/theme-functions.php:217
 msgid "Rotary Club"
 msgstr "Club Rotary"
 
-#: includes/theme-functions.php:105
+#: includes/theme-functions.php:231
 msgid "Club"
 msgstr ""
 
-#: includes/theme-functions.php:119
+#: includes/theme-functions.php:245
 #, php-format
 msgid "Rotary Club of %s"
 msgstr "Club Rotary di %s"
 
-#: includes/theme-functions.php:123
+#: includes/theme-functions.php:249
 #, php-format
 msgid "%s Rotary Club"
-msgstr ""
+msgstr "%s Club Rotary"
 
-#: includes/theme-functions.php:232
+#: includes/theme-functions.php:357
 msgid "Primary Navigation"
 msgstr ""
 
-#: includes/theme-functions.php:477
+#: includes/theme-functions.php:469
+msgid "Go To Link"
+msgstr "Vai al Post"
+
+#: includes/theme-functions.php:621
 #, php-format
 msgid "%s says:"
-msgstr ""
+msgstr "%s dice:"
 
-#: includes/theme-functions.php:479
+#: includes/theme-functions.php:623
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "Il tuo commento è in attesa di essere approvato."
 
-#: includes/theme-functions.php:486
+#: includes/theme-functions.php:630
 #, php-format
 msgid "%1$s at %2$s"
-msgstr ""
+msgstr "%1$s a %2$s"
 
-#: includes/theme-functions.php:486 includes/theme-functions.php:502
+#: includes/theme-functions.php:630 includes/theme-functions.php:646
 msgid "(Edit)"
-msgstr ""
+msgstr "(Modifica)"
 
-#: includes/theme-functions.php:502
+#: includes/theme-functions.php:646
 msgid "Pingback:"
 msgstr ""
 
-#: includes/theme-functions.php:531
+#: includes/theme-functions.php:675
 msgid "Website"
-msgstr ""
+msgstr "Sito web"
 
-#: includes/theme-functions.php:559
+#: includes/theme-functions.php:703
 #, php-format
 msgid "Speaker on <br/>%2$s"
 msgstr "Relatore di <br/>%2$s"
 
-#: includes/theme-functions.php:571
+#: includes/theme-functions.php:715
 #, php-format
 msgid "Date Posted<br/>&nbsp;%2$s"
-msgstr ""
+msgstr "Data di pubblicazione<br>%2$s"
 
-#: includes/theme-functions.php:581
+#: includes/theme-functions.php:725
 #, php-format
 msgid "%2$s"
 msgstr ""
 
-#: includes/theme-functions.php:605
+#: includes/theme-functions.php:749
 #, php-format
 msgid ""
 "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
 "title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
 
-#: includes/theme-functions.php:607
+#: includes/theme-functions.php:751
 #, php-format
 msgid ""
 "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title="
 "\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr ""
 
-#: includes/theme-functions.php:609
+#: includes/theme-functions.php:753
 #, php-format
 msgid ""
 "Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark"
 "\">permalink</a>."
 msgstr ""
 
-#: includes/theme-functions.php:635
+#: includes/theme-functions.php:779
 msgid "Slides"
 msgstr ""
 
-#: includes/theme-functions.php:637
+#: includes/theme-functions.php:781
 msgid "Slides Item"
 msgstr ""
 
-#: includes/theme-functions.php:650
+#: includes/theme-functions.php:794
 msgctxt "post type general name"
 msgid "Slides Category"
-msgstr ""
+msgstr "Categoria Slide"
 
-#: includes/theme-functions.php:651
+#: includes/theme-functions.php:795
 msgctxt "all items"
 msgid "All Slides"
-msgstr ""
+msgstr "Tutte le Slide"
 
-#: includes/theme-functions.php:652
+#: includes/theme-functions.php:796
 msgctxt "adding a new item"
 msgid "Add Slides Category"
 msgstr "Aggiungi Categoria Slide"
 
-#: includes/theme-functions.php:653
+#: includes/theme-functions.php:797
 msgctxt "adding a new item"
 msgid "New Slides Category Name"
 msgstr "Nome Nuova Categoria Slide"
 
-#: includes/theme-functions.php:796
+#: includes/theme-functions.php:940
 msgid "Slide Link"
-msgstr ""
+msgstr "Link della slide"
 
-#: includes/theme-functions.php:1022 loop-search.php:33
+#: includes/theme-functions.php:1166 loop-search.php:33
 #: upcoming-programs.php:79
 #, php-format
 msgid "Permalink to %s"
-msgstr ""
+msgstr "Permalink a %s"
 
-#: includes/theme-functions.php:1025
+#: includes/theme-functions.php:1169
 msgid "By "
-msgstr ""
+msgstr "Di "
 
-#: includes/theme-functions.php:1063 loop-search.php:41
+#: includes/theme-functions.php:1207 loop-search.php:41
 #, php-format
 msgid "Posted in %2$s"
-msgstr ""
+msgstr "Pubblicato in %2$s"
 
-#: includes/theme-functions.php:1069 loop-search.php:47
+#: includes/theme-functions.php:1213 loop-search.php:47
 #, php-format
 msgid "Tagged %2$s"
-msgstr ""
+msgstr "Contrassegnato %2$s"
 
 #: includes/theme-options.php:57
 msgid "Name and Logo"
@@ -3356,11 +3476,12 @@ msgstr "Mostra Rotary Club prima del nome del club"
 
 #: includes/theme-options.php:90
 msgid "Is This a Rotary Club or District&#63;"
-msgstr ""
+msgstr "E' un Rotary Club o un Distretto&#63;"
 
 #: includes/theme-options.php:93
 msgid "You will need to refresh the page after changing this option"
 msgstr ""
+"Sarà necessario aggiornare la pagina dopo la modifica di questa opzione"
 
 #: includes/theme-options.php:107
 msgid "Optional Logo file to use"
@@ -3371,6 +3492,8 @@ msgid ""
 "If this is not provided, a responsive text version will be used (required "
 "for Districts)"
 msgstr ""
+"Se questo non viene fornito, verrà utilizzata una versione di testo reattivo "
+"(obbligatorio per i distretti)"
 
 #: includes/theme-options.php:122
 msgid "Meeting Information"
@@ -3382,7 +3505,7 @@ msgstr "Luogo Conviviale"
 
 #: includes/theme-options.php:142
 msgid "Country"
-msgstr ""
+msgstr "Paese"
 
 #: includes/theme-options.php:151
 msgid "Telephone"
@@ -3562,11 +3685,11 @@ msgstr "Apertura"
 
 #: includes/theme-options.php:226
 msgid "Program Starts"
-msgstr "L'conferenza Inizia"
+msgstr "La Conferenza Inizia"
 
 #: includes/theme-options.php:236
 msgid "Program Ends"
-msgstr "L'Conferenza Finisce"
+msgstr "La Conferenza Finisce"
 
 #: includes/theme-options.php:250
 msgid "Select page for the Get More Info button"
@@ -3598,7 +3721,7 @@ msgstr ""
 
 #: includes/theme-options.php:327
 msgid "Static Front Page"
-msgstr ""
+msgstr "Pagina Iniziale statica"
 
 #: includes/theme-options.php:330
 msgid "This theme can only be used with a static home page."
@@ -3622,11 +3745,11 @@ msgstr "Mostra la Colonna Soci"
 
 #: includes/theme-options.php:413
 msgid "Posts page"
-msgstr ""
+msgstr "﻿Pagina degli articoli"
 
 #: includes/theme-widgets.php:73
 msgid "Sort by:"
-msgstr ""
+msgstr "Ordinato per:"
 
 #: includes/theme-widgets.php:75
 msgid "Link title"
@@ -3642,7 +3765,7 @@ msgstr ""
 
 #: includes/theme-widgets.php:78
 msgid "Random"
-msgstr ""
+msgstr "Casuale"
 
 #: includes/theme-widgets.php:83
 msgid "Show Link Name"
@@ -3650,17 +3773,11 @@ msgstr ""
 
 #: includes/theme-widgets.php:87
 msgid "Number of links to show:"
-msgstr ""
+msgstr "Numero di Collegamenti da mostrare:"
 
 #: includes/theme-widgets.php:251
 msgid "All Months"
 msgstr "Tutti Mesi"
-
-#: includes/theme-widgets.php:321 includes/theme-widgets.php:407
-#: includes/theme-widgets.php:501 includes/theme-widgets.php:612
-#: includes/theme-widgets.php:711
-msgid "Title:"
-msgstr "Titolo:"
 
 #: includes/theme-widgets.php:329
 msgid "Hide on none category pages"
@@ -3688,7 +3805,7 @@ msgstr "Aggiornamento Commissione per"
 
 #: index.php:25
 msgid "Daily Archive"
-msgstr ""
+msgstr "Archivio Giornaliero"
 
 #: index.php:29 index.php:32
 msgid "Monthly Archive"
@@ -3696,11 +3813,11 @@ msgstr "Archivio Mensile"
 
 #: index.php:37 index.php:40 index.php:44
 msgid "Annual Archive"
-msgstr ""
+msgstr "Archivio annuale"
 
 #: index.php:47
 msgid "Archive"
-msgstr ""
+msgstr "Archivio"
 
 #: index.php:48
 msgid "All Posts and Updates"
@@ -3709,7 +3826,7 @@ msgstr "Tutti i Post e Aggiornamenti"
 #: loop-attachment.php:14
 #, php-format
 msgid "Return to %s"
-msgstr ""
+msgstr "Torna a %s"
 
 #: loop-attachment.php:14
 #, php-format
@@ -3719,12 +3836,12 @@ msgstr ""
 #: loop-attachment.php:23
 #, php-format
 msgid "By %2$s"
-msgstr ""
+msgstr "Di %2$s"
 
 #: loop-attachment.php:27
 #, php-format
 msgid "View all posts by %s"
-msgstr ""
+msgstr "Vedi tutti i post di %s"
 
 #: loop-attachment.php:34
 #, php-format
@@ -3734,15 +3851,15 @@ msgstr "Pubblicato %2$s"
 #: loop-attachment.php:44
 #, php-format
 msgid "Full size is %s pixels"
-msgstr ""
+msgstr "Dimensioni massime di %s pixels"
 
 #: loop-attachment.php:47
 msgid "Link to full-size image"
-msgstr ""
+msgstr "Link all'immagine a grandezza intera"
 
 #: loop-attachment.php:92
 msgid "Continue reading &rarr;"
-msgstr ""
+msgstr "Continua a leggere &rarr;"
 
 #: loop-attachment.php:94 loop-page.php:23
 msgid "Pages:"
@@ -3766,6 +3883,8 @@ msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
 msgstr ""
+"Spiacente, ma non sono stati trovati risultati per l'archivio richiesto. "
+"Forse la ricerca aiuterà a trovare un post correlato."
 
 #: loop-search.php:24 loop.php:16
 msgid "&lt; Older posts"
@@ -3787,18 +3906,23 @@ msgstr "1 Commento"
 msgid "% Comments"
 msgstr "% Commenti"
 
-#: loop-single-announcement.php:63 loop-single-announcement.php:115
+#: loop-single-announcement.php:59 loop-single-announcement.php:103
+#, php-format
+msgid "By %s"
+msgstr "Di %s"
+
+#: loop-single-announcement.php:63 loop-single-announcement.php:107
 #: loop-single-announcement.php:174
 #, php-format
 msgid "Reply to %s"
 msgstr "Rispondi a %s"
 
-#: loop-single-announcement.php:86 loop-single-announcement.php:134
+#: loop-single-announcement.php:87 loop-single-announcement.php:134
 #, php-format
 msgid "Expires %s"
-msgstr ""
+msgstr "Scade il %s"
 
-#: loop-single-announcement.php:104
+#: loop-single-announcement.php:112
 msgid "Edit Announcement"
 msgstr "Modifica Annuncio"
 
@@ -3828,27 +3952,27 @@ msgctxt "Next post link"
 msgid "&gt;"
 msgstr ""
 
-#: loop-single-speaker.php:48 shortcodes/shortcode-announcements.php:136
+#: loop-single-speaker.php:55 shortcodes/shortcode-announcements.php:138
 msgid "Send Test Email"
 msgstr "Invia Mail di Prova"
 
-#: loop-single-speaker.php:49 shortcodes/shortcode-announcements.php:137
+#: loop-single-speaker.php:56 shortcodes/shortcode-announcements.php:139
 msgid "Send Email Blast"
 msgstr "Invia Mail Massiva"
 
-#: loop-single-speaker.php:69 nm-mailchimp/speaker_table.php:88
+#: loop-single-speaker.php:76 nm-mailchimp/speaker_table.php:88
 msgid "Scribe"
 msgstr "Scrivano"
 
-#: loop-single-speaker.php:70 nm-mailchimp/speaker_table.php:89
+#: loop-single-speaker.php:77 nm-mailchimp/speaker_table.php:89
 msgid "Editor"
 msgstr ""
 
-#: loop-single-speaker.php:71 nm-mailchimp/speaker_table.php:90
+#: loop-single-speaker.php:78 nm-mailchimp/speaker_table.php:90
 msgid "Introduced by"
 msgstr "Introdotto da"
 
-#: loop-single-speaker.php:85 nm-mailchimp/speaker_table.php:103
+#: loop-single-speaker.php:92 nm-mailchimp/speaker_table.php:102
 msgid "Club Announcements"
 msgstr "Annunci del Club"
 
@@ -3866,23 +3990,27 @@ msgstr "Conferenza %s: "
 msgid "Club Announcements for %s"
 msgstr "Annunci del Club per %s"
 
-#: nm-mailchimp/announcements_table.php:60 nm-mailchimp/speaker_table.php:123
-#: shortcodes/shortcode-announcements.php:222
+#: nm-mailchimp/announcements_table.php:60
+#: shortcodes/shortcode-announcements.php:244
 msgid "There are no active announcements"
 msgstr "Non ci sono Annunci Attivi"
 
-#: nm-mailchimp/speaker_table.php:139 sidebar-speaker.php:41
-#: tmpl-speaker-archive.php:53
+#: nm-mailchimp/speaker_table.php:123
+#, php-format
+msgid "There are no active announcements, Speakerdate = %s"
+msgstr "Non ci sono Annunci Attivi, DataRelatore = %s"
+
+#: nm-mailchimp/speaker_table.php:138 sidebar-speaker.php:41
 msgid "About the Speaker"
 msgstr "Informazioni sul Relatore"
 
 #: required-plugins/class-tgm-plugin-activation.php:333
 msgid "Install Required Plugins"
-msgstr ""
+msgstr "Installa i plugin richiesti"
 
 #: required-plugins/class-tgm-plugin-activation.php:334
 msgid "Install Plugins"
-msgstr ""
+msgstr "Installa i plugin"
 
 #: required-plugins/class-tgm-plugin-activation.php:335
 #, php-format
@@ -3975,20 +4103,20 @@ msgstr[1] "Ci Spiace ma non hai i permessi per attivare i %1$s plugin."
 #: required-plugins/class-tgm-plugin-activation.php:383
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Inizia l'installazione del plugin"
+msgstr[1] "Inizia l'installazione dei plugin"
 
 #: required-plugins/class-tgm-plugin-activation.php:388
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Inizia l'aggiornamento plugin"
+msgstr[1] "Inizia l'aggiornamento dei plugin"
 
 #: required-plugins/class-tgm-plugin-activation.php:393
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Incomincia ad attivare il plugin"
+msgstr[1] "Incomincia ad attivare i plugin"
 
 #: required-plugins/class-tgm-plugin-activation.php:397
 msgid "Return to Required Plugins Installer"
@@ -4001,14 +4129,14 @@ msgstr ""
 #: required-plugins/class-tgm-plugin-activation.php:399
 #: required-plugins/class-tgm-plugin-activation.php:3029
 msgid "Plugin activated successfully."
-msgstr ""
+msgstr "Plugin attivati con successo."
 
 #: required-plugins/class-tgm-plugin-activation.php:400
 #: required-plugins/class-tgm-plugin-activation.php:2832
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Il seguente plugin è stato attivato con successo:"
+msgstr[1] "I seguenti plugin sono stati attivati con successo:"
 
 #: required-plugins/class-tgm-plugin-activation.php:401
 #, php-format
@@ -4021,11 +4149,13 @@ msgid ""
 "Plugin not activated. A higher version of %s is needed for this theme. "
 "Please update the plugin."
 msgstr ""
+"Plugin non attivato. Una versione superiore di% s è necessaria per questo "
+"tema. Si prega di aggiornare il plugin."
 
 #: required-plugins/class-tgm-plugin-activation.php:403
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
-msgstr ""
+msgstr "Tutti i plugins installati e attivati con successo. %1$s"
 
 #: required-plugins/class-tgm-plugin-activation.php:404
 msgid "Dismiss this notice"
@@ -4041,7 +4171,7 @@ msgstr ""
 
 #: required-plugins/class-tgm-plugin-activation.php:521
 msgid "Update Required"
-msgstr ""
+msgstr "Aggiornamento Richiesto"
 
 #: required-plugins/class-tgm-plugin-activation.php:635
 msgid "Set the parent_slug config variable instead."
@@ -4075,7 +4205,7 @@ msgstr ""
 #: required-plugins/class-tgm-plugin-activation.php:2828
 msgctxt "plugin A *and* plugin B"
 msgid "and"
-msgstr ""
+msgstr "e"
 
 #: required-plugins/class-tgm-plugin-activation.php:1881
 #, php-format
@@ -4089,11 +4219,11 @@ msgstr "Richiesto"
 
 #: required-plugins/class-tgm-plugin-activation.php:2170
 msgid "Recommended"
-msgstr ""
+msgstr "Raccomandato"
 
 #: required-plugins/class-tgm-plugin-activation.php:2186
 msgid "WordPress Repository"
-msgstr ""
+msgstr "Repository WordPress"
 
 #: required-plugins/class-tgm-plugin-activation.php:2189
 msgid "External Source"
@@ -4113,19 +4243,19 @@ msgstr ""
 
 #: required-plugins/class-tgm-plugin-activation.php:2215
 msgid "Active"
-msgstr ""
+msgstr "Attivo"
 
 #: required-plugins/class-tgm-plugin-activation.php:2221
 msgid "Required Update not Available"
-msgstr ""
+msgstr "L’aggiornamento richiesto non è disponibile"
 
 #: required-plugins/class-tgm-plugin-activation.php:2224
 msgid "Requires Update"
-msgstr ""
+msgstr "Richiede Aggiornamento"
 
 #: required-plugins/class-tgm-plugin-activation.php:2227
 msgid "Update recommended"
-msgstr ""
+msgstr "Aggiornamento Raccomandato"
 
 #: required-plugins/class-tgm-plugin-activation.php:2235
 #, php-format
@@ -4138,46 +4268,46 @@ msgstr ""
 msgctxt "plugins"
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Tutto <span class=\"count\">(%s)</span>"
+msgstr[1] "Tutti <span class=\"count\">(%s)</span>"
 
 #: required-plugins/class-tgm-plugin-activation.php:2283
 #, php-format
 msgid "To Install <span class=\"count\">(%s)</span>"
 msgid_plural "To Install <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Per installare <span class=\"count\">(%s)</span>"
+msgstr[1] "Per installare <span class=\"count\">(%s)</span>"
 
 #: required-plugins/class-tgm-plugin-activation.php:2286
 #, php-format
 msgid "Update Available <span class=\"count\">(%s)</span>"
 msgid_plural "Update Available <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Aggiornamento Disponibile <span class=\"count\">(%s)</span>"
+msgstr[1] "Aggiornamenti Disponibili <span class=\"count\">(%s)</span>"
 
 #: required-plugins/class-tgm-plugin-activation.php:2289
 #, php-format
 msgid "To Activate <span class=\"count\">(%s)</span>"
 msgid_plural "To Activate <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Per Attivare <span class=\"count\">(%s)</span>"
+msgstr[1] "Per Attivare <span class=\"count\">(%s)</span>"
 
 #: required-plugins/class-tgm-plugin-activation.php:2371
 msgctxt "as in: \"version nr unknown\""
 msgid "unknown"
-msgstr ""
+msgstr "sconosciuto"
 
 #: required-plugins/class-tgm-plugin-activation.php:2379
 msgid "Installed version:"
-msgstr ""
+msgstr "Versione Installata:"
 
 #: required-plugins/class-tgm-plugin-activation.php:2387
 msgid "Minimum required version:"
-msgstr ""
+msgstr "La versione minima richiesta è:"
 
 #: required-plugins/class-tgm-plugin-activation.php:2399
 msgid "Available version:"
-msgstr ""
+msgstr "Versione disponibile:"
 
 #: required-plugins/class-tgm-plugin-activation.php:2422
 #, php-format
@@ -4204,7 +4334,7 @@ msgstr "Versione"
 
 #: required-plugins/class-tgm-plugin-activation.php:2443
 msgid "Status"
-msgstr ""
+msgstr "Stato"
 
 #: required-plugins/class-tgm-plugin-activation.php:2491
 #, php-format
@@ -4288,7 +4418,7 @@ msgstr ""
 #: required-plugins/class-tgm-plugin-activation.php:3370
 #, php-format
 msgid "%1$s installed and activated successfully."
-msgstr ""
+msgstr "%1$s installato e attivato con succeso."
 
 #: required-plugins/class-tgm-plugin-activation.php:3370
 #: required-plugins/class-tgm-plugin-activation.php:3376
@@ -4302,7 +4432,7 @@ msgstr "Nascondi Dettagli"
 
 #: required-plugins/class-tgm-plugin-activation.php:3371
 msgid "All installations and activations have been completed."
-msgstr ""
+msgstr "Tutte le installazioni e le attivazioni sono state completate."
 
 #: required-plugins/class-tgm-plugin-activation.php:3372
 #, php-format
@@ -4318,11 +4448,11 @@ msgstr ""
 #: required-plugins/class-tgm-plugin-activation.php:3376
 #, php-format
 msgid "%1$s installed successfully."
-msgstr ""
+msgstr "%1$s installato con successo."
 
 #: required-plugins/class-tgm-plugin-activation.php:3377
 msgid "All installations have been completed."
-msgstr ""
+msgstr "Tutte le installazioni sono state completate."
 
 #: required-plugins/class-tgm-plugin-activation.php:3378
 #, php-format
@@ -4344,39 +4474,39 @@ msgid ""
 "different keywords."
 msgstr ""
 
-#: shortcodes/shortcode-announcements.php:123
+#: shortcodes/shortcode-announcements.php:124
 #, php-format
 msgid "Please %s to make an announcement"
 msgstr "%s per creare un annuncio"
 
-#: shortcodes/shortcode-announcements.php:341
+#: shortcodes/shortcode-announcements.php:363
 msgid "Wedding Anniversaries"
 msgstr "Anniversari di Matrimonio"
 
-#: shortcodes/shortcode-announcements.php:344
+#: shortcodes/shortcode-announcements.php:366
 msgid "Club Anniversaries"
 msgstr "Anniversari del Club"
 
-#: shortcodes/shortcode-announcements.php:347
+#: shortcodes/shortcode-announcements.php:369
 msgid "Birthdays"
 msgstr "Compleanni"
 
-#: shortcodes/shortcode-announcements.php:355
+#: shortcodes/shortcode-announcements.php:377
 #, php-format
 msgid "%s for %s"
 msgstr "%s per %s"
 
-#: shortcodes/shortcode-announcements.php:364
+#: shortcodes/shortcode-announcements.php:386
 #, php-format
 msgid "%s and %s"
 msgstr "%s e %s"
 
-#: shortcodes/shortcode-announcements.php:380
+#: shortcodes/shortcode-announcements.php:402
 #, php-format
 msgid "%s Years"
 msgstr "%s Anni"
 
-#: shortcodes/shortcode-boardmembers.php:21
+#: shortcodes/shortcode-boardmembers.php:20
 msgid " Board Members"
 msgstr " Membri Consiglio"
 
@@ -4467,7 +4597,7 @@ msgstr "Nuovo Post"
 msgid "Posts Sidebar"
 msgstr "Sidebar dei Post"
 
-#: single-rotary_speakers.php:10 taxonomy.php:15 tmpl-speaker-archive.php:86
+#: single-rotary_speakers.php:10 taxonomy.php:15
 msgid "Speaker Program"
 msgstr "Conferenza Relatore"
 
@@ -4498,62 +4628,6 @@ msgstr "Vuoi crearne uno"
 msgid "New Announcement"
 msgstr "Nuovo Annuncio"
 
-#: tmpl-speaker-archive.php:20
-msgid "First Name"
-msgstr "Nome del Relatore"
-
-#: tmpl-speaker-archive.php:25
-msgid "Last Name"
-msgstr "Cognome del Relatore"
-
-#: tmpl-speaker-archive.php:34
-msgid "Job Title/Position"
-msgstr "Incarico/Ruolo"
-
-#: tmpl-speaker-archive.php:39 tmpl-speaker-archive.php:108
-msgid "Category"
-msgstr "Categoria"
-
-#: tmpl-speaker-archive.php:45
-msgid "Tag(s)"
-msgstr ""
-
-#: tmpl-speaker-archive.php:59
-msgid "Speaker Dates"
-msgstr "Data Conferenza"
-
-#: tmpl-speaker-archive.php:67
-msgid "&nbsp;"
-msgstr ""
-
-#: tmpl-speaker-archive.php:91
-msgid "Advanced Search"
-msgstr "Ricerca Avanzata"
-
-#: tmpl-speaker-archive.php:103
-msgid "Speaker Link"
-msgstr "Link al Relatore"
-
-#: tmpl-speaker-archive.php:104
-msgid "Date"
-msgstr "Data"
-
-#: tmpl-speaker-archive.php:105
-msgid "Program Title"
-msgstr "Titolo Conferenza"
-
-#: tmpl-speaker-archive.php:106
-msgid "Speaker Name"
-msgstr "Relatore"
-
-#: tmpl-speaker-archive.php:107
-msgid "Job Title/Organization"
-msgstr "Incarico/Organizzazione"
-
-#: tmpl-speaker-archive.php:131
-msgid "There are no speakers that match your search criteria"
-msgstr "Non ci sono relatori che soddisfano i criteri di ricerca"
-
 #: upcoming-programs.php:34
 msgid "&lt; Older speakers"
 msgstr "&lt; Relatori precedenti"
@@ -4582,12 +4656,62 @@ msgstr ""
 msgid "Merrill M. Mayer (development) and  Carolina Torres (design)"
 msgstr ""
 
+#~ msgid "Speaker First Name"
+#~ msgstr "Nome del Relatore"
+
+#~ msgid "Speaker Last Name"
+#~ msgstr "Cognome del Relatore"
+
+#~ msgid "You must be logged in to see project participants"
+#~ msgstr "Devi essere loggato per vedere i partecipanti al service"
+
+#~ msgid "Project Archive"
+#~ msgstr "Archivio Service"
+
+#~ msgid "Project Category Archive"
+#~ msgstr "Archivio Categorie Service"
+
+#~ msgid "Comments Form"
+#~ msgstr "Form Commenti"
+
+#~ msgid "Posts"
+#~ msgstr "Post"
+
+#~ msgid "First Name"
+#~ msgstr "Nome del Relatore"
+
+#~ msgid "Last Name"
+#~ msgstr "Cognome del Relatore"
+
+#~ msgid "Job Title/Position"
+#~ msgstr "Incarico/Ruolo"
+
+#~ msgid "Category"
+#~ msgstr "Categoria"
+
+#~ msgid "Speaker Dates"
+#~ msgstr "Data Conferenza"
+
+#~ msgid "Advanced Search"
+#~ msgstr "Ricerca Avanzata"
+
+#~ msgid "Speaker Link"
+#~ msgstr "Link al Relatore"
+
+#~ msgid "Date"
+#~ msgstr "Data"
+
+#~ msgid "Speaker Name"
+#~ msgstr "Relatore"
+
+#~ msgid "Job Title/Organization"
+#~ msgstr "Incarico/Organizzazione"
+
+#~ msgid "There are no speakers that match your search criteria"
+#~ msgstr "Non ci sono relatori che soddisfano i criteri di ricerca"
+
 #~ msgid "Address Geocoder"
 #~ msgstr "Indirizzo Geolocalizzato"
 
 #~ msgid "Save Options"
 #~ msgstr "Salva Opzioni"
-
-#~ msgctxt "Search widget"
-#~ msgid "Search"
-#~ msgstr "Cerca"
