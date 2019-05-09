@@ -99,7 +99,7 @@ class Github_Theme_Upgrader extends Theme_Upgrader {
 		return $tmpfname;
 	}
 	
-	function download_package($package) {
+	function download_package($package, $check_signatures = true) {
 		/*
 			http://core.trac.wordpress.org/browser/trunk/wp-admin/includes/class-wp-upgrader.php?rev=17771#L108
 			changes:
